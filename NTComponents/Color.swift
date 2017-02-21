@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  NTUIKit
+//  NTComponents
 //
 //  Created by Nathan Tannar on 1/7/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
@@ -37,6 +37,14 @@ public struct Color {
     public static var defaultButtonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
     public static var defaultTitle = UIColor.black
     public static var defaultSubtitle = UIColor.darkGray
+    
+    public struct Defaults {
+        public static var navigationBarTint = UIColor.black
+        public static var navigationBarBackground = UIColor.white
+        public static var buttonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        public static var titleTextColor = UIColor.black
+        public static var subtitleTextColor = UIColor.darkGray
+    }
     
     public static let lightGray = UIColor.groupTableViewBackground
     public static let darkGray = Color.fromHex("424242")

@@ -1,6 +1,6 @@
 //
 //  NTSearchViewController.swift
-//  NTUIKit
+//  NTComponents
 //
 //  Created by Nathan Tannar on 1/29/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.

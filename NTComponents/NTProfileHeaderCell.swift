@@ -1,6 +1,6 @@
 //
 //  NTProfileHeaderCell.swift
-//  NTUIKit
+//  NTComponents
 //
 //  Created by Nathan Tannar on 12/29/16.
 //  Copyright © 2016 Nathan Tannar. All rights reserved.

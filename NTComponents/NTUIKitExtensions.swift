@@ -1,6 +1,6 @@
 //
-//  NTUIKitExtensions.swift
-//  NTUIKit
+//  NTComponentsExtensions.swift
+//  NTComponents
 //
 //  Created by Nathan Tannar on 12/28/16.
 //  Copyright © 2016 Nathan Tannar. All rights reserved.
@@ -557,7 +557,7 @@ public extension String {
         var text = self
         let BOLD = "*"
         let ITALIC = "_"
-        var attributedString = NSMutableAttributedString()
+        let attributedString = NSMutableAttributedString()
         
         var boldComponents = text.components(separatedBy: BOLD)
         while boldComponents.count > 1 {

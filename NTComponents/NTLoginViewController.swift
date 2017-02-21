@@ -1,6 +1,6 @@
 //
 //  NTLoginViewController.swift
-//  NTUIKit
+//  NTComponents
 //
 //  Created by Nathan Tannar on 1/7/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.

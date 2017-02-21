@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 # 1 - Specs
 s.platform = :ios
-s.ios.deployment_target = '8.2'
+s.ios.deployment_target = '9.1'
 s.name = "NTComponents"
 s.summary = "A collection of everything I find useful when developing any app!"
 s.requires_arc = true
@@ -30,6 +30,6 @@ s.source = { :git => "https://github.com/nathantannar4/NTComponents.git", :tag =
 s.source_files = "NTComponents/**/*.{swift}"
 
 # 9
-s.resources = "NTComponents/**/*.{png,jpeg,jpg,storyboard,xcassets,xib}"
+s.resources = "NTComponents/**/*.{png,jpeg,jpg,storyboard,xcassets,xib,otf,ttf}"
 
 end

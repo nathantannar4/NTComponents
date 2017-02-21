@@ -1,6 +1,6 @@
 //
 //  NTPageViewController.swift
-//  NTUIKit
+//  NTComponents
 //
 //  Created by Nathan Tannar on 2/12/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
