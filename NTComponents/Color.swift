@@ -39,6 +39,8 @@ public struct Color {
     public static var defaultSubtitle = UIColor.darkGray
     
     public struct Defaults {
+        public static var tint = Color.blue
+        public static var viewControllerBackground = UIColor.groupTableViewBackground
         public static var navigationBarTint = UIColor.black
         public static var navigationBarBackground = UIColor.white
         public static var buttonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)

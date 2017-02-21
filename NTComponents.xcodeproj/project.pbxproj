@@ -63,7 +63,7 @@
 		3818F7511E5BE06C00902E23 /* NTTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3818F72F1E5BE06C00902E23 /* NTTextViewCell.xib */; };
 		3818F7521E5BE06C00902E23 /* NTMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7301E5BE06C00902E23 /* NTMenuItemCell.swift */; };
 		3818F7531E5BE06C00902E23 /* NTMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3818F7311E5BE06C00902E23 /* NTMenuItemCell.xib */; };
-		3818F7701E5BF23B00902E23 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F76F1E5BF23B00902E23 /* AutoLayout.swift */; };
+		3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
 		3818F77F1E5C0EF100902E23 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3818F7731E5C0EF100902E23 /* Roboto-Black.ttf */; };
 		3818F7801E5C0EF100902E23 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3818F7741E5C0EF100902E23 /* Roboto-BlackItalic.ttf */; };
@@ -139,7 +139,7 @@
 		3818F72F1E5BE06C00902E23 /* NTTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTTextViewCell.xib; sourceTree = "<group>"; };
 		3818F7301E5BE06C00902E23 /* NTMenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMenuItemCell.swift; sourceTree = "<group>"; };
 		3818F7311E5BE06C00902E23 /* NTMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTMenuItemCell.xib; sourceTree = "<group>"; };
-		3818F76F1E5BF23B00902E23 /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
+		3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		3818F7731E5C0EF100902E23 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		3818F7741E5C0EF100902E23 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				3818F6DA1E5BDEA600902E23 /* NTComponents.h */,
 				3818F6E61E5BDF3A00902E23 /* NTUIKitProtocols.swift */,
 				3818F6E71E5BDF3A00902E23 /* NTUIKitExtensions.swift */,
-				3818F76F1E5BF23B00902E23 /* AutoLayout.swift */,
+				3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */,
 				3818F76D1E5BF0F100902E23 /* Views */,
 				3818F76A1E5BF06C00902E23 /* Controllers */,
 				3818F76C1E5BF0E300902E23 /* Resources */,
@@ -461,7 +461,7 @@
 				3818F6FE1E5BDF5000902E23 /* NTTableViewController.swift in Sources */,
 				3818F74E1E5BE06C00902E23 /* NTLoginOptionCell.swift in Sources */,
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
-				3818F7701E5BF23B00902E23 /* AutoLayout.swift in Sources */,
+				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
 				3818F7001E5BDF5000902E23 /* NTTableViewCell.swift in Sources */,
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				3818F7401E5BE06C00902E23 /* NTHeaderCell.swift in Sources */,
