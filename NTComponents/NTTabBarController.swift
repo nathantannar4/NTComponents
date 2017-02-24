@@ -27,7 +27,7 @@ open class NTTabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.tabBar.isTranslucent = false
-        self.tabBar.tintColor = Color.defaultNavbarTint
-        self.tabBar.backgroundColor = Color.defaultNavbarBackground
+        self.tabBar.tintColor = Color.Defaults.navigationBarTint
+        self.tabBar.backgroundColor = Color.Defaults.navigationBarBackground
     }
 }
