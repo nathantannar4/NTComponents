@@ -28,7 +28,7 @@ open class NTView: UIView {
     
     open override func awakeFromNib() {
         for subview in self.subviews {
-            subview.tintColor = Color.defaultNavbarTint
+            subview.tintColor = Color.Defaults.tint
         }
     }
 

@@ -17,7 +17,7 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
         
         self.updateNavigationBar()
         self.searchBar.delegate = self
-        self.searchBar.tintColor = Color.defaultNavbarTint
+        self.searchBar.tintColor = Color.Defaults.tint
         self.searchBar.placeholder = "Search Users"
         self.searchBar.autocapitalizationType = .words
         self.searchBar.showsCancelButton = false
@@ -45,7 +45,7 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
     
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(searchBarTextDidEndEditing))
-        cancelButton.tintColor = Color.defaultNavbarTint
+        cancelButton.tintColor = Color.Defaults.tint
         self.navigationItem.rightBarButtonItem = cancelButton
     }
     

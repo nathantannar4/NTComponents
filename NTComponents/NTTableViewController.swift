@@ -123,7 +123,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                 self.refreshTitleView(withAlpha: ratio)
                 if ratio >= 0 && ratio <= 1 {
                     if ratio >= 0.5 {
-                        self.navigationController?.navigationBar.tintColor = Color.defaultNavbarTint.withAlphaComponent(ratio)
+                        self.navigationController?.navigationBar.tintColor = Color.Defaults.tint.withAlphaComponent(ratio)
                         UIApplication.shared.statusBarStyle = .default
                     } else {
                         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 1.0 - ratio, green: 1.0 - ratio, blue: 1.0 - ratio, alpha: 1.0)
@@ -132,7 +132,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                 } else {
                     self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground
                     self.setStatusBarBackgroundColor()
-                    self.navigationController?.navigationBar.tintColor = Color.defaultNavbarTint
+                    self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
                     self.navigationController?.navigationBar.layer.shadowOpacity = 0.3
                     self.refreshTitleView(withAlpha: 1)
                 }
@@ -143,7 +143,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
             } else {
                 self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground
                 self.setStatusBarBackgroundColor()
-                self.navigationController?.navigationBar.tintColor = Color.defaultNavbarTint
+                self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0.3
                 self.refreshTitleView(withAlpha: 1)
             }

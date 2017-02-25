@@ -197,7 +197,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         self.centerNavigationController.addChildViewController(self.centerViewController)
         
         self.centerNavigationController.navigationBar.isTranslucent = false
-        self.centerNavigationController.navigationBar.tintColor = Color.defaultNavbarTint
+        self.centerNavigationController.navigationBar.tintColor = Color.Defaults.tint
         
         if self.centerViewController is UITabBarController || self.centerViewController is UINavigationController || self.centerViewController is NTPageViewController {
             self.centerNavigationController.setNavigationBarHidden(true, animated: false)

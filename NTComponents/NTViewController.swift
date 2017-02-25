@@ -76,7 +76,7 @@ open class NTViewController: UIViewController {
     
     private func commitNavigationBarChanges() {
         self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground.withAlphaComponent(self.fadeInNavBarOnScroll ? 0 : 1)
-        self.navigationController?.navigationBar.tintColor = Color.defaultNavbarTint
+        self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
         self.navigationController?.navigationBar.isTranslucent = self.fadeInNavBarOnScroll
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
