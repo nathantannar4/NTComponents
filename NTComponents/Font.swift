@@ -19,7 +19,7 @@ public struct Font {
     
     public struct Defaults {
         public static var title = UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)
-        public static var subtitle = UIFont.systemFont(ofSize: 13, weight: UIFontWeightMedium)
+        public static var subtitle = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
         public static var content = UIFont.systemFont(ofSize: 13)
     }
     
