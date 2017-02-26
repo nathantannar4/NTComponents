@@ -120,5 +120,7 @@ public struct Icon {
         public static let teamFilled = Icon.icon("ic_team_filled")
         public static let profile = Icon.icon("ic_profile")
         public static let profileFilled = Icon.icon("ic_profile_filled")
+        public static let calendar = Icon.icon("ic_calendar")
+        public static let calendarFilled = Icon.icon("ic_calendar_filled")
     }
 }
