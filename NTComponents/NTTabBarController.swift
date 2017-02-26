@@ -10,6 +10,11 @@ import UIKit
 
 open class NTTabBarController: UITabBarController {
     
+    public convenience init(viewControllers: [UIViewController]) {
+        self.init()
+        self.viewControllers = viewControllers
+    }
+    
     open override func viewWillLayoutSubviews() {
         var tabFrame = self.tabBar.frame
         tabFrame.size.height = 44
