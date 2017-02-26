@@ -78,6 +78,10 @@
 		3818F7891E5C0EF100902E23 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3818F77D1E5C0EF100902E23 /* Roboto-Thin.ttf */; };
 		3818F78A1E5C0EF100902E23 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3818F77E1E5C0EF100902E23 /* Roboto-ThinItalic.ttf */; };
 		3818F78D1E5C0F1D00902E23 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3818F78C1E5C0F1D00902E23 /* BebasNeue.otf */; };
+		3830D6761E62A7F4005C9A31 /* NTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6751E62A7F4005C9A31 /* NTLabel.swift */; };
+		3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6771E62A7FD005C9A31 /* NTTextView.swift */; };
+		3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6791E62A864005C9A31 /* NTButton.swift */; };
+		3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D67B1E62A895005C9A31 /* NTNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +158,10 @@
 		3818F77D1E5C0EF100902E23 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		3818F77E1E5C0EF100902E23 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		3818F78C1E5C0F1D00902E23 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		3830D6751E62A7F4005C9A31 /* NTLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTLabel.swift; sourceTree = "<group>"; };
+		3830D6771E62A7FD005C9A31 /* NTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
+		3830D6791E62A864005C9A31 /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
+		3830D67B1E62A895005C9A31 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +222,7 @@
 				3818F6F21E5BDF5000902E23 /* NTNavigationContainer.swift */,
 				3818F6F31E5BDF5000902E23 /* NTLoginViewController.swift */,
 				3818F6F41E5BDF5000902E23 /* NTSearchViewController.swift */,
+				3830D67B1E62A895005C9A31 /* NTNavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +286,9 @@
 			children = (
 				3818F6EA1E5BDF5000902E23 /* NTView.swift */,
 				3818F6EB1E5BDF5000902E23 /* NTToolbar.swift */,
+				3830D6751E62A7F4005C9A31 /* NTLabel.swift */,
+				3830D6771E62A7FD005C9A31 /* NTTextView.swift */,
+				3830D6791E62A864005C9A31 /* NTButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -449,10 +461,13 @@
 				3818F7501E5BE06C00902E23 /* NTTextViewCell.swift in Sources */,
 				3818F7461E5BE06C00902E23 /* NTDynamicHeightTextCell.swift in Sources */,
 				3818F74A1E5BE06C00902E23 /* NTLabeledInputCell.swift in Sources */,
+				3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */,
+				3830D6761E62A7F4005C9A31 /* NTLabel.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3818F7421E5BE06C00902E23 /* NTFooterCell.swift in Sources */,
 				3818F7441E5BE06C00902E23 /* NTImageCell.swift in Sources */,
 				3818F7021E5BDF5000902E23 /* NTTabBarController.swift in Sources */,
+				3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */,
 				3818F7481E5BE06C00902E23 /* NTInputCell.swift in Sources */,
 				3818F7341E5BE06C00902E23 /* NTPageHeaderCell.swift in Sources */,
 				3818F6E81E5BDF3A00902E23 /* NTUIKitProtocols.swift in Sources */,
@@ -462,6 +477,7 @@
 				3818F74E1E5BE06C00902E23 /* NTLoginOptionCell.swift in Sources */,
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
 				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
+				3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */,
 				3818F7001E5BDF5000902E23 /* NTTableViewCell.swift in Sources */,
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				3818F7401E5BE06C00902E23 /* NTHeaderCell.swift in Sources */,
