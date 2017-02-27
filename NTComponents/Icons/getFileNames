@@ -11,7 +11,7 @@ for categoryFolder in 50/*/; do
 		name=${fileName#$categoryFolder}
 		extension="-50.png"
 		noExtenion=${name%$extension}
-		noSpaces=${noExtenion//-/.}
+		noSpaces=${noExtenion//-/_}
 		echo "public static let ${noSpaces}_50 = Icon.icon(\"$name\")" >> iOS\ Icons.swift
 	done
 	echo "}" >> iOS\ Icons.swift
