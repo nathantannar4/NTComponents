@@ -1,9 +1,20 @@
 #!/bin/bash
 
-for categoryFolder in 25/*/; do
-		for fileName in "$categoryFolder"*.png; do
-			name=${fileName#$categoryFolder}
-			extension=".png"
-			echo "public static let ${name%$extension} = Icon.icon(\"$name\")" 
-		done
-	done 
+echo "public extension Icon {" >> iOS\ Icons.swift
+echo "public struct iOS {" >> iOS\ Icons.swift
+for categoryFolder in 50/*/; do
+
+	folder=${categoryFolder#*/}
+	folder=${folder%"/"}
+	echo "public struct $folder {" >> iOS\ Icons.swift
+	for fileName in "$categoryFolder"*.png; do
+		name=${fileName#$categoryFolder}
+		extension="-50.png"
+		noExtenion=${name%$extension}
+		noSpaces=${noExtenion//-/.}
+		echo "public static let ${noSpaces}_50 = Icon.icon(\"$name\")" >> iOS\ Icons.swift
+	done
+	echo "}" >> iOS\ Icons.swift
+done 
+echo "}" >> iOS\ Icons.swift
+echo "}" >> iOS\ Icons.swift

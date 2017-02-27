@@ -91,6 +91,7 @@
 		38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */; };
 		38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */; };
 		38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */; };
+		38F572731E64CCD100E8F995 /* iOS Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F572721E64CCD100E8F995 /* iOS Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,6 +182,7 @@
 		38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
 		38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
 		38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
+		38F572721E64CCD100E8F995 /* iOS Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS Icons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				3818F6F51E5BDF5000902E23 /* Icon.swift */,
+				38F572721E64CCD100E8F995 /* iOS Icons.swift */,
 				3818F6F61E5BDF5000902E23 /* Color.swift */,
 				3818F7711E5BF78C00902E23 /* Font.swift */,
 			);
@@ -598,6 +601,7 @@
 				3818F6FE1E5BDF5000902E23 /* NTTableViewController.swift in Sources */,
 				3818F74E1E5BE06C00902E23 /* NTLoginOptionCell.swift in Sources */,
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
+				38F572731E64CCD100E8F995 /* iOS Icons.swift in Sources */,
 				38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */,
 				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
 				38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */,
