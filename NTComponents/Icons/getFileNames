@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for categoryFolder in 25/*/; do
+		for fileName in "$categoryFolder"*.png; do
+			name=${fileName#$categoryFolder}
+			extension=".png"
+			echo "public static let ${name%$extension} = Icon.icon(\"$name\")" 
+		done
+	done 

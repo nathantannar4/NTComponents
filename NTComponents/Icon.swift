@@ -39,7 +39,7 @@ public class Icon: UIImage {
     public static let twitter = UIImage(named: "ic_twitter_logo", in: bundle, compatibleWith: nil)
     public static let google = UIImage(named: "ic_google_logo", in: bundle, compatibleWith: nil)
     public static let email = UIImage(named: "ic_email_logo", in: bundle, compatibleWith: nil)
-    
+
     // Google icons
     public struct Google {
         public static let add = Icon.icon("ic_add_white")

@@ -30,6 +30,8 @@ s.source = { :git => "https://github.com/nathantannar4/NTComponents.git", :tag =
 s.source_files = "NTComponents/**/*.{swift}"
 
 # 9
-s.resources = "NTComponents/**/*.{png,jpeg,jpg,storyboard,xcassets,xib,otf,ttf}"
+s.resources = "NTComponents/**/*.{png,jpeg,jpg,storyboard,xcassets,xib}"
+s.resources = "NTComponents/**/Icons/*.{png,jpeg,jpg}"
+s.resources = "NTComponents/**/Fonts/*.{otf,ttf}"
 
 end
