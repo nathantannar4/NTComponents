@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public struct Icon {
+public class Icon: UIImage {
     
     /// An internal reference to the icons bundle.
     private static var internalBundle: Bundle?
@@ -20,7 +20,7 @@ public struct Icon {
      */
     public static var bundle: Bundle {
         if nil == Icon.internalBundle {
-            Icon.internalBundle = Bundle(for: NTView.self)
+            Icon.internalBundle = Bundle(for: Icon.self)
             let url = Icon.internalBundle!.resourceURL!
             let b = Bundle(url: url)
             if let v = b {

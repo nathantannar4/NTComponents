@@ -15,7 +15,7 @@ public class NTTableView: UITableView {
     public var emptyFooterHeight: CGFloat = 0
     
     public init() {
-        super.init(frame: CGRect.zero, style: .grouped)
+        super.init(frame: .zero, style: .grouped)
         self.setTableDefaults()
     }
     

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-public struct Font {
+public class Font: UIFont {
     
     public static func availableFonts() {
         for familyName in UIFont.familyNames {

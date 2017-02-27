@@ -1,0 +1,16 @@
+PODS:
+  - NTComponents (0.0.1)
+
+DEPENDENCIES:
+  - NTComponents (from `~/Documents/NTComponents`)
+
+EXTERNAL SOURCES:
+  NTComponents:
+    :path: "~/Documents/NTComponents"
+
+SPEC CHECKSUMS:
+  NTComponents: d0bd15291865ff78e84495e5a287b196d75d73b4
+
+PODFILE CHECKSUM: e9707c64a052d015eb895654c2710597e074a694
+
+COCOAPODS: 1.2.0

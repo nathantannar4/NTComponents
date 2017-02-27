@@ -82,6 +82,15 @@
 		3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6771E62A7FD005C9A31 /* NTTextView.swift */; };
 		3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6791E62A864005C9A31 /* NTButton.swift */; };
 		3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D67B1E62A895005C9A31 /* NTNavigationController.swift */; };
+		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
+		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
+		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
+		38E625191E63B4CA003DC7B0 /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625141E63B4CA003DC7B0 /* DatasourceCell.swift */; };
+		38E6251A1E63B4CA003DC7B0 /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625151E63B4CA003DC7B0 /* DatasourceController.swift */; };
+		38E6251B1E63B4CA003DC7B0 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625161E63B4CA003DC7B0 /* DefaultCells.swift */; };
+		38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */; };
+		38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */; };
+		38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,10 +171,27 @@
 		3830D6771E62A7FD005C9A31 /* NTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
 		3830D6791E62A864005C9A31 /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
 		3830D67B1E62A895005C9A31 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
+		38E624FA1E63AF9C003DC7B0 /* NTComponents Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
+		38E625131E63B4CA003DC7B0 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
+		38E625141E63B4CA003DC7B0 /* DatasourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasourceCell.swift; sourceTree = "<group>"; };
+		38E625151E63B4CA003DC7B0 /* DatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasourceController.swift; sourceTree = "<group>"; };
+		38E625161E63B4CA003DC7B0 /* DefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCells.swift; sourceTree = "<group>"; };
+		38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
+		38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
+		38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3818F6D31E5BDEA600902E23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38E624F71E63AF9C003DC7B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				3818F6D71E5BDEA600902E23 /* NTComponents.framework */,
+				38E624FA1E63AF9C003DC7B0 /* NTComponents Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,9 +226,12 @@
 				3818F6DA1E5BDEA600902E23 /* NTComponents.h */,
 				3818F6E61E5BDF3A00902E23 /* NTUIKitProtocols.swift */,
 				3818F6E71E5BDF3A00902E23 /* NTUIKitExtensions.swift */,
-				3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */,
+				38E6251D1E63B912003DC7B0 /* LBTA Components */,
 				3818F76D1E5BF0F100902E23 /* Views */,
 				3818F76A1E5BF06C00902E23 /* Controllers */,
+				3818F6F31E5BDF5000902E23 /* NTLoginViewController.swift */,
+				3818F6F41E5BDF5000902E23 /* NTSearchViewController.swift */,
+				38E6251C1E63B4DA003DC7B0 /* Models */,
 				3818F76C1E5BF0E300902E23 /* Resources */,
 				3818F76E1E5BF0FB00902E23 /* Functionality */,
 				3818F6DB1E5BDEA600902E23 /* Info.plist */,
@@ -214,15 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				3818F6EC1E5BDF5000902E23 /* NTViewController.swift */,
-				3818F6ED1E5BDF5000902E23 /* NTTableViewController.swift */,
-				3818F6EE1E5BDF5000902E23 /* NTTableView.swift */,
-				3818F6EF1E5BDF5000902E23 /* NTTableViewCell.swift */,
-				3818F6F01E5BDF5000902E23 /* NTPageViewController.swift */,
-				3818F6F11E5BDF5000902E23 /* NTTabBarController.swift */,
-				3818F6F21E5BDF5000902E23 /* NTNavigationContainer.swift */,
-				3818F6F31E5BDF5000902E23 /* NTLoginViewController.swift */,
-				3818F6F41E5BDF5000902E23 /* NTSearchViewController.swift */,
-				3830D67B1E62A895005C9A31 /* NTNavigationController.swift */,
+				38E625441E64BF3D003DC7B0 /* Navigation */,
+				38E625431E64BF20003DC7B0 /* Table */,
+				38E625421E64BEE6003DC7B0 /* Collection */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,9 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				3818F70C1E5BDF8600902E23 /* Assets.xcassets */,
-				3818F6F51E5BDF5000902E23 /* Icon.swift */,
-				3818F6F61E5BDF5000902E23 /* Color.swift */,
-				3818F7711E5BF78C00902E23 /* Font.swift */,
 				3818F78E1E5C0F2100902E23 /* Babas Neue */,
 				3818F78B1E5C0EF900902E23 /* Roboto */,
 			);
@@ -289,6 +310,7 @@
 				3830D6751E62A7F4005C9A31 /* NTLabel.swift */,
 				3830D6771E62A7FD005C9A31 /* NTTextView.swift */,
 				3830D6791E62A864005C9A31 /* NTButton.swift */,
+				38E625121E63B4CA003DC7B0 /* NTImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +352,60 @@
 			name = "Babas Neue";
 			sourceTree = "<group>";
 		};
+		38E6251C1E63B4DA003DC7B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3818F6F51E5BDF5000902E23 /* Icon.swift */,
+				3818F6F61E5BDF5000902E23 /* Color.swift */,
+				3818F7711E5BF78C00902E23 /* Font.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		38E6251D1E63B912003DC7B0 /* LBTA Components */ = {
+			isa = PBXGroup;
+			children = (
+				38E625131E63B4CA003DC7B0 /* Datasource.swift */,
+				38E625141E63B4CA003DC7B0 /* DatasourceCell.swift */,
+				38E625151E63B4CA003DC7B0 /* DatasourceController.swift */,
+				38E625161E63B4CA003DC7B0 /* DefaultCells.swift */,
+				38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */,
+				3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */,
+			);
+			name = "LBTA Components";
+			sourceTree = "<group>";
+		};
+		38E625421E64BEE6003DC7B0 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */,
+				38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */,
+				38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		38E625431E64BF20003DC7B0 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				3818F6ED1E5BDF5000902E23 /* NTTableViewController.swift */,
+				3818F6EE1E5BDF5000902E23 /* NTTableView.swift */,
+				3818F6EF1E5BDF5000902E23 /* NTTableViewCell.swift */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		38E625441E64BF3D003DC7B0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3818F6F01E5BDF5000902E23 /* NTPageViewController.swift */,
+				3818F6F11E5BDF5000902E23 /* NTTabBarController.swift */,
+				3830D67B1E62A895005C9A31 /* NTNavigationController.swift */,
+				3818F6F21E5BDF5000902E23 /* NTNavigationContainer.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -362,16 +438,39 @@
 			productReference = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		38E624F91E63AF9C003DC7B0 /* NTComponents Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38E6250E1E63AF9C003DC7B0 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */;
+			buildPhases = (
+				38E624F61E63AF9C003DC7B0 /* Sources */,
+				38E624F71E63AF9C003DC7B0 /* Frameworks */,
+				38E624F81E63AF9C003DC7B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NTComponents Demo";
+			productName = "NTComponents Demo";
+			productReference = 38E624FA1E63AF9C003DC7B0 /* NTComponents Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3818F6CE1E5BDEA600902E23 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Nathan Tannar";
 				TargetAttributes = {
 					3818F6D61E5BDEA600902E23 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9EUCWD26TP;
+						ProvisioningStyle = Automatic;
+					};
+					38E624F91E63AF9C003DC7B0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9EUCWD26TP;
 						ProvisioningStyle = Automatic;
@@ -384,6 +483,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3818F6CD1E5BDEA600902E23;
 			productRefGroup = 3818F6D81E5BDEA600902E23 /* Products */;
@@ -391,6 +491,7 @@
 			projectRoot = "";
 			targets = (
 				3818F6D61E5BDEA600902E23 /* NTComponents */,
+				38E624F91E63AF9C003DC7B0 /* NTComponents Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -436,6 +537,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38E624F81E63AF9C003DC7B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -445,12 +553,15 @@
 			files = (
 				3818F7011E5BDF5000902E23 /* NTPageViewController.swift in Sources */,
 				3818F7361E5BE06C00902E23 /* NTProfileCell.swift in Sources */,
+				38E6251B1E63B4CA003DC7B0 /* DefaultCells.swift in Sources */,
+				38E6251A1E63B4CA003DC7B0 /* DatasourceController.swift in Sources */,
 				3818F7081E5BDF5000902E23 /* Toast.swift in Sources */,
 				3818F73E1E5BE06C00902E23 /* NTDualActionCell.swift in Sources */,
 				3818F73A1E5BE06C00902E23 /* NTInfoLinkCell.swift in Sources */,
 				3818F73C1E5BE06C00902E23 /* NTActionCell.swift in Sources */,
 				3818F70B1E5BDF5000902E23 /* ProgressHUD.swift in Sources */,
 				3818F7031E5BDF5000902E23 /* NTNavigationContainer.swift in Sources */,
+				38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
 				3818F7521E5BE06C00902E23 /* NTMenuItemCell.swift in Sources */,
 				3818F6E91E5BDF3A00902E23 /* NTUIKitExtensions.swift in Sources */,
@@ -460,6 +571,8 @@
 				3818F74C1E5BE06C00902E23 /* NTLabeledCell.swift in Sources */,
 				3818F7501E5BE06C00902E23 /* NTTextViewCell.swift in Sources */,
 				3818F7461E5BE06C00902E23 /* NTDynamicHeightTextCell.swift in Sources */,
+				38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */,
+				38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */,
 				3818F74A1E5BE06C00902E23 /* NTLabeledInputCell.swift in Sources */,
 				3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */,
 				3830D6761E62A7F4005C9A31 /* NTLabel.swift in Sources */,
@@ -470,20 +583,31 @@
 				3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */,
 				3818F7481E5BE06C00902E23 /* NTInputCell.swift in Sources */,
 				3818F7341E5BE06C00902E23 /* NTPageHeaderCell.swift in Sources */,
+				38E625191E63B4CA003DC7B0 /* DatasourceCell.swift in Sources */,
 				3818F6E81E5BDF3A00902E23 /* NTUIKitProtocols.swift in Sources */,
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,
 				3818F6FF1E5BDF5000902E23 /* NTTableView.swift in Sources */,
 				3818F6FE1E5BDF5000902E23 /* NTTableViewController.swift in Sources */,
 				3818F74E1E5BE06C00902E23 /* NTLoginOptionCell.swift in Sources */,
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
+				38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */,
 				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
+				38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */,
 				3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */,
 				3818F7001E5BDF5000902E23 /* NTTableViewCell.swift in Sources */,
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				3818F7401E5BE06C00902E23 /* NTHeaderCell.swift in Sources */,
+				38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				3818F7381E5BE06C00902E23 /* NTDetailedProfileCell.swift in Sources */,
 				3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38E624F61E63AF9C003DC7B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +751,32 @@
 			};
 			name = Release;
 		};
+		38E6250C1E63AF9C003DC7B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		38E6250D1E63AF9C003DC7B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -644,6 +794,15 @@
 			buildConfigurations = (
 				3818F6E01E5BDEA600902E23 /* Debug */,
 				3818F6E11E5BDEA600902E23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38E6250E1E63AF9C003DC7B0 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38E6250C1E63AF9C003DC7B0 /* Debug */,
+				38E6250D1E63AF9C003DC7B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

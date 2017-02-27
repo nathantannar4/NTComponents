@@ -6,18 +6,23 @@
 	<dict>
 		<key>NTComponents.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NTComponents Playground.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3818F6D61E5BDEA600902E23</key>
+		<key>1D5333E15E2A84F93F25DC25861E3E88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>38E624F91E63AF9C003DC7B0</key>
+		<key>633DBE7F9D9F523E43FF56A2D8D9C44D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

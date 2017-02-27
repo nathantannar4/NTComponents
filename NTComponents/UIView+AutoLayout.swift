@@ -1,14 +1,31 @@
-//
-//  UIView+AutoLayout.swift
-//  NTComponents
-//
-//  Created by Brian Voong on 11/16/16.
-//  Copyright © 2016 Brian Voong. All rights reserved.
-//
+/*
+ MIT License
+ 
+ Copyright (c) 2016 Brian Voong <bhlvoong@gmail.com>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+*/
 
 import UIKit
-/*
+
 public extension UIView {
+    
     func addConstraintsWithFormat(_ format: String, views: UIView...) {
         
         var viewsDictionary = [String: UIView]()
@@ -22,22 +39,34 @@ public extension UIView {
     }
     
     func fillSuperview() {
-        translatesAutoresizingMaskIntoConstraints = false
-        if let superview = superview {
-            leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-            rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
-            topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+        guard let superview = self.superview else {
+            Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `fillSuperview()` to fix this.")
+            return
         }
+        translatesAutoresizingMaskIntoConstraints = false
+        leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
+        rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
+        topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
     }
     
     func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) {
+        
+        if self.superview == nil {
+            Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchor()` to fix this.")
+            return
+        }
         translatesAutoresizingMaskIntoConstraints = false
         
         _ = anchorWithReturnAnchors(top, left: left, bottom: bottom, right: right, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant, widthConstant: widthConstant, heightConstant: heightConstant)
     }
     
     func anchorWithReturnAnchors(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+        
+        if self.superview == nil {
+            Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorWithReturnAnchors(...)` to fix this.")
+            return []
+        }
         translatesAutoresizingMaskIntoConstraints = false
         
         var anchors = [NSLayoutConstraint]()
@@ -72,6 +101,11 @@ public extension UIView {
     }
     
     func anchorCenterXToSuperview(constant: CGFloat = 0) {
+        
+        if self.superview == nil {
+            Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorCenterXToSuperview()` to fix this.")
+            return
+        }
         translatesAutoresizingMaskIntoConstraints = false
         if let anchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
@@ -79,6 +113,11 @@ public extension UIView {
     }
     
     func anchorCenterYToSuperview(constant: CGFloat = 0) {
+        
+        if self.superview == nil {
+            Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorCenterYToSuperview()` to fix this.")
+            return
+        }
         translatesAutoresizingMaskIntoConstraints = false
         if let anchor = superview?.centerYAnchor {
             centerYAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
@@ -90,4 +129,3 @@ public extension UIView {
         anchorCenterYToSuperview()
     }
 }
-*/

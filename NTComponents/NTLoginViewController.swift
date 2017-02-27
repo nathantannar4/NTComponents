@@ -371,14 +371,14 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(toggleLoginView))
                 cell.addGestureRecognizer(tapAction)
             case .facebook:
-                cell.backgroundView.backgroundColor = Color.facebookBlue
+                cell.backgroundView.backgroundColor = Color.FacebookBlue
                 cell.image = Icon.facebook
                 cellTitle.append(NSMutableAttributedString(string: "Facebook", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
                 cell.attributedTitle = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(facebookLoginLogic))
                 cell.addGestureRecognizer(tapAction)
             case .twitter:
-                cell.backgroundView.backgroundColor = Color.twitterBlue
+                cell.backgroundView.backgroundColor = Color.TwitterBlue
                 cell.image = Icon.twitter?.withRenderingMode(.alwaysTemplate)
                 cell.imageView.tintColor = UIColor.white
                 cellTitle.append(NSMutableAttributedString(string: "Twitter", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
@@ -415,7 +415,7 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
             self.emailText = textField.text
             if self.viewPurpose == .register {
                 if !self.isValidEmail {
-                    textField.textColor = Color.darkRed
+                    textField.textColor = Color.Red.P500
                 } else {
                     textField.textColor = UIColor.black
                 }
@@ -427,7 +427,7 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
             // Password verify text field
             self.passwordVerifyText = textField.text
             if self.passwordText != self.passwordVerifyText {
-                textField.textColor = Color.darkRed
+                textField.textColor = Color.Red.P500
             } else {
                 textField.textColor = UIColor.black
             }

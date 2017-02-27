@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NTComponents.xcscheme</key>
+		<key>NTComponents Playground.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3818F6D61E5BDEA600902E23</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>38E624F91E63AF9C003DC7B0</key>
+		<key>38E625281E63BD3E003DC7B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

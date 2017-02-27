@@ -28,3 +28,4 @@ public protocol NTNavigationContainerDelegate: NSObjectProtocol {
     func toggleRightPanel()
     func replaceCenterViewWith(_ view: UIViewController)
 }
+
