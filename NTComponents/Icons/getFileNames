@@ -1,20 +1,20 @@
 #!/bin/bash
 
-echo "public extension Icon {" >> iOS\ Icons.swift
-echo "public struct iOS {" >> iOS\ Icons.swift
-for categoryFolder in 50/*/; do
+echo "public extension Icon {" >> Material\ Icons.swift
+echo "public struct Material {" >> Material\ Icons.swift
+for categoryFolder in Material/*/; do
 
 	folder=${categoryFolder#*/}
 	folder=${folder%"/"}
-	echo "public struct $folder {" >> iOS\ Icons.swift
+	echo "public struct $folder {" >> Material\ Icons.swift
 	for fileName in "$categoryFolder"*.png; do
 		name=${fileName#$categoryFolder}
-		extension="-50.png"
+		extension="-48.png"
 		noExtenion=${name%$extension}
 		noSpaces=${noExtenion//-/_}
-		echo "public static let ${noSpaces} = Icon.icon(\"$name\")" >> iOS\ Icons.swift
+		echo "public static let ${noSpaces} = Icon.icon(\"$name\")" >> Material\ Icons.swift
 	done
-	echo "}" >> iOS\ Icons.swift
+	echo "}" >> Material\ Icons.swift
 done 
-echo "}" >> iOS\ Icons.swift
-echo "}" >> iOS\ Icons.swift
+echo "}" >> Material\ Icons.swift
+echo "}" >> Material\ Icons.swift
