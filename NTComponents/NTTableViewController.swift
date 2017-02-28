@@ -36,11 +36,11 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         self.stretchyView.addSubview(self.stretchyImageView)
         self.view.addSubview(self.stretchyView)
         self.stretchyView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: self.stretchyHeaderHeight)
-        self.stretchyImageView.anchorCenterSuperview()
+        self.stretchyImageView.fillSuperview()
         
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
-        self.tableView.anchorCenterSuperview()
+        self.tableView.fillSuperview()
         self.reloadData()
     }
     

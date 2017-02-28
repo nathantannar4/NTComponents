@@ -43,16 +43,10 @@ public class Color: UIColor {
         }
     }
     
-    public static var defaultNavbarTint = UIColor.black
-    public static var defaultNavbarBackground = UIColor.white
-    public static var defaultButtonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-    public static var defaultTitle = UIColor.black
-    public static var defaultSubtitle = UIColor.darkGray
-    
     public struct Defaults {
         public static var tint = Color.blue
         public static var viewControllerBackground = UIColor.groupTableViewBackground
-        public static var navigationBarTint = UIColor.black
+        public static var navigationBarTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
         public static var navigationBarBackground = UIColor.white
         public static var buttonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
         public static var titleTextColor = UIColor.black
@@ -60,7 +54,7 @@ public class Color: UIColor {
     }
     
     public static let FacebookBlue = Color(hex: "#3b5998")
-    public static let TwitterBlue = Color(hex: "#0084b4")
+    public static let TwitterBlue = Color(hex: "#00aced")
     
     public struct Red {
         static let P50	= Color(rgba: 0xFDE0DCFF)

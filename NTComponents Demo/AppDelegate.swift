@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  NTComponents Playground
+//  NTComponents Demo
 //
-//  Created by Nathan Tannar on 2/26/17.
+//  Created by Nathan Tannar on 2/27/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
 import UIKit
+import NTComponents
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = NTNavigationController(rootViewController: LoginViewController())
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
         
         return true
     }

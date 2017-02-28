@@ -6,6 +6,6 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-class NTCollectionDatasource: Datasource {
+public class NTCollectionDatasource: Datasource {
     
 }

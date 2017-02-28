@@ -1,6 +1,0 @@
-framework module NTComponents {
-  umbrella header "NTComponents-umbrella.h"
-
-  export *
-  module * { export * }
-}

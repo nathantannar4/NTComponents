@@ -8,7 +8,7 @@
 
 public extension UIImage {
     
-    func resizeImage(width: CGFloat, height: CGFloat, renderingMode: UIImageRenderingMode) -> UIImage {
+    func resizeImage(width: CGFloat, height: CGFloat) -> UIImage? {
         var newImage = self
         let size = CGSize(width: width, height: height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
@@ -18,8 +18,12 @@ public extension UIImage {
         return newImage.withRenderingMode(renderingMode)
     }
     
+    func scale(to size: CGFloat) -> UIImage? {
+        return self.resizeImage(width: size, height: size)
+    }
     
-    func cropToSquare() -> UIImage? {
+    
+    func toSquare() -> UIImage? {
         // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
         let contextImage: UIImage = UIImage(cgImage: self.cgImage!)
         

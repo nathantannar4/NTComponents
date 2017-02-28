@@ -29,7 +29,7 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
-        self.pageViewController.view.anchorCenterSuperview()
+        self.pageViewController.view.fillSuperview()
         self.pageViewController.setViewControllers([self.viewControllers[index]], direction: .forward, animated: false, completion: nil)
         
         self.pageViewController.view.backgroundColor = UIColor.groupTableViewBackground

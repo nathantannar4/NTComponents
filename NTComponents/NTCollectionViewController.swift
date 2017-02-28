@@ -8,9 +8,9 @@
 
 import UIKit
 
-class NTCollectionViewController: DatasourceController {
+public class NTCollectionViewController: DatasourceController {
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         if #available(iOS 10.0, *) {
@@ -19,7 +19,8 @@ class NTCollectionViewController: DatasourceController {
         collectionView?.backgroundColor = Color.Defaults.viewControllerBackground
     }
     
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+    open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
         collectionViewLayout.invalidateLayout()
     }
 }

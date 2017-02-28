@@ -8,90 +8,63 @@
 
 /* Begin PBXBuildFile section */
 		000211F1BC9EAFFEDB9AACD13BCAC8CA /* Pods-NTComponents Playground-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D013B9ED7E88003B459BA0E192E7546 /* Pods-NTComponents Playground-dummy.m */; };
-		00E7DF6C3CCE38C3416DEEFB4984C131 /* NTComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 860F23FD7A2684474AA72847162F8F80 /* NTComponents-dummy.m */; };
-		07DD801DC8E30E4FFF3C08B27C73CF32 /* NTLabeledInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1F38C50A80B476539C4B0FCEDAC29 /* NTLabeledInputCell.swift */; };
-		0AF9E2136993C44B530B7CE5EB4E95DE /* NTHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C40C03C761A4109A925626E7C5FA52 /* NTHeaderCell.swift */; };
-		0B8CEF10B760308AEB20716C649109EC /* NTTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC402E8011973C7093789856DB3D1A /* NTTextViewCell.swift */; };
-		0E12500B998A2D8AAEDEA7E250714627 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		0FF26826FC7F68C95DE0A81AB960D5EE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95A0BB1B3A5C662F3E0291111E8EA6A3 /* Roboto-BlackItalic.ttf */; };
-		117B6EEDC01937FCC79A2859B22DA861 /* NTLabeledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94F8A6CF6FE0689934388043A17123 /* NTLabeledCell.xib */; };
-		14CA91BF6635D407C908F5A17E1E6B38 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E865C1AB4013E615C86410996E1D4912 /* NTButton.swift */; };
+		02A9FB1132F73199AD6AD2FDA1220FAB /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62743A8E0FB28CD265C76D2B69CE87 /* NTCollectionDatasource.swift */; };
+		0360FD6F158728754C396B778216B29E /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54CD9C8D84C02336E6DBA0BBE72B7F27 /* Roboto-BlackItalic.ttf */; };
+		0469D371129B977E2EE19341AFBC99A7 /* NTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688162F3F0824ECBF62CBDA425C31D7 /* NTLoginViewController.swift */; };
+		0514532B2AF1CC1FF270B8E70D245C07 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3684C081AE64289B4BE15F2F7BF9E0 /* NSMutableAttributedString.swift */; };
+		0A172B9095033D5D747FD91916C2F2B6 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2000592A95773CE5C78DB2006DAB9B87 /* Roboto-Italic.ttf */; };
+		0EBB722DB6ABBB7A644AD19A8C5F2A5D /* NTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B656C73E5CC28B0AF34781FA77CA21 /* NTTabBarController.swift */; };
+		0F9C6A033A639B23C093DB3FF0A6109C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5713FC8043F8A32267235AEF4BD7B /* ViewController.swift */; };
+		13D36A7D939AC8EA202310877A588B51 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0AA5E54FEEBFA01764B64213E80BB /* NTNavigationController.swift */; };
+		17DB452233069090684F215B3332E75E /* NTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C449A1786C270EF5F0ED7152CFC94 /* NTTableView.swift */; };
 		17ECA9C97F091DE7F9B9A7541C903E18 /* Pods-NTComponents Playground-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCB74E002F143B792A09055B8FE3958 /* Pods-NTComponents Playground-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C6F9DD8A40F0EBC729755F8D0BF72E2 /* NTPageHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2D7A785416B180BD0ABBD0ECCA241B6 /* NTPageHeaderCell.xib */; };
-		210D4468DE82B5C3009C7F05F9EA47DB /* NTLoginOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C73647C94AEE3E2F4858BB30608E0 /* NTLoginOptionCell.swift */; };
-		2486CB38D640ED7F919D95D2918F1DDC /* NTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1740C9989B87E561E9588F67203B8 /* NTTableViewController.swift */; };
-		24C397A3CA31216281DE6BBD09CB94F2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D30C8693A081205C963BDD09D9E4AA20 /* Roboto-Medium.ttf */; };
-		282B6E105E5A4A4900CC1403C62A1EDB /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB62ACCD46C8A05507A703723436A60 /* ProgressHUD.swift */; };
-		2BD18087BD0B3733B17F30B6C535BCFE /* NTImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515537BCF39C531D83A7B84B43345E1C /* NTImageCell.swift */; };
-		2D4737F14FD960A6C3659BB5BB39EBBE /* NTInfoLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28E835D55146AF71A2888748FEAFCE0 /* NTInfoLinkCell.xib */; };
-		327ACE51FB6BBA2B62D8B95B2FBB20A6 /* NTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED0B3AD354B336F1ADC7C8450FD951 /* NTViewController.swift */; };
-		371198C3007AB33C888AC6AE23BF1714 /* NTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1397E096D4680C92B303162ACE5F4 /* NTLabel.swift */; };
-		3C83335DEA42B0DCA36F4873E590A584 /* NTProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A30D04D0F5A32AB4FCBCC7007D29C1 /* NTProfileCell.swift */; };
-		3D71E8BA1245B856275EB96BE38B0B11 /* NTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96F37FDDFE927A6F1B5D7677647D4B /* NTTableViewCell.swift */; };
-		3EF36E53D379FBDC3784572388020F6C /* NTProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD0DB0B2A9DCF20E626FF4FC55E8E29D /* NTProfileHeaderCell.xib */; };
-		3F61532BB5DCF029553AB016BD56FDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B936D9A2B85804BC58DF730D2721733F /* Assets.xcassets */; };
-		40C9F163155905C6513ED7155629CF01 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505CEDE6DB27B30D585A38D1F914BD4 /* Color.swift */; };
-		4141419FF7E357837B28CDCCBAAFBE92 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76E1718C62AB7C4ECDCC53B8379CC96D /* Roboto-BoldItalic.ttf */; };
-		41C9C011B80A4B2F30E563B7AB8200DD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CA1BB75FC84D58DCC3AAEE334FED5 /* Toast.swift */; };
-		42E7E563B7C2B9BD4F8A96EF0C35B7CD /* NTDualActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22A0CCB8F60A5BCE8FA26A642ED9081 /* NTDualActionCell.xib */; };
-		44A0A94F4763408564CF974BEEB41777 /* NTLabeledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AB07C64D7891886D050F3C7B031B34 /* NTLabeledCell.swift */; };
-		46AB8CDEB4C2DA737F6AAB30BDB4FBD9 /* NTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59904C0CD1509FA4C9E206CE784A92F9 /* NTTabBarController.swift */; };
-		48DA8A083C6304022DF88A833BD248C5 /* NTUIKitProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4089829E025EA914013D1574E023F2C /* NTUIKitProtocols.swift */; };
-		4C0B1F6FE3A65B9195D01268FC0C5351 /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0302ECD5C5AA5FEE82165F0E5C3F7424 /* DatasourceCell.swift */; };
-		4DC44D3FE32017AC8263B7AEDF3D84FB /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86931198445B9C2F7A1D5099441748D0 /* BebasNeue.otf */; };
-		4F409F5D64DFC6DA277DFFBCB93ACCAC /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCCF67517BC10983D5FE829A8AAFC3 /* Font.swift */; };
-		5A65A89A61E0B2907BB41D402850EA9E /* NTHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5745E48F1D3F6A3B49E5F09524D3D0B1 /* NTHeaderCell.xib */; };
-		5A6D8BA026CCE5D177196299F6EF049D /* NTDynamicHeightTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38178A7D1498BE1021E1E963A5E46BD9 /* NTDynamicHeightTextCell.swift */; };
-		5AD79F5132BC68DFA4A7F69AF72536A2 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8496EC4F4B3C36B8C44EC2A32314584E /* Roboto-Light.ttf */; };
-		5CBE6ED1A258BFADF4E1AF3CE08E5527 /* NTImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D303FF064AC1E24FDC25F79363F5546 /* NTImageCell.xib */; };
-		5EA6BE7A8657F03D31B49F8EB6C20D44 /* NTPageHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B81BC9837CB8670A8801A0ABB1F050F /* NTPageHeaderCell.swift */; };
-		5EAA2EBAF83328B7326D0B7158A4111B /* NTNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4B636CA5D0A1C6C20C8181D203428 /* NTNavigationContainer.swift */; };
-		63E006F360A961A520AE131090FEE333 /* NTMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55EAC5D4D95993386AFE460B654533E0 /* NTMenuItemCell.xib */; };
-		660086E80C8697720250718DC260C6B2 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52D3061AF18B218E3ACAF06B98EC9C /* NTImageView.swift */; };
-		6B56BEA4B70FBADD1BE5ECBA7B22F8E8 /* NTActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F203C6E634D198E237BD300ADD16EB /* NTActionCell.swift */; };
+		18E4CBCBA266ADD2BBC653EF61FB03FD /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92548E5A90F8BCB7C68D9080B3A68924 /* Roboto-ThinItalic.ttf */; };
+		256DB1646A3503742AB39A0D62C7C514 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073571207C3BC0F417804C87E496BF2E /* Log.swift */; };
+		2B7FDA8F83D16FF97BB5B9685B5736F8 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09738DE556A6808F56F0498B4C024E5 /* ProgressHUD.swift */; };
+		3C20633097D78E66B4C228EAF97AC8E2 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55FD3AD9042CFB4E2A4F986B3786E8D /* NTTextView.swift */; };
+		461AFFA41106CB270D8B18C4B9C26AB5 /* NTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9862AA81C53567176E52742E2E045BB /* NTTableViewController.swift */; };
+		48136B2C403C83AFBF8ADEF0A6D19A3C /* NTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA6B3655F781B39187A47668D1BAEC /* NTSearchViewController.swift */; };
+		50AEA7C2AB2456C5CABC49AA00933FC8 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE686622888C83D543E2259005CC79 /* DiscardableImageCacheItem.swift */; };
+		51F23552DC5AD856179DD54930773152 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E19C3D3EA0E9B75A1B75729F649FFBD6 /* Roboto-Regular.ttf */; };
+		57E711F6B334CD5D87116A8931CECA37 /* iOS Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7B86B1277F02107414129C19BDDCD /* iOS Icons.swift */; };
+		5D9B5031E205CE2EA255637F41A4A690 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 255B400EA2BB4228FC91B2FAA19570E5 /* BebasNeue.otf */; };
+		5EAA0A9DC63FD4074B837E5BFA284E17 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14880E0FC826E195DC5C671C1D9384F5 /* String.swift */; };
+		5FBD1A4F6433678EACBAFAEB0B75CC9D /* UIImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD4DBC32D44A8592C7C6281ECBF9C4 /* UIImage+UIImageView.swift */; };
+		6501F7908F1D9949FF7886794AD23F75 /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F33C9BD2872A721B9E9B9BAC21C0E6 /* NTToolbar.swift */; };
+		6DD12CF1085EA90E608289B0F29B0A2A /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF725806524A68B637ACE3C71EEDE1C9 /* Icon.swift */; };
+		6E34E6FD0A639227C0C856C81725BD98 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A7C9BBC15A7199D55E418D03938B /* NTCollectionViewCell.swift */; };
 		6E6FE89F5C79316DBDE3ED8CD5EC993D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		6EED6B5A2CD6D30925B38395AC48C710 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8E4733B8E12AAC0869870D543D22B /* Log.swift */; };
-		723ED54CC6D50DD7497B29A788DCBCD9 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B72AC7CBECCDB89E21FF01B84EAB1 /* DiscardableImageCacheItem.swift */; };
-		73E4B2B821E87EAA622E21DA96BDED1B /* NTDetailedProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80EBDC925A207797C9A1154BFA40355 /* NTDetailedProfileCell.swift */; };
-		7B607F168191AD1109FE326071C53821 /* NTSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952CA09B10EF235979DB243AFCD35B /* NTSearchViewController.swift */; };
-		7C84F4ACDE32EF61C22276F39EA4E07A /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0822E35D89768E8CD8DA6BFAD6B15F79 /* NTNavigationController.swift */; };
-		7D88FECD439604C973C3D45CB9900540 /* NTActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEDBB7B824158AA8227218BE4BA242 /* NTActionCell.xib */; };
-		80028651DA1C9C2EE8DF1ADD87356A92 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12F545F6B5D4C65F8991444882FC88A0 /* Roboto-Italic.ttf */; };
-		831B45FDF41E37ADE8EA5694F47B0648 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF3C8B882241A217D7957897336D3C8 /* DefaultCells.swift */; };
-		84B13717626B20AEFE4F11C31CAC0FF1 /* NTProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57A4DC86225741BBD605D8531F4F7E /* NTProfileHeaderCell.swift */; };
-		880AC5ED73F0B574CCD50CFD5532D3C2 /* NTComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04C34212D1656B87679E916C91B867A9 /* NTComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		887C3242931507D632D961951B74E595 /* NTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139E9504FF887229EEAB7C01374CFE4 /* NTTableView.swift */; };
-		8F65FA61127EE7086BBB4F73D9B9B270 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE64D21F2DB26739315697B8BBDBFD4 /* Icon.swift */; };
-		952D57BD56C60F2D1758F2BEA6643B18 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D8C7687D61D941D8BCA6F55F79B93 /* Roboto-Thin.ttf */; };
-		9A0A66F96D3B884E77A88480F412D1D1 /* NTLabeledInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC37027F2855E6164FCA42D45C43DD /* NTLabeledInputCell.xib */; };
-		9F5BA73CC5B0DDA5828221C8B02164E0 /* NTDualActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B7AF298F53E81B18B61048F87A7DBB /* NTDualActionCell.swift */; };
-		A6316837236E13174F9AB109DBB913DD /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F8C9DAFC9FC44FF2F0ACBAF27B8490 /* NTView.swift */; };
-		AB516F3D8A965AB56E3E594085A37E06 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3C8DF701AF2B9C77F460C2CA33A8D89 /* Roboto-Bold.ttf */; };
-		B0418F6D9DC79A46A1385271C60A70B8 /* NTPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02442E94F6C553F494CF30F2EFDE95 /* NTPageViewController.swift */; };
-		B6FC045C7349C7F46552DA6C5C13F4FB /* NTProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67BF4AC3FEC629E1E96AF58D01F1A53E /* NTProfileCell.xib */; };
-		B975FB4E262630230DADEC41648BBACF /* NTInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8B448F03510707EECC454CE0D3A8FB /* NTInputCell.xib */; };
-		B9AFA5D4C1995DC4285B52B4D434DE10 /* NTUIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9050CEA8D3BC57FCE1C37B6AC439ACF /* NTUIKitExtensions.swift */; };
-		BB3092A189ABC01D08A8E206468604D7 /* NTDynamicHeightTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920CEBDBD7BD1291F7A0F18821D294B9 /* NTDynamicHeightTextCell.xib */; };
-		BD459BBA909685723A77CA77803108B3 /* NTDetailedProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99C34A93C6C75D5713B91C2BB47448B /* NTDetailedProfileCell.xib */; };
-		C14EFD2FCDA7AF09D03A512CA97A4EC4 /* NTFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B85EFCE1779AB7A74879C51F2A6893 /* NTFooterCell.xib */; };
-		C34216D2BB26E4FB2BBF65C398B0EE65 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF275A35FC657BD12165F3F719E509F9 /* Roboto-Regular.ttf */; };
-		C8CC718CB64D86599AE48AE1DB780932 /* NTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B995248613AB681F331CBB9459070 /* NTLoginViewController.swift */; };
-		C903F7B75F1E7AE1CD95C1C5C2565597 /* NTDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D4B092E41FC1E4539121694716E678 /* NTDatasourceController.swift */; };
-		CCF1B39D91105A6E3EF571B4CCCDB282 /* NTMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FA1DC24572EFA32604A7749DEA667 /* NTMenuItemCell.swift */; };
-		CE78505922B8FF0DC28038E0F0C7987D /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA8C9A4B8C58AE36E5B1C6FE76A910 /* DatasourceController.swift */; };
-		D20B8F989A5ED55321FBAA0D8E767D9F /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7555B2E349BB82DD9DB45B8C562BD725 /* Roboto-MediumItalic.ttf */; };
-		D3D4C267BC66A1C911194584CA0D96B7 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABF4F60A6E27D060100452DC52D2E751 /* Roboto-Black.ttf */; };
-		D625FB58A3EDE77913ECEAF98B09313D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 245471A865426621914CA937A5CA6120 /* Roboto-ThinItalic.ttf */; };
-		D713ABBAA4AA06C057B5E6A081163AC9 /* NTLoginOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C20E532FDE24626830679D2EE3BF8A8 /* NTLoginOptionCell.xib */; };
-		DAA2C7719CB3E565E29E12162AB51467 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA46E821BBBE61AA93A32A3ED55CC38 /* UIView+AutoLayout.swift */; };
-		DE5D515758847D0A46E8A9481B24AA2D /* NTFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4603072AD1D2C8EF05A06FE0FBEA0 /* NTFooterCell.swift */; };
-		EAD36D7AEEC897890D8FAE22B9410186 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F257474252AFAD926B89BACE6D19EA1 /* Roboto-LightItalic.ttf */; };
-		EDD9DA839132A7283C4D09A6ED58A245 /* NTInfoLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCED2A26AFF18F262E996AD588DBAE /* NTInfoLinkCell.swift */; };
-		EF3B641AB2AA3152D9CB1AABCC4D0790 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5C718A66AC705F96FA3923919BD4D /* Datasource.swift */; };
-		F411C3FE8CD5C912B47C2F0F24BE445E /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4053DA655CDE1B62F3A655B0B40C68 /* NTToolbar.swift */; };
-		F8789BF0B8B818477FC17C2777E21EB9 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086DA689635098FEE31E3D400447DA9 /* NTTextView.swift */; };
-		F96F8E2AEDB1A4893B03C55407ABBFA3 /* NTTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C25C39707824B2FC2CB601ACA65587 /* NTTextViewCell.xib */; };
-		FB11084B93BCDF6FF030C37D7DF6A5E7 /* NTInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45328D505BD5CDEDF2F4D0EFAC3F4CE4 /* NTInputCell.swift */; };
+		6ECE2FDBC39AC5572FA085FEF6852C16 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0F9D76222B30A1417D2CBC56408AA /* UIView.swift */; };
+		721C6EA64E294E454F2FBE6DAF513685 /* NTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1898E357F07B8BA168240224ED49014 /* NTTableViewCell.swift */; };
+		7572015647F1CFB6C59D0F65DE948E93 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9783A2DBB04E980BFDE3675B6884E /* Datasource.swift */; };
+		82BF71DEC530996137A980E0FC03A2A7 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A621B7889916411A4572863D74F6F1A /* Roboto-LightItalic.ttf */; };
+		879FCFC7031A9F57AADACEA7EEBDC815 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 155B643C475DE5E0C411AD007D45611D /* Roboto-Bold.ttf */; };
+		8E0791D0B62CDC8AD5114563EBD6FAEC /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A559AD2D338C8B8EB2ACC2D98C57C9 /* NTButton.swift */; };
+		8ED2C9E736746852F54408F4F9998AB0 /* NTComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97FB11409A021889DBDDC64D337061FB /* NTComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0281C302AD810E68123256A199828E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB6741E16819C2EFAB233AD5440F88 /* UIView+AutoLayout.swift */; };
+		94108A91D8B139EF0F597173DB89ADB5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634244035AAFCB6F5B4B7D7E3816A6A /* Color.swift */; };
+		969DE9306B8646516DEF71E2408D32DE /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BCB5EEC7FA9A826B25116EA01F1AC0 /* DatasourceCell.swift */; };
+		9806062438698B58C02A451001CF5DF6 /* NTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A59263B5C9BBEA042492AEA61BEE2 /* NTLabel.swift */; };
+		A4E0490B6D2AEA7961706A55FC2E2252 /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0BD161AD09579FAC9054D7EEE2C9C /* DatasourceController.swift */; };
+		A5F4F8315BCC6D2B15E8888C6C360431 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1258F26DA0C2CDA0022FB2EF79737094 /* NTView.swift */; };
+		A751D969EEF6CCB5AE88CED55B01E761 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B7B848A661ED9126D9E900D1A58EC09 /* Roboto-Medium.ttf */; };
+		AB6CB5E9ABDD73159E2EE7712380CE02 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D20402E9CDEB1C4F8BB5C19A2F0F /* NTCollectionViewController.swift */; };
+		B45E4BD35ACDA0773A57361A2F0F3654 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6CDEBFFE2B017D47A2701AEB1A05D /* DefaultCells.swift */; };
+		B9467C42360F3396CABE5AA9D4997D04 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C188D62F668A2957BAA8AE0E6EA84598 /* Toast.swift */; };
+		C34FF50B9A4B3F6687E3F988B42470B1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2029A355AF58ECBFC00DD454CB19E8 /* Font.swift */; };
+		C41E65D2A21119625EBD34452509FAD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0D93E91B3EEB00B28DD33F39B7DD282 /* Roboto-Thin.ttf */; };
+		C552321657B5D4F1A192B9FF07D85B46 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F0E84D5A1F83817FFC582679BA3F8A /* UIColor.swift */; };
+		C800DACCF7F3904907D2977CF9B5BCD0 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8733686EB4036B99B3882D56AC6C87F2 /* Roboto-BoldItalic.ttf */; };
+		C9244901930DCD12452701E9E3714123 /* NTComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A34D96B7E9E39297D6585C660301361 /* NTComponents-dummy.m */; };
+		D2111760FEFC1100CF24D058FD63A2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		D2606D5387909D987D67822769B9411A /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70BF4730AB1B27993B6B74E2FD92AA1B /* Roboto-MediumItalic.ttf */; };
+		D38D621EC98B16610D6DDDA4401ADB01 /* NTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C71B5441360612C0B705F42057356B /* NTViewController.swift */; };
+		D567C1E30B26E8F1EC407F2FA86B56F6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4B4101C7B10DD8434632F65A77E092F /* Roboto-Light.ttf */; };
+		D706EF76D3162AFF7B12613965DAA44C /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50900442B2AF6870AF72F4134A7CF4DE /* NTImageView.swift */; };
+		DB057F6640229B944CFABF8CE77B41BC /* NTPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99194920D24679C2B77D8461FB2B0F96 /* NTPageViewController.swift */; };
+		F4AF156288768ECEC02CD816612D9C37 /* NTNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE98F7603E1230E2317208596ECA884 /* NTNavigationContainer.swift */; };
+		F64BA6659C70C9B7C2C905F192080F9D /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CB8EAA08D1E379396E915F9A05569A /* Roboto-Black.ttf */; };
+		F8087D3813E35CFC5957E483750CC996 /* Material Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0F2A2BD49B0BAB760E26CBF2CCB49 /* Material Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,111 +72,84 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 633DBE7F9D9F523E43FF56A2D8D9C44D;
+			remoteGlobalIDString = E58C4FDD5546D41B273BFAF62CE932C3;
 			remoteInfo = NTComponents;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0086DA689635098FEE31E3D400447DA9 /* NTTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
-		0252E0944B3070F3E4D85DAD177901EA /* NTComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NTComponents.modulemap; sourceTree = "<group>"; };
-		0302ECD5C5AA5FEE82165F0E5C3F7424 /* DatasourceCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatasourceCell.swift; sourceTree = "<group>"; };
-		03B85EFCE1779AB7A74879C51F2A6893 /* NTFooterCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTFooterCell.xib; sourceTree = "<group>"; };
-		04C34212D1656B87679E916C91B867A9 /* NTComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NTComponents-umbrella.h"; sourceTree = "<group>"; };
-		0822E35D89768E8CD8DA6BFAD6B15F79 /* NTNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
-		0B81BC9837CB8670A8801A0ABB1F050F /* NTPageHeaderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTPageHeaderCell.swift; sourceTree = "<group>"; };
-		12F545F6B5D4C65F8991444882FC88A0 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		02B656C73E5CC28B0AF34781FA77CA21 /* NTTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTabBarController.swift; sourceTree = "<group>"; };
+		073571207C3BC0F417804C87E496BF2E /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		09C0F2A2BD49B0BAB760E26CBF2CCB49 /* Material Icons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Material Icons.swift"; sourceTree = "<group>"; };
+		0C2029A355AF58ECBFC00DD454CB19E8 /* Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		1258F26DA0C2CDA0022FB2EF79737094 /* NTView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
 		137AEC846DD60667C36B5AC4036C68EB /* Pods-NTComponents Playground-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NTComponents Playground-acknowledgements.plist"; sourceTree = "<group>"; };
-		16D5C718A66AC705F96FA3923919BD4D /* Datasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
-		16F1F38C50A80B476539C4B0FCEDAC29 /* NTLabeledInputCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLabeledInputCell.swift; sourceTree = "<group>"; };
-		196CA1BB75FC84D58DCC3AAEE334FED5 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		14880E0FC826E195DC5C671C1D9384F5 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		155B643C475DE5E0C411AD007D45611D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		1634244035AAFCB6F5B4B7D7E3816A6A /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		16F0E84D5A1F83817FFC582679BA3F8A /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		17BCB5EEC7FA9A826B25116EA01F1AC0 /* DatasourceCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatasourceCell.swift; sourceTree = "<group>"; };
+		1A621B7889916411A4572863D74F6F1A /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		1AEB6741E16819C2EFAB233AD5440F88 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		1CAEE58951D320C6334214F8B2A114BB /* Pods-NTComponents Playground.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NTComponents Playground.modulemap"; sourceTree = "<group>"; };
-		245471A865426621914CA937A5CA6120 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		1DC79A1B45E6BDA2B6CF10D4CFF4813A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2000592A95773CE5C78DB2006DAB9B87 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		255B400EA2BB4228FC91B2FAA19570E5 /* BebasNeue.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = BebasNeue.otf; sourceTree = "<group>"; };
 		2894A4878A3F06D6E98266A84CC16371 /* Pods-NTComponents Playground-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NTComponents Playground-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2D303FF064AC1E24FDC25F79363F5546 /* NTImageCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTImageCell.xib; sourceTree = "<group>"; };
-		30F8C9DAFC9FC44FF2F0ACBAF27B8490 /* NTView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
-		3139E9504FF887229EEAB7C01374CFE4 /* NTTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableView.swift; sourceTree = "<group>"; };
+		2BBB5B76A9C237AA576FBA800BE675A3 /* NTComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NTComponents-prefix.pch"; sourceTree = "<group>"; };
 		3256BA49933B0229B0B4968836DB80C5 /* Pods_NTComponents_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NTComponents_Playground.framework; path = "Pods-NTComponents Playground.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C25C39707824B2FC2CB601ACA65587 /* NTTextViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTTextViewCell.xib; sourceTree = "<group>"; };
-		38178A7D1498BE1021E1E963A5E46BD9 /* NTDynamicHeightTextCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTDynamicHeightTextCell.swift; sourceTree = "<group>"; };
-		3F02442E94F6C553F494CF30F2EFDE95 /* NTPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTPageViewController.swift; sourceTree = "<group>"; };
+		38C71B5441360612C0B705F42057356B /* NTViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTViewController.swift; sourceTree = "<group>"; };
+		39CE686622888C83D543E2259005CC79 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		3A34D96B7E9E39297D6585C660301361 /* NTComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NTComponents-dummy.m"; sourceTree = "<group>"; };
+		3B7B848A661ED9126D9E900D1A58EC09 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		3BE0AA5E54FEEBFA01764B64213E80BB /* NTNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
+		3D3684C081AE64289B4BE15F2F7BF9E0 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		4063B4E267B063BE8A96BB092591BF7A /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NTComponents.framework; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45328D505BD5CDEDF2F4D0EFAC3F4CE4 /* NTInputCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTInputCell.swift; sourceTree = "<group>"; };
-		47CA8C9A4B8C58AE36E5B1C6FE76A910 /* DatasourceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatasourceController.swift; sourceTree = "<group>"; };
-		4C20E532FDE24626830679D2EE3BF8A8 /* NTLoginOptionCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTLoginOptionCell.xib; sourceTree = "<group>"; };
+		40EA6B3655F781B39187A47668D1BAEC /* NTSearchViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTSearchViewController.swift; sourceTree = "<group>"; };
 		4CCB74E002F143B792A09055B8FE3958 /* Pods-NTComponents Playground-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NTComponents Playground-umbrella.h"; sourceTree = "<group>"; };
-		4F96F37FDDFE927A6F1B5D7677647D4B /* NTTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableViewCell.swift; sourceTree = "<group>"; };
-		515537BCF39C531D83A7B84B43345E1C /* NTImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTImageCell.swift; sourceTree = "<group>"; };
+		50900442B2AF6870AF72F4134A7CF4DE /* NTImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		517C073FE39FA4AA555CAE103754656B /* Pods-NTComponents Playground-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NTComponents Playground-resources.sh"; sourceTree = "<group>"; };
-		55EAC5D4D95993386AFE460B654533E0 /* NTMenuItemCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTMenuItemCell.xib; sourceTree = "<group>"; };
-		5745E48F1D3F6A3B49E5F09524D3D0B1 /* NTHeaderCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTHeaderCell.xib; sourceTree = "<group>"; };
-		59904C0CD1509FA4C9E206CE784A92F9 /* NTTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTabBarController.swift; sourceTree = "<group>"; };
+		54CD9C8D84C02336E6DBA0BBE72B7F27 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		5BA6CDEBFFE2B017D47A2701AEB1A05D /* DefaultCells.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultCells.swift; sourceTree = "<group>"; };
 		5D195A32CA87E5EF25B26DFA9877C463 /* Pods-NTComponents Playground-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NTComponents Playground-frameworks.sh"; sourceTree = "<group>"; };
-		5DE64D21F2DB26739315697B8BBDBFD4 /* Icon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		609C82D6D4AF11485D00B4B17AD9029D /* NTComponents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NTComponents.xcconfig; sourceTree = "<group>"; };
-		65C40C03C761A4109A925626E7C5FA52 /* NTHeaderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTHeaderCell.swift; sourceTree = "<group>"; };
-		66F203C6E634D198E237BD300ADD16EB /* NTActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTActionCell.swift; sourceTree = "<group>"; };
-		67BF4AC3FEC629E1E96AF58D01F1A53E /* NTProfileCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTProfileCell.xib; sourceTree = "<group>"; };
-		6A6D8C7687D61D941D8BCA6F55F79B93 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		6BBCED2A26AFF18F262E996AD588DBAE /* NTInfoLinkCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTInfoLinkCell.swift; sourceTree = "<group>"; };
-		6F257474252AFAD926B89BACE6D19EA1 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		73A30D04D0F5A32AB4FCBCC7007D29C1 /* NTProfileCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTProfileCell.swift; sourceTree = "<group>"; };
-		7555B2E349BB82DD9DB45B8C562BD725 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
-		76E1718C62AB7C4ECDCC53B8379CC96D /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
-		7BD1740C9989B87E561E9588F67203B8 /* NTTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableViewController.swift; sourceTree = "<group>"; };
-		7C8B448F03510707EECC454CE0D3A8FB /* NTInputCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTInputCell.xib; sourceTree = "<group>"; };
-		7D52D3061AF18B218E3ACAF06B98EC9C /* NTImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
-		8496EC4F4B3C36B8C44EC2A32314584E /* Roboto-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		84ED0B3AD354B336F1ADC7C8450FD951 /* NTViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTViewController.swift; sourceTree = "<group>"; };
-		860F23FD7A2684474AA72847162F8F80 /* NTComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NTComponents-dummy.m"; sourceTree = "<group>"; };
-		86931198445B9C2F7A1D5099441748D0 /* BebasNeue.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = BebasNeue.otf; sourceTree = "<group>"; };
+		67BD4DBC32D44A8592C7C6281ECBF9C4 /* UIImage+UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+UIImageView.swift"; sourceTree = "<group>"; };
+		68F33C9BD2872A721B9E9B9BAC21C0E6 /* NTToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
+		70BF4730AB1B27993B6B74E2FD92AA1B /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		85C7B86B1277F02107414129C19BDDCD /* iOS Icons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "iOS Icons.swift"; sourceTree = "<group>"; };
+		86C0F9D76222B30A1417D2CBC56408AA /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8733686EB4036B99B3882D56AC6C87F2 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		87E9783A2DBB04E980BFDE3675B6884E /* Datasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		8D013B9ED7E88003B459BA0E192E7546 /* Pods-NTComponents Playground-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NTComponents Playground-dummy.m"; sourceTree = "<group>"; };
-		8E1B995248613AB681F331CBB9459070 /* NTLoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLoginViewController.swift; sourceTree = "<group>"; };
-		8EA46E821BBBE61AA93A32A3ED55CC38 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
-		8F57A4DC86225741BBD605D8531F4F7E /* NTProfileHeaderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTProfileHeaderCell.swift; sourceTree = "<group>"; };
-		8FEEDBB7B824158AA8227218BE4BA242 /* NTActionCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTActionCell.xib; sourceTree = "<group>"; };
-		91FCCF67517BC10983D5FE829A8AAFC3 /* Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		920CEBDBD7BD1291F7A0F18821D294B9 /* NTDynamicHeightTextCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTDynamicHeightTextCell.xib; sourceTree = "<group>"; };
+		92548E5A90F8BCB7C68D9080B3A68924 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94A0745CC666ED03D8A475296ED56A80 /* Pods-NTComponents Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTComponents Playground.debug.xcconfig"; sourceTree = "<group>"; };
-		95A0BB1B3A5C662F3E0291111E8EA6A3 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
-		9AE4B636CA5D0A1C6C20C8181D203428 /* NTNavigationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTNavigationContainer.swift; sourceTree = "<group>"; };
-		9EF3C8B882241A217D7957897336D3C8 /* DefaultCells.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultCells.swift; sourceTree = "<group>"; };
-		9FB62ACCD46C8A05507A703723436A60 /* ProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		A06B72AC7CBECCDB89E21FF01B84EAB1 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
-		A1C8E4733B8E12AAC0869870D543D22B /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		A2767CEF3F03E7CDF8D81B551155F529 /* NTComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NTComponents-prefix.pch"; sourceTree = "<group>"; };
-		A2AB07C64D7891886D050F3C7B031B34 /* NTLabeledCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLabeledCell.swift; sourceTree = "<group>"; };
-		A2D7A785416B180BD0ABBD0ECCA241B6 /* NTPageHeaderCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTPageHeaderCell.xib; sourceTree = "<group>"; };
-		A3C8DF701AF2B9C77F460C2CA33A8D89 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		A6B7AF298F53E81B18B61048F87A7DBB /* NTDualActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTDualActionCell.swift; sourceTree = "<group>"; };
-		ABF4F60A6E27D060100452DC52D2E751 /* Roboto-Black.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		AD0DB0B2A9DCF20E626FF4FC55E8E29D /* NTProfileHeaderCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTProfileHeaderCell.xib; sourceTree = "<group>"; };
-		B40FA1DC24572EFA32604A7749DEA667 /* NTMenuItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTMenuItemCell.swift; sourceTree = "<group>"; };
-		B936D9A2B85804BC58DF730D2721733F /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF275A35FC657BD12165F3F719E509F9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		C28E835D55146AF71A2888748FEAFCE0 /* NTInfoLinkCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTInfoLinkCell.xib; sourceTree = "<group>"; };
-		C2BC402E8011973C7093789856DB3D1A /* NTTextViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTextViewCell.swift; sourceTree = "<group>"; };
-		C2C4603072AD1D2C8EF05A06FE0FBEA0 /* NTFooterCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTFooterCell.swift; sourceTree = "<group>"; };
-		C2C5E204525A2442D52A4D8DB977C8AA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97FB11409A021889DBDDC64D337061FB /* NTComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NTComponents-umbrella.h"; sourceTree = "<group>"; };
+		99194920D24679C2B77D8461FB2B0F96 /* NTPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTPageViewController.swift; sourceTree = "<group>"; };
+		A0D93E91B3EEB00B28DD33F39B7DD282 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		A32A59263B5C9BBEA042492AEA61BEE2 /* NTLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLabel.swift; sourceTree = "<group>"; };
+		A9E0BD161AD09579FAC9054D7EEE2C9C /* DatasourceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DatasourceController.swift; sourceTree = "<group>"; };
+		B6D5713FC8043F8A32267235AEF4BD7B /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9862AA81C53567176E52742E2E045BB /* NTTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableViewController.swift; sourceTree = "<group>"; };
+		BDCB5B43620E221F0C9E40B6D180A522 /* NTComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NTComponents.modulemap; sourceTree = "<group>"; };
+		BF3C449A1786C270EF5F0ED7152CFC94 /* NTTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableView.swift; sourceTree = "<group>"; };
+		C188D62F668A2957BAA8AE0E6EA84598 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		C55FD3AD9042CFB4E2A4F986B3786E8D /* NTTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D22A0CCB8F60A5BCE8FA26A642ED9081 /* NTDualActionCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTDualActionCell.xib; sourceTree = "<group>"; };
-		D2D4B092E41FC1E4539121694716E678 /* NTDatasourceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTDatasourceController.swift; sourceTree = "<group>"; };
-		D2FC37027F2855E6164FCA42D45C43DD /* NTLabeledInputCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTLabeledInputCell.xib; sourceTree = "<group>"; };
-		D30C8693A081205C963BDD09D9E4AA20 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		D340A7C9BBC15A7199D55E418D03938B /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
+		D3CB8EAA08D1E379396E915F9A05569A /* Roboto-Black.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		D60B5B06D01BABA18831DB68C7C8027C /* Pods-NTComponents Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NTComponents Playground.release.xcconfig"; sourceTree = "<group>"; };
-		E42C73647C94AEE3E2F4858BB30608E0 /* NTLoginOptionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLoginOptionCell.swift; sourceTree = "<group>"; };
+		D688162F3F0824ECBF62CBDA425C31D7 /* NTLoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLoginViewController.swift; sourceTree = "<group>"; };
+		D7A559AD2D338C8B8EB2ACC2D98C57C9 /* NTButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
+		DE485F115D7DA4743C0AAFCB1A55F78D /* NTComponents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NTComponents.xcconfig; sourceTree = "<group>"; };
+		E09738DE556A6808F56F0498B4C024E5 /* ProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		E1898E357F07B8BA168240224ED49014 /* NTTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTTableViewCell.swift; sourceTree = "<group>"; };
+		E19C3D3EA0E9B75A1B75729F649FFBD6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		E4B4101C7B10DD8434632F65A77E092F /* Roboto-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		E551DC68B74731077420C709C285B54B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E865C1AB4013E615C86410996E1D4912 /* NTButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
-		E9050CEA8D3BC57FCE1C37B6AC439ACF /* NTUIKitExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTUIKitExtensions.swift; sourceTree = "<group>"; };
-		EE4053DA655CDE1B62F3A655B0B40C68 /* NTToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
-		F4089829E025EA914013D1574E023F2C /* NTUIKitProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTUIKitProtocols.swift; sourceTree = "<group>"; };
-		F505CEDE6DB27B30D585A38D1F914BD4 /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		F7A1397E096D4680C92B303162ACE5F4 /* NTLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTLabel.swift; sourceTree = "<group>"; };
-		F80EBDC925A207797C9A1154BFA40355 /* NTDetailedProfileCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTDetailedProfileCell.swift; sourceTree = "<group>"; };
-		F8952CA09B10EF235979DB243AFCD35B /* NTSearchViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTSearchViewController.swift; sourceTree = "<group>"; };
-		F99C34A93C6C75D5713B91C2BB47448B /* NTDetailedProfileCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTDetailedProfileCell.xib; sourceTree = "<group>"; };
-		FC94F8A6CF6FE0689934388043A17123 /* NTLabeledCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = NTLabeledCell.xib; sourceTree = "<group>"; };
+		EEE98F7603E1230E2317208596ECA884 /* NTNavigationContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTNavigationContainer.swift; sourceTree = "<group>"; };
+		EF62743A8E0FB28CD265C76D2B69CE87 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
+		FA64D20402E9CDEB1C4F8BB5C19A2F0F /* NTCollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
+		FF725806524A68B637ACE3C71EEDE1C9 /* Icon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,34 +161,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB7D00B8756E6F6A3B0B31FF284BE435 /* Frameworks */ = {
+		A186F2420B3ADFC8E51C1C716776246A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E12500B998A2D8AAEDEA7E250714627 /* Foundation.framework in Frameworks */,
+				D2111760FEFC1100CF24D058FD63A2D5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E0C668F3053391313176CD3CB96AF2B /* Resources */ = {
+		132192B84AD6494447DAFC6771F8F701 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				707146A82C299D1E09E68CDA31578E72 /* NTComponents */,
+				255B400EA2BB4228FC91B2FAA19570E5 /* BebasNeue.otf */,
+				D3CB8EAA08D1E379396E915F9A05569A /* Roboto-Black.ttf */,
+				54CD9C8D84C02336E6DBA0BBE72B7F27 /* Roboto-BlackItalic.ttf */,
+				155B643C475DE5E0C411AD007D45611D /* Roboto-Bold.ttf */,
+				8733686EB4036B99B3882D56AC6C87F2 /* Roboto-BoldItalic.ttf */,
+				2000592A95773CE5C78DB2006DAB9B87 /* Roboto-Italic.ttf */,
+				E4B4101C7B10DD8434632F65A77E092F /* Roboto-Light.ttf */,
+				1A621B7889916411A4572863D74F6F1A /* Roboto-LightItalic.ttf */,
+				3B7B848A661ED9126D9E900D1A58EC09 /* Roboto-Medium.ttf */,
+				70BF4730AB1B27993B6B74E2FD92AA1B /* Roboto-MediumItalic.ttf */,
+				E19C3D3EA0E9B75A1B75729F649FFBD6 /* Roboto-Regular.ttf */,
+				A0D93E91B3EEB00B28DD33F39B7DD282 /* Roboto-Thin.ttf */,
+				92548E5A90F8BCB7C68D9080B3A68924 /* Roboto-ThinItalic.ttf */,
 			);
-			name = Resources;
+			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
-		35A0B99ECB3692ABFB3D6DD4FF169F38 /* Support Files */ = {
+		19E8B033F58531523D06BC8A6D442183 /* NTComponents */ = {
 			isa = PBXGroup;
 			children = (
-				C2C5E204525A2442D52A4D8DB977C8AA /* Info.plist */,
-				0252E0944B3070F3E4D85DAD177901EA /* NTComponents.modulemap */,
-				609C82D6D4AF11485D00B4B17AD9029D /* NTComponents.xcconfig */,
-				860F23FD7A2684474AA72847162F8F80 /* NTComponents-dummy.m */,
-				A2767CEF3F03E7CDF8D81B551155F529 /* NTComponents-prefix.pch */,
-				04C34212D1656B87679E916C91B867A9 /* NTComponents-umbrella.h */,
+				1634244035AAFCB6F5B4B7D7E3816A6A /* Color.swift */,
+				87E9783A2DBB04E980BFDE3675B6884E /* Datasource.swift */,
+				17BCB5EEC7FA9A826B25116EA01F1AC0 /* DatasourceCell.swift */,
+				A9E0BD161AD09579FAC9054D7EEE2C9C /* DatasourceController.swift */,
+				5BA6CDEBFFE2B017D47A2701AEB1A05D /* DefaultCells.swift */,
+				39CE686622888C83D543E2259005CC79 /* DiscardableImageCacheItem.swift */,
+				0C2029A355AF58ECBFC00DD454CB19E8 /* Font.swift */,
+				FF725806524A68B637ACE3C71EEDE1C9 /* Icon.swift */,
+				85C7B86B1277F02107414129C19BDDCD /* iOS Icons.swift */,
+				073571207C3BC0F417804C87E496BF2E /* Log.swift */,
+				09C0F2A2BD49B0BAB760E26CBF2CCB49 /* Material Icons.swift */,
+				3D3684C081AE64289B4BE15F2F7BF9E0 /* NSMutableAttributedString.swift */,
+				D7A559AD2D338C8B8EB2ACC2D98C57C9 /* NTButton.swift */,
+				EF62743A8E0FB28CD265C76D2B69CE87 /* NTCollectionDatasource.swift */,
+				D340A7C9BBC15A7199D55E418D03938B /* NTCollectionViewCell.swift */,
+				FA64D20402E9CDEB1C4F8BB5C19A2F0F /* NTCollectionViewController.swift */,
+				50900442B2AF6870AF72F4134A7CF4DE /* NTImageView.swift */,
+				A32A59263B5C9BBEA042492AEA61BEE2 /* NTLabel.swift */,
+				D688162F3F0824ECBF62CBDA425C31D7 /* NTLoginViewController.swift */,
+				EEE98F7603E1230E2317208596ECA884 /* NTNavigationContainer.swift */,
+				3BE0AA5E54FEEBFA01764B64213E80BB /* NTNavigationController.swift */,
+				99194920D24679C2B77D8461FB2B0F96 /* NTPageViewController.swift */,
+				40EA6B3655F781B39187A47668D1BAEC /* NTSearchViewController.swift */,
+				02B656C73E5CC28B0AF34781FA77CA21 /* NTTabBarController.swift */,
+				BF3C449A1786C270EF5F0ED7152CFC94 /* NTTableView.swift */,
+				E1898E357F07B8BA168240224ED49014 /* NTTableViewCell.swift */,
+				B9862AA81C53567176E52742E2E045BB /* NTTableViewController.swift */,
+				C55FD3AD9042CFB4E2A4F986B3786E8D /* NTTextView.swift */,
+				68F33C9BD2872A721B9E9B9BAC21C0E6 /* NTToolbar.swift */,
+				1258F26DA0C2CDA0022FB2EF79737094 /* NTView.swift */,
+				38C71B5441360612C0B705F42057356B /* NTViewController.swift */,
+				E09738DE556A6808F56F0498B4C024E5 /* ProgressHUD.swift */,
+				14880E0FC826E195DC5C671C1D9384F5 /* String.swift */,
+				C188D62F668A2957BAA8AE0E6EA84598 /* Toast.swift */,
+				16F0E84D5A1F83817FFC582679BA3F8A /* UIColor.swift */,
+				67BD4DBC32D44A8592C7C6281ECBF9C4 /* UIImage+UIImageView.swift */,
+				86C0F9D76222B30A1417D2CBC56408AA /* UIView.swift */,
+				1AEB6741E16819C2EFAB233AD5440F88 /* UIView+AutoLayout.swift */,
+				B6D5713FC8043F8A32267235AEF4BD7B /* ViewController.swift */,
+			);
+			name = NTComponents;
+			path = NTComponents;
+			sourceTree = "<group>";
+		};
+		65434701FDAAF982BFC2B31269C78C65 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DC79A1B45E6BDA2B6CF10D4CFF4813A /* Info.plist */,
+				BDCB5B43620E221F0C9E40B6D180A522 /* NTComponents.modulemap */,
+				DE485F115D7DA4743C0AAFCB1A55F78D /* NTComponents.xcconfig */,
+				3A34D96B7E9E39297D6585C660301361 /* NTComponents-dummy.m */,
+				2BBB5B76A9C237AA576FBA800BE675A3 /* NTComponents-prefix.pch */,
+				97FB11409A021889DBDDC64D337061FB /* NTComponents-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "NTComponents Playground/Pods/Target Support Files/NTComponents";
@@ -255,45 +261,6 @@
 				3256BA49933B0229B0B4968836DB80C5 /* Pods_NTComponents_Playground.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		707146A82C299D1E09E68CDA31578E72 /* NTComponents */ = {
-			isa = PBXGroup;
-			children = (
-				B936D9A2B85804BC58DF730D2721733F /* Assets.xcassets */,
-				86931198445B9C2F7A1D5099441748D0 /* BebasNeue.otf */,
-				8FEEDBB7B824158AA8227218BE4BA242 /* NTActionCell.xib */,
-				F99C34A93C6C75D5713B91C2BB47448B /* NTDetailedProfileCell.xib */,
-				D22A0CCB8F60A5BCE8FA26A642ED9081 /* NTDualActionCell.xib */,
-				920CEBDBD7BD1291F7A0F18821D294B9 /* NTDynamicHeightTextCell.xib */,
-				03B85EFCE1779AB7A74879C51F2A6893 /* NTFooterCell.xib */,
-				5745E48F1D3F6A3B49E5F09524D3D0B1 /* NTHeaderCell.xib */,
-				2D303FF064AC1E24FDC25F79363F5546 /* NTImageCell.xib */,
-				C28E835D55146AF71A2888748FEAFCE0 /* NTInfoLinkCell.xib */,
-				7C8B448F03510707EECC454CE0D3A8FB /* NTInputCell.xib */,
-				FC94F8A6CF6FE0689934388043A17123 /* NTLabeledCell.xib */,
-				D2FC37027F2855E6164FCA42D45C43DD /* NTLabeledInputCell.xib */,
-				4C20E532FDE24626830679D2EE3BF8A8 /* NTLoginOptionCell.xib */,
-				55EAC5D4D95993386AFE460B654533E0 /* NTMenuItemCell.xib */,
-				A2D7A785416B180BD0ABBD0ECCA241B6 /* NTPageHeaderCell.xib */,
-				67BF4AC3FEC629E1E96AF58D01F1A53E /* NTProfileCell.xib */,
-				AD0DB0B2A9DCF20E626FF4FC55E8E29D /* NTProfileHeaderCell.xib */,
-				37C25C39707824B2FC2CB601ACA65587 /* NTTextViewCell.xib */,
-				ABF4F60A6E27D060100452DC52D2E751 /* Roboto-Black.ttf */,
-				95A0BB1B3A5C662F3E0291111E8EA6A3 /* Roboto-BlackItalic.ttf */,
-				A3C8DF701AF2B9C77F460C2CA33A8D89 /* Roboto-Bold.ttf */,
-				76E1718C62AB7C4ECDCC53B8379CC96D /* Roboto-BoldItalic.ttf */,
-				12F545F6B5D4C65F8991444882FC88A0 /* Roboto-Italic.ttf */,
-				8496EC4F4B3C36B8C44EC2A32314584E /* Roboto-Light.ttf */,
-				6F257474252AFAD926B89BACE6D19EA1 /* Roboto-LightItalic.ttf */,
-				D30C8693A081205C963BDD09D9E4AA20 /* Roboto-Medium.ttf */,
-				7555B2E349BB82DD9DB45B8C562BD725 /* Roboto-MediumItalic.ttf */,
-				BF275A35FC657BD12165F3F719E509F9 /* Roboto-Regular.ttf */,
-				6A6D8C7687D61D941D8BCA6F55F79B93 /* Roboto-Thin.ttf */,
-				245471A865426621914CA937A5CA6120 /* Roboto-ThinItalic.ttf */,
-			);
-			name = NTComponents;
-			path = NTComponents;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -315,6 +282,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		B1B76B258989342C4FC58DC6A5696EFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F586587B3CEB277AC917A9F65B5DB61B /* NTComponents */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,12 +298,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CCFAD4972C4B3B6BAFF462853399A54F /* NTComponents */ = {
+		F586587B3CEB277AC917A9F65B5DB61B /* NTComponents */ = {
 			isa = PBXGroup;
 			children = (
-				F9F554F1C492BDBD65BA80AFC1651855 /* NTComponents */,
-				1E0C668F3053391313176CD3CB96AF2B /* Resources */,
-				35A0B99ECB3692ABFB3D6DD4FF169F38 /* Support Files */,
+				132192B84AD6494447DAFC6771F8F701 /* Fonts */,
+			);
+			name = NTComponents;
+			path = NTComponents;
+			sourceTree = "<group>";
+		};
+		F5FFE6F8043E86815C663669E57B81BA /* NTComponents */ = {
+			isa = PBXGroup;
+			children = (
+				19E8B033F58531523D06BC8A6D442183 /* NTComponents */,
+				B1B76B258989342C4FC58DC6A5696EFC /* Resources */,
+				65434701FDAAF982BFC2B31269C78C65 /* Support Files */,
 			);
 			name = NTComponents;
 			path = /Users/nathantannar/Documents/NTComponents;
@@ -337,7 +321,7 @@
 		F6FB2F8336172212EB0A7624733E6147 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CCFAD4972C4B3B6BAFF462853399A54F /* NTComponents */,
+				F5FFE6F8043E86815C663669E57B81BA /* NTComponents */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -360,62 +344,6 @@
 			path = "Target Support Files/Pods-NTComponents Playground";
 			sourceTree = "<group>";
 		};
-		F9F554F1C492BDBD65BA80AFC1651855 /* NTComponents */ = {
-			isa = PBXGroup;
-			children = (
-				F505CEDE6DB27B30D585A38D1F914BD4 /* Color.swift */,
-				16D5C718A66AC705F96FA3923919BD4D /* Datasource.swift */,
-				0302ECD5C5AA5FEE82165F0E5C3F7424 /* DatasourceCell.swift */,
-				47CA8C9A4B8C58AE36E5B1C6FE76A910 /* DatasourceController.swift */,
-				9EF3C8B882241A217D7957897336D3C8 /* DefaultCells.swift */,
-				A06B72AC7CBECCDB89E21FF01B84EAB1 /* DiscardableImageCacheItem.swift */,
-				91FCCF67517BC10983D5FE829A8AAFC3 /* Font.swift */,
-				5DE64D21F2DB26739315697B8BBDBFD4 /* Icon.swift */,
-				A1C8E4733B8E12AAC0869870D543D22B /* Log.swift */,
-				66F203C6E634D198E237BD300ADD16EB /* NTActionCell.swift */,
-				E865C1AB4013E615C86410996E1D4912 /* NTButton.swift */,
-				D2D4B092E41FC1E4539121694716E678 /* NTDatasourceController.swift */,
-				F80EBDC925A207797C9A1154BFA40355 /* NTDetailedProfileCell.swift */,
-				A6B7AF298F53E81B18B61048F87A7DBB /* NTDualActionCell.swift */,
-				38178A7D1498BE1021E1E963A5E46BD9 /* NTDynamicHeightTextCell.swift */,
-				C2C4603072AD1D2C8EF05A06FE0FBEA0 /* NTFooterCell.swift */,
-				65C40C03C761A4109A925626E7C5FA52 /* NTHeaderCell.swift */,
-				515537BCF39C531D83A7B84B43345E1C /* NTImageCell.swift */,
-				7D52D3061AF18B218E3ACAF06B98EC9C /* NTImageView.swift */,
-				6BBCED2A26AFF18F262E996AD588DBAE /* NTInfoLinkCell.swift */,
-				45328D505BD5CDEDF2F4D0EFAC3F4CE4 /* NTInputCell.swift */,
-				F7A1397E096D4680C92B303162ACE5F4 /* NTLabel.swift */,
-				A2AB07C64D7891886D050F3C7B031B34 /* NTLabeledCell.swift */,
-				16F1F38C50A80B476539C4B0FCEDAC29 /* NTLabeledInputCell.swift */,
-				E42C73647C94AEE3E2F4858BB30608E0 /* NTLoginOptionCell.swift */,
-				8E1B995248613AB681F331CBB9459070 /* NTLoginViewController.swift */,
-				B40FA1DC24572EFA32604A7749DEA667 /* NTMenuItemCell.swift */,
-				9AE4B636CA5D0A1C6C20C8181D203428 /* NTNavigationContainer.swift */,
-				0822E35D89768E8CD8DA6BFAD6B15F79 /* NTNavigationController.swift */,
-				0B81BC9837CB8670A8801A0ABB1F050F /* NTPageHeaderCell.swift */,
-				3F02442E94F6C553F494CF30F2EFDE95 /* NTPageViewController.swift */,
-				73A30D04D0F5A32AB4FCBCC7007D29C1 /* NTProfileCell.swift */,
-				8F57A4DC86225741BBD605D8531F4F7E /* NTProfileHeaderCell.swift */,
-				F8952CA09B10EF235979DB243AFCD35B /* NTSearchViewController.swift */,
-				59904C0CD1509FA4C9E206CE784A92F9 /* NTTabBarController.swift */,
-				3139E9504FF887229EEAB7C01374CFE4 /* NTTableView.swift */,
-				4F96F37FDDFE927A6F1B5D7677647D4B /* NTTableViewCell.swift */,
-				7BD1740C9989B87E561E9588F67203B8 /* NTTableViewController.swift */,
-				0086DA689635098FEE31E3D400447DA9 /* NTTextView.swift */,
-				C2BC402E8011973C7093789856DB3D1A /* NTTextViewCell.swift */,
-				EE4053DA655CDE1B62F3A655B0B40C68 /* NTToolbar.swift */,
-				E9050CEA8D3BC57FCE1C37B6AC439ACF /* NTUIKitExtensions.swift */,
-				F4089829E025EA914013D1574E023F2C /* NTUIKitProtocols.swift */,
-				30F8C9DAFC9FC44FF2F0ACBAF27B8490 /* NTView.swift */,
-				84ED0B3AD354B336F1ADC7C8450FD951 /* NTViewController.swift */,
-				9FB62ACCD46C8A05507A703723436A60 /* ProgressHUD.swift */,
-				196CA1BB75FC84D58DCC3AAEE334FED5 /* Toast.swift */,
-				8EA46E821BBBE61AA93A32A3ED55CC38 /* UIView+AutoLayout.swift */,
-			);
-			name = NTComponents;
-			path = NTComponents;
-			sourceTree = "<group>";
-		};
 		FC0D3CC960455A7F9F56FECE198DD115 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,19 +355,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5E0697D6F4E1819ACDBE8031105846D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED2C9E736746852F54408F4F9998AB0 /* NTComponents-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DF3EF20190A8B18127AB8F31C811C138 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				17ECA9C97F091DE7F9B9A7541C903E18 /* Pods-NTComponents Playground-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F89F9D9E74E2DC1B78EC96E870557664 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				880AC5ED73F0B574CCD50CFD5532D3C2 /* NTComponents-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,14 +392,14 @@
 			productReference = 3256BA49933B0229B0B4968836DB80C5 /* Pods_NTComponents_Playground.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		633DBE7F9D9F523E43FF56A2D8D9C44D /* NTComponents */ = {
+		E58C4FDD5546D41B273BFAF62CE932C3 /* NTComponents */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13D5DEB21448821E3916EAC758B4B4F2 /* Build configuration list for PBXNativeTarget "NTComponents" */;
+			buildConfigurationList = 895FD6D654CFD92B233054F6988212A7 /* Build configuration list for PBXNativeTarget "NTComponents" */;
 			buildPhases = (
-				CC188A0442F01346E7D76C858316B8E2 /* Sources */,
-				FB7D00B8756E6F6A3B0B31FF284BE435 /* Frameworks */,
-				95FAE22C981EC91A802274525E145EC8 /* Resources */,
-				F89F9D9E74E2DC1B78EC96E870557664 /* Headers */,
+				C0CB8767F673B5886782126154FB4728 /* Sources */,
+				A186F2420B3ADFC8E51C1C716776246A /* Frameworks */,
+				C9ABD841033A26C422D383BEDBE4CC20 /* Resources */,
+				5E0697D6F4E1819ACDBE8031105846D8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -503,48 +431,30 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				633DBE7F9D9F523E43FF56A2D8D9C44D /* NTComponents */,
+				E58C4FDD5546D41B273BFAF62CE932C3 /* NTComponents */,
 				1D5333E15E2A84F93F25DC25861E3E88 /* Pods-NTComponents Playground */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		95FAE22C981EC91A802274525E145EC8 /* Resources */ = {
+		C9ABD841033A26C422D383BEDBE4CC20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F61532BB5DCF029553AB016BD56FDBA /* Assets.xcassets in Resources */,
-				4DC44D3FE32017AC8263B7AEDF3D84FB /* BebasNeue.otf in Resources */,
-				7D88FECD439604C973C3D45CB9900540 /* NTActionCell.xib in Resources */,
-				BD459BBA909685723A77CA77803108B3 /* NTDetailedProfileCell.xib in Resources */,
-				42E7E563B7C2B9BD4F8A96EF0C35B7CD /* NTDualActionCell.xib in Resources */,
-				BB3092A189ABC01D08A8E206468604D7 /* NTDynamicHeightTextCell.xib in Resources */,
-				C14EFD2FCDA7AF09D03A512CA97A4EC4 /* NTFooterCell.xib in Resources */,
-				5A65A89A61E0B2907BB41D402850EA9E /* NTHeaderCell.xib in Resources */,
-				5CBE6ED1A258BFADF4E1AF3CE08E5527 /* NTImageCell.xib in Resources */,
-				2D4737F14FD960A6C3659BB5BB39EBBE /* NTInfoLinkCell.xib in Resources */,
-				B975FB4E262630230DADEC41648BBACF /* NTInputCell.xib in Resources */,
-				117B6EEDC01937FCC79A2859B22DA861 /* NTLabeledCell.xib in Resources */,
-				9A0A66F96D3B884E77A88480F412D1D1 /* NTLabeledInputCell.xib in Resources */,
-				D713ABBAA4AA06C057B5E6A081163AC9 /* NTLoginOptionCell.xib in Resources */,
-				63E006F360A961A520AE131090FEE333 /* NTMenuItemCell.xib in Resources */,
-				1C6F9DD8A40F0EBC729755F8D0BF72E2 /* NTPageHeaderCell.xib in Resources */,
-				B6FC045C7349C7F46552DA6C5C13F4FB /* NTProfileCell.xib in Resources */,
-				3EF36E53D379FBDC3784572388020F6C /* NTProfileHeaderCell.xib in Resources */,
-				F96F8E2AEDB1A4893B03C55407ABBFA3 /* NTTextViewCell.xib in Resources */,
-				D3D4C267BC66A1C911194584CA0D96B7 /* Roboto-Black.ttf in Resources */,
-				0FF26826FC7F68C95DE0A81AB960D5EE /* Roboto-BlackItalic.ttf in Resources */,
-				AB516F3D8A965AB56E3E594085A37E06 /* Roboto-Bold.ttf in Resources */,
-				4141419FF7E357837B28CDCCBAAFBE92 /* Roboto-BoldItalic.ttf in Resources */,
-				80028651DA1C9C2EE8DF1ADD87356A92 /* Roboto-Italic.ttf in Resources */,
-				5AD79F5132BC68DFA4A7F69AF72536A2 /* Roboto-Light.ttf in Resources */,
-				EAD36D7AEEC897890D8FAE22B9410186 /* Roboto-LightItalic.ttf in Resources */,
-				24C397A3CA31216281DE6BBD09CB94F2 /* Roboto-Medium.ttf in Resources */,
-				D20B8F989A5ED55321FBAA0D8E767D9F /* Roboto-MediumItalic.ttf in Resources */,
-				C34216D2BB26E4FB2BBF65C398B0EE65 /* Roboto-Regular.ttf in Resources */,
-				952D57BD56C60F2D1758F2BEA6643B18 /* Roboto-Thin.ttf in Resources */,
-				D625FB58A3EDE77913ECEAF98B09313D /* Roboto-ThinItalic.ttf in Resources */,
+				5D9B5031E205CE2EA255637F41A4A690 /* BebasNeue.otf in Resources */,
+				F64BA6659C70C9B7C2C905F192080F9D /* Roboto-Black.ttf in Resources */,
+				0360FD6F158728754C396B778216B29E /* Roboto-BlackItalic.ttf in Resources */,
+				879FCFC7031A9F57AADACEA7EEBDC815 /* Roboto-Bold.ttf in Resources */,
+				C800DACCF7F3904907D2977CF9B5BCD0 /* Roboto-BoldItalic.ttf in Resources */,
+				0A172B9095033D5D747FD91916C2F2B6 /* Roboto-Italic.ttf in Resources */,
+				D567C1E30B26E8F1EC407F2FA86B56F6 /* Roboto-Light.ttf in Resources */,
+				82BF71DEC530996137A980E0FC03A2A7 /* Roboto-LightItalic.ttf in Resources */,
+				A751D969EEF6CCB5AE88CED55B01E761 /* Roboto-Medium.ttf in Resources */,
+				D2606D5387909D987D67822769B9411A /* Roboto-MediumItalic.ttf in Resources */,
+				51F23552DC5AD856179DD54930773152 /* Roboto-Regular.ttf in Resources */,
+				C41E65D2A21119625EBD34452509FAD1 /* Roboto-Thin.ttf in Resources */,
+				18E4CBCBA266ADD2BBC653EF61FB03FD /* Roboto-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,59 +469,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC188A0442F01346E7D76C858316B8E2 /* Sources */ = {
+		C0CB8767F673B5886782126154FB4728 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C9F163155905C6513ED7155629CF01 /* Color.swift in Sources */,
-				EF3B641AB2AA3152D9CB1AABCC4D0790 /* Datasource.swift in Sources */,
-				4C0B1F6FE3A65B9195D01268FC0C5351 /* DatasourceCell.swift in Sources */,
-				CE78505922B8FF0DC28038E0F0C7987D /* DatasourceController.swift in Sources */,
-				831B45FDF41E37ADE8EA5694F47B0648 /* DefaultCells.swift in Sources */,
-				723ED54CC6D50DD7497B29A788DCBCD9 /* DiscardableImageCacheItem.swift in Sources */,
-				4F409F5D64DFC6DA277DFFBCB93ACCAC /* Font.swift in Sources */,
-				8F65FA61127EE7086BBB4F73D9B9B270 /* Icon.swift in Sources */,
-				6EED6B5A2CD6D30925B38395AC48C710 /* Log.swift in Sources */,
-				6B56BEA4B70FBADD1BE5ECBA7B22F8E8 /* NTActionCell.swift in Sources */,
-				14CA91BF6635D407C908F5A17E1E6B38 /* NTButton.swift in Sources */,
-				00E7DF6C3CCE38C3416DEEFB4984C131 /* NTComponents-dummy.m in Sources */,
-				C903F7B75F1E7AE1CD95C1C5C2565597 /* NTDatasourceController.swift in Sources */,
-				73E4B2B821E87EAA622E21DA96BDED1B /* NTDetailedProfileCell.swift in Sources */,
-				9F5BA73CC5B0DDA5828221C8B02164E0 /* NTDualActionCell.swift in Sources */,
-				5A6D8BA026CCE5D177196299F6EF049D /* NTDynamicHeightTextCell.swift in Sources */,
-				DE5D515758847D0A46E8A9481B24AA2D /* NTFooterCell.swift in Sources */,
-				0AF9E2136993C44B530B7CE5EB4E95DE /* NTHeaderCell.swift in Sources */,
-				2BD18087BD0B3733B17F30B6C535BCFE /* NTImageCell.swift in Sources */,
-				660086E80C8697720250718DC260C6B2 /* NTImageView.swift in Sources */,
-				EDD9DA839132A7283C4D09A6ED58A245 /* NTInfoLinkCell.swift in Sources */,
-				FB11084B93BCDF6FF030C37D7DF6A5E7 /* NTInputCell.swift in Sources */,
-				371198C3007AB33C888AC6AE23BF1714 /* NTLabel.swift in Sources */,
-				44A0A94F4763408564CF974BEEB41777 /* NTLabeledCell.swift in Sources */,
-				07DD801DC8E30E4FFF3C08B27C73CF32 /* NTLabeledInputCell.swift in Sources */,
-				210D4468DE82B5C3009C7F05F9EA47DB /* NTLoginOptionCell.swift in Sources */,
-				C8CC718CB64D86599AE48AE1DB780932 /* NTLoginViewController.swift in Sources */,
-				CCF1B39D91105A6E3EF571B4CCCDB282 /* NTMenuItemCell.swift in Sources */,
-				5EAA2EBAF83328B7326D0B7158A4111B /* NTNavigationContainer.swift in Sources */,
-				7C84F4ACDE32EF61C22276F39EA4E07A /* NTNavigationController.swift in Sources */,
-				5EA6BE7A8657F03D31B49F8EB6C20D44 /* NTPageHeaderCell.swift in Sources */,
-				B0418F6D9DC79A46A1385271C60A70B8 /* NTPageViewController.swift in Sources */,
-				3C83335DEA42B0DCA36F4873E590A584 /* NTProfileCell.swift in Sources */,
-				84B13717626B20AEFE4F11C31CAC0FF1 /* NTProfileHeaderCell.swift in Sources */,
-				7B607F168191AD1109FE326071C53821 /* NTSearchViewController.swift in Sources */,
-				46AB8CDEB4C2DA737F6AAB30BDB4FBD9 /* NTTabBarController.swift in Sources */,
-				887C3242931507D632D961951B74E595 /* NTTableView.swift in Sources */,
-				3D71E8BA1245B856275EB96BE38B0B11 /* NTTableViewCell.swift in Sources */,
-				2486CB38D640ED7F919D95D2918F1DDC /* NTTableViewController.swift in Sources */,
-				F8789BF0B8B818477FC17C2777E21EB9 /* NTTextView.swift in Sources */,
-				0B8CEF10B760308AEB20716C649109EC /* NTTextViewCell.swift in Sources */,
-				F411C3FE8CD5C912B47C2F0F24BE445E /* NTToolbar.swift in Sources */,
-				B9AFA5D4C1995DC4285B52B4D434DE10 /* NTUIKitExtensions.swift in Sources */,
-				48DA8A083C6304022DF88A833BD248C5 /* NTUIKitProtocols.swift in Sources */,
-				A6316837236E13174F9AB109DBB913DD /* NTView.swift in Sources */,
-				327ACE51FB6BBA2B62D8B95B2FBB20A6 /* NTViewController.swift in Sources */,
-				282B6E105E5A4A4900CC1403C62A1EDB /* ProgressHUD.swift in Sources */,
-				41C9C011B80A4B2F30E563B7AB8200DD /* Toast.swift in Sources */,
-				DAA2C7719CB3E565E29E12162AB51467 /* UIView+AutoLayout.swift in Sources */,
+				94108A91D8B139EF0F597173DB89ADB5 /* Color.swift in Sources */,
+				7572015647F1CFB6C59D0F65DE948E93 /* Datasource.swift in Sources */,
+				969DE9306B8646516DEF71E2408D32DE /* DatasourceCell.swift in Sources */,
+				A4E0490B6D2AEA7961706A55FC2E2252 /* DatasourceController.swift in Sources */,
+				B45E4BD35ACDA0773A57361A2F0F3654 /* DefaultCells.swift in Sources */,
+				50AEA7C2AB2456C5CABC49AA00933FC8 /* DiscardableImageCacheItem.swift in Sources */,
+				C34FF50B9A4B3F6687E3F988B42470B1 /* Font.swift in Sources */,
+				6DD12CF1085EA90E608289B0F29B0A2A /* Icon.swift in Sources */,
+				57E711F6B334CD5D87116A8931CECA37 /* iOS Icons.swift in Sources */,
+				256DB1646A3503742AB39A0D62C7C514 /* Log.swift in Sources */,
+				F8087D3813E35CFC5957E483750CC996 /* Material Icons.swift in Sources */,
+				0514532B2AF1CC1FF270B8E70D245C07 /* NSMutableAttributedString.swift in Sources */,
+				8E0791D0B62CDC8AD5114563EBD6FAEC /* NTButton.swift in Sources */,
+				02A9FB1132F73199AD6AD2FDA1220FAB /* NTCollectionDatasource.swift in Sources */,
+				6E34E6FD0A639227C0C856C81725BD98 /* NTCollectionViewCell.swift in Sources */,
+				AB6CB5E9ABDD73159E2EE7712380CE02 /* NTCollectionViewController.swift in Sources */,
+				C9244901930DCD12452701E9E3714123 /* NTComponents-dummy.m in Sources */,
+				D706EF76D3162AFF7B12613965DAA44C /* NTImageView.swift in Sources */,
+				9806062438698B58C02A451001CF5DF6 /* NTLabel.swift in Sources */,
+				0469D371129B977E2EE19341AFBC99A7 /* NTLoginViewController.swift in Sources */,
+				F4AF156288768ECEC02CD816612D9C37 /* NTNavigationContainer.swift in Sources */,
+				13D36A7D939AC8EA202310877A588B51 /* NTNavigationController.swift in Sources */,
+				DB057F6640229B944CFABF8CE77B41BC /* NTPageViewController.swift in Sources */,
+				48136B2C403C83AFBF8ADEF0A6D19A3C /* NTSearchViewController.swift in Sources */,
+				0EBB722DB6ABBB7A644AD19A8C5F2A5D /* NTTabBarController.swift in Sources */,
+				17DB452233069090684F215B3332E75E /* NTTableView.swift in Sources */,
+				721C6EA64E294E454F2FBE6DAF513685 /* NTTableViewCell.swift in Sources */,
+				461AFFA41106CB270D8B18C4B9C26AB5 /* NTTableViewController.swift in Sources */,
+				3C20633097D78E66B4C228EAF97AC8E2 /* NTTextView.swift in Sources */,
+				6501F7908F1D9949FF7886794AD23F75 /* NTToolbar.swift in Sources */,
+				A5F4F8315BCC6D2B15E8888C6C360431 /* NTView.swift in Sources */,
+				D38D621EC98B16610D6DDDA4401ADB01 /* NTViewController.swift in Sources */,
+				2B7FDA8F83D16FF97BB5B9685B5736F8 /* ProgressHUD.swift in Sources */,
+				5EAA0A9DC63FD4074B837E5BFA284E17 /* String.swift in Sources */,
+				B9467C42360F3396CABE5AA9D4997D04 /* Toast.swift in Sources */,
+				C552321657B5D4F1A192B9FF07D85B46 /* UIColor.swift in Sources */,
+				5FBD1A4F6433678EACBAFAEB0B75CC9D /* UIImage+UIImageView.swift in Sources */,
+				8F0281C302AD810E68123256A199828E /* UIView+AutoLayout.swift in Sources */,
+				6ECE2FDBC39AC5572FA085FEF6852C16 /* UIView.swift in Sources */,
+				0F9C6A033A639B23C093DB3FF0A6109C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +522,7 @@
 		6F541DADC448C47FAE8DC3CA22BBABE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NTComponents;
-			target = 633DBE7F9D9F523E43FF56A2D8D9C44D /* NTComponents */;
+			target = E58C4FDD5546D41B273BFAF62CE932C3 /* NTComponents */;
 			targetProxy = 959D0DE9B7C43E80856F08A185C9BE34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -656,38 +557,6 @@
 				PRODUCT_NAME = Pods_NTComponents_Playground;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		47EE88B2A55F5F9665860987C2A59B10 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 609C82D6D4AF11485D00B4B17AD9029D /* NTComponents.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/NTComponents/NTComponents-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NTComponents/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/NTComponents/NTComponents.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = NTComponents;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -734,15 +603,15 @@
 			};
 			name = Release;
 		};
-		7C696304560F469C9596EF2EE103D918 /* Debug */ = {
+		795042EF86D9C17A6A4B6F3248A5C852 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 609C82D6D4AF11485D00B4B17AD9029D /* NTComponents.xcconfig */;
+			baseConfigurationReference = DE485F115D7DA4743C0AAFCB1A55F78D /* NTComponents.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -755,17 +624,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NTComponents/NTComponents.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = NTComponents;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -847,23 +715,56 @@
 			};
 			name = Debug;
 		};
+		FC47D33043996E3E6C400084D0394EA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE485F115D7DA4743C0AAFCB1A55F78D /* NTComponents.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NTComponents/NTComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NTComponents/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NTComponents/NTComponents.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NTComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13D5DEB21448821E3916EAC758B4B4F2 /* Build configuration list for PBXNativeTarget "NTComponents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7C696304560F469C9596EF2EE103D918 /* Debug */,
-				47EE88B2A55F5F9665860987C2A59B10 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
 				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		895FD6D654CFD92B233054F6988212A7 /* Build configuration list for PBXNativeTarget "NTComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC47D33043996E3E6C400084D0394EA3 /* Debug */,
+				795042EF86D9C17A6A4B6F3248A5C852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27ECA036F5CEE4C55F98D263 /* Pods_NTComponents_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C54AF93D384ECA91B2DBBF6 /* Pods_NTComponents_Playground.framework */; };
+		3849B2C61E654D5600A86586 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2C51E654D5600A86586 /* LoginViewController.swift */; };
 		38E6252D1E63BD3E003DC7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6252C1E63BD3E003DC7B0 /* AppDelegate.swift */; };
 		38E6252F1E63BD3E003DC7B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6252E1E63BD3E003DC7B0 /* ViewController.swift */; };
 		38E625321E63BD3E003DC7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E625301E63BD3E003DC7B0 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3849B2C51E654D5600A86586 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		38E625291E63BD3E003DC7B0 /* NTComponents Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E6252C1E63BD3E003DC7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E6252E1E63BD3E003DC7B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				38E6252C1E63BD3E003DC7B0 /* AppDelegate.swift */,
 				38E6252E1E63BD3E003DC7B0 /* ViewController.swift */,
+				3849B2C51E654D5600A86586 /* LoginViewController.swift */,
 				38E625301E63BD3E003DC7B0 /* Main.storyboard */,
 				38E625331E63BD3E003DC7B0 /* Assets.xcassets */,
 				38E625351E63BD3E003DC7B0 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3849B2C61E654D5600A86586 /* LoginViewController.swift in Sources */,
 				38E6252F1E63BD3E003DC7B0 /* ViewController.swift in Sources */,
 				38E6252D1E63BD3E003DC7B0 /* AppDelegate.swift in Sources */,
 			);
@@ -377,6 +381,7 @@
 				38E6253D1E63BD3E003DC7B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

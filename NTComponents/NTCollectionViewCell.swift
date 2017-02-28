@@ -6,7 +6,6 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-
-class NTCollectionViewCell: DatasourceCell {
+public class NTCollectionViewCell: DatasourceCell {
     
 }

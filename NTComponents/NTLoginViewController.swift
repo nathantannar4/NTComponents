@@ -15,8 +15,68 @@ public enum NTLoginLogicOptions: String {
     case twitter = "Twitter"
 }
 
-/*
-open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, UITextFieldDelegate {
+public class NTLoginOptionCell: NTTableViewCell {
+    
+    var loginOption: NTLoginLogicOptions?
+    
+    convenience init(_ option: NTLoginLogicOptions) {
+        self.init()
+        self.loginOption = option
+    }
+    
+    let colorView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    let logoView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .white
+        return imageView
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        return label
+    }()
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        
+        selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        
+        addSubview(colorView)
+        colorView.addSubview(logoView)
+        colorView.addSubview(titleLabel)
+        
+        colorView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 20, bottomConstant: 10, rightConstant: 20, widthConstant: 0, heightConstant: 0)
+        logoView.anchor(colorView.topAnchor, left: colorView.leftAnchor, bottom: colorView.bottomAnchor, right: nil, topConstant: 5, leftConstant: 10, bottomConstant: 5, rightConstant: 0, widthConstant: 50, heightConstant: 50)
+        titleLabel.anchor(logoView.topAnchor, left: logoView.rightAnchor, bottom: logoView.bottomAnchor, right: colorView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        guard let option = loginOption else { return }
+        switch option {
+        case .email:
+            colorView.backgroundColor = Color.Blue.P50
+            logoView.image = Icon.email
+        case .facebook:
+            colorView.backgroundColor = Color.FacebookBlue
+            logoView.image = Icon.facebook
+        case .google:
+            colorView.backgroundColor = .white
+            logoView.image = Icon.google
+        case .twitter:
+            colorView.backgroundColor = Color.TwitterBlue
+            logoView.image = Icon.twitter
+        }
+    }
+}
+
+open class NTLoginViewController: UITableViewController {
     
     public var logo: UIImage?
     public var loginOptions = [NTLoginLogicOptions]()
@@ -32,10 +92,8 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = self
-        self.tableView.contentInset.top = 10
-        self.tableView.contentInset.bottom = 60
-        self.tableView.emptyFooterHeight = 40
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -53,16 +111,16 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
     
     // MARK: Actions
     
-    internal func toggleLoginView() {
+    func toggleLoginView() {
         if self.viewPurpose == .login || self.viewPurpose == .register {
             self.viewPurpose = .loginOptions
         } else {
             self.viewPurpose = .login
         }
-        self.reloadData()
+        self.tableView.reloadData()
     }
     
-    internal func loginPressed() {
+    func loginPressed() {
         self.dismissKeyboard()
         if self.isValidEmail && self.isValidPassword {
             self.emailLoginLogic(email: self.emailText!, password: self.passwordText!)
@@ -73,7 +131,7 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
         }
     }
     
-    internal func registerPressed() {
+    func registerPressed() {
         self.dismissKeyboard()
         if self.isValidEmail && self.isValidPassword && self.passwordText == self.passwordVerifyText {
             if self.fullnameText == nil {
@@ -117,12 +175,12 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
     // Can be overridden by subclass
     open func registerButtonPressed() {
         self.viewPurpose = .register
-        self.reloadData()
+        self.tableView.reloadData()
     }
     
     final func backToLogin() {
         self.viewPurpose = .login
-        self.reloadData()
+        self.tableView.reloadData()
     }
     
     // MARK: Error Handling
@@ -133,53 +191,100 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
         toast.show(duration: 2.0)
     }
     
-    // MARK: NTTableViewDataSource
+    // MARK: Validation Variables
     
-    public func tableView(_ tableView: NTTableView, cellForHeaderInSection section: Int) -> NTHeaderCell? {
-        if self.viewPurpose == .login {
-            if section == 2 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Email"
-                return header
-            } else if section == 3 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Password"
-                return header
-            } else if section == 4 {
-                return NTHeaderCell()
+    open var isValidEmail: Bool {
+        guard let email = self.emailText else {
+            return false
+        }
+        return email.isValidEmail()
+    }
+    
+    open var isValidPassword: Bool {
+        guard let password = self.passwordText else {
+            return false
+        }
+        return (password.characters.count >= 8)
+    }
+    
+    // MARK: Keyboard
+    
+    public func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if self.tableView.frame.origin.y == 0 {
+            if self.tableView.frame.width > self.tableView.frame.height {
+                // Landscape
+                self.tableView.frame.origin.y -= 100
             } else {
-                return nil
+                // Portait
+                self.tableView.frame.origin.y -= 200
             }
-        } else if self.viewPurpose == .register {
-            if section == 2 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Email"
-                return header
-            } else if section == 3 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Password"
-                return header
-            } else if section == 4 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Verify Password"
-                return header
-            } else if section == 5 {
-                let header = NTHeaderCell.initFromNib()
-                header.title = "Full Name"
-                return header
-            } else if section == 6 {
-                return NTHeaderCell()
-            } else {
-                return nil
-            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if self.tableView.frame.origin.y != 0 {
+            self.tableView.frame.origin.y = 0
+        }
+    }
+    
+    // MARK: UIScrollViewDelegate
+    
+    override open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.viewPurpose != .register {
+            self.dismissKeyboard()
+        }
+    }
+    
+    // MARK: UITableViewDataSource
+    
+    open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = UITableViewHeaderFooterView()
+        header.contentView.backgroundColor = .clear
+        header.textLabel?.font = Font.Defaults.content
+        header.textLabel?.textColor = Color.Defaults.subtitleTextColor
+        
+        if self.viewPurpose == .loginOptions {
+            return nil
         } else {
+            if section == 2 {
+                header.textLabel?.text = "Email"
+                return header
+            } else if section == 3 {
+                header.textLabel?.text = "Password"
+                return header
+            }
+            if self.viewPurpose == .login && section == 4 {
+                return header
+            } else if self.viewPurpose == .register {
+                if section == 4 {
+                    header.textLabel?.text = "Verify Password"
+                    return header
+                } else if section == 5 {
+                    header.textLabel?.text = "Full Name"
+                    return header
+                } else if section == 6 {
+                    return header
+                }
+            }
             return nil
         }
     }
     
-    open func tableView(_ tableView: NTTableView, cellForFooterInSection section: Int) -> NTFooterCell? {
+    open override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footer = UITableViewHeaderFooterView()
+        footer.contentView.backgroundColor = .clear
+        footer.textLabel?.textAlignment = .center
+        footer.textLabel?.font = Font.Defaults.content
+        footer.textLabel?.textColor = Color.Defaults.subtitleTextColor
+        
         if section == (numberOfSections(in: self.tableView) - 1) {
-            let footer = NTFooterCell.initFromNib()
+
             if self.viewPurpose != .loginOptions && loginOptions.count > 1 {
                 let loginOptions = NSMutableAttributedString(string: "Or login with ")
                 for option in self.loginOptions {
@@ -191,25 +296,22 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
                         }
                     }
                 }
-                footer.attributedTitle = loginOptions
+                footer.textLabel?.attributedText = loginOptions
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(toggleLoginView))
                 footer.addGestureRecognizer(tapAction)
             } else {
                 if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                    footer.title = "Version \(version)"
+                    footer.textLabel?.text = "Version \(version)"
                 }
             }
             return footer
-        } else if section == 0 {
-            return NTFooterCell()
-        } else if section == 1 && self.viewPurpose == .loginOptions {
-            return NTFooterCell()
-        } else {
-            return nil
+        } else if section <= 1 && self.viewPurpose == .loginOptions {
+            return footer
         }
+        return nil
     }
     
-    final public func numberOfSections(in tableView: NTTableView) -> Int {
+    open override func numberOfSections(in tableView: UITableView) -> Int {
         switch self.viewPurpose {
         case .loginOptions:
             return (self.loginOptions.count + 2)
@@ -220,33 +322,47 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
         }
     }
     
-    final public func tableView(_ tableView: NTTableView, rowsInSection section: Int) -> Int {
+    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    final public func tableView(_ tableView: NTTableView, cellForRowAt indexPath: IndexPath) -> NTTableViewCell {
+    open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    open override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if self.viewPurpose == .loginOptions {
+            return 0
+        }
+        return 20
+    }
+    
+    open override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.viewPurpose == .loginOptions {
+            return 0
+        }
+        return 30
+    }
+    
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         if section == 0 {
             // Image row
-            let cell = NTImageCell.initFromNib()
-            cell.image = logo
-            cell.horizontalInset = self.view.frame.width / 4
-            cell.backgroundColor = UIColor.clear
-            return cell
+            return UITableViewCell()
         } else if section == 1 {
             // Title row
-            let cell = NTDynamicHeightTextCell.initFromNib()
+            let cell = UITableViewCell()
             if let name = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
-                cell.text = name
+                cell.textLabel?.text = name
+                cell.textLabel?.font = Font.Defaults.title.withSize(28)
+                cell.textLabel?.textAlignment = .center
             }
-            cell.contentLabel.font = UIFont.systemFont(ofSize: 36, weight: UIFontWeightLight)
-            cell.contentLabel.textAlignment = .center
-            cell.verticalInset = -20
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = .clear
             return cell
         }
         switch self.viewPurpose {
         case .login:
+            /*
             switch section {
             case 2:
                 // Email row
@@ -289,7 +405,11 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
             default:
                 return NTTableViewCell()
             }
+            */
+            return UITableViewCell()
         case .register:
+            return UITableViewCell()
+            /*
             switch section {
             case 2:
                 // Email row
@@ -353,45 +473,33 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
             default:
                 return NTTableViewCell()
             }
+        */
         case .loginOptions:
-            let cell = NTLoginOptionCell.initFromNib()
-            cell.horizontalInset = 20
             let loginOption = self.loginOptions[section - 2]
+            let cell = NTLoginOptionCell(loginOption)
             let cellTitle = NSMutableAttributedString()
             cellTitle.append(NSMutableAttributedString(string: "   Login", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
             cellTitle.append(NSMutableAttributedString(string: " with ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]))
             switch loginOption {
             case .email:
-                cell.backgroundView.backgroundColor = UIColor.white
-                cell.image = Icon.email?.withRenderingMode(.alwaysTemplate)
-                cell.imageView.tintColor = UIColor.black
                 cellTitle.append(NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.attributedTitle = cellTitle
-                cell.titleLabel.textColor = UIColor.black
+                cell.textLabel?.attributedText = cellTitle
                 cell.titleLabel.addBorder(edges: .left, colour: UIColor.black, thickness: 1)
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(toggleLoginView))
                 cell.addGestureRecognizer(tapAction)
             case .facebook:
-                cell.backgroundView.backgroundColor = Color.FacebookBlue
-                cell.image = Icon.facebook
                 cellTitle.append(NSMutableAttributedString(string: "Facebook", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.attributedTitle = cellTitle
+                cell.textLabel?.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(facebookLoginLogic))
                 cell.addGestureRecognizer(tapAction)
             case .twitter:
-                cell.backgroundView.backgroundColor = Color.TwitterBlue
-                cell.image = Icon.twitter?.withRenderingMode(.alwaysTemplate)
-                cell.imageView.tintColor = UIColor.white
                 cellTitle.append(NSMutableAttributedString(string: "Twitter", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.attributedTitle = cellTitle
+                cell.textLabel?.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(twitterLoginLogic))
                 cell.addGestureRecognizer(tapAction)
             case .google:
-                cell.backgroundView.backgroundColor = UIColor.white
-                cell.image = Icon.google
                 cellTitle.append(NSMutableAttributedString(string: "Google", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.attributedTitle = cellTitle
-                cell.titleLabel.textColor = UIColor.black
+                cell.textLabel?.attributedText = cellTitle
                 cell.titleLabel.addBorder(edges: .left, colour: UIColor.black, thickness: 1)
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(googleLoginLogic))
                 cell.addGestureRecognizer(tapAction)
@@ -399,18 +507,13 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
             return cell
         }
     }
-    
-    // MARK: UIScrollViewDelegate
-    
-    override open func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.viewPurpose != .register {
-            self.dismissKeyboard()
-        }
-    }
+}
+
+extension NTLoginViewController: UITextFieldDelegate {
     
     // MARK: UITextFieldDelegate
     
-    internal func textFieldDidChange(textField: UITextField) {
+    func textFieldDidChange(textField: UITextField) {
         if textField.tag == 0 {
             // Email text field
             self.emailText = textField.text
@@ -463,45 +566,4 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
         toolBar.sizeToFit()
         textField.inputAccessoryView = toolBar
     }
-    
-    // MARK: Validation Variables
-    
-    open var isValidEmail: Bool {
-        guard let email = self.emailText else {
-            return false
-        }
-        return email.isValidEmail()
-    }
-    
-    open var isValidPassword: Bool {
-        guard let password = self.passwordText else {
-            return false
-        }
-        return (password.characters.count >= 8)
-    }
-    
-    // MARK: Keyboard
-    
-    public func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-    
-    internal func keyboardWillShow(notification: NSNotification) {
-        if self.tableView.frame.origin.y == 0 {
-            if self.tableView.frame.width > self.tableView.frame.height {
-                // Landscape
-                self.tableView.frame.origin.y -= 100
-            } else {
-                // Portait
-                self.tableView.frame.origin.y -= 200
-            }
-        }
-    }
-    
-    internal func keyboardWillHide(notification: NSNotification) {
-        if self.tableView.frame.origin.y != 0 {
-            self.tableView.frame.origin.y = 0
-        }
-    }
 }
- */
