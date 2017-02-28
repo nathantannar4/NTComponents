@@ -13,10 +13,5 @@ public class NTNavigationController: UINavigationController {
         
         navigationBar.tintColor = Color.Defaults.navigationBarTint
         navigationBar.barTintColor = Color.Defaults.navigationBarBackground
-        navigationBar.shadowImage = UIImage()
-        navigationBar.layer.shadowColor = Color.darkGray.cgColor
-        navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1)
-        navigationBar.layer.shadowRadius = 1
-        navigationBar.layer.shadowOpacity = 0.3
     }
 }

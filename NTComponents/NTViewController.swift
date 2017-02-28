@@ -69,7 +69,7 @@ open class NTViewController: UIViewController {
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {
         if self.title != nil {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.defaultTitle.withAlphaComponent(alpha), subtitleColor: Color.defaultSubtitle.withAlphaComponent(alpha))
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Defaults.titleTextColor.withAlphaComponent(alpha), subtitleColor: Color.Defaults.subtitleTextColor.withAlphaComponent(alpha))
         }
     }
 }

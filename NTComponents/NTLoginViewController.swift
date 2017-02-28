@@ -50,28 +50,35 @@ public class NTLoginOptionCell: NTTableViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
+        let separatorView = UIView()
+        separatorView.backgroundColor = .white
+        
         addSubview(colorView)
+        colorView.addSubview(separatorView)
         colorView.addSubview(logoView)
         colorView.addSubview(titleLabel)
         
-        colorView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 20, bottomConstant: 10, rightConstant: 20, widthConstant: 0, heightConstant: 0)
-        logoView.anchor(colorView.topAnchor, left: colorView.leftAnchor, bottom: colorView.bottomAnchor, right: nil, topConstant: 5, leftConstant: 10, bottomConstant: 5, rightConstant: 0, widthConstant: 50, heightConstant: 50)
-        titleLabel.anchor(logoView.topAnchor, left: logoView.rightAnchor, bottom: logoView.bottomAnchor, right: colorView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        colorView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 30, bottomConstant: 10, rightConstant: 30, widthConstant: 0, heightConstant: 0)
+        logoView.anchor(colorView.topAnchor, left: colorView.leftAnchor, bottom: colorView.bottomAnchor, right: nil, topConstant: 5, leftConstant: 10, bottomConstant: 5, rightConstant: 0, widthConstant: 50, heightConstant: 0)
+        separatorView.anchor(logoView.topAnchor, left: logoView.rightAnchor, bottom: logoView.bottomAnchor, right: nil, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 0, widthConstant: 1.5, heightConstant: 0)
+        titleLabel.anchor(separatorView.topAnchor, left: separatorView.rightAnchor, bottom: separatorView.bottomAnchor, right: colorView.rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 0)
         
         guard let option = loginOption else { return }
         switch option {
         case .email:
-            colorView.backgroundColor = Color.Blue.P50
-            logoView.image = Icon.email
+            colorView.backgroundColor = Color.Defaults.tint
+            logoView.image = Icon.email?.withRenderingMode(.alwaysTemplate)
         case .facebook:
             colorView.backgroundColor = Color.FacebookBlue
             logoView.image = Icon.facebook
         case .google:
             colorView.backgroundColor = .white
             logoView.image = Icon.google
+            titleLabel.textColor = .black
+            separatorView.backgroundColor = .black
         case .twitter:
             colorView.backgroundColor = Color.TwitterBlue
-            logoView.image = Icon.twitter
+            logoView.image = Icon.twitter?.withRenderingMode(.alwaysTemplate)
         }
     }
 }
@@ -93,6 +100,7 @@ open class NTLoginViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
+        self.tableView.backgroundColor = .groupTableViewBackground
         self.tableView.separatorStyle = .none
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -244,7 +252,7 @@ open class NTLoginViewController: UITableViewController {
     open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = UITableViewHeaderFooterView()
-        header.contentView.backgroundColor = .clear
+        header.contentView.backgroundColor = view.backgroundColor
         header.textLabel?.font = Font.Defaults.content
         header.textLabel?.textColor = Color.Defaults.subtitleTextColor
         
@@ -278,8 +286,7 @@ open class NTLoginViewController: UITableViewController {
     open override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         let footer = UITableViewHeaderFooterView()
-        footer.contentView.backgroundColor = .clear
-        footer.textLabel?.textAlignment = .center
+        footer.contentView.backgroundColor = view.backgroundColor
         footer.textLabel?.font = Font.Defaults.content
         footer.textLabel?.textColor = Color.Defaults.subtitleTextColor
         
@@ -289,11 +296,8 @@ open class NTLoginViewController: UITableViewController {
                 let loginOptions = NSMutableAttributedString(string: "Or login with ")
                 for option in self.loginOptions {
                     if option != .email {
-                        loginOptions.append(NSMutableAttributedString(string: option.rawValue, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 13), NSForegroundColorAttributeName: Color.defaultButtonTint]))
-                        let index = self.loginOptions.index(of: option)!
-                        if (index != self.loginOptions.count - 1) && self.loginOptions[index + 1] != .email {
-                            loginOptions.append(NSMutableAttributedString(string: "/", attributes: [NSForegroundColorAttributeName: Color.defaultButtonTint]))
-                        }
+                        loginOptions.append(NSMutableAttributedString(string: option.rawValue, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 13), NSForegroundColorAttributeName: Color.Defaults.tint]))
+                        loginOptions.append(NSMutableAttributedString(string: "/", attributes: [NSForegroundColorAttributeName: Color.Defaults.tint]))
                     }
                 }
                 footer.textLabel?.attributedText = loginOptions
@@ -338,10 +342,10 @@ open class NTLoginViewController: UITableViewController {
     }
     
     open override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if self.viewPurpose == .loginOptions {
-            return 0
+        if section == (numberOfSections(in: self.tableView) - 1) {
+            return 30
         }
-        return 30
+        return 0
     }
     
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -352,6 +356,7 @@ open class NTLoginViewController: UITableViewController {
         } else if section == 1 {
             // Title row
             let cell = UITableViewCell()
+            cell.selectionStyle = .none
             if let name = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
                 cell.textLabel?.text = name
                 cell.textLabel?.font = Font.Defaults.title.withSize(28)
@@ -478,34 +483,37 @@ open class NTLoginViewController: UITableViewController {
             let loginOption = self.loginOptions[section - 2]
             let cell = NTLoginOptionCell(loginOption)
             let cellTitle = NSMutableAttributedString()
-            cellTitle.append(NSMutableAttributedString(string: "   Login", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
+            cellTitle.append(NSMutableAttributedString(string: "Login", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
             cellTitle.append(NSMutableAttributedString(string: " with ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]))
             switch loginOption {
             case .email:
                 cellTitle.append(NSMutableAttributedString(string: "Email", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.textLabel?.attributedText = cellTitle
-                cell.titleLabel.addBorder(edges: .left, colour: UIColor.black, thickness: 1)
+                cell.titleLabel.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(toggleLoginView))
-                cell.addGestureRecognizer(tapAction)
+                cell.colorView.addGestureRecognizer(tapAction)
             case .facebook:
                 cellTitle.append(NSMutableAttributedString(string: "Facebook", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.textLabel?.attributedText = cellTitle
+                cell.titleLabel.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(facebookLoginLogic))
-                cell.addGestureRecognizer(tapAction)
+                cell.colorView.addGestureRecognizer(tapAction)
             case .twitter:
                 cellTitle.append(NSMutableAttributedString(string: "Twitter", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.textLabel?.attributedText = cellTitle
+                cell.titleLabel.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(twitterLoginLogic))
-                cell.addGestureRecognizer(tapAction)
+                cell.colorView.addGestureRecognizer(tapAction)
             case .google:
                 cellTitle.append(NSMutableAttributedString(string: "Google", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)]))
-                cell.textLabel?.attributedText = cellTitle
-                cell.titleLabel.addBorder(edges: .left, colour: UIColor.black, thickness: 1)
+                cell.titleLabel.attributedText = cellTitle
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(googleLoginLogic))
-                cell.addGestureRecognizer(tapAction)
+                cell.colorView.addGestureRecognizer(tapAction)
             }
             return cell
         }
+    }
+    
+    override open func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let footer: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        footer.textLabel?.textAlignment = .center
     }
 }
 
@@ -557,7 +565,7 @@ extension NTLoginViewController: UITextFieldDelegate {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = Color.defaultButtonTint
+        toolBar.tintColor = Color.Defaults.buttonTint
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(dismissKeyboard))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
