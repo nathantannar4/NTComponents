@@ -10,10 +10,6 @@ import UIKit
 
 public class NTTableView: UITableView {
     
-    public var cellSeperationHeight: CGFloat = 0
-    public var emptyHeaderHeight: CGFloat = 0
-    public var emptyFooterHeight: CGFloat = 0
-    
     public init() {
         super.init(frame: .zero, style: .grouped)
         self.setTableDefaults()
@@ -24,7 +20,6 @@ public class NTTableView: UITableView {
     }
     
     public func setTableDefaults() {
-        self.separatorStyle = .none
         self.backgroundColor = UIColor.clear
     }
 }

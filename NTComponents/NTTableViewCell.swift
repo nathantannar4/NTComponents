@@ -8,21 +8,7 @@
 
 import UIKit
 
-open class NTTableViewCell: NTView {
+public class NTTableViewCell: UITableViewCell {
     
-    public var horizontalInset: CGFloat! = 0
-    public var verticalInset: CGFloat! = 0
-    
-    
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
-    open func setDefaults() {
-        self.horizontalInset = 10
-        self.cornersRounded = [.allCorners]
-        self.cornerRadius = 5
-        self.backgroundColor = UIColor.white
-    }
+
 }

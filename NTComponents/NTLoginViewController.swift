@@ -15,6 +15,7 @@ public enum NTLoginLogicOptions: String {
     case twitter = "Twitter"
 }
 
+/*
 open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, UITextFieldDelegate {
     
     public var logo: UIImage?
@@ -503,3 +504,4 @@ open class NTLoginViewController: NTTableViewController, NTTableViewDataSource, 
         }
     }
 }
+ */

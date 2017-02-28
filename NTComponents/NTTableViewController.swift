@@ -6,14 +6,15 @@
 //  Copyright © 2016 Nathan Tannar. All rights reserved.
 //
 
-import UIKit
+public protocol NTTableViewDataSource: NSObjectProtocol {
+     func imageForStretchyView(in tableView: NTTableView) -> UIImage?
+}
 
-open class NTTableViewController: NTViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrollViewDelegate {
     
     // Public Variables
     public var tableView: NTTableView = NTTableView()
     public var dataSource: NTTableViewDataSource?
-    public var delegate: NTTableViewDelegate?
     
     public var stretchyView: UIView = UIView()
     public var stretchyHeaderHeight: CGFloat = 350.0
@@ -25,22 +26,6 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         self.prepareView()
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.reloadData()
-        if self.navigationController?.navigationBar.backgroundColor != Color.defaultNavbarBackground && self.fadeInNavBarOnScroll {
-            //self.tableView.contentOffset = CGPoint(x: 0, y: 0 - self.tableView.contentInset.top)
-        }
-    }
-    
-    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        self.updateNavigationBar()
-        self.reloadData()
-    }
-    
     // MARK: Preperation
     
     private func prepareView() {
@@ -50,29 +35,29 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         self.stretchyImageView?.contentMode = UIViewContentMode.scaleAspectFill
         self.stretchyView.addSubview(self.stretchyImageView)
         self.view.addSubview(self.stretchyView)
-        self.stretchyView.bindFrameToSuperviewTopBounds(withHeight: self.stretchyHeaderHeight)
-        self.stretchyImageView.bindFrameToSuperviewTopBounds(withHeight: self.stretchyHeaderHeight)
+        self.stretchyView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: self.stretchyHeaderHeight)
+        self.stretchyImageView.anchorCenterSuperview()
         
         self.tableView.delegate = self
-        self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
-        self.tableView.bindFrameToSuperviewBounds()
+        self.tableView.anchorCenterSuperview()
         self.reloadData()
     }
     
     public func updateStretchyViewImage() {
-        let image = self.dataSource?.imageForStretchyView?(in: self.tableView)
+        let image = self.dataSource?.imageForStretchyView(in: self.tableView)
         if image != nil {
             if self.navigationController?.navigationBar.alpha != nil {
                 if self.fadeInNavBarOnScroll && self.navigationController!.navigationBar.alpha <= CGFloat(0.5) {
                     UIApplication.shared.statusBarStyle = .lightContent
                 }
             }
-            
+            /*
             self.stretchyView.removeAllConstraints()
             self.stretchyView.bindFrameToSuperviewTopBounds(withHeight: self.stretchyHeaderHeight)
             self.stretchyImageView.removeAllConstraints()
             self.stretchyImageView.bindFrameToSuperviewTopBounds(withHeight: self.stretchyHeaderHeight)
+            */
             
             self.stretchyImageView.image = image
             self.addGradients()
@@ -105,20 +90,18 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBar.isTranslucent = self.fadeInNavBarOnScroll
         
         let offset = self.tableView.contentOffset.y + self.tableView.contentInset.top
-        let ratio = offset / (self.tableView(self.tableView, heightForRowAt: IndexPath(row: 0, section: 0)) / 2 + self.tableView.contentInset.top - (self.navigationController?.navigationBar.frame.height ?? 0))
+        let ratio = offset / (self.tableView.contentInset.top + self.stretchyHeaderHeight + 200)
       
         if offset < 0 {
             if self.fadeInNavBarOnScroll {
                 self.navigationController?.navigationBar.backgroundColor = UIColor.clear
                 self.navigationController?.navigationBar.tintColor = UIColor.white
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0
-                self.setStatusBarBackgroundColor()
                 self.refreshTitleView(withAlpha: 0)
             }
         } else {
             if self.fadeInNavBarOnScroll {
-                self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground.withAlphaComponent(ratio)
-                self.setStatusBarBackgroundColor()
+                self.navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground.withAlphaComponent(ratio)
                 self.navigationController?.navigationBar.layer.shadowOpacity = Float(ratio) * 0.3
                 self.refreshTitleView(withAlpha: ratio)
                 if ratio >= 0 && ratio <= 1 {
@@ -130,8 +113,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                         UIApplication.shared.statusBarStyle = .lightContent
                     }
                 } else {
-                    self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground
-                    self.setStatusBarBackgroundColor()
+                    self.navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground
                     self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
                     self.navigationController?.navigationBar.layer.shadowOpacity = 0.3
                     self.refreshTitleView(withAlpha: 1)
@@ -141,8 +123,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                     UIApplication.shared.statusBarStyle = ratio >= 0.5 ? .default : .lightContent
                 }
             } else {
-                self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground
-                self.setStatusBarBackgroundColor()
+                self.navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground
                 self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0.3
                 self.refreshTitleView(withAlpha: 1)
@@ -150,140 +131,11 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         }
     }
     
-    // MARK: UITableViewDataSource
-    
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //return UITableViewAutomaticDimension
-        guard let height = self.dataSource?.tableView?(self.tableView, heightForRowAt: indexPath) else {
-            guard let cell = self.dataSource?.tableView(self.tableView, cellForRowAt: indexPath) else {
-                return UITableViewAutomaticDimension
-            }
-            let height = cell.bounds.height + self.tableView.cellSeperationHeight
-            if cell.verticalInset < 0 {
-                return height - ( 2 * cell.verticalInset)
-            }
-            return height
-        }
-        return height + self.tableView.cellSeperationHeight
-    }
-    
-    open func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = self.dataSource?.numberOfSections(in: self.tableView) else {
-            return 0
-        }
-        return sections
-    }
-    
-    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let rows = self.dataSource?.tableView(self.tableView, rowsInSection: section) else {
-            return 0
-        }
-        return rows
-    }
-    
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellView = self.dataSource?.tableView(self.tableView, cellForRowAt: indexPath) else {
-            return UITableViewCell()
-        }
-        let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.clear
-        cell.selectionStyle = .none
-        
-        if self.tableView.frame.width > self.tableView.frame.height {
-            // Landscape
-            cellView.bounds = CGRect(x: 0, y: 0, width: (self.tableView.frame.width - (cellView.horizontalInset * 2)) * 2 / 3, height: cellView.bounds.height - (cellView.verticalInset * 2))
-        } else {
-            // Portait
-            cellView.bounds = CGRect(x: 0, y: 0, width: self.tableView.frame.width - (cellView.horizontalInset * 2), height: cellView.bounds.height - (cellView.verticalInset * 2))
-        }
-        if cellView.cornersRounded == .allCorners {
-            cellView.layer.cornerRadius = cellView.cornerRadius
-        } else {
-            cellView.round(corners: cellView.cornersRounded, radius: cellView.cornerRadius)
-        }
-        cellView.center = CGPoint(x: self.tableView.frame.width / 2, y: cellView.bounds.height / 2)
-        cell.addSubview(cellView)
-        return cell
-    }
-    
-    
-    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let cellView = self.dataSource?.tableView?(self.tableView, cellForHeaderInSection: section) else {
-            return nil
-        }
-        if self.tableView.frame.width > self.tableView.frame.height {
-            // Landscape
-            cellView.bounds = CGRect(x: 0, y: 0, width: self.tableView.frame.width * 2 / 3, height: cellView.bounds.height)
-        } else {
-            // Portait
-            cellView.bounds = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: cellView.bounds.height)
-        }
-        cellView.center = CGPoint(x: self.tableView.frame.width / 2, y: cellView.bounds.height / 2)
-        let headerView = UITableViewCell()
-        headerView.addSubview(cellView)
-        return headerView
-    }
-    
-    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let cellView = self.dataSource?.tableView?(self.tableView, cellForFooterInSection: section) else {
-            return nil
-        }
-        if self.tableView.frame.width > self.tableView.frame.height {
-            // Landscape
-            cellView.bounds = CGRect(x: 0, y: 0, width: self.tableView.frame.width * 2 / 3, height: cellView.bounds.height)
-        } else {
-            // Portait
-            cellView.bounds = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: cellView.bounds.height)
-        }
-        cellView.center = CGPoint(x: self.tableView.frame.width / 2, y: cellView.bounds.height / 2)
-        let footerView = UITableViewCell()
-        footerView.addSubview(cellView)
-        return footerView
-    }
-    
-    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return nil
-    }
-    
-    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let headerCell = self.dataSource?.tableView?(self.tableView, cellForHeaderInSection: section) else {
-            return CGFloat.leastNonzeroMagnitude
-        }
-        guard let textLabel = headerCell.titleLabel else {
-            return self.tableView.emptyHeaderHeight
-        }
-        return textLabel.text!.isEmpty ? self.tableView.emptyHeaderHeight : 40
-    }
-    
-    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        guard let footerCell = self.dataSource?.tableView?(self.tableView, cellForFooterInSection: section) else {
-            return CGFloat.leastNonzeroMagnitude
-        }
-        guard let textLabel = footerCell.titleLabel else {
-            return self.tableView.emptyFooterHeight
-        }
-        return textLabel.text!.isEmpty ? self.tableView.emptyFooterHeight : 30
-    }
- 
     open func reloadData() {
         self.tableView.reloadData()
         self.updateStretchyViewImage()
     }
-    
-    // MARK: - UITableViewDelegate
-    
-    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.deselectRow(at: indexPath, animated: true)
-    
-        self.delegate?.tableView?(self.tableView, didSelectRowAt: indexPath)
-    }
-    
-    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-    
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    }
+
     
     // MARK: - UIScrollViewDelegate
     

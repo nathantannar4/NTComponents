@@ -26,7 +26,6 @@ open class NTViewController: UIViewController {
         set {
             if newValue != self._fadeInNavBarOnScroll {
                 self._fadeInNavBarOnScroll = newValue
-                self.commitNavigationBarChanges()
             }
         }
         get {
@@ -49,44 +48,12 @@ open class NTViewController: UIViewController {
         return self.statusBarHidden
     }
 
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    open override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else {
-            return
-        }
-        //statusBar.backgroundColor = UIColor.clear
-    }
-    
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.commitNavigationBarChanges()
-    }
-
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.updateStatusBarStyle()
-        self.setStatusBarBackgroundColor()
     }
-    
-    private func commitNavigationBarChanges() {
-        self.navigationController?.navigationBar.backgroundColor = Color.defaultNavbarBackground.withAlphaComponent(self.fadeInNavBarOnScroll ? 0 : 1)
-        self.navigationController?.navigationBar.tintColor = Color.Defaults.tint
-        self.navigationController?.navigationBar.isTranslucent = self.fadeInNavBarOnScroll
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layer.shadowColor = Color.darkGray.cgColor
-        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1)
-        self.navigationController?.navigationBar.layer.shadowRadius = 1
-        self.navigationController?.navigationBar.layer.shadowOpacity = self.fadeInNavBarOnScroll ? 0 : 0.3
-        self.setStatusBarBackgroundColor()
-        UIApplication.shared.statusBarStyle = self.fadeInNavBarOnScroll ? .lightContent : .default
-    }
+
     
     public func updateStatusBarStyle() {
         guard let color = self.navigationController?.navigationBar.backgroundColor else {
@@ -98,17 +65,6 @@ open class NTViewController: UIViewController {
         } else {
             UIApplication.shared.statusBarStyle = .lightContent
         }
-    }
-    
-    public func setStatusBarBackgroundColor() {
-        
-        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else {
-            return
-        }
-        guard let color = self.navigationController?.navigationBar.backgroundColor else {
-            return
-        }
-        //statusBar.backgroundColor = color
     }
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {
