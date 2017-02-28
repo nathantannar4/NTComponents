@@ -22,10 +22,5 @@ import UIKit
     @objc optional func tableView(_ tableView: NTTableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 }
 
-public protocol NTNavigationContainerDelegate: NSObjectProtocol {
-    func dismissOverlayTo(_ direction: NTPresentationDirection)
-    func toggleLeftPanel()
-    func toggleRightPanel()
-    func replaceCenterViewWith(_ view: UIViewController)
-}
+
 

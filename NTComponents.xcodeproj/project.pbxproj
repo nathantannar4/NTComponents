@@ -10,7 +10,7 @@
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F6E81E5BDF3A00902E23 /* NTUIKitProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6E61E5BDF3A00902E23 /* NTUIKitProtocols.swift */; };
-		3818F6E91E5BDF3A00902E23 /* NTUIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6E71E5BDF3A00902E23 /* NTUIKitExtensions.swift */; };
+		3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6E71E5BDF3A00902E23 /* ViewController.swift */; };
 		3818F6FB1E5BDF5000902E23 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6EA1E5BDF5000902E23 /* NTView.swift */; };
 		3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6EB1E5BDF5000902E23 /* NTToolbar.swift */; };
 		3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6EC1E5BDF5000902E23 /* NTViewController.swift */; };
@@ -192,6 +192,11 @@
 		3849B2B31E651BE300A86586 /* Users in Resources */ = {isa = PBXBuildFile; fileRef = 3849B27E1E651BE300A86586 /* Users */; };
 		3849B2B41E651BE300A86586 /* Very_Basic in Resources */ = {isa = PBXBuildFile; fileRef = 3849B27F1E651BE300A86586 /* Very_Basic */; };
 		3849B2B51E651BE300A86586 /* Weather in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2801E651BE300A86586 /* Weather */; };
+		3849B2B71E651CAB00A86586 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2B61E651CAB00A86586 /* UIColor.swift */; };
+		3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */; };
+		3849B2BB1E651D6300A86586 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BA1E651D6300A86586 /* String.swift */; };
+		3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */; };
+		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
 		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
 		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
 		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
@@ -210,7 +215,7 @@
 		3818F6DB1E5BDEA600902E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3818F6E41E5BDED000902E23 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3818F6E61E5BDF3A00902E23 /* NTUIKitProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUIKitProtocols.swift; sourceTree = "<group>"; };
-		3818F6E71E5BDF3A00902E23 /* NTUIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUIKitExtensions.swift; sourceTree = "<group>"; };
+		3818F6E71E5BDF3A00902E23 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3818F6EA1E5BDF5000902E23 /* NTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
 		3818F6EB1E5BDF5000902E23 /* NTToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
 		3818F6EC1E5BDF5000902E23 /* NTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +397,11 @@
 		3849B27E1E651BE300A86586 /* Users */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Users; path = Icons/Material/Users; sourceTree = "<group>"; };
 		3849B27F1E651BE300A86586 /* Very_Basic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Very_Basic; path = Icons/Material/Very_Basic; sourceTree = "<group>"; };
 		3849B2801E651BE300A86586 /* Weather */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Weather; path = Icons/Material/Weather; sourceTree = "<group>"; };
+		3849B2B61E651CAB00A86586 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIImageView.swift"; sourceTree = "<group>"; };
+		3849B2BA1E651D6300A86586 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		38E624FA1E63AF9C003DC7B0 /* NTComponents Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
@@ -447,7 +457,7 @@
 			children = (
 				3818F6DA1E5BDEA600902E23 /* NTComponents.h */,
 				3818F6E61E5BDF3A00902E23 /* NTUIKitProtocols.swift */,
-				3818F6E71E5BDF3A00902E23 /* NTUIKitExtensions.swift */,
+				3849B2C01E651E6F00A86586 /* Extensions */,
 				38E6251D1E63B912003DC7B0 /* LBTA Components */,
 				3818F76D1E5BF0F100902E23 /* Views */,
 				3818F76A1E5BF06C00902E23 /* Controllers */,
@@ -713,6 +723,19 @@
 				3849B2801E651BE300A86586 /* Weather */,
 			);
 			name = Material;
+			sourceTree = "<group>";
+		};
+		3849B2C01E651E6F00A86586 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3849B2BA1E651D6300A86586 /* String.swift */,
+				3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */,
+				3849B2B61E651CAB00A86586 /* UIColor.swift */,
+				3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */,
+				3849B2BE1E651E4600A86586 /* UIView.swift */,
+				3818F6E71E5BDF3A00902E23 /* ViewController.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		38E6251C1E63B4DA003DC7B0 /* Models */ = {
@@ -1029,6 +1052,7 @@
 				3818F7361E5BE06C00902E23 /* NTProfileCell.swift in Sources */,
 				38E6251B1E63B4CA003DC7B0 /* DefaultCells.swift in Sources */,
 				38E6251A1E63B4CA003DC7B0 /* DatasourceController.swift in Sources */,
+				3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */,
 				3818F7081E5BDF5000902E23 /* Toast.swift in Sources */,
 				3818F73E1E5BE06C00902E23 /* NTDualActionCell.swift in Sources */,
 				3818F73A1E5BE06C00902E23 /* NTInfoLinkCell.swift in Sources */,
@@ -1037,11 +1061,14 @@
 				3818F7031E5BDF5000902E23 /* NTNavigationContainer.swift in Sources */,
 				38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
+				3849B2BF1E651E4600A86586 /* UIView.swift in Sources */,
+				3849B2BB1E651D6300A86586 /* String.swift in Sources */,
 				3818F7521E5BE06C00902E23 /* NTMenuItemCell.swift in Sources */,
-				3818F6E91E5BDF3A00902E23 /* NTUIKitExtensions.swift in Sources */,
+				3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */,
 				3818F6FB1E5BDF5000902E23 /* NTView.swift in Sources */,
 				3818F7041E5BDF5000902E23 /* NTLoginViewController.swift in Sources */,
 				3818F7321E5BE06C00902E23 /* NTProfileHeaderCell.swift in Sources */,
+				3849B2B71E651CAB00A86586 /* UIColor.swift in Sources */,
 				3818F74C1E5BE06C00902E23 /* NTLabeledCell.swift in Sources */,
 				3818F7501E5BE06C00902E23 /* NTTextViewCell.swift in Sources */,
 				3818F7461E5BE06C00902E23 /* NTDynamicHeightTextCell.swift in Sources */,
@@ -1076,6 +1103,7 @@
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				3818F7381E5BE06C00902E23 /* NTDetailedProfileCell.swift in Sources */,
 				3849B24A1E6519E100A86586 /* Material Icons.swift in Sources */,
+				3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */,
 				3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

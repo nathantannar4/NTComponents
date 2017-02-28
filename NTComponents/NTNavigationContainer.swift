@@ -33,7 +33,11 @@ public enum NTNavigationContainerState {
     case leftPanelExpanded, rightPanelExpanded, bothPanelsCollapsed, inBackground
 }
 
-class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
+public enum NTPresentationDirection {
+    case top, right, bottom, left
+}
+
+public class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
     var toDirection: NTPresentationDirection!
     
     convenience init(target: Any?, action: Selector?, direction: NTPresentationDirection) {
@@ -43,6 +47,28 @@ class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
     }
 }
 
+extension UIViewController {
+    var getNTNavigationContainer: NTNavigationContainer? {
+        var parentViewController = self.parent
+        
+        while parentViewController != nil {
+            if let view = parentViewController as? NTNavigationContainer{
+                return view
+            }
+            
+            parentViewController = parentViewController!.parent
+        }
+        print("### ERROR: View controller did not have an NTNavigationContainer as a parent")
+        return nil
+    }
+}
+
+public protocol NTNavigationContainerDelegate: NSObjectProtocol {
+    func dismissOverlayTo(_ direction: NTPresentationDirection)
+    func toggleLeftPanel()
+    func toggleRightPanel()
+    func replaceCenterViewWith(_ view: UIViewController)
+}
 
 open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate, NTNavigationContainerDelegate {
     

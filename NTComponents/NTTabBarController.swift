@@ -35,4 +35,21 @@ open class NTTabBarController: UITabBarController {
         self.tabBar.tintColor = Color.Defaults.navigationBarTint
         self.tabBar.backgroundColor = Color.Defaults.navigationBarBackground
     }
+    
+    public func setTabBar(hidden: Bool, animated: Bool) {
+        
+        if self.tabBar.isHidden == hidden {
+            return
+        }
+        
+        guard let frame = self.tabBarController?.tabBar.frame else {
+            return
+        }
+        let height = frame.size.height
+        let offsetY = hidden ? height : -height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.tabBarController?.tabBar.frame = CGRect(x: frame.origin.x, y: frame.origin.y + offsetY, width: frame.width, height: frame.height)
+        }
+    }
 }
