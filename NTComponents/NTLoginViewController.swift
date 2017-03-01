@@ -15,6 +15,40 @@ public enum NTLoginLogicOptions: String {
     case twitter = "Twitter"
 }
 
+public class NTTextInputCell: NTTableViewCell {
+    
+    var delegate: UITextFieldDelegate? {
+        get {
+            return textInput.delegate
+        }
+        set {
+            textInput.delegate = newValue
+        }
+    }
+    
+    let textInput: UITextField = {
+        let textField = UITextField()
+        textField.font = Font.Defaults.content
+        return textField
+    }()
+    
+    let icon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addSubview(icon)
+        addSubview(textInput)
+        
+        icon.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 8, leftConstant: 12, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        textInput.anchor(icon.topAnchor, left: icon.rightAnchor, bottom: icon.bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
+    }
+}
+
 public class NTLoginOptionCell: NTTableViewCell {
     
     var loginOption: NTLoginLogicOptions?
