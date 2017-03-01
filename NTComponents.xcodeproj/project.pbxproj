@@ -55,11 +55,6 @@
 		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
 		3849B2C31E652C7700A86586 /* iOS in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2C11E652C7700A86586 /* iOS */; };
 		3849B2C41E652C7700A86586 /* Material in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2C21E652C7700A86586 /* Material */; };
-		3849B2E41E655F3400A86586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2E31E655F3400A86586 /* AppDelegate.swift */; };
-		3849B2E61E655F3400A86586 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2E51E655F3400A86586 /* ViewController.swift */; };
-		3849B2EB1E655F3400A86586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2EA1E655F3400A86586 /* Assets.xcassets */; };
-		3849B2EE1E655F3400A86586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2EC1E655F3400A86586 /* LaunchScreen.storyboard */; };
-		3849B2F31E655FF000A86586 /* NTComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; };
 		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
 		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
 		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
@@ -123,12 +118,6 @@
 		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3849B2C11E652C7700A86586 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Icons/iOS; sourceTree = "<group>"; };
 		3849B2C21E652C7700A86586 /* Material */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Material; path = Icons/Material; sourceTree = "<group>"; };
-		3849B2E11E655F3400A86586 /* NTComponents Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3849B2E31E655F3400A86586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3849B2E51E655F3400A86586 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3849B2EA1E655F3400A86586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3849B2ED1E655F3400A86586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3849B2EF1E655F3400A86586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		38E625131E63B4CA003DC7B0 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
@@ -149,14 +138,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3849B2DE1E655F3400A86586 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3849B2F31E655FF000A86586 /* NTComponents.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,7 +147,6 @@
 				3818F70E1E5BE05800902E23 /* NTComponents.podspec */,
 				3818F6E41E5BDED000902E23 /* LICENSE */,
 				3818F6D91E5BDEA600902E23 /* NTComponents */,
-				3849B2E21E655F3400A86586 /* NTComponents Demo */,
 				3818F6D81E5BDEA600902E23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				3818F6D71E5BDEA600902E23 /* NTComponents.framework */,
-				3849B2E11E655F3400A86586 /* NTComponents Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,18 +279,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		3849B2E21E655F3400A86586 /* NTComponents Demo */ = {
-			isa = PBXGroup;
-			children = (
-				3849B2E31E655F3400A86586 /* AppDelegate.swift */,
-				3849B2E51E655F3400A86586 /* ViewController.swift */,
-				3849B2EA1E655F3400A86586 /* Assets.xcassets */,
-				3849B2EC1E655F3400A86586 /* LaunchScreen.storyboard */,
-				3849B2EF1E655F3400A86586 /* Info.plist */,
-			);
-			path = "NTComponents Demo";
-			sourceTree = "<group>";
-		};
 		38E6251C1E63B4DA003DC7B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,23 +367,6 @@
 			productReference = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3849B2E01E655F3400A86586 /* NTComponents Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3849B2F01E655F3400A86586 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */;
-			buildPhases = (
-				3849B2DD1E655F3400A86586 /* Sources */,
-				3849B2DE1E655F3400A86586 /* Frameworks */,
-				3849B2DF1E655F3400A86586 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "NTComponents Demo";
-			productName = "NTComponents Demo";
-			productReference = 3849B2E11E655F3400A86586 /* NTComponents Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -429,13 +379,7 @@
 				TargetAttributes = {
 					3818F6D61E5BDEA600902E23 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9EUCWD26TP;
-						ProvisioningStyle = Automatic;
-					};
-					3849B2E01E655F3400A86586 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9EUCWD26TP;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -453,7 +397,6 @@
 			projectRoot = "";
 			targets = (
 				3818F6D61E5BDEA600902E23 /* NTComponents */,
-				3849B2E01E655F3400A86586 /* NTComponents Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -481,15 +424,6 @@
 				3849B2C41E652C7700A86586 /* Material in Resources */,
 				3838503F1E64C982001BADFB /* Roboto-Medium.ttf in Resources */,
 				383850431E64C982001BADFB /* Roboto-ThinItalic.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3849B2DF1E655F3400A86586 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3849B2EE1E655F3400A86586 /* LaunchScreen.storyboard in Resources */,
-				3849B2EB1E655F3400A86586 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,27 +476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3849B2DD1E655F3400A86586 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3849B2E61E655F3400A86586 /* ViewController.swift in Sources */,
-				3849B2E41E655F3400A86586 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		3849B2EC1E655F3400A86586 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3849B2ED1E655F3400A86586 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3818F6DD1E5BDEA600902E23 /* Debug */ = {
@@ -669,7 +583,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -688,7 +602,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -698,32 +612,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathantannar.NTComponents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		3849B2F11E655F3400A86586 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		3849B2F21E655F3400A86586 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -748,14 +636,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		3849B2F01E655F3400A86586 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3849B2F11E655F3400A86586 /* Debug */,
-				3849B2F21E655F3400A86586 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
