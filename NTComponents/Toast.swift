@@ -13,6 +13,10 @@ public class Toast: NTToolbar {
     private var currentState: NTViewState = .hidden
     public var dismissOnTap: Bool = false
     
+    public convenience init(text: String?) {
+        self.init(text: text, button: nil, color: Color.darkGray, height: 49)
+    }
+    
     internal func didTap(_ recognizer: UITapGestureRecognizer) {
         if self.dismissOnTap {
             self.dismiss()

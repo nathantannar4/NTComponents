@@ -13,5 +13,6 @@ public class NTNavigationController: UINavigationController {
         
         navigationBar.tintColor = Color.Defaults.navigationBarTint
         navigationBar.barTintColor = Color.Defaults.navigationBarBackground
+        navigationBar.isTranslucent = false
     }
 }

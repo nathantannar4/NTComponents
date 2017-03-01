@@ -34,14 +34,11 @@
 		3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6771E62A7FD005C9A31 /* NTTextView.swift */; };
 		3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6791E62A864005C9A31 /* NTButton.swift */; };
 		3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D67B1E62A895005C9A31 /* NTNavigationController.swift */; };
-		3849B24A1E6519E100A86586 /* Material Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2491E6519E100A86586 /* Material Icons.swift */; };
 		3849B2B71E651CAB00A86586 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2B61E651CAB00A86586 /* UIColor.swift */; };
 		3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */; };
 		3849B2BB1E651D6300A86586 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BA1E651D6300A86586 /* String.swift */; };
 		3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */; };
 		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
-		3849B2C31E652C7700A86586 /* iOS in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2C11E652C7700A86586 /* iOS */; };
-		3849B2C41E652C7700A86586 /* Material in Resources */ = {isa = PBXBuildFile; fileRef = 3849B2C21E652C7700A86586 /* Material */; };
 		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
 		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
 		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
@@ -51,7 +48,6 @@
 		38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */; };
 		38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */; };
 		38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */; };
-		38F572731E64CCD100E8F995 /* iOS Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F572721E64CCD100E8F995 /* iOS Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,14 +80,11 @@
 		3830D6771E62A7FD005C9A31 /* NTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
 		3830D6791E62A864005C9A31 /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
 		3830D67B1E62A895005C9A31 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
-		3849B2491E6519E100A86586 /* Material Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Icons.swift"; sourceTree = "<group>"; };
 		3849B2B61E651CAB00A86586 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIImageView.swift"; sourceTree = "<group>"; };
 		3849B2BA1E651D6300A86586 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		3849B2C11E652C7700A86586 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Icons/iOS; sourceTree = "<group>"; };
-		3849B2C21E652C7700A86586 /* Material */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Material; path = Icons/Material; sourceTree = "<group>"; };
 		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		38E625131E63B4CA003DC7B0 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
@@ -101,7 +94,6 @@
 		38E6251E1E63BA05003DC7B0 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
 		38E6253E1E64BE8B003DC7B0 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
 		38E625401E64BEBD003DC7B0 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
-		38F572721E64CCD100E8F995 /* iOS Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS Icons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3818F70C1E5BDF8600902E23 /* Assets.xcassets */,
-				3849B1671E64D43300A86586 /* Icons */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -194,15 +185,6 @@
 			name = Functionality;
 			sourceTree = "<group>";
 		};
-		3849B1671E64D43300A86586 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				3849B2C11E652C7700A86586 /* iOS */,
-				3849B2C21E652C7700A86586 /* Material */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
 		3849B2C01E651E6F00A86586 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				3818F6F51E5BDF5000902E23 /* Icon.swift */,
-				38F572721E64CCD100E8F995 /* iOS Icons.swift */,
-				3849B2491E6519E100A86586 /* Material Icons.swift */,
 				3818F6F61E5BDF5000902E23 /* Color.swift */,
 				3818F7711E5BF78C00902E23 /* Font.swift */,
 			);
@@ -346,8 +326,6 @@
 				3818F6E51E5BDED000902E23 /* LICENSE in Resources */,
 				3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */,
 				3818F70D1E5BDF8600902E23 /* Assets.xcassets in Resources */,
-				3849B2C31E652C7700A86586 /* iOS in Resources */,
-				3849B2C41E652C7700A86586 /* Material in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +363,6 @@
 				3818F6FF1E5BDF5000902E23 /* NTTableView.swift in Sources */,
 				3818F6FE1E5BDF5000902E23 /* NTTableViewController.swift in Sources */,
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
-				38F572731E64CCD100E8F995 /* iOS Icons.swift in Sources */,
 				38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */,
 				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
 				38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */,
@@ -394,7 +371,6 @@
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
-				3849B24A1E6519E100A86586 /* Material Icons.swift in Sources */,
 				3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */,
 				3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */,
 			);

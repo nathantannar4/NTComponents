@@ -10,17 +10,17 @@ import UIKit
 
 public extension UIViewController {
     
-    func setTitleView(title: String?, subtitle: String?, titleColor: UIColor, subtitleColor: UIColor) {
+    func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = nil, subtitleColor: UIColor? = nil) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = titleColor
+        titleLabel.textColor = titleColor ?? Color.Defaults.titleTextColor
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.text = title
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
-        subtitleLabel.textColor = subtitleColor
+        subtitleLabel.textColor = subtitleColor ?? Color.Defaults.subtitleTextColor
         subtitleLabel.font = UIFont.systemFont(ofSize: 13)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
