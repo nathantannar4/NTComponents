@@ -109,7 +109,7 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
                         self.navigationController?.navigationBar.tintColor = Color.Defaults.tint.withAlphaComponent(ratio)
                         UIApplication.shared.statusBarStyle = .default
                     } else {
-                        self.navigationController?.navigationBar.tintColor = UIColor.init(red: 1.0 - ratio, green: 1.0 - ratio, blue: 1.0 - ratio, alpha: 1.0)
+                        self.navigationController?.navigationBar.tintColor = UIColor(red: 1.0 - ratio, green: 1.0 - ratio, blue: 1.0 - ratio, alpha: 1.0)
                         UIApplication.shared.statusBarStyle = .lightContent
                     }
                 } else {

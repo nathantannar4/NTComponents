@@ -39,6 +39,7 @@
 		3849B2BB1E651D6300A86586 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BA1E651D6300A86586 /* String.swift */; };
 		3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */; };
 		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
+		38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B20E8B1E6918AE00DD71AC /* Date.swift */; };
 		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
 		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
 		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
@@ -85,6 +86,7 @@
 		3849B2BA1E651D6300A86586 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		38B20E8B1E6918AE00DD71AC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		38E625131E63B4CA003DC7B0 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3849B2BA1E651D6300A86586 /* String.swift */,
+				38B20E8B1E6918AE00DD71AC /* Date.swift */,
 				3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */,
 				3849B2B61E651CAB00A86586 /* UIColor.swift */,
 				3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */,
@@ -371,6 +374,7 @@
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
+				38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */,
 				3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */,
 				3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */,
 			);
