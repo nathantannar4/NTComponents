@@ -18,7 +18,7 @@ public class NTToolbar: UIToolbar {
         
         super.init(frame: bounds)
         
-        self.barTintColor = Color.darkGray
+        barTintColor = color
         
         if text != nil {
             self.appendButton(buttonItem: self.fixedSpace)
