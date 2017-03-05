@@ -10,19 +10,21 @@ import UIKit
 
 public extension UIViewController {
     
-    func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = nil, subtitleColor: UIColor? = nil) {
+    public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Defaults.titleTextColor, subtitleColor: UIColor? = Color.Defaults.subtitleTextColor) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
         titleLabel.backgroundColor = UIColor.clear
         titleLabel.textColor = titleColor ?? Color.Defaults.titleTextColor
-        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.font = Font.Defaults.title.withSize(18)
         titleLabel.text = title
+        titleLabel.textAlignment = .center
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
         subtitleLabel.textColor = subtitleColor ?? Color.Defaults.subtitleTextColor
-        subtitleLabel.font = UIFont.systemFont(ofSize: 13)
+        subtitleLabel.font = Font.Defaults.subtitle.withSize(14)
         subtitleLabel.text = subtitle
+        subtitleLabel.textAlignment = .center
         subtitleLabel.sizeToFit()
         
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 30))
@@ -41,7 +43,8 @@ public extension UIViewController {
             titleLabel.frame.origin.x = newX
         }
         
-        self.navigationItem.titleView = titleView
+        navigationItem.titleView = titleView
+        
     }
     
     public func presentViewController(_ viewController: UIViewController, from: NTPresentationDirection, completion:  (() -> Void)?) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class NTCollectionViewController: DatasourceController {
+open class NTCollectionViewController: DatasourceController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()

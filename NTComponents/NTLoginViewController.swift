@@ -17,7 +17,7 @@ public enum NTLoginLogicOptions: String {
 
 public class NTTextInputCell: NTTableViewCell {
     
-    public var delegate: UITextFieldDelegate? {
+    public var delegate: UITextViewDelegate? {
         get {
             return textInput.delegate
         }
@@ -26,18 +26,30 @@ public class NTTextInputCell: NTTableViewCell {
         }
     }
     
-    public let textInput: UITextField = {
-        let textField = UITextField()
-        textField.font = Font.Defaults.content
-        return textField
+    public let textInput: NTTextView = {
+        let textView = NTTextView()
+        textView.isScrollEnabled = true
+        return textView
     }()
+    
+    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        addSubview(textInput)
+        autoresizesSubviews = true
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
         
-        addSubview(textInput)
+        autoresizesSubviews = true
+        textInput.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 8, leftConstant: 12, bottomConstant: 8, rightConstant: 12, widthConstant: 0, heightConstant: 0)
         
-        textInput.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 8, leftConstant: 12, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
     }
 }
 

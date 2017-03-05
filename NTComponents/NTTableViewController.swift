@@ -32,7 +32,7 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         self.view.backgroundColor = self.parent?.view.backgroundColor ?? UIColor.groupTableViewBackground
         
         self.stretchyImageView = UIImageView()
-        self.stretchyImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        self.stretchyImageView?.contentMode = .scaleAspectFill
         self.stretchyView.addSubview(self.stretchyImageView)
         self.view.addSubview(self.stretchyView)
         self.stretchyView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: self.stretchyHeaderHeight)
