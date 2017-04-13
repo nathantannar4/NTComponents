@@ -10,8 +10,10 @@ import UIKit
 
 public class NTTableView: UITableView {
     
+    public var imageDataSource: NTTableViewDataSource?
+    
     public init() {
-        super.init(frame: .zero, style: .grouped)
+        super.init(frame: .zero, style: .plain)
         self.setTableDefaults()
     }
     

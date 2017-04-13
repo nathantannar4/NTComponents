@@ -8,27 +8,11 @@
 
 public extension Date {
     
-    func mediumDateShortTime() -> String {
+    func string(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .current
-        dateFormatter.timeStyle = .short
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: self)
-    }
-    
-    func mediumDateNoTime() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: self)
-    }
-    
-    func fullDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = timeStyle
+        dateFormatter.dateStyle = dateStyle
         return dateFormatter.string(from: self)
     }
     

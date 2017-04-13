@@ -202,17 +202,11 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    public init(centerView: UIViewController, leftView: UIViewController?, rightView: UIViewController?) {
+    public required init(centerView: UIViewController, leftView: UIViewController? = nil, rightView: UIViewController? = nil) {
         self.init()
         self.centerViewController = centerView
         self.leftViewController = leftView
         self.rightViewController = rightView
-        self.initializeContainer()
-    }
-    
-    public init(centerView: UIViewController) {
-        self.init()
-        self.centerViewController = centerView
         self.initializeContainer()
     }
     

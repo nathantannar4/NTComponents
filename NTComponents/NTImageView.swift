@@ -51,15 +51,42 @@ open class NTImageView: UIImageView {
      - parameter urlString: The url location of your image, usually on a remote server somewhere.
      - parameter completion: Optionally execute some task after the image download completes
      */
+    
+    open func loadImage(url: URL?, allowCache: Bool = true, completion: (() -> ())? = nil) {
+        guard let url = url else {
+            completion?()
+            return
+        }
+        if allowCache, let cachedItem = NTImageView.imageCache.object(forKey: url.absoluteString as NSString) {
+            image = cachedItem.image
+            completion?()
+            return
+        }
+        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+            if error != nil {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    let cacheItem = DiscardableImageCacheItem(image: image)
+                    NTImageView.imageCache.setObject(cacheItem, forKey: url.absoluteString as NSString)
+                    
+                    self?.image = image
+                    completion?()
+                }
+            }
+        }).resume()
+    }
 
-    open func loadImage(urlString: String, completion: (() -> ())? = nil) {
-        image = nil
+    open func loadImage(urlString: String, allowCache: Bool = true, completion: (() -> ())? = nil) {
         
         self.urlStringForChecking = urlString
         
         let urlKey = urlString as NSString
+        print(urlKey)
         
-        if let cachedItem = NTImageView.imageCache.object(forKey: urlKey) {
+        if allowCache, let cachedItem = NTImageView.imageCache.object(forKey: urlKey) {
             image = cachedItem.image
             completion?()
             return
@@ -71,23 +98,6 @@ open class NTImageView: UIImageView {
             }
             return
         }
-        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
-            if error != nil {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                if let image = UIImage(data: data!) {
-                    let cacheItem = DiscardableImageCacheItem(image: image)
-                    NTImageView.imageCache.setObject(cacheItem, forKey: urlKey)
-                    
-                    if urlString == self?.urlStringForChecking {
-                        self?.image = image
-                        completion?()
-                    }
-                }
-            }
-            
-            }).resume()
+        loadImage(url: url, allowCache: allowCache, completion: completion)
     }
 }

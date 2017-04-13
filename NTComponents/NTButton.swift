@@ -17,4 +17,22 @@ public class NTButton: UIButton {
         setTitleColor(Color.Defaults.buttonTint, for: .normal)
         imageView?.contentMode = .scaleAspectFit
     }
+    
+    public var title: String? {
+        get {
+            return titleLabel?.text
+        }
+        set {
+            setTitle(newValue, for: .normal)
+        }
+    }
+    
+    public var titleColor: UIColor? {
+        get {
+            return titleLabel?.textColor
+        }
+        set {
+            setTitleColor(newValue, for: .normal)
+        }
+    }
 }

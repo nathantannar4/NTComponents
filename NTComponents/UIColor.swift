@@ -28,29 +28,6 @@ public extension UIColor {
         }
     }
     
-    var isLight:  Bool {
-        guard let components = self.cgColor.components else {
-            return false
-        }
-        var brightness: CGFloat = 0
-        for color in components {
-            switch components.index(of: color)! {
-            case 0:
-                brightness += color * 0.299
-            case 1:
-                brightness += color * 0.587
-            case 2:
-                brightness += color * 0.114
-            default:
-                break
-            }
-        }
-        if brightness < 0.5 {
-            return false
-        }
-        return true
-    }
-    
     convenience init(hexString: String) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
@@ -71,5 +48,51 @@ public extension UIColor {
                 alpha: CGFloat(1.0)
             )
         }
+    }
+
+    var RGBA: [CGFloat] {
+        var RGBA: [CGFloat] = [0,0,0,0]
+        self.getRed(&RGBA[0], green: &RGBA[1], blue: &RGBA[2], alpha: &RGBA[3])
+        return RGBA
+    }
+    
+    var luminance: CGFloat {
+        // http://www.w3.org/WAI/GL/WCAG20-TECHS/G18.html
+        
+        let RGBA = self.RGBA
+        
+        func lumHelper(c: CGFloat) -> CGFloat {
+            return (c < 0.03928) ? (c/12.92): pow((c+0.055)/1.055, 2.4)
+        }
+        
+        return 0.2126 * lumHelper(c: RGBA[0]) + 0.7152 * lumHelper(c: RGBA[1]) + 0.0722 * lumHelper(c: RGBA[2])
+    }
+
+    var isDark: Bool {
+        return self.luminance < 0.5
+    }
+    
+    var isLight: Bool {
+        return !self.isDark
+    }
+    
+    func isDarker(than color: UIColor) -> Bool {
+        return self.luminance < color.luminance
+    }
+    
+    func isLighter(than color: UIColor) -> Bool {
+        return !self.isDarker(than: color)
+    }
+    
+    var isBlackOrWhite: Bool {
+        let RGBA = self.RGBA
+        let isBlack = RGBA[0] < 0.09 && RGBA[1] < 0.09 && RGBA[2] < 0.09
+        let isWhite = RGBA[0] > 0.91 && RGBA[1] > 0.91 && RGBA[2] > 0.91
+        
+        return isBlack || isWhite
+    }
+    
+    func withAlpha(newAlpha: CGFloat) -> UIColor {
+        return self.withAlphaComponent(newAlpha)
     }
 }

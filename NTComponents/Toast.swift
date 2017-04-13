@@ -8,13 +8,37 @@
 
 import UIKit
 
-public class Toast: NTToolbar {
+public class Toast: UIView {
     
     private var currentState: NTViewState = .hidden
-    public var dismissOnTap: Bool = false
+    public var dismissOnTap: Bool = true
     
     public convenience init(text: String?) {
-        self.init(text: text, button: nil, color: Color.darkGray, height: 49)
+        self.init(text: text, color: Color.darkGray, height: 50)
+    }
+    
+    public init(text: String?, color: UIColor, height: CGFloat) {
+        
+        var bounds =  UIScreen.main.bounds
+        bounds.origin.y = bounds.height - height
+        bounds.size.height = height
+        
+        super.init(frame: bounds)
+        
+        backgroundColor = color
+        
+        let label = NTLabel(type: .content)
+        label.text = text
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.1
+        label.textColor = color.isLight ? .black : .white
+        addSubview(label)
+        label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 12, bottomConstant: 2, rightConstant: 12, widthConstant: 0, heightConstant: 0)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     internal func didTap(_ recognizer: UITapGestureRecognizer) {
@@ -70,7 +94,7 @@ public class Toast: NTToolbar {
     }
     
     public class func genericErrorMessage() {
-        let toast = Toast(text: "Sorry, an error occurred", button: nil, color: Color.darkGray, height: 44)
+        let toast = Toast(text: "Sorry, an error occurred", color: Color.darkGray, height: 50)
         toast.dismissOnTap = true
         toast.show(duration: 1.5)
     }
