@@ -32,14 +32,33 @@ public extension UIView {
         self.layer.masksToBounds = true
     }
     
-    func round(corners: UIRectCorner, radius: CGFloat) {
-        _round(corners: corners, radius: radius)
+    func round(corners: UIRectCorner, radius:CGFloat, borderColor: UIColor = .clear, width: CGFloat = 0) {
+        let bounds = self.bounds
+        
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        
+        self.layer.mask = maskLayer
+        
+        let frameLayer = CAShapeLayer()
+        frameLayer.frame = bounds
+        frameLayer.path = maskPath.cgPath
+        frameLayer.strokeColor = borderColor.cgColor
+        frameLayer.fillColor = nil
+        frameLayer.lineWidth = width
+        
+        self.layer.addSublayer(frameLayer)
     }
     
-    func fullyRound(diameter: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
-        layer.cornerRadius = diameter / 2
-        layer.borderWidth = borderWidth
-        layer.borderColor = borderColor.cgColor;
+    func roundTopCornersRadius(radius:CGFloat) {
+        self.round(corners: [UIRectCorner.topLeft, UIRectCorner.topRight], radius:radius)
+    }
+    
+    func roundBottomCornersRadius(radius:CGFloat) {
+        self.round(corners: [UIRectCorner.bottomLeft, UIRectCorner.bottomRight], radius:radius)
     }
     
     func addBorder(edges: UIRectEdge, colour: UIColor = UIColor.white, thickness: CGFloat = 1) {
@@ -127,16 +146,5 @@ public extension UIView {
             })
             view = view?.superview
         }
-    }
-}
-
-public extension UIView {
-    
-    @discardableResult func _round(corners: UIRectCorner, radius: CGFloat) -> CAShapeLayer {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
-        return mask
     }
 }

@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		380460C41E9F19A0008A03B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460C31E9F19A0008A03B5 /* AppDelegate.swift */; };
-		380460C61E9F19A0008A03B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460C51E9F19A0008A03B5 /* ViewController.swift */; };
-		380460CB1E9F19A0008A03B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380460CA1E9F19A0008A03B5 /* Assets.xcassets */; };
-		380460CE1E9F19A0008A03B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380460CC1E9F19A0008A03B5 /* LaunchScreen.storyboard */; };
 		380460D71E9F1B6E008A03B5 /* NTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460D61E9F1B6E008A03B5 /* NTAlertController.swift */; };
+		380460D91EA06A11008A03B5 /* NTActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460D81EA06A11008A03B5 /* NTActionSheetController.swift */; };
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6E71E5BDF3A00902E23 /* ViewController.swift */; };
@@ -57,14 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		380460C11E9F19A0008A03B5 /* NTComponents Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		380460C31E9F19A0008A03B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		380460C51E9F19A0008A03B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		380460CA1E9F19A0008A03B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		380460CD1E9F19A0008A03B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		380460CF1E9F19A0008A03B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		380460D31E9F1AAA008A03B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		380460D61E9F1B6E008A03B5 /* NTAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertController.swift; sourceTree = "<group>"; };
+		380460D81EA06A11008A03B5 /* NTActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetController.swift; sourceTree = "<group>"; };
 		3818F6D71E5BDEA600902E23 /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818F6DA1E5BDEA600902E23 /* NTComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTComponents.h; sourceTree = "<group>"; };
 		3818F6DB1E5BDEA600902E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,13 +104,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		380460BE1E9F19A0008A03B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3818F6D31E5BDEA600902E23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,22 +114,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		380460C21E9F19A0008A03B5 /* NTComponents Demo */ = {
-			isa = PBXGroup;
-			children = (
-				380460C31E9F19A0008A03B5 /* AppDelegate.swift */,
-				380460C51E9F19A0008A03B5 /* ViewController.swift */,
-				380460CA1E9F19A0008A03B5 /* Assets.xcassets */,
-				380460CC1E9F19A0008A03B5 /* LaunchScreen.storyboard */,
-				380460CF1E9F19A0008A03B5 /* Info.plist */,
-			);
-			path = "NTComponents Demo";
-			sourceTree = "<group>";
-		};
 		380460D41E9F1B22008A03B5 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
 				380460D61E9F1B6E008A03B5 /* NTAlertController.swift */,
+				380460D81EA06A11008A03B5 /* NTActionSheetController.swift */,
 			);
 			name = Alerts;
 			sourceTree = "<group>";
@@ -165,7 +139,6 @@
 				3818F6E41E5BDED000902E23 /* LICENSE */,
 				380460D31E9F1AAA008A03B5 /* README.md */,
 				3818F6D91E5BDEA600902E23 /* NTComponents */,
-				380460C21E9F19A0008A03B5 /* NTComponents Demo */,
 				3818F6D81E5BDEA600902E23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				3818F6D71E5BDEA600902E23 /* NTComponents.framework */,
-				380460C11E9F19A0008A03B5 /* NTComponents Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,23 +293,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		380460C01E9F19A0008A03B5 /* NTComponents Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 380460D01E9F19A0008A03B5 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */;
-			buildPhases = (
-				380460BD1E9F19A0008A03B5 /* Sources */,
-				380460BE1E9F19A0008A03B5 /* Frameworks */,
-				380460BF1E9F19A0008A03B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "NTComponents Demo";
-			productName = "NTComponents Demo";
-			productReference = 380460C11E9F19A0008A03B5 /* NTComponents Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 		3818F6D61E5BDEA600902E23 /* NTComponents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3818F6DF1E5BDEA600902E23 /* Build configuration list for PBXNativeTarget "NTComponents" */;
@@ -363,14 +318,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Nathan Tannar";
 				TargetAttributes = {
-					380460C01E9F19A0008A03B5 = {
-						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 9EUCWD26TP;
-						ProvisioningStyle = Automatic;
-					};
 					3818F6D61E5BDEA600902E23 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -391,21 +341,11 @@
 			projectRoot = "";
 			targets = (
 				3818F6D61E5BDEA600902E23 /* NTComponents */,
-				380460C01E9F19A0008A03B5 /* NTComponents Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		380460BF1E9F19A0008A03B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				380460CE1E9F19A0008A03B5 /* LaunchScreen.storyboard in Resources */,
-				380460CB1E9F19A0008A03B5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3818F6D51E5BDEA600902E23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,15 +359,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		380460BD1E9F19A0008A03B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				380460C61E9F19A0008A03B5 /* ViewController.swift in Sources */,
-				380460C41E9F19A0008A03B5 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3818F6D21E5BDEA600902E23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,6 +376,7 @@
 				3849B2BB1E651D6300A86586 /* String.swift in Sources */,
 				3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */,
 				3818F6FB1E5BDF5000902E23 /* NTView.swift in Sources */,
+				380460D91EA06A11008A03B5 /* NTActionSheetController.swift in Sources */,
 				3818F7041E5BDF5000902E23 /* NTLoginViewController.swift in Sources */,
 				3849B2B71E651CAB00A86586 /* UIColor.swift in Sources */,
 				38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */,
@@ -476,48 +408,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		380460CC1E9F19A0008A03B5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				380460CD1E9F19A0008A03B5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		380460D11E9F19A0008A03B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		380460D21E9F19A0008A03B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		3818F6DD1E5BDEA600902E23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,7 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -641,7 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -660,14 +551,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		380460D01E9F19A0008A03B5 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				380460D11E9F19A0008A03B5 /* Debug */,
-				380460D21E9F19A0008A03B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		3818F6D11E5BDEA600902E23 /* Build configuration list for PBXProject "NTComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

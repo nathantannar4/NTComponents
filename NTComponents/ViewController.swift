@@ -10,6 +10,23 @@ import UIKit
 
 public extension UIViewController {
     
+    public func makeKeyAndVisible()  {
+        guard let vc = NTAlertViewController.topWindow()?.rootViewController else {
+            Log.write(.error, "Could not find the active window")
+            return
+        }
+        vc.present(self, animated: true, completion: nil)
+    }
+    
+    class func topWindow() -> UIWindow? {
+        for window in UIApplication.shared.windows.reversed() {
+            if window.windowLevel == UIWindowLevelNormal && !window.isHidden && window.frame != CGRect.zero {
+                return window
+            }
+        }
+        return nil
+    }
+    
     public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Defaults.titleTextColor, subtitleColor: UIColor? = Color.Defaults.subtitleTextColor) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
@@ -50,7 +67,9 @@ public extension UIViewController {
     public func presentViewController(_ viewController: UIViewController, from: NTPresentationDirection, completion:  (() -> Void)?) {
         viewController.view.alpha = 0.0
         viewController.modalPresentationStyle = .overCurrentContext
-        let windowFrame = self.view.window!.frame
+        guard let windowFrame = self.view.window?.frame else {
+            return
+        }
         let viewFrame = viewController.view.frame
         let finalFrame = viewFrame
         self.present(viewController, animated: false) { () -> Void in

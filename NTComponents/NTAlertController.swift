@@ -8,18 +8,29 @@
 
 import UIKit
 
-open class NTAlertViewController: UIViewController {
+open class NTAlertViewController: UIViewController  {
     
-    public var didSetupConstraints = false
+    fileprivate var currentState: NTViewState = .hidden
+    
     open let titleLabel: NTLabel = {
         let label = NTLabel(type: .title)
         label.numberOfLines = 0
+        label.font = Font.Defaults.title.withSize(20)
+        label.textAlignment = .center
         return label
     }()
     
-    fileprivate let buttonContainer: NTView = {
+    open let subtitleLabel: NTLabel = {
+        let label = NTLabel(type: .subtitle)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    fileprivate let alertContainer: NTView = {
         let view = NTView()
         view.backgroundColor = .white
+        view.layer.cornerRadius = 5
         view.setDefaultShadow()
         return view
     }()
@@ -28,6 +39,7 @@ open class NTAlertViewController: UIViewController {
         let button = NTButton()
         button.title = "Cancel"
         button.titleColor = .white
+        button.titleLabel?.textAlignment = .center
         button.backgroundColor = Color.Red.P500
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
@@ -38,72 +50,79 @@ open class NTAlertViewController: UIViewController {
         let button = NTButton()
         button.title = "Confirm"
         button.titleColor = .white
+        button.titleLabel?.textAlignment = .center
         button.backgroundColor = Color.Defaults.tint
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(confirmButtonPresssed), for: .touchUpInside)
         return button
     }()
     
+    open override var title: String? {
+        get {
+            return super.title
+        }
+        set {
+            super.title = newValue
+            titleLabel.text = newValue
+        }
+    }
+    open var subtitle: String? {
+        get {
+            return subtitleLabel.text
+        }
+        set {
+            subtitleLabel.text = newValue
+        }
+    }
     public var onCancel : (() -> Void)?
     public var onConfirm : (() -> Void)?
     
+    public required init(title: String, subtitle: String? = nil) {
+        self.init()
+        self.title = title
+        self.subtitle = subtitle
+    }
     
-    override open func viewDidLoad() {
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.modalTransitionStyle = .crossDissolve
+        self.modalPresentationStyle = .overCurrentContext
+    }
+    
+    // MARK: - Class Functions
+    open override func viewDidLoad() {
         super.viewDidLoad()
+    
+        view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
         
-        view.addSubview(titleLabel)
-        view.addSubview(buttonContainer)
-        buttonContainer.addSubview(cancelButton)
-        buttonContainer.addSubview(confirmationButton)
-        updateViewConstraints()
-    }
-    
-    func cancelButtonPressed() {
-        dismiss(animated: false, completion: nil)
-    }
-    
-    func confirmButtonPresssed() {
-        dismissViewControllerAnimated(false, completion: nil)
-    }
-    
-    func setTitleLabel(text: String) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.Center
-        paragraphStyle.lineSpacing = 4.5
-        titleLabel.attributedText = NSMutableAttributedString(
-            string: text,
-            attributes: [
-                NSFontAttributeName: UIFont(name: "AvenirNextLTPro-Regular", size: 14)!,
-                NSForegroundColorAttributeName: UIColor.colorFromCode(0x151515),
-                NSKernAttributeName: 0.5,
-                NSParagraphStyleAttributeName: paragraphStyle
-            ]
-        )
-    }
-    
-    override func updateViewConstraints() {
-        if !didSetupConstraints {
-            titleLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10), excludingEdge: .Bottom)
-            titleLabel.autoAlignAxisToSuperviewAxis(.Vertical)
-            
-            buttonContainer.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 3)
-            buttonContainer.autoAlignAxisToSuperviewAxis(.Vertical)
-            buttonContainer.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
-            
-            let contactViews: NSArray = [cancelButton, confirmationButton]
-            contactViews.autoDistributeViewsAlongAxis(.Horizontal, alignedTo: .Horizontal, withFixedSpacing: 7, insetSpacing: true, matchedSizes: false)
-            
-            cancelButton.autoPinEdgeToSuperviewEdge(.Top)
-            cancelButton.autoPinEdgeToSuperviewEdge(.Bottom)
-            cancelButton.autoSetDimensionsToSize(CGSize(width: 100, height: 50))
-            
-            confirmationButton.autoPinEdgeToSuperviewEdge(.Top)
-            confirmationButton.autoPinEdgeToSuperviewEdge(.Bottom)
-            confirmationButton.autoSetDimensionsToSize(CGSize(width: 100, height: 50))
-            
-            didSetupConstraints = true
-        }
+        view.addSubview(alertContainer)
         
-        super.updateViewConstraints()
+        alertContainer.addSubview(titleLabel)
+        alertContainer.addSubview(subtitleLabel)
+        alertContainer.addSubview(cancelButton)
+        alertContainer.addSubview(confirmButton)
+        
+        alertContainer.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 250, leftConstant: 50, bottomConstant: 250, rightConstant: 50, widthConstant: 0, heightConstant: 0)
+        titleLabel.anchor(alertContainer.topAnchor, left: alertContainer.leftAnchor, bottom: nil, right: alertContainer.rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        cancelButton.anchor(nil, left: titleLabel.leftAnchor, bottom: alertContainer.bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+        confirmButton.anchor(nil, left: titleLabel.leftAnchor, bottom: cancelButton.topAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+    }
+    
+    // MARK: - Actions
+    open func cancelButtonPressed() {
+        onCancel?()
+        Log.write(.status, "Cancel button pressed")
+        dismiss(animated: true)
+    }
+    
+    open func confirmButtonPresssed() {
+        onConfirm?()
+        Log.write(.status, "Confirm button pressed")
+        dismiss(animated: true)
     }
 }
