@@ -10,12 +10,12 @@ import UIKit
 
 public extension UIViewController {
     
-    public func makeKeyAndVisible()  {
+    public func makeKeyAndVisible(animated: Bool = false)  {
         guard let vc = NTAlertViewController.topWindow()?.rootViewController else {
             Log.write(.error, "Could not find the active window")
             return
         }
-        vc.present(self, animated: true, completion: nil)
+        vc.present(self, animated: animated, completion: nil)
     }
     
     class func topWindow() -> UIWindow? {

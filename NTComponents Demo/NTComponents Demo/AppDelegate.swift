@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = NTNavigationController(rootViewController: ViewController())
+        window?.rootViewController = NTTabBarController(viewControllers: [ViewController(), UIViewController()])  //NTNavigationController(rootViewController: ViewController())
         window?.makeKeyAndVisible()
         
         return true

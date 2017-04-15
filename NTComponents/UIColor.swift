@@ -8,12 +8,12 @@
 
 public extension UIColor {
     
-    func lighter(by percentage:CGFloat=30.0) -> UIColor? {
-        return self.adjust(by: abs(percentage) )
+    func lighter(by percentage:CGFloat=30.0) -> UIColor {
+        return self.adjust(by: abs(percentage)) ?? .white
     }
     
-    func darker(by percentage:CGFloat=30.0) -> UIColor? {
-        return self.adjust(by: -1 * abs(percentage) )
+    func darker(by percentage:CGFloat=30.0) -> UIColor {
+        return self.adjust(by: -1 * abs(percentage)) ?? .black
     }
     
     func adjust(by percentage:CGFloat=30.0) -> UIColor? {

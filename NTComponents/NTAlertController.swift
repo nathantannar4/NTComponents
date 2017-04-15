@@ -39,10 +39,10 @@ open class NTAlertViewController: UIViewController  {
         let button = NTButton()
         button.title = "Cancel"
         button.titleColor = .white
-        button.titleLabel?.textAlignment = .center
         button.backgroundColor = Color.Red.P500
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
+        
         return button
     }()
     

@@ -15,6 +15,7 @@ class ViewController: NTTableViewController, NTTableViewDataSource, UITableViewD
         
         title = "NTComponents"
         subtitle = "By Nathan Tannar"
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.imageDataSource = self
         stretchyHeaderHeight = 350
@@ -25,19 +26,17 @@ class ViewController: NTTableViewController, NTTableViewDataSource, UITableViewD
         
         Color.Defaults.tint = Color.Blue.P700
         view.backgroundColor = Color.Blue.P700
-        
-        let alert = NTActionSheetController()
-        let action = NTActionSheetAction(title: "Google", icon: Icon.google) {
-            alert.dismiss(animated: true, completion: {
-                let popup = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone")
-                popup.makeKeyAndVisible()
-            })
-        }
-        alert.addAction(action)
-        alert.addDismissAction()
-        alert.makeKeyAndVisible()
-        
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let alert = NTActionSheetController()
+//        let action = NTActionSheetAction(title: "Google", icon: Icon.google)
+//        alert.addAction(action)
+//        alert.addDismissAction()
+//        alert.makeKeyAndVisible()
+        let popup = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone")
+        popup.makeKeyAndVisible(animated: true)
+
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

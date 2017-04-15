@@ -59,15 +59,9 @@ open class NTActionSheetController: UIViewController, UITableViewDataSource, UIT
         
         view.addSubview(actionTable)
         actionTable.fillSuperview()
-        
+
         let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismissSheet))
         actionTable.addGestureRecognizer(tapAction)
-    }
-    
-    open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
     }
     
     public func addAction(_ action: NTActionSheetAction) {
@@ -78,8 +72,7 @@ open class NTActionSheetController: UIViewController, UITableViewDataSource, UIT
     
     public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100")) {
         let dismissAction = NTActionSheetAction(title: text, icon: icon) { 
-            self.view.backgroundColor = .clear
-            self.dismiss(animated: true, completion: nil)
+            self.dismissSheet()
         }
         actions.append(dismissAction)
         actionTable.reloadData()
@@ -96,8 +89,8 @@ open class NTActionSheetController: UIViewController, UITableViewDataSource, UIT
     }
     
     public func dismissSheet() {
-        self.view.backgroundColor = .clear
-        self.dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: false, completion: nil)
     }
     
     // MARK: - UITableViewDatasource
