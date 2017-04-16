@@ -69,32 +69,38 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         }
         
         stretchyImageView.image = image
-        
-        addGradients()
-        
         stretchyView.clipsToBounds = true
     }
     
-    private func addGradients() {
+    public func addTopGradientToStretchyImage() {
         let frame = CGRect(x: stretchyImageView.frame.origin.x, y: stretchyImageView.frame.origin.x, width: view.frame.width * 2, height: stretchyHeaderHeight)
         
         stretchyImageView.layer.sublayers?.removeAll()
         
         let topGradient: CAGradientLayer = CAGradientLayer()
         topGradient.frame = frame
-        topGradient.colors = [UIColor.black.withAlphaComponent(0.5).cgColor, UIColor.clear.cgColor]
+        topGradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         topGradient.locations = [0.0, 0.3]
         stretchyImageView.layer.insertSublayer(topGradient, at: 0)
+    }
+    
+    public func addBottomGradientToStretchyImage() {
+        let frame = CGRect(x: stretchyImageView.frame.origin.x, y: stretchyImageView.frame.origin.x, width: view.frame.width * 2, height: stretchyHeaderHeight)
         
-//        
-//        let bottomGradient: CAGradientLayer = CAGradientLayer()
-//        bottomGradient.frame = frame
-//        bottomGradient.colors = [UIColor.clear.cgColor, view.backgroundColor?.withAlphaComponent(0.5).cgColor ?? UIColor.groupTableViewBackground.withAlphaComponent(0.5).cgColor, view.backgroundColor?.cgColor ?? UIColor.groupTableViewBackground.cgColor]
-//        bottomGradient.locations = [0.6, 0.8, 1.0]
-//        stretchyImageView.layer.insertSublayer(bottomGradient, at: 0)
+        stretchyImageView.layer.sublayers?.removeAll()
+        
+        let bottomGradient: CAGradientLayer = CAGradientLayer()
+        bottomGradient.frame = frame
+        bottomGradient.colors = [UIColor.clear.cgColor, view.backgroundColor?.withAlphaComponent(0.5).cgColor ?? UIColor.groupTableViewBackground.withAlphaComponent(0.5).cgColor, view.backgroundColor?.cgColor ?? UIColor.groupTableViewBackground.cgColor]
+        bottomGradient.locations = [0.6, 0.8, 1.0]
+        stretchyImageView.layer.insertSublayer(bottomGradient, at: 0)
     }
     
     public func updateNavigationBar() {
+        
+        if parent is NTScrollableTabBarController {
+            return
+        }
         
         navigationController?.navigationBar.isTranslucent = fadeInNavBarOnScroll
         

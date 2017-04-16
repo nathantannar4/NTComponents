@@ -32,7 +32,7 @@ open class NTTabBarController: UITabBarController {
         self.tabBar.frame = tabFrame
         
         self.tabBar.shadowImage = UIImage()
-        self.tabBar.layer.shadowColor = Color.darkGray.cgColor
+        self.tabBar.layer.shadowColor = Color.Gray.P600.cgColor
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: -1)
         self.tabBar.layer.shadowRadius = 2
         self.tabBar.layer.shadowOpacity = 0.3

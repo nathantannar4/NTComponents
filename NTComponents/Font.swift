@@ -6,7 +6,9 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-public class Font: UIFont {
+public struct Font: PropertyLoopable {
+    
+    public init() {}
     
     public static func availableFonts() {
         for familyName in UIFont.familyNames {

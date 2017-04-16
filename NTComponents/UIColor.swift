@@ -8,6 +8,42 @@
 
 public extension UIColor {
     
+    public convenience init(hex: String) {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            self.init(red: 0, green: 0, blue: 0, alpha: 1)
+        } else {
+            var rgbValue:UInt32 = 0
+            Scanner(string: cString).scanHexInt32(&rgbValue)
+            
+            self.init(
+                red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        }
+    }
+    
+    public convenience init(rgba: UInt){
+        let sRgba = min(rgba,0xFFFFFFFF)
+        let red: CGFloat = CGFloat((sRgba & 0xFF000000) >> 24) / 255.0
+        let green: CGFloat = CGFloat((sRgba & 0x00FF0000) >> 16) / 255.0
+        let blue: CGFloat = CGFloat((sRgba & 0x0000FF00) >> 8) / 255.0
+        let alpha: CGFloat = CGFloat(sRgba & 0x000000FF) / 255.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    public convenience init(r: CGFloat, g: CGFloat, b: CGFloat){
+        self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: 1)
+    }
+    
     func lighter(by percentage:CGFloat=30.0) -> UIColor {
         return self.adjust(by: abs(percentage)) ?? .white
     }

@@ -14,7 +14,7 @@ public class Toast: UIView {
     public var dismissOnTap: Bool = true
     
     public convenience init(text: String?) {
-        self.init(text: text, color: Color.darkGray, height: 50)
+        self.init(text: text, color: Color.Gray.P600, height: 50)
     }
     
     public init(text: String?, color: UIColor, height: CGFloat) {
@@ -94,7 +94,7 @@ public class Toast: UIView {
     }
     
     public class func genericErrorMessage() {
-        let toast = Toast(text: "Sorry, an error occurred", color: Color.darkGray, height: 50)
+        let toast = Toast(text: "Sorry, an error occurred", color: Color.Gray.P600, height: 50)
         toast.dismissOnTap = true
         toast.show(duration: 1.5)
     }

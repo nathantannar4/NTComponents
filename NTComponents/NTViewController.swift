@@ -48,6 +48,12 @@ open class NTViewController: UIViewController {
         return self.statusBarHidden
     }
 
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = Color.Defaults.viewControllerBackground
+    }
+    
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

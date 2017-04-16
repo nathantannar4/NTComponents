@@ -17,27 +17,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        Color.Defaults.viewControllerBackground = .white
+        Color.Defaults.tabBarBackgound = .white
+        Color.Defaults.navigationBarBackground = .white
+        Color.Defaults.tabBarTint = UIColor(hex: "31485e")
+        Color.Defaults.navigationBarTint = UIColor(hex: "31485e")
+        Color.Defaults.tint = UIColor(hex: "31485e")
+        Color.Defaults.buttonTint = UIColor(hex: "31485e")
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = NTNavigationContainer(centerView: UIViewController(), leftView: UIViewController())
         
+        let leftVC = NTViewController()
+        leftVC.view.backgroundColor = Color.Defaults.tint
+        let leftMenuLabel = NTLabel(type: .title)
+        leftMenuLabel.textColor = .white
+        leftMenuLabel.textAlignment = .center
+        leftMenuLabel.text = "Left Navigation Drawer\n(A right one is available too!)"
+        leftMenuLabel.numberOfLines = 0
+        leftVC.view.addSubview(leftMenuLabel)
+        leftMenuLabel.fillSuperview()
         
-//        let tc = NTScrollableTabBarController()
-//        let vc1 = UIViewController()
-//        vc1.view.backgroundColor = Color.Gray.P100
-//        let vc2 = UIViewController()
-//        vc2.view.backgroundColor = Color.Gray.P200
-//        tc.tabItems = [(vc1, "First"), (vc2, "Second")]
-//        var properties = NTTabBarProperties()
-//        properties.tabWidth = window!.frame.width / CGFloat(tc.tabItems.count)
-//        tc.properties = properties
-//        tc.properties.hidesTabBarOnSwipe = true
+        let centerVC = NTScrollableTabBarController()
+        centerVC.title = "NTComponents"
+        centerVC.subtitle = "by Nathan Tannar"
         
+        let tableVC = DemoTableViewController()
+        centerVC.tabItems.append((tableVC, "Table View"))
         
+        let colorsVC = DemoColorsCollectionView()
+        centerVC.tabItems.append((colorsVC, "Colors"))
         
+        let alertsVC = DemoAlertsViewController()
+        centerVC.tabItems.append((alertsVC, "Alerts"))
         
+        for i in 3...4 {
+            let vc = NTViewController()
+            vc.view.backgroundColor = .white
+            centerVC.tabItems.append((vc, "Tab \(i + 1)"))
+        }
+        var properties = NTTabBarProperties()
+        properties.tabWidth = window!.frame.width / CGFloat(centerVC.tabItems.count)
+        centerVC.properties = properties
+        centerVC.properties.hidesTabBarOnSwipe = true
+        
+        window?.rootViewController = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         window?.makeKeyAndVisible()
-        
         
         return true
     }

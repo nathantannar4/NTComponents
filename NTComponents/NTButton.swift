@@ -70,7 +70,7 @@ open class NTButton: UIButton {
         }
         set {
             super.backgroundColor = newValue
-            rippleBackgroundColor = newValue ?? .white
+            rippleBackgroundColor = newValue ?? .clear
             rippleColor = rippleBackgroundColor.isLight ? rippleBackgroundColor.darker(by: 10) : rippleBackgroundColor.lighter(by: 10)
         }
     }
@@ -87,9 +87,12 @@ open class NTButton: UIButton {
         }
     }
     
-    open var rippleBackgroundColor: UIColor = .white {
-        didSet {
-            rippleBackgroundView.backgroundColor = rippleBackgroundColor
+    open var rippleBackgroundColor: UIColor {
+        get {
+            return rippleBackgroundView.backgroundColor ?? .clear
+        }
+        set {
+            rippleBackgroundView.backgroundColor = newValue
         }
     }
     

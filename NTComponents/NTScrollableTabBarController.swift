@@ -14,7 +14,17 @@ import UIKit
 
 open class NTScrollableTabBarController: UIPageViewController {
     
-    open var isInfinity: Bool = false
+    override open var title: String? {
+        didSet {
+            self.refreshTitleView(withAlpha: 1.0)
+        }
+    }
+    open var subtitle: String? {
+        didSet {
+            self.refreshTitleView(withAlpha: 1.0)
+        }
+    }
+    
     open var properties: NTTabBarProperties = NTTabBarProperties()
     open var tabItems: [(viewController: UIViewController, title: String)] = [] {
         didSet {
@@ -74,7 +84,7 @@ open class NTScrollableTabBarController: UIPageViewController {
             tabView = configuredTabView()
         }
 
-        if let currentIndex = currentIndex, isInfinity {
+        if let currentIndex = currentIndex {
             tabView.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
     }
@@ -145,8 +155,9 @@ extension NTScrollableTabBarController {
     fileprivate func updateNavigationBar() {
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.shadowImage = UIImage()
-            navigationBar.setBackgroundImage(properties.tabBackgroundImage, for: .default)
-            navigationBar.isTranslucent = properties.isTranslucent
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.barTintColor = Color.Defaults.navigationBarBackground
+            navigationBar.isTranslucent = false
         }
     }
 
@@ -286,6 +297,12 @@ extension NTScrollableTabBarController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    public func refreshTitleView(withAlpha alpha: CGFloat) {
+        if self.title != nil {
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Defaults.titleTextColor.withAlphaComponent(alpha), subtitleColor: Color.Defaults.subtitleTextColor.withAlphaComponent(alpha))
+        }
+    }
 }
 
 
@@ -303,14 +320,6 @@ extension NTScrollableTabBarController: UIPageViewControllerDataSource {
             index += 1
         } else {
             index -= 1
-        }
-
-        if isInfinity {
-            if index < 0 {
-                index = tabItems.count - 1
-            } else if index == tabItems.count {
-                index = 0
-            }
         }
 
         if index >= 0 && index < tabItems.count {

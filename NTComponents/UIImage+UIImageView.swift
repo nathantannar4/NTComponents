@@ -75,4 +75,33 @@ public extension UIImageView {
             
         }).resume()
     }
+    
+    var containsBlurEffect: Bool {
+        for subview in subviews {
+            if subview is UIVisualEffectView {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func addBlurEffect(style: UIBlurEffectStyle, animationDuration: TimeInterval = 0.0) {
+        let blurEffect = UIBlurEffect(style: style)
+        let overlay = UIVisualEffectView()
+        overlay.frame = self.bounds
+        overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(overlay)
+        
+        UIView.animate(withDuration: animationDuration, animations: {
+            overlay.effect = blurEffect
+        })
+    }
+    
+    func removeBlurEffects() {
+        for subview in subviews {
+            if subview is UIVisualEffectView {
+                subview.removeFromSuperview()
+            }
+        }
+    }
 }

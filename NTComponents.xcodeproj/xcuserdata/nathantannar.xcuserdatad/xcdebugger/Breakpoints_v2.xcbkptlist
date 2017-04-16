@@ -99,5 +99,211 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/NTScrollableTabBarController.swift"
+            timestampString = "514002115.836151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "NTScrollableTabBarController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.currentIndex.getter : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002015.784137"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "318">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.(currentIndex.getter : Swift.Optional&lt;Swift.Int&gt;).(closure #1)"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002015.786977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/NTScrollableTabBarController.swift"
+            timestampString = "514002017.667645"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "NTScrollableTabBarController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.init (transitionStyle : __C.UIPageViewControllerTransitionStyle, navigationOrientation : __C.UIPageViewControllerNavigationOrientation, options : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; NTComponents.NTScrollableTabBarController"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002117.050879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;NTComponents.NTScrollableTabBarController&gt;"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002117.052693"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "103">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.properties.getter : NTComponents.NTTabBarProperties"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002117.054408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "215">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTScrollableTabBarController.properties.setter : NTComponents.NTTabBarProperties"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/NTScrollableTabBarController.swift"
+                  timestampString = "514002117.056116"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "575">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/NTScrollableTabBarController.swift"
+            timestampString = "514002115.836151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents Demo/DemoColorsCollectionView.swift"
+            timestampString = "514014720.773315"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "reuseIdentifier"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents Demo/DemoColorsCollectionView.swift"
+            timestampString = "514014720.773315"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "item(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/NTCollectionViewController.swift"
+            timestampString = "514015223.804798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents Demo/DemoAlertsViewController.swift"
+            timestampString = "514057136.606669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "showActionSheet()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

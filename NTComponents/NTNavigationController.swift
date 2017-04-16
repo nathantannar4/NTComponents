@@ -6,13 +6,25 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-public class NTNavigationController: UINavigationController {
+open class NTNavigationController: UINavigationController {
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
+    public convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    public override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
         
         navigationBar.tintColor = Color.Defaults.navigationBarTint
         navigationBar.barTintColor = Color.Defaults.navigationBarBackground
         navigationBar.isTranslucent = false
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -66,7 +66,7 @@ internal class NTScrollableTabBar: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(collectionView)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = properties.tabBackgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollsToTop = false
@@ -95,7 +95,8 @@ internal class NTScrollableTabBar: UIView {
                                       constant: 0.0)
         currentBarViewLeftConstraint = left
         collectionView.addConstraints([top, left])
-
+        
+        setDefaultShadow()
     }
 }
 

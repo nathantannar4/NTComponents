@@ -13,10 +13,13 @@ open class NTCollectionViewController: DatasourceController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 10.0, *) {
-            collectionView?.refreshControl = self.getRefreshControl()
-        }
+        view.backgroundColor = Color.Defaults.viewControllerBackground
         collectionView?.backgroundColor = Color.Defaults.viewControllerBackground
+       
+        if let parent =  parent as? NTScrollableTabBarController {
+            collectionView?.contentInset.top = parent.properties.tabHeight
+            collectionView?.scrollIndicatorInsets.top = parent.properties.tabHeight
+        }
     }
     
     open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

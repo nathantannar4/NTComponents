@@ -12,7 +12,7 @@ public class NTTextView: UITextView {
         didSet {
             if text.isEmpty {
                 text = placeholder
-                textColor = Color.lightGray
+                textColor = Color.Gray.P600
             }
         }
     }
@@ -58,7 +58,7 @@ public class NTTextView: UITextView {
     func textViewDidEndEditing(notification: NSNotification) {
         if text.isEmpty {
             text = placeholder
-            textColor = Color.lightGray
+            textColor = Color.Gray.P600
         }
     }
 }

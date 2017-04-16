@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DemoTableViewController.swift
 //  NTComponents Demo
 //
 //  Created by Nathan Tannar on 3/11/17.
@@ -9,36 +9,22 @@
 import UIKit
 import NTComponents
 
-class ViewController: NTTableViewController, NTTableViewDataSource, UITableViewDataSource {
+class DemoTableViewController: NTTableViewController, NTTableViewDataSource, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "NTComponents"
-        subtitle = "By Nathan Tannar"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.imageDataSource = self
-        stretchyHeaderHeight = 350
+        stretchyHeaderHeight = 250
+        addTopGradientToStretchyImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        Color.Defaults.tint = Color.Blue.P700
-        view.backgroundColor = Color.Blue.P700
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let alert = NTActionSheetController()
-//        let action = NTActionSheetAction(title: "Google", icon: Icon.google)
-//        alert.addAction(action)
-//        alert.addDismissAction()
-//        alert.makeKeyAndVisible()
-        let popup = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone")
-        popup.makeKeyAndVisible(animated: true)
-
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,7 +40,7 @@ class ViewController: NTTableViewController, NTTableViewDataSource, UITableViewD
     }
 
     func imageForStretchyView(in tableView: NTTableView) -> UIImage? {
-        return UIImage(named: "banner.jpg")
+        return UIImage(named: "Background")
     }
 }
 

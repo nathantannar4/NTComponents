@@ -232,7 +232,7 @@ open class NTLoginViewController: UITableViewController {
     // MARK: Error Handling
     
     open func toastError(_ error: String) {
-        Toast(text: error, color: Color.darkGray, height: 50).show(duration: 2.0)
+        Toast(text: error, color: Color.Gray.P600, height: 50).show(duration: 2.0)
     }
     
     // MARK: Validation Variables
