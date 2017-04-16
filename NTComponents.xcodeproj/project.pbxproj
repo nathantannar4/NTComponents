@@ -11,6 +11,15 @@
 		380460D91EA06A11008A03B5 /* NTActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460D81EA06A11008A03B5 /* NTActionSheetController.swift */; };
 		380460DC1EA2822B008A03B5 /* NTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DB1EA2822B008A03B5 /* NTTabBar.swift */; };
 		380460DE1EA28244008A03B5 /* NTTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DD1EA28244008A03B5 /* NTTabBarItem.swift */; };
+		380460E61EA28E20008A03B5 /* NTScrollableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */; };
+		380460E81EA28E20008A03B5 /* NTTabBarProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */; };
+		380460EA1EA28E20008A03B5 /* NTScrollableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */; };
+		380460EB1EA28E20008A03B5 /* NTScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460E41EA28E20008A03B5 /* NTScrollableTabBar.swift */; };
+		380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460F41EA2A6C2008A03B5 /* AppDelegate.swift */; };
+		380460FC1EA2A6C2008A03B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380460FB1EA2A6C2008A03B5 /* Assets.xcassets */; };
+		380460FF1EA2A6C2008A03B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380460FD1EA2A6C2008A03B5 /* LaunchScreen.storyboard */; };
+		380461041EA2A720008A03B5 /* NTComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; };
+		380461061EA2A787008A03B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380461051EA2A787008A03B5 /* ViewController.swift */; };
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6E71E5BDF3A00902E23 /* ViewController.swift */; };
@@ -61,6 +70,16 @@
 		380460D81EA06A11008A03B5 /* NTActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetController.swift; sourceTree = "<group>"; };
 		380460DB1EA2822B008A03B5 /* NTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBar.swift; sourceTree = "<group>"; };
 		380460DD1EA28244008A03B5 /* NTTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarItem.swift; sourceTree = "<group>"; };
+		380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScrollableTabBarItem.swift; sourceTree = "<group>"; };
+		380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarProperties.swift; sourceTree = "<group>"; };
+		380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScrollableTabBarController.swift; sourceTree = "<group>"; };
+		380460E41EA28E20008A03B5 /* NTScrollableTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScrollableTabBar.swift; sourceTree = "<group>"; };
+		380460F21EA2A6C2008A03B5 /* NTComponents Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NTComponents Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		380460F41EA2A6C2008A03B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		380460FB1EA2A6C2008A03B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		380460FE1EA2A6C2008A03B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		380461001EA2A6C2008A03B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380461051EA2A787008A03B5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3818F6D71E5BDEA600902E23 /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818F6DA1E5BDEA600902E23 /* NTComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTComponents.h; sourceTree = "<group>"; };
 		3818F6DB1E5BDEA600902E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +127,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		380460EF1EA2A6C2008A03B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380461041EA2A720008A03B5 /* NTComponents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3818F6D31E5BDEA600902E23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,8 +169,32 @@
 				3818F6F11E5BDF5000902E23 /* NTTabBarController.swift */,
 				380460DB1EA2822B008A03B5 /* NTTabBar.swift */,
 				380460DD1EA28244008A03B5 /* NTTabBarItem.swift */,
+				380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */,
+				380460ED1EA29392008A03B5 /* ScrollableTabBar */,
 			);
 			name = TabBar;
+			sourceTree = "<group>";
+		};
+		380460ED1EA29392008A03B5 /* ScrollableTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */,
+				380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */,
+				380460E41EA28E20008A03B5 /* NTScrollableTabBar.swift */,
+			);
+			name = ScrollableTabBar;
+			sourceTree = "<group>";
+		};
+		380460F31EA2A6C2008A03B5 /* NTComponents Demo */ = {
+			isa = PBXGroup;
+			children = (
+				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
+				380461051EA2A787008A03B5 /* ViewController.swift */,
+				380460FB1EA2A6C2008A03B5 /* Assets.xcassets */,
+				380460FD1EA2A6C2008A03B5 /* LaunchScreen.storyboard */,
+				380461001EA2A6C2008A03B5 /* Info.plist */,
+			);
+			path = "NTComponents Demo";
 			sourceTree = "<group>";
 		};
 		3818F6CD1E5BDEA600902E23 = {
@@ -153,6 +204,7 @@
 				3818F6E41E5BDED000902E23 /* LICENSE */,
 				380460D31E9F1AAA008A03B5 /* README.md */,
 				3818F6D91E5BDEA600902E23 /* NTComponents */,
+				380460F31EA2A6C2008A03B5 /* NTComponents Demo */,
 				3818F6D81E5BDEA600902E23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				3818F6D71E5BDEA600902E23 /* NTComponents.framework */,
+				380460F21EA2A6C2008A03B5 /* NTComponents Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +360,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		380460F11EA2A6C2008A03B5 /* NTComponents Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380461011EA2A6C2008A03B5 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */;
+			buildPhases = (
+				380460EE1EA2A6C2008A03B5 /* Sources */,
+				380460EF1EA2A6C2008A03B5 /* Frameworks */,
+				380460F01EA2A6C2008A03B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NTComponents Demo";
+			productName = "NTComponents Demo";
+			productReference = 380460F21EA2A6C2008A03B5 /* NTComponents Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3818F6D61E5BDEA600902E23 /* NTComponents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3818F6DF1E5BDEA600902E23 /* Build configuration list for PBXNativeTarget "NTComponents" */;
@@ -335,6 +405,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Nathan Tannar";
 				TargetAttributes = {
+					380460F11EA2A6C2008A03B5 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 9EUCWD26TP;
+						ProvisioningStyle = Automatic;
+					};
 					3818F6D61E5BDEA600902E23 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -355,11 +430,21 @@
 			projectRoot = "";
 			targets = (
 				3818F6D61E5BDEA600902E23 /* NTComponents */,
+				380460F11EA2A6C2008A03B5 /* NTComponents Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		380460F01EA2A6C2008A03B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380460FF1EA2A6C2008A03B5 /* LaunchScreen.storyboard in Resources */,
+				380460FC1EA2A6C2008A03B5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3818F6D51E5BDEA600902E23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,6 +458,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		380460EE1EA2A6C2008A03B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380461061EA2A787008A03B5 /* ViewController.swift in Sources */,
+				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3818F6D21E5BDEA600902E23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +474,8 @@
 				3818F7011E5BDF5000902E23 /* NTPageViewController.swift in Sources */,
 				38E6251B1E63B4CA003DC7B0 /* DefaultCells.swift in Sources */,
 				38E6251A1E63B4CA003DC7B0 /* DatasourceController.swift in Sources */,
+				380460EA1EA28E20008A03B5 /* NTScrollableTabBarController.swift in Sources */,
+				380460E81EA28E20008A03B5 /* NTTabBarProperties.swift in Sources */,
 				3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */,
 				3818F7081E5BDF5000902E23 /* Toast.swift in Sources */,
 				3818F70B1E5BDF5000902E23 /* ProgressHUD.swift in Sources */,
@@ -395,8 +491,10 @@
 				3849B2B71E651CAB00A86586 /* UIColor.swift in Sources */,
 				38E625411E64BEBD003DC7B0 /* NTCollectionViewCell.swift in Sources */,
 				38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */,
+				380460EB1EA28E20008A03B5 /* NTScrollableTabBar.swift in Sources */,
 				3830D67C1E62A895005C9A31 /* NTNavigationController.swift in Sources */,
 				3830D6761E62A7F4005C9A31 /* NTLabel.swift in Sources */,
+				380460E61EA28E20008A03B5 /* NTScrollableTabBarItem.swift in Sources */,
 				380460DC1EA2822B008A03B5 /* NTTabBar.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3818F7021E5BDF5000902E23 /* NTTabBarController.swift in Sources */,
@@ -424,7 +522,48 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		380460FD1EA2A6C2008A03B5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				380460FE1EA2A6C2008A03B5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		380461021EA2A6C2008A03B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		380461031EA2A6C2008A03B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 9EUCWD26TP;
+				INFOPLIST_FILE = "NTComponents Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		3818F6DD1E5BDEA600902E23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +706,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		380461011EA2A6C2008A03B5 /* Build configuration list for PBXNativeTarget "NTComponents Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380461021EA2A6C2008A03B5 /* Debug */,
+				380461031EA2A6C2008A03B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3818F6D11E5BDEA600902E23 /* Build configuration list for PBXProject "NTComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

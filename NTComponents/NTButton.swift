@@ -54,6 +54,16 @@ open class NTButton: UIButton {
         }
     }
     
+    
+    open var titleFont: UIFont? {
+        get {
+            return titleLabel?.font
+        }
+        set {
+            titleLabel?.font = newValue
+        }
+    }
+    
     open override var backgroundColor: UIColor? {
         get {
             return super.backgroundColor
@@ -77,7 +87,7 @@ open class NTButton: UIButton {
         }
     }
     
-    open var rippleBackgroundColor: UIColor = UIColor(white: 0.95, alpha: 1) {
+    open var rippleBackgroundColor: UIColor = .white {
         didSet {
             rippleBackgroundView.backgroundColor = rippleBackgroundColor
         }

@@ -88,11 +88,15 @@ public extension UIView {
         }
         
         if widthConstant > 0 {
-            anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
+            let constraint = widthAnchor.constraint(equalToConstant: widthConstant)
+            constraint.identifier = "width"
+            anchors.append(constraint)
         }
         
         if heightConstant > 0 {
-            anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
+            let constraint = heightAnchor.constraint(equalToConstant: heightConstant)
+            constraint.identifier = "height"
+            anchors.append(constraint)
         }
         
         anchors.forEach({$0.isActive = true})
@@ -127,5 +131,14 @@ public extension UIView {
     func anchorCenterSuperview() {
         anchorCenterXToSuperview()
         anchorCenterYToSuperview()
+    }
+    
+    func constraint(withIdentifier identifier: String) -> NSLayoutConstraint? {
+        for constraint in self.constraints {
+            if constraint.identifier == identifier {
+                return constraint
+            }
+        }
+        return nil
     }
 }

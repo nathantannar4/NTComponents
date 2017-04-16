@@ -48,11 +48,13 @@ public class Color: UIColor {
     }
     
     public struct Defaults {
-        public static var tint = Color.blue
+        public static var tint = Color.init(hex: "31485e")
         public static var viewControllerBackground = UIColor.groupTableViewBackground
-        public static var navigationBarTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        public static var navigationBarTint = Color.init(hex: "31485e")
         public static var navigationBarBackground = UIColor.white
-        public static var buttonTint = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        public static var tabBarTint = Color.init(hex: "31485e")
+        public static var tabBarBackgound = UIColor.white
+        public static var buttonTint = Color.init(hex: "31485e")
         public static var titleTextColor = UIColor.black
         public static var subtitleTextColor = UIColor.darkGray
     }

@@ -1,6 +1,6 @@
 //
 //  NTCollectionViewController.swift
-//  Engage
+//  NTComponents
 //
 //  Created by Nathan Tannar on 2/22/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.

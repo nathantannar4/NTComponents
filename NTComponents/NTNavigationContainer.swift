@@ -233,10 +233,13 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+       modalPresentationStyle = .overCurrentContext
+    }
+    
+    public func addPanGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
         panGestureRecognizer.delegate = self
-        //self.centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
-        self.modalPresentationStyle = .overCurrentContext
+        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
     
     
@@ -255,15 +258,15 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     private func showLeftMenuButton(_ shouldShow: Bool) {
         Log.write(.status, "Will show left menu button is \(shouldShow)")
         if self.centerViewController.navigationItem.leftBarButtonItem == nil {
-            //let leftDrawerButton = UIBarButtonItem(image: Icon.iOS.User_Interface.menu?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
-            //self.centerViewController.navigationItem.leftBarButtonItem = shouldShow ? leftDrawerButton : nil
+            let leftDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
+            self.centerViewController.navigationItem.leftBarButtonItem = shouldShow ? leftDrawerButton : nil
         }
     }
     private func showRightMenuButton(_ shouldShow: Bool) {
         Log.write(.status, "Will show right menu button is \(shouldShow)")
         if self.centerViewController.navigationItem.rightBarButtonItem == nil {
-            //let rightDrawerButton = UIBarButtonItem(image: Icon.iOS.User_Interface.menu?.scale(to: 30), style: .plain, target: self, action: #selector(toggleRightPanel))
-            //self.centerViewController.navigationItem.rightBarButtonItem = shouldShow ? rightDrawerButton : nil
+            let rightDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleRightPanel))
+            self.centerViewController.navigationItem.rightBarButtonItem = shouldShow ? rightDrawerButton : nil
         }
     }
     

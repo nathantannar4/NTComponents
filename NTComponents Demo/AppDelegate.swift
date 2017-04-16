@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NTComponents Demo
 //
-//  Created by Nathan Tannar on 3/11/17.
+//  Created by Nathan Tannar on 4/15/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
@@ -16,13 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = NTTabBarController(viewControllers: [ViewController(), UIViewController()])  //NTNavigationController(rootViewController: ViewController())
+        window?.rootViewController = NTNavigationContainer(centerView: UIViewController(), leftView: UIViewController())
+        
+        
+//        let tc = NTScrollableTabBarController()
+//        let vc1 = UIViewController()
+//        vc1.view.backgroundColor = Color.Gray.P100
+//        let vc2 = UIViewController()
+//        vc2.view.backgroundColor = Color.Gray.P200
+//        tc.tabItems = [(vc1, "First"), (vc2, "Second")]
+//        var properties = NTTabBarProperties()
+//        properties.tabWidth = window!.frame.width / CGFloat(tc.tabItems.count)
+//        tc.properties = properties
+//        tc.properties.hidesTabBarOnSwipe = true
+        
+        
+        
+        
         window?.makeKeyAndVisible()
+        
         
         return true
     }
