@@ -26,39 +26,41 @@ public extension UIView {
         self.layer.shadowRadius = 3
     }
     
-    func setRounded() {
-        let radius = self.frame.width / 2
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
+    /**
+     Rounds the given set of corners to the specified radius
+     
+     - parameter corners: Corners to round
+     - parameter radius:  Radius to round to
+     */
+    func round(corners: UIRectCorner, radius: CGFloat) {
+        _round(corners: corners, radius: radius)
     }
     
-    func round(corners: UIRectCorner, radius:CGFloat, borderColor: UIColor = .clear, width: CGFloat = 0) {
-        let bounds = self.bounds
-        
-        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = bounds
-        maskLayer.path = maskPath.cgPath
-        
-        self.layer.mask = maskLayer
-        
-        let frameLayer = CAShapeLayer()
-        frameLayer.frame = bounds
-        frameLayer.path = maskPath.cgPath
-        frameLayer.strokeColor = borderColor.cgColor
-        frameLayer.fillColor = nil
-        frameLayer.lineWidth = width
-        
-        self.layer.addSublayer(frameLayer)
+    /**
+     Rounds the given set of corners to the specified radius with a border
+     
+     - parameter corners:     Corners to round
+     - parameter radius:      Radius to round to
+     - parameter borderColor: The border color
+     - parameter borderWidth: The border width
+     */
+    func round(corners: UIRectCorner, radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+        let mask = _round(corners: corners, radius: radius)
+        addBorder(mask: mask, borderColor: borderColor, borderWidth: borderWidth)
     }
     
-    func roundTopCornersRadius(radius:CGFloat) {
-        self.round(corners: [UIRectCorner.topLeft, UIRectCorner.topRight], radius:radius)
-    }
-    
-    func roundBottomCornersRadius(radius:CGFloat) {
-        self.round(corners: [UIRectCorner.bottomLeft, UIRectCorner.bottomRight], radius:radius)
+    /**
+     Fully rounds an autolayout view (e.g. one with no known frame) with the given diameter and border
+     
+     - parameter diameter:    The view's diameter
+     - parameter borderColor: The border color
+     - parameter borderWidth: The border width
+     */
+    func fullyRound(diameter: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+        layer.masksToBounds = true
+        layer.cornerRadius = diameter / 2
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor;
     }
     
     func addBorder(edges: UIRectEdge, colour: UIColor = UIColor.white, thickness: CGFloat = 1) {
@@ -147,4 +149,41 @@ public extension UIView {
             view = view?.superview
         }
     }
+    
+    func lastSubview() -> UIView? {
+        return subviews.last
+    }
+    
+    func secondLastSubview() -> UIView? {
+        guard let lastSubview = lastSubview() else {
+            return nil
+        }
+        let index = subviews.index(of: lastSubview)!
+        if index >= 1 {
+            return subviews[index - 1]
+        }
+        return nil
+    }
 }
+
+private extension UIView {
+    
+    @discardableResult func _round(corners: UIRectCorner, radius: CGFloat) -> CAShapeLayer {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+        return mask
+    }
+    
+    func addBorder(mask: CAShapeLayer, borderColor: UIColor, borderWidth: CGFloat) {
+        let borderLayer = CAShapeLayer()
+        borderLayer.path = mask.path
+        borderLayer.fillColor = UIColor.clear.cgColor
+        borderLayer.strokeColor = borderColor.cgColor
+        borderLayer.lineWidth = borderWidth
+        borderLayer.frame = bounds
+        layer.addSublayer(borderLayer)
+    }
+}
+

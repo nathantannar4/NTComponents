@@ -12,34 +12,67 @@ open class NTActionSheetAction: NSObject {
     
     public var icon: UIImage?
     public var title: String
+    public var color: UIColor
     public var action: (() -> Void)?
     
-    public required init(title: String, icon: UIImage? = nil, action: (() -> Void)? = nil) {
+    public required init(title: String, icon: UIImage? = nil, color: UIColor = .white, action: (() -> Void)? = nil) {
         self.title = title
         self.icon = icon
+        self.color = color
         self.action = action
     }
     
 }
 
-open class NTActionSheetController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+open class NTActionSheetController: UIViewController  {
 
-    fileprivate let actionTable: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
-        tableView.isScrollEnabled = true
-        tableView.bounces = false
-        return tableView
-    }()
+    open override var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
+    open var subtitle: String? {
+        get {
+            return subtitleLabel.text
+        }
+        set {
+            subtitleLabel.text = newValue
+        }
+    }
     
     fileprivate var actions: [NTActionSheetAction] = []
+    fileprivate var actionButtons: [NTButton] = []
+    
+    public var titleLabel: NTLabel = {
+        let label = NTLabel(type: .title)
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        return label
+    }()
+    
+    public var subtitleLabel: NTLabel = {
+        let label = NTLabel(type: .subtitle)
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        return label
+    }()
+    
+    fileprivate let actionsContainer: NTView = {
+        let view = NTView()
+        view.backgroundColor = .clear
+        view.setDefaultShadow()
+        view.layer.shadowOffset = CGSize(width: 0, height: -2)
+        view.isHidden = true
+        return view
+    }()
     
     // MARK: - Initialization
     
-    public required init(actions: [NTActionSheetAction]?) {
+    public required init(title: String? = nil, subtitle: String? = nil, actions: [NTActionSheetAction] = []) {
         self.init()
-        self.actions = actions ?? []
+        self.title = title
+        self.subtitle = subtitle
+        self.actions = actions
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -50,75 +83,119 @@ open class NTActionSheetController: UIViewController, UITableViewDataSource, UIT
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.modalPresentationStyle = .overCurrentContext
     }
+    
+    // MARK: - Standard Methods
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        actionTable.delegate = self
-        actionTable.dataSource = self
-        
-        view.addSubview(actionTable)
-        actionTable.fillSuperview()
-
-        let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismissSheet))
-        actionTable.addGestureRecognizer(tapAction)
+        view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:)))
+        view.addGestureRecognizer(tapAction)
     }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presentActions()
+    }
+    
+    // MARK: - NTActionSheetAction Methods
     
     public func addAction(_ action: NTActionSheetAction) {
         actions.append(action)
-        actionTable.reloadData()
-        reverseInsertDirection()
     }
     
-    public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100")) {
-        let dismissAction = NTActionSheetAction(title: text, icon: icon) { 
-            self.dismissSheet()
-        }
+    public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100"), color: UIColor = .white) {
+        let dismissAction = NTActionSheetAction(title: text, icon: icon, color: color)
         actions.append(dismissAction)
-        actionTable.reloadData()
-        reverseInsertDirection()
     }
     
-    func reverseInsertDirection() {
-        let numRows = tableView(actionTable, numberOfRowsInSection: 0)
-        var contentInsetTop = UIScreen.main.bounds.height
-        for i in 0..<numRows {
-            contentInsetTop -= tableView(actionTable, heightForRowAt: IndexPath(item: i, section: 0))
-        }
-        actionTable.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0)
-    }
-    
-    public func dismissSheet() {
+    open func createButton(fromAction action: NTActionSheetAction) -> NTButton {
+        let button = NTButton()
+        button.backgroundColor = action.color
         
-        self.dismiss(animated: false, completion: nil)
+        // Title
+        button.title = action.title
+        button.titleFont = Font.Defaults.title
+        button.titleColor = action.color.isLight ? .black : .white
+    
+        // Icon
+        if action.icon != nil {
+            
+            button.contentHorizontalAlignment = .left
+            button.titleEdgeInsets.left = 66
+            
+            let iconView = UIImageView(image: action.icon)
+            iconView.tintColor = action.color.isLight ? .black : .white
+            button.addSubview(iconView)
+            iconView.anchor(nil, left: button.leftAnchor, bottom: nil, right: nil, topConstant: 6, leftConstant: 12, bottomConstant: 6, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+            iconView.anchorCenterYToSuperview()
+        }
+        button.addTarget(self, action: #selector(didSelectAction(sender:)), for: .touchUpInside)
+        return button
     }
     
-    // MARK: - UITableViewDatasource
-    
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+    open func didSelectAction(sender: NTButton) {
+        if let index = actionButtons.index(of: sender) {
+            actions[index].action?()
+            dismiss()
+        }
     }
     
-    final public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    // MARK: - Animation Methods
+    
+    public func presentActions() {
+        
+        let numberOfActions = actions.count
+        
+        if numberOfActions <= 0 {
+            return
+        }
+        
+        let actionButtonHeight = 44
+        let titleLabelHeight: CGFloat = 20
+        let subtitleLabelHeight: CGFloat = 15
+        let containerHeight: CGFloat = CGFloat(numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
+        
+        view.addSubview(actionsContainer)
+        actionsContainer.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: containerHeight)
+        
+        // Header
+        if title != nil {
+            actionsContainer.addSubview(titleLabel)
+            titleLabel.anchor(actionsContainer.topAnchor, left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: titleLabelHeight)
+        }
+        if subtitle != nil {
+            actionsContainer.addSubview(subtitleLabel)
+            subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight)
+        }
+        
+        actionButtons.removeAll()
+        
+        // Actions
+        for action in actions {
+            let button = createButton(fromAction: action)
+            actionButtons.append(button)
+            actionsContainer.addSubview(button)
+            button.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: CGFloat(actionButtonHeight))
+        }
+        
+        self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            self.actionsContainer.isHidden = false
+            self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
+        }, completion: nil)
     }
     
-    final public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actions.count 
-    }
-    
-    final public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = NTTableViewCell()
-        cell.textLabel?.text = actions[indexPath.row].title
-        cell.imageView?.image = actions[indexPath.row].icon?.scale(to: 30)
-        cell.backgroundColor = .white
-        return cell
-    }
-    
-    // MARK: - UITableViewDelegate
-    
-    final public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        actions[indexPath.row].action?()
+    open override func dismiss(animated flag: Bool = false, completion: (() -> Void)? = nil) {
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+            self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
+        }) { (success) in
+            if success {
+                super.dismiss(animated: flag, completion: completion)
+            }
+        }
     }
 }

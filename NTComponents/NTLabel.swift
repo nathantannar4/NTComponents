@@ -25,5 +25,16 @@ public class NTLabel: UILabel {
             font = Font.Defaults.content
         }
     }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.2
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
