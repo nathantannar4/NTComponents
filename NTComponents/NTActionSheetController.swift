@@ -9,19 +9,19 @@
 import UIKit
 
 open class NTActionSheetAction: NSObject {
-    
+
     public var icon: UIImage?
     public var title: String
     public var color: UIColor
     public var action: (() -> Void)?
-    
+
     public required init(title: String, icon: UIImage? = nil, color: UIColor = .white, action: (() -> Void)? = nil) {
         self.title = title
         self.icon = icon
         self.color = color
         self.action = action
     }
-    
+
 }
 
 open class NTActionSheetController: UIViewController  {
@@ -39,24 +39,24 @@ open class NTActionSheetController: UIViewController  {
             subtitleLabel.text = newValue
         }
     }
-    
+
     fileprivate var actions: [NTActionSheetAction] = []
     fileprivate var actionButtons: [NTButton] = []
-    
+
     public var titleLabel: NTLabel = {
         let label = NTLabel(type: .title)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
     }()
-    
+
     public var subtitleLabel: NTLabel = {
         let label = NTLabel(type: .subtitle)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
     }()
-    
+
     fileprivate let actionsContainer: NTView = {
         let view = NTView()
         view.backgroundColor = .clear
@@ -65,69 +65,70 @@ open class NTActionSheetController: UIViewController  {
         view.isHidden = true
         return view
     }()
-    
+
     // MARK: - Initialization
-    
+
     public required init(title: String? = nil, subtitle: String? = nil, actions: [NTActionSheetAction] = []) {
         self.init()
         self.title = title
         self.subtitle = subtitle
         self.actions = actions
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.modalPresentationStyle = .overCurrentContext
     }
-    
+
     // MARK: - Standard Methods
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:)))
         view.addGestureRecognizer(tapAction)
     }
-    
+
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         presentActionSheet()
     }
-    
+
     // MARK: - NTActionSheetAction Methods
-    
+
     public func addAction(_ action: NTActionSheetAction) {
         actions.append(action)
     }
-    
+
     public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100"), color: UIColor = .white) {
         let dismissAction = NTActionSheetAction(title: text, icon: icon, color: color)
         actions.append(dismissAction)
     }
-    
+
     open func createButton(fromAction action: NTActionSheetAction) -> NTButton {
         let button = NTButton()
         button.backgroundColor = action.color
         button.touchUpAnimationTime = 0.2
         button.trackTouchLocation = false
+        button.ripplePercent = 1
         button.imageView?.backgroundColor = .clear
-        
+
         // Title
         button.title = action.title
         button.titleFont = Font.Defaults.title
         button.titleColor = action.color.isLight ? .black : .white
-    
+
         // Icon
         if action.icon != nil {
-            
+
             button.contentHorizontalAlignment = .left
             button.titleEdgeInsets.left = 66
-            
+
             let iconView = UIImageView(image: action.icon)
             iconView.tintColor = action.color.isLight ? .black : .white
             button.addSubview(iconView)
@@ -137,32 +138,32 @@ open class NTActionSheetController: UIViewController  {
         button.addTarget(self, action: #selector(didSelectAction(sender:)), for: .touchUpInside)
         return button
     }
-    
+
     open func didSelectAction(sender: NTButton) {
         if let index = actionButtons.index(of: sender) {
             actions[index].action?()
             dismiss()
         }
     }
-    
+
     // MARK: - Animation Methods
-    
+
     public func presentActionSheet() {
-        
+
         let numberOfActions = actions.count
-        
+
         if numberOfActions <= 0 {
             return
         }
-        
+
         let actionButtonHeight = 44
         let titleLabelHeight: CGFloat = 20
         let subtitleLabelHeight: CGFloat = 15
         let containerHeight: CGFloat = CGFloat(numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
-        
+
         view.addSubview(actionsContainer)
         actionsContainer.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: containerHeight)
-        
+
         // Header
         if title != nil {
             actionsContainer.addSubview(titleLabel)
@@ -172,9 +173,9 @@ open class NTActionSheetController: UIViewController  {
             actionsContainer.addSubview(subtitleLabel)
             subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight)
         }
-        
+
         actionButtons.removeAll()
-        
+
         // Actions
         for action in actions {
             let button = createButton(fromAction: action)
@@ -182,7 +183,7 @@ open class NTActionSheetController: UIViewController  {
             actionsContainer.addSubview(button)
             button.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: CGFloat(actionButtonHeight))
         }
-        
+
         self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
         self.actionsContainer.isHidden = false
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
@@ -190,9 +191,9 @@ open class NTActionSheetController: UIViewController  {
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
         }, completion: nil)
     }
-    
+
     open override func dismiss(animated flag: Bool = false, completion: (() -> Void)? = nil) {
-        
+
         UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseIn, animations: {
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
             self.view.backgroundColor = .clear
