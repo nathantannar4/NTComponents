@@ -44,15 +44,6 @@ import NTComponents
 1. Download and drop ```NTComponents.xcproject``` in your project.  
 2. Link the NTComponents.framework product to your projects binaries
 
-## Usage example
-
-```swift
-import EZSwiftExtensions
-ez.detectScreenShot { () -> () in
-    print("User took a screen shot")
-}
-```
-
 ## Release History
 
 * 0.0.1
