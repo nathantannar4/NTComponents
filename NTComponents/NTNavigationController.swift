@@ -22,6 +22,9 @@ open class NTNavigationController: UINavigationController {
         navigationBar.tintColor = Color.Defaults.navigationBarTint
         navigationBar.barTintColor = Color.Defaults.navigationBarBackground
         navigationBar.isTranslucent = false
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.setDefaultShadow()
     }
     
     required public init?(coder aDecoder: NSCoder) {

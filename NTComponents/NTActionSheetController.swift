@@ -89,7 +89,6 @@ open class NTActionSheetController: UIViewController  {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
         let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:)))
         view.addGestureRecognizer(tapAction)
     }
@@ -97,7 +96,7 @@ open class NTActionSheetController: UIViewController  {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        presentActions()
+        presentActionSheet()
     }
     
     // MARK: - NTActionSheetAction Methods
@@ -114,6 +113,9 @@ open class NTActionSheetController: UIViewController  {
     open func createButton(fromAction action: NTActionSheetAction) -> NTButton {
         let button = NTButton()
         button.backgroundColor = action.color
+        button.touchUpAnimationTime = 0.2
+        button.trackTouchLocation = false
+        button.imageView?.backgroundColor = .clear
         
         // Title
         button.title = action.title
@@ -145,7 +147,7 @@ open class NTActionSheetController: UIViewController  {
     
     // MARK: - Animation Methods
     
-    public func presentActions() {
+    public func presentActionSheet() {
         
         let numberOfActions = actions.count
         
@@ -182,16 +184,18 @@ open class NTActionSheetController: UIViewController  {
         }
         
         self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
+        self.actionsContainer.isHidden = false
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            self.actionsContainer.isHidden = false
+            self.view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
         }, completion: nil)
     }
     
     open override func dismiss(animated flag: Bool = false, completion: (() -> Void)? = nil) {
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseIn, animations: {
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
+            self.view.backgroundColor = .clear
         }) { (success) in
             if success {
                 super.dismiss(animated: flag, completion: completion)

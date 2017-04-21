@@ -10,7 +10,6 @@
 		380460D71E9F1B6E008A03B5 /* NTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460D61E9F1B6E008A03B5 /* NTAlertController.swift */; };
 		380460D91EA06A11008A03B5 /* NTActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460D81EA06A11008A03B5 /* NTActionSheetController.swift */; };
 		380460DC1EA2822B008A03B5 /* NTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DB1EA2822B008A03B5 /* NTTabBar.swift */; };
-		380460DE1EA28244008A03B5 /* NTTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DD1EA28244008A03B5 /* NTTabBarItem.swift */; };
 		380460E61EA28E20008A03B5 /* NTScrollableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */; };
 		380460E81EA28E20008A03B5 /* NTTabBarProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */; };
 		380460EA1EA28E20008A03B5 /* NTScrollableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */; };
@@ -58,6 +57,10 @@
 		38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B20E8B1E6918AE00DD71AC /* Date.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
+		38C7C8C11EA65B3600187EE9 /* NTAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8C01EA65B3600187EE9 /* NTAnimatedView.swift */; };
+		38C7C8DB1EA716D800187EE9 /* NTTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8DA1EA716D800187EE9 /* NTTabBarItem.swift */; };
+		38DE75D01EA99F54004A10D2 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE75CF1EA99F54004A10D2 /* UISearchBar.swift */; };
+		38DE75D21EA99F6F004A10D2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DE75D11EA99F6F004A10D2 /* UITextField.swift */; };
 		38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */; };
 		38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625121E63B4CA003DC7B0 /* NTImageView.swift */; };
 		38E625181E63B4CA003DC7B0 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E625131E63B4CA003DC7B0 /* Datasource.swift */; };
@@ -98,7 +101,6 @@
 		380460D61E9F1B6E008A03B5 /* NTAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertController.swift; sourceTree = "<group>"; };
 		380460D81EA06A11008A03B5 /* NTActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetController.swift; sourceTree = "<group>"; };
 		380460DB1EA2822B008A03B5 /* NTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBar.swift; sourceTree = "<group>"; };
-		380460DD1EA28244008A03B5 /* NTTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarItem.swift; sourceTree = "<group>"; };
 		380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScrollableTabBarItem.swift; sourceTree = "<group>"; };
 		380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarProperties.swift; sourceTree = "<group>"; };
 		380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTScrollableTabBarController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,10 @@
 		38B20E8B1E6918AE00DD71AC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
+		38C7C8C01EA65B3600187EE9 /* NTAnimatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedView.swift; sourceTree = "<group>"; };
+		38C7C8DA1EA716D800187EE9 /* NTTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarItem.swift; sourceTree = "<group>"; };
+		38DE75CF1EA99F54004A10D2 /* UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		38DE75D11EA99F6F004A10D2 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		38E625121E63B4CA003DC7B0 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		38E625131E63B4CA003DC7B0 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
@@ -201,9 +207,8 @@
 			children = (
 				3818F6F11E5BDF5000902E23 /* NTTabBarController.swift */,
 				380460DB1EA2822B008A03B5 /* NTTabBar.swift */,
-				380460DD1EA28244008A03B5 /* NTTabBarItem.swift */,
+				38C7C8DA1EA716D800187EE9 /* NTTabBarItem.swift */,
 				380460E11EA28E20008A03B5 /* NTTabBarProperties.swift */,
-				380460ED1EA29392008A03B5 /* ScrollableTabBar */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -212,8 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				380460E31EA28E20008A03B5 /* NTScrollableTabBarController.swift */,
-				380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */,
 				380460E41EA28E20008A03B5 /* NTScrollableTabBar.swift */,
+				380460DF1EA28E20008A03B5 /* NTScrollableTabBarItem.swift */,
 			);
 			name = ScrollableTabBar;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				3818F6EC1E5BDF5000902E23 /* NTViewController.swift */,
 				380460D51E9F1B31008A03B5 /* Functional */,
 				380460DA1EA28047008A03B5 /* TabBar */,
+				380460ED1EA29392008A03B5 /* ScrollableTabBar */,
 				38E625441E64BF3D003DC7B0 /* Navigation */,
 				38E625431E64BF20003DC7B0 /* Table */,
 				38E625421E64BEE6003DC7B0 /* Collection */,
@@ -296,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				3818F6EA1E5BDF5000902E23 /* NTView.swift */,
+				38C7C8C01EA65B3600187EE9 /* NTAnimatedView.swift */,
 				3818F6EB1E5BDF5000902E23 /* NTToolbar.swift */,
 				3830D6751E62A7F4005C9A31 /* NTLabel.swift */,
 				3830D6771E62A7FD005C9A31 /* NTTextView.swift */,
@@ -324,6 +331,8 @@
 				3849B2B61E651CAB00A86586 /* UIColor.swift */,
 				3849B2B81E651CD400A86586 /* UIImage+UIImageView.swift */,
 				3849B2BE1E651E4600A86586 /* UIView.swift */,
+				38DE75CF1EA99F54004A10D2 /* UISearchBar.swift */,
+				38DE75D11EA99F6F004A10D2 /* UITextField.swift */,
 				3818F6E71E5BDF3A00902E23 /* ViewController.swift */,
 				38084AB71EA30F8400329516 /* PropertyLoopable.swift */,
 			);
@@ -515,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3818F7011E5BDF5000902E23 /* NTPageViewController.swift in Sources */,
+				38DE75D21EA99F6F004A10D2 /* UITextField.swift in Sources */,
 				38E6251B1E63B4CA003DC7B0 /* DefaultCells.swift in Sources */,
 				38E6251A1E63B4CA003DC7B0 /* DatasourceController.swift in Sources */,
 				380460EA1EA28E20008A03B5 /* NTScrollableTabBarController.swift in Sources */,
@@ -542,7 +552,6 @@
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3818F7021E5BDF5000902E23 /* NTTabBarController.swift in Sources */,
 				3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */,
-				380460DE1EA28244008A03B5 /* NTTabBarItem.swift in Sources */,
 				38E625191E63B4CA003DC7B0 /* DatasourceCell.swift in Sources */,
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,
 				3818F6FF1E5BDF5000902E23 /* NTTableView.swift in Sources */,
@@ -557,10 +566,13 @@
 				3818F7001E5BDF5000902E23 /* NTTableViewCell.swift in Sources */,
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */,
+				38C7C8DB1EA716D800187EE9 /* NTTabBarItem.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */,
 				3849B2B91E651CD400A86586 /* UIImage+UIImageView.swift in Sources */,
 				3818F6FD1E5BDF5000902E23 /* NTViewController.swift in Sources */,
+				38DE75D01EA99F54004A10D2 /* UISearchBar.swift in Sources */,
+				38C7C8C11EA65B3600187EE9 /* NTAnimatedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

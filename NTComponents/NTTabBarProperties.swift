@@ -22,6 +22,7 @@ public struct NTTabBarProperties {
     public var pageBackgoundColor: UIColor = Color.Defaults.viewControllerBackground
     public var isTranslucent: Bool = true
     public var hidesTabBarOnSwipe: Bool = false
+    public var postion: NTPresentationDirection = .top
 
     internal var tabBarAlpha: CGFloat {
         return isTranslucent ? 0.95 : 1.0

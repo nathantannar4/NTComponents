@@ -27,7 +27,7 @@ internal class NTScrollableTabBar: UIView {
     
     fileprivate var properties: NTTabBarProperties = NTTabBarProperties()
     fileprivate var beforeIndex: Int = 0
-    fileprivate var currentIndex: Int = 0
+    internal var currentIndex: Int = 0
     fileprivate var pageTabItemsCount: Int = 0
     fileprivate var shouldScrollToItem: Bool = false
     fileprivate var pageTabItemsWidth: CGFloat = 0.0
@@ -104,6 +104,7 @@ internal class NTScrollableTabBar: UIView {
 // MARK: - View
 
 extension NTScrollableTabBar {
+    
 
     /**
      Called when you swipe in isInfinityTabPageViewController, moves the contentOffset of collectionView
@@ -332,16 +333,18 @@ extension NTScrollableTabBar: UICollectionViewDelegateFlowLayout {
 
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        if let size = cachedCellSizes[indexPath] {
-            return size
-        }
+//        if let size = cachedCellSizes[indexPath] {
+//            return size
+//        }
+//        
+//        let cell = NTScrollableTabBarItem()
+//
+//        configureCell(cell, indexPath: indexPath)
+//
+//        let size = cell.sizeThatFits(CGSize(width: collectionView.bounds.width, height: properties.tabHeight))
+//        cachedCellSizes[indexPath] = size
         
-        let cell = NTScrollableTabBarItem()
-
-        configureCell(cell, indexPath: indexPath)
-
-        let size = cell.sizeThatFits(CGSize(width: collectionView.bounds.width, height: properties.tabHeight))
-        cachedCellSizes[indexPath] = size
+        let size = CGSize(width: (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)), height: properties.tabHeight)
 
         return size
     }

@@ -1,66 +1,26 @@
 //
-//  NTButton.swift
+//  NTAnimatedView.swift
 //  NTComponents
 //
-//  Created by Nathan Tannar on 2/25/17.
+//  Created by Nathan Tannar on 4/18/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
-//  Ripple effect created by Amornchai Kanokpullwad on 6/26/14.
-//  Copyright (c) 2014 zoonref. All rights reserved.
 
-import UIKit
-import QuartzCore
 
-open class NTButton: UIButton {
-    
-    // MARK: - Initialization
-    
-    public convenience init() {
-        self.init(frame: .zero)
-        
-        layer.borderColor = Color.Defaults.buttonTint.cgColor
-        tintColor = Color.Defaults.buttonTint
-        titleLabel?.textAlignment = .center
-        titleLabel?.font = Font.Defaults.content
-        setTitleColor(Color.Defaults.buttonTint, for: .normal)
-        imageView?.contentMode = .scaleAspectFit
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
+open class NTAnimatedView: NTView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setup()
     }
     
-    open var title: String? {
-        get {
-            return titleLabel?.text
-        }
-        set {
-            setTitle(newValue, for: .normal)
-        }
+    public convenience init() {
+        self.init(frame: .zero)
     }
     
-    open var titleColor: UIColor? {
-        get {
-            return titleLabel?.textColor
-        }
-        set {
-            setTitleColor(newValue, for: .normal)
-        }
-    }
-    
-    open var titleFont: UIFont? {
-        get {
-            return titleLabel?.font
-        }
-        set {
-            titleLabel?.font = newValue
-        }
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     open override var backgroundColor: UIColor? {
@@ -127,7 +87,7 @@ open class NTButton: UIButton {
         }
     }
     
-    fileprivate func setup() {
+    open func setup() {
         setupRippleView()
         
         rippleBackgroundView.backgroundColor = rippleBackgroundColor
@@ -152,26 +112,28 @@ open class NTButton: UIButton {
         rippleView.layer.cornerRadius = corner
     }
     
-    override open func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    // MARK: - Standard Methods
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if trackTouchLocation {
-            touchCenterLocation = touch.location(in: self)
+            rippleView.center = touches.first?.location(in: self) ?? center
         } else {
-            touchCenterLocation = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+            rippleView.center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         }
         
         animate()
         
-        return super.beginTracking(touch, with: event)
+        return super.touchesBegan(touches, with: event)
     }
     
-    override open func cancelTracking(with event: UIEvent?) {
-        super.cancelTracking(with: event)
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         animateToNormal()
     }
     
-    override open func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        super.endTracking(touch, with: event)
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
         animateToNormal()
     }
     
@@ -219,22 +181,22 @@ open class NTButton: UIButton {
         
         
         UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction],
-               animations: {
-                self.rippleView.transform = CGAffineTransform.identity
-                
-                let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
-                shadowAnim.toValue = self.tempShadowRadius
-                
-                let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
-                opacityAnim.toValue = self.tempShadowOpacity
-                
-                let groupAnim = CAAnimationGroup()
-                groupAnim.duration = 0.7
-                groupAnim.fillMode = kCAFillModeForwards
-                groupAnim.isRemovedOnCompletion = false
-                groupAnim.animations = [shadowAnim, opacityAnim]
-                
-                self.layer.add(groupAnim, forKey:"shadowBack")
+                       animations: {
+                        self.rippleView.transform = CGAffineTransform.identity
+                        
+                        let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
+                        shadowAnim.toValue = self.tempShadowRadius
+                        
+                        let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
+                        opacityAnim.toValue = self.tempShadowOpacity
+                        
+                        let groupAnim = CAAnimationGroup()
+                        groupAnim.duration = 0.7
+                        groupAnim.fillMode = kCAFillModeForwards
+                        groupAnim.isRemovedOnCompletion = false
+                        groupAnim.animations = [shadowAnim, opacityAnim]
+                        
+                        self.layer.add(groupAnim, forKey:"shadowBack")
         }, completion: nil)
     }
     
@@ -249,5 +211,4 @@ open class NTButton: UIButton {
         rippleBackgroundView.layer.frame = bounds
         rippleBackgroundView.layer.mask = rippleMask
     }
-
 }

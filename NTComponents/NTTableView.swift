@@ -10,19 +10,19 @@ import UIKit
 
 public class NTTableView: UITableView {
     
-    public var imageDataSource: NTTableViewDataSource?
+    public var imageDataSource: NTTableViewImageDataSource?
     
     public init() {
         super.init(frame: .zero, style: .plain)
-        self.setTableDefaults()
+        self.backgroundColor = UIColor.clear
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    public func setTableDefaults() {
-        self.backgroundColor = UIColor.clear
+    public override func deselectRow(at indexPath: IndexPath, animated: Bool) {
+        super.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -51,17 +51,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let alertsVC = DemoAlertsViewController()
         centerVC.tabItems.append((alertsVC, "Alerts"))
         
-        for i in 3...4 {
-            let vc = NTViewController()
-            vc.view.backgroundColor = .white
-            centerVC.tabItems.append((vc, "Tab \(i + 1)"))
+        var tabVCs = [UIViewController]()
+        for i in 0...2 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = Color.BlueGray.P500.lighter(by: CGFloat(i * 5))
+            vc.title = "Title"
+            vc.tabBarItem.image = Icon.google
+            tabVCs.append(vc)
         }
-        var properties = NTTabBarProperties()
-        properties.tabWidth = window!.frame.width / CGFloat(centerVC.tabItems.count)
-        centerVC.properties = properties
+    
+        let tabVC = NTTabBarController(viewControllers: tabVCs)
+        centerVC.tabItems.append((tabVC, "TabBar"))
+        
+        
         centerVC.properties.hidesTabBarOnSwipe = true
         
-        window?.rootViewController = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        
+        
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true

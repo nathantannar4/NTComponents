@@ -6,11 +6,11 @@
 //  Copyright © 2016 Nathan Tannar. All rights reserved.
 //
 
-public protocol NTTableViewDataSource: NSObjectProtocol {
+public protocol NTTableViewImageDataSource: NSObjectProtocol {
     func imageForStretchyView(in tableView: NTTableView) -> UIImage?
 }
 
-open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrollViewDelegate {
+open class NTTableViewController: NTViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     // Public Variables
     public var tableView: NTTableView = {
@@ -34,6 +34,8 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         return imageView
     }()
     
+    // MARK: - Standard Methods
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,10 +46,9 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         stretchyImageView.fillSuperview()
         
         tableView.delegate = self
+        tableView.dataSource = self
         view.addSubview(tableView)
         tableView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        tableView.contentInset.top = stretchyHeaderHeight
-        tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight)
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -56,9 +57,12 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         updateStretchyViewImage()
     }
     
+    // MARK: - NTTableViewImageDataSource
+    
     public func updateStretchyViewImage() {
         guard let image = tableView.imageDataSource?.imageForStretchyView(in: tableView) else {
-            Log.write(.warning, "StretchyViewImage for NTTableView not found")
+            tableView.contentInset.top = 0
+            tableView.contentOffset = CGPoint(x: 0, y: 0)
             return
         }
         
@@ -67,6 +71,9 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
                 UIApplication.shared.statusBarStyle = .lightContent
             }
         }
+        
+        tableView.contentInset.top = stretchyHeaderHeight
+        tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight)
         
         stretchyImageView.image = image
         stretchyView.clipsToBounds = true
@@ -188,5 +195,29 @@ open class NTTableViewController: NTViewController, UITableViewDelegate, UIScrol
         
         // Apply Transformation
         stretchyView.layer.transform = headerTransform
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    open func numberOfSections(in tableView: UITableView) -> Int {
+        return 0
+    }
+    
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return NTTableViewCell()
+    }
+    
+    // MAKR: - UITableViewDelegate
+    
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Log.write(.status, "Selected row at index path \(indexPath)")
     }
 }

@@ -9,12 +9,11 @@
 import UIKit
 import NTComponents
 
-class DemoTableViewController: NTTableViewController, NTTableViewDataSource, UITableViewDataSource {
+class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.imageDataSource = self
         stretchyHeaderHeight = 250
         addTopGradientToStretchyImage()
@@ -25,16 +24,16 @@ class DemoTableViewController: NTTableViewController, NTTableViewDataSource, UIT
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 30
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = NTTableViewCell()
         cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }

@@ -43,6 +43,8 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
         let button = NTButton()
         button.backgroundColor = Color.Defaults.tabBarBackgound
         button.titleFont = Font.Defaults.subtitle
+        button.trackTouchLocation = false
+        button.ripplePercent = 1
         return button
     }()
     
@@ -111,11 +113,14 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     }
 
     internal func unHighlightTitle() {
-        animatedButton.titleColor = Color.Defaults.tabBarBackgound.isLight ? .lightGray : .white
+        animatedButton.titleColor = Color.Defaults.tabBarBackgound.isLight ? Color.Gray.P500 : .white
     }
     
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        if animatedButton.title!.characters.count == 0 {
+        guard let title = animatedButton.title else {
+            return .zero
+        }
+        if title.characters.count == 0 {
             return .zero
         }
         

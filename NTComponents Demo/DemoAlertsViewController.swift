@@ -56,7 +56,7 @@ class DemoAlertsViewController: NTViewController {
             Toast(text: "Twitter").show(self.view, duration: 3.0)
         }))
         let actionSheet = NTActionSheetController(actions: actions)
-        actionSheet.addDismissAction(color: .black)
+        actionSheet.addDismissAction()
         present(actionSheet, animated: false, completion: nil)
         
     }

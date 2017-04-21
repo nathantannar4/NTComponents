@@ -14,25 +14,20 @@ public enum NTViewState {
 
 open class NTView: UIView {
     
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        for subview in self.subviews {
+            subview.tintColor = Color.Defaults.tint
+        }
+        backgroundColor = .white
     }
     
     public convenience init() {
         self.init(frame: .zero)
     }
     
-    open override func awakeFromNib() {
-        for subview in self.subviews {
-            subview.tintColor = Color.Defaults.tint
-        }
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-    public var cornersRounded: UIRectCorner = UIRectCorner()
-    public var cornerRadius: CGFloat = 0
-
 }

@@ -102,6 +102,12 @@ open class NTScrollableTabBarController: UIPageViewController {
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
+    
+    open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tabView.collectionView.collectionViewLayout.invalidateLayout()
+        view.setNeedsDisplay()
+        
+    }
 
     public func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
 
@@ -154,10 +160,7 @@ extension NTScrollableTabBarController {
 
     fileprivate func updateNavigationBar() {
         if let navigationBar = navigationController?.navigationBar {
-            navigationBar.shadowImage = UIImage()
-            navigationBar.setBackgroundImage(UIImage(), for: .default)
-            navigationBar.barTintColor = Color.Defaults.navigationBarBackground
-            navigationBar.isTranslucent = false
+            navigationBar.layer.shadowOpacity = 0
         }
     }
 
@@ -175,31 +178,37 @@ extension NTScrollableTabBarController {
         tabView.addConstraint(height)
         view.addSubview(tabView)
 
-        let top = NSLayoutConstraint(item: tabView,
-                                     attribute: .top,
-                                     relatedBy: .equal,
-                                     toItem: topLayoutGuide,
-                                     attribute: .bottom,
-                                     multiplier:1.0,
-                                     constant: 0.0)
+//        let top = NSLayoutConstraint(item: tabView,
+//                                     attribute: .top,
+//                                     relatedBy: .equal,
+//                                     toItem: topLayoutGuide,
+//                                     attribute: .bottom,
+//                                     multiplier:1.0,
+//                                     constant: 0.0)
+//
+//        let left = NSLayoutConstraint(item: tabView,
+//                                      attribute: .leading,
+//                                      relatedBy: .equal,
+//                                      toItem: view,
+//                                      attribute: .leading,
+//                                      multiplier: 1.0,
+//                                      constant: 0.0)
+//
+//        let right = NSLayoutConstraint(item: view,
+//                                       attribute: .trailing,
+//                                       relatedBy: .equal,
+//                                       toItem: tabView,
+//                                       attribute: .trailing,
+//                                       multiplier: 1.0,
+//                                       constant: 0.0)
 
-        let left = NSLayoutConstraint(item: tabView,
-                                      attribute: .leading,
-                                      relatedBy: .equal,
-                                      toItem: view,
-                                      attribute: .leading,
-                                      multiplier: 1.0,
-                                      constant: 0.0)
-
-        let right = NSLayoutConstraint(item: view,
-                                       attribute: .trailing,
-                                       relatedBy: .equal,
-                                       toItem: tabView,
-                                       attribute: .trailing,
-                                       multiplier: 1.0,
-                                       constant: 0.0)
-
-        view.addConstraints([top, left, right])
+//        view.addConstraints([top, left, right])
+        
+        if properties.postion == .top {
+            tabView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        } else {
+            tabView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        }
 
         tabView.pageTabItems = tabItems.map({ $0.title})
         tabView.updateCurrentIndex(beforeIndex, shouldScroll: true)
@@ -208,7 +217,7 @@ extension NTScrollableTabBarController {
             self?.displayControllerWithIndex(index, direction: direction, animated: true)
         }
 
-        tabBarTopConstraint = top
+//        tabBarTopConstraint = top
 
         return tabView
     }

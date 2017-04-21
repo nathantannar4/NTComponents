@@ -10,28 +10,30 @@ import UIKit
 
 open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
     
-    public lazy var searchBar = UISearchBar()
+    public var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.tintColor = Color.Defaults.navigationBarTint
+        searchBar.placeholder = "Search"
+        searchBar.showsScopeBar = true
+        return searchBar
+    }()
+    
+    // MARK: - Standard Methods
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateNavigationBar()
-        self.searchBar.delegate = self
-        self.searchBar.tintColor = Color.Defaults.tint
-        self.searchBar.placeholder = "Search Users"
-        self.searchBar.autocapitalizationType = .words
-        self.searchBar.showsCancelButton = false
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil),UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil)]
-        self.navigationItem.titleView = self.searchBar
-        self.updateResults()
+        searchBar.delegate = self
+        navigationItem.titleView = self.searchBar
+        updateResults()
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
-    // MARK: User Actions
+    // MARK: NTSearchViewController Methods
     
     open func updateResults() {
         Log.write(.warning, "You have not overridden the search results handler")
@@ -39,33 +41,27 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
     
     // MARK: - UISearchBar Delegate
     
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.updateResults()
+    open func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        updateResults()
     }
     
-    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(searchBarTextDidEndEditing))
-        cancelButton.tintColor = Color.Defaults.tint
-        self.navigationItem.rightBarButtonItem = cancelButton
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBarCancelled()
     }
     
-    public func searchBarTextDidEndEditing() {
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil),UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil)]
-        if !self.searchBar.text!.isEmpty {
-            self.searchBarCancelled()
-        } else {
-            self.searchBar.resignFirstResponder()
-        }
+    open func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
     }
     
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.resignFirstResponder()
+    open func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
-    public func searchBarCancelled() {
-        self.searchBar.text = String()
-        self.searchBar.resignFirstResponder()
-        self.updateResults()
+    open func searchBarCancelled() {
+        searchBar.text = String()
+        searchBar.resignFirstResponder()
+        updateResults()
     }
 }
 

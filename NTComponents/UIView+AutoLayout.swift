@@ -84,7 +84,9 @@ public extension UIView {
         }
         
         if let right = right {
-            anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
+            let constraint = rightAnchor.constraint(equalTo: right, constant: -rightConstant)
+            constraint.identifier = "right"
+            anchors.append(constraint)
         }
         
         if widthConstant > 0 {
@@ -140,5 +142,15 @@ public extension UIView {
             }
         }
         return nil
+    }
+    
+    func anchorWidthToItem(_ item: UIView) {
+        let widthConstraint = widthAnchor.constraint(equalTo: item.widthAnchor, multiplier: 1)
+        widthConstraint.isActive = true
+    }
+    
+    func anchorHeightToItem(_ item: UIView) {
+        let widthConstraint = heightAnchor.constraint(equalTo: item.heightAnchor, multiplier: 1)
+        widthConstraint.isActive = true
     }
 }
