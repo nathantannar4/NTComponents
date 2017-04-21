@@ -5,17 +5,15 @@
 //  Created by Nathan Tannar on 1/7/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
-// Colors From https://material.io/guidelines/style/color.html
-
-import UIKit
+//  Colors From https://material.io/guidelines/style/color.html & https://experience.sap.com/fiori-design-ios/
+//  Use the Material Design Color Tool to design your palette: https://material.io/color/#!/?view.left=0&view.right=0
+//
 
 public struct Color {
-    
+
     public init() {}
-    
-    public static let FacebookBlue = UIColor(hex: "#3b5998")
-    public static let TwitterBlue = UIColor(hex: "#00aced")
-    
+
+    // Depricated
     public struct Defaults {
         public static var tint = UIColor(hex: "007AFF")
         public static var viewControllerBackground = UIColor.groupTableViewBackground
@@ -25,9 +23,100 @@ public struct Color {
         public static var tabBarBackgound = UIColor.white
         public static var buttonTint = UIColor(hex: "007AFF")
         public static var titleTextColor = UIColor.black
-        public static var subtitleTextColor = UIColor.darkGray
+        public static var subtitleTextColor = Color.Gray.P500
     }
-    
+
+    public struct Default {
+
+        /**
+         Overrides the default background colors of navigation views and buttons with some having lighter/darker variations
+
+         - note: The tint color will be adjusted to black or white
+         - parameter to: The base color used to set new values
+         - returns: Void
+        */
+        public static func setPrimary(to color: UIColor) {
+
+        }
+
+        /**
+         Overrides the default background/tint colors of navigation views and buttons with some having lighter/darker variations
+
+         - parameter to: The base color used to set new values
+         - returns: Void
+        */
+        public static func setSecondary(to color: UIColor) {
+
+        }
+
+        /**
+         Overrides the default background colors of controllers and views with some having lighter/darker variations
+
+         - parameter to: The base color used to set new values
+         - returns: Void
+        */
+        public static func setTertiary(to color: UIColor) {
+
+        }
+
+        /**
+         Overrides the default background/tint colors of buttons
+
+         - parameter to: The base color used to set new values
+         - returns: Void
+        */
+        public static func setAccent(to color: UIColor) {
+
+        }
+
+        public struct Tint: PropertyLoopable {
+
+            // 007AFF is the hex code for the default blue tint in iOS
+            public static var View          =  UIColor(hex: "007AFF")
+            public static var Button        =  UIColor(hex: "007AFF")
+            public static var NavigationBar =  UIColor(hex: "007AFF")
+            public static var TabBar        =  UIColor(hex: "007AFF")
+            public static var Toolbar       =  UIColor(hex: "007AFF")
+
+            public static func overrideAll(with newColor: UIColor) {
+                for color in (try! Color.Default.Tint.allProperties()) {
+                    color = newColor
+                }
+            }
+        }
+
+        public struct Background: PropertyLoopable {
+            public static var View             =  Color.White
+            public static var ViewController   =  UIColor(hex: "EFEFF4")
+            public static var ButtonBackground =  Color.White
+            public static var NavigationBar    =  Color.White
+            public static var TabBar           =  Color.White
+            public static var Toolbar          =  Color.White
+        }
+
+        public struct Text: PropertyLoopable {
+            public static var Title     = Color.Gray.P900
+            public static var Subtitle  = Color.Gray.P800
+            public static var Body      = UIColor(hex: "#333333")
+            public static var Callout   = UIColor(hex: "#333333")
+            public static var Caption   = UIColor(hex: "#333333")
+            public static var Footnote  = UIColor(hex: "#333333")
+            public static var Headline  = UIColor(hex: "#333333")
+            public static var Subhead   = UIColor(hex: "#8E8E8E")
+            public static var Disabled  = Color.Gray.P500
+        }
+
+        public struct Status: PropertyLoopable {
+            public static var Info    = Color.White
+            public static var Success = UIColor(hex: "#37D387")
+            public static var Warning = UIColor(hex: "#FFB200")
+            public static var Danger  = UIColor(hex: "#FF6E6E")
+        }
+    }
+
+    public static let FacebookBlue = UIColor(hex: "#3b5998")
+    public static let TwitterBlue  = UIColor(hex: "#00aced")
+
     public struct Red {
         public static let P50	= UIColor(rgba: 0xFDE0DCFF)
         public static let P100	= UIColor(rgba: 0xF9BDBBFF)
@@ -44,7 +133,7 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xFF2D6FFF)
         public static let A700	= UIColor(rgba: 0xE00032FF)
     }
-    
+
     public struct Pink {
         public static let P50	= UIColor(rgba: 0xFCE4ECFF)
         public static let P100	= UIColor(rgba: 0xF8BBD0FF)
@@ -61,7 +150,7 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xF50057FF)
         public static let A700	= UIColor(rgba: 0xC51162FF)
     }
-    
+
     public struct Purple {
         public static let P50	= UIColor(rgba: 0xF3E5F5FF)
         public static let P100	= UIColor(rgba: 0xE1BEE7FF)
@@ -78,9 +167,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xD500F9FF)
         public static let A700	= UIColor(rgba: 0xAA00FFFF)
     }
-    
+
     public struct DeepPurple {
-        public static let P50	= UIColor(rgba: 0xEDE7F6FF)
+        public static let P50  	= UIColor(rgba: 0xEDE7F6FF)
         public static let P100	= UIColor(rgba: 0xD1C4E9FF)
         public static let P200	= UIColor(rgba: 0xB39DDBFF)
         public static let P300	= UIColor(rgba: 0x9575CDFF)
@@ -95,9 +184,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x651FFFFF)
         public static let A700	= UIColor(rgba: 0x6200EAFF)
     }
-    
+
     public struct Indigo {
-        public static let P50	= UIColor(rgba: 0xE8EAF6FF)
+        public static let P50   = UIColor(rgba: 0xE8EAF6FF)
         public static let P100	= UIColor(rgba: 0xC5CAE9FF)
         public static let P200	= UIColor(rgba: 0x9FA8DAFF)
         public static let P300	= UIColor(rgba: 0x7986CBFF)
@@ -112,7 +201,7 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x3D5AFEFF)
         public static let A700	= UIColor(rgba: 0x304FFEFF)
     }
-    
+
     public struct Blue {
         public static let P50	= UIColor(rgba: 0xE7E9FDFF)
         public static let P100	= UIColor(rgba: 0xD0D9FFFF)
@@ -129,9 +218,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x4D73FFFF)
         public static let A700	= UIColor(rgba: 0x4D69FFFF)
     }
-    
+
     public struct LightBlue {
-        public static let P50	= UIColor(rgba: 0xE1F5FEFF)
+        public static let P50   = UIColor(rgba: 0xE1F5FEFF)
         public static let P100	= UIColor(rgba: 0xB3E5FCFF)
         public static let P200	= UIColor(rgba: 0x81D4FAFF)
         public static let P300	= UIColor(rgba: 0x4FC3F7FF)
@@ -146,7 +235,7 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x00B0FFFF)
         public static let A700	= UIColor(rgba: 0x0091EAFF)
     }
-    
+
     public struct Cyan {
         public static let P50	= UIColor(rgba: 0xE0F7FAFF)
         public static let P100	= UIColor(rgba: 0xB2EBF2FF)
@@ -163,9 +252,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x00E5FFFF)
         public static let A700	= UIColor(rgba: 0x00B8D4FF)
     }
-    
+
     public struct Teal {
-        public static let P50	= UIColor(rgba: 0xE0F2F1FF)
+        public static let P50  	= UIColor(rgba: 0xE0F2F1FF)
         public static let P100	= UIColor(rgba: 0xB2DFDBFF)
         public static let P200	= UIColor(rgba: 0x80CBC4FF)
         public static let P300	= UIColor(rgba: 0x4DB6ACFF)
@@ -180,7 +269,7 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x1DE9B6FF)
         public static let A700	= UIColor(rgba: 0x00BFA5FF)
     }
-    
+
     public struct Green {
         public static let P50	= UIColor(rgba: 0xD0F8CEFF)
         public static let P100	= UIColor(rgba: 0xA3E9A4FF)
@@ -197,9 +286,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x14E715FF)
         public static let A700	= UIColor(rgba: 0x12C700FF)
     }
-    
+
     public struct LightGreen {
-        public static let P50	= UIColor(rgba: 0xF1F8E9FF)
+        public static let P50  	= UIColor(rgba: 0xF1F8E9FF)
         public static let P100	= UIColor(rgba: 0xDCEDC8FF)
         public static let P200	= UIColor(rgba: 0xC5E1A5FF)
         public static let P300	= UIColor(rgba: 0xAED581FF)
@@ -214,9 +303,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0x76FF03FF)
         public static let A700	= UIColor(rgba: 0x64DD17FF)
     }
-    
+
     public struct Lime {
-        public static let P50	= UIColor(rgba: 0xF9FBE7FF)
+        public static let P50 	= UIColor(rgba: 0xF9FBE7FF)
         public static let P100	= UIColor(rgba: 0xF0F4C3FF)
         public static let P200	= UIColor(rgba: 0xE6EE9CFF)
         public static let P300	= UIColor(rgba: 0xDCE775FF)
@@ -231,9 +320,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xC6FF00FF)
         public static let A700	= UIColor(rgba: 0xAEEA00FF)
     }
-    
+
     public struct Yellow {
-        public static let P50	= UIColor(rgba: 0xFFFDE7FF)
+        public static let P50 	= UIColor(rgba: 0xFFFDE7FF)
         public static let P100	= UIColor(rgba: 0xFFF9C4FF)
         public static let P200	= UIColor(rgba: 0xFFF59DFF)
         public static let P300	= UIColor(rgba: 0xFFF176FF)
@@ -248,9 +337,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xFFEA00FF)
         public static let A700	= UIColor(rgba: 0xFFD600FF)
     }
-    
+
     public struct Amber {
-        public static let P50	= UIColor(rgba: 0xFFF8E1FF)
+        public static let P50 	= UIColor(rgba: 0xFFF8E1FF)
         public static let P100	= UIColor(rgba: 0xFFECB3FF)
         public static let P200	= UIColor(rgba: 0xFFE082FF)
         public static let P300	= UIColor(rgba: 0xFFD54FFF)
@@ -265,9 +354,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xFFC400FF)
         public static let A700	= UIColor(rgba: 0xFFAB00FF)
     }
-    
+
     public struct Orange {
-        public static let P50	= UIColor(rgba: 0xFFF3E0FF)
+        public static let P50 	= UIColor(rgba: 0xFFF3E0FF)
         public static let P100	= UIColor(rgba: 0xFFE0B2FF)
         public static let P200	= UIColor(rgba: 0xFFCC80FF)
         public static let P300	= UIColor(rgba: 0xFFB74DFF)
@@ -282,9 +371,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xFF9100FF)
         public static let A700	= UIColor(rgba: 0xFF6D00FF)
     }
-    
+
     public struct DeepOrange {
-        public static let P50	= UIColor(rgba: 0xFBE9E7FF)
+        public static let P50 	= UIColor(rgba: 0xFBE9E7FF)
         public static let P100	= UIColor(rgba: 0xFFCCBCFF)
         public static let P200	= UIColor(rgba: 0xFFAB91FF)
         public static let P300	= UIColor(rgba: 0xFF8A65FF)
@@ -299,9 +388,9 @@ public struct Color {
         public static let A400	= UIColor(rgba: 0xFF3D00FF)
         public static let A700	= UIColor(rgba: 0xDD2C00FF)
     }
-    
+
     public struct Brown {
-        public static let P50	= UIColor(rgba: 0xEFEBE9FF)
+        public static let P50 	= UIColor(rgba: 0xEFEBE9FF)
         public static let P100	= UIColor(rgba: 0xD7CCC8FF)
         public static let P200	= UIColor(rgba: 0xBCAAA4FF)
         public static let P300	= UIColor(rgba: 0xA1887FFF)
@@ -312,7 +401,7 @@ public struct Color {
         public static let P800	= UIColor(rgba: 0x4E342EFF)
         public static let P900	= UIColor(rgba: 0x3E2723FF)
     }
-    
+
     public struct Gray {
         public static let P0	= UIColor(rgba: 0xFFFFFFFF)
         public static let P50	= UIColor(rgba: 0xFAFAFAFF)
@@ -327,9 +416,9 @@ public struct Color {
         public static let P900	= UIColor(rgba: 0x212121FF)
         public static let P1000 = UIColor(rgba: 0x000000FF)
     }
-    
+
     public struct BlueGray {
-        public static let P50	= UIColor(rgba: 0xECEFF1FF)
+        public static let P50 	= UIColor(rgba: 0xECEFF1FF)
         public static let P100	= UIColor(rgba: 0xCFD8DCFF)
         public static let P200	= UIColor(rgba: 0xB0BEC5FF)
         public static let P300	= UIColor(rgba: 0x90A4AEFF)
@@ -340,4 +429,8 @@ public struct Color {
         public static let P800	= UIColor(rgba: 0x37474FFF)
         public static let P900	= UIColor(rgba: 0x263238FF)
     }
+
+    public static let Black = UIColor(hex: "000000")
+
+    public static let White = UIColor(hex: "FFFFFF")
 }
