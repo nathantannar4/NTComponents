@@ -17,9 +17,7 @@ open class NTView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        for subview in self.subviews {
-            subview.tintColor = Color.Defaults.tint
-        }
+        tintColor = Color.Default.Tint.View
         backgroundColor = .white
     }
     

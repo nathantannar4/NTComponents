@@ -18,11 +18,12 @@ open class NTButton: UIButton {
     public convenience init() {
         self.init(frame: .zero)
         
-        layer.borderColor = Color.Defaults.buttonTint.cgColor
-        tintColor = Color.Defaults.buttonTint
+        backgroundColor = Color.Default.Background.Button
+        tintColor = Color.Default.Tint.Button
+        contentHorizontalAlignment = .center
         titleLabel?.textAlignment = .center
         titleLabel?.font = Font.Defaults.content
-        setTitleColor(Color.Defaults.buttonTint, for: .normal)
+        setTitleColor(Color.Default.Tint.Button, for: .normal)
         imageView?.contentMode = .scaleAspectFit
     }
     

@@ -8,13 +8,11 @@
 //  Typography defaults inspired by https://experience.sap.com/fiori-design-ios/article/typography/
 //
 
-enum NTPreferredFontStyle {
+public enum NTPreferredFontStyle {
     case title, subtitle, body, callout, caption, footnote, headline, subhead, disabled
 }
 
 public struct Font {
-
-    public init() {}
 
     public static func whatIsAvailable() {
         for familyName in UIFont.familyNames {
@@ -141,46 +139,6 @@ extension UITextField {
 }
 
 extension UITextView {
-    /**
-     Sets the textColor and font to that stored in Color.Default.Text and Font.Default
-
-     - parameter to: The style of your preferred font
-     - returns: Void
-    */
-    func setPreferredFontStyle(to style: NTPreferredFontStyle) {
-        switch style {
-        case .title:
-            self.textColor = Color.Default.Text.Title
-            self.font = Font.Default.Title
-        case .subtitle:
-            self.textColor = Color.Default.Text.Subtitle
-            self.font = Font.Default.Subtitle
-        case .body:
-            self.textColor = Color.Default.Text.Body
-            self.font = Font.Default.Body
-        case .callout:
-            self.textColor = Color.Default.Text.Callout
-            self.font = Font.Default.Callout
-        case .caption:
-            self.textColor = Color.Default.Text.Caption
-            self.font = Font.Default.Caption
-        case .footnote:
-            self.textColor = Color.Default.Text.Footnote
-            self.font = Font.Default.Footnote
-        case .headline:
-            self.textColor = Color.Default.Text.Headline
-            self.font = Font.Default.Headline
-        case .subhead:
-            self.textColor = Color.Default.Text.Subhead
-            self.font = Font.Default.Subhead
-        case .disabled:
-            self.textColor = Color.Default.Text.Disabled
-            self.font = Font.Default.Disabled
-        }
-    }
-}
-
-extension UISearchBar {
     /**
      Sets the textColor and font to that stored in Color.Default.Text and Font.Default
 

@@ -9,9 +9,7 @@
 import UIKit
 import Foundation
 
-public struct Icon: PropertyLoopable {
-    
-    public init() {}
+public struct Icon {
     
     /// An internal reference to the icons bundle.
     private static var internalBundle: Bundle?

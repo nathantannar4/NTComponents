@@ -11,42 +11,37 @@
 
 public struct Color {
 
-    public init() {}
-
-    // Depricated
-    public struct Defaults {
-        public static var tint = UIColor(hex: "007AFF")
-        public static var viewControllerBackground = UIColor.groupTableViewBackground
-        public static var navigationBarTint = UIColor(hex: "007AFF")
-        public static var navigationBarBackground = UIColor.white
-        public static var tabBarTint = UIColor(hex: "007AFF")
-        public static var tabBarBackgound = UIColor.white
-        public static var buttonTint = UIColor(hex: "007AFF")
-        public static var titleTextColor = UIColor.black
-        public static var subtitleTextColor = Color.Gray.P500
-    }
-
     public struct Default {
 
         /**
-         Overrides the default background colors of navigation views and buttons with some having lighter/darker variations
+         Overrides the default background colors of navigation views and buttons
 
          - note: The tint color will be adjusted to black or white
          - parameter to: The base color used to set new values
          - returns: Void
         */
         public static func setPrimary(to color: UIColor) {
-
+            Color.Default.Background.NavigationBar = color
+            Color.Default.Background.TabBar = color
+            Color.Default.Background.Button = color
+            Color.Default.Tint.Toolbar = color
+            Color.Default.Tint.View = color
+            Color.Default.Status.Info = color
         }
 
         /**
-         Overrides the default background/tint colors of navigation views and buttons with some having lighter/darker variations
+         Overrides the default background/tint colors of navigation views and buttons
 
          - parameter to: The base color used to set new values
          - returns: Void
         */
         public static func setSecondary(to color: UIColor) {
-
+            Color.Default.Tint.Button = color
+            Color.Default.Tint.NavigationBar = color
+            Color.Default.Tint.TabBar = color
+            Color.Default.Text.Title = color
+            Color.Default.Text.Subtitle = color.darker(by: 20)
+            Color.Default.Tint.Inactive = color.darker(by: 20)
         }
 
         /**
@@ -69,7 +64,7 @@ public struct Color {
 
         }
 
-        public struct Tint: PropertyLoopable {
+        public struct Tint {
 
             // 007AFF is the hex code for the default blue tint in iOS
             public static var View          =  UIColor(hex: "007AFF")
@@ -77,24 +72,19 @@ public struct Color {
             public static var NavigationBar =  UIColor(hex: "007AFF")
             public static var TabBar        =  UIColor(hex: "007AFF")
             public static var Toolbar       =  UIColor(hex: "007AFF")
-
-            public static func overrideAll(with newColor: UIColor) {
-                for color in (try! Color.Default.Tint.allProperties()) {
-                    color = newColor
-                }
-            }
+            public static var Inactive      =  Color.Gray.P500
         }
 
-        public struct Background: PropertyLoopable {
+        public struct Background {
             public static var View             =  Color.White
             public static var ViewController   =  UIColor(hex: "EFEFF4")
-            public static var ButtonBackground =  Color.White
+            public static var Button           =  Color.White
             public static var NavigationBar    =  Color.White
             public static var TabBar           =  Color.White
             public static var Toolbar          =  Color.White
         }
 
-        public struct Text: PropertyLoopable {
+        public struct Text {
             public static var Title     = Color.Gray.P900
             public static var Subtitle  = Color.Gray.P800
             public static var Body      = UIColor(hex: "#333333")
@@ -106,7 +96,7 @@ public struct Color {
             public static var Disabled  = Color.Gray.P500
         }
 
-        public struct Status: PropertyLoopable {
+        public struct Status {
             public static var Info    = Color.White
             public static var Success = UIColor(hex: "#37D387")
             public static var Warning = UIColor(hex: "#FFB200")

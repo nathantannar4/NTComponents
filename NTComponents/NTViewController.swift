@@ -51,7 +51,7 @@ open class NTViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Color.Defaults.viewControllerBackground
+        view.backgroundColor = Color.Default.Background.ViewController
     }
     
     override open func viewDidAppear(_ animated: Bool) {
@@ -75,7 +75,7 @@ open class NTViewController: UIViewController {
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {
         if self.title != nil {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Defaults.titleTextColor.withAlphaComponent(alpha), subtitleColor: Color.Defaults.subtitleTextColor.withAlphaComponent(alpha))
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title.withAlphaComponent(alpha), subtitleColor: Color.Default.Text.Subtitle.withAlphaComponent(alpha))
         }
     }
 }

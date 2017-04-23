@@ -13,7 +13,7 @@ open class NTAlertViewController: UIViewController  {
     fileprivate var currentState: NTViewState = .hidden
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(type: .title)
+        let label = NTLabel(style: .title)
         label.numberOfLines = 0
         label.font = Font.Defaults.title.withSize(20)
         label.textAlignment = .center
@@ -21,7 +21,7 @@ open class NTAlertViewController: UIViewController  {
     }()
     
     open let subtitleLabel: NTLabel = {
-        let label = NTLabel(type: .subtitle)
+        let label = NTLabel(style: .subtitle)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -39,7 +39,7 @@ open class NTAlertViewController: UIViewController  {
         let button = NTButton()
         button.title = "Cancel"
         button.titleColor = .white
-        button.backgroundColor = Color.Red.P500
+        button.backgroundColor = Color.Default.Status.Danger
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
         
@@ -51,7 +51,7 @@ open class NTAlertViewController: UIViewController  {
         button.title = "Confirm"
         button.titleColor = .white
         button.titleLabel?.textAlignment = .center
-        button.backgroundColor = Color.Defaults.tint
+        button.backgroundColor = Color.Default.Status.Success
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(confirmButtonPresssed), for: .touchUpInside)
         return button
@@ -106,7 +106,8 @@ open class NTAlertViewController: UIViewController  {
         alertContainer.addSubview(cancelButton)
         alertContainer.addSubview(confirmButton)
         
-        alertContainer.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 250, leftConstant: 50, bottomConstant: 250, rightConstant: 50, widthConstant: 0, heightConstant: 0)
+        alertContainer.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 300, heightConstant: 250)
+        alertContainer.anchorCenterSuperview()
         titleLabel.anchor(alertContainer.topAnchor, left: alertContainer.leftAnchor, bottom: nil, right: alertContainer.rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         cancelButton.anchor(nil, left: titleLabel.leftAnchor, bottom: alertContainer.bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)

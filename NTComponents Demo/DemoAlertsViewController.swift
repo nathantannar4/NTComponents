@@ -13,17 +13,21 @@ class DemoAlertsViewController: NTViewController {
     
     let actionSheetButton: NTButton = {
         let button = NTButton()
-        button.backgroundColor = Color.Defaults.buttonTint
         button.title = "Action Sheet"
-        button.titleColor = .white
         button.layer.cornerRadius = 5
         return button
     }()
     
     let alertButton: NTButton = {
         let button = NTButton()
-        button.backgroundColor = Color.Defaults.buttonTint
         button.title = "Alert"
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    let activityButton: NTButton = {
+        let button = NTButton()
+        button.title = "ActivityHUD"
         button.titleColor = .white
         button.layer.cornerRadius = 5
         return button
@@ -34,14 +38,17 @@ class DemoAlertsViewController: NTViewController {
         
         view.addSubview(actionSheetButton)
         view.addSubview(alertButton)
+        view.addSubview(activityButton)
         
         actionSheetButton.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 30)
         alertButton.anchor(actionSheetButton.bottomAnchor, left: actionSheetButton.leftAnchor, bottom: nil, right: actionSheetButton.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
-        
+        activityButton.anchor(alertButton.bottomAnchor, left: alertButton.leftAnchor, bottom: nil, right: alertButton.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
         
         actionSheetButton.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
         alertButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        
     }
+    
     
     func showActionSheet() {
         

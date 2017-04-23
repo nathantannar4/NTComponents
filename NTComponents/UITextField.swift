@@ -12,7 +12,7 @@ public extension UITextField {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = Color.Defaults.navigationBarTint
+        toolBar.tintColor = Color.Default.Tint.Toolbar
         toolBar.setItems(items, animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()

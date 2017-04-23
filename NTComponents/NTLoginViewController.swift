@@ -5,7 +5,7 @@
 //  Created by Nathan Tannar on 1/7/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
-
+/*
 import UIKit
 
 public enum NTLoginLogicOptions: String {
@@ -232,7 +232,7 @@ open class NTLoginViewController: UITableViewController {
     // MARK: Error Handling
     
     open func toastError(_ error: String) {
-        Toast(text: error, color: Color.Gray.P600, height: 50).show(duration: 2.0)
+        Toast(text: error, color: Color.Gray.P800, height: 50).show(duration: 2.0)
     }
     
     // MARK: Validation Variables
@@ -290,7 +290,7 @@ open class NTLoginViewController: UITableViewController {
         let header = UITableViewHeaderFooterView()
         header.contentView.backgroundColor = view.backgroundColor
         header.textLabel?.font = Font.Defaults.content
-        header.textLabel?.textColor = Color.Defaults.subtitleTextColor
+        header.textLabel?.textColor = Color.Default.Text.Subtitle
         
         if self.viewPurpose == .loginOptions {
             return nil
@@ -324,7 +324,7 @@ open class NTLoginViewController: UITableViewController {
         let footer = UITableViewHeaderFooterView()
         footer.contentView.backgroundColor = view.backgroundColor
         footer.textLabel?.font = Font.Defaults.content
-        footer.textLabel?.textColor = Color.Defaults.subtitleTextColor
+        footer.textLabel?.textColor = Color.Default.Text.Subtitle
         
         if section == (numberOfSections(in: self.tableView) - 1) {
 
@@ -611,3 +611,4 @@ extension NTLoginViewController: UITextFieldDelegate {
         textField.inputAccessoryView = toolBar
     }
 }
+ */

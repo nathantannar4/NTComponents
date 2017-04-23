@@ -19,8 +19,8 @@ open class NTNavigationController: UINavigationController {
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         
-        navigationBar.tintColor = Color.Defaults.navigationBarTint
-        navigationBar.barTintColor = Color.Defaults.navigationBarBackground
+        navigationBar.tintColor = Color.Default.Tint.NavigationBar
+        navigationBar.barTintColor = Color.Default.Background.NavigationBar
         navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)

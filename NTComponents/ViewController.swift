@@ -27,18 +27,18 @@ public extension UIViewController {
         return nil
     }
     
-    public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Defaults.titleTextColor, subtitleColor: UIColor? = Color.Defaults.subtitleTextColor) {
+    public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Default.Text.Title, subtitleColor: UIColor? = Color.Default.Text.Subtitle) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = titleColor ?? Color.Defaults.titleTextColor
+        titleLabel.textColor = titleColor ?? Color.Default.Text.Title
         titleLabel.font = Font.Defaults.title.withSize(18)
         titleLabel.text = title
         titleLabel.textAlignment = .center
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
-        subtitleLabel.textColor = subtitleColor ?? Color.Defaults.subtitleTextColor
+        subtitleLabel.textColor = subtitleColor ?? Color.Default.Text.Subtitle
         subtitleLabel.font = Font.Defaults.subtitle.withSize(14)
         subtitleLabel.text = subtitle
         subtitleLabel.textAlignment = .center

@@ -39,7 +39,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Color.Defaults.viewControllerBackground
+        view.backgroundColor = Color.Default.Background.ViewController
         stretchyView.addSubview(stretchyImageView)
         view.addSubview(stretchyView)
         stretchyView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: stretchyHeaderHeight)
@@ -123,20 +123,20 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
             }
         } else {
             if fadeInNavBarOnScroll {
-                navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground.withAlphaComponent(ratio)
+                navigationController?.navigationBar.backgroundColor = Color.Default.Background.NavigationBar.withAlphaComponent(ratio)
                 navigationController?.navigationBar.layer.shadowOpacity = Float(ratio) * 0.3
                 refreshTitleView(withAlpha: ratio)
                 if ratio >= 0 && ratio <= 1 {
                     if ratio >= 0.5 {
-                        navigationController?.navigationBar.tintColor = Color.Defaults.tint.withAlphaComponent(ratio)
+                        navigationController?.navigationBar.tintColor = Color.Default.Tint.NavigationBar.withAlphaComponent(ratio)
                         UIApplication.shared.statusBarStyle = .default
                     } else {
                         navigationController?.navigationBar.tintColor = UIColor(red: 1.0 - ratio, green: 1.0 - ratio, blue: 1.0 - ratio, alpha: 1.0)
                         UIApplication.shared.statusBarStyle = .lightContent
                     }
                 } else {
-                    navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground
-                    navigationController?.navigationBar.tintColor = Color.Defaults.tint
+                    navigationController?.navigationBar.backgroundColor = Color.Default.Background.NavigationBar
+                    navigationController?.navigationBar.tintColor =  Color.Default.Tint.NavigationBar
                     navigationController?.navigationBar.layer.shadowOpacity = 0.3
                     refreshTitleView(withAlpha: 1)
                 }
@@ -145,8 +145,8 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                     UIApplication.shared.statusBarStyle = ratio >= 0.5 ? .default : .lightContent
                 }
             } else {
-                navigationController?.navigationBar.backgroundColor = Color.Defaults.navigationBarBackground
-                navigationController?.navigationBar.tintColor = Color.Defaults.tint
+                navigationController?.navigationBar.backgroundColor = Color.Default.Background.NavigationBar
+                navigationController?.navigationBar.tintColor = Color.Default.Tint.NavigationBar
                 navigationController?.navigationBar.layer.shadowOpacity = 0.3
                 refreshTitleView(withAlpha: 1)
             }

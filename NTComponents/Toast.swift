@@ -8,26 +8,26 @@
 
 import UIKit
 
-public class Toast: UIView {
+public class Toast: NTAnimatedView {
     
     private var currentState: NTViewState = .hidden
     public var dismissOnTap: Bool = true
     
     public convenience init(text: String?) {
-        self.init(text: text, color: Color.Gray.P600, height: 50)
+        self.init(text: text, color: Color.Gray.P800, height: 50)
     }
     
-    public init(text: String?, color: UIColor, height: CGFloat) {
+    public convenience init(text: String?, color: UIColor, height: CGFloat) {
         
         var bounds =  UIScreen.main.bounds
         bounds.origin.y = bounds.height - height
         bounds.size.height = height
         
-        super.init(frame: bounds)
+        self.init(frame: bounds)
         
         backgroundColor = color
         
-        let label = NTLabel(type: .content)
+        let label = NTLabel(style: .body)
         label.text = text
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -35,6 +35,12 @@ public class Toast: UIView {
         label.textColor = color.isLight ? .black : .white
         addSubview(label)
         label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 12, bottomConstant: 2, rightConstant: 12, widthConstant: 0, heightConstant: 0)
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        ripplePercent = 0.5
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -76,6 +82,7 @@ public class Toast: UIView {
             return
         }
         self.currentState = .transitioning
+
         UIView.transition(with: self, duration: 0.3, options: .curveLinear, animations: {() -> Void in
             self.alpha = 0
         }, completion: { finished in

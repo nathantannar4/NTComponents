@@ -6,24 +6,11 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-public enum NTLabelType {
-    case title, subtitle, content
-}
-
 public class NTLabel: UILabel {
     
-    public convenience init(type: NTLabelType) {
+    public convenience init(style: NTPreferredFontStyle) {
         self.init()
-        switch type {
-        case .title:
-            textColor = Color.Defaults.titleTextColor
-            font = Font.Defaults.title
-        case .subtitle:
-            textColor = Color.Defaults.subtitleTextColor
-            font = Font.Defaults.subtitle
-        case .content:
-            font = Font.Defaults.content
-        }
+        self.setPreferredFontStyle(to: style)
     }
     
     public override init(frame: CGRect) {

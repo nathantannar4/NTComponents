@@ -21,12 +21,12 @@ open class NTTableViewCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        tintColor = Color.Defaults.tint
+        tintColor = Color.Default.Tint.View
         textLabel?.font = Font.Defaults.content
         textLabel?.numberOfLines = 0
         detailTextLabel?.numberOfLines = 0
         detailTextLabel?.font = Font.Defaults.content
-        imageView?.tintColor = Color.Defaults.tint
+        imageView?.tintColor = Color.Default.Tint.View
         selectionStyle = .none
         setup()
         

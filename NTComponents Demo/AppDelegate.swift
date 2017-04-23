@@ -17,20 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Color.Defaults.viewControllerBackground = .white
-        Color.Defaults.tabBarBackgound = .white
-        Color.Defaults.navigationBarBackground = .white
-        Color.Defaults.tabBarTint = UIColor(hex: "31485e")
-        Color.Defaults.navigationBarTint = UIColor(hex: "31485e")
-        Color.Defaults.tint = UIColor(hex: "31485e")
-        Color.Defaults.buttonTint = UIColor(hex: "31485e")
+        Color.Default.setPrimary(to: UIColor(hex: "31485e"))
+        Color.Default.setSecondary(to: .white)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
         let leftVC = NTViewController()
-        leftVC.view.backgroundColor = Color.Defaults.tint
-        let leftMenuLabel = NTLabel(type: .title)
+        leftVC.view.backgroundColor = Color.Default.Tint.View
+        let leftMenuLabel = NTLabel(style: .title)
         leftMenuLabel.textColor = .white
         leftMenuLabel.textAlignment = .center
         leftMenuLabel.text = "Left Navigation Drawer\n(A right one is available too!)"

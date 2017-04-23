@@ -72,15 +72,21 @@ public extension UIView {
         var anchors = [NSLayoutConstraint]()
         
         if let top = top {
-            anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
+            let constraint = topAnchor.constraint(equalTo: top, constant: topConstant)
+            constraint.identifier = "top"
+            anchors.append(constraint)
         }
         
         if let left = left {
-            anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
+            let constraint = leftAnchor.constraint(equalTo: left, constant: leftConstant)
+            constraint.identifier = "left"
+            anchors.append(constraint)
         }
         
         if let bottom = bottom {
-            anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
+            let constraint = bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant)
+            constraint.identifier = "bottom"
+            anchors.append(constraint)
         }
         
         if let right = right {

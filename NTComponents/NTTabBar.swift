@@ -92,8 +92,8 @@ open class NTTabBar: UIView, NTTabBarItemDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        tintColor = Color.Defaults.tabBarTint
-        backgroundColor = Color.Defaults.tabBarBackgound
+        tintColor = Color.Default.Tint.TabBar
+        backgroundColor = Color.Default.Background.TabBar
         
         setDefaultShadow()
         layer.shadowOffset = CGSize(width: 0, height: -1)

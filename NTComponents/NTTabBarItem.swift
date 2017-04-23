@@ -32,7 +32,7 @@ open class NTTabBarItem: NTAnimatedView {
     open var selectedImage: UIImage?
     
     open var titleLabel: NTLabel = {
-        let label = NTLabel(type: .content)
+        let label = NTLabel(style: .body)
         label.textAlignment = .center
         label.font = Font.Defaults.subtitle.withSize(11)
         label.textColor = Color.Gray.P500
@@ -48,10 +48,17 @@ open class NTTabBarItem: NTAnimatedView {
     
     internal var isSelected: Bool = false {
         didSet {
-            titleLabel.textColor = isSelected ? Color.Defaults.tabBarTint : Color.Gray.P500
-            imageView.tintColor = isSelected ? Color.Defaults.tabBarTint : Color.Gray.P500
+            titleLabel.textColor = isSelected ? Color.Default.Text.Title : Color.Default.Tint.Inactive
+            imageView.tintColor = isSelected ? activeTint() : Color.Default.Tint.Inactive
             imageView.image = isSelected ? (selectedImage?.withRenderingMode(.alwaysTemplate) ?? image) : image
         }
+    }
+    
+    fileprivate func activeTint() -> UIColor {
+        guard let bgColor = backgroundColor else {
+            return Color.Default.Tint.TabBar
+        }
+        return bgColor.isLight ? Color.Default.Tint.TabBar : Color.White
     }
     
     open var delegate: NTTabBarItemDelegate?
@@ -71,8 +78,9 @@ open class NTTabBarItem: NTAnimatedView {
         
         trackTouchLocation = false
         ripplePercent = 0.8
-        tintColor = Color.Defaults.tabBarTint
-        backgroundColor = Color.Defaults.tabBarBackgound
+        touchUpAnimationTime = 0.5
+        tintColor = Color.Default.Tint.TabBar
+        backgroundColor = Color.Default.Background.TabBar
         
         addSubview(imageView)
         addSubview(titleLabel)

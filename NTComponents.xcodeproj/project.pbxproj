@@ -40,10 +40,9 @@
 		3818F7071E5BDF5000902E23 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F61E5BDF5000902E23 /* Color.swift */; };
 		3818F7081E5BDF5000902E23 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F71E5BDF5000902E23 /* Toast.swift */; };
 		3818F70A1E5BDF5000902E23 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F91E5BDF5000902E23 /* Log.swift */; };
-		3818F70B1E5BDF5000902E23 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6FA1E5BDF5000902E23 /* ProgressHUD.swift */; };
 		3818F70D1E5BDF8600902E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70C1E5BDF8600902E23 /* Assets.xcassets */; };
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
-		3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */; };
+		3818F7701E5BF23B00902E23 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F76F1E5BF23B00902E23 /* AutoLayout.swift */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
 		3830D6761E62A7F4005C9A31 /* NTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6751E62A7F4005C9A31 /* NTLabel.swift */; };
 		3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830D6771E62A7FD005C9A31 /* NTTextView.swift */; };
@@ -54,6 +53,7 @@
 		3849B2BB1E651D6300A86586 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BA1E651D6300A86586 /* String.swift */; };
 		3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */; };
 		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
+		387D90161EABF4C800F5A886 /* NTMenuBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */; };
 		38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B20E8B1E6918AE00DD71AC /* Date.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
@@ -133,10 +133,9 @@
 		3818F6F61E5BDF5000902E23 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3818F6F71E5BDF5000902E23 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		3818F6F91E5BDF5000902E23 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		3818F6FA1E5BDF5000902E23 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		3818F70C1E5BDF8600902E23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
-		3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		3818F76F1E5BF23B00902E23 /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		3830D6751E62A7F4005C9A31 /* NTLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTLabel.swift; sourceTree = "<group>"; };
 		3830D6771E62A7FD005C9A31 /* NTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTextView.swift; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		3849B2BA1E651D6300A86586 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMenuBarButtonItem.swift; sourceTree = "<group>"; };
 		38B20E8B1E6918AE00DD71AC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +308,7 @@
 				3830D6771E62A7FD005C9A31 /* NTTextView.swift */,
 				3830D6791E62A864005C9A31 /* NTButton.swift */,
 				38E625121E63B4CA003DC7B0 /* NTImageView.swift */,
+				387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -317,7 +318,6 @@
 			children = (
 				3818F6F71E5BDF5000902E23 /* Toast.swift */,
 				3818F6F91E5BDF5000902E23 /* Log.swift */,
-				3818F6FA1E5BDF5000902E23 /* ProgressHUD.swift */,
 			);
 			name = Functionality;
 			sourceTree = "<group>";
@@ -335,6 +335,7 @@
 				38DE75D11EA99F6F004A10D2 /* UITextField.swift */,
 				3818F6E71E5BDF3A00902E23 /* ViewController.swift */,
 				38084AB71EA30F8400329516 /* PropertyLoopable.swift */,
+				3818F76F1E5BF23B00902E23 /* AutoLayout.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -357,7 +358,6 @@
 				38E625151E63B4CA003DC7B0 /* DatasourceController.swift */,
 				38E625161E63B4CA003DC7B0 /* DefaultCells.swift */,
 				38E625101E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift */,
-				3818F76F1E5BF23B00902E23 /* UIView+AutoLayout.swift */,
 			);
 			name = "LBTA Components";
 			sourceTree = "<group>";
@@ -531,12 +531,12 @@
 				380460E81EA28E20008A03B5 /* NTTabBarProperties.swift in Sources */,
 				3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */,
 				3818F7081E5BDF5000902E23 /* Toast.swift in Sources */,
-				3818F70B1E5BDF5000902E23 /* ProgressHUD.swift in Sources */,
 				3818F7031E5BDF5000902E23 /* NTNavigationContainer.swift in Sources */,
 				38E625111E63B4B7003DC7B0 /* DiscardableImageCacheItem.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
 				3849B2BF1E651E4600A86586 /* UIView.swift in Sources */,
 				3849B2BB1E651D6300A86586 /* String.swift in Sources */,
+				387D90161EABF4C800F5A886 /* NTMenuBarButtonItem.swift in Sources */,
 				3818F6E91E5BDF3A00902E23 /* ViewController.swift in Sources */,
 				3818F6FB1E5BDF5000902E23 /* NTView.swift in Sources */,
 				380460D91EA06A11008A03B5 /* NTActionSheetController.swift in Sources */,
@@ -559,7 +559,7 @@
 				3818F7051E5BDF5000902E23 /* NTSearchViewController.swift in Sources */,
 				38084AB81EA30F8400329516 /* PropertyLoopable.swift in Sources */,
 				38E625171E63B4CA003DC7B0 /* NTImageView.swift in Sources */,
-				3818F7701E5BF23B00902E23 /* UIView+AutoLayout.swift in Sources */,
+				3818F7701E5BF23B00902E23 /* AutoLayout.swift in Sources */,
 				38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */,
 				380460D71E9F1B6E008A03B5 /* NTAlertController.swift in Sources */,
 				3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */,

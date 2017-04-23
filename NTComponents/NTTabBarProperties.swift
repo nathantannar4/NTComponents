@@ -12,14 +12,14 @@ public struct NTTabBarProperties {
     public init() {}
 
     public var fontSize = UIFont.systemFontSize
-    public var currentColor = Color.Defaults.tabBarTint
+    public var currentColor = Color.Default.Tint.TabBar
     public var defaultColor = Color.Gray.P600
     public var tabHeight: CGFloat = 32.0
     public var tabMargin: CGFloat = 20.0
     public var tabWidth: CGFloat?
     public var currentBarHeight: CGFloat = 2.0
-    public var tabBackgroundColor: UIColor = Color.Defaults.tabBarBackgound
-    public var pageBackgoundColor: UIColor = Color.Defaults.viewControllerBackground
+    public var tabBackgroundColor: UIColor = Color.Default.Background.TabBar
+    public var pageBackgoundColor: UIColor = Color.Default.Background.ViewController
     public var isTranslucent: Bool = true
     public var hidesTabBarOnSwipe: Bool = false
     public var postion: NTPresentationDirection = .top
@@ -35,7 +35,7 @@ public struct NTTabBarProperties {
         let rect : CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context : CGContext? = UIGraphicsGetCurrentContext()
-        let backgroundColor = Color.Defaults.navigationBarBackground.cgColor
+        let backgroundColor = Color.Default.Background.TabBar.cgColor
         context?.setFillColor(backgroundColor)
         context?.fill(rect)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!

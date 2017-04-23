@@ -39,7 +39,7 @@ open class NTImageView: UIImageView {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         self.emptyImage = emptyImage
-        tintColor = Color.Defaults.tint
+        tintColor = Color.Default.Tint.View
     }
     
     required public init?(coder aDecoder: NSCoder) {

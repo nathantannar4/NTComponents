@@ -41,7 +41,7 @@ public extension NSMutableAttributedString {
         if foundRange.location != NSNotFound {
             //self.addAttribute(NSLinkAttributeName, value: linkURL, range: foundRange)
             self.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)], range: foundRange)
-            self.addAttributes([NSForegroundColorAttributeName: Color.Defaults.tint], range: foundRange)
+            self.addAttributes([NSForegroundColorAttributeName: Color.Default.Tint.Button], range: foundRange)
         }
     }
 }

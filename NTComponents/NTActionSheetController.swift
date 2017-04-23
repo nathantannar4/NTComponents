@@ -44,14 +44,14 @@ open class NTActionSheetController: UIViewController  {
     fileprivate var actionButtons: [NTButton] = []
 
     public var titleLabel: NTLabel = {
-        let label = NTLabel(type: .title)
+        let label = NTLabel(style: .title)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
     }()
 
     public var subtitleLabel: NTLabel = {
-        let label = NTLabel(type: .subtitle)
+        let label = NTLabel(style: .subtitle)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label

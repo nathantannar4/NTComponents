@@ -225,12 +225,20 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerNavigationController.didMove(toParentViewController: self)
         addSidePanelViews()
         showShadowForCenterViewController(drawerShadowShown)
+//        addEdgePanGestureRecognizer()
+        addPanGestureRecognizer()
     }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         
        modalPresentationStyle = .overCurrentContext
+    }
+    
+    public func addEdgePanGestureRecognizer() {
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
+        edgePan.edges = .left
+        centerNavigationController.view.addGestureRecognizer(edgePan)
     }
     
     public func addPanGestureRecognizer() {
@@ -256,6 +264,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         Log.write(.status, "Will show left menu button is \(shouldShow)")
         if centerViewController.navigationItem.leftBarButtonItem == nil {
             let leftDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
+            //let leftDrawerButton = NTMenuBarButtonItem(target: self, action: #selector(toggleLeftPanel))
             centerViewController.navigationItem.leftBarButtonItem = shouldShow ? leftDrawerButton : nil
         }
     }
