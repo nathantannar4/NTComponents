@@ -2,65 +2,28 @@
 //  NTTabBar.swift
 //  NTComponents
 //
-//  Created by Nathan Tannar on 4/15/17.
-//  Copyright © 2017 Nathan Tannar. All rights reserved.
+//  Copyright © 2017 Nathan Tannar.
 //
-
-/*
- Items
- 
- var items: [UITabBarItem]?
- The items displayed by the tab bar.
- func setItems([UITabBarItem]?, animated: Bool)
- Sets the items on the tab bar, optionally animating any changes into position.
- var selectedItem: UITabBarItem?
- The currently selected item on the tab bar.
- Customizing Tab Bar Appearance
- 
- var barStyle: UIBarStyle
- The tab bar style that specifies its appearance.
- var isTranslucent: Bool
- A Boolean value that indicates whether the tab bar is translucent.
- var barTintColor: UIColor?
- The tint color to apply to the tab bar background.
- var itemPositioning: UITabBarItemPositioning
- The positioning scheme for the tab bar items in the tab bar.
- var itemSpacing: CGFloat
- The amount of space (in points) to use between tab bar items.
- var itemWidth: CGFloat
- The width (in points) of tab bar items.
- var tintColor: UIColor!
- The tint color to apply to the tab bar items.
- var backgroundImage: UIImage?
- The custom background image for the tab bar.
- var shadowImage: UIImage?
- The shadow image to use for the tab bar.
- var selectionIndicatorImage: UIImage?
- The image to use for the selection indicator.
- Setting the Delegate
- 
- var delegate: UITabBarDelegate?
- The tab bar’s delegate object.
- Supporting User Customization of Tab Bars
- 
- func beginCustomizingItems([UITabBarItem])
- Presents a standard interface that lets the user customize the contents of the tab bar.
- func endCustomizing(animated: Bool)
- Dismisses the standard interface used to customize the tab bar.
- Deprecated
- 
- var selectedImageTintColor: UIColor?
- The tint color applied to the selected tab bar item.
- Deprecated
- Constants
- 
- UITabBarItemPositioning
- Constants that specify tab bar item positioning.
- Instance Properties
- 
- var isCustomizing: Bool
- var unselectedItemTintColor: UIColor?
-*/
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+//  Created by Nathan Tannar on 2/12/17.
+//
 
 public protocol NTTabBarDelegate: NSObjectProtocol {
     func tabBar(_ tabBar: NTTabBar, didSelect index: Int)

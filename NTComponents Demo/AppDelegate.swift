@@ -17,14 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Color.Default.setPrimary(to: UIColor(hex: "31485e"))
-        Color.Default.setSecondary(to: .white)
+        Color.Default.setPrimary(to: .white)
+        Color.Default.setSecondary(to: UIColor(hex: "31485e"))
+        Color.Default.Background.Button = UIColor(hex: "31485e")
+        Color.Default.Tint.Button = .white
+        Color.Default.Text.Title = .black
+        Color.Default.Text.Subtitle = Color.Gray.P700
+        Color.Default.Tint.Inactive = Color.Gray.P500
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
         let leftVC = NTViewController()
-        leftVC.view.backgroundColor = Color.Default.Tint.View
+        leftVC.view.backgroundColor = UIColor(hex: "31485e")
         let leftMenuLabel = NTLabel(style: .title)
         leftMenuLabel.textColor = .white
         leftMenuLabel.textAlignment = .center
@@ -40,16 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tableVC = DemoTableViewController()
         centerVC.tabItems.append((tableVC, "Table View"))
         
-        let colorsVC = DemoColorsCollectionView()
-        centerVC.tabItems.append((colorsVC, "Colors"))
-        
         let alertsVC = DemoAlertsViewController()
         centerVC.tabItems.append((alertsVC, "Alerts"))
         
         var tabVCs = [UIViewController]()
         for i in 0...2 {
             let vc = UIViewController()
-            vc.view.backgroundColor = Color.BlueGray.P500.lighter(by: CGFloat(i * 5))
+            vc.view.backgroundColor = UIColor.groupTableViewBackground.darker(by: CGFloat(i * 5))
             vc.title = "Title"
             vc.tabBarItem.image = Icon.google
             tabVCs.append(vc)
@@ -58,6 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabVC = NTTabBarController(viewControllers: tabVCs)
         centerVC.tabItems.append((tabVC, "TabBar"))
         
+        let colorsVC = DemoColorsCollectionView()
+        centerVC.tabItems.append((colorsVC, "Colors"))
         
         centerVC.properties.hidesTabBarOnSwipe = true
         
