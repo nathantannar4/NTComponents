@@ -1,5 +1,5 @@
 //
-//  UITextField.swift
+//  NTMapAnnotationView.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,19 +22,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 4/24/17.
 //
 
-public extension UITextField {
+import MapKit
 
-    func addToolBar(withItems items: [UIBarButtonItem]){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = false
-        toolBar.tintColor = Color.Default.Tint.Toolbar
-        toolBar.setItems(items, animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        self.inputAccessoryView = toolBar
-    }
+open class NTMapAnnotationView: MKAnnotationView {
+
 }

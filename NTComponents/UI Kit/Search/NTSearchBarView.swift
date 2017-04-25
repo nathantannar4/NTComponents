@@ -29,6 +29,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
 
     open var onSearch: ((query: String?) -> Void)?
+    open var menuButtonAction: (() -> Void)?
 
     open var searchField: NTTextField = {
         let textField = NTTextField()
@@ -84,10 +85,15 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
                                                    constant: 50)
         searchButton.addConstraint(searchButtonWidth)
 
+        menuButton.addTarget(self, action: #selector(menuButtonWasTapped(_:)), for: .touchUpInside)
         searchButton.addTarget(self, action: #selector(search), for: .touchUpInside)
+
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(endEditing))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        textField.addToolBar(withItems items: [cancelButton, spaceButton])
     }
 
-    public convenience init(onSearch function: ((query: String?) -> Void)?) {
+    public convenience init(onSearch function: ((query: String?) -> Void)? = nil) {
         self.init(frame: .zero)
         self.onSearch = function
     }
@@ -115,7 +121,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
         search()
     }
 
-    // MARK: - Search Controller
+    // MARK: - Search
 
     open func search() {
         Log.write(.status, "SearchBar search executed")
@@ -125,5 +131,16 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
     open func endEditing() {
         searchField.resignFirstResponder()
+    }
+
+    // MARK: - Menu
+
+    open func menuButtonWasTapped(_ sender: NTButton) {
+        endEditing()
+        menuButtonAction?()
+    }
+
+    open func setMenuButton(hidden: Bool, animated: Bool) {
+
     }
 }

@@ -28,19 +28,59 @@
 import MapKit
 import CoreLocation
 
-open class NTMapViewController: NTViewController, MKMapViewDelegate {
-    
-    public var mapView: NTMapView = {
+open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+    open var mapView: NTMapView = {
         let mapView = NTMapView()
         mapView.showsCompass = true
+        mapView.showsUserLocation = true
         return mapView
     }()
-    
+
+    open var locationManager: CLLocationManager = {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        return manager
+    }()
+
+    open var searchBar: NTSearchBarView = {
+        let searchBar = NTSearchBarView()
+        return searchBar
+    }
+
+    // MARK: - Standard Methods
+
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        locationManager = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
         mapView.delegate = self
         view.addSubview(mapView)
         mapView.fillSuperview()
+
+        mapView.addSubview(searchBar)
+        searchBar.anchor(mapView.topAnchor, left: mapView.leftAnchor, bottom: nil, right: mapView.rightAnchor, topConstant: 30, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 50)
+    }
+
+    // MARK: - MKMapViewDelegate
+
+    // MARK: - CLLocationManagerDelegate
+
+    open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        guard let latitude = location?.coordinate.latitude, let longitude = location?.coordinate.longitude else {
+            return
+        }
+        let center = CLLocationCoordinate2D(latitude: atitude, longitude: longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+
+        mapView.setRegion(region, animated: true)
+    }
+
+    open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        Log.write(.error, error.localizedDescription)
     }
 }

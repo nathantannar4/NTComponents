@@ -28,22 +28,22 @@
 import MapKit
 
 open class NTMapView: MKMapView {
-    
+
     convenience init() {
         self.init(frame: .zero)
     }
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         tintColor = Color.Default.Tint.View
         backgroundColor = Color.Default.Background.View
         showsBuildings = true
         isZoomEnabled = true
         isScrollEnabled = true
-
+        isPitchEnabled = true
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

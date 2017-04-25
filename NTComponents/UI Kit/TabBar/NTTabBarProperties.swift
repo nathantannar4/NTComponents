@@ -27,6 +27,10 @@
 
 import UIKit
 
+public enum NTTabBarPosition {
+    case top, bottom
+}
+
 public struct NTTabBarProperties {
 
     public init() {}
@@ -39,7 +43,7 @@ public struct NTTabBarProperties {
     public var tabBackgroundColor: UIColor = Color.Default.Background.TabBar
     public var pageBackgoundColor: UIColor = Color.Default.Background.ViewController
     public var isTranslucent: Bool = true
-    public var postion: NTPresentationDirection = .bottom
+    public var postion: NTTabBarPosition = .bottom
 
     internal var tabBarAlpha: CGFloat {
         return isTranslucent ? 0.95 : 1.0
