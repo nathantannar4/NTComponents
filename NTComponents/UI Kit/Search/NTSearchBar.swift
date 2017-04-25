@@ -1,5 +1,5 @@
 //
-//  NTLabel.swift
+//  NTSearchbar.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -25,24 +25,23 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
-open class NTLabel: UILabel {
+open class NTSearchBar: UISearchBar {
 
     // MARK: - Initialization
 
-    public convenience init(style: NTPreferredFontStyle) {
-        self.init()
-        self.setPreferredFontStyle(to: style)
+    convenience init(frame: CGRect) {
+        self.init(frame: .zero)
     }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setPreferredFontStyle(to: .body)
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.2
+        tintColor = Color.Default.Tint.View
+        placeholder = "Search"
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }

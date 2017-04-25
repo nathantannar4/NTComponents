@@ -1,5 +1,5 @@
 //
-//  NTLabel.swift
+//  NTTextField.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,10 +22,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 4/25/17.
 //
 
-open class NTLabel: UILabel {
+open class NTTextField: UITextField {
 
     // MARK: - Initialization
 
@@ -36,10 +36,7 @@ open class NTLabel: UILabel {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
-        setPreferredFontStyle(to: .body)
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.2
+        self.setPreferredFontStyle(to: .body)
     }
 
     required public init?(coder aDecoder: NSCoder) {
