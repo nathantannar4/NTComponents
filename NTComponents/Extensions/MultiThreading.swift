@@ -1,5 +1,5 @@
 //
-//  NTLabel.swift
+//  MultiThreading.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,28 +22,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 4/25/17.
 //
 
-open class NTLabel: UILabel {
+public extension DispatchQueue {
 
-    // MARK: - Initialization
-
-    public convenience init(style: NTPreferredFontStyle) {
-        self.init()
-        self.setPreferredFontStyle(to: style)
-    }
-
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setPreferredFontStyle(to: .body)
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.2
-        numberOfLines = 0
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    class func executeAfter(_ delay: Double, closure: @escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
 }
