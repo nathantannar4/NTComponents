@@ -30,7 +30,7 @@ import UIKit
 public extension UIViewController {
     
     public func makeKeyAndVisible(animated: Bool = false)  {
-        guard let vc = NTAlertViewController.topWindow()?.rootViewController else {
+        guard let vc = UIViewController.topWindow()?.rootViewController else {
             Log.write(.error, "Could not find the active window")
             return
         }
