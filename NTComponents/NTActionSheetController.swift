@@ -139,7 +139,6 @@ open class NTActionSheetController: UIViewController  {
 
         // Title
         button.title = action.title
-        button.titleFont = Font.Default.Title
         button.titleColor = action.color.isLight ? .black : .white
 
         // Icon

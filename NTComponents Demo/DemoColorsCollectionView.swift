@@ -13,6 +13,7 @@ class DemoColorsCollectionView: NTCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Colors"
         datasource = ColorDatasource(colors: MaterialColors().all())
     }
     

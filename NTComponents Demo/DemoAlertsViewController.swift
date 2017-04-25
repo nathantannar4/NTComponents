@@ -36,6 +36,8 @@ class DemoAlertsViewController: NTViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Alerts"
+        
         view.addSubview(actionSheetButton)
         view.addSubview(alertButton)
         view.addSubview(activityButton)

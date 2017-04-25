@@ -37,14 +37,20 @@ open class NTTableViewCell: UITableViewCell {
     
     // MARK: - Initialization
     
+    public convenience init() {
+        self.init(style: .subtitle, reuseIdentifier: "NTTableViewCell")
+    }
+    
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
         tintColor = Color.Default.Tint.View
         textLabel?.setPreferredFontStyle(to: .body)
         textLabel?.numberOfLines = 0
-        detailTextLabel?.numberOfLines = 0
+        textLabel?.lineBreakMode = .byWordWrapping
         detailTextLabel?.setPreferredFontStyle(to: .footnote)
+        detailTextLabel?.numberOfLines = 0
+        detailTextLabel?.lineBreakMode = .byWordWrapping
         imageView?.tintColor = Color.Default.Tint.View
         selectionStyle = .none
         setup()

@@ -47,7 +47,6 @@ internal class NTScrollableTabBar: UIView {
     fileprivate var pageTabItemsWidth: CGFloat = 0.0
     fileprivate var collectionViewContentOffsetX: CGFloat = 0.0
     fileprivate var currentBarViewWidth: CGFloat = 0.0
-    fileprivate var cachedCellSizes: [IndexPath: CGSize] = [:]
     fileprivate var currentBarViewLeftConstraint: NSLayoutConstraint?
 
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -78,6 +77,7 @@ internal class NTScrollableTabBar: UIView {
         
         backgroundColor = properties.tabBackgroundColor.withAlphaComponent(properties.tabBarAlpha)
         translatesAutoresizingMaskIntoConstraints = false
+        setDefaultShadow()
         
         addSubview(collectionView)
         collectionView.backgroundColor = properties.tabBackgroundColor
@@ -88,10 +88,20 @@ internal class NTScrollableTabBar: UIView {
         collectionView.register(NTScrollableTabBarItem.self, forCellWithReuseIdentifier: NTScrollableTabBarItem.cellIdentifier)
 
         collectionView.addSubview(currentBarView)
+        
+        
+        if properties.postion == .bottom {
+            currentBarView.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: properties.currentBarHeight)
+            layer.shadowOffset = CGSize(width: 0, height: -1)
+        } else {
+            currentBarView.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: properties.currentBarHeight)
+        }
+        
         currentBarView.backgroundColor = properties.currentColor
         currentBarViewHeightConstraint?.constant = properties.currentBarHeight
-        currentBarView.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: properties.currentBarHeight)
+        
         currentBarView.translatesAutoresizingMaskIntoConstraints = false
+        
         let top = NSLayoutConstraint(item: currentBarView,
                                      attribute: .top,
                                      relatedBy: .equal,
@@ -107,18 +117,12 @@ internal class NTScrollableTabBar: UIView {
                                       attribute: .leading,
                                       multiplier: 1.0,
                                       constant: 0.0)
+        
         currentBarViewLeftConstraint = left
         collectionView.addConstraints([top, left])
         
-        setDefaultShadow()
+        
     }
-}
-
-
-// MARK: - View
-
-extension NTScrollableTabBar {
-    
 
     /**
      Called when you swipe in isInfinityTabPageViewController, moves the contentOffset of collectionView
@@ -206,7 +210,7 @@ extension NTScrollableTabBar {
      - parameter animated: true when you tap to move the isInfinityNTScrollableTabBarItem
      - parameter shouldScroll:
      */
-    fileprivate func moveCurrentBarView(_ indexPath: IndexPath, animated: Bool, shouldScroll: Bool) {
+    internal func moveCurrentBarView(_ indexPath: IndexPath, animated: Bool, shouldScroll: Bool) {
         if shouldScroll {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
             layoutIfNeeded()
@@ -346,18 +350,7 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
 extension NTScrollableTabBar: UICollectionViewDelegateFlowLayout {
 
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-//        if let size = cachedCellSizes[indexPath] {
-//            return size
-//        }
-//        
-//        let cell = NTScrollableTabBarItem()
-//
-//        configureCell(cell, indexPath: indexPath)
-//
-//        let size = cell.sizeThatFits(CGSize(width: collectionView.bounds.width, height: properties.tabHeight))
-//        cachedCellSizes[indexPath] = size
-        
+      
         let size = CGSize(width: (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)), height: properties.tabHeight)
 
         return size

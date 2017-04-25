@@ -225,7 +225,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerNavigationController.didMove(toParentViewController: self)
         addSidePanelViews()
         showShadowForCenterViewController(drawerShadowShown)
-//        addEdgePanGestureRecognizer()
         addPanGestureRecognizer()
     }
     
@@ -233,12 +232,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         super.viewDidLoad()
         
        modalPresentationStyle = .overCurrentContext
-    }
-    
-    public func addEdgePanGestureRecognizer() {
-        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
-        edgePan.edges = .left
-        centerNavigationController.view.addGestureRecognizer(edgePan)
     }
     
     public func addPanGestureRecognizer() {

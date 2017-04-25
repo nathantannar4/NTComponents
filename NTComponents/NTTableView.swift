@@ -34,14 +34,13 @@ public class NTTableView: UITableView {
     public init() {
         super.init(frame: .zero, style: .plain)
         self.backgroundColor = UIColor.clear
+        self.rowHeight = UITableViewAutomaticDimension
+        self.estimatedRowHeight = 44
+        self.register(NTTableViewCell.self, forCellReuseIdentifier: "NTTableViewCell")
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    public override func deselectRow(at indexPath: IndexPath, animated: Bool) {
-        super.deselectRow(at: indexPath, animated: true)
     }
 }
 

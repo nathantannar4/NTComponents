@@ -38,15 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         leftVC.view.addSubview(leftMenuLabel)
         leftMenuLabel.fillSuperview()
         
-        let centerVC = NTScrollableTabBarController()
-        centerVC.title = "NTComponents"
-        centerVC.subtitle = "by Nathan Tannar"
+        
         
         let tableVC = DemoTableViewController()
-        centerVC.tabItems.append((tableVC, "Table View"))
         
         let alertsVC = DemoAlertsViewController()
-        centerVC.tabItems.append((alertsVC, "Alerts"))
         
         var tabVCs = [UIViewController]()
         for i in 0...2 {
@@ -58,12 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     
         let tabVC = NTTabBarController(viewControllers: tabVCs)
-        centerVC.tabItems.append((tabVC, "TabBar"))
+        tabVC.title = "TabBar"
         
         let colorsVC = DemoColorsCollectionView()
-        centerVC.tabItems.append((colorsVC, "Colors"))
         
-        centerVC.properties.hidesTabBarOnSwipe = true
+        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, tabVC, colorsVC])
+        centerVC.title = "NTComponents"
+        centerVC.subtitle = "by Nathan Tannar"
         
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         

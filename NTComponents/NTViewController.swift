@@ -76,7 +76,7 @@ open class NTViewController: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.updateStatusBarStyle()
+        //self.updateStatusBarStyle()
     }
 
     

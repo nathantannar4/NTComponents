@@ -1,5 +1,5 @@
 //
-//  NTCollectionViewController.swift
+//  NTMapView.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,29 +22,29 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 4/24/17.
 //
 
-import UIKit
+import MapKit
 
-open class NTCollectionViewController: DatasourceController {
+open class NTMapView: MKMapView {
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = Color.Default.Background.ViewController
-        collectionView?.backgroundColor = Color.Default.Background.ViewController
-       
-        if let parent =  parent as? NTScrollableTabBarController {
-            if parent.properties.postion == .top {
-                collectionView?.contentInset.top = parent.properties.tabHeight
-                collectionView?.scrollIndicatorInsets.top = parent.properties.tabHeight
-            }
-        }
+    convenience init() {
+        self.init(frame: .zero)
     }
     
-    open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-        collectionViewLayout.invalidateLayout()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        tintColor = Color.Default.Tint.View
+        backgroundColor = Color.Default.Background.View
+        showsBuildings = true
+        isZoomEnabled = true
+        isScrollEnabled = true
+
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

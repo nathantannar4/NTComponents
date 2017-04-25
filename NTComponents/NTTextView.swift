@@ -54,6 +54,7 @@ public class NTTextView: UITextView {
         setPreferredFontStyle(to: .body)
         backgroundColor = .clear
         isScrollEnabled = false
+        tintColor = Color.Default.Tint.View
         
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidBeginEditing(notification:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidEndEditing(notification:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)

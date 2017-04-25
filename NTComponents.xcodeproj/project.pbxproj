@@ -53,6 +53,8 @@
 		3849B2BB1E651D6300A86586 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BA1E651D6300A86586 /* String.swift */; };
 		3849B2BD1E651D9600A86586 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */; };
 		3849B2BF1E651E4600A86586 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849B2BE1E651E4600A86586 /* UIView.swift */; };
+		3863D8091EAEE997003B73F7 /* NTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8081EAEE997003B73F7 /* NTMapViewController.swift */; };
+		3863D80B1EAEEA53003B73F7 /* NTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D80A1EAEEA53003B73F7 /* NTMapView.swift */; };
 		387D90161EABF4C800F5A886 /* NTMenuBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */; };
 		38B20E8C1E6918AE00DD71AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B20E8B1E6918AE00DD71AC /* Date.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
@@ -146,6 +148,8 @@
 		3849B2BA1E651D6300A86586 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3849B2BC1E651D9600A86586 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		3849B2BE1E651E4600A86586 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3863D8081EAEE997003B73F7 /* NTMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapViewController.swift; sourceTree = "<group>"; };
+		3863D80A1EAEEA53003B73F7 /* NTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapView.swift; sourceTree = "<group>"; };
 		387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMenuBarButtonItem.swift; sourceTree = "<group>"; };
 		38B20E8B1E6918AE00DD71AC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				3818F6F31E5BDF5000902E23 /* NTLoginViewController.swift */,
 				3818F6F41E5BDF5000902E23 /* NTSearchViewController.swift */,
+				3863D8081EAEE997003B73F7 /* NTMapViewController.swift */,
 			);
 			name = Functional;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				3830D6771E62A7FD005C9A31 /* NTTextView.swift */,
 				3830D6791E62A864005C9A31 /* NTButton.swift */,
 				38E625121E63B4CA003DC7B0 /* NTImageView.swift */,
+				3863D80A1EAEEA53003B73F7 /* NTMapView.swift */,
 				387D90151EABF4C800F5A886 /* NTMenuBarButtonItem.swift */,
 			);
 			name = Views;
@@ -550,6 +556,7 @@
 				380460E61EA28E20008A03B5 /* NTScrollableTabBarItem.swift in Sources */,
 				380460DC1EA2822B008A03B5 /* NTTabBar.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
+				3863D8091EAEE997003B73F7 /* NTMapViewController.swift in Sources */,
 				3818F7021E5BDF5000902E23 /* NTTabBarController.swift in Sources */,
 				3830D67A1E62A864005C9A31 /* NTButton.swift in Sources */,
 				38E625191E63B4CA003DC7B0 /* DatasourceCell.swift in Sources */,
@@ -563,6 +570,7 @@
 				38E6251F1E63BA05003DC7B0 /* NTCollectionViewController.swift in Sources */,
 				380460D71E9F1B6E008A03B5 /* NTAlertController.swift in Sources */,
 				3830D6781E62A7FD005C9A31 /* NTTextView.swift in Sources */,
+				3863D80B1EAEEA53003B73F7 /* NTMapView.swift in Sources */,
 				3818F7001E5BDF5000902E23 /* NTTableViewCell.swift in Sources */,
 				3818F6FC1E5BDF5000902E23 /* NTToolbar.swift in Sources */,
 				38E6253F1E64BE8B003DC7B0 /* NTCollectionDatasource.swift in Sources */,

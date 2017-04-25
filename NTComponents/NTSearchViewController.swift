@@ -31,9 +31,8 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
     
     public var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.tintColor = Color.Default.Tint.View
+        searchBar.tintColor = Color.Default.Tint.NavigationBar
         searchBar.placeholder = "Search"
-        searchBar.showsScopeBar = true
         return searchBar
     }()
     

@@ -109,13 +109,7 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     // MARK: - Standard Methods
     
     override open var intrinsicContentSize : CGSize {
-        let width: CGFloat
-        if let tabWidth = properties.tabWidth , tabWidth > 0.0 {
-            width = tabWidth
-        } else {
-            width = animatedButton.intrinsicContentSize.width + properties.tabMargin * 2
-        }
-
+        let width = animatedButton.intrinsicContentSize.width + properties.tabMargin * 2
         let size = CGSize(width: width, height: properties.tabHeight)
         return size
     }

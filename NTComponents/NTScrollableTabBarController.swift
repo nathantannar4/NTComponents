@@ -27,7 +27,7 @@
 
 import UIKit
 
-open class NTScrollableTabBarController: UIPageViewController {
+open class NTScrollableTabBarController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     
     override open var title: String? {
         didSet {
@@ -40,29 +40,36 @@ open class NTScrollableTabBarController: UIPageViewController {
         }
     }
     
-    open var properties: NTTabBarProperties = NTTabBarProperties()
-    open var tabItems: [(viewController: UIViewController, title: String)] = [] {
-        didSet {
-            tabItemsCount = tabItems.count
+    public var currentIndex: Int? {
+        get {
+            guard let viewController = viewControllers?.first else {
+                return nil
+            }
+            return _viewControllers?.index(of: viewController)
         }
     }
-
-    var currentIndex: Int? {
-        guard let viewController = viewControllers?.first else {
-            return nil
-        }
-        return tabItems.map{ $0.viewController }.index(of: viewController)
-    }
+    
+    fileprivate var _viewControllers: [UIViewController]?
     fileprivate var beforeIndex: Int = 0
-    fileprivate var tabItemsCount = 0
+    fileprivate var viewControllerCount: Int {
+        get {
+            return _viewControllers?.count ?? 0
+        }
+    }
     fileprivate var defaultContentOffsetX: CGFloat {
         return self.view.bounds.width
     }
     fileprivate var shouldScrollCurrentBar: Bool = true
     lazy fileprivate var tabView: NTScrollableTabBar = self.configuredTabView()
-    fileprivate var statusView: UIView?
-    fileprivate var statusViewHeightConstraint: NSLayoutConstraint?
+    
     fileprivate var tabBarTopConstraint: NSLayoutConstraint?
+    
+    open var properties: NTTabBarProperties = {
+        var props = NTTabBarProperties()
+        props.tabHeight = 32
+        props.postion = .top
+        return props
+    }()
 
     // MARK: - Initialization
     
@@ -72,10 +79,12 @@ open class NTScrollableTabBarController: UIPageViewController {
     
     public convenience init(viewControllers: [UIViewController]) {
         self.init()
+        _viewControllers = viewControllers
     }
     
     public override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {
         super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
+        _viewControllers = [UIViewController()]
     }
     
     required public init?(coder: NSCoder) {
@@ -121,14 +130,16 @@ open class NTScrollableTabBarController: UIPageViewController {
     open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         tabView.collectionView.collectionViewLayout.invalidateLayout()
         view.setNeedsDisplay()
-        
     }
 
     public func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
 
         beforeIndex = index
         shouldScrollCurrentBar = false
-        let nextViewControllers: [UIViewController] = [tabItems[index].viewController]
+        guard let viewControllers = _viewControllers else {
+            return
+        }
+        let nextViewControllers: [UIViewController] = [viewControllers[index]]
 
         let completion: ((Bool) -> Void) = { [weak self] _ in
             self?.shouldScrollCurrentBar = true
@@ -144,18 +155,17 @@ open class NTScrollableTabBarController: UIPageViewController {
         guard isViewLoaded else { return }
         tabView.updateCurrentIndex(index, shouldScroll: true)
     }
-}
-
-// MARK: - View
-
-extension NTScrollableTabBarController {
     
     fileprivate func setupPageViewController() {
         dataSource = self
         delegate = self
         automaticallyAdjustsScrollViewInsets = false
-
-        setViewControllers([tabItems[beforeIndex].viewController],
+        
+        guard let viewControllers = _viewControllers else {
+            return
+        }
+        
+        setViewControllers([viewControllers[beforeIndex]],
                            direction: .forward,
                            animated: false,
                            completion: nil)
@@ -169,13 +179,12 @@ extension NTScrollableTabBarController {
         scrollView?.backgroundColor = properties.pageBackgoundColor
     }
 
-    /**
-     Update NavigationBar
-     */
 
     fileprivate func updateNavigationBar() {
-        if let navigationBar = navigationController?.navigationBar {
+        if let navigationBar = navigationController?.navigationBar, properties.postion == .top {
             navigationBar.layer.shadowOpacity = 0
+            navigationBar.shadowImage = UIImage()
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
         }
     }
 
@@ -192,125 +201,23 @@ extension NTScrollableTabBarController {
                                         constant: properties.tabHeight)
         tabView.addConstraint(height)
         view.addSubview(tabView)
-
-//        let top = NSLayoutConstraint(item: tabView,
-//                                     attribute: .top,
-//                                     relatedBy: .equal,
-//                                     toItem: topLayoutGuide,
-//                                     attribute: .bottom,
-//                                     multiplier:1.0,
-//                                     constant: 0.0)
-//
-//        let left = NSLayoutConstraint(item: tabView,
-//                                      attribute: .leading,
-//                                      relatedBy: .equal,
-//                                      toItem: view,
-//                                      attribute: .leading,
-//                                      multiplier: 1.0,
-//                                      constant: 0.0)
-//
-//        let right = NSLayoutConstraint(item: view,
-//                                       attribute: .trailing,
-//                                       relatedBy: .equal,
-//                                       toItem: tabView,
-//                                       attribute: .trailing,
-//                                       multiplier: 1.0,
-//                                       constant: 0.0)
-
-//        view.addConstraints([top, left, right])
         
         if properties.postion == .top {
             tabView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         } else {
             tabView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         }
-
-        tabView.pageTabItems = tabItems.map({ $0.title})
+        
+        let _ = (_viewControllers ?? []).map({ $0.viewDidLoad() })
+      
+        tabView.pageTabItems = (_viewControllers ?? []).map({ $0.title ?? String() })
         tabView.updateCurrentIndex(beforeIndex, shouldScroll: true)
 
         tabView.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
             self?.displayControllerWithIndex(index, direction: direction, animated: true)
         }
 
-//        tabBarTopConstraint = top
-
         return tabView
-    }
-
-    private func setupStatusView() {
-        let statusView = UIView()
-        statusView.backgroundColor = properties.tabBackgroundColor
-        statusView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(statusView)
-
-        let top = NSLayoutConstraint(item: statusView,
-                                     attribute: .top,
-                                     relatedBy: .equal,
-                                     toItem: view,
-                                     attribute: .top,
-                                     multiplier:1.0,
-                                     constant: 0.0)
-
-        let left = NSLayoutConstraint(item: statusView,
-                                      attribute: .leading,
-                                      relatedBy: .equal,
-                                      toItem: view,
-                                      attribute: .leading,
-                                      multiplier: 1.0,
-                                      constant: 0.0)
-
-        let right = NSLayoutConstraint(item: view,
-                                       attribute: .trailing,
-                                       relatedBy: .equal,
-                                       toItem: statusView,
-                                       attribute: .trailing,
-                                       multiplier: 1.0,
-                                       constant: 0.0)
-
-        let height = NSLayoutConstraint(item: statusView,
-                                        attribute: .height,
-                                        relatedBy: .equal,
-                                        toItem: nil,
-                                        attribute: .height,
-                                        multiplier: 1.0,
-                                        constant: topLayoutGuide.length)
-
-        view.addConstraints([top, left, right, height])
-
-        statusViewHeightConstraint = height
-        self.statusView = statusView
-    }
-
-    public func updateNavigationBarHidden(_ hidden: Bool, animated: Bool) {
-        guard let navigationController = navigationController else { return }
-
-        if properties.hidesTabBarOnSwipe {
-            updateTabBarOrigin(hidden: hidden)
-        }
-
-        navigationController.setNavigationBarHidden(hidden, animated: animated)
-
-        if statusView == nil {
-            setupStatusView()
-        }
-
-        statusViewHeightConstraint!.constant = topLayoutGuide.length
-    }
-
-    public func showNavigationBar() {
-        guard let navigationController = navigationController else { return }
-        guard navigationController.isNavigationBarHidden  else { return }
-        guard let tabBarTopConstraint = tabBarTopConstraint else { return }
-
-        if properties.hidesTabBarOnSwipe {
-            tabBarTopConstraint.constant = 0.0
-            UIView.animate(withDuration: TimeInterval(UINavigationControllerHideShowBarDuration)) {
-                self.view.layoutIfNeeded()
-            }
-        }
-
-        navigationController.setNavigationBarHidden(false, animated: true)
-        
     }
 
     private func updateTabBarOrigin(hidden: Bool) {
@@ -327,16 +234,12 @@ extension NTScrollableTabBarController {
             self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title.withAlphaComponent(alpha), subtitleColor: Color.Default.Text.Subtitle.withAlphaComponent(alpha))
         }
     }
-}
-
-
-// MARK: - UIPageViewControllerDataSource
-
-extension NTScrollableTabBarController: UIPageViewControllerDataSource {
+    
+    // MARK: - UIPageViewControllerDataSource
 
     fileprivate func nextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
 
-        guard var index = tabItems.map({$0.viewController}).index(of: viewController) else {
+        guard var index = _viewControllers?.index(of: viewController) else {
             return nil
         }
 
@@ -346,8 +249,8 @@ extension NTScrollableTabBarController: UIPageViewControllerDataSource {
             index -= 1
         }
 
-        if index >= 0 && index < tabItems.count {
-            return tabItems[index].viewController
+        if index >= 0 && index < (_viewControllers?.count ?? 0) {
+            return _viewControllers?[index]
         }
         return nil
     }
@@ -359,12 +262,8 @@ extension NTScrollableTabBarController: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return nextViewController(viewController, isAfter: false)
     }
-}
-
-
-// MARK: - UIPageViewControllerDelegate
-
-extension NTScrollableTabBarController: UIPageViewControllerDelegate {
+    
+    // MARK: - UIPageViewControllerDelegate
 
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         shouldScrollCurrentBar = true
@@ -375,26 +274,21 @@ extension NTScrollableTabBarController: UIPageViewControllerDelegate {
     }
 
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let currentIndex = currentIndex , currentIndex < tabItemsCount {
+        if let currentIndex = currentIndex , currentIndex < viewControllerCount {
             tabView.updateCurrentIndex(currentIndex, shouldScroll: false)
             beforeIndex = currentIndex
         }
 
         tabView.updateCollectionViewUserInteractionEnabled(true)
     }
-}
-
-
-// MARK: - UIScrollViewDelegate
-
-extension NTScrollableTabBarController: UIScrollViewDelegate {
+    
+    // MARK: - UIScrollViewDelegate
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x == defaultContentOffsetX || !shouldScrollCurrentBar {
             return
         }
 
-        // (0..<tabItemsCount)
         var index: Int
         if scrollView.contentOffset.x > defaultContentOffsetX {
             index = beforeIndex + 1
@@ -402,10 +296,10 @@ extension NTScrollableTabBarController: UIScrollViewDelegate {
             index = beforeIndex - 1
         }
         
-        if index == tabItemsCount {
+        if index == viewControllerCount {
             index = 0
         } else if index < 0 {
-            index = tabItemsCount - 1
+            index = viewControllerCount - 1
         }
 
         let scrollOffsetX = scrollView.contentOffset.x - view.frame.width

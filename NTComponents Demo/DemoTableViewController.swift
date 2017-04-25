@@ -13,15 +13,15 @@ class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Table View"
         tableView.delegate = self
         tableView.imageDataSource = self
         stretchyHeaderHeight = 250
         addTopGradientToStretchyImage()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,8 +33,13 @@ class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = NTTableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
+        cell.textLabel?.text = String.random(ofLength: 10)
+
+        cell.detailTextLabel?.text = String.random(ofLength: 30)
+        
+//        cell.imageView?.image = UIImage(named: "Nathan")?.scale(to: 70)
+        
         return cell
     }
 

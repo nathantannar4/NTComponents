@@ -1,5 +1,5 @@
 //
-//  NTCollectionViewController.swift
+//  NTMapViewController.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,29 +22,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 4/24/17.
 //
 
-import UIKit
+import MapKit
+import CoreLocation
 
-open class NTCollectionViewController: DatasourceController {
+open class NTMapViewController: NTViewController, MKMapViewDelegate {
+    
+    public var mapView: NTMapView = {
+        let mapView = NTMapView()
+        mapView.showsCompass = true
+        return mapView
+    }()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Color.Default.Background.ViewController
-        collectionView?.backgroundColor = Color.Default.Background.ViewController
-       
-        if let parent =  parent as? NTScrollableTabBarController {
-            if parent.properties.postion == .top {
-                collectionView?.contentInset.top = parent.properties.tabHeight
-                collectionView?.scrollIndicatorInsets.top = parent.properties.tabHeight
-            }
-        }
-    }
-    
-    open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-        collectionViewLayout.invalidateLayout()
+        mapView.delegate = self
+        view.addSubview(mapView)
+        mapView.fillSuperview()
     }
 }

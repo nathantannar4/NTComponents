@@ -31,7 +31,7 @@ public extension UISearchBar {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = Color.Default.Tint.View
+        toolBar.tintColor = Color.Default.Tint.Toolbar
         toolBar.setItems(items, animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
