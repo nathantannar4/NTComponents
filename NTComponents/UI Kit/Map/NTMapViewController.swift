@@ -46,14 +46,14 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
     open var searchBar: NTSearchBarView = {
         let searchBar = NTSearchBarView()
         return searchBar
-    }
+    }()
 
     // MARK: - Standard Methods
 
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        locationManager = self
+        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
@@ -74,7 +74,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         guard let latitude = location?.coordinate.latitude, let longitude = location?.coordinate.longitude else {
             return
         }
-        let center = CLLocationCoordinate2D(latitude: atitude, longitude: longitude)
+        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 
         mapView.setRegion(region, animated: true)

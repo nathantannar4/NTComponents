@@ -29,7 +29,7 @@ open class NTSearchBar: UISearchBar {
 
     // MARK: - Initialization
 
-    convenience init(frame: CGRect) {
+    public convenience init() {
         self.init(frame: .zero)
     }
 

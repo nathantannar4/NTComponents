@@ -56,13 +56,13 @@ class DemoAlertsViewController: NTViewController {
         
         var actions = [NTActionSheetAction]()
         actions.append(NTActionSheetAction(title: "Google", icon: Icon.google, action: {
-            Toast(text: "Google").show(self.view, duration: 3.0)
+            NTToast(text: "Google").show(self.view, duration: 3.0)
         }))
         actions.append(NTActionSheetAction(title: "Facebook", icon: Icon.facebook, action: {
-            Toast(text: "Facebook").show(self.view, duration: 3.0)
+            NTToast(text: "Facebook").show(self.view, duration: 3.0)
         }))
         actions.append(NTActionSheetAction(title: "Twitter", icon: Icon.twitter, action: {
-            Toast(text: "Twitter").show(self.view, duration: 3.0)
+            NTToast(text: "Twitter").show(self.view, duration: 3.0)
         }))
         let actionSheet = NTActionSheetController(actions: actions)
         actionSheet.addDismissAction()
@@ -74,10 +74,10 @@ class DemoAlertsViewController: NTViewController {
         
         let alert = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone")
         alert.onCancel = {
-            Toast(text: "Canceled").show(duration: 5.0)
+            NTToast(text: "Canceled").show(duration: 5.0)
         }
         alert.onConfirm = {
-            Toast(text: "Confirmed").show(duration: 5.0)
+            NTToast(text: "Confirmed").show(duration: 5.0)
         }
         present(alert, animated: true, completion: nil)
     }

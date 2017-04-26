@@ -27,10 +27,10 @@
 
 import UIKit
 
-public class NTToast: NTAnimatedView {
+open class NTToast: NTAnimatedView {
 
     fileprivate var currentState: NTViewState = .hidden
-    public var dismissOnTap: Bool = true
+    open var dismissOnTap: Bool = true
 
     public convenience init(text: String?) {
         self.init(text: text, color: Color.Gray.P800, height: 50)
@@ -56,8 +56,8 @@ public class NTToast: NTAnimatedView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
-        ripplePercent = 3
-        touchUpAnimationTime = 0.3
+        ripplePercent = 1.5
+        touchUpAnimationTime = 0.4
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -70,7 +70,7 @@ public class NTToast: NTAnimatedView {
         }
     }
 
-    public func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = nil) {
+    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = nil) {
         if currentState != .hidden {
             return
         }
@@ -94,27 +94,25 @@ public class NTToast: NTAnimatedView {
         })
     }
 
-    public func dismiss() {
+    open func dismiss() {
         if currentState != .visible {
             return
         }
         currentState = .transitioning
 
-        DispatchQueue.executeAfter(0.5) {
-            UIView.transition(with: self, duration: 0.3, options: .curveLinear, animations: {() -> Void in
-                self.alpha = 0
-            }, completion: { finished in
-                self.currentState = .hidden
-                self.removeFromSuperview()
-            })
-        }
+        UIView.transition(with: self, duration: 0.6, options: .curveLinear, animations: {() -> Void in
+            self.alpha = 0
+        }, completion: { finished in
+            self.currentState = .hidden
+            self.removeFromSuperview()
+        })
+    }
+    
+    open override func animateToNormal() {
+        // Purposefully Empty
     }
 
-    open override animateToNormal() {
-        // Purposefully empty
-    }
-
-    public class func genericErrorMessage() {
+    open class func genericErrorMessage() {
         let alert = NTToast(text: "Sorry, an error occurred")
         alert.show(duration: 3.0)
     }

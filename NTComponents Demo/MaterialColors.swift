@@ -8,6 +8,33 @@
 
 import NTComponents
 
+protocol PropertyLoopable
+{
+    func allProperties() throws -> [String: Any]
+}
+
+extension PropertyLoopable
+{
+    func allProperties() throws -> [String: Any] {
+        
+        var result: [String: Any] = [:]
+        
+        let mirror = Mirror(reflecting: self)
+
+        
+        for (labelMaybe, valueMaybe) in mirror.children {
+            guard let label = labelMaybe else {
+                continue
+            }
+            
+            result[label] = valueMaybe
+        }
+        
+        return result
+    }
+}
+
+
 struct MaterialColors {
     
     func all() -> [UIColor] {

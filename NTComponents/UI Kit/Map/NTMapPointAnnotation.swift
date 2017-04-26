@@ -30,12 +30,10 @@ import MapKit
 open class NTMapPointAnnotation: MKPointAnnotation {
 
     // MARK: - Initialization
-
-    public convenience init() {
-        self.init(annotation: nil, reuseIdentifier: nil)
-    }
-
-    public override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+    
+    public override init() {
+        super.init()
+        
+        
     }
 }
