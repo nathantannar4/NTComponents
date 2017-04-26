@@ -62,10 +62,15 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         mapView.fillSuperview()
 
         mapView.addSubview(searchBar)
-        searchBar.anchor(mapView.topAnchor, left: mapView.leftAnchor, bottom: nil, right: mapView.rightAnchor, topConstant: 30, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 50)
+        
+        searchBar.anchor(mapView.topAnchor, left: mapView.leftAnchor, bottom: nil, right: mapView.rightAnchor, topConstant: 60, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 44)
     }
 
     // MARK: - MKMapViewDelegate
+    
+    public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        searchBar.searchField.resignFirstResponder()
+    }
 
     // MARK: - CLLocationManagerDelegate
 
@@ -77,7 +82,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 
-        mapView.setRegion(region, animated: true)
+//        mapView.setRegion(region, animated: true)
     }
 
     open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

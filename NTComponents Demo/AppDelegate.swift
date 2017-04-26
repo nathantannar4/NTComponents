@@ -56,9 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabVC = NTTabBarController(viewControllers: tabVCs)
         tabVC.title = "TabBar"
         
-        let colorsVC = DemoColorsCollectionView()
+        let mapVC = NTMapViewController()
+        mapVC.title = "MapView"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, tabVC, colorsVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, tabVC, mapVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         

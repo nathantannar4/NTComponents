@@ -29,28 +29,32 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
 
     open var onSearch: ((_ query: String?) -> Void)?
-    open var menuButtonAction: (() -> Void)?
+//    open var menuButtonAction: (() -> Void)?
 
     open var searchField: NTTextField = {
         let textField = NTTextField()
-        textField.placeholder = "..."
+        textField.placeholder = "Search"
         textField.backgroundColor = .clear
         textField.returnKeyType = .search
+        textField.clearButtonMode = .whileEditing
         return textField
     }()
 
-    open var searchButton: NTButton = {
-        let button = NTButton()
-        button.title = "Search"
-        button.titleFont = Font.Default.Callout
-        return button
-    }()
-
-    open var menuButton: NTButton = {
-        let button = NTButton()
-        button.trackTouchLocation = false
-        return button
-    }()
+//    open var searchButton: NTButton = {
+//        let button = NTButton()
+//        button.setImage(Icon.icon("Search")?.scale(to: 30), for: .normal)
+//        button.trackTouchLocation = false
+//        button.layer.cornerRadius = 5
+//        return button
+//    }()
+//
+//    open var menuButton: NTButton = {
+//        let button = NTButton()
+//        button.setImage(Icon.icon("Menu_ffffff_100")?.scale(to: 30), for: .normal)
+//        button.trackTouchLocation = false
+//        button.layer.cornerRadius = 5
+//        return button
+//    }()
 
     // MARK: - Initialization
 
@@ -58,39 +62,20 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
         super.init(frame: frame)
 
         setDefaultShadow()
+        layer.cornerRadius = 5
 
-        addSubview(menuButton)
+//        addSubview(menuButton)
         addSubview(searchField)
-        addSubview(searchButton)
+//        addSubview(searchButton)
 
-        menuButton.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: searchField.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        let menuButtonWidth = NSLayoutConstraint(item: menuButton,
-                                                   attribute: .width,
-                                                   relatedBy: .lessThanOrEqual,
-                                                   toItem: nil,
-                                                   attribute: .width,
-                                                   multiplier: 1.0,
-                                                   constant: 30)
-        menuButton.addConstraint(menuButtonWidth)
+//        menuButton.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 0)
+        
+        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 0)
 
-        searchField.anchor(topAnchor, left: menuButton.rightAnchor, bottom: bottomAnchor, right: searchButton.leftAnchor, topConstant: 5, leftConstant: 10, bottomConstant: 5, rightConstant: 10, widthConstant: 0, heightConstant: 0)
+//        searchButton.anchor(topAnchor, left: nil, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 0)
 
-        searchButton.anchor(topAnchor, left: searchField.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        let searchButtonWidth = NSLayoutConstraint(item: searchButton,
-                                                   attribute: .width,
-                                                   relatedBy: .lessThanOrEqual,
-                                                   toItem: nil,
-                                                   attribute: .width,
-                                                   multiplier: 1.0,
-                                                   constant: 50)
-        searchButton.addConstraint(searchButtonWidth)
-
-        menuButton.addTarget(self, action: #selector(menuButtonWasTapped(_:)), for: .touchUpInside)
-        searchButton.addTarget(self, action: #selector(search), for: .touchUpInside)
-
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(endSearhEditing))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        searchField.addToolBar(withItems: [cancelButton, spaceButton])
+//        menuButton.addTarget(self, action: #selector(menuButtonWasTapped(_:)), for: .touchUpInside)
+//        searchButton.addTarget(self, action: #selector(search), for: .touchUpInside)
     }
 
     public convenience init(onSearch function: ((_ query: String?) -> Void)? = nil) {
@@ -139,7 +124,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
     open func menuButtonWasTapped(_ sender: NTButton) {
         endSearhEditing()
-        menuButtonAction?()
+//        menuButtonAction?()
     }
 
     open func setMenuButton(hidden: Bool, animated: Bool) {

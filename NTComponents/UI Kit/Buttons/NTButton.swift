@@ -156,6 +156,10 @@ open class NTButton: UIButton {
         rippleBackgroundView.alpha = 0
         addSubview(rippleBackgroundView)
         
+        if let imageView = imageView {
+            bringSubview(toFront: imageView)
+        }
+        
         layer.shadowRadius = 0
         layer.shadowOffset = CGSize(width: 0, height: 1)
         layer.shadowColor = UIColor(white: 0.0, alpha: 0.5).cgColor
@@ -229,7 +233,7 @@ open class NTButton: UIButton {
     }
     
     open func animateToNormal() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.3, options: UIViewAnimationOptions.allowUserInteraction, animations: {
             self.rippleBackgroundView.alpha = 1
         }, completion: {(success: Bool) -> () in
             UIView.animate(withDuration: self.touchUpAnimationTime, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
