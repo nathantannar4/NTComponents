@@ -1,5 +1,5 @@
-# NTComponents
-> Everything you need to build amazing iOS apps
+![pageres](LOGO.jpg)
+##### Everything you need to build amazing iOS apps
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTUIKit.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -11,7 +11,7 @@ I faced an ongoing problem of always having to set the tint color, font choice a
 
 ## Features
 
-* MAintain consistency and style with ease
+* Maintain consistency and style with ease
     * Set global app defaults, such as color or font, that will be defaults in all NTComponent classes
 * Material color palette built in
 * Roboto font build in
@@ -23,7 +23,7 @@ I faced an ongoing problem of always having to set the tint color, font choice a
 ## Requirements
 
 - iOS 9.1+
-- Xcode 8.0
+- Xcode 8.0+
 
 ## Installation
 
@@ -36,14 +36,15 @@ use_frameworks!
 pod 'NTComponents'
 ```
 
-To get the full benefits import `NTComponents` wherever you import UIKit
+Now, rather than importing UIKit use the following
 
 ``` swift
 import NTComponents
 ```
 #### Manually
-1. Download and drop ```NTComponents.xcproject``` in your project.  
-2. Link the NTComponents.framework product to your projects binaries
+1. Download and open ```NTComponents.xcproject```
+2. Build the framework
+2. Copy the NTComponents.framework product to your project
 
 ## Release History
 
@@ -52,11 +53,14 @@ import NTComponents
 
 ## Contribute
 
-We would love for you to contribute to **NTComponents** with more useful extensions, models or UI classes. If interested please contact myself.
+We would love for you to contribute to `NTComponents` with more useful extensions, models or UI classes. If interested please contact myself.
 
-## Meta
+## Author
 
+<img src="NATHAN.jpg" data-canonical-src="https://github.com/nathantannar4/Engage/blob/master/Engage/Nathan.jpg" width="75" height="75" style="border-radius: 50%" />
 [Nathan Tannar](https://nathantannar.me)  – nathantannar4@gmail.com
+
+## License
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
