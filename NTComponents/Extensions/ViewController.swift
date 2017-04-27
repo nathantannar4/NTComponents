@@ -56,9 +56,9 @@ public extension UIViewController {
         titleLabel.textAlignment = .center
         titleLabel.sizeToFit()
         
-        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 16, width: 0, height: 0))
         subtitleLabel.textColor = subtitleColor ?? Color.Default.Text.Subtitle
-        subtitleLabel.font = Font.Default.Subtitle.withSize(14)
+        subtitleLabel.font = Font.Default.Subtitle.withSize(12)
         subtitleLabel.text = subtitle
         subtitleLabel.textAlignment = .center
         subtitleLabel.sizeToFit()

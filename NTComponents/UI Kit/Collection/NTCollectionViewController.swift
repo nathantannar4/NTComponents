@@ -36,9 +36,9 @@ open class NTCollectionViewController: DatasourceController {
         collectionView?.backgroundColor = Color.Default.Background.ViewController
        
         if let parent =  parent as? NTScrollableTabBarController {
-            if parent.properties.postion == .top {
-                collectionView?.contentInset.top = parent.properties.tabHeight
-                collectionView?.scrollIndicatorInsets.top = parent.properties.tabHeight
+            if parent.tabBarPosition == .top {
+                collectionView?.contentInset.top = parent.tabBarHeight
+                collectionView?.scrollIndicatorInsets.top = parent.tabBarHeight
             }
         }
     }

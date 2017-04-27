@@ -28,7 +28,7 @@
 import MapKit
 import CoreLocation
 
-open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, NTSearchBarViewDelegate {
 
     open var mapView: NTMapView = {
         let mapView = NTMapView()
@@ -47,6 +47,18 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         let searchBar = NTSearchBarView()
         return searchBar
     }()
+    
+    public var tableView: NTTableView = {
+        let tableView = NTTableView()
+        tableView.backgroundColor = Color.Default.Background.ViewController
+        tableView.contentInset.top = 10
+        tableView.contentOffset = CGPoint(x: 0, y: -10)
+        tableView.scrollIndicatorInsets.top = 10
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
+    var numberOfRows = 0
 
     // MARK: - Standard Methods
 
@@ -61,15 +73,53 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         view.addSubview(mapView)
         mapView.fillSuperview()
 
-        mapView.addSubview(searchBar)
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+        searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 44)
         
-        searchBar.anchor(mapView.topAnchor, left: mapView.leftAnchor, bottom: nil, right: mapView.rightAnchor, topConstant: 60, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 44)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.insertSubview(tableView, belowSubview: searchBar)
+        tableView.anchor(searchBar.bottomAnchor, left: searchBar.leftAnchor, bottom: nil, right: searchBar.rightAnchor, topConstant: -10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        tableView.setDefaultShadow()
+        tableView.layer.cornerRadius = 5
+    }
+    
+    // MARK: - NTSearchBarViewDelegate
+    
+    public func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) {
+        Log.write(.status, "Searched for \(query))")
+        
+        numberOfRows = query.characters.count
+        tableView.reloadSections([0], with: .none)
+        
+        let origin = tableView.frame.origin
+        let bounds = tableView.bounds
+        let height = (tableView.numberOfRows(inSection: 0) * 44) + 10
+        
+        UIView.animate(withDuration: 0.3) {
+            self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: CGFloat(height)))
+        }
+    }
+    
+    public func searchBarDidBeginEditing(_ searchBar: NTTextField) {
+       
+    }
+    
+    public func searchBarDidEndEditing(_ searchBar: NTTextField) {
+        
+        let origin = tableView.frame.origin
+        let bounds = tableView.bounds
+        
+        UIView.animate(withDuration: 0.3) {
+            self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: 0))
+        }
     }
 
     // MARK: - MKMapViewDelegate
     
     public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-        searchBar.searchField.resignFirstResponder()
+        searchBar.endSearchEditing()
     }
 
     // MARK: - CLLocationManagerDelegate
@@ -80,12 +130,39 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
             return
         }
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        _ = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 
 //        mapView.setRegion(region, animated: true)
     }
 
     open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         Log.write(.error, error.localizedDescription)
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    final public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    final public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfRows
+    }
+    
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = NTTableViewCell()
+        cell.textLabel?.text = String.random(ofLength: 10)
+        cell.detailTextLabel?.text = String.random(ofLength: 30)
+        return cell
+    }
+    
+    // MAKR: - UITableViewDelegate
+    
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Log.write(.status, "Selected row at index path \(indexPath)")
     }
 }

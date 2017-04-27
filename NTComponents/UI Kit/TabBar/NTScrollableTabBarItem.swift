@@ -57,14 +57,12 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
         }
     }
     
-    internal var properties: NTTabBarProperties = NTTabBarProperties()
-    
     fileprivate var animatedButton: NTButton = {
         let button = NTButton()
         button.backgroundColor = Color.Default.Background.TabBar
         button.titleFont = Font.Default.Subtitle
         button.trackTouchLocation = false
-        button.ripplePercent = 1
+        button.ripplePercent = 1.5
         return button
     }()
     
@@ -108,11 +106,11 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
 
     // MARK: - Standard Methods
     
-    override open var intrinsicContentSize : CGSize {
-        let width = animatedButton.intrinsicContentSize.width + properties.tabMargin * 2
-        let size = CGSize(width: width, height: properties.tabHeight)
-        return size
-    }
+//    override open var intrinsicContentSize : CGSize {
+//        let width = animatedButton.intrinsicContentSize.width + 40
+//        let size = CGSize(width: width, height: properties.tabHeight)
+//        return size
+//    }
 
     internal func hideCurrentBarView() {
         currentBarView.isHidden = true

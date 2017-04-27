@@ -78,7 +78,6 @@
 		3863D8D01EB0686E003B73F7 /* NTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D88A1EB0686E003B73F7 /* NTTabBar.swift */; };
 		3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D88B1EB0686E003B73F7 /* NTTabBarController.swift */; };
 		3863D8D21EB0686E003B73F7 /* NTTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D88C1EB0686E003B73F7 /* NTTabBarItem.swift */; };
-		3863D8D31EB0686E003B73F7 /* NTTabBarProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D88D1EB0686E003B73F7 /* NTTabBarProperties.swift */; };
 		3863D8D41EB0686E003B73F7 /* NTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D88F1EB0686E003B73F7 /* NTTableView.swift */; };
 		3863D8D51EB0686E003B73F7 /* NTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8901EB0686E003B73F7 /* NTTableViewCell.swift */; };
 		3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8911EB0686E003B73F7 /* NTTableViewController.swift */; };
@@ -191,7 +190,6 @@
 		3863D88A1EB0686E003B73F7 /* NTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBar.swift; sourceTree = "<group>"; };
 		3863D88B1EB0686E003B73F7 /* NTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarController.swift; sourceTree = "<group>"; };
 		3863D88C1EB0686E003B73F7 /* NTTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarItem.swift; sourceTree = "<group>"; };
-		3863D88D1EB0686E003B73F7 /* NTTabBarProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTabBarProperties.swift; sourceTree = "<group>"; };
 		3863D88F1EB0686E003B73F7 /* NTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableView.swift; sourceTree = "<group>"; };
 		3863D8901EB0686E003B73F7 /* NTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewCell.swift; sourceTree = "<group>"; };
 		3863D8911EB0686E003B73F7 /* NTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewController.swift; sourceTree = "<group>"; };
@@ -449,7 +447,6 @@
 				3863D88A1EB0686E003B73F7 /* NTTabBar.swift */,
 				3863D88B1EB0686E003B73F7 /* NTTabBarController.swift */,
 				3863D88C1EB0686E003B73F7 /* NTTabBarItem.swift */,
-				3863D88D1EB0686E003B73F7 /* NTTabBarProperties.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -644,7 +641,6 @@
 				3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */,
 				3863D8A91EB0686E003B73F7 /* DatasourceCell.swift in Sources */,
 				3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */,
-				3863D8D31EB0686E003B73F7 /* NTTabBarProperties.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
 				3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */,
 				3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */,

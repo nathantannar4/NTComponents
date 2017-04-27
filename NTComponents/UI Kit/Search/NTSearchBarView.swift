@@ -25,10 +25,17 @@
 //  Created by Nathan Tannar on 4/25/17.
 //
 
+public protocol NTSearchBarViewDelegate {
+    func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String)
+    func searchBarDidBeginEditing(_ searchBar: NTTextField)
+    func searchBarDidEndEditing(_ searchBar: NTTextField)
+}
+
 open class NTSearchBarView: NTView, UITextFieldDelegate {
 
 
-    open var onSearch: ((_ query: String?) -> Void)?
+    public var delegate: NTSearchBarViewDelegate?
+    
 //    open var menuButtonAction: (() -> Void)?
 
     open var searchField: NTTextField = {
@@ -64,23 +71,12 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
         setDefaultShadow()
         layer.cornerRadius = 5
 
-//        addSubview(menuButton)
-        addSubview(searchField)
-//        addSubview(searchButton)
 
-//        menuButton.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 0)
-        
+        searchField.delegate = self
+        searchField.addTarget(self, action: #selector(search), for: UIControlEvents.editingChanged)
+        addSubview(searchField)
         searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 0)
 
-//        searchButton.anchor(topAnchor, left: nil, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 44, heightConstant: 0)
-
-//        menuButton.addTarget(self, action: #selector(menuButtonWasTapped(_:)), for: .touchUpInside)
-//        searchButton.addTarget(self, action: #selector(search), for: .touchUpInside)
-    }
-
-    public convenience init(onSearch function: ((_ query: String?) -> Void)? = nil) {
-        self.init(frame: .zero)
-        self.onSearch = function
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -91,43 +87,48 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         Log.write(.status, "SearchBar editing began")
+        delegate?.searchBarDidBeginEditing(searchField)
     }
 
     open func textFieldDidEndEditing(_ textField: UITextField) {
         Log.write(.status, "SearchBar editing ended")
-        endSearhEditing()
+        endSearchEditing()
     }
     
     public func textFieldShouldClear(_ textField: UITextField) -> Bool {
         Log.write(.status, "SearchBar text cleared")
+        delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
         return true
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         search()
+        endSearchEditing()
         return true
     }
-
+    
+    
+    
     // MARK: - Search
 
     open func search() {
         Log.write(.status, "SearchBar search executed")
-        endSearhEditing()
-        onSearch?(searchField.text)
+        delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
     }
     
-    open func endSearhEditing() {
+    open func endSearchEditing() {
+        delegate?.searchBarDidEndEditing(searchField)
         searchField.resignFirstResponder()
     }
 
     // MARK: - Menu
 
     open func menuButtonWasTapped(_ sender: NTButton) {
-        endSearhEditing()
+        endSearchEditing()
 //        menuButtonAction?()
     }
 
-    open func setMenuButton(hidden: Bool, animated: Bool) {
-
-    }
+//    open func setMenuButton(hidden: Bool, animated: Bool) {
+//
+//    }
 }

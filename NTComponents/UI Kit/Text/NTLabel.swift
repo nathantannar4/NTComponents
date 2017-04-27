@@ -38,7 +38,6 @@ open class NTLabel: UILabel {
         super.init(frame: frame)
 
         setPreferredFontStyle(to: .body)
-        adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.2
         numberOfLines = 0
     }

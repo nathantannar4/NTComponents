@@ -39,7 +39,6 @@ internal class NTScrollableTabBar: UIView {
     var layouted: Bool = false
 
     
-    fileprivate var properties: NTTabBarProperties = NTTabBarProperties()
     fileprivate var beforeIndex: Int = 0
     internal var currentIndex: Int = 0
     fileprivate var pageTabItemsCount: Int = 0
@@ -48,6 +47,7 @@ internal class NTScrollableTabBar: UIView {
     fileprivate var collectionViewContentOffsetX: CGFloat = 0.0
     fileprivate var currentBarViewWidth: CGFloat = 0.0
     fileprivate var currentBarViewLeftConstraint: NSLayoutConstraint?
+    fileprivate var tabHeight: CGFloat = 32
 
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     var currentBarView = UIView()
@@ -71,44 +71,24 @@ internal class NTScrollableTabBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(properties: NTTabBarProperties) {
+    init(barHeight: CGFloat = 2, barPosition: NTTabBarPosition = .top, tabHeight: CGFloat = 32) {
         super.init(frame: .zero)
-        self.properties = properties
         
-        backgroundColor = properties.tabBackgroundColor.withAlphaComponent(properties.tabBarAlpha)
+        self.tabHeight = tabHeight
+        
+        backgroundColor = Color.Default.Background.TabBar
         translatesAutoresizingMaskIntoConstraints = false
         setDefaultShadow()
         
         addSubview(collectionView)
-        collectionView.backgroundColor = properties.tabBackgroundColor
+        collectionView.backgroundColor = Color.Default.Background.TabBar
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollsToTop = false
         collectionView.fillSuperview()
         collectionView.register(NTScrollableTabBarItem.self, forCellWithReuseIdentifier: NTScrollableTabBarItem.cellIdentifier)
-
         collectionView.addSubview(currentBarView)
         
-        
-        if properties.postion == .bottom {
-            currentBarView.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: properties.currentBarHeight)
-            layer.shadowOffset = CGSize(width: 0, height: -1)
-        } else {
-            currentBarView.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: properties.currentBarHeight)
-        }
-        
-        currentBarView.backgroundColor = properties.currentColor
-        currentBarViewHeightConstraint?.constant = properties.currentBarHeight
-        
-        currentBarView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let top = NSLayoutConstraint(item: currentBarView,
-                                     attribute: .top,
-                                     relatedBy: .equal,
-                                     toItem: collectionView,
-                                     attribute: .top,
-                                     multiplier: 1.0,
-                                     constant: properties.tabHeight - (currentBarViewHeightConstraint?.constant ?? 0))
         
         let left = NSLayoutConstraint(item: currentBarView,
                                       attribute: .leading,
@@ -117,11 +97,21 @@ internal class NTScrollableTabBar: UIView {
                                       attribute: .leading,
                                       multiplier: 1.0,
                                       constant: 0.0)
+        collectionView.addConstraint(left)
         
         currentBarViewLeftConstraint = left
-        collectionView.addConstraints([top, left])
+        
+        currentBarView.backgroundColor = Color.Default.Tint.TabBar
+        currentBarViewHeightConstraint?.constant = barHeight
+        currentBarView.translatesAutoresizingMaskIntoConstraints = false
         
         
+        if barPosition == .bottom {
+            currentBarView.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: barHeight)
+            layer.shadowOffset = CGSize(width: 0, height: -1)
+        } else {
+            currentBarView.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: barHeight)
+        }
     }
 
     /**
@@ -276,7 +266,6 @@ extension NTScrollableTabBar: UICollectionViewDataSource {
     fileprivate func configureCell(_ cell: NTScrollableTabBarItem, indexPath: IndexPath) {
         let fixedIndex = indexPath.item
         cell.title = pageTabItems[fixedIndex]
-        cell.properties = properties
         cell.isCurrent = fixedIndex == (currentIndex % pageTabItemsCount)
         cell.tabItemButtonPressedBlock = { [weak self, weak cell] in
             var direction: UIPageViewControllerNavigationDirection = .forward
@@ -318,8 +307,6 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
             }
         }
 
-
-
         if pageTabItemsWidth == 0.0 {
             pageTabItemsWidth = floor(scrollView.contentSize.width / 3.0)
         }
@@ -351,7 +338,7 @@ extension NTScrollableTabBar: UICollectionViewDelegateFlowLayout {
 
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       
-        let size = CGSize(width: (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)), height: properties.tabHeight)
+        let size = CGSize(width: (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)), height: tabHeight)
 
         return size
     }

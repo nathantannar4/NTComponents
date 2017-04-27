@@ -37,7 +37,7 @@ open class NTView: UIView {
         super.init(frame: frame)
         
         tintColor = Color.Default.Tint.View
-        backgroundColor = .white
+        backgroundColor = Color.Default.Background.View
     }
     
     public convenience init() {

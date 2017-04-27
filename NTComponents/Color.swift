@@ -62,6 +62,7 @@ public struct Color {
             Color.Default.Text.Title = color
             Color.Default.Text.Subtitle = color.darker(by: 20)
             Color.Default.Tint.Inactive = color.darker(by: 20)
+            Color.Default.Tint.View = color
         }
 
         /**

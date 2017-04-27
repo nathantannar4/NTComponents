@@ -53,7 +53,7 @@ open class NTTabBarItem: NTAnimatedView {
     open var titleLabel: NTLabel = {
         let label = NTLabel(style: .caption)
         label.textAlignment = .center
-        label.font = Font.Default.Caption.withSize(11)
+        label.font = Font.Default.Subhead.withSize(11)
         label.textColor = Color.Gray.P500
         return label
     }()

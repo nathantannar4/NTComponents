@@ -59,9 +59,9 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         if let parent = parent as? NTScrollableTabBarController {
-            if parent.properties.postion == .top {
-                tableView.contentInset.top = parent.properties.tabHeight
-                tableView.scrollIndicatorInsets.top = parent.properties.tabHeight
+            if parent.tabBarPosition == .top {
+                tableView.contentInset.top = parent.tabBarHeight
+                tableView.scrollIndicatorInsets.top = parent.tabBarHeight
             }
         }
         
@@ -226,7 +226,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDataSource
     
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 44
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
