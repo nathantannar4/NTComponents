@@ -59,7 +59,7 @@ We would love for you to contribute to `NTComponents` with more useful extension
 
 ## Author
 
-<img src="NATHAN.jpg" data-canonical-src="https://github.com/nathantannar4/Engage/blob/master/Engage/Nathan.jpg" width="75" height="75" style="border-radius: 50%" />
+<img src="NATHAN.jpg" data-canonical-src="https://github.com/nathantannar4/Engage/blob/master/Engage/Nathan.jpg" width="75" height="75" style="border-radius: 50%">
 [Nathan Tannar](https://nathantannar.me)  – nathantannar4@gmail.com
 
 ## License
