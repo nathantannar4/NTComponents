@@ -1,4 +1,4 @@
-![pageres](LOGO.jpg)
+![Logo](LOGO.jpg)
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTUIKit.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -6,7 +6,7 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/NTUIKit.svg)](https://img.shields.io/cocoapods/v/NTUIKit.svg)   [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/NTUIKit.svg)]()
 <br>
 
-I faced an ongoing problem of always having to set the tint color, font choice and general for every subclass I made of UIKit. To solve this I made `NTComponents`. A set of classes that will inherit defaults defined in `AppDelegate`. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.
+I faced an ongoing problem of always having to set the tint color, font choice and general defaults for every project. To solve this I made `NTComponents`. A set of classes that will inherit defaults defined in `AppDelegate`. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.
 
 ## Features
 
@@ -49,6 +49,9 @@ import NTComponents
 
 * 0.0.1
     * Work in progress
+
+## Getting Started
+Coming soon...
 
 ## Contribute
 
