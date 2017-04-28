@@ -47,8 +47,10 @@ import NTComponents
 
 ## Release History
 
+* 0.0.2
+    * Completed the majority of main components
 * 0.0.1
-    * Work in progress
+    * Started with NTUIKit
 
 ## Getting Started
 Coming soon...
