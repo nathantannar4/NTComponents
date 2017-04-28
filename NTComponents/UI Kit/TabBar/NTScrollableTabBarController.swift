@@ -119,13 +119,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
 
         updateNavigationBar()
         tabView?.layouted = true
-    }
-
-    override open func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        
     }
     
     open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -161,6 +155,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         dataSource = self
         delegate = self
         automaticallyAdjustsScrollViewInsets = false
+        
         
         guard let viewControllers = _viewControllers else {
             return

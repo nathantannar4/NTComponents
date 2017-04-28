@@ -71,7 +71,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
 
         searchBar.delegate = self
         view.addSubview(searchBar)
-        searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 44)
+        searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,10 +84,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
     // MARK: - NTSearchBarViewDelegate
 
     open func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) {
-        Log.write(.status, "Searched for \(query))")
-
-        numberOfRows = query.characters.count
-        tableView.reloadSections([0], with: .none)
+        Log.write(.status, "Searched for \(query)")
 
         let origin = tableView.frame.origin
         let bounds = tableView.bounds
@@ -118,9 +115,9 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         searchBar.endSearchEditing()
     }
 
-    open func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    open func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseIdentifier = "pin"
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseIdentifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
 
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -129,8 +126,8 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
             annotationView?.annotation = annotation
         }
 
-        let customPointAnnotation = annotation as! CustomPointAnnotation
-        annotationView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
+//        let customPointAnnotation = annotation as! CustomPointAnnotation
+//        annotationView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
 
         return annotationView
     }
@@ -152,24 +149,25 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
     open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         Log.write(.error, error.localizedDescription)
     }
-
-    open func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             // Location services are authorised, track the user.
             locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
-
+            Log.write(.status, "Location use authorized")
+            
         case .denied, .restricted:
             // Location services not authorised, stop tracking the user.
             locationManager.stopUpdatingLocation()
             mapView.showsUserLocation = false
-            currentLocation = nil
-
+            Log.write(.warning, "Location use NOT authorized")
+            
         default:
             // Location services pending authorisation.
             // Alert requesting access is visible at this point.
-            currentLocation = nil
+            break
         }
     }
 

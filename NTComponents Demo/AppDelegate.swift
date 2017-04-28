@@ -53,18 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabVCs.append(vc)
         }
     
-        let tabVC = NTTabBarController(viewControllers: tabVCs)
-        tabVC.title = "TabBar"
-        
         let mapVC = NTMapViewController()
         mapVC.title = "MapView"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, tabVC, mapVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, mapVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
-        centerVC.tabBarHeight = 44
-        centerVC.tabBarPosition = .bottom
-//        centerVC.currentTabBarHeight = 4
+        centerVC.currentTabBarHeight = 2.5
         
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         

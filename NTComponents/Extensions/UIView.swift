@@ -38,11 +38,15 @@ public extension UIView {
         return nil
     }
     
+    func hideShadow() {
+        self.layer.shadowOpacity = 0
+    }
+    
     func setDefaultShadow() {
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOpacity = 0.3
-        self.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.layer.shadowRadius = 3
+        self.layer.shadowColor = Color.Default.Shadow.cgColor
+        self.layer.shadowOpacity = Color.Default.Shadow.Opacity
+        self.layer.shadowOffset = Color.Default.Shadow.Offset
+        self.layer.shadowRadius = Color.Default.Shadow.Radius
     }
     
     /**

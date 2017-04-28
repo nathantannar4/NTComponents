@@ -108,7 +108,7 @@ internal class NTScrollableTabBar: UIView {
         
         if barPosition == .bottom {
             currentBarView.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: barHeight)
-            layer.shadowOffset = CGSize(width: 0, height: -1)
+            layer.shadowOffset = CGSize(width: -Color.Default.Shadow.Offset.width, height: -Color.Default.Shadow.Offset.height)
         } else {
             currentBarView.anchor(nil, left: nil, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: barHeight)
         }

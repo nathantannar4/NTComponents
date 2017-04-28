@@ -60,7 +60,7 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     fileprivate var animatedButton: NTButton = {
         let button = NTButton()
         button.backgroundColor = Color.Default.Background.TabBar
-        button.titleFont = Font.Default.Subtitle
+        button.titleFont = Font.Default.Subhead
         button.trackTouchLocation = false
         button.ripplePercent = 1.5
         return button

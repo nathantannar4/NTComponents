@@ -75,7 +75,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
         searchField.delegate = self
         searchField.addTarget(self, action: #selector(search), for: UIControlEvents.editingChanged)
         addSubview(searchField)
-        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 0)
+        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 8, leftConstant: 10, bottomConstant: 8, rightConstant: 10, widthConstant: 0, heightConstant: 0)
 
     }
 

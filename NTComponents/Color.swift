@@ -85,6 +85,22 @@ public struct Color {
 
         }
 
+        /**
+         Overrides the default shadow properties view
+
+         - parameter color: The color of the shadow, defaults to Color.Gray.P600
+         - parameter opacity: The opacity of the shadow, defaults to 0.3
+         - parameter radius: The radius of the shadow, defaults to 3
+         - paramter offset: The offset of the shadow, defaults to CGSize(width: 0, height: 2)
+         - returns: Void
+        */
+        public static func setShadow(color: CGColor = Color.Gray.P600.cgColor, opacity: Float = 0.3, radius: CGFloat = 3, offset: CGSize = CGSize(width: 0, height: 2)) {
+            Color.Default.Shadow.cgColor = color
+            Color.Default.Shadow.Opacity = opacity
+            Color.Default.Shadow.Radius = radius
+            Color.Default.Shadow.Offset = offset
+        }
+
         public struct Tint {
 
             // 007AFF is the hex code for the default blue tint in iOS
@@ -122,6 +138,13 @@ public struct Color {
             public static var Success = UIColor(hex: "#37D387")
             public static var Warning = UIColor(hex: "#FFB200")
             public static var Danger  = UIColor(hex: "#FF6E6E")
+        }
+        
+        public struct Shadow {
+            public static var cgColor: CGColor = Color.Gray.P600.cgColor
+            public static var Opacity: Float   = 0.3
+            public static var Radius:  CGFloat = 3
+            public static var Offset: CGSize   = CGSize(width: 0, height: 2)
         }
     }
 
