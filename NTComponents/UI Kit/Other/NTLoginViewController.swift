@@ -615,19 +615,5 @@ extension NTLoginViewController: UITextFieldDelegate {
         }
         return false
     }
-    
-    private func addToolBar(textField: UITextField){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = Color.Defaults.buttonTint
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(dismissKeyboard))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        textField.inputAccessoryView = toolBar
-    }
 }
  */
