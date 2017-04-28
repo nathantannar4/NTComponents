@@ -156,9 +156,13 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         delegate = self
         automaticallyAdjustsScrollViewInsets = false
         
-        
         guard let viewControllers = _viewControllers else {
             return
+        }
+        
+        for vc in viewControllers {
+            addChildViewController(vc)
+            vc.didMove(toParentViewController: self)
         }
         
         setViewControllers([viewControllers[beforeIndex]],

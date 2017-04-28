@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabVCs.append(vc)
         }
     
-        let mapVC = NTMapViewController()
+        let mapVC = DemoMapViewController()
         mapVC.title = "MapView"
         
         let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, mapVC])
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
-        window?.rootViewController = root
+        window?.rootViewController = mapVC
         window?.makeKeyAndVisible()
         
         return true

@@ -71,7 +71,14 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
 
         searchBar.delegate = self
         view.addSubview(searchBar)
-        searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
+        
+        if let parent = parent as? NTScrollableTabBarController, parent.tabBarPosition == .top {
+            searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24 + parent.tabBarHeight, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
+        } else {
+            searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
+        }
+        
+        
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -83,16 +90,17 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
 
     // MARK: - NTSearchBarViewDelegate
 
-    open func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) {
+    open func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) -> Bool {
         Log.write(.status, "Searched for \(query)")
 
         let origin = tableView.frame.origin
         let bounds = tableView.bounds
         let height = (tableView.numberOfRows(inSection: 0) * 36) + 10
-
-        UIView.animate(withDuration: 0.3) {
+       
+        UIView.animate(withDuration: 0.3, animations: {
             self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: CGFloat(height)))
-        }
+        })
+        return true
     }
 
     open func searchBarDidBeginEditing(_ searchBar: NTTextField) {

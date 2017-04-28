@@ -26,7 +26,7 @@
 //
 
 public protocol NTSearchBarViewDelegate {
-    func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String)
+    func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) -> Bool
     func searchBarDidBeginEditing(_ searchBar: NTTextField)
     func searchBarDidEndEditing(_ searchBar: NTTextField)
 }
@@ -97,8 +97,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
     
     public func textFieldShouldClear(_ textField: UITextField) -> Bool {
         Log.write(.status, "SearchBar text cleared")
-        delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
-        return true
+        return delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String()) ?? true
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -113,7 +112,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
 
     open func search() {
         Log.write(.status, "SearchBar search executed")
-        delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
+        let _ = delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
     }
     
     open func endSearchEditing() {

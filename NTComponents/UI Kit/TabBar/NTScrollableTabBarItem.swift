@@ -74,7 +74,7 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     
     fileprivate let currentBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = Color.Default.Tint.TabBar
         return view
     }()
     

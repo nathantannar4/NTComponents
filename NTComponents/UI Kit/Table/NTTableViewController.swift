@@ -58,11 +58,9 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        if let parent = parent as? NTScrollableTabBarController {
-            if parent.tabBarPosition == .top {
-                tableView.contentInset.top = parent.tabBarHeight
-                tableView.scrollIndicatorInsets.top = parent.tabBarHeight
-            }
+        if let parent = parent as? NTScrollableTabBarController, parent.tabBarPosition == .top {
+            tableView.contentInset.top = parent.tabBarHeight
+            tableView.scrollIndicatorInsets.top = parent.tabBarHeight
         }
         
         view.backgroundColor = Color.Default.Background.ViewController
