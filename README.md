@@ -1,4 +1,4 @@
-![Logo](LOGO.jpg)
+![Logo](BANNER.jpg)
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -12,8 +12,8 @@ I faced an ongoing problem of always having to set the tint color, font choice a
 
 * Maintain consistency and style with ease
     * Set global app defaults, such as color or font, that will be defaults in all NTComponent classes
+* New base class controllers to work with
 * Material color palette built in
-* Roboto font build in
 * Ripple effect for buttons and views available
 * Common icons built in
 * Programatic auto layout

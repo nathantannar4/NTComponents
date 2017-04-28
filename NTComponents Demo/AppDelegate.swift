@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
-        window?.rootViewController = mapVC
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true
