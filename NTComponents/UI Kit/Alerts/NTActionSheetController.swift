@@ -133,7 +133,6 @@ open class NTActionSheetController: UIViewController  {
         let button = NTButton()
         button.backgroundColor = action.color
         button.touchUpAnimationTime = 0.2
-        button.trackTouchLocation = false
         button.ripplePercent = 1
         button.imageView?.backgroundColor = .clear
 

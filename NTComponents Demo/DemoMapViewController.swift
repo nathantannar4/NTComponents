@@ -29,6 +29,8 @@ class DemoMapViewController: NTMapViewController {
     }
     
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = NTTableViewCell()
         cell.textLabel?.text = objects[indexPath.row]

@@ -52,12 +52,19 @@ open class NTImageView: UIImageView {
     
     private var tapCallback: (() -> ())?
     
-    public init(cornerRadius: CGFloat = 0, emptyImage: UIImage? = nil) {
-        super.init(frame: .zero)
+    public convenience init(cornerRadius: CGFloat = 0, emptyImage: UIImage? = nil) {
+        self.init(frame: .zero)
         contentMode = .scaleAspectFill
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         self.emptyImage = emptyImage
+        tintColor = Color.Default.Tint.View
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        contentMode = .scaleAspectFit
         tintColor = Color.Default.Tint.View
     }
     

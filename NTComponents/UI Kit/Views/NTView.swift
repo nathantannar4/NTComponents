@@ -33,6 +33,8 @@ public enum NTViewState {
 
 open class NTView: UIView {
     
+    // MARK: - Initialization
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         

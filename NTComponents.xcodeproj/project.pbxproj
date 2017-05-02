@@ -88,6 +88,9 @@
 		3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8981EB0686E003B73F7 /* NTImageView.swift */; };
 		3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8991EB0686E003B73F7 /* NTView.swift */; };
 		389AF3D51EB307370089E9C1 /* DemoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3D41EB307370089E9C1 /* DemoMapViewController.swift */; };
+		389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F41EB51EBE0089E9C1 /* NTChime.swift */; };
+		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
+		389AF3FB1EB5A1D00089E9C1 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -201,6 +204,9 @@
 		3863D8981EB0686E003B73F7 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		3863D8991EB0686E003B73F7 /* NTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
 		389AF3D41EB307370089E9C1 /* DemoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoMapViewController.swift; sourceTree = "<group>"; };
+		389AF3F41EB51EBE0089E9C1 /* NTChime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTChime.swift; sourceTree = "<group>"; };
+		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
+		389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -371,6 +377,8 @@
 				3863D86A1EB0686E003B73F7 /* NTActionSheetController.swift */,
 				3863D86B1EB0686E003B73F7 /* NTAlertController.swift */,
 				3863D86C1EB0686E003B73F7 /* NTToast.swift */,
+				389AF3F41EB51EBE0089E9C1 /* NTChime.swift */,
+				389AF3F81EB59AC10089E9C1 /* NTPing.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -478,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D8971EB0686E003B73F7 /* NTAnimatedView.swift */,
+				389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */,
 				3863D8981EB0686E003B73F7 /* NTImageView.swift */,
 				3863D8991EB0686E003B73F7 /* NTView.swift */,
 			);
@@ -660,6 +669,7 @@
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,
 				3863D8A81EB0686E003B73F7 /* Datasource.swift in Sources */,
+				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
@@ -674,6 +684,7 @@
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
+				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
 				3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */,
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,
 				3863D8D81EB0686E003B73F7 /* NTTextField.swift in Sources */,
@@ -683,6 +694,7 @@
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */,
+				389AF3FB1EB5A1D00089E9C1 /* NTActivityIndicator.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */,
 			);

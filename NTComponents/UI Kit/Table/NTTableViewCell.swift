@@ -148,7 +148,7 @@ open class NTTableViewCell: UITableViewCell {
     open var rippleOverBounds: Bool = false
     open var shadowRippleRadius: Float = 1
     open var shadowRippleEnable: Bool = false
-    open var trackTouchLocation: Bool = false
+    open var trackTouchLocation: Bool = true
     open var touchUpAnimationTime: Double = 0.4
     
     let rippleView = UIView()

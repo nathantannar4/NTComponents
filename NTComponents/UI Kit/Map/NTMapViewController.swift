@@ -95,7 +95,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
 
         let origin = tableView.frame.origin
         let bounds = tableView.bounds
-        let height = (tableView.numberOfRows(inSection: 0) * 36) + 10
+        let height = (CGFloat(tableView.numberOfRows(inSection: 0)) * tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))) + 10
        
         UIView.animate(withDuration: 0.3, animations: {
             self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: CGFloat(height)))
@@ -181,7 +181,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
 
     // MARK: - UITableViewDataSource
 
-    final public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 36
     }
 

@@ -85,13 +85,6 @@ open class NTTabBarController: UITabBarController, NTTabBarDelegate {
         Log.write(.status, "NTTabBarController - Selected '\(viewController.title ?? "nil Title")'")
     }
     
-//    open override func viewWillLayoutSubviews() {
-//        var tabFrame = self.tabBar.frame
-//        tabFrame.size.height = 44
-//        tabFrame.origin.y = self.view.frame.size.height - 44
-//        self.tabBar.frame = tabFrame
-//    }
-    
     open func setTabBar(hidden: Bool, animated: Bool) {
         
         if self.tabBar.isHidden == hidden {

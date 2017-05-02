@@ -56,10 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mapVC = DemoMapViewController()
         mapVC.title = "MapView"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, mapVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tableVC, mapVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5
+        centerVC.tabBarHeight = 50
+        centerVC.tabBarPosition = .bottom
         
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         

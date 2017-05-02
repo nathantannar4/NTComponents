@@ -25,7 +25,9 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
-import UIKit
+public enum NTAlertType {
+    case isInfo, isSuccess, isWarning, isDanger
+}
 
 open class NTAlertViewController: UIViewController  {
     

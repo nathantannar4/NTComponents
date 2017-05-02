@@ -71,12 +71,9 @@ open class NTToast: NTAnimatedView {
     }
 
     open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = nil) {
-        if currentState != .hidden {
-            return
-        }
-        guard let view = view else {
-            return
-        }
+        if currentState != .hidden { return }
+        guard let view = view else { return }
+        
         addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(NTToast.didTap(_:))))
         frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: self.frame.height)
         view.addSubview(self)
@@ -85,12 +82,10 @@ open class NTToast: NTAnimatedView {
             self.frame = CGRect(x: 0, y: view.frame.height - self.frame.height, width: view.frame.width, height: self.frame.height)
         }, completion: { finished in
             self.currentState = .visible
-            guard let duration = duration else {
-                return
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(1000.0 * duration))) {
+            guard let duration = duration else { return }
+            DispatchQueue.executeAfter(duration, closure: {
                 self.dismiss()
-            }
+            })
         })
     }
 
