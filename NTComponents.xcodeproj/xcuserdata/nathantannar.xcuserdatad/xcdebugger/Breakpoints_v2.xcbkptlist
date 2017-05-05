@@ -264,12 +264,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents Demo/DemoAlertsViewController.swift"
-            timestampString = "515221383.61029"
+            timestampString = "515409258.403406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "showActionSheet()"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "showActionSheet(withImages:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -856,6 +856,22 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "animate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Alerts/NTChime.swift"
+            timestampString = "515409599.717746"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "init(type:title:subtitle:icon:action:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

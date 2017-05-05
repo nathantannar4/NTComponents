@@ -1,5 +1,5 @@
 //
-//  NTActionSheetController.swift
+//  NTActionSheetViewController.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -27,7 +27,7 @@
 
 import UIKit
 
-open class NTActionSheetAction: NSObject {
+open class NTActionSheetItem: NSObject {
 
     public var icon: UIImage?
     public var title: String
@@ -43,7 +43,7 @@ open class NTActionSheetAction: NSObject {
 
 }
 
-open class NTActionSheetController: UIViewController  {
+open class NTActionSheetViewController: UIViewController  {
 
     open override var title: String? {
         didSet {
@@ -59,7 +59,7 @@ open class NTActionSheetController: UIViewController  {
         }
     }
 
-    fileprivate var actions: [NTActionSheetAction] = []
+    fileprivate var actions: [NTActionSheetItem] = []
     fileprivate var actionButtons: [NTButton] = []
 
     public var titleLabel: NTLabel = {
@@ -87,7 +87,7 @@ open class NTActionSheetController: UIViewController  {
 
     // MARK: - Initialization
 
-    public required init(title: String? = nil, subtitle: String? = nil, actions: [NTActionSheetAction] = []) {
+    public required init(title: String? = nil, subtitle: String? = nil, actions: [NTActionSheetItem] = []) {
         self.init()
         self.title = title
         self.subtitle = subtitle
@@ -120,16 +120,16 @@ open class NTActionSheetController: UIViewController  {
 
     // MARK: - NTActionSheetAction Methods
 
-    public func addAction(_ action: NTActionSheetAction) {
+    public func addAction(_ action: NTActionSheetItem) {
         actions.append(action)
     }
 
     public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100"), color: UIColor = .white) {
-        let dismissAction = NTActionSheetAction(title: text, icon: icon, color: color)
+        let dismissAction = NTActionSheetItem(title: text, icon: icon, color: color)
         actions.append(dismissAction)
     }
 
-    open func createButton(fromAction action: NTActionSheetAction) -> NTButton {
+    open func createButton(fromAction action: NTActionSheetItem) -> NTButton {
         let button = NTButton()
         button.backgroundColor = action.color
         button.touchUpAnimationTime = 0.2

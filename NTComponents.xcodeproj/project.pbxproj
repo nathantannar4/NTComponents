@@ -51,8 +51,8 @@
 		3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8651EB0686E003B73F7 /* UITextField.swift */; };
 		3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8661EB0686E003B73F7 /* UIView.swift */; };
 		3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8671EB0686E003B73F7 /* ViewController.swift */; };
-		3863D8B81EB0686E003B73F7 /* NTActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86A1EB0686E003B73F7 /* NTActionSheetController.swift */; };
-		3863D8B91EB0686E003B73F7 /* NTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86B1EB0686E003B73F7 /* NTAlertController.swift */; };
+		3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */; };
+		3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */; };
 		3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86C1EB0686E003B73F7 /* NTToast.swift */; };
 		3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86E1EB0686E003B73F7 /* NTButton.swift */; };
 		3863D8BC1EB0686E003B73F7 /* NTMenuBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86F1EB0686E003B73F7 /* NTMenuBarButtonItem.swift */; };
@@ -90,7 +90,8 @@
 		389AF3D51EB307370089E9C1 /* DemoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3D41EB307370089E9C1 /* DemoMapViewController.swift */; };
 		389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F41EB51EBE0089E9C1 /* NTChime.swift */; };
 		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
-		389AF3FB1EB5A1D00089E9C1 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */; };
+		389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */; };
+		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -167,8 +168,8 @@
 		3863D8651EB0686E003B73F7 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		3863D8661EB0686E003B73F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3863D8671EB0686E003B73F7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3863D86A1EB0686E003B73F7 /* NTActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetController.swift; sourceTree = "<group>"; };
-		3863D86B1EB0686E003B73F7 /* NTAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertController.swift; sourceTree = "<group>"; };
+		3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetViewController.swift; sourceTree = "<group>"; };
+		3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertViewController.swift; sourceTree = "<group>"; };
 		3863D86C1EB0686E003B73F7 /* NTToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToast.swift; sourceTree = "<group>"; };
 		3863D86E1EB0686E003B73F7 /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
 		3863D86F1EB0686E003B73F7 /* NTMenuBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMenuBarButtonItem.swift; sourceTree = "<group>"; };
@@ -206,7 +207,8 @@
 		389AF3D41EB307370089E9C1 /* DemoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoMapViewController.swift; sourceTree = "<group>"; };
 		389AF3F41EB51EBE0089E9C1 /* NTChime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTChime.swift; sourceTree = "<group>"; };
 		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
-		389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
+		389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
+		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,11 +376,12 @@
 		3863D8691EB0686E003B73F7 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				3863D86A1EB0686E003B73F7 /* NTActionSheetController.swift */,
-				3863D86B1EB0686E003B73F7 /* NTAlertController.swift */,
+				3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */,
+				3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */,
 				3863D86C1EB0686E003B73F7 /* NTToast.swift */,
 				389AF3F41EB51EBE0089E9C1 /* NTChime.swift */,
 				389AF3F81EB59AC10089E9C1 /* NTPing.swift */,
+				389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			children = (
 				3863D88F1EB0686E003B73F7 /* NTTableView.swift */,
 				3863D8901EB0686E003B73F7 /* NTTableViewCell.swift */,
+				389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */,
 				3863D8911EB0686E003B73F7 /* NTTableViewController.swift */,
 			);
 			path = Table;
@@ -486,7 +490,6 @@
 			isa = PBXGroup;
 			children = (
 				3863D8971EB0686E003B73F7 /* NTAnimatedView.swift */,
-				389AF3FA1EB5A1D00089E9C1 /* NTActivityIndicator.swift */,
 				3863D8981EB0686E003B73F7 /* NTImageView.swift */,
 				3863D8991EB0686E003B73F7 /* NTView.swift */,
 			);
@@ -662,7 +665,7 @@
 				3863D8D51EB0686E003B73F7 /* NTTableViewCell.swift in Sources */,
 				3863D8C81EB0686E003B73F7 /* NTLoginViewController.swift in Sources */,
 				3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */,
-				3863D8B91EB0686E003B73F7 /* NTAlertController.swift in Sources */,
+				3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */,
 				3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */,
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
@@ -672,14 +675,16 @@
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
+				389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
-				3863D8B81EB0686E003B73F7 /* NTActionSheetController.swift in Sources */,
+				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
 				3863D8AA1EB0686E003B73F7 /* DatasourceController.swift in Sources */,
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
+				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
 				3863D8AB1EB0686E003B73F7 /* DefaultCells.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
@@ -694,7 +699,6 @@
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */,
-				389AF3FB1EB5A1D00089E9C1 /* NTActivityIndicator.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */,
 			);

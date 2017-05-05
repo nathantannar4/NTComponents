@@ -70,7 +70,7 @@ public struct Font {
     }
 }
 
-extension UILabel {
+public extension UILabel {
     /**
      Sets the textColor and font to that stored in Color.Default.Text and Font.Default
 
@@ -110,7 +110,7 @@ extension UILabel {
     }
 }
 
-extension UITextField {
+public extension UITextField {
     /**
      Sets the textColor and font to that stored in Color.Default.Text and Font.Default
 
@@ -150,7 +150,7 @@ extension UITextField {
     }
 }
 
-extension UITextView {
+public extension UITextView {
     /**
      Sets the textColor and font to that stored in Color.Default.Text and Font.Default
 
@@ -186,6 +186,46 @@ extension UITextView {
         case .disabled:
             self.textColor = Color.Default.Text.Disabled
             self.font = Font.Default.Disabled
+        }
+    }
+}
+
+public extension UIButton {
+    /**
+     Sets the textColor and font to that stored in Color.Default.Text and Font.Default
+     
+     - parameter to: The style of your preferred font
+     - returns: Void
+     */
+    func setPreferredFontStyle(to style: NTPreferredFontStyle) {
+        switch style {
+        case .title:
+            self.setTitleColor(Color.Default.Text.Title, for: .normal)
+            self.titleLabel?.font = Font.Default.Title
+        case .subtitle:
+            self.setTitleColor(Color.Default.Text.Subtitle, for: .normal)
+            self.titleLabel?.font = Font.Default.Subtitle
+        case .body:
+            self.setTitleColor(Color.Default.Text.Body, for: .normal)
+            self.titleLabel?.font = Font.Default.Body
+        case .callout:
+            self.setTitleColor(Color.Default.Text.Callout, for: .normal)
+            self.titleLabel?.font = Font.Default.Callout
+        case .caption:
+            self.setTitleColor(Color.Default.Text.Caption, for: .normal)
+            self.titleLabel?.font = Font.Default.Caption
+        case .footnote:
+            self.setTitleColor(Color.Default.Text.Footnote, for: .normal)
+            self.titleLabel?.font = Font.Default.Footnote
+        case .headline:
+            self.setTitleColor(Color.Default.Text.Headline, for: .normal)
+            self.titleLabel?.font = Font.Default.Headline
+        case .subhead:
+            self.setTitleColor(Color.Default.Text.Subhead, for: .normal)
+            self.titleLabel?.font = Font.Default.Subhead
+        case .disabled:
+            self.setTitleColor(Color.Default.Text.Disabled, for: .normal)
+            self.titleLabel?.font = Font.Default.Disabled
         }
     }
 }

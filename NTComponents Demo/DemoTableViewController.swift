@@ -14,14 +14,9 @@ class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource
         super.viewDidLoad()
         
         title = "Table View"
-        tableView.delegate = self
         tableView.imageDataSource = self
         stretchyHeaderHeight = 250
         addTopGradientToStretchyImage()
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

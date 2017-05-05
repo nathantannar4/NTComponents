@@ -32,8 +32,8 @@ open class NTChime: NTView {
     open var action : (() -> Void)?
     open var animationDuration: Double = 0.6
     open var animationDelay: Double = 0
-    open var animationSpringDamping: CGFloat = 0.8
-    open var animationSpringVelocity: CGFloat = 1.3
+    open var animationSpringDamping: CGFloat = 0.85
+    open var animationSpringVelocity: CGFloat = 1.12
     open var animationOptions: UIViewAnimationOptions = [.curveEaseOut]
     
     fileprivate var originalStatusBarStyle: UIStatusBarStyle = .default

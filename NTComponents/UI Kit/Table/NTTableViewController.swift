@@ -58,9 +58,13 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        if let parent = parent as? NTScrollableTabBarController, parent.tabBarPosition == .top {
-            tableView.contentInset.top = parent.tabBarHeight
-            tableView.scrollIndicatorInsets.top = parent.tabBarHeight
+        if let parent = parent as? NTScrollableTabBarController {
+            if parent.tabBarPosition == .top {
+                tableView.contentInset.top = parent.tabBarHeight
+                tableView.scrollIndicatorInsets.top = parent.tabBarHeight
+            } else {
+                tableView.contentInset.bottom = parent.tabBarHeight
+            }
         }
         
         view.backgroundColor = Color.Default.Background.ViewController
@@ -241,6 +245,46 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return NTTableViewCell()
+    }
+    
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
+    
+    open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return nil
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = NTTableViewHeaderFooterView()
+        guard let title = self.tableView(tableView, titleForHeaderInSection: section) else {
+            return nil
+        }
+        view.textLabel.text = title
+        return view
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = NTTableViewHeaderFooterView()
+        guard let title = self.tableView(tableView, titleForFooterInSection: section) else {
+            return nil
+        }
+        view.textLabel.text = title
+        return view
+    }
+    
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if self.tableView(tableView, viewForHeaderInSection: section) == nil {
+            return 0
+        }
+        return 24
+    }
+    
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.tableView(tableView, viewForFooterInSection: section) == nil {
+            return 0
+        }
+        return 24
     }
     
     // MAKR: - UITableViewDelegate
