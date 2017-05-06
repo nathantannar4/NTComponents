@@ -20,10 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Color.Default.setPrimary(to: .white)
         Color.Default.setSecondary(to: UIColor(hex: "31485e"))
         Color.Default.Background.Button = UIColor(hex: "31485e")
-        Color.Default.Tint.Button = .white
         Color.Default.Text.Title = .black
         Color.Default.Text.Subtitle = Color.Gray.P700
         Color.Default.Tint.Inactive = Color.Gray.P500
+        
+        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
@@ -55,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         let mapVC = DemoMapViewController()
         mapVC.title = "MapView"
+        
+        let loginVC = NTLoginViewController()
+        loginVC.title = "Login"
         
         let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tableVC, mapVC])
         centerVC.title = "NTComponents"

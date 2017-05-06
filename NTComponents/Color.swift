@@ -150,6 +150,7 @@ public struct Color {
 
     public static let FacebookBlue = UIColor(hex: "#3b5998")
     public static let TwitterBlue  = UIColor(hex: "#00aced")
+    public static let LinkedInBlue  = UIColor(hex: "#0077b5")
 
     public struct Red {
         public static let P50	= UIColor(rgba: 0xFDE0DCFF)

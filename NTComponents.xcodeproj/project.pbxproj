@@ -298,12 +298,12 @@
 			isa = PBXGroup;
 			children = (
 				3863D8471EB0686E003B73F7 /* Assets.xcassets */,
-				3863D8481EB0686E003B73F7 /* fonts */,
+				3863D8481EB0686E003B73F7 /* Fonts */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		3863D8481EB0686E003B73F7 /* fonts */ = {
+		3863D8481EB0686E003B73F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				3863D8491EB0686E003B73F7 /* BebasNeue.otf */,
@@ -320,6 +320,7 @@
 				3863D8541EB0686E003B73F7 /* Roboto-Thin.ttf */,
 				3863D8551EB0686E003B73F7 /* Roboto-ThinItalic.ttf */,
 			);
+			name = Fonts;
 			path = fonts;
 			sourceTree = "<group>";
 		};
@@ -356,12 +357,12 @@
 		3863D8681EB0686E003B73F7 /* UI Kit */ = {
 			isa = PBXGroup;
 			children = (
+				3863D87D1EB0686E003B73F7 /* NTViewController.swift */,
 				3863D8691EB0686E003B73F7 /* Alerts */,
 				3863D86D1EB0686E003B73F7 /* Buttons */,
 				3863D8711EB0686E003B73F7 /* Collection */,
 				3863D8751EB0686E003B73F7 /* Map */,
 				3863D87A1EB0686E003B73F7 /* Navigation */,
-				3863D87D1EB0686E003B73F7 /* NTViewController.swift */,
 				3863D87E1EB0686E003B73F7 /* Other */,
 				3863D8801EB0686E003B73F7 /* Page */,
 				3863D8821EB0686E003B73F7 /* Search */,

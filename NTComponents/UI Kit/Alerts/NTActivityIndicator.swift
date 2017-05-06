@@ -1,16 +1,16 @@
 //
-//  NTActivityIndicator.swift
+//  NTProgressIndicator.swift
 //  NTComponents
 //
 //  Created by Nathan Tannar on 4/29/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-public enum NTActivityIndicatorState {
+public enum NTProgressIndicatorState {
     case standby, loading, canceled, completed
 }
 
-open class NTActivityIndicator: UIView {
+open class NTProgressIndicator: UIView {
     
     let progressLine: UIView = {
         let view = UIView()
@@ -18,7 +18,7 @@ open class NTActivityIndicator: UIView {
         return view
     }()
     
-    open var state: NTActivityIndicatorState = .standby
+    open var state: NTProgressIndicatorState = .standby
     open var task: (() -> Bool)?
     open var completion: ((Bool) -> Void)?
     
@@ -117,7 +117,7 @@ open class NTActivityIndicator: UIView {
                 }
             })
         } else {
-            Log.write(.warning, "NTActivityIndicator has not completed")
+            Log.write(.warning, "NTProgressIndicator has not completed")
         }
     }
 }

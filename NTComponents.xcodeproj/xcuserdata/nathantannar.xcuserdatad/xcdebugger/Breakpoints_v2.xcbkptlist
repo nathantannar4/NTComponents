@@ -875,5 +875,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Other/NTLoginViewController.swift"
+            timestampString = "515733696.368875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "subtitleLabel"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTLoginViewController.(subtitleLabel : NTComponents.NTLabel).(variable initialization expression).(closure #1)"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/UI%20Kit/Other/NTLoginViewController.swift"
+                  timestampString = "515731442.633812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "249">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NTComponents.NTLoginViewController.(subtitleLabel : NTComponents.NTLabel).(variable initialization expression).(closure #1)"
+                  moduleName = "NTComponents"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nathantannar/Documents/NTComponents/NTComponents/UI%20Kit/Other/NTLoginViewController.swift"
+                  timestampString = "515731442.635912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Other/NTLoginViewController.swift"
+            timestampString = "515746541.258133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "createLoginButton(forMethod:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

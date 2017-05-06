@@ -54,11 +54,15 @@ open class NTImageView: UIImageView {
     
     public convenience init(cornerRadius: CGFloat = 0, emptyImage: UIImage? = nil) {
         self.init(frame: .zero)
-        contentMode = .scaleAspectFill
+        contentMode = .scaleAspectFit
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         self.emptyImage = emptyImage
         tintColor = Color.Default.Tint.View
+    }
+    
+    public convenience init() {
+        self.init(frame: .zero)
     }
     
     public override init(frame: CGRect) {

@@ -24,15 +24,142 @@
 //
 //  Created by Nathan Tannar on 2/12/17.
 //
-/*
-import UIKit
 
-public enum NTLoginLogicOptions: String {
-    case email = "Email"
-    case facebook = "Facebook"
-    case google = "Google"
-    case twitter = "Twitter"
+
+/********************/
+/* Work in Progress */
+/********************/
+
+public enum NTLoginMethod {
+    case email, facebook, twitter, google, github, linkedin
 }
+
+open class NTLoginViewController: NTViewController {
+    
+    open var loginMethods: [NTLoginMethod] = [.facebook, .twitter, .google, .github, .linkedin, .email]
+    
+    open var logo: UIImage? {
+        get {
+            return logoView.image
+        }
+        set {
+            logoView.image = newValue
+        }
+    }
+    
+    open var logoView: NTImageView = {
+        let imageView = NTImageView()
+        return imageView
+    }()
+    
+    open var titleLabel: NTLabel = {
+        let label = NTLabel(style: .title)
+        label.font = Font.Default.Title.withSize(36)
+        label.adjustsFontSizeToFitWidth = true
+        label.text = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
+        label.textAlignment = .center
+        return label
+    }()
+    
+    open var subtitleLabel: NTLabel = {
+        let label = NTLabel(style: .subtitle)
+        label.font = Font.Default.Subtitle.withSize(24)
+        label.adjustsFontSizeToFitWidth = true
+        label.text = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    fileprivate var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.isScrollEnabled = true
+        scrollView.bounces = true
+        return scrollView
+    }()
+    
+    // MARK: - Standard Methods
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(logoView)
+        view.addSubview(titleLabel)
+        view.addSubview(subtitleLabel)
+        view.addSubview(scrollView)
+        
+        logoView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
+        
+        titleLabel.anchor(logoView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        titleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
+        
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
+        
+        scrollView.anchor(subtitleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        addLoginButtons(toScrollView: scrollView)
+    }
+    
+    // MARK: - Login Button Methods
+    
+    open func addLoginButtons(toScrollView scrollView: UIScrollView) {
+        for method in loginMethods {
+            let button = createLoginButton(forMethod: method)
+            scrollView.addSubview(button)
+            button.anchor(scrollView.secondLastSubview()?.bottomAnchor ?? scrollView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 15, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 44)
+            button.anchorCenterXToSuperview()
+        }
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloat(59 * loginMethods.count))
+    }
+    
+    open func createLoginButton(forMethod method: NTLoginMethod) -> NTButton {
+        switch method {
+        case .email:
+            return createLoginButton(color: Color.Default.Tint.Button, title: "Login with Email", logo: Icon.email)
+        case .facebook:
+            return createLoginButton(color: Color.FacebookBlue, title: "Login with Facebook", logo: Icon.facebook)
+        case .twitter:
+            return createLoginButton(color: Color.TwitterBlue, title: "Login with Twitter", logo: Icon.twitter)
+        case .google:
+            return createLoginButton(color: Color.White, title: "Login with Google", logo: Icon.google)
+        case .linkedin:
+            return createLoginButton(color: Color.LinkedInBlue, title: "Login with LinkedIn", logo: Icon.linkedin)
+        case .github:
+            return createLoginButton(color: Color.White, title: "Login with Github", logo: Icon.github)
+        }
+    }
+    
+    open func createLoginButton(color: UIColor = .white, title: String?, logo: UIImage?) -> NTButton {
+        let button = NTButton()
+        button.layer.cornerRadius = 5
+        button.backgroundColor = color
+        button.touchUpAnimationTime = 0.35
+        button.ripplePercent = 0.8
+        button.imageView?.backgroundColor = .clear
+        
+        // Title
+        button.title = title
+        button.titleColor = color.isLight ? .black : .white
+        
+        // Icon
+        if logo != nil {
+            
+            button.contentHorizontalAlignment = .left
+            button.titleEdgeInsets.left = 66
+            
+            let iconView = UIImageView(image: logo)
+            iconView.tintColor = color.isLight ? .black : .white
+            button.addSubview(iconView)
+            iconView.anchor(nil, left: button.leftAnchor, bottom: nil, right: nil, topConstant: 6, leftConstant: 12, bottomConstant: 6, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+            iconView.anchorCenterYToSuperview()
+        }
+        return button
+    }
+}
+
+/*
 
 public class NTTextInputCell: NTTableViewCell {
     
@@ -123,7 +250,7 @@ public class NTLoginOptionCell: NTTableViewCell {
         guard let option = loginOption else { return }
         switch option {
         case .email:
-            colorView.backgroundColor = Color.Defaults.tint
+            colorView.backgroundColor = Color.Default.Tint.NavigationBar
             logoView.image = Icon.email?.withRenderingMode(.alwaysTemplate)
         case .facebook:
             colorView.backgroundColor = Color.FacebookBlue
@@ -251,7 +378,7 @@ open class NTLoginViewController: UITableViewController {
     // MARK: Error Handling
     
     open func toastError(_ error: String) {
-        Toast(text: error, color: Color.Gray.P800, height: 50).show(duration: 2.0)
+        NTToast(text: error).show(duration: 2.0)
     }
     
     // MARK: Validation Variables
@@ -260,7 +387,7 @@ open class NTLoginViewController: UITableViewController {
         guard let email = self.emailText else {
             return false
         }
-        return email.isValidEmail()
+        return email.isValidEmail
     }
     
     open var isValidPassword: Bool {
@@ -306,29 +433,26 @@ open class NTLoginViewController: UITableViewController {
     
     open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let header = UITableViewHeaderFooterView()
-        header.contentView.backgroundColor = view.backgroundColor
-        header.textLabel?.font = Font.Defaults.content
-        header.textLabel?.textColor = Color.Default.Text.Subtitle
+        let header = NTTableViewHeaderFooterView()
         
         if self.viewPurpose == .loginOptions {
             return nil
         } else {
             if section == 2 {
-                header.textLabel?.text = "Email"
+                header.textLabel.text = "Email"
                 return header
             } else if section == 3 {
-                header.textLabel?.text = "Password"
+                header.textLabel.text = "Password"
                 return header
             }
             if self.viewPurpose == .login && section == 4 {
                 return header
             } else if self.viewPurpose == .register {
                 if section == 4 {
-                    header.textLabel?.text = "Verify Password"
+                    header.textLabel.text = "Verify Password"
                     return header
                 } else if section == 5 {
-                    header.textLabel?.text = "Full Name"
+                    header.textLabel.text = "Full Name"
                     return header
                 } else if section == 6 {
                     return header
@@ -340,10 +464,7 @@ open class NTLoginViewController: UITableViewController {
     
     open override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        let footer = UITableViewHeaderFooterView()
-        footer.contentView.backgroundColor = view.backgroundColor
-        footer.textLabel?.font = Font.Defaults.content
-        footer.textLabel?.textColor = Color.Default.Text.Subtitle
+        let footer = NTTableViewHeaderFooterView()
         
         if section == (numberOfSections(in: self.tableView) - 1) {
 
@@ -351,16 +472,16 @@ open class NTLoginViewController: UITableViewController {
                 let loginOptions = NSMutableAttributedString(string: "Or login with ")
                 for option in self.loginOptions {
                     if option != .email {
-                        loginOptions.append(NSMutableAttributedString(string: option.rawValue, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 13), NSForegroundColorAttributeName: Color.Defaults.tint]))
-                        loginOptions.append(NSMutableAttributedString(string: "/", attributes: [NSForegroundColorAttributeName: Color.Defaults.tint]))
+                        loginOptions.append(NSMutableAttributedString(string: option.rawValue, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 13), NSForegroundColorAttributeName: Color.Default.Tint.Button]))
+                        loginOptions.append(NSMutableAttributedString(string: "/", attributes: [NSForegroundColorAttributeName: Color.Default.Tint.Button]))
                     }
                 }
-                footer.textLabel?.attributedText = loginOptions
+                footer.textLabel.attributedText = loginOptions
                 let tapAction = UITapGestureRecognizer(target: self, action: #selector(toggleLoginView))
                 footer.addGestureRecognizer(tapAction)
             } else {
                 if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                    footer.textLabel?.text = "Version \(version)"
+                    footer.textLabel.text = "Version \(version)"
                 }
             }
             return footer
@@ -414,7 +535,7 @@ open class NTLoginViewController: UITableViewController {
             cell.selectionStyle = .none
             if let name = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
                 cell.textLabel?.text = name
-                cell.textLabel?.font = Font.Defaults.title.withSize(28)
+                cell.textLabel?.font = Font.Default.Title.withSize(28)
                 cell.textLabel?.textAlignment = .center
             }
             cell.backgroundColor = .clear
@@ -567,8 +688,8 @@ open class NTLoginViewController: UITableViewController {
     }
     
     override open func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let footer: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        footer.textLabel?.textAlignment = .center
+        let footer: NTTableViewHeaderFooterView = view as! NTTableViewHeaderFooterView
+        footer.textLabel.textAlignment = .center
     }
 }
 

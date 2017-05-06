@@ -199,7 +199,7 @@ class DemoAlertsViewController: NTTableViewController {
     }
     
     func showLoader() {
-        let loader = NTActivityIndicator()
+        let loader = NTProgressIndicator()
         view.addSubview(loader)
         loader.autoComplete(withDuration: 2)
     }
