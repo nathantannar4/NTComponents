@@ -33,6 +33,24 @@ open class NTAlertViewController: UIViewController  {
     
     fileprivate var currentState: NTViewState = .hidden
     
+    open override var title: String? {
+        get {
+            return super.title
+        }
+        set {
+            super.title = newValue
+            titleLabel.text = newValue
+        }
+    }
+    open var subtitle: String? {
+        get {
+            return subtitleLabel.text
+        }
+        set {
+            subtitleLabel.text = newValue
+        }
+    }
+    
     open let titleLabel: NTLabel = {
         let label = NTLabel(style: .title)
         label.numberOfLines = 0
@@ -59,49 +77,42 @@ open class NTAlertViewController: UIViewController  {
     fileprivate let cancelButton: NTButton = {
         let button = NTButton()
         button.title = "Cancel"
-        button.titleColor = .white
-        button.backgroundColor = Color.Default.Status.Danger
+        button.backgroundColor = .white
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
-        
+        button.setDefaultShadow()
         return button
     }()
     
     fileprivate let confirmButton: NTButton = {
         let button = NTButton()
         button.title = "Confirm"
-        button.titleColor = .white
         button.titleLabel?.textAlignment = .center
-        button.backgroundColor = Color.Default.Status.Success
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(confirmButtonPresssed), for: .touchUpInside)
+        button.setDefaultShadow()
         return button
     }()
     
-    open override var title: String? {
-        get {
-            return super.title
-        }
-        set {
-            super.title = newValue
-            titleLabel.text = newValue
-        }
-    }
-    open var subtitle: String? {
-        get {
-            return subtitleLabel.text
-        }
-        set {
-            subtitleLabel.text = newValue
-        }
-    }
     public var onCancel : (() -> Void)?
     public var onConfirm : (() -> Void)?
     
-    public required init(title: String, subtitle: String? = nil) {
+    public required init(title: String, subtitle: String? = nil, type: NTAlertType? = nil) {
         self.init()
         self.title = title
         self.subtitle = subtitle
+        if let type = type {
+            switch type {
+            case .isInfo:
+                confirmButton.backgroundColor = Color.Default.Status.Info
+            case .isSuccess:
+                confirmButton.backgroundColor = Color.Default.Status.Success
+            case .isWarning:
+                confirmButton.backgroundColor = Color.Default.Status.Warning
+            case .isDanger:
+                confirmButton.backgroundColor = Color.Default.Status.Danger
+            }
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {

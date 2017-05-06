@@ -42,7 +42,7 @@ open class NTButton: UIButton {
         contentHorizontalAlignment = .center
         titleLabel?.textAlignment = .center
         titleLabel?.font = Font.Default.Body
-        setTitleColor(Color.Default.Tint.Button, for: .normal)
+        setTitleColor(Color.Default.Background.Button.isLight ? .black : .white, for: .normal)
         imageView?.contentMode = .scaleAspectFit
     }
     
@@ -91,6 +91,9 @@ open class NTButton: UIButton {
             super.backgroundColor = newValue
             rippleBackgroundColor = newValue ?? .clear
             rippleColor = rippleBackgroundColor.isLight ? rippleBackgroundColor.darker(by: 10) : rippleBackgroundColor.lighter(by: 10)
+            if let color = newValue {
+                setTitleColor(color.isLight ? .black : .white, for: .normal)
+            }
         }
     }
     

@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginVC = NTLoginViewController()
         loginVC.title = "Login"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tableVC, mapVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tableVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5

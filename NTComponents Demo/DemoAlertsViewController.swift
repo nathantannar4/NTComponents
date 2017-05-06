@@ -44,7 +44,7 @@ class DemoAlertsViewController: NTTableViewController {
         case 0:
             return 2
         case 1:
-            return 1
+            return 4
         case 2:
             return 1
         case 3:
@@ -69,7 +69,18 @@ class DemoAlertsViewController: NTTableViewController {
                 cell.textLabel?.text = "Present without images"
             }
         case 1:
-            cell.textLabel?.text = "Present"
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "Info"
+            case 1:
+                cell.textLabel?.text = "Success"
+            case 2:
+                cell.textLabel?.text = "Warning"
+            case 3:
+                cell.textLabel?.text = "Danger"
+            default:
+                break
+            }
         case 2:
             cell.textLabel?.text = "Present"
         case 3:
@@ -117,7 +128,18 @@ class DemoAlertsViewController: NTTableViewController {
                 showActionSheet(withImages: false)
             }
         case 1:
-            showAlert()
+            switch indexPath.row {
+            case 0:
+                showAlert(type: .isInfo)
+            case 1:
+                showAlert(type: .isSuccess)
+            case 2:
+                showAlert(type: .isWarning)
+            case 3:
+                showAlert(type: .isDanger)
+            default:
+                break
+            }
         case 2:
             showToast(withText: "This is a toast!")
         case 3:
@@ -158,10 +180,10 @@ class DemoAlertsViewController: NTTableViewController {
         actions.append(NTActionSheetItem(title: "Google", icon: withImages ? Icon.google : nil, action: {
             NTToast(text: "Google").show(duration: 3.0)
         }))
-        actions.append(NTActionSheetItem(title: "Facebook", icon: withImages ? Icon.facebook : nil, action: {
+        actions.append(NTActionSheetItem(title: "Facebook", icon: withImages ? Icon.facebook : nil, iconTint: Color.FacebookBlue, action: {
             NTToast(text: "Facebook").show(duration: 3.0)
         }))
-        actions.append(NTActionSheetItem(title: "Twitter", icon: withImages ? Icon.twitter : nil, action: {
+        actions.append(NTActionSheetItem(title: "Twitter", icon: withImages ? Icon.twitter : nil, iconTint: Color.TwitterBlue, action: {
             NTToast(text: "Twitter").show(duration: 3.0)
         }))
         let actionSheet = NTActionSheetViewController(actions: actions)
@@ -170,9 +192,9 @@ class DemoAlertsViewController: NTTableViewController {
         
     }
     
-    func showAlert() {
+    func showAlert(type: NTAlertType) {
         
-        let alert = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone")
+        let alert = NTAlertViewController(title: "Are you sure?", subtitle: "This action cannot be undone", type: type)
         alert.onCancel = {
             self.showToast(withText: "Canceled action")
         }

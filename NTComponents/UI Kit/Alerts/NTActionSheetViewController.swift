@@ -29,16 +29,18 @@ import UIKit
 
 open class NTActionSheetItem: NSObject {
 
-    public var icon: UIImage?
-    public var title: String
-    public var color: UIColor
-    public var action: (() -> Void)?
+    open var icon: UIImage?
+    open var iconTint: UIColor?
+    open var title: String
+    open var color: UIColor
+    open var action: (() -> Void)?
 
-    public required init(title: String, icon: UIImage? = nil, color: UIColor = .white, action: (() -> Void)? = nil) {
+    public required init(title: String, icon: UIImage? = nil, iconTint: UIColor? = Color.Default.Tint.Button, color: UIColor = .white, action: (() -> Void)? = nil) {
         self.title = title
         self.icon = icon
         self.color = color
         self.action = action
+        self.iconTint = iconTint
     }
 
 }
@@ -125,7 +127,7 @@ open class NTActionSheetViewController: UIViewController  {
     }
 
     public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100"), color: UIColor = .white) {
-        let dismissAction = NTActionSheetItem(title: text, icon: icon, color: color)
+        let dismissAction = NTActionSheetItem(title: text, icon: icon, iconTint: UIColor.black, color: color)
         actions.append(dismissAction)
     }
 
@@ -147,7 +149,7 @@ open class NTActionSheetViewController: UIViewController  {
             button.titleEdgeInsets.left = 66
 
             let iconView = UIImageView(image: action.icon)
-            iconView.tintColor = action.color.isLight ? .black : .white
+            iconView.tintColor = action.iconTint
             button.addSubview(iconView)
             iconView.anchor(nil, left: button.leftAnchor, bottom: nil, right: nil, topConstant: 6, leftConstant: 12, bottomConstant: 6, rightConstant: 0, widthConstant: 30, heightConstant: 30)
             iconView.anchorCenterYToSuperview()
