@@ -40,8 +40,10 @@ open class NTSlideShowViewController: NTPageViewController {
     
     open var dataSource: NTSlideShowDataSource?
     
-    // The view controller presented after the slide show has completed
-    open var completionViewController: UIViewController = NTViewController()
+    /**
+     The view controller presented after the slide show has completed. If left nil NTSlideShowViewController will attempt to dismiss itself
+     */
+    open var completionViewController: UIViewController?
     
     open var nextButton: NTButton = {
         let button = NTButton()
@@ -148,8 +150,11 @@ open class NTSlideShowViewController: NTPageViewController {
         if currentIndex == viewControllers.count - 1 {
             
             statusBarHidden = false
-            presentViewController(completionViewController, from: .right, completion: nil)
-            
+            guard let completion = completionViewController else {
+                dismissViewController(to: .left, completion: nil)
+                return
+            }
+            presentViewController(completion, from: .right, completion: nil)
         } else {
             super.slideToNextViewController()
         }

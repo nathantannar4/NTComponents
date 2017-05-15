@@ -205,7 +205,7 @@ class DemoAlertsViewController: NTTableViewController {
     }
     
     func showChime(type: NTAlertType) {
-        let chime = NTChime(type: type, title: "Title", subtitle: "Subtile/Description", icon: Icon.email) {
+        let chime = NTChime(type: type, title: "Title", subtitle: "Subtile/Description", icon: Icon.Email) {
             self.showToast(withText: "Chime completition action")
         }
         chime.show()

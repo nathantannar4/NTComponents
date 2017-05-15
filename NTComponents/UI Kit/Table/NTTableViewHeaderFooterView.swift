@@ -55,7 +55,7 @@ open class NTTableViewHeaderFooterView: NTView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Color.Default.Background.ViewController
+        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
         
         addSubview(textLabel)
         addSubview(actionButton)

@@ -31,8 +31,6 @@ public enum NTAlertType {
 
 open class NTAlertViewController: UIViewController  {
     
-    fileprivate var currentState: NTViewState = .hidden
-    
     open override var title: String? {
         get {
             return super.title
@@ -125,12 +123,12 @@ open class NTAlertViewController: UIViewController  {
         self.modalPresentationStyle = .overCurrentContext
     }
     
-    // MARK: - Class Functions
+    // MARK: - Standard Methods
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
     
         view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
-        
         view.addSubview(alertContainer)
         
         alertContainer.addSubview(titleLabel)

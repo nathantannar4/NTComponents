@@ -78,7 +78,7 @@ open class NTChime: NTView {
             backgroundColor = Color.Default.Status.Danger
         }
         
-        if type != .isInfo {
+        if backgroundColor!.isDark {
             iconView.tintColor = .white
             titleLabel.textColor = .white
             subtitleLabel.textColor = .white

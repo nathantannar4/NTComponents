@@ -37,7 +37,7 @@ public enum NTPresentationDirection {
     case top, right, bottom, left
 }
 
-public class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
+open class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
     var toDirection: NTPresentationDirection!
     
     convenience init(target: Any?, action: Selector?, direction: NTPresentationDirection) {
@@ -161,24 +161,24 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     }
     
     // MARK: - Container Appearance Properties
-    public var leftPanelWidth: CGFloat = 250 {
+    open var leftPanelWidth: CGFloat = 250 {
         didSet {
             if leftPanelWidth > (view.frame.width - 60) { leftPanelWidth = view.frame.width - 60 }
             leftViewController?.view.frame = CGRect(x: 0, y: 0, width: leftPanelWidth, height: view.frame.height)
         }
     }
-    public var rightPanelWidth: CGFloat = 250 {
+    open var rightPanelWidth: CGFloat = 250 {
         didSet {
             if rightPanelWidth > (view.frame.width - 60) { rightPanelWidth = view.frame.width - 60 }
             rightViewController?.view.frame = CGRect(x: view.frame.width - rightPanelWidth, y: 0, width: rightPanelWidth, height: view.frame.height)
         }
     }
-    public var drawerShadowShown: Bool = true {
+    open var drawerShadowShown: Bool = true {
         didSet {
             showShadowForCenterViewController(drawerShadowShown)
         }
     }
-    public var statusBarHidden: Bool = false {
+    open var statusBarHidden: Bool = false {
         didSet {
             UIView.animate(withDuration: 0.5) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
@@ -187,11 +187,11 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     }
     
     // MARK: - Drawer Animation Properties
-    public var drawerAnimationDuration: TimeInterval = 0.5
-    public var drawerAnimationDelay: TimeInterval = 0.0
-    public var drawerAnimationSpringDamping: CGFloat = 1.0
-    public var drawerAnimationSpringVelocity: CGFloat = 1.0
-    public var drawerAnimationStyle: UIViewAnimationOptions = .curveLinear
+    open var drawerAnimationDuration: TimeInterval = 0.5
+    open var drawerAnimationDelay: TimeInterval = 0.0
+    open var drawerAnimationSpringDamping: CGFloat = 1.0
+    open var drawerAnimationSpringVelocity: CGFloat = 1.0
+    open var drawerAnimationStyle: UIViewAnimationOptions = .curveLinear
     
     // MARK: - Initializers
     public required init?(coder aDecoder: NSCoder) {
@@ -234,7 +234,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
        modalPresentationStyle = .overCurrentContext
     }
     
-    public func addPanGestureRecognizer() {
+    open func addPanGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
         panGestureRecognizer.delegate = self
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
@@ -309,7 +309,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     }
     
     // MARK: - NTNavigationContainer get functions
-    public func getCurrentState() -> NTNavigationContainerState {
+    open func getCurrentState() -> NTNavigationContainerState {
         return currentState
     }
 
@@ -365,7 +365,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     }
     
     // MARK: - UIGestureRecognizerDelegate
-    public func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    open func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         
         let gestureIsDraggingFromLeftToRight = (recognizer.velocity(in: view).x > 0)
         let boundWidth = recognizer.view!.frame.origin.x
@@ -434,7 +434,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
         switch currentState {
         case .leftPanelExpanded, .rightPanelExpanded, .bothPanelsCollapsed:
@@ -448,24 +448,24 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     
     
     // MARK: - Navigation and Presentation
-    public func toggleLeftPanel() {
+    open func toggleLeftPanel() {
         Log.write(.status, "Toggle left panel")
         let notAlreadyExpanded = (currentState != .leftPanelExpanded)
         animateLeftPanel(notAlreadyExpanded)
     }
     
-    public func toggleRightPanel() {
+    open func toggleRightPanel() {
         Log.write(.status, "Toggle right panel")
         let notAlreadyExpanded = (currentState != .rightPanelExpanded)
         animateRightPanel(notAlreadyExpanded)
     }
     
-    public func replaceCenterViewWith(_ view: UIViewController) {
+    open func replaceCenterViewWith(_ view: UIViewController) {
         Log.write(.status, "Replacing center view")
         setCenterView(newView: view)
     }
     
-    private func lights(on: Bool) {
+    open func lights(on: Bool) {
         UIView.animate(withDuration: 0.5, animations: {
             switch on {
             case true:
@@ -488,7 +488,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         overlayDismissRecognizer = NTTapDismissGestureRecognizer(target: self, action: #selector(dismissOverlayFromRecognizer(sender:)), direction: direction)
     }
     
-    public func presentOverlay(_ overlay: UIViewController, from direction: NTPresentationDirection) {
+    open func presentOverlay(_ overlay: UIViewController, from direction: NTPresentationDirection) {
         setDismissRecognizer(direction: direction)
         overlayViewController = overlay
         overlayFrame = overlayViewController!.view.frame
@@ -497,7 +497,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         })
     }
     
-    public func presentOverlayFromBottom(_ overlay: UIViewController, height: CGFloat) {
+    open func presentOverlayFromBottom(_ overlay: UIViewController, height: CGFloat) {
         setDismissRecognizer(direction: .bottom)
         overlayViewController = overlay
         overlayViewController!.view.frame = CGRect(x: 0, y: view.frame.height - height, width: overlayViewController!.view.frame.width, height: height)
@@ -507,7 +507,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         })
     }
     
-    public func presentOverlayFromTop(_ overlay: UIViewController, height: CGFloat) {
+    open func presentOverlayFromTop(_ overlay: UIViewController, height: CGFloat) {
         setDismissRecognizer(direction: .top)
         overlayViewController = overlay
         overlayViewController!.view.frame = CGRect(x: 0, y: 0, width: overlayViewController!.view.frame.width, height: height)
@@ -517,7 +517,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         })
     }
     
-    public func presentOverlayFromLeft(_ overlay: UIViewController, width: CGFloat) {
+    open func presentOverlayFromLeft(_ overlay: UIViewController, width: CGFloat) {
         setDismissRecognizer(direction: .left)
         overlayViewController = overlay
         overlayViewController!.view.frame = CGRect(x: 0, y: 0, width: width, height: overlayViewController!.view.frame.height)
@@ -527,7 +527,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         })
     }
     
-    public func presentOverlayFromRight(_ overlay: UIViewController, width: CGFloat) {
+    open func presentOverlayFromRight(_ overlay: UIViewController, width: CGFloat) {
         setDismissRecognizer(direction: .right)
         overlayViewController = overlay
         overlayViewController!.view.frame = CGRect(x: view.frame.width - width, y: 0, width: width, height: overlayViewController!.view.frame.height)
@@ -537,7 +537,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         })
     }
     
-    public func dismissOverlayTo(_ direction: NTPresentationDirection) {
+    open func dismissOverlayTo(_ direction: NTPresentationDirection) {
         Log.write(.status, "Dismissing overlay view to \(direction)")
         lights(on: true)
         overlayViewController?.dismissViewController(to: direction, completion: {

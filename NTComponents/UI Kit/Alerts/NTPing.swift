@@ -78,6 +78,16 @@ open class NTPing: NTView {
     // MARK: - Presentation Methods
     
     open func show(duration: TimeInterval = 3) {
+        
+        if UIApplication.shared.isStatusBarHidden {
+            // Fallback when status bar is not visible
+            let chime = NTChime(title: "Invalid Email", height: 20, color: Color.Default.Status.Danger, onTap: nil)
+            chime.hideShadow()
+            chime.titleLabel.textAlignment = .center
+            chime.titleLabel.font = Font.Default.Caption.withSize(12)
+            chime.show(duration: duration)
+        }
+        
         guard let view = statusBar else { return }
         
         statusBar?.addSubview(self)

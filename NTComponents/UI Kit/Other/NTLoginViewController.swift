@@ -26,7 +26,11 @@
 //
 
 public enum NTLoginMethod {
-    case email, facebook, twitter, google, github, linkedin
+    case email, facebook, twitter, google, github, linkedin, custom
+}
+
+open class NTLoginButton: NTButton {
+    var method: NTLoginMethod?
 }
 
 open class NTLoginViewController: NTViewController, UITableViewDataSource, UITableViewDelegate {
@@ -109,31 +113,36 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     
     // MARK: - Login Button Methods
     
-    open func createLoginButton(forMethod method: NTLoginMethod) -> NTButton {
+    open func createLoginButton(forMethod method: NTLoginMethod) -> NTLoginButton {
+        var button: NTLoginButton
         switch method {
         case .email:
-            return createLoginButton(color: Color.Default.Tint.Button, title: "Login with Email", logo: Icon.email)
+            button = createLoginButton(color: Color.Default.Tint.Button, title: "Login with Email", logo: Icon.Email)
         case .facebook:
-            return createLoginButton(color: Color.FacebookBlue, title: "Login with Facebook", logo: Icon.facebook)
+            button = createLoginButton(color: Color.FacebookBlue, title: "Login with Facebook", logo: Icon.facebook)
         case .twitter:
-            return createLoginButton(color: Color.TwitterBlue, title: "Login with Twitter", logo: Icon.twitter)
+            button = createLoginButton(color: Color.TwitterBlue, title: "Login with Twitter", logo: Icon.twitter)
         case .google:
-            return createLoginButton(color: Color.White, title: "Login with Google", logo: Icon.google)
+            button = createLoginButton(color: Color.White, title: "Login with Google", logo: Icon.google)
         case .linkedin:
-            return createLoginButton(color: Color.LinkedInBlue, title: "Login with LinkedIn", logo: Icon.linkedin)
+            button = createLoginButton(color: Color.LinkedInBlue, title: "Login with LinkedIn", logo: Icon.linkedin)
         case .github:
-            return createLoginButton(color: Color.White, title: "Login with Github", logo: Icon.github)
+            button = createLoginButton(color: Color.White, title: "Login with Github", logo: Icon.github)
+        case .custom:
+            button = createLoginButton(color: Color.White, title: "Custom Login", logo: nil)
         }
+        button.method = method
+        return button
     }
     
-    open func createLoginButton(color: UIColor = .white, title: String?, logo: UIImage?) -> NTButton {
-        let button = NTButton()
+    open func createLoginButton(color: UIColor = .white, title: String?, logo: UIImage?) -> NTLoginButton {
+        let button = NTLoginButton()
         button.layer.cornerRadius = 5
         button.backgroundColor = color
         button.touchUpAnimationTime = 0.35
         button.ripplePercent = 0.8
         button.imageView?.backgroundColor = .clear
-        
+        button.addTarget(self, action: #selector(loginLogic(sender:)), for: .touchUpInside)
         
         // Title
         button.title = title
@@ -152,6 +161,16 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
             iconView.anchorCenterYToSuperview()
         }
         return button
+    }
+    
+    open func loginLogic(sender: NTLoginButton) {
+        if sender.method == .email {
+            let vc = NTCredentialPromptViewController(onSubmit: { (email, password) -> Bool in
+                NTPing(type: .isSuccess, title: "Login Successful").show(duration: 2)
+                return true
+            })
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -178,18 +197,6 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
-    }
-    
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y - 6
-        print(offset)
-        if offset > 0 {
-            tableView.setDefaultShadow()
-            tableView.layer.shadowOffset = CGSize(width: 0, height: -2)
-            
-        } else {
-            tableView.hideShadow()
-        }
     }
 }
 

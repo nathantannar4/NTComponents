@@ -57,12 +57,15 @@ public struct Icon {
     public static let facebook = UIImage(named: "ic_facebook_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     public static let twitter = UIImage(named: "ic_twitter_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     public static let google = UIImage(named: "ic_google_logo", in: bundle, compatibleWith: nil)
-    public static let email = UIImage(named: "ic_email_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     public static let linkedin = UIImage(named: "ic_linkedin_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     public static let github = UIImage(named: "ic_github_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     
     
     public static let Delete = UIImage(named: "Delete_ffffff_100", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    
+    public static let Email = icon("ic_email")
+    
+    public static let Lock = icon("ic_lock")
     
     public struct Arrow {
         public static let Backward = Icon.icon("Backward_ffffff_100")
