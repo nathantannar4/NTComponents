@@ -32,11 +32,15 @@ open class NTTextField: UITextField {
     public convenience init(style: NTPreferredFontStyle) {
         self.init()
         self.setPreferredFontStyle(to: style)
+        
+        tintColor = Color.Default.Tint.View
     }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setPreferredFontStyle(to: .body)
+        
+        tintColor = Color.Default.Tint.View
     }
 
     required public init?(coder aDecoder: NSCoder) {

@@ -63,4 +63,9 @@ public struct Icon {
     
     
     public static let Delete = UIImage(named: "Delete_ffffff_100", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    
+    public struct Arrow {
+        public static let Backward = Icon.icon("Backward_ffffff_100")
+        public static let Forward = Icon.icon("Forward_ffffff_100")
+    }
 }

@@ -53,6 +53,8 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         return imageView
     }()
     
+    fileprivate var defaultTopContentOffset: CGFloat = 0
+    
     // MARK: - Standard Methods
     
     override open func viewDidLoad() {
@@ -60,8 +62,9 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         
         if let parent = parent as? NTScrollableTabBarController {
             if parent.tabBarPosition == .top {
-                tableView.contentInset.top = parent.tabBarHeight
+                defaultTopContentOffset = parent.tabBarHeight
                 tableView.scrollIndicatorInsets.top = parent.tabBarHeight
+                tableView.contentOffset = CGPoint(x: 0, y: -defaultTopContentOffset)
             } else {
                 tableView.contentInset.bottom = parent.tabBarHeight
             }
@@ -89,8 +92,8 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     
     public func updateStretchyViewImage() {
         guard let image = tableView.imageDataSource?.imageForStretchyView(in: tableView) else {
-            tableView.contentInset.top = 0
-            tableView.contentOffset = CGPoint(x: 0, y: 0)
+            tableView.contentInset.top = defaultTopContentOffset
+            tableView.contentOffset = CGPoint(x: 0, y: -defaultTopContentOffset)
             return
         }
         
@@ -100,7 +103,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
             }
         }
         
-        tableView.contentInset.top = stretchyHeaderHeight
+//        tableView.contentInset.top = stretchyHeaderHeight + defaultTopContentOffset
         tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight)
         
         stretchyImageView.image = image
@@ -140,7 +143,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         navigationController?.navigationBar.isTranslucent = fadeInNavBarOnScroll
         
         let offset = tableView.contentOffset.y + tableView.contentInset.top
-        let ratio = offset / (tableView.contentInset.top + stretchyHeaderHeight + 200)
+        let ratio = offset / (tableView.contentInset.top + stretchyHeaderHeight + 200 + defaultTopContentOffset)
       
         if offset < 0 {
             if fadeInNavBarOnScroll {

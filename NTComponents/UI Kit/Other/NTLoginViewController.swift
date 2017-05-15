@@ -25,16 +25,11 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
-
-/********************/
-/* Work in Progress */
-/********************/
-
 public enum NTLoginMethod {
     case email, facebook, twitter, google, github, linkedin
 }
 
-open class NTLoginViewController: NTViewController {
+open class NTLoginViewController: NTViewController, UITableViewDataSource, UITableViewDelegate {
     
     open var loginMethods: [NTLoginMethod] = [.facebook, .twitter, .google, .github, .linkedin, .email]
     
@@ -70,12 +65,19 @@ open class NTLoginViewController: NTViewController {
         return label
     }()
     
-    fileprivate var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.backgroundColor = .clear
-        scrollView.isScrollEnabled = true
-        scrollView.bounces = true
-        return scrollView
+    open var tableView: NTTableView = {
+        let tableView = NTTableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.contentInset.top = 10
+        return tableView
+    }()
+    
+    open var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Color.Gray.P700
+        return view
     }()
     
     // MARK: - Standard Methods
@@ -86,7 +88,10 @@ open class NTLoginViewController: NTViewController {
         view.addSubview(logoView)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
-        view.addSubview(scrollView)
+        view.addSubview(separatorView)
+        view.addSubview(tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
         
         logoView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
@@ -97,22 +102,12 @@ open class NTLoginViewController: NTViewController {
         subtitleLabel.anchor(titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         subtitleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         
-        scrollView.anchor(subtitleLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        separatorView.anchor(subtitleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 6, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 0.5)
         
-        addLoginButtons(toScrollView: scrollView)
+        tableView.anchor(separatorView.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
     
     // MARK: - Login Button Methods
-    
-    open func addLoginButtons(toScrollView scrollView: UIScrollView) {
-        for method in loginMethods {
-            let button = createLoginButton(forMethod: method)
-            scrollView.addSubview(button)
-            button.anchor(scrollView.secondLastSubview()?.bottomAnchor ?? scrollView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 15, leftConstant: 30, bottomConstant: 0, rightConstant: 30, widthConstant: 0, heightConstant: 44)
-            button.anchorCenterXToSuperview()
-        }
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloat(59 * loginMethods.count))
-    }
     
     open func createLoginButton(forMethod method: NTLoginMethod) -> NTButton {
         switch method {
@@ -139,6 +134,7 @@ open class NTLoginViewController: NTViewController {
         button.ripplePercent = 0.8
         button.imageView?.backgroundColor = .clear
         
+        
         // Title
         button.title = title
         button.titleColor = color.isLight ? .black : .white
@@ -156,6 +152,44 @@ open class NTLoginViewController: NTViewController {
             iconView.anchorCenterYToSuperview()
         }
         return button
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    final public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    final public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return loginMethods.count
+    }
+    
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        let button = createLoginButton(forMethod: loginMethods[indexPath.row])
+        cell.addSubview(button)
+        button.anchor(cell.topAnchor, left: cell.leftAnchor, bottom: cell.bottomAnchor, right: cell.rightAnchor, topConstant: 6, leftConstant: 16, bottomConstant: 6, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        return cell
+    }
+
+    // MARK: - UITableViewDelegate
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y - 6
+        print(offset)
+        if offset > 0 {
+            tableView.setDefaultShadow()
+            tableView.layer.shadowOffset = CGSize(width: 0, height: -2)
+            
+        } else {
+            tableView.hideShadow()
+        }
     }
 }
 

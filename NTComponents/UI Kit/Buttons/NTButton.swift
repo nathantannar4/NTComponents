@@ -83,6 +83,15 @@ open class NTButton: UIButton {
         }
     }
     
+    open var image: UIImage? {
+        get {
+            return imageView?.image
+        }
+        set {
+            setImage(newValue, for: .normal)
+        }
+    }
+    
     open override var backgroundColor: UIColor? {
         get {
             return super.backgroundColor

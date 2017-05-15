@@ -64,12 +64,12 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         return self.view.bounds.width
     }
     fileprivate var shouldScrollCurrentBar: Bool = true
-    fileprivate var tabView: NTScrollableTabBar?
-    fileprivate var tabBarTopConstraint: NSLayoutConstraint?
     
-    public var currentTabBarHeight: CGFloat = 2
-    public var tabBarHeight: CGFloat = 32
-    public var tabBarPosition: NTTabBarPosition = .top
+    open var tabView: NTScrollableTabBar?
+    open var tabBarTopConstraint: NSLayoutConstraint?
+    open var currentTabBarHeight: CGFloat = 2
+    open var tabBarHeight: CGFloat = 32
+    open var tabBarPosition: NTTabBarPosition = .top
     
 
     // MARK: - Initialization
@@ -106,7 +106,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         super.viewWillAppear(animated)
 
         if tabView?.superview == nil {
-            tabView = configuredTabView()
+            configureTabView()
         }
 
         if let currentIndex = currentIndex {
@@ -127,7 +127,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         view.setNeedsDisplay()
     }
 
-    public func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
+    open func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
 
         beforeIndex = index
         shouldScrollCurrentBar = false
@@ -172,7 +172,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
     }
 
     fileprivate func setupScrollView() {
-        // Disable PageViewController's ScrollView bounce
+        // Disable UIPageViewController's ScrollView bounce
         let scrollView = view.subviews.flatMap { $0 as? UIScrollView }.first
         scrollView?.scrollsToTop = false
         scrollView?.delegate = self
@@ -188,36 +188,31 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         }
     }
 
-    fileprivate func configuredTabView() -> NTScrollableTabBar {
+    open func configureTabView() {
         let tabView = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight)
         tabView.translatesAutoresizingMaskIntoConstraints = false
-
-        let height = NSLayoutConstraint(item: tabView,
-                                        attribute: .height,
-                                        relatedBy: .equal,
-                                        toItem: nil,
-                                        attribute: .height,
-                                        multiplier: 1.0,
-                                        constant: tabBarHeight)
-        tabView.addConstraint(height)
         view.addSubview(tabView)
+        self.tabView = tabView
         
-        if tabBarPosition == .top {
-            tabView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        } else {
-            tabView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        }
+        applyTabViewContraints()
         
         let _ = (_viewControllers ?? []).map({ $0.viewDidLoad() })
-      
-        tabView.pageTabItems = (_viewControllers ?? []).map({ $0.title ?? String() })
-        tabView.updateCurrentIndex(beforeIndex, shouldScroll: true)
-
-        tabView.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
+        
+        self.tabView?.pageTabItems = (_viewControllers ?? []).map({ $0.title ?? String() })
+        self.tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)
+        
+        self.tabView?.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
             self?.displayControllerWithIndex(index, direction: direction, animated: true)
         }
 
-        return tabView
+    }
+    
+    open func applyTabViewContraints() {
+        if tabBarPosition == .top {
+            tabView?.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)
+        } else {
+            tabView?.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)
+        }
     }
 
     private func updateTabBarOrigin(hidden: Bool) {

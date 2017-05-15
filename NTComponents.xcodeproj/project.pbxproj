@@ -92,6 +92,7 @@
 		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
 		389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */; };
 		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
+		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -209,6 +210,7 @@
 		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
 		389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
 		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -431,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */,
+				389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -456,11 +459,11 @@
 		3863D8861EB0686E003B73F7 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				3863D8871EB0686E003B73F7 /* NTScrollableTabBar.swift */,
 				3863D8881EB0686E003B73F7 /* NTScrollableTabBarController.swift */,
+				3863D8871EB0686E003B73F7 /* NTScrollableTabBar.swift */,
 				3863D8891EB0686E003B73F7 /* NTScrollableTabBarItem.swift */,
-				3863D88A1EB0686E003B73F7 /* NTTabBar.swift */,
 				3863D88B1EB0686E003B73F7 /* NTTabBarController.swift */,
+				3863D88A1EB0686E003B73F7 /* NTTabBar.swift */,
 				3863D88C1EB0686E003B73F7 /* NTTabBarItem.swift */,
 			);
 			path = TabBar;
@@ -673,6 +676,7 @@
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,
 				3863D8A81EB0686E003B73F7 /* Datasource.swift in Sources */,
+				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,

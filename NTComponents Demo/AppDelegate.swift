@@ -64,10 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5
-        centerVC.tabBarHeight = 30
-        centerVC.tabBarPosition = .bottom
+        centerVC.tabBarHeight = 50
+        centerVC.tabBarPosition = .top
+        
         
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        
         
         
         window?.rootViewController = root

@@ -53,8 +53,10 @@ open class NTViewController: UIViewController {
     }
     
     // MARK: - Status Bar
+    
     open var statusBarHidden: Bool = false {
         didSet {
+            UIApplication.shared.isStatusBarHidden = statusBarHidden
             UIView.animate(withDuration: 0.5) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
             }
@@ -66,7 +68,9 @@ open class NTViewController: UIViewController {
     open override var prefersStatusBarHidden: Bool {
         return self.statusBarHidden
     }
-
+    
+    // MARK: - Standard Methods
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +81,12 @@ open class NTViewController: UIViewController {
         super.viewDidAppear(animated)
         
         //self.updateStatusBarStyle()
+    }
+    
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        statusBarHidden = false
     }
 
     

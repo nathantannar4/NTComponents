@@ -27,63 +27,146 @@
 
 import UIKit
 
-open class NTPageViewController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+open class NTPageViewController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     
-    public var viewControllers: [UIViewController] = []
+    open var viewControllers: [UIViewController] = []
     
-    private var pageViewController: UIPageViewController!
-    private var initialIndex: Int!
+    internal var pageViewController: UIPageViewController = {
+        let viewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        viewController.view.backgroundColor = Color.Default.Background.ViewController
+        return viewController
+    }()
+    
+    internal var currentIndex: Int = 0
+    
+    fileprivate var defaultContentOffsetX: CGFloat {
+        return self.view.bounds.width
+    }
 
+    // MARK: - Initialization
     
-    // MARK: Initialization
-    
-    public convenience init(viewControllers: [UIViewController], initialIndex index: Int) {
+    public convenience init(viewControllers: [UIViewController], initialIndex index: Int = 0) {
         self.init()
         self.viewControllers = viewControllers
-        self.initialIndex = index
-        
-        self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.pageViewController.dataSource = self
-        self.pageViewController.delegate = self
-        self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMove(toParentViewController: self)
-        self.pageViewController.view.fillSuperview()
-        self.pageViewController.setViewControllers([self.viewControllers[index]], direction: .forward, animated: false, completion: nil)
-        
-        self.pageViewController.view.backgroundColor = UIColor.groupTableViewBackground
+        self.currentIndex = index
     }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Standard Methods
 
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
+        pageViewController.view.fillSuperview()
+        pageViewController.setViewControllers([viewControllers[currentIndex]], direction: .forward, animated: false, completion: nil)
+        setupScrollView()
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = self.viewControllers.index(of: viewController) else {
+    // MARK: - NTPageViewController Methods
+    
+    open func slideToNextViewController() {
+        displayControllerWithIndex(currentIndex + 1, direction: .forward, animated: true)
+    }
+    
+    open func slideToPreviousViewController() {
+        displayControllerWithIndex(currentIndex - 1, direction: .reverse, animated: true)
+    }
+    
+    // MARK: - UIPageViewControllerDataSource
+    
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let currentIndex = viewControllers.index(of: viewController) else {
             return nil
         }
         if (currentIndex - 1) < 0 {
             return nil
         }
-        return self.viewControllers[currentIndex - 1]
+        return viewControllers[currentIndex - 1]
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = self.viewControllers.index(of: viewController) else {
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let currentIndex = viewControllers.index(of: viewController) else {
             return nil
         }
-        if (currentIndex + 1) == self.viewControllers.count {
+        if (currentIndex + 1) == viewControllers.count {
             return nil
         }
-        return self.viewControllers[currentIndex + 1]
+        return viewControllers[currentIndex + 1]
     }
     
-    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return self.viewControllers.count
+    open func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return viewControllers.count
     }
     
-    public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return self.initialIndex
+    open func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return currentIndex
+    }
+    
+    fileprivate func nextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
+        
+        guard var index = viewControllers.index(of: viewController) else {
+            return nil
+        }
+        
+        if isAfter {
+            index += 1
+        } else {
+            index -= 1
+        }
+        
+        if index >= 0 && index < viewControllers.count {
+            return viewControllers[index]
+        }
+        return nil
+    }
+    
+    // MARK: - UIPageViewControllerDelegate
+    
+    open func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if completed {
+            currentIndex = viewControllers.index(of: pageViewController.viewControllers![0])!
+        }
+    }
+    
+    open func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
+        
+        if index < 0 || index >= viewControllers.count {
+            return
+        }
+        
+        let nextViewControllers = [viewControllers[index]]
+        
+        let completion: ((Bool) -> Void) = { [weak self] _ in
+            self?.currentIndex = index
+        }
+        
+        pageViewController.setViewControllers(
+            nextViewControllers,
+            direction: direction,
+            animated: animated,
+            completion: completion)
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    fileprivate func setupScrollView() {
+        // Disable UIPageViewController's ScrollView bounce
+        let scrollView = pageViewController.view.subviews.flatMap { $0 as? UIScrollView }.first
+        scrollView?.scrollsToTop = false
+        scrollView?.delegate = self
+        scrollView?.backgroundColor = Color.Default.Background.ViewController
     }
 }

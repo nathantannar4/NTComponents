@@ -61,8 +61,25 @@ open class NTImageView: UIImageView {
         tintColor = Color.Default.Tint.View
     }
     
+    // MARK: - Initialization
+    
     public convenience init() {
         self.init(frame: .zero)
+        
+    }
+    
+    public override init(image: UIImage?) {
+        super.init(image: image)
+        
+        contentMode = .scaleAspectFit
+        tintColor = Color.Default.Tint.View
+    }
+    
+    public override init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        
+        contentMode = .scaleAspectFit
+        tintColor = Color.Default.Tint.View
     }
     
     public override init(frame: CGRect) {
