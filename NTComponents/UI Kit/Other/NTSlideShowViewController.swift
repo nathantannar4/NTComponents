@@ -27,7 +27,7 @@
 
 public typealias NTSlideDataSet = (image: UIImage?, title: String?, subtitle: String?, body: String?)
 
-open class NTSlideShowDataSource {
+open class NTSlideShowDatasource {
 
     open var items: [NTSlideDataSet]
     
@@ -38,7 +38,7 @@ open class NTSlideShowDataSource {
 
 open class NTSlideShowViewController: NTPageViewController {
     
-    open var dataSource: NTSlideShowDataSource?
+    open var datasource: NTSlideShowDatasource?
     
     /**
      The view controller presented after the slide show has completed. If left nil NTSlideShowViewController will attempt to dismiss itself
@@ -91,7 +91,7 @@ open class NTSlideShowViewController: NTPageViewController {
 
     // MARK: - Initialization
  
-    public convenience init(dataSource: NTSlideShowDataSource?) {
+    public convenience init(dataSource: NTSlideShowDatasource?) {
         self.init()
  
         guard let items = dataSource?.items else {

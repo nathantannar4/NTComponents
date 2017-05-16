@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerVC.tabBarPosition = .bottom
         
         
-        let root = NTLoginViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        let root = NTProfileViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
         

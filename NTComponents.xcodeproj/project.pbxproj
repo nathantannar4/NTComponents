@@ -94,6 +94,7 @@
 		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
 		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
+		38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -213,6 +214,7 @@
 		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
+		38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUserViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -437,6 +439,7 @@
 			children = (
 				3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */,
 				389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */,
+				38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -475,10 +478,10 @@
 		3863D88E1EB0686E003B73F7 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				3863D8911EB0686E003B73F7 /* NTTableViewController.swift */,
 				3863D88F1EB0686E003B73F7 /* NTTableView.swift */,
 				3863D8901EB0686E003B73F7 /* NTTableViewCell.swift */,
 				389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */,
-				3863D8911EB0686E003B73F7 /* NTTableViewController.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
 				3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */,
+				38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */,
 			);
