@@ -77,29 +77,10 @@ open class NTViewController: UIViewController {
         view.backgroundColor = Color.Default.Background.ViewController
     }
     
-    override open func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //self.updateStatusBarStyle()
-    }
-    
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         statusBarHidden = false
-    }
-
-    
-    public func updateStatusBarStyle() {
-        guard let color = self.navigationController?.navigationBar.backgroundColor else {
-            UIApplication.shared.statusBarStyle = .default
-            return
-        }
-        if color.isLight  {
-            UIApplication.shared.statusBarStyle = .default
-        } else {
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
     }
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {

@@ -22,19 +22,57 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 5/17/17.
 //
 
 import UIKit
 
-open class NTCollectionViewController: DatasourceController {
+open class NTCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    open override func viewDidLoad() {
+    open let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        aiv.hidesWhenStopped = true
+        aiv.color = .black
+        return aiv
+    }()
+    
+    open var layout: UICollectionViewFlowLayout? {
+        get {
+            return collectionViewLayout as? UICollectionViewFlowLayout
+        }
+    }
+    
+    let defaultCellId = "defaultCellId"
+    let defaultFooterId = "defaultFooterId"
+    let defaultHeaderId = "defaultHeaderId"
+    
+    // MARK: - Initialization
+    
+    public init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Standard Methods
+    
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = Color.Default.Background.ViewController
         collectionView?.backgroundColor = Color.Default.Background.ViewController
-       
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.register(NTCollectionDatasourceCell.self, forCellWithReuseIdentifier: "NTCollectionDatasourceCell")
+        collectionView?.register(NTCollectionViewDefaultCell.self, forCellWithReuseIdentifier: defaultCellId)
+        collectionView?.register(NTCollectionViewDefaultFooter.self, forCellWithReuseIdentifier: defaultFooterId)
+        collectionView?.register(NTCollectionViewDefaultHeader.self, forCellWithReuseIdentifier: defaultHeaderId)
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.anchorCenterXToSuperview()
+        activityIndicatorView.anchorCenterYToSuperview()
+        
         if let parent =  parent as? NTScrollableTabBarController {
             if parent.tabBarPosition == .top {
                 collectionView?.contentInset.top = parent.tabBarHeight
@@ -45,6 +83,112 @@ open class NTCollectionViewController: DatasourceController {
     
     open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
-        collectionViewLayout.invalidateLayout()
+        collectionView?.collectionViewLayout.invalidateLayout()
+        view.setNeedsDisplay()
+    }
+    
+    // MARK: - UICollectionViewDataSource
+    
+    open var datasource: NTCollectionDatasource? {
+        didSet {
+            if let cellClasses = datasource?.cellClasses() {
+                for cellClass in cellClasses {
+                    collectionView?.register(cellClass, forCellWithReuseIdentifier: NSStringFromClass(cellClass))
+                }
+            }
+            
+            if let headerClasses = datasource?.headerClasses() {
+                for headerClass in headerClasses {
+                    collectionView?.register(headerClass, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(headerClass))
+                }
+            }
+            
+            if let footerClasses = datasource?.footerClasses() {
+                for footerClass in footerClasses {
+                    collectionView?.register(footerClass, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: NSStringFromClass(footerClass))
+                }
+            }
+            
+            collectionView?.reloadData()
+        }
+    }
+    
+    override open func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return datasource?.numberOfSections() ?? 0
+    }
+    
+    override open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return datasource?.numberOfItems(section) ?? 0
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 44)
+    }
+    
+    override open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: NTCollectionViewCell
+        
+        if let cls = datasource?.cellClass(indexPath) {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+        } else if let cellClasses = datasource?.cellClasses(), cellClasses.count > indexPath.section {
+            let cls = cellClasses[indexPath.section]
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+        } else if let cls = datasource?.cellClasses().first {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: defaultCellId, for: indexPath) as! NTCollectionViewCell
+        }
+        
+        cell.controller = self
+        cell.datasourceItem = datasource?.item(indexPath)
+        return cell
+    }
+    
+    override open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let reusableView: NTCollectionViewCell
+        
+        if kind == UICollectionElementKindSectionHeader {
+            if let classes = datasource?.headerClasses(), classes.count > indexPath.section {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(classes[indexPath.section]), for: indexPath) as! NTCollectionViewCell
+            } else if let cls = datasource?.headerClasses()?.first {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+            } else {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: defaultHeaderId, for: indexPath) as! NTCollectionViewCell
+            }
+            reusableView.datasourceItem = datasource?.headerItem(indexPath.section)
+            
+        } else {
+            if let classes = datasource?.footerClasses(), classes.count > indexPath.section {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(classes[indexPath.section]), for: indexPath) as! NTCollectionViewCell
+            } else if let cls = datasource?.footerClasses()?.first {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+            } else {
+                reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: defaultFooterId, for: indexPath) as! NTCollectionViewCell
+            }
+            reusableView.datasourceItem = datasource?.footerItem(indexPath.section)
+        }
+        
+        reusableView.controller = self
+        
+        return reusableView
+    }
+
+    
+    // MARK: - Refresh Methods
+    
+    open func addRefreshControl() {
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            collectionView?.refreshControl = rc
+        } else {
+            Log.write(.error, "UIRefreshControl requires iOS 10.0")
+        }
+    }
+    
+    open func handleRefresh() {
+        
     }
 }

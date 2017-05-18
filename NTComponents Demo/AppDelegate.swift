@@ -67,9 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerVC.tabBarHeight = 50
         centerVC.tabBarPosition = .bottom
         
-        
-        let root = NTProfileViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
-        
+        let vc = NTProfileViewController()
+        let root = vc //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
         window?.rootViewController = root

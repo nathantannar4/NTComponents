@@ -61,7 +61,7 @@ class ColorCell: NTCollectionViewCell {
     }
 }
 
-class ColorDatasource: Datasource {
+class ColorDatasource: NTCollectionDatasource {
     
     var colors: [UIColor]!
     
@@ -70,15 +70,15 @@ class ColorDatasource: Datasource {
         self.colors = colors
     }
     
-    override func footerClasses() -> [DatasourceCell.Type]? {
+    override func footerClasses() -> [NTCollectionViewCell.Type]? {
         return nil
     }
     
-    override func headerClasses() -> [DatasourceCell.Type]? {
+    override func headerClasses() -> [NTCollectionViewCell.Type]? {
         return nil
     }
     
-    override func cellClasses() -> [DatasourceCell.Type] {
+    override func cellClasses() -> [NTCollectionViewCell.Type] {
         return [ColorCell.self]
     }
     

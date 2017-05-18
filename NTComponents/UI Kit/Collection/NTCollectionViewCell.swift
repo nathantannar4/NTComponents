@@ -25,6 +25,34 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
-open class NTCollectionViewCell: DatasourceCell {
+open class NTCollectionViewCell: UICollectionViewCell {
+    
+    open var datasourceItem: Any?
+    open weak var controller: NTCollectionViewController?
+    
+    open let separatorLineView: UIView = {
+        let lineView = UIView()
+        lineView.backgroundColor = Color.Gray.P500
+        lineView.isHidden = true
+        return lineView
+    }()
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    ///Override this method to provide your own custom views.
+    open func setupViews() {
+        
+        clipsToBounds = true
+        
+        addSubview(separatorLineView)
+        separatorLineView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }

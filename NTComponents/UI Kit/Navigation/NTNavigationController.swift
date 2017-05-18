@@ -27,6 +27,8 @@
 
 open class NTNavigationController: UINavigationController {
     
+    // MARK: - Initialization
+    
     public convenience init() {
         self.init(nibName: nil, bundle: nil)
     }
@@ -39,14 +41,29 @@ open class NTNavigationController: UINavigationController {
         super.init(rootViewController: rootViewController)
         
         navigationBar.tintColor = Color.Default.Tint.NavigationBar
-        navigationBar.barTintColor = Color.Default.Background.NavigationBar
+        navigationBar.barTintColor = .clear //Color.Default.Background.NavigationBar
+        navigationBar.backgroundColor = Color.Default.Background.NavigationBar
         navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.setBackgroundImage(UIImage.from(color: Color.Default.Background.NavigationBar), for: UIBarMetrics.default)
         navigationBar.setDefaultShadow()
+        updateStatusBarStyle()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Autoupdate statusBarStyle
+    
+    open func updateStatusBarStyle() {
+        guard let color = navigationBar.backgroundColor else {
+            return
+        }
+        if color.isLight  {
+            UIApplication.shared.statusBarStyle = .default
+        } else {
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
     }
 }

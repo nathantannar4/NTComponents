@@ -25,7 +25,7 @@
 //  Created by Nathan Tannar on 5/15/17.
 //
 
-open class UserDatasource: Datasource {
+open class UserDatasource: NTCollectionDatasource {
     
     open override func item(_ indexPath: IndexPath) -> Any? {
         if indexPath.section == 0 {
@@ -45,15 +45,15 @@ open class UserDatasource: Datasource {
         return 1
     }
     
-    open override func footerClasses() -> [DatasourceCell.Type]? {
-        return [DatasourceCell.self]
+    open override func footerClasses() -> [NTCollectionViewCell.Type]? {
+        return [NTCollectionViewCell.self]
     }
     
-    open override func headerClasses() -> [DatasourceCell.Type]? {
-        return [DatasourceCell.self]
+    open override func headerClasses() -> [NTCollectionViewCell.Type]? {
+        return [NTCollectionViewCell.self]
     }
     
-    open override func cellClasses() -> [DatasourceCell.Type] {
+    open override func cellClasses() -> [NTCollectionViewCell.Type] {
         return [UserProfileCell.self]
     }
 }
@@ -116,7 +116,6 @@ open class UserProfileCell: NTCollectionViewCell {
         button.title = "Follow"
         button.titleFont = Font.Default.Callout.withSize(12)
         button.rippleColor = Color.Default.Background.Button
-//        button.rippleBackgroundColor = Color.Default.Background.Button
         button.setTitleColor(.white, for: .highlighted)
         return button
     }()
@@ -127,7 +126,7 @@ open class UserProfileCell: NTCollectionViewCell {
         backgroundColor = .white
         
         separatorLineView.isHidden = false
-        separatorLineView.backgroundColor = Color.Gray.P700
+        separatorLineView.backgroundColor = Color.Gray.P500
         
         addSubview(coverImageView)
         
@@ -151,9 +150,6 @@ open class UserProfileCell: NTCollectionViewCell {
         titleLabel.anchor(coverImageView.bottomAnchor, left: view.rightAnchor, bottom: nil, right: actionButton.leftAnchor, topConstant: 0, leftConstant: 6, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 35)
         
         subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 15)
-        
-
-        
     }
 }
 
