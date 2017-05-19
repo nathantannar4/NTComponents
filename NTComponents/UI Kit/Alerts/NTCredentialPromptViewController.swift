@@ -111,13 +111,12 @@ open class NTCredentialPromptViewController: UIViewController, UIGestureRecogniz
         tapGesture.delegate = self
         view.addGestureRecognizer(tapGesture)
         
+        alertContainer.frame = CGRect(x: 40, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width - 80, height: 160)
         alertContainer.addSubview(loginButton)
         alertContainer.addSubview(emailTextField)
         alertContainer.addSubview(emailIconView)
         alertContainer.addSubview(passwordTextField)
         alertContainer.addSubview(passwordIconView)
-        
-        alertContainer.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 100, leftConstant: 40, bottomConstant: 0, rightConstant: 40, widthConstant: 0, heightConstant: 160)
         
         emailIconView.anchor(alertContainer.topAnchor, left: alertContainer.leftAnchor, bottom: nil, right: nil, topConstant: 16, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 25, heightConstant: 25)
         emailTextField.anchor(emailIconView.topAnchor, left: emailIconView.rightAnchor, bottom: nil, right: alertContainer.rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 25)
@@ -131,6 +130,25 @@ open class NTCredentialPromptViewController: UIViewController, UIGestureRecogniz
         emailTextField.returnKeyType = .next
         passwordTextField.delegate = self
         passwordTextField.returnKeyType = .go
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        alertContainer.frame = CGRect(x: 40, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width - 80, height: 160)
+        UIView.animate(withDuration: 0.3, delay: 0.3, usingSpringWithDamping: 0.85, initialSpringVelocity: 1.2, options: .curveLinear, animations: {
+            self.alertContainer.frame = CGRect(x: 40, y: 100, width: UIScreen.main.bounds.width - 80, height: 160)
+        }) { (success) in
+            if success {
+                self.alertContainer.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topConstant: 100, leftConstant: 40, bottomConstant: 0, rightConstant: 40, widthConstant: 0, heightConstant: 160)
+            }
+        }
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        emailTextField.becomeFirstResponder()
     }
     
     // MARK: - UITextFieldDelegate
@@ -155,7 +173,13 @@ open class NTCredentialPromptViewController: UIViewController, UIGestureRecogniz
             passwordTextField.resignFirstResponder()
             return
         }
-        dismiss(animated: true)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.alertContainer.frame = CGRect(x: 40, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width - 80, height: 160)
+        }) { (success) in
+            if success {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     open func loginButtonPresssed() {

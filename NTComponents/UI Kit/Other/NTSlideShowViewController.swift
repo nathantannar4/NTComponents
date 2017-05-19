@@ -76,6 +76,8 @@ open class NTSlideShowViewController: NTPageViewController {
         didSet {
             if currentIndex == 0 {
                 nextButton.ripplePercent = 0
+                nextButton.title = nil
+                nextButton.image = Icon.Arrow.Forward
             } else if currentIndex < viewControllers.count - 1 {
                 nextButton.title = nil
                 nextButton.image = Icon.Arrow.Forward
@@ -163,10 +165,11 @@ open class NTSlideShowViewController: NTPageViewController {
     open func createContentViewControllers(withItems items: [NTSlideDataSet]) {
         for item in items {
             let imageView = NTImageView(image: item.image)
-            imageView.contentMode = .scaleToFill
+            imageView.contentMode = .scaleAspectFill
             let titleLabel = NTLabel(style: .title)
             titleLabel.text = item.title
             titleLabel.textAlignment = .center
+            titleLabel.font = Font.Default.Title.withSize(26)
             let subtitleLabel = NTLabel(style: .subtitle)
             subtitleLabel.text = item.subtitle
             subtitleLabel.textAlignment = .center

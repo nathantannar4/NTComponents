@@ -137,4 +137,9 @@ open class NTPing: NTView {
             self.removeFromSuperview()
         })
     }
+    
+    open class func genericErrorMessage() {
+        let ping = NTPing(type: .isDanger, title: "Sorry, an error occurred")
+        ping.show(duration: 3.0)
+    }
 }

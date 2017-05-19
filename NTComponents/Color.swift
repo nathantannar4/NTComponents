@@ -59,10 +59,9 @@ public struct Color {
             Color.Default.Tint.NavigationBar = color
             Color.Default.Tint.TabBar = color
             Color.Default.Tint.Toolbar = color
-            Color.Default.Text.Title = color
-            Color.Default.Text.Subtitle = color.darker(by: 20)
             Color.Default.Tint.Inactive = color.darker(by: 20)
             Color.Default.Tint.View = color
+            Color.Default.Background.Button = color
         }
 
         /**

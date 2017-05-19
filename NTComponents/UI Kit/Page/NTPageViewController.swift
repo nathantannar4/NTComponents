@@ -42,6 +42,8 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
     fileprivate var defaultContentOffsetX: CGFloat {
         return self.view.bounds.width
     }
+    
+    open var pageControl: UIPageControl?
 
     // MARK: - Initialization
     
@@ -72,6 +74,21 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
         pageViewController.view.fillSuperview()
         pageViewController.setViewControllers([viewControllers[currentIndex]], direction: .forward, animated: false, completion: nil)
         setupScrollView()
+    }
+    
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        for subview in pageViewController.view.subviews {
+            if let view = subview as? UIPageControl {
+                pageControl = view
+            }
+        }
+        
+        pageControl?.backgroundColor = UIColor.clear
+        pageControl?.pageIndicatorTintColor = Color.Default.Tint.NavigationBar
+        pageControl?.currentPageIndicatorTintColor = Color.Default.Tint.NavigationBar.lighter(by: 20)
+        pageControl?.isHidden = true
     }
     
     // MARK: - NTPageViewController Methods

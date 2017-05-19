@@ -30,7 +30,7 @@ public enum NTLoginMethod {
 }
 
 open class NTLoginButton: NTButton {
-    var method: NTLoginMethod?
+    open var loginMethod: NTLoginMethod?
 }
 
 open class NTLoginViewController: NTViewController, UITableViewDataSource, UITableViewDelegate {
@@ -89,6 +89,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         view.addSubview(logoView)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
@@ -131,7 +132,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         case .custom:
             button = createLoginButton(color: Color.White, title: "Custom Login", logo: nil)
         }
-        button.method = method
+        button.loginMethod = method
         return button
     }
     
@@ -164,7 +165,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     }
     
     open func loginLogic(sender: NTLoginButton) {
-        if sender.method == .email {
+        if sender.loginMethod == .email {
             let vc = NTCredentialPromptViewController(onSubmit: { (email, password) -> Bool in
                 NTPing(type: .isSuccess, title: "Login Successful").show(duration: 2)
                 return true

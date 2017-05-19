@@ -946,11 +946,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Page/NTPageViewController.swift"
-            timestampString = "516530421.037381"
+            timestampString = "516787994.441808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "init(viewControllers:initialIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -962,11 +962,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Page/NTPageViewController.swift"
-            timestampString = "516530421.037381"
+            timestampString = "516787994.441808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "nextViewController(_:isAfter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -978,11 +978,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Page/NTPageViewController.swift"
-            timestampString = "516534279.56323"
+            timestampString = "516787994.441808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "setupScrollView()"
             landmarkType = "7">
             <Locations>
