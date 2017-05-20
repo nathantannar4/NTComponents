@@ -79,20 +79,11 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         didSet {
             self.signInButton.layoutIfNeeded()
             self.view.layoutIfNeeded()
-            if keyboardActive.0 {
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                    self.bottomAnchor?.constant = -self.keyboardActive.1.height + 10
-                    self.signInButton.layoutIfNeeded()
-                    self.view.layoutIfNeeded()
-                })
-                
-            } else {
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                    self.bottomAnchor?.constant = 5
-                    self.signInButton.layoutIfNeeded()
-                    self.view.layoutIfNeeded()
-                })
-            }
+            UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                self.bottomAnchor?.constant = -self.keyboardActive.1.height - 16
+                self.signInButton.layoutIfNeeded()
+                self.view.layoutIfNeeded()
+            })
         }
     }
     
@@ -192,7 +183,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         passwordViewToggleButton.anchor(passwordTextField.topAnchor, left: nil, bottom: nil, right: passwordTextField.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 5, rightConstant: 5, widthConstant: 30, heightConstant: 30)
         
         view.addSubview(signInButton)
-        bottomAnchor = signInButton.anchorWithReturnAnchors(nil, left: nil, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 100, heightConstant: 36)[1]
+        bottomAnchor = signInButton.anchorWithReturnAnchors(nil, left: nil, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 100, heightConstant: 36).first
         
         view.addSubview(signUpButton)
         signUpButton.anchor(passwordTextField.bottomAnchor, left: passwordTextField.leftAnchor, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -246,19 +237,28 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
     func keyboardDidChangeFrame(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardActive = (keyboardActive.0, keyboardSize)
+            if keyboardSize.height > keyboardActive.1.height {
+                // Accounts for a frame glitch with some keyboards such as GBoard
+                DispatchQueue.executeAfter(0.05, closure: {
+                    self.keyboardActive = (self.keyboardActive.0, keyboardSize)
+                })
+            } else {
+                keyboardActive = (keyboardActive.0, keyboardSize)
+            }
         }
     }
     
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardActive = (true, keyboardSize)
+            if !keyboardActive.0 {
+                keyboardActive = (true, keyboardSize)
+            }
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardActive = (false, keyboardSize)
+        if keyboardActive.0 {
+            keyboardActive = (false, .zero)
         }
     }
 
