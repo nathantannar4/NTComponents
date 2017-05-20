@@ -31,7 +31,7 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
     
     open var viewControllers: [UIViewController] = []
     
-    internal var pageViewController: UIPageViewController = {
+    open var pageViewController: UIPageViewController = {
         let viewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         viewController.view.backgroundColor = Color.Default.Background.ViewController
         return viewController

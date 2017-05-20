@@ -29,15 +29,18 @@ import UIKit
 
 public extension UIViewController {
     
-    public func makeKeyAndVisible(animated: Bool = false)  {
-        guard let vc = UIViewController.topWindow()?.rootViewController else {
+    public func makeKeyAndVisible()  {
+        guard let window = UIViewController.topWindow() else {
             Log.write(.error, "Could not find the active window")
             return
         }
-        vc.present(self, animated: animated, completion: nil)
+        window.rootViewController = self
+        window.makeKeyAndVisible()
+        
     }
     
     class func topWindow() -> UIWindow? {
+        
         for window in UIApplication.shared.windows.reversed() {
             if window.windowLevel == UIWindowLevelNormal && !window.isHidden && window.frame != CGRect.zero {
                 return window

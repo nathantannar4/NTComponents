@@ -171,10 +171,6 @@ open class NTButton: UIButton {
         if let imageView = imageView {
             bringSubview(toFront: imageView)
         }
-        
-        layer.shadowRadius = 0
-        layer.shadowOffset = CGSize(width: 0, height: 1)
-        layer.shadowColor = UIColor(white: 0.0, alpha: 0.5).cgColor
     }
     
     fileprivate func setupRippleView() {
@@ -225,8 +221,11 @@ open class NTButton: UIButton {
         }, completion: nil)
         
         if shadowRippleEnable {
-            tempShadowRadius = layer.shadowRadius
-            tempShadowOpacity = layer.shadowOpacity
+            
+            layer.shadowRadius = Color.Default.Shadow.Radius
+            layer.shadowOffset = Color.Default.Shadow.Offset
+            layer.shadowColor = Color.Default.Shadow.cgColor
+            layer.shadowOpacity = Color.Default.Shadow.Opacity
             
             let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
             shadowAnim.toValue = shadowRippleRadius
@@ -258,19 +257,21 @@ open class NTButton: UIButton {
                animations: {
                 self.rippleView.transform = CGAffineTransform.identity
                 
-                let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
-                shadowAnim.toValue = self.tempShadowRadius
-                
-                let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
-                opacityAnim.toValue = self.tempShadowOpacity
-                
-                let groupAnim = CAAnimationGroup()
-                groupAnim.duration = 0.7
-                groupAnim.fillMode = kCAFillModeForwards
-                groupAnim.isRemovedOnCompletion = false
-                groupAnim.animations = [shadowAnim, opacityAnim]
-                
-                self.layer.add(groupAnim, forKey:"shadowBack")
+                if self.shadowRippleEnable {
+                    let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
+                    shadowAnim.toValue = 0
+                    
+                    let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
+                    opacityAnim.toValue = 0
+                    
+                    let groupAnim = CAAnimationGroup()
+                    groupAnim.duration = 0.7
+                    groupAnim.fillMode = kCAFillModeForwards
+                    groupAnim.isRemovedOnCompletion = false
+                    groupAnim.animations = [shadowAnim, opacityAnim]
+                    
+                    self.layer.add(groupAnim, forKey:"shadowBack")
+                }
         }, completion: nil)
     }
     

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icons8-plus.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Lock_ffffff_100.png",
       "scale" : "2x"
     },
     {

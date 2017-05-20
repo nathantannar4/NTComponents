@@ -59,6 +59,7 @@ open class NTAlertViewController: UIViewController  {
     
     open let subtitleLabel: NTLabel = {
         let label = NTLabel(style: .subtitle)
+        label.font = Font.Default.Subtitle.withSize(13)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -72,7 +73,7 @@ open class NTAlertViewController: UIViewController  {
         return view
     }()
     
-    fileprivate let cancelButton: NTButton = {
+    open let cancelButton: NTButton = {
         let button = NTButton()
         button.title = "Cancel"
         button.backgroundColor = .white
@@ -82,7 +83,7 @@ open class NTAlertViewController: UIViewController  {
         return button
     }()
     
-    fileprivate let confirmButton: NTButton = {
+    open let confirmButton: NTButton = {
         let button = NTButton()
         button.title = "Confirm"
         button.titleLabel?.textAlignment = .center
@@ -92,10 +93,10 @@ open class NTAlertViewController: UIViewController  {
         return button
     }()
     
-    public var onCancel : (() -> Void)?
-    public var onConfirm : (() -> Void)?
+    open var onCancel : (() -> Void)?
+    open var onConfirm : (() -> Void)?
     
-    public required init(title: String, subtitle: String? = nil, type: NTAlertType? = nil) {
+    public required init(title: String? = nil, subtitle: String? = nil, type: NTAlertType? = nil) {
         self.init()
         self.title = title
         self.subtitle = subtitle
@@ -105,10 +106,12 @@ open class NTAlertViewController: UIViewController  {
                 confirmButton.backgroundColor = Color.Default.Status.Info
             case .isSuccess:
                 confirmButton.backgroundColor = Color.Default.Status.Success
+                confirmButton.titleColor = .white
             case .isWarning:
                 confirmButton.backgroundColor = Color.Default.Status.Warning
             case .isDanger:
                 confirmButton.backgroundColor = Color.Default.Status.Danger
+                confirmButton.titleColor = .white
             }
         }
     }
@@ -146,14 +149,16 @@ open class NTAlertViewController: UIViewController  {
     
     // MARK: - Actions
     open func cancelButtonPressed() {
-        onCancel?()
         Log.write(.status, "Cancel button pressed")
-        dismiss(animated: true)
+        dismiss(animated: true) { 
+            self.onCancel?()
+        }
     }
     
     open func confirmButtonPresssed() {
-        onConfirm?()
         Log.write(.status, "Confirm button pressed")
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            self.onConfirm?()
+        }
     }
 }

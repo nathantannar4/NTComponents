@@ -87,5 +87,15 @@ public extension String {
         attributedString.append(NSMutableAttributedString(string: text))
         return attributedString
     }
+    
+    func bold() -> NSMutableAttributedString {
+        let boldText = NSMutableAttributedString(string: self)
+        return boldText.bold(self)
+    }
+    
+    func italic() -> NSMutableAttributedString {
+        let italicText = NSMutableAttributedString(string: self)
+        return italicText.italic(self)
+    }
 }
 

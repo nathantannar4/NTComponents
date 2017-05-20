@@ -61,11 +61,16 @@ public struct Icon {
     public static let github = UIImage(named: "ic_github_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     
     
-    public static let Delete = UIImage(named: "Delete_ffffff_100", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    public static let Delete = icon("Delete_ffffff_100")
     
     public static let Email = icon("ic_email")
     
     public static let Lock = icon("ic_lock")
+    public static let Unlock = icon("ic_unlock")
+    
+    public static let Search = icon("Search")
+    public static let Create = icon("Create")
+    public static let Check = icon("Check")
     
     public struct Arrow {
         public static let Backward = Icon.icon("Backward_ffffff_100")

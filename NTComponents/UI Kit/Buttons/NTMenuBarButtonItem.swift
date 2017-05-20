@@ -35,7 +35,7 @@ public enum DrawerSide: Int {
     case right
 }
 
-open class NTAnimatedMenuButton : UIButton {
+open class NTAnimatedMenuButton: NTButton {
     
     let top: CAShapeLayer = CAShapeLayer()
     let middle: CAShapeLayer = CAShapeLayer()
@@ -101,8 +101,11 @@ open class NTAnimatedMenuButton : UIButton {
     
     // MARK: - Animations
     
-    open func animate() {
+    open override func animate() {
         
+        super.animate()
+        
+        /*
         self.top.anchorPoint = CGPoint(x: 1, y: 0.5)
         self.top.position = CGPoint(x: 30 - 1, y: 5)
         self.middle.position = CGPoint(x: 15, y: 15)
@@ -128,7 +131,7 @@ open class NTAnimatedMenuButton : UIButton {
         self.middle.add(middleTransform, forKey: "opacity")
         self.bottom.add(rotationAnimation, forKey: "transform.rotation")
 
-        
+        */
     }
     
     open func animate(withPercentVisible percentVisible: CGFloat, drawerSide: DrawerSide) {
@@ -181,7 +184,7 @@ open class NTAnimatedMenuButton : UIButton {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        animate()
+        //animate()
     }
 }
 
@@ -204,6 +207,12 @@ open class NTMenuBarButtonItem: UIBarButtonItem {
     public convenience init(target: AnyObject?, action: Selector, menuIconColor: UIColor) {
         let menuButton = NTAnimatedMenuButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30), strokeColor: menuIconColor)
         menuButton.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        menuButton.trackTouchLocation = false
+        menuButton.ripplePercent = 1.5
+        menuButton.touchUpAnimationTime = 0.4
+        menuButton.rippleOverBounds = true
+        
+        
         self.init(customView: menuButton)
         
         self.menuButton = menuButton

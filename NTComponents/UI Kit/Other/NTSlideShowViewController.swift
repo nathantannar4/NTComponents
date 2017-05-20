@@ -85,7 +85,7 @@ open class NTSlideShowViewController: NTPageViewController {
                     self.nextButton.ripplePercent = 0.8
                 })
             } else {
-                nextButton.title = "Done"
+                nextButton.title = "Get Started"
                 nextButton.image = nil
             }
         }

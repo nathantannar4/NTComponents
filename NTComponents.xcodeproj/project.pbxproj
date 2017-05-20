@@ -95,6 +95,11 @@
 		38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */; };
+		38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */; };
+		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
+		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
+		38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA3B1ECFF7C7007D3019 /* NTEULAController.swift */; };
+		38FCFA4A1ED01F3F007D3019 /* NTSelfNavigatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +218,11 @@
 		38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUserViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAlertsViewController.swift; sourceTree = "<group>"; };
+		38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedTextField.swift; sourceTree = "<group>"; };
+		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
+		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
+		38FCFA3B1ECFF7C7007D3019 /* NTEULAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEULAController.swift; sourceTree = "<group>"; };
+		38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSelfNavigatedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +426,7 @@
 			children = (
 				3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */,
 				3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */,
+				38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -423,7 +434,7 @@
 		3863D87E1EB0686E003B73F7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */,
+				38FCFA3A1ECFF7AD007D3019 /* Login */,
 				389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */,
 				38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */,
 			);
@@ -477,6 +488,7 @@
 			children = (
 				3863D8931EB0686E003B73F7 /* NTLabel.swift */,
 				3863D8941EB0686E003B73F7 /* NTTextField.swift */,
+				38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */,
 				3863D8951EB0686E003B73F7 /* NTTextView.swift */,
 			);
 			path = Text;
@@ -490,6 +502,17 @@
 				3863D8991EB0686E003B73F7 /* NTView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38FCFA3A1ECFF7AD007D3019 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */,
+				38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */,
+				38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */,
+				38FCFA3B1ECFF7C7007D3019 /* NTEULAController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -646,10 +669,12 @@
 				3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */,
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
 				3863D8B21EB0686E003B73F7 /* UIColor.swift in Sources */,
+				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
 				3863D8CB1EB0686E003B73F7 /* NTSearchBarView.swift in Sources */,
 				3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */,
 				3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */,
+				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
 				3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */,
 				3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */,
@@ -660,6 +685,7 @@
 				3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */,
 				3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */,
 				3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */,
+				38FCFA4A1ED01F3F007D3019 /* NTSelfNavigatedViewController.swift in Sources */,
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
@@ -672,12 +698,14 @@
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
+				38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */,
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
+				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
 				386AB9B91ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,

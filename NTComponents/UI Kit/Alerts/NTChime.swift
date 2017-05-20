@@ -143,7 +143,7 @@ open class NTChime: NTView {
     
     // MARK: - Presentation Methods
     
-    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = nil) {
+    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = 3) {
         if currentState != .hidden { return }
         guard let view = view else { return }
         addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(NTToast.didTap(_:))))
@@ -187,7 +187,9 @@ open class NTChime: NTView {
             self.frame.origin = CGPoint(x: 0, y: -self.frame.height)
         }, completion: { finished in
             self.currentState = .hidden
-            UIApplication.shared.statusBarStyle = self.originalStatusBarStyle
+            if UIApplication.shared.statusBarStyle != self.originalStatusBarStyle {
+                UIApplication.shared.statusBarStyle = self.originalStatusBarStyle
+            }
             self.removeFromSuperview()
         })
     }

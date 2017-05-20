@@ -29,7 +29,7 @@ open class UserDatasource: NTCollectionDatasource {
     
     open override func item(_ indexPath: IndexPath) -> Any? {
         if indexPath.section == 0 {
-            return (bg: #imageLiteral(resourceName: "Background"), name: "Nathan Tannar", title: "iOS Developer", pic: #imageLiteral(resourceName: "Nathan"))
+            return (bg: UIImage(), name: "Nathan Tannar", title: "iOS Developer", pic: UIImage())
         }
         return nil
     }
@@ -114,6 +114,7 @@ open class UserProfileCell: NTCollectionViewCell {
         button.layer.cornerRadius = 5
         button.rippleBackgroundView.layer.cornerRadius = 5
         button.title = "Follow"
+        button.titleColor = Color.Default.Background.Button
         button.titleFont = Font.Default.Callout.withSize(12)
         button.rippleColor = Color.Default.Background.Button
         button.setTitleColor(.white, for: .highlighted)
@@ -160,6 +161,7 @@ open class NTProfileViewController: NTCollectionViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Profile"
         datasource = UserDatasource()
     }
     

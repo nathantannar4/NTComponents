@@ -245,10 +245,11 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     private func showShadowForCenterViewController(_ shouldShowShadow: Bool) {
         if (shouldShowShadow) {
             Log.write(.status, "Will show shadow for center view")
-            centerNavigationController.view.layer.shadowOpacity = 0.8
+            centerNavigationController.view.setDefaultShadow()
+            centerNavigationController.view.layer.shadowOffset = CGSize(width: -2, height: 0)
         } else {
             Log.write(.status, "Will hide shadow for center view")
-            centerNavigationController.view.layer.shadowOpacity = 0.0
+            centerNavigationController.view.hideShadow()
         }
     }
     
@@ -256,8 +257,8 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     private func showLeftMenuButton(_ shouldShow: Bool) {
         Log.write(.status, "Will show left menu button is \(shouldShow)")
         if centerViewController.navigationItem.leftBarButtonItem == nil {
-            let leftDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
-            //let leftDrawerButton = NTMenuBarButtonItem(target: self, action: #selector(toggleLeftPanel))
+            //let leftDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
+            let leftDrawerButton = NTMenuBarButtonItem(target: self, action: #selector(toggleLeftPanel))
             centerViewController.navigationItem.leftBarButtonItem = shouldShow ? leftDrawerButton : nil
         }
     }

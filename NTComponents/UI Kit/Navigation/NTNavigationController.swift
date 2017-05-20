@@ -41,11 +41,11 @@ open class NTNavigationController: UINavigationController {
         super.init(rootViewController: rootViewController)
         
         navigationBar.tintColor = Color.Default.Tint.NavigationBar
-        navigationBar.barTintColor = .clear //Color.Default.Background.NavigationBar
+        navigationBar.barTintColor = Color.Default.Background.NavigationBar
         navigationBar.backgroundColor = Color.Default.Background.NavigationBar
         navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
-        navigationBar.setBackgroundImage(UIImage.from(color: Color.Default.Background.NavigationBar), for: UIBarMetrics.default)
+        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.setDefaultShadow()
         updateStatusBarStyle()
     }

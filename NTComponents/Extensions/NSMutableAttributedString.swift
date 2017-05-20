@@ -26,6 +26,7 @@
 //
 
 public extension NSMutableAttributedString {
+    
     func bold(_ text: String) -> NSMutableAttributedString {
         let attrs:[String:AnyObject] = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]
         let boldString = NSMutableAttributedString(string:"\(text)", attributes: attrs)

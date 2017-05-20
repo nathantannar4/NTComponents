@@ -31,12 +31,8 @@ open class NTToast: NTAnimatedView {
 
     fileprivate var currentState: NTViewState = .hidden
     open var dismissOnTap: Bool = true
-
-    public convenience init(text: String?) {
-        self.init(text: text, color: Color.Gray.P800, height: 50)
-    }
-
-    public convenience init(text: String?, color: UIColor, height: CGFloat) {
+    
+    public convenience init(text: String?, color: UIColor = Color.Gray.P800, height: CGFloat = 50) {
 
         var bounds =  UIScreen.main.bounds
         bounds.origin.y = bounds.height - height
@@ -70,7 +66,7 @@ open class NTToast: NTAnimatedView {
         }
     }
 
-    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = nil) {
+    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = 2) {
         if currentState != .hidden { return }
         guard let view = view else { return }
         

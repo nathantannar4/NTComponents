@@ -60,15 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginVC = NTLoginViewController()
         loginVC.title = "Login"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tableVC])
+        let profileVC = NTProfileViewController()
+        profileVC.title = "Profile"
+        
+        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, mapVC, profileVC, DemoColorsCollectionView(), NTLoginViewController()])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5
         centerVC.tabBarHeight = 50
         centerVC.tabBarPosition = .bottom
         
-        let vc = NTProfileViewController()
-        let root = vc //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        let root = NTLoginViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
         window?.rootViewController = root

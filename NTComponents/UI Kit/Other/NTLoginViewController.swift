@@ -64,8 +64,16 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         let label = NTLabel(style: .subtitle)
         label.font = Font.Default.Subtitle.withSize(24)
         label.adjustsFontSizeToFitWidth = true
-        label.text = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
         label.textAlignment = .center
+        return label
+    }()
+    
+    open var versionLabel: NTLabel = {
+        let label = NTLabel(style: .subtitle)
+        label.font = Font.Default.Footnote
+        label.adjustsFontSizeToFitWidth = true
+        label.text = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -94,12 +102,13 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(separatorView)
+        view.addSubview(versionLabel)
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         
-        logoView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
+        logoView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
         
         titleLabel.anchor(logoView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         titleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
@@ -108,6 +117,8 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         subtitleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         
         separatorView.anchor(subtitleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 6, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 0.5)
+        
+        versionLabel.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 16, rightConstant: 0, widthConstant: 50, heightConstant: 20)
         
         tableView.anchor(separatorView.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
@@ -118,19 +129,19 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         var button: NTLoginButton
         switch method {
         case .email:
-            button = createLoginButton(color: Color.Default.Tint.Button, title: "Login with Email", logo: Icon.Email)
+            button = createLoginButton(color: Color.Gray.P200, title: "Login with Email", logo: Icon.Email)
         case .facebook:
             button = createLoginButton(color: Color.FacebookBlue, title: "Login with Facebook", logo: Icon.facebook)
         case .twitter:
             button = createLoginButton(color: Color.TwitterBlue, title: "Login with Twitter", logo: Icon.twitter)
         case .google:
-            button = createLoginButton(color: Color.White, title: "Login with Google", logo: Icon.google)
+            button = createLoginButton(color: Color.Gray.P200, title: "Login with Google", logo: Icon.google)
         case .linkedin:
             button = createLoginButton(color: Color.LinkedInBlue, title: "Login with LinkedIn", logo: Icon.linkedin)
         case .github:
-            button = createLoginButton(color: Color.White, title: "Login with Github", logo: Icon.github)
+            button = createLoginButton(color: Color.Gray.P200, title: "Login with Github", logo: Icon.github)
         case .custom:
-            button = createLoginButton(color: Color.White, title: "Custom Login", logo: nil)
+            button = createLoginButton(color: Color.Gray.P200, title: "Custom Login", logo: nil)
         }
         button.loginMethod = method
         return button
@@ -140,9 +151,8 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         let button = NTLoginButton()
         button.layer.cornerRadius = 5
         button.backgroundColor = color
-        button.touchUpAnimationTime = 0.35
-        button.ripplePercent = 0.8
-        button.imageView?.backgroundColor = .clear
+        button.touchUpAnimationTime = 0.6
+        button.ripplePercent = 1.2
         button.addTarget(self, action: #selector(loginLogic(sender:)), for: .touchUpInside)
         
         // Title
@@ -166,11 +176,11 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     
     open func loginLogic(sender: NTLoginButton) {
         if sender.loginMethod == .email {
-            let vc = NTCredentialPromptViewController(onSubmit: { (email, password) -> Bool in
-                NTPing(type: .isSuccess, title: "Login Successful").show(duration: 2)
-                return true
-            })
+            let vc = NTEmailAuthViewController()
             present(vc, animated: true, completion: nil)
+        } else {
+            NTToast(text: "You need to override loginLogic(sender: NTLoginButton)").show()
+            Log.write(.warning, "You need to override loginLogic(sender: NTLoginButton)")
         }
     }
     
