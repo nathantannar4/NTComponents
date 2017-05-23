@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTLoginViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
-        window?.rootViewController = root
+        window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
         
         return true

@@ -60,14 +60,6 @@ open class NTTextView: UITextView {
 
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidBeginEditing(notification:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidEndEditing(notification:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange(notification:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
-    }
-
-    open func textViewTextDidChange(notification: NSNotification) {
-//        let contentSize = sizeThatFits(bounds.size)
-//        var frame = self.frame
-//        frame.size.height = contentSize.height
-//        self.frame = frame
     }
 
     open func textViewDidBeginEditing(notification: NSNotification) {

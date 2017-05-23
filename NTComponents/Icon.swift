@@ -71,6 +71,11 @@ public struct Icon {
     public static let Search = icon("Search")
     public static let Create = icon("Create")
     public static let Check = icon("Check")
+    public static let Send = icon("Send")
+    public static let Camera = icon("Camera")
+    public static let Help = icon("Help")
+    public static let More = icon("More")
+    public static let MoreVertical = UIImage().imageRotatedByDegrees(oldImage: icon("More")!, deg: 90)
     
     public struct Arrow {
         public static let Backward = Icon.icon("Backward_ffffff_100")

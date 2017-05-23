@@ -99,7 +99,10 @@
 		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
 		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
 		38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA3B1ECFF7C7007D3019 /* NTEULAController.swift */; };
-		38FCFA4A1ED01F3F007D3019 /* NTSelfNavigatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */; };
+		38FCFA4A1ED01F3F007D3019 /* NTNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA491ED01F3F007D3019 /* NTNavigationViewController.swift */; };
+		38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA7D1ED2BEFC007D3019 /* NTTextInputBar.swift */; };
+		38FCFA801ED2C5BB007D3019 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA7F1ED2C5BB007D3019 /* ViewController.swift */; };
+		38FCFA821ED2D0C4007D3019 /* NTInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +225,10 @@
 		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
 		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
 		38FCFA3B1ECFF7C7007D3019 /* NTEULAController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEULAController.swift; sourceTree = "<group>"; };
-		38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSelfNavigatedViewController.swift; sourceTree = "<group>"; };
+		38FCFA491ED01F3F007D3019 /* NTNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationViewController.swift; sourceTree = "<group>"; };
+		38FCFA7D1ED2BEFC007D3019 /* NTTextInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTextInputBar.swift; sourceTree = "<group>"; };
+		38FCFA7F1ED2C5BB007D3019 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTInputAccessoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
+				38FCFA7F1ED2C5BB007D3019 /* ViewController.swift */,
 				380461051EA2A787008A03B5 /* DemoTableViewController.swift */,
 				38084AC41EA319D900329516 /* DemoColorsCollectionView.swift */,
 				38C7C8BE1EA3DF9A00187EE9 /* DemoAlertsViewController.swift */,
@@ -426,7 +433,7 @@
 			children = (
 				3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */,
 				3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */,
-				38FCFA491ED01F3F007D3019 /* NTSelfNavigatedViewController.swift */,
+				38FCFA491ED01F3F007D3019 /* NTNavigationViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -490,6 +497,7 @@
 				3863D8941EB0686E003B73F7 /* NTTextField.swift */,
 				38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */,
 				3863D8951EB0686E003B73F7 /* NTTextView.swift */,
+				38FCFA7D1ED2BEFC007D3019 /* NTTextInputBar.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				3863D8971EB0686E003B73F7 /* NTAnimatedView.swift */,
 				3863D8981EB0686E003B73F7 /* NTImageView.swift */,
 				3863D8991EB0686E003B73F7 /* NTView.swift */,
+				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -650,6 +659,7 @@
 				380461061EA2A787008A03B5 /* DemoTableViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* DemoMapViewController.swift in Sources */,
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
+				38FCFA801ED2C5BB007D3019 /* ViewController.swift in Sources */,
 				38084AC51EA319D900329516 /* DemoColorsCollectionView.swift in Sources */,
 				38C7C8BF1EA3DF9A00187EE9 /* DemoAlertsViewController.swift in Sources */,
 			);
@@ -685,7 +695,7 @@
 				3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */,
 				3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */,
 				3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */,
-				38FCFA4A1ED01F3F007D3019 /* NTSelfNavigatedViewController.swift in Sources */,
+				38FCFA4A1ED01F3F007D3019 /* NTNavigationViewController.swift in Sources */,
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
@@ -704,6 +714,7 @@
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
+				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
@@ -724,6 +735,7 @@
 				3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */,
 				38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
+				38FCFA821ED2D0C4007D3019 /* NTInputAccessoryView.swift in Sources */,
 				3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,20 +39,10 @@ open class NTViewController: UIViewController {
             self.refreshTitleView(withAlpha: 1.0)
         }
     }
-    private var statusBarView = UIView()
-    private var _fadeInNavBarOnScroll: Bool = false
-    open var fadeInNavBarOnScroll: Bool {
-        set {
-            if newValue != self._fadeInNavBarOnScroll {
-                self._fadeInNavBarOnScroll = newValue
-            }
-        }
-        get {
-            return self._fadeInNavBarOnScroll
-        }
-    }
     
     // MARK: - Status Bar
+    
+    internal var statusBarStyle: UIStatusBarStyle = .default
     
     open var statusBarHidden: Bool = false {
         didSet {
@@ -81,6 +71,25 @@ open class NTViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         statusBarHidden = false
+        UIApplication.shared.statusBarStyle = statusBarStyle
+    }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = statusBarStyle
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        statusBarStyle = UIApplication.shared.statusBarStyle
+        guard let navColor = navigationController?.navigationBar.barTintColor else {
+            guard let viewColor = view.backgroundColor else {
+                return
+            }
+            UIApplication.shared.statusBarStyle = viewColor.isLight ? .default : .lightContent
+            return
+        }
+        UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
     }
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {

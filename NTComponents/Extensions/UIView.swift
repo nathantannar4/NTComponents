@@ -161,16 +161,7 @@ public extension UIView {
         if edges.contains(.bottom) || edges.contains(.all) {
             let bottom = border()
             addSubview(bottom)
-            addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "V:[bottom(==thickness)]-(0)-|",
-                                               options: [],
-                                               metrics: ["thickness": thickness],
-                                               views: ["bottom": bottom]))
-            addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[bottom]-(0)-|",
-                                               options: [],
-                                               metrics: nil,
-                                               views: ["bottom": bottom]))
+            bottom.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: thickness)
             borders.append(bottom)
         }
     }

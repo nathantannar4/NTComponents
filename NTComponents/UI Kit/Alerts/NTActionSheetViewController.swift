@@ -110,7 +110,7 @@ open class NTActionSheetViewController: UIViewController  {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:)))
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(dismissActionSheet))
         view.addGestureRecognizer(tapAction)
     }
 
@@ -121,6 +121,10 @@ open class NTActionSheetViewController: UIViewController  {
     }
 
     // MARK: - NTActionSheetAction Methods
+    
+    open func dismissActionSheet() {
+        dismiss()
+    }
 
     public func addAction(_ action: NTActionSheetItem) {
         actions.append(action)
@@ -135,8 +139,13 @@ open class NTActionSheetViewController: UIViewController  {
         let button = NTButton()
         button.backgroundColor = action.color
         button.touchUpAnimationTime = 0.2
-        button.ripplePercent = 1
+        button.ripplePercent = 1.55
         button.imageView?.backgroundColor = .clear
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = Color.Gray.P500
+        button.addSubview(separatorView)
+        separatorView.anchor(nil, left: button.leftAnchor, bottom: button.bottomAnchor, right: button.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
 
         // Title
         button.title = action.title
@@ -175,7 +184,7 @@ open class NTActionSheetViewController: UIViewController  {
             return
         }
 
-        let actionButtonHeight = 44
+        let actionButtonHeight = 50
         let titleLabelHeight: CGFloat = 20
         let subtitleLabelHeight: CGFloat = 15
         let containerHeight: CGFloat = CGFloat(numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
@@ -205,7 +214,7 @@ open class NTActionSheetViewController: UIViewController  {
 
         self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
         self.actionsContainer.isHidden = false
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             self.view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
         }, completion: nil)

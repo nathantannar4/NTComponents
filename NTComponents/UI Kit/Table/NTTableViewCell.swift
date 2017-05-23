@@ -124,7 +124,7 @@ open class NTTableViewCell: UITableViewCell {
         animateToNormal()
     }
     
-    open var ripplePercent: Float = 1.0 {
+    open var ripplePercent: Float = 1.5 {
         didSet {
             setupRippleView()
         }

@@ -47,7 +47,7 @@ open class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
     }
 }
 
-extension UIViewController {
+public extension UIViewController {
     var getNTNavigationContainer: NTNavigationContainer? {
         var parentViewController = parent
         
@@ -225,7 +225,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerNavigationController.didMove(toParentViewController: self)
         addSidePanelViews()
         showShadowForCenterViewController(drawerShadowShown)
-        addPanGestureRecognizer()
+        //addPanGestureRecognizer()
     }
     
     open override func viewDidLoad() {

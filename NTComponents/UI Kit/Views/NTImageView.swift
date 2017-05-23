@@ -127,12 +127,17 @@ open class NTImageView: UIImageView {
         }).resume()
     }
 
-    open func loadImage(urlString: String, allowCache: Bool = true, completion: (() -> ())? = nil) {
+    open func loadImage(urlString: String?, allowCache: Bool = true, completion: (() -> ())? = nil) {
+        
+        guard let urlString = urlString else {
+            return
+        }
         
         self.urlStringForChecking = urlString
         
         let urlKey = urlString as NSString
-        print(urlKey)
+        
+        Log.write(.status, "Loading from url " + urlString)
         
         if allowCache, let cachedItem = NTImageView.imageCache.object(forKey: urlKey) {
             image = cachedItem.image

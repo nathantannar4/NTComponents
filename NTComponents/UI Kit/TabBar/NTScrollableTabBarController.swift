@@ -192,6 +192,8 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         let tabView = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight)
         tabView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabView)
+        self.tabView?.removeFromSuperview()
+        self.tabView = nil
         self.tabView = tabView
         
         applyTabViewContraints()

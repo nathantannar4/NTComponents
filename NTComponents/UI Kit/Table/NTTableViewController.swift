@@ -98,7 +98,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         }
         
         if navigationController?.navigationBar.alpha != nil {
-            if fadeInNavBarOnScroll && navigationController!.navigationBar.alpha <= CGFloat(0.5) {
+            if navigationController!.navigationBar.alpha <= CGFloat(0.5) {
                 UIApplication.shared.statusBarStyle = .lightContent
             }
         }
@@ -139,7 +139,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         if parent is NTScrollableTabBarController {
             return
         }
-        
+        /*
         navigationController?.navigationBar.isTranslucent = fadeInNavBarOnScroll
         
         let offset = tableView.contentOffset.y + tableView.contentInset.top
@@ -182,6 +182,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
                 refreshTitleView(withAlpha: 1)
             }
         }
+        */
     }
     
     open func reloadData() {

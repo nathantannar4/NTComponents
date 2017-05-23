@@ -286,5 +286,4 @@ open class NTButton: UIButton {
         rippleBackgroundView.layer.frame = bounds
         rippleBackgroundView.layer.mask = rippleMask
     }
-
 }

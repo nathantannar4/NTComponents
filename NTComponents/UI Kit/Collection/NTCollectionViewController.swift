@@ -62,12 +62,14 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         super.viewDidLoad()
         
         view.backgroundColor = Color.Default.Background.ViewController
-        collectionView?.backgroundColor = Color.Default.Background.ViewController
+        collectionView?.backgroundColor = .clear
         collectionView?.alwaysBounceVertical = true
+        collectionView?.register(NTCollectionViewCell.self, forCellWithReuseIdentifier: "NTCollectionViewCell")
         collectionView?.register(NTCollectionDatasourceCell.self, forCellWithReuseIdentifier: "NTCollectionDatasourceCell")
         collectionView?.register(NTCollectionViewDefaultCell.self, forCellWithReuseIdentifier: defaultCellId)
         collectionView?.register(NTCollectionViewDefaultFooter.self, forCellWithReuseIdentifier: defaultFooterId)
         collectionView?.register(NTCollectionViewDefaultHeader.self, forCellWithReuseIdentifier: defaultHeaderId)
+       
         
         view.addSubview(activityIndicatorView)
         activityIndicatorView.anchorCenterXToSuperview()
@@ -178,13 +180,15 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - Refresh Methods
     
-    open func addRefreshControl() {
+    open func refreshControl() -> UIRefreshControl? {
         let rc = UIRefreshControl()
+        rc.attributedTitle = NSAttributedString(string: "Pull to Refresh")
         rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
-            collectionView?.refreshControl = rc
+            return rc
         } else {
             Log.write(.error, "UIRefreshControl requires iOS 10.0")
+            return nil
         }
     }
     

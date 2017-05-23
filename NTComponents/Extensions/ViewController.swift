@@ -36,7 +36,6 @@ public extension UIViewController {
         }
         window.rootViewController = self
         window.makeKeyAndVisible()
-        
     }
     
     class func topWindow() -> UIWindow? {
@@ -45,6 +44,17 @@ public extension UIViewController {
             if window.windowLevel == UIWindowLevelNormal && !window.isHidden && window.frame != CGRect.zero {
                 return window
             }
+        }
+        return nil
+    }
+    
+    class func topController() -> UIViewController? {
+        if var topController = UIViewController.topWindow()?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            return topController
         }
         return nil
     }
