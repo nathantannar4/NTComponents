@@ -63,8 +63,9 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         if let parent = parent as? NTScrollableTabBarController {
             if parent.tabBarPosition == .top {
                 defaultTopContentOffset = parent.tabBarHeight
-                tableView.scrollIndicatorInsets.top = parent.tabBarHeight
+                tableView.scrollIndicatorInsets.top = defaultTopContentOffset
                 tableView.contentOffset = CGPoint(x: 0, y: -defaultTopContentOffset)
+                tableView.contentInset.top = defaultTopContentOffset
             } else {
                 tableView.contentInset.bottom = parent.tabBarHeight
             }
@@ -104,9 +105,8 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         }
         
 //        tableView.contentInset.top = stretchyHeaderHeight + defaultTopContentOffset
-        if tableView.contentOffset != CGPoint(x: 0, y: -stretchyHeaderHeight) {
-            tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight) 
-        }
+//        tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight) 
+        
         
         stretchyImageView.image = image
         stretchyView.clipsToBounds = true

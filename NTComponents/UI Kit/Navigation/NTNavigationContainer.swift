@@ -204,7 +204,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerNavigationController.didMove(toParentViewController: self)
         addSidePanelViews()
         showShadowForCenterViewController(drawerShadowShown)
-        addPanGestureRecognizer()
+        //addPanGestureRecognizer()
     }
     
     open func addPanGestureRecognizer() {
@@ -385,6 +385,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
                 }
             }
         case .ended:
+            
             // Animate the side panel open or closed based on whether the view has moved more or less than of its width
             if (currentState == .leftPanelExpanded) {
                 let hasMovedGreaterThanHalfway = boundWidth > (leftPanelWidth / 2)

@@ -27,15 +27,15 @@
 
 import UIKit
 
-open class NTScrollableTabBarItem: UICollectionViewCell {
+open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
 
     open var tabItemButtonPressedBlock: ((Void) -> Void)?
     open var title: String? {
         get {
-            return animatedButton.title
+            return titleLabel.text
         }
         set {
-            animatedButton.title = newValue
+            titleLabel.text = newValue
         }
     }
     internal var isCurrent: Bool = false {
@@ -57,13 +57,10 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
         }
     }
     
-    fileprivate var animatedButton: NTButton = {
-        let button = NTButton()
-        button.backgroundColor = Color.Default.Background.TabBar
-        button.titleFont = Font.Default.Subhead
-        button.trackTouchLocation = false
-        button.ripplePercent = 1.5
-        return button
+    open var titleLabel: NTLabel = {
+        let label = NTLabel(style: .subhead)
+        label.textAlignment = .center
+        return label
     }()
     
     fileprivate var currentTabLineWeight: CGFloat = 2.0 {
@@ -83,34 +80,33 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(animatedButton)
+        backgroundColor = Color.Default.Background.TabBar
+        trackTouchLocation = false
+        ripplePercent = 1.1
+        
+        addSubview(titleLabel)
         addSubview(currentBarView)
         
-        animatedButton.fillSuperview()
+        titleLabel.fillSuperview()
         
         currentBarView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
         
         currentBarView.isHidden = true
-        animatedButton.addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        //addGestureRecognizer(tapGesture)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - User Actions
     
-    func didTouchUpInside() {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
         tabItemButtonPressedBlock?()
     }
 
-    // MARK: - Standard Methods
-    
-//    override open var intrinsicContentSize : CGSize {
-//        let width = animatedButton.intrinsicContentSize.width + 40
-//        let size = CGSize(width: width, height: properties.tabHeight)
-//        return size
-//    }
+    // MARK: - User Actions
 
     internal func hideCurrentBarView() {
         currentBarView.isHidden = true
@@ -121,21 +117,20 @@ open class NTScrollableTabBarItem: UICollectionViewCell {
     }
 
     internal func highlightTitle() {
-        animatedButton.titleColor = Color.Default.Tint.TabBar
+        titleLabel.textColor = Color.Default.Tint.TabBar
     }
 
     internal func unHighlightTitle() {
-        animatedButton.titleColor = Color.Default.Tint.Inactive
+        titleLabel.textColor = Color.Default.Tint.Inactive
     }
     
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        guard let title = animatedButton.title else {
+        guard let title = titleLabel.text else {
             return .zero
         }
         if title.characters.count == 0 {
             return .zero
         }
-        
         return intrinsicContentSize
     }
 }

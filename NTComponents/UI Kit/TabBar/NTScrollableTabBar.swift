@@ -49,7 +49,17 @@ open class NTScrollableTabBar: UIView {
     fileprivate var currentBarViewLeftConstraint: NSLayoutConstraint?
     fileprivate var tabHeight: CGFloat = 32
 
-    open var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    open var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(NTScrollableTabBarItem.self, forCellWithReuseIdentifier: NTScrollableTabBarItem.cellIdentifier)
+        collectionView.backgroundColor = Color.Default.Background.TabBar
+        collectionView.scrollsToTop = false
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
     open var currentBarView = UIView()
     
     open var currentBarViewWidthConstraint: NSLayoutConstraint? {
@@ -69,22 +79,20 @@ open class NTScrollableTabBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(barHeight: CGFloat = 2, barPosition: NTTabBarPosition = .top, tabHeight: CGFloat = 32) {
+    public init(barHeight: CGFloat = 2, barPosition: NTTabBarPosition = .top, tabHeight: CGFloat = 32, itemWidth: CGFloat = 0) {
         super.init(frame: .zero)
         
         self.tabHeight = tabHeight
+        pageTabItemsWidth = itemWidth
         
         backgroundColor = Color.Default.Background.TabBar
         translatesAutoresizingMaskIntoConstraints = false
         setDefaultShadow()
         
         addSubview(collectionView)
-        collectionView.backgroundColor = Color.Default.Background.TabBar
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.scrollsToTop = false
         collectionView.fillSuperview()
-        collectionView.register(NTScrollableTabBarItem.self, forCellWithReuseIdentifier: NTScrollableTabBarItem.cellIdentifier)
         collectionView.addSubview(currentBarView)
         
         
@@ -304,15 +312,6 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
                 cell.showCurrentBarView()
             }
         }
-
-        if pageTabItemsWidth == 0.0 {
-            pageTabItemsWidth = floor(scrollView.contentSize.width / 3.0)
-        }
-
-        if (scrollView.contentOffset.x <= 0.0) || (scrollView.contentOffset.x > pageTabItemsWidth * 2.0) {
-            scrollView.contentOffset.x = pageTabItemsWidth
-        }
-
     }
 
     open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -335,8 +334,10 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
 extension NTScrollableTabBar: UICollectionViewDelegateFlowLayout {
 
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      
-        let size = CGSize(width: (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)), height: tabHeight)
+        
+        let width = pageTabItemsWidth == 0 ? (UIScreen.main.bounds.width / CGFloat(pageTabItemsCount)) : pageTabItemsWidth
+
+        let size = CGSize(width: width, height: tabHeight)
 
         return size
     }

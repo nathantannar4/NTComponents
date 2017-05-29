@@ -69,6 +69,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
     open var tabBarTopConstraint: NSLayoutConstraint?
     open var currentTabBarHeight: CGFloat = 2
     open var tabBarHeight: CGFloat = 32
+    open var tabBarItemWidth: CGFloat = 0
     open var tabBarPosition: NTTabBarPosition = .top
     
 
@@ -119,14 +120,15 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
 
         updateNavigationBar()
         tabView?.layouted = true
-        
     }
     
     open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         tabView?.collectionView.collectionViewLayout.invalidateLayout()
         tabView?.setNeedsDisplay()
         view.setNeedsDisplay()
-        tabView?.updateCurrentIndex(tabView!.currentIndex, shouldScroll: true)
+        DispatchQueue.executeAfter(0.1) {
+            self.tabView?.updateCurrentIndex(self.tabView!.currentIndex, shouldScroll: true)
+        }
     }
 
     open func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
@@ -193,7 +195,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
     }
 
     open func configureTabView() {
-        let tabView = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight)
+        let tabView = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight, itemWidth: tabBarItemWidth)
         tabView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabView)
         self.tabView?.removeFromSuperview()
@@ -229,14 +231,14 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         } else {
             tabBarTopConstraint.constant = hidden ? tabBarHeight : 0.0
         }
-        if hidden == false {
+        if !hidden {
             navigationController?.navigationBar.hideShadow()
         } else {
-            DispatchQueue.executeAfter(TimeInterval(UINavigationControllerHideShowBarDuration), closure: {
+            DispatchQueue.executeAfter(1.5 * TimeInterval(UINavigationControllerHideShowBarDuration), closure: {
                 self.navigationController?.navigationBar.setDefaultShadow()
             })
         }
-        UIView.animate(withDuration: TimeInterval(UINavigationControllerHideShowBarDuration)) {
+        UIView.animate(withDuration: 2 * TimeInterval(UINavigationControllerHideShowBarDuration)) {
             self.view.layoutIfNeeded()
         }
     }
