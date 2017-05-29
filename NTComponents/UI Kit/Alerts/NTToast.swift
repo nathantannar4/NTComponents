@@ -32,6 +32,42 @@ open class NTToast: NTAnimatedView {
     fileprivate var currentState: NTViewState = .hidden
     open var dismissOnTap: Bool = true
     
+    open let label: NTLabel = {
+        let label = NTLabel(style: .body)
+        return label
+    }()
+    
+    open let button: NTButton = {
+        let button = NTButton()
+        button.trackTouchLocation = false
+        button.contentHorizontalAlignment = .center
+        button.ripplePercent = 0.7
+        button.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    public convenience init(text: String?, color: UIColor = Color.Gray.P800, actionTitle: String, target: Any, selector: Selector) {
+        
+        var bounds =  UIScreen.main.bounds
+        bounds.origin.y = bounds.height - 50
+        bounds.size.height = 50
+        
+        self.init(frame: bounds)
+        
+        backgroundColor = color
+        
+        label.text = text
+        label.textColor = color.isLight ? .black : .white
+        
+        button.title = actionTitle
+        button.backgroundColor = color
+        button.addTarget(target, action: selector, for: .touchUpInside)
+        
+        label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: button.leftAnchor, topConstant: 2, leftConstant: 12, bottomConstant: 2, rightConstant: 4, widthConstant: 0, heightConstant: 0)
+        button.anchor(label.topAnchor, left: nil, bottom: label.bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 60, heightConstant: 0)
+    }
+    
     public convenience init(text: String?, color: UIColor = Color.Gray.P800, height: CGFloat = 50) {
 
         var bounds =  UIScreen.main.bounds
@@ -42,10 +78,8 @@ open class NTToast: NTAnimatedView {
 
         backgroundColor = color
 
-        let label = NTLabel(style: .body)
         label.text = text
         label.textColor = color.isLight ? .black : .white
-        addSubview(label)
         label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 12, bottomConstant: 2, rightConstant: 12, widthConstant: 0, heightConstant: 0)
     }
 
@@ -54,6 +88,8 @@ open class NTToast: NTAnimatedView {
 
         ripplePercent = 1.5
         touchUpAnimationTime = 0.4
+        addSubview(label)
+        addSubview(button)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -90,7 +126,7 @@ open class NTToast: NTAnimatedView {
             return
         }
         currentState = .transitioning
-
+        button.isEnabled = false
         UIView.transition(with: self, duration: 0.6, options: .curveLinear, animations: {() -> Void in
             self.alpha = 0
         }, completion: { finished in

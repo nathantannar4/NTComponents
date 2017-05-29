@@ -77,8 +77,6 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         } else {
             searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
         }
-        
-        
 
         tableView.delegate = self
         tableView.dataSource = self

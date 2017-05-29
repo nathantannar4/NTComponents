@@ -30,41 +30,29 @@ import UIKit
 import QuartzCore
 
 public enum NTNavigationContainerState {
-    case leftPanelExpanded, rightPanelExpanded, bothPanelsCollapsed, inBackground
+    case leftPanelExpanded, rightPanelExpanded, bothPanelsCollapsed
 }
 
 public enum NTPresentationDirection {
     case top, right, bottom, left
 }
 
-open class NTTapDismissGestureRecognizer: UITapGestureRecognizer {
-    var toDirection: NTPresentationDirection!
-    
-    convenience init(target: Any?, action: Selector?, direction: NTPresentationDirection) {
-        self.init(target: target, action: action)
-        toDirection = direction
-        numberOfTapsRequired = 1
-    }
-}
-
 public extension UIViewController {
-    var getNTNavigationContainer: NTNavigationContainer? {
+    var navigationContainer: NTNavigationContainer? {
         var parentViewController = parent
         
         while parentViewController != nil {
             if let view = parentViewController as? NTNavigationContainer{
                 return view
             }
-            
             parentViewController = parentViewController!.parent
         }
-        print("### ERROR: View controller did not have an NTNavigationContainer as a parent")
+        Log.write(.warning, "View controller did not have an NTNavigationContainer as a parent")
         return nil
     }
 }
 
-public protocol NTNavigationContainerDelegate: NSObjectProtocol {
-    func dismissOverlayTo(_ direction: NTPresentationDirection)
+public protocol NTNavigationContainerDelegate {
     func toggleLeftPanel()
     func toggleRightPanel()
     func replaceCenterViewWith(_ view: UIViewController)
@@ -87,10 +75,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
             showLeftMenuButton(shouldShow)
         }
     }
-    private var overlayDismissRecognizer: NTTapDismissGestureRecognizer = NTTapDismissGestureRecognizer()
-    private var overlayViewController: UIViewController?
-    private var overlayFrame: CGRect?
-    
     open var centerView: UIViewController! {
         get {
             return centerViewController
@@ -143,19 +127,14 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     // Properties
     private var currentState: NTNavigationContainerState = .bothPanelsCollapsed {
         didSet {
-            if currentState == .inBackground {
-                lights(on: false)
-                overlayDismissRecognizer.delegate = self
-                view.window?.addGestureRecognizer(overlayDismissRecognizer)
-            } else {
-                lights(on: true)
-                view.window?.removeGestureRecognizer(overlayDismissRecognizer)
-            }
-            
             if currentState == .leftPanelExpanded {
                 setleftViewProperties(hidden: false)
+                centerViewController.view.isUserInteractionEnabled = false  
             } else if currentState == .rightPanelExpanded {
                 setRightViewProperties(hidden: false)
+                centerViewController.view.isUserInteractionEnabled = false
+            } else {
+                centerViewController.view.isUserInteractionEnabled = true
             }
         }
     }
@@ -180,7 +159,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     }
     open var statusBarHidden: Bool = false {
         didSet {
-            UIView.animate(withDuration: 0.5) { () -> Void in
+            UIView.animate(withDuration: drawerAnimationDuration) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
             }
         }
@@ -225,13 +204,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerNavigationController.didMove(toParentViewController: self)
         addSidePanelViews()
         showShadowForCenterViewController(drawerShadowShown)
-        //addPanGestureRecognizer()
-    }
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       modalPresentationStyle = .overCurrentContext
+        addPanGestureRecognizer()
     }
     
     open func addPanGestureRecognizer() {
@@ -257,7 +230,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     private func showLeftMenuButton(_ shouldShow: Bool) {
         Log.write(.status, "Will show left menu button is \(shouldShow)")
         if centerViewController.navigationItem.leftBarButtonItem == nil {
-            //let leftDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleLeftPanel))
             let leftDrawerButton = NTMenuBarButtonItem(target: self, action: #selector(toggleLeftPanel))
             centerViewController.navigationItem.leftBarButtonItem = shouldShow ? leftDrawerButton : nil
         }
@@ -265,7 +237,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     private func showRightMenuButton(_ shouldShow: Bool) {
         Log.write(.status, "Will show right menu button is \(shouldShow)")
         if centerViewController.navigationItem.rightBarButtonItem == nil {
-            let rightDrawerButton = UIBarButtonItem(image: Icon.icon("Menu_ffffff_100")?.scale(to: 30), style: .plain, target: self, action: #selector(toggleRightPanel))
+            let rightDrawerButton = NTMenuBarButtonItem(target: self, action: #selector(toggleRightPanel))
             centerViewController.navigationItem.rightBarButtonItem = shouldShow ? rightDrawerButton : nil
         }
     }
@@ -291,9 +263,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        if currentState == .inBackground {
-            dismissOverlayFromRecognizer(sender: overlayDismissRecognizer)
-        }
         if currentState == .leftPanelExpanded {
             setleftViewProperties(hidden: false)
         } else if currentState == .rightPanelExpanded {
@@ -435,20 +404,8 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         }
     }
     
-    open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        
-        switch currentState {
-        case .leftPanelExpanded, .rightPanelExpanded, .bothPanelsCollapsed:
-            return true
-        case .inBackground:
-            let point = touch.location(in: nil)
-            let touchFrame = overlayViewController!.view.frame
-            return !touchFrame.contains(point)
-        }
-    }
-    
-    
     // MARK: - Navigation and Presentation
+    
     open func toggleLeftPanel() {
         Log.write(.status, "Toggle left panel")
         let notAlreadyExpanded = (currentState != .leftPanelExpanded)
@@ -464,96 +421,5 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
     open func replaceCenterViewWith(_ view: UIViewController) {
         Log.write(.status, "Replacing center view")
         setCenterView(newView: view)
-    }
-    
-    open func lights(on: Bool) {
-        UIView.animate(withDuration: 0.5, animations: {
-            switch on {
-            case true:
-                self.view.backgroundColor = UIColor.white
-                self.centerNavigationController.view.alpha = 1.0
-                self.leftViewController?.view.alpha = 1.0
-                self.rightViewController?.view.alpha = 1.0
-            case false:
-                self.view.backgroundColor = UIColor.black
-                self.centerNavigationController.view.alpha = 0.5
-                self.leftViewController?.view.alpha = 0.5
-                self.rightViewController?.view.alpha = 0.5
-            }
-        })
-    }
-    
-    private func setDismissRecognizer(direction: NTPresentationDirection) {
-        Log.write(.status, "Presenting overlay view from \(direction)")
-        lights(on: false)
-        overlayDismissRecognizer = NTTapDismissGestureRecognizer(target: self, action: #selector(dismissOverlayFromRecognizer(sender:)), direction: direction)
-    }
-    
-    open func presentOverlay(_ overlay: UIViewController, from direction: NTPresentationDirection) {
-        setDismissRecognizer(direction: direction)
-        overlayViewController = overlay
-        overlayFrame = overlayViewController!.view.frame
-        presentViewController(overlayViewController!, from: direction, completion: {
-            self.currentState = .inBackground
-        })
-    }
-    
-    open func presentOverlayFromBottom(_ overlay: UIViewController, height: CGFloat) {
-        setDismissRecognizer(direction: .bottom)
-        overlayViewController = overlay
-        overlayViewController!.view.frame = CGRect(x: 0, y: view.frame.height - height, width: overlayViewController!.view.frame.width, height: height)
-        overlayFrame = overlayViewController!.view.frame
-        presentViewController(overlayViewController!, from: .bottom, completion: {
-            self.currentState = .inBackground
-        })
-    }
-    
-    open func presentOverlayFromTop(_ overlay: UIViewController, height: CGFloat) {
-        setDismissRecognizer(direction: .top)
-        overlayViewController = overlay
-        overlayViewController!.view.frame = CGRect(x: 0, y: 0, width: overlayViewController!.view.frame.width, height: height)
-        overlayFrame = overlayViewController!.view.frame
-        presentViewController(overlayViewController!, from: .top, completion: {
-            self.currentState = .inBackground
-        })
-    }
-    
-    open func presentOverlayFromLeft(_ overlay: UIViewController, width: CGFloat) {
-        setDismissRecognizer(direction: .left)
-        overlayViewController = overlay
-        overlayViewController!.view.frame = CGRect(x: 0, y: 0, width: width, height: overlayViewController!.view.frame.height)
-        overlayFrame = overlayViewController!.view.frame
-        presentViewController(overlayViewController!, from: .left, completion: {
-            self.currentState = .inBackground
-        })
-    }
-    
-    open func presentOverlayFromRight(_ overlay: UIViewController, width: CGFloat) {
-        setDismissRecognizer(direction: .right)
-        overlayViewController = overlay
-        overlayViewController!.view.frame = CGRect(x: view.frame.width - width, y: 0, width: width, height: overlayViewController!.view.frame.height)
-        overlayFrame = overlayViewController!.view.frame
-        presentViewController(overlayViewController!, from: .right, completion: {
-            self.currentState = .inBackground
-        })
-    }
-    
-    open func dismissOverlayTo(_ direction: NTPresentationDirection) {
-        Log.write(.status, "Dismissing overlay view to \(direction)")
-        lights(on: true)
-        overlayViewController?.dismissViewController(to: direction, completion: {
-            self.overlayViewController = nil
-            self.currentState = .bothPanelsCollapsed
-            if let leftView = self.leftViewController?.view {
-                if !leftView.isHidden { self.currentState = .leftPanelExpanded }
-            }
-            if let rightView = self.rightViewController?.view {
-                if !rightView.isHidden { self.currentState = .rightPanelExpanded }
-            }
-        })
-    }
-    
-    func dismissOverlayFromRecognizer(sender: NTTapDismissGestureRecognizer) {
-        dismissOverlayTo(sender.toDirection)
     }
 }

@@ -48,10 +48,10 @@ open class NTNavigationViewController: NTViewController {
         let button = NTButton()
         button.backgroundColor = .clear
         button.trackTouchLocation = false
-        button.tintColor = Color.Gray.P500
+        button.tintColor = Color.Default.Tint.NavigationBar
         button.rippleColor = Color.Gray.P200
         button.image = Icon.Arrow.Backward
-        button.ripplePercent = 1.5
+        button.ripplePercent = 1.2
         button.rippleOverBounds = true
         button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         return button
@@ -113,6 +113,8 @@ open class NTNavigationViewController: NTViewController {
     }
     
     open func backButtonPressed() {
-        dismissViewController(to: .right, completion: nil)
+        dismissViewController(to: .right, completion: {
+            UIViewController.topController()?.viewDidAppear(true)
+        })
     }
 }

@@ -1,5 +1,5 @@
 //
-//  DemoMapViewController.swift
+//  MapViewController.swift
 //  NTComponents
 //
 //  Created by Nathan Tannar on 4/27/17.
@@ -8,7 +8,7 @@
 
 import NTComponents
 
-class DemoMapViewController: NTMapViewController {
+class MapViewController: NTMapViewController {
     
     var objects: [String] = []
     

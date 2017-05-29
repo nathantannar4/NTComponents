@@ -45,7 +45,6 @@ public struct Color {
             Color.Default.Background.Button = color
             Color.Default.Tint.Toolbar = color
             Color.Default.Tint.View = color
-            Color.Default.Status.Info = color
         }
 
         /**
@@ -61,7 +60,6 @@ public struct Color {
             Color.Default.Tint.Toolbar = color
             Color.Default.Tint.Inactive = color.darker(by: 20)
             Color.Default.Tint.View = color
-            Color.Default.Background.Button = color
         }
 
         /**
@@ -71,7 +69,7 @@ public struct Color {
          - returns: Void
         */
         public static func setTertiary(to color: UIColor) {
-
+            Color.Default.Background.Button = color
         }
 
         /**

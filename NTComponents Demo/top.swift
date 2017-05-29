@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let tableVC = DemoTableViewController()
+        let tableVC = TableViewController()
         
-        let alertsVC = DemoAlertsViewController()
+        let alertsVC = AlertsViewController()
         
         var tabVCs = [UIViewController]()
         for i in 0...2 {
@@ -54,26 +54,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabVCs.append(vc)
         }
     
-        let mapVC = DemoMapViewController()
+        let mapVC = MapViewController()
         mapVC.title = "MapView"
         
         let loginVC = NTLoginViewController()
+        loginVC.logo = #imageLiteral(resourceName: "BANNER")
         loginVC.title = "Login"
         
         let profileVC = NTProfileViewController()
         profileVC.title = "Profile"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, mapVC, profileVC, DemoColorsCollectionView(), NTLoginViewController()])
+        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5
         centerVC.tabBarHeight = 50
         centerVC.tabBarPosition = .bottom
         
-        let root = NTLoginViewController() //NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
         
-        window?.rootViewController = ViewController()
+        window?.rootViewController = root  
         window?.makeKeyAndVisible()
         
         return true

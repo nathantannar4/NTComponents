@@ -101,55 +101,22 @@ open class NTAnimatedMenuButton: NTButton {
     
     // MARK: - Animations
     
-    open override func animate() {
-        
-        super.animate()
-        
-        /*
-        self.top.anchorPoint = CGPoint(x: 1, y: 0.5)
-        self.top.position = CGPoint(x: 30 - 1, y: 5)
-        self.middle.position = CGPoint(x: 15, y: 15)
-        self.bottom.anchorPoint = CGPoint(x: 1, y: 0.5)
-        self.bottom.position = CGPoint(x: 30 - 1, y: 25)
-        
-        let rotationAnimation: CAAnimation = {
-            let animation = CABasicAnimation(keyPath: "transform.rotation")
-            animation.fromValue = 0
-            animation.toValue = Double.pi * 2
-            animation.duration = 4
-            
-            
-            animation.repeatCount = MAXFLOAT
-            return animation
-        }()
-        
-        let middleTransform = CABasicAnimation(keyPath: "opacity")
-        middleTransform.duration = animationDuration
-        middleTransform.toValue = 0
-        
-        self.top.add(rotationAnimation, forKey: "transform.rotation")
-        self.middle.add(middleTransform, forKey: "opacity")
-        self.bottom.add(rotationAnimation, forKey: "transform.rotation")
-
-        */
-    }
-    
     open func animate(withPercentVisible percentVisible: CGFloat, drawerSide: DrawerSide) {
         
         if drawerSide == DrawerSide.left {
             self.top.anchorPoint = CGPoint(x: 1, y: 0.5)
-            self.top.position = CGPoint(x: 30 - 1, y: 5)
-            self.middle.position = CGPoint(x: 15, y: 15)
+            self.top.position = CGPoint(x: 23, y: 7)
+            self.middle.position = CGPoint(x: 13, y: 13)
             
             self.bottom.anchorPoint = CGPoint(x: 1, y: 0.5)
-            self.bottom.position = CGPoint(x: 30 - 1, y: 25)
+            self.bottom.position = CGPoint(x: 23, y: 19)
         } else if drawerSide == DrawerSide.right {
             self.top.anchorPoint = CGPoint(x: 0, y: 0.5)
-            self.top.position = CGPoint(x: 1, y: 5)
-            self.middle.position = CGPoint(x: 15, y: 15)
+            self.top.position = CGPoint(x: 3, y: 7)
+            self.middle.position = CGPoint(x: 13, y: 13)
             
             self.bottom.anchorPoint = CGPoint(x: 0, y: 0.5)
-            self.bottom.position = CGPoint(x: 1, y: 25)
+            self.bottom.position = CGPoint(x: 3, y: 19)
         }
         
         let middleTransform = CABasicAnimation(keyPath: "opacity")
@@ -166,9 +133,12 @@ open class NTAnimatedMenuButton: NTButton {
         
         let translation = CATransform3DMakeTranslation(-4 * percentVisible, 0, 0)
         
+        let tanOfTransformAngle = 6.0/19.0
+        let transformAngle = atan(tanOfTransformAngle)
+        
         let sideInverter: CGFloat = drawerSide == DrawerSide.left ? -1 : 1
-        topTransform.toValue = NSValue(caTransform3D: CATransform3DRotate(translation, 1.0 * sideInverter * ((CGFloat)(45.0 * Double.pi / 180.0) * percentVisible), 0, 0, 1))
-        bottomTransform.toValue = NSValue(caTransform3D: CATransform3DRotate(translation, (-1.0 * sideInverter * (CGFloat)(45.0 * Double.pi / 180.0) * percentVisible), 0, 0, 1))
+        topTransform.toValue = NSValue(caTransform3D: CATransform3DRotate(translation, 1.0 * sideInverter * (CGFloat(transformAngle) * percentVisible), 0, 0, 1))
+        bottomTransform.toValue = NSValue(caTransform3D: CATransform3DRotate(translation, (-1.0 * sideInverter * CGFloat(transformAngle) * percentVisible), 0, 0, 1))
         
         topTransform.beginTime = CACurrentMediaTime()
         bottomTransform.beginTime = CACurrentMediaTime()
@@ -180,11 +150,6 @@ open class NTAnimatedMenuButton: NTButton {
         self.top.setValue(topTransform.toValue, forKey: topTransform.keyPath!)
         self.middle.setValue(middleTransform.toValue, forKey: middleTransform.keyPath!)
         self.bottom.setValue(bottomTransform.toValue, forKey: bottomTransform.keyPath!)
-    }
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        //animate()
     }
 }
 

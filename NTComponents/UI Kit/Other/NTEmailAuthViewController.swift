@@ -36,7 +36,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
     open let navBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.Default.Background.NavigationBar
         view.setDefaultShadow()
         return view
     }()
@@ -45,10 +45,10 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         let button = NTButton()
         button.backgroundColor = .clear
         button.trackTouchLocation = false
-        button.tintColor = Color.Gray.P500
+        button.tintColor = Color.Default.Tint.NavigationBar
         button.rippleColor = Color.Gray.P200
         button.image = Icon.Delete
-        button.ripplePercent = 1.5
+        button.ripplePercent = 1.2
         button.rippleOverBounds = true
         button.addTarget(self, action: #selector(cancelAuth), for: .touchUpInside)
         return button
@@ -62,8 +62,6 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         return label
     }()
     
-    fileprivate var bottomAnchor: NSLayoutConstraint?
-    
     open let signInButton: NTButton = {
         let button = NTButton()
         button.trackTouchLocation = false
@@ -74,18 +72,6 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         button.addTarget(self, action: #selector(submitAuth), for: .touchUpInside)
         return button
     }()
-    
-    fileprivate var keyboardActive: (Bool, CGRect) = (false, .zero) {
-        didSet {
-            self.signInButton.layoutIfNeeded()
-            self.view.layoutIfNeeded()
-            UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                self.bottomAnchor?.constant = -self.keyboardActive.1.height - 16
-                self.signInButton.layoutIfNeeded()
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
     
     open let signUpButton: NTButton = {
         let button = NTButton()
@@ -127,6 +113,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
     let passwordViewToggleButton: NTButton = {
         let button = NTButton()
+        button.tintColor = Color.Default.Tint.View
         button.backgroundColor = .clear
         button.trackTouchLocation = false
         button.ripplePercent = 1.5
@@ -163,15 +150,15 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        view.backgroundColor = Color.Default.Background.ViewController
         view.addSubview(navBarView)
         navBarView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 84)
         
         navBarView.addSubview(cancelButton)
         navBarView.addSubview(titleLabel)
         
-        cancelButton.anchor(navBarView.topAnchor, left: navBarView.leftAnchor, bottom: nil, right: nil, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
-        titleLabel.anchor(cancelButton.bottomAnchor, left: cancelButton.leftAnchor, bottom: navBarView.bottomAnchor, right: navBarView.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        cancelButton.anchor(navBarView.topAnchor, left: navBarView.leftAnchor, bottom: nil, right: nil, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+        titleLabel.anchor(cancelButton.bottomAnchor, left: cancelButton.leftAnchor, bottom: navBarView.bottomAnchor, right: navBarView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
@@ -182,15 +169,15 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         view.addSubview(passwordViewToggleButton)
         passwordViewToggleButton.anchor(passwordTextField.topAnchor, left: nil, bottom: nil, right: passwordTextField.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 5, rightConstant: 5, widthConstant: 30, heightConstant: 30)
         
-        view.addSubview(signInButton)
-        bottomAnchor = signInButton.anchorWithReturnAnchors(nil, left: nil, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 100, heightConstant: 36).first
-        
         view.addSubview(signUpButton)
         signUpButton.anchor(passwordTextField.bottomAnchor, left: passwordTextField.leftAnchor, bottom: nil, right: nil, topConstant: 30, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(NTEmailAuthViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(NTEmailAuthViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(NTEmailAuthViewController.keyboardDidChangeFrame), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        let accessoryView = NTInputAccessoryView()
+        accessoryView.heightConstant = 52
+        accessoryView.controller = self
+        accessoryView.backgroundColor = .clear
+        accessoryView.addSubview(signInButton)
+        signInButton.anchor(nil, left: nil, bottom: accessoryView.bottomAnchor, right: accessoryView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 100, heightConstant: 36)
     }
     
     open func submitAuth() {
@@ -220,6 +207,8 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     }
     
     open func showSignUpViewController() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         let vc = NTEmailRegisterViewController()
         vc.delegate = self
         vc.view.setDefaultShadow()
@@ -232,34 +221,4 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     public func authorize(_ controller: NTEmailAuthViewController, email: String, password: String) {
         delegate?.register?(controller, email: email, password: password)
     }
-    
-    // MARK: - Keyboard Observer
-    
-    func keyboardDidChangeFrame(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if keyboardSize.height > keyboardActive.1.height {
-                // Accounts for a frame glitch with some keyboards such as GBoard
-                DispatchQueue.executeAfter(0.05, closure: {
-                    self.keyboardActive = (self.keyboardActive.0, keyboardSize)
-                })
-            } else {
-                keyboardActive = (keyboardActive.0, keyboardSize)
-            }
-        }
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if !keyboardActive.0 {
-                keyboardActive = (true, keyboardSize)
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if keyboardActive.0 {
-            keyboardActive = (false, .zero)
-        }
-    }
-
 }

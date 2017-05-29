@@ -1,5 +1,5 @@
 //
-//  DemoColorsCollectionView.swift
+//  ColorsCollectionView.swift
 //  NTComponents
 //
 //  Created by Nathan Tannar on 4/15/17.
@@ -8,7 +8,7 @@
 
 import NTComponents
 
-class DemoColorsCollectionView: NTCollectionViewController {
+class ColorsCollectionView: NTCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

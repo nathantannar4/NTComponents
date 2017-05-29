@@ -34,7 +34,7 @@ open class NTEmailRegisterViewController: NTEmailAuthViewController {
         signUpButton.isHidden = true
         titleLabel.text = "Email Sign Up"
         signInButton.title = "Sign Up"
-        cancelButton.image = Icon.Arrow.Backward?.scale(to: 20)
+        cancelButton.image = Icon.Arrow.Backward
     }
     
     open override func cancelAuth() {

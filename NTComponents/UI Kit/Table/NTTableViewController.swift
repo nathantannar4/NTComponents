@@ -104,7 +104,9 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         }
         
 //        tableView.contentInset.top = stretchyHeaderHeight + defaultTopContentOffset
-        tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight)
+        if tableView.contentOffset != CGPoint(x: 0, y: -stretchyHeaderHeight) {
+            tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight) 
+        }
         
         stretchyImageView.image = image
         stretchyView.clipsToBounds = true

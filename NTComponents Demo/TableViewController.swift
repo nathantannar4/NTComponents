@@ -1,5 +1,5 @@
 //
-//  DemoTableViewController.swift
+//  TableViewController.swift
 //  NTComponents Demo
 //
 //  Created by Nathan Tannar on 3/11/17.
@@ -9,7 +9,7 @@
 import UIKit
 import NTComponents
 
-class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource {
+class TableViewController: NTTableViewController, NTTableViewImageDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,12 +30,12 @@ class DemoTableViewController: NTTableViewController, NTTableViewImageDataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
         cell.textLabel?.text = String.random(ofLength: 10)
-
         cell.detailTextLabel?.text = String.random(ofLength: 30)
-        
-//        cell.imageView?.image = UIImage(named: "Nathan")?.scale(to: 70)
-        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(NTViewController(), animated: true)
     }
 
     func imageForStretchyView(in tableView: NTTableView) -> UIImage? {

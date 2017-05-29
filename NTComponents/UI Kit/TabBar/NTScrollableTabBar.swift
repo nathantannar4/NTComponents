@@ -49,29 +49,27 @@ open class NTScrollableTabBar: UIView {
     fileprivate var currentBarViewLeftConstraint: NSLayoutConstraint?
     fileprivate var tabHeight: CGFloat = 32
 
-    var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    var currentBarView = UIView()
+    open var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    open var currentBarView = UIView()
     
-    var currentBarViewWidthConstraint: NSLayoutConstraint? {
+    open var currentBarViewWidthConstraint: NSLayoutConstraint? {
         get {
             return currentBarView.constraint(withIdentifier: "width")
         }
     }
-    var currentBarViewHeightConstraint: NSLayoutConstraint? {
+    open var currentBarViewHeightConstraint: NSLayoutConstraint? {
         get {
             return currentBarView.constraint(withIdentifier: "height")
         }
     }
     
-    
     // MARK: - Initialization
-
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(barHeight: CGFloat = 2, barPosition: NTTabBarPosition = .top, tabHeight: CGFloat = 32) {
+    public init(barHeight: CGFloat = 2, barPosition: NTTabBarPosition = .top, tabHeight: CGFloat = 32) {
         super.init(frame: .zero)
         
         self.tabHeight = tabHeight
@@ -115,12 +113,12 @@ open class NTScrollableTabBar: UIView {
     }
 
     /**
-     Called when you swipe in isInfinityTabPageViewController, moves the contentOffset of collectionView
+     Called when you rotate the device, moves the contentOffset of collectionView
 
      - parameter index: Next Index
      - parameter contentOffsetX: contentOffset.x of scrollView of isInfinityTabPageViewController
      */
-    func scrollCurrentBarView(_ index: Int, contentOffsetX: CGFloat) {
+    open func scrollCurrentBarView(_ index: Int, contentOffsetX: CGFloat) {
      
         if collectionViewContentOffsetX == 0.0 {
             collectionViewContentOffsetX = collectionView.contentOffset.x
@@ -160,7 +158,7 @@ open class NTScrollableTabBar: UIView {
     /**
      Center the current cell after page swipe
      */
-    func scrollToHorizontalCenter() {
+    open func scrollToHorizontalCenter() {
         let indexPath = IndexPath(item: currentIndex, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         collectionViewContentOffsetX = collectionView.contentOffset.x
@@ -171,7 +169,7 @@ open class NTScrollableTabBar: UIView {
 
      - parameter index: Next Index
      */
-    func updateCurrentIndex(_ index: Int, shouldScroll: Bool) {
+    open func updateCurrentIndex(_ index: Int, shouldScroll: Bool) {
         deselectVisibleCells()
 
         currentIndex = index
@@ -181,7 +179,7 @@ open class NTScrollableTabBar: UIView {
     }
 
     /**
-     Make the tapped cell the current if isInfinity is true
+     Make the tapped cell the current
 
      - parameter index: Next IndexPath√
      */
@@ -231,7 +229,7 @@ open class NTScrollableTabBar: UIView {
     /**
      Touch event control of collectionView
 
-     - parameter userInteractionEnabled: collectionViewに渡すuserInteractionEnabled
+     - parameter userInteractionEnabled: Bool
      */
     func updateCollectionViewUserInteractionEnabled(_ userInteractionEnabled: Bool) {
         collectionView.isUserInteractionEnabled = userInteractionEnabled

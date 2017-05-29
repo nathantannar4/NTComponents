@@ -75,12 +75,18 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
         searchField.delegate = self
         searchField.addTarget(self, action: #selector(search), for: UIControlEvents.editingChanged)
         addSubview(searchField)
-        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 8, leftConstant: 10, bottomConstant: 8, rightConstant: 10, widthConstant: 0, heightConstant: 0)
-
+        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 8, bottomConstant: 2, rightConstant: 8, widthConstant: 0, heightConstant: 0)
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        searchField.removeAllConstraints()
+        searchField.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 8, bottomConstant: 2, rightConstant: 8, widthConstant: 0, heightConstant: 0)
     }
 
     // MARK: - UITextFieldDelegate

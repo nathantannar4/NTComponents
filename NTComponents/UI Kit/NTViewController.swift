@@ -70,8 +70,8 @@ open class NTViewController: UIViewController {
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        statusBarHidden = false
-        UIApplication.shared.statusBarStyle = statusBarStyle
+//        statusBarHidden = false
+//        UIApplication.shared.statusBarStyle = statusBarStyle
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
@@ -81,15 +81,15 @@ open class NTViewController: UIViewController {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        statusBarStyle = UIApplication.shared.statusBarStyle
-        guard let navColor = navigationController?.navigationBar.barTintColor else {
-            guard let viewColor = view.backgroundColor else {
-                return
-            }
-            UIApplication.shared.statusBarStyle = viewColor.isLight ? .default : .lightContent
-            return
-        }
-        UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
+//        statusBarStyle = UIApplication.shared.statusBarStyle
+//        guard let navColor = navigationController?.navigationBar.barTintColor else {
+//            guard let viewColor = view.backgroundColor else {
+//                return
+//            }
+//            UIApplication.shared.statusBarStyle = viewColor.isLight ? .default : .lightContent
+//            return
+//        }
+//        UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
     }
     
     public func refreshTitleView(withAlpha alpha: CGFloat) {

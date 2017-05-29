@@ -1,5 +1,5 @@
 //
-//  DemoAlertsViewController.swift
+//  AlertsViewController.swift
 //  NTComponents
 //
 //  Created by Nathan Tannar on 4/16/17.
@@ -8,7 +8,7 @@
 
 import NTComponents
 
-class DemoAlertsViewController: NTTableViewController {
+class AlertsViewController: NTTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -217,7 +217,11 @@ class DemoAlertsViewController: NTTableViewController {
     }
     
     func showToast(withText text: String) {
-        NTToast(text: text).show(duration: 3.0)
+        NTToast(text: text, actionTitle: "Undo", target: self, selector: #selector(toastAction)).show(duration: 3)
+    }
+    
+    func toastAction() {
+        NTPing(title: "Toast Action", color: Color.Gray.P800).show()
     }
     
     func showLoader() {
