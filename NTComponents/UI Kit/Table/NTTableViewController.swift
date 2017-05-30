@@ -60,17 +60,6 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        if let parent = parent as? NTScrollableTabBarController {
-            if parent.tabBarPosition == .top {
-                defaultTopContentOffset = parent.tabBarHeight
-                tableView.scrollIndicatorInsets.top = defaultTopContentOffset
-                tableView.contentOffset = CGPoint(x: 0, y: -defaultTopContentOffset)
-                tableView.contentInset.top = defaultTopContentOffset
-            } else {
-                tableView.contentInset.bottom = parent.tabBarHeight
-            }
-        }
-        
         view.backgroundColor = Color.Default.Background.ViewController
         stretchyView.addSubview(stretchyImageView)
         view.addSubview(stretchyView)

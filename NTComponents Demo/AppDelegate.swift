@@ -9,6 +9,41 @@
 import UIKit
 import NTComponents
 
+
+class ContainerView: UIViewController {
+    
+    var topView: UIViewController
+    var bottomView: UIViewController
+    
+    init(topView: UIViewController, bottomView: UIViewController) {
+        self.topView = topView
+        self.bottomView = bottomView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public Methods -
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addChildViewController(topView)
+        view.addSubview(topView.view)
+        topView.didMove(toParentViewController: self)
+        
+        addChildViewController(bottomView)
+        view.addSubview(bottomView.view)
+        bottomView.didMove(toParentViewController: self)
+        
+        topView.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: bottomView.view.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        bottomView.view.anchor(topView.view.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        topView.view.anchorHeightToItem(bottomView.view)
+    }
+    
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -68,13 +103,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerVC.title = "NTComponents"
         centerVC.subtitle = "by Nathan Tannar"
         centerVC.currentTabBarHeight = 2.5
-        centerVC.tabBarHeight = 30
+        centerVC.tabBarHeight = 25
         centerVC.tabBarPosition = .top
         
         let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
         
-        
-        window?.rootViewController = root  
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true

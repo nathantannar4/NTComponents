@@ -43,7 +43,7 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
         return self.view.bounds.width
     }
     
-    open var pageControl: UIPageControl?
+    open weak var pageControl: UIPageControl?
 
     // MARK: - Initialization
     

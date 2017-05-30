@@ -74,13 +74,6 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         view.addSubview(activityIndicatorView)
         activityIndicatorView.anchorCenterXToSuperview()
         activityIndicatorView.anchorCenterYToSuperview()
-        
-        if let parent =  parent as? NTScrollableTabBarController {
-            if parent.tabBarPosition == .top {
-                collectionView?.contentInset.top = parent.tabBarHeight
-                collectionView?.scrollIndicatorInsets.top = parent.tabBarHeight
-            }
-        }
     }
     
     open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

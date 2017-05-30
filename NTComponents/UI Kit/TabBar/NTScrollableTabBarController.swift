@@ -31,33 +31,28 @@ public enum NTTabBarPosition {
     case top, bottom
 }
 
-open class NTScrollableTabBarController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate {
-    
-    override open var title: String? {
-        didSet {
-            self.refreshTitleView(withAlpha: 1.0)
-        }
-    }
-    open var subtitle: String? {
-        didSet {
-            self.refreshTitleView(withAlpha: 1.0)
-        }
-    }
+open class NTScrollableTabBarController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate {
     
     public var currentIndex: Int? {
         get {
-            guard let viewController = viewControllers?.first else {
+            guard let viewController = pageViewController.viewControllers?.first else {
                 return nil
             }
-            return _viewControllers?.index(of: viewController)
+            return viewControllers.index(of: viewController)
         }
     }
     
-    fileprivate var _viewControllers: [UIViewController]?
+    open var pageViewController: UIPageViewController = {
+        let viewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        viewController.view.backgroundColor = .clear
+        return viewController
+    }()
+    
+    fileprivate var viewControllers: [UIViewController]
     fileprivate var beforeIndex: Int = 0
     fileprivate var viewControllerCount: Int {
         get {
-            return _viewControllers?.count ?? 0
+            return viewControllers.count
         }
     }
     fileprivate var defaultContentOffsetX: CGFloat {
@@ -75,18 +70,9 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
 
     // MARK: - Initialization
     
-    public convenience init() {
-        self.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    }
-    
-    public convenience init(viewControllers: [UIViewController]) {
-        self.init()
-        _viewControllers = viewControllers
-    }
-    
-    public override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {
-        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
-        _viewControllers = [UIViewController()]
+    public init(viewControllers: [UIViewController]) {
+        self.viewControllers = viewControllers
+        super.init(nibName: nil, bundle: nil)
     }
     
     required public init?(coder: NSCoder) {
@@ -135,18 +121,16 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
 
         beforeIndex = index
         shouldScrollCurrentBar = false
-        guard let viewControllers = _viewControllers else {
-            return
-        }
+        
         let nextViewControllers: [UIViewController] = [viewControllers[index]]
 
         let completion: ((Bool) -> Void) = { [weak self] _ in
             self?.shouldScrollCurrentBar = true
             self?.beforeIndex = index
-            viewControllers[index].viewDidAppear(false)
+            self?.viewControllers[index].viewDidAppear(false)
         }
 
-        setViewControllers(
+        pageViewController.setViewControllers(
             nextViewControllers,
             direction: direction,
             animated: animated,
@@ -157,20 +141,25 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
     }
     
     fileprivate func setupPageViewController() {
-        dataSource = self
-        delegate = self
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
         automaticallyAdjustsScrollViewInsets = false
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
         
-        guard let viewControllers = _viewControllers else {
-            return
+        if tabBarPosition == .top {
+            pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: tabBarHeight, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        } else {
+            pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: tabBarHeight, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         }
-        
+    
         for vc in viewControllers {
-            addChildViewController(vc)
-            vc.didMove(toParentViewController: self)
+            pageViewController.addChildViewController(vc)
+            vc.didMove(toParentViewController: pageViewController)
         }
         
-        setViewControllers([viewControllers[beforeIndex]],
+        pageViewController.setViewControllers([viewControllers[beforeIndex]],
                            direction: .forward,
                            animated: false,
                            completion: nil)
@@ -178,7 +167,7 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
 
     fileprivate func setupScrollView() {
         // Disable UIPageViewController's ScrollView bounce
-        let scrollView = view.subviews.flatMap { $0 as? UIScrollView }.first
+        let scrollView = pageViewController.view.subviews.flatMap { $0 as? UIScrollView }.first
         scrollView?.scrollsToTop = false
         scrollView?.delegate = self
         scrollView?.backgroundColor = Color.Default.Background.ViewController
@@ -204,9 +193,9 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         
         applyTabViewContraints()
         
-        let _ = (_viewControllers ?? []).map({ $0.viewDidLoad() })
+        let _ = viewControllers.map({ $0.viewDidLoad() })
         
-        self.tabView?.pageTabItems = (_viewControllers ?? []).map({ $0.title ?? String() })
+        self.tabView?.pageTabItems = viewControllers.map({ $0.title ?? String() })
         self.tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)
         
         self.tabView?.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
@@ -243,17 +232,11 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
         }
     }
     
-    public func refreshTitleView(withAlpha alpha: CGFloat) {
-        if self.title != nil {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title.withAlphaComponent(alpha), subtitleColor: Color.Default.Text.Subtitle.withAlphaComponent(alpha))
-        }
-    }
-    
     // MARK: - UIPageViewControllerDataSource
 
     fileprivate func nextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
 
-        guard var index = _viewControllers?.index(of: viewController) else {
+        guard var index = viewControllers.index(of: viewController) else {
             return nil
         }
 
@@ -263,8 +246,8 @@ open class NTScrollableTabBarController: UIPageViewController, UIPageViewControl
             index -= 1
         }
 
-        if index >= 0 && index < (_viewControllers?.count ?? 0) {
-            return _viewControllers?[index]
+        if index >= 0 && index < viewControllerCount {
+            return viewControllers[index]
         }
         return nil
     }
