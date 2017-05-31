@@ -46,14 +46,33 @@ open class NTAnimatedMenuButton: NTButton {
     
     let animationDuration: CFTimeInterval = 8.0
     
+    let longStroke: CGPath = {
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 2, y: 2))
+        path.addLine(to: CGPoint(x: 30, y: 2))
+        return path
+    }()
+    
     let shortStroke: CGPath = {
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 2, y: 2))
-        path.addLine(to: CGPoint(x: 30 - 2 * 2, y: 2))
+        path.addLine(to: CGPoint(x: 20, y: 2))
         return path
     }()
     
     // MARK: - Initializers
+    
+    open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        DispatchQueue.executeAfter(0.15) {
+            super.endTracking(touch, with: event)
+        }
+    }
+    
+    open override func cancelTracking(with event: UIEvent?) {
+        DispatchQueue.executeAfter(0.14) {
+            super.cancelTracking(with: event)
+        }
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -67,17 +86,18 @@ open class NTAnimatedMenuButton: NTButton {
         self.strokeColor = strokeColor
         super.init(frame: frame)
         
-        self.top.path = shortStroke;
+        self.top.path = longStroke;
         self.middle.path = shortStroke;
-        self.bottom.path = shortStroke;
+        self.bottom.path = longStroke;
         
         for layer in [ self.top, self.middle, self.bottom ] {
             layer.fillColor = nil
             layer.strokeColor = self.strokeColor.cgColor
-            layer.lineWidth = 2
+            layer.lineWidth = 2.4
             layer.miterLimit = 2
             layer.lineCap = kCALineCapRound
             layer.masksToBounds = true
+            layer.cornerRadius = 5
             
             if let path = layer.path, let strokingPath = CGPath(__byStroking: path, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4) {
                 layer.bounds = strokingPath.boundingBoxOfPath
@@ -92,11 +112,10 @@ open class NTAnimatedMenuButton: NTButton {
         }
         
         self.top.anchorPoint = CGPoint(x: 1, y: 0.5)
-        self.top.position = CGPoint(x: 30 - 1, y: 5)
-        self.middle.position = CGPoint(x: 15, y: 15)
-        
+        self.top.position = CGPoint(x: 31, y: 5)
+        self.middle.position = CGPoint(x: 10, y: 15)
         self.bottom.anchorPoint = CGPoint(x: 1, y: 0.5)
-        self.bottom.position = CGPoint(x: 30 - 1, y: 25)
+        self.bottom.position = CGPoint(x: 31, y: 25)
     }
     
     // MARK: - Animations

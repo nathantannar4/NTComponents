@@ -1,0 +1,156 @@
+//
+//  NTCircularTransition.swift
+//  NTComponents
+//
+//  Copyright © 2017 Nathan Tannar.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+//  Created by Nathan Tannar on 5/30/17.
+//
+
+import UIKit
+
+/* Use
+ 
+ func present() {
+ let vc = UIViewController()
+ vc = self
+ vc = .custom
+ }
+ 
+ 
+ func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+ transition.transitionMode = .present
+ transition.startingPoint = menuButton.center
+ transition.circleColor = menuButton.backgroundColor
+ 
+ return transition
+ }
+ 
+ func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+ transition.transitionMode = .dismiss
+ transition.startingPoint = menuButton.center
+ transition.circleColor = menuButton.backgroundColor
+ 
+ return transition
+ }
+*/
+
+open class NTCircularTransition: NSObject, UIViewControllerAnimatedTransitioning {
+ 
+    public enum CircularTransitionMode:Int {
+        case present, dismiss, pop
+    }
+    
+    open var circle = UIView()
+    open var startingPoint: CGPoint = .zero {
+        didSet {
+            circle.center = startingPoint
+        }
+    }
+    open var circleColor: UIColor? = UIColor.white
+    open var duration = 0.3
+    open var transitionMode: CircularTransitionMode = .present
+    
+    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return duration
+    }
+    
+    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        
+        if transitionMode == .present {
+            if let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) {
+                let viewCenter = presentedView.center
+                let viewSize = presentedView.frame.size
+                
+                circle = UIView()
+                
+                circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
+                
+                circle.layer.cornerRadius = circle.frame.size.height / 2
+                circle.center = startingPoint
+                circle.backgroundColor = circleColor
+                circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                containerView.addSubview(circle)
+                
+                presentedView.center = startingPoint
+                presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                presentedView.alpha = 0
+                containerView.addSubview(presentedView)
+                
+                UIView.animate(withDuration: duration, animations: {
+                    self.circle.transform = CGAffineTransform.identity
+                    presentedView.transform = CGAffineTransform.identity
+                    presentedView.alpha = 1
+                    presentedView.center = viewCenter
+                    
+                }, completion: { (success:Bool) in
+                    transitionContext.completeTransition(success)
+                })
+            }
+            
+        } else {
+            let transitionModeKey = (transitionMode == .pop) ? UITransitionContextViewKey.to : UITransitionContextViewKey.from
+            
+            if let returningView = transitionContext.view(forKey: transitionModeKey) {
+                let viewCenter = returningView.center
+                let viewSize = returningView.frame.size
+                
+                
+                circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
+                
+                circle.layer.cornerRadius = circle.frame.size.height / 2
+                circle.center = startingPoint
+                
+                UIView.animate(withDuration: duration, animations: {
+                    self.circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                    returningView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                    returningView.center = self.startingPoint
+                    returningView.alpha = 0
+                    
+                    if self.transitionMode == .pop {
+                        containerView.insertSubview(returningView, belowSubview: returningView)
+                        containerView.insertSubview(self.circle, belowSubview: returningView)
+                    }
+                }, completion: { (success:Bool) in
+                    returningView.center = viewCenter
+                    returningView.removeFromSuperview()
+                    
+                    self.circle.removeFromSuperview()
+                    transitionContext.completeTransition(success)
+                    
+                })
+            }
+        }
+    }
+    
+    open func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
+        let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
+        let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
+        
+        let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
+        let size = CGSize(width: offestVector, height: offestVector)
+        
+        return CGRect(origin: CGPoint.zero, size: size)
+        
+    }
+}
+

@@ -179,7 +179,6 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
             let vc = NTEmailAuthViewController()
             present(vc, animated: true, completion: nil)
         } else {
-            NTToast(text: "You need to override loginLogic(sender: NTLoginButton)").show()
             Log.write(.warning, "You need to override loginLogic(sender: NTLoginButton)")
         }
     }

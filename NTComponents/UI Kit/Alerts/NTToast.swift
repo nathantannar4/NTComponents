@@ -29,7 +29,7 @@ import UIKit
 
 open class NTToast: NTAnimatedView {
 
-    fileprivate var currentState: NTViewState = .hidden
+    internal var currentState: NTViewState = .hidden
     open var dismissOnTap: Bool = true
     
     open let label: NTLabel = {
@@ -102,7 +102,7 @@ open class NTToast: NTAnimatedView {
         }
     }
 
-    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = 2) {
+    open func show(_ view: UIView? = UIViewController.topController()?.view, duration: TimeInterval? = 2) {
         if currentState != .hidden { return }
         guard let view = view else { return }
         

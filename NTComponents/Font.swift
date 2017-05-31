@@ -33,13 +33,40 @@ public enum NTPreferredFontStyle {
 
 public struct Font {
 
-    public static func whatIsAvailable() {
-        for familyName in UIFont.familyNames {
-            Log.write(.status, familyName)
-            for fontName in UIFont.fontNames(forFamilyName: familyName) {
-                Log.write(.status, "== \(fontName)")
+    /// An internal reference to the fonts bundle.
+    private static var internalBundle: Bundle?
+    
+    /**
+     A public reference to the font bundle, that aims to detect
+     the correct bundle to use.
+     */
+    public static var bundle: Bundle {
+        if nil == Font.internalBundle {
+            Font.internalBundle = Bundle(for: NTView.self)
+            let url = Font.internalBundle!.resourceURL!
+            let b = Bundle(url: url)
+            if let v = b {
+                Font.internalBundle = v
             }
         }
+        return Font.internalBundle!
+    }
+    
+    public static func load(fromBundle: Bundle = bundle, name: String, withExtension: String = "ttf", withSize size: CGFloat = 15) -> UIFont? {
+        guard let url = bundle.url(forResource: name, withExtension: withExtension) else {
+            Log.write(.error, "Failed to find the font: \(name).\(withExtension) in the supplied bundle")
+            return nil
+        }
+        guard let fontDataProvider = CGDataProvider(url: url as CFURL) else {
+            return nil
+        }
+        let font = CGFont(fontDataProvider)
+        var error: Unmanaged<CFError>?
+        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+            Log.write(.error, "Failed to register font from file: \(name).\(withExtension)")
+            return nil
+        }
+        return UIFont(name: name, size: size)
     }
 
     public struct Default {
@@ -55,18 +82,18 @@ public struct Font {
     }
 
     public struct Roboto {
-        public static let Regular       = UIFont(name: "Roboto-Regular", size: 15)
-        public static let Thin          = UIFont(name: "Roboto-Thin", size: 15)
-        public static let ThinItalic    = UIFont(name: "Roboto-ThinItalic", size: 15)
-        public static let Italic        = UIFont(name: "Roboto-Italic", size: 15)
-        public static let Light         = UIFont(name: "Roboto-Light", size: 15)
-        public static let LightItalic   = UIFont(name: "Roboto-LightItalic", size: 15)
-        public static let Medium        = UIFont(name: "Roboto-Medium", size: 15)
-        public static let MediumItalic  = UIFont(name: "Roboto-MediumItalic", size: 15)
-        public static let Bold          = UIFont(name: "Roboto-Bold", size: 15)
-        public static let BoldItalic    = UIFont(name: "Roboto-BoldItalic", size: 15)
-        public static let Black         = UIFont(name: "Roboto-Black", size: 15)
-        public static let BlackItalic   = UIFont(name: "Roboto-BlackItalic", size: 15)
+        public static let Regular       = Font.load(name: "Roboto-Regular")!
+        public static let Thin          = Font.load(name: "Roboto-Thin")!
+        public static let ThinItalic    = Font.load(name: "Roboto-ThinItalic")!
+        public static let Italic        = Font.load(name: "Roboto-Italic")!
+        public static let Light         = Font.load(name: "Roboto-Light")!
+        public static let LightItalic   = Font.load(name: "Roboto-LightItalic")!
+        public static let Medium        = Font.load(name: "Roboto-Medium")!
+        public static let MediumItalic  = Font.load(name: "Roboto-MediumItalic")!
+        public static let Bold          = Font.load(name: "Roboto-Bold")!
+        public static let BoldItalic    = Font.load(name: "Roboto-BoldItalic")!
+        public static let Black         = Font.load(name: "Roboto-Black")!
+        public static let BlackItalic   = Font.load(name: "Roboto-BlackItalic")!
     }
 }
 

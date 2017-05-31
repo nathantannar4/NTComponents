@@ -9,41 +9,6 @@
 import UIKit
 import NTComponents
 
-
-class ContainerView: UIViewController {
-    
-    var topView: UIViewController
-    var bottomView: UIViewController
-    
-    init(topView: UIViewController, bottomView: UIViewController) {
-        self.topView = topView
-        self.bottomView = bottomView
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Public Methods -
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        
-        addChildViewController(topView)
-        view.addSubview(topView.view)
-        topView.didMove(toParentViewController: self)
-        
-        addChildViewController(bottomView)
-        view.addSubview(bottomView.view)
-        bottomView.didMove(toParentViewController: self)
-        
-        topView.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: bottomView.view.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        bottomView.view.anchor(topView.view.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        topView.view.anchorHeightToItem(bottomView.view)
-    }
-    
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -55,11 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Color.Default.setPrimary(to: .white)
         Color.Default.setSecondary(to: UIColor(hex: "31485e"))
         Color.Default.Background.Button = UIColor(hex: "31485e")
-        Color.Default.Text.Title = .black
         Color.Default.Text.Subtitle = Color.Gray.P700
         Color.Default.Tint.Inactive = Color.Gray.P500
+    
         
+        Font.Default.Title = Font.Roboto.Regular.withSize(18)
+        Font.Default.Subtitle = Font.Roboto.Regular
+        Font.Default.Body = Font.Roboto.Regular.withSize(13)
+        Font.Default.Caption = Font.Roboto.Medium.withSize(12)
+        Font.Default.Subhead = Font.Roboto.Regular
         
+        Log.setTraceLevel(to: .off)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
@@ -75,9 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         leftMenuLabel.fillSuperview()
         
         
-        
-        let tableVC = TableViewController()
-        
         let alertsVC = AlertsViewController()
         
         var tabVCs = [UIViewController]()
@@ -88,25 +56,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.tabBarItem.image = Icon.google
             tabVCs.append(vc)
         }
-    
-        let mapVC = MapViewController()
-        mapVC.title = "MapView"
+        
+        let tabVC = NTTabBarController(viewControllers: tabVCs)
+        tabVC.title = "TabBar"
         
         let loginVC = NTLoginViewController()
         loginVC.logo = #imageLiteral(resourceName: "BANNER")
         loginVC.title = "Login"
         
-        let profileVC = NTProfileViewController()
-        profileVC.title = "Profile"
-        
-        let centerVC = NTScrollableTabBarController(viewControllers: [tableVC, alertsVC, profileVC, loginVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tabVC, TableViewController()])
         centerVC.title = "NTComponents"
-        centerVC.subtitle = "by Nathan Tannar"
-        centerVC.currentTabBarHeight = 2.5
         centerVC.tabBarHeight = 25
         centerVC.tabBarPosition = .top
         
-        let root = NTNavigationContainer(centerView: centerVC, leftView: leftVC)
+        let root = NTNavigationContainer(centerView: centerVC, leftView: AuthorViewController())
         
         window?.rootViewController = root
         window?.makeKeyAndVisible()

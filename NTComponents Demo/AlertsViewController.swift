@@ -29,7 +29,7 @@ class AlertsViewController: NTTableViewController {
         case 4:
             return "NTPing"
         case 5:
-            return "NTActivityIndicator"
+            return "NTActivityIndicators"
         default:
             return nil
         }
@@ -52,7 +52,7 @@ class AlertsViewController: NTTableViewController {
         case 4:
             return 4
         case 5:
-            return 1
+            return 2
         default:
             return 0
         }
@@ -110,7 +110,11 @@ class AlertsViewController: NTTableViewController {
                 break
             }
         case 5:
-            cell.textLabel?.text = "Present with auto completion"
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "Line Progress"
+            } else {
+                cell.textLabel?.text = "Activity"
+            }
         default:
             break
         }
@@ -167,8 +171,13 @@ class AlertsViewController: NTTableViewController {
                 showPing(type: .isDanger)
             default:
                 break
-            }        case 5:
-            showLoader()
+            }
+        case 5:
+            if indexPath.row == 0 {
+                showLineLoader()
+            } else {
+                showWheelLoader()
+            }
         default:
             break
         }
@@ -224,9 +233,14 @@ class AlertsViewController: NTTableViewController {
         NTPing(title: "Toast Action", color: Color.Gray.P800).show()
     }
     
-    func showLoader() {
-        let loader = NTProgressIndicator()
+    func showLineLoader() {
+        let loader = NTProgressLineIndicator()
         view.addSubview(loader)
         loader.autoComplete(withDuration: 2)
+    }
+    
+    func showWheelLoader() {
+        let loader = NTActivityIndicator()
+        loader.show(duration: 3)
     }
 }

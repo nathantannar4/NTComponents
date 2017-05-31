@@ -100,7 +100,7 @@ open class NTPing: NTView {
         
         if UIApplication.shared.isStatusBarHidden {
             // Fallback when status bar is not visible
-            let chime = NTChime(title: titleLabel.text, height: 20, color: backgroundColor ?? .white, onTap: nil)
+            let chime = NTChime(title: titleLabel.text, height: frame.height, color: backgroundColor ?? .white, onTap: nil)
             chime.hideShadow()
             chime.titleLabel.textAlignment = .center
             chime.titleLabel.font = Font.Default.Caption.withSize(12)
@@ -140,6 +140,6 @@ open class NTPing: NTView {
     
     open class func genericErrorMessage() {
         let ping = NTPing(type: .isDanger, title: "Sorry, an error occurred")
-        ping.show(duration: 3.0)
+        ping.show()
     }
 }

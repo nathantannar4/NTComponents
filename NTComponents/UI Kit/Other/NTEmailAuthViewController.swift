@@ -123,26 +123,16 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         return button
     }()
     
-    fileprivate let overlayView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
-        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        activityIndicatorView.startAnimating()
-        view.addSubview(activityIndicatorView)
-        activityIndicatorView.anchorCenterSuperview()
-        activityIndicatorView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
-        return view
-    }()
+    fileprivate let indicatorView = NTActivityIndicator()
     
     open var showActivityIndicator: Bool = false {
         didSet {
             if showActivityIndicator {
                 UIApplication.shared.beginIgnoringInteractionEvents()
-                view.addSubview(overlayView)
-                overlayView.fillSuperview()
+                indicatorView.show()
             } else {
                 UIApplication.shared.endIgnoringInteractionEvents()
-                overlayView.removeFromSuperview()
+                indicatorView.dismiss()
             }
         }
     }

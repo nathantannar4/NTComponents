@@ -30,7 +30,7 @@ s.framework = "UIKit"
 s.source_files = "NTComponents/**/*.{swift}"
 
 # 9
-s.resources = "NTComponents/**/*.{xcassets,oft,ttf,xib,storyboard}"
+s.resources = "NTComponents/**/*.{xcassets,otf,ttf,xib,storyboard}"
 
 
 

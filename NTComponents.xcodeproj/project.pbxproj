@@ -14,8 +14,11 @@
 		38084ABF1EA311EE00329516 /* NTComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; };
 		38084AC01EA311EE00329516 /* NTComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38084AC51EA319D900329516 /* ColorsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38084AC41EA319D900329516 /* ColorsCollectionView.swift */; };
-		380EEA061ED941850018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA051ED941850018FC37 /* NTImagePickerController.swift */; };
 		380EEA121EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA111EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift */; };
+		380EEA141EDD4DF90018FC37 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA131EDD4DF90018FC37 /* NTActivityIndicator.swift */; };
+		380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */; };
+		380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */; };
+		380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */; };
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F7061E5BDF5000902E23 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F51E5BDF5000902E23 /* Icon.swift */; };
@@ -23,8 +26,8 @@
 		3818F70A1E5BDF5000902E23 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F91E5BDF5000902E23 /* Log.swift */; };
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
+		383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */; };
 		3863D89A1EB0686E003B73F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3863D8471EB0686E003B73F7 /* Assets.xcassets */; };
-		3863D89B1EB0686E003B73F7 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D8491EB0686E003B73F7 /* BebasNeue.otf */; };
 		3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */; };
 		3863D89D1EB0686E003B73F7 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D84B1EB0686E003B73F7 /* Roboto-BlackItalic.ttf */; };
 		3863D89E1EB0686E003B73F7 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D84C1EB0686E003B73F7 /* Roboto-Bold.ttf */; };
@@ -90,7 +93,7 @@
 		389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3D41EB307370089E9C1 /* MapViewController.swift */; };
 		389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F41EB51EBE0089E9C1 /* NTChime.swift */; };
 		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
-		389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */; };
+		389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FC1EB880770089E9C1 /* NTProgressLineIndicator.swift */; };
 		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
 		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
@@ -139,8 +142,11 @@
 		380461001EA2A6C2008A03B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		380461051EA2A787008A03B5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		38084AC41EA319D900329516 /* ColorsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionView.swift; sourceTree = "<group>"; };
-		380EEA051ED941850018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
 		380EEA111EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedCollectionViewCell.swift; sourceTree = "<group>"; };
+		380EEA131EDD4DF90018FC37 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
+		380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransition.swift; sourceTree = "<group>"; };
+		380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
+		380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCameraViewController.swift; sourceTree = "<group>"; };
 		3818F6D71E5BDEA600902E23 /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818F6DA1E5BDEA600902E23 /* NTComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTComponents.h; sourceTree = "<group>"; };
 		3818F6DB1E5BDEA600902E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,8 +156,8 @@
 		3818F6F91E5BDF5000902E23 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		3863D8471EB0686E003B73F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3863D8491EB0686E003B73F7 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		3863D84B1EB0686E003B73F7 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		3863D84C1EB0686E003B73F7 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -217,7 +223,7 @@
 		389AF3D41EB307370089E9C1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		389AF3F41EB51EBE0089E9C1 /* NTChime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTChime.swift; sourceTree = "<group>"; };
 		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
-		389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActivityIndicator.swift; sourceTree = "<group>"; };
+		389AF3FC1EB880770089E9C1 /* NTProgressLineIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProgressLineIndicator.swift; sourceTree = "<group>"; };
 		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
+				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
 				380461051EA2A787008A03B5 /* TableViewController.swift */,
 				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
 				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
@@ -266,6 +273,31 @@
 				380461001EA2A6C2008A03B5 /* Info.plist */,
 			);
 			path = "NTComponents Demo";
+			sourceTree = "<group>";
+		};
+		380EEA151EDE7FB30018FC37 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				380EEA161EDE7FD80018FC37 /* Transitions */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		380EEA161EDE7FD80018FC37 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		380EEA1C1EDE862D0018FC37 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */,
+				380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		3818F6CD1E5BDEA600902E23 = {
@@ -298,6 +330,7 @@
 				3818F6F61E5BDF5000902E23 /* Color.swift */,
 				3818F7711E5BF78C00902E23 /* Font.swift */,
 				3863D8461EB0686E003B73F7 /* Assets */,
+				380EEA151EDE7FB30018FC37 /* Miscellaneous */,
 				3863D85C1EB0686E003B73F7 /* Extensions */,
 				3863D8681EB0686E003B73F7 /* UI Kit */,
 			);
@@ -325,7 +358,6 @@
 		3863D8481EB0686E003B73F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				3863D8491EB0686E003B73F7 /* BebasNeue.otf */,
 				3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */,
 				3863D84B1EB0686E003B73F7 /* Roboto-BlackItalic.ttf */,
 				3863D84C1EB0686E003B73F7 /* Roboto-Bold.ttf */,
@@ -368,6 +400,7 @@
 				3863D87D1EB0686E003B73F7 /* NTViewController.swift */,
 				3863D8691EB0686E003B73F7 /* Alerts */,
 				3863D86D1EB0686E003B73F7 /* Buttons */,
+				380EEA1C1EDE862D0018FC37 /* Camera */,
 				3863D8711EB0686E003B73F7 /* Collection */,
 				3863D8751EB0686E003B73F7 /* Map */,
 				3863D87A1EB0686E003B73F7 /* Navigation */,
@@ -391,7 +424,8 @@
 				3863D86C1EB0686E003B73F7 /* NTToast.swift */,
 				389AF3F41EB51EBE0089E9C1 /* NTChime.swift */,
 				389AF3F81EB59AC10089E9C1 /* NTPing.swift */,
-				389AF3FC1EB880770089E9C1 /* NTActivityIndicator.swift */,
+				389AF3FC1EB880770089E9C1 /* NTProgressLineIndicator.swift */,
+				380EEA131EDD4DF90018FC37 /* NTActivityIndicator.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -446,7 +480,6 @@
 				38FCFA3A1ECFF7AD007D3019 /* Login */,
 				389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */,
 				38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */,
-				380EEA051ED941850018FC37 /* NTImagePickerController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -646,7 +679,6 @@
 				3863D8A31EB0686E003B73F7 /* Roboto-Medium.ttf in Resources */,
 				3863D8A71EB0686E003B73F7 /* Roboto-ThinItalic.ttf in Resources */,
 				3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */,
-				3863D89B1EB0686E003B73F7 /* BebasNeue.otf in Resources */,
 				3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +694,7 @@
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */,
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
+				383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */,
 				38084AC51EA319D900329516 /* ColorsCollectionView.swift in Sources */,
 				38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */,
 			);
@@ -702,16 +735,17 @@
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,
+				380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */,
 				386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */,
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
+				380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
-				389AF3FD1EB880770089E9C1 /* NTActivityIndicator.swift in Sources */,
+				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
 				38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */,
-				380EEA061ED941850018FC37 /* NTImagePickerController.swift in Sources */,
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
@@ -722,9 +756,11 @@
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
 				386AB9B91ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift in Sources */,
+				380EEA141EDD4DF90018FC37 /* NTActivityIndicator.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
+				380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */,
 				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
 				3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */,
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,

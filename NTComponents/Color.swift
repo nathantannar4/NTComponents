@@ -133,7 +133,7 @@ public struct Color {
         public struct Status {
             public static var Info    = Color.White
             public static var Success = UIColor(hex: "#37D387")
-            public static var Warning = UIColor(hex: "#FFB200")
+            public static var Warning = Color.Orange.P800
             public static var Danger  = UIColor(hex: "#FF6E6E")
         }
         

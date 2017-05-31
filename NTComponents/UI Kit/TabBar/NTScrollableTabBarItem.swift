@@ -58,7 +58,8 @@ open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
     }
     
     open var titleLabel: NTLabel = {
-        let label = NTLabel(style: .subhead)
+        let label = NTLabel(style: .body)
+        label.font = Font.Default.Subtitle.withSize(13)
         label.textAlignment = .center
         return label
     }()

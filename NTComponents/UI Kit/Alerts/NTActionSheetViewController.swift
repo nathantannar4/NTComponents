@@ -138,8 +138,8 @@ open class NTActionSheetViewController: UIViewController  {
     open func createButton(fromAction action: NTActionSheetItem) -> NTButton {
         let button = NTButton()
         button.backgroundColor = action.color
-        button.touchUpAnimationTime = 0.2
-        button.ripplePercent = 1.55
+        button.touchUpAnimationTime = 0.4
+        button.ripplePercent = 1.2
         button.imageView?.backgroundColor = .clear
         
         let separatorView = UIView()

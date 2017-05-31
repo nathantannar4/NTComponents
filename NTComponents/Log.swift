@@ -35,35 +35,37 @@ public enum LogMode: Int {
     case debug = 2
 }
 
-public class Log {
+public struct Log {
     
     fileprivate static var mode: LogMode = .debug
     
-    public class func setTraceLevel(to mode: LogMode) {
+    public static func setTraceLevel(to mode: LogMode) {
         Log.mode = mode
     }
 
-    public class func write(_ type: LogType, _ text: String) {
+    public static func write(_ type: LogType, _ text: String) {
         var message = String()
         switch type {
         case .error:
             if Log.mode.rawValue != 0 {
                 message.append("### ERROR  : ")
-                message.append(text)
-                print(message)
             }
         case .warning:
             if Log.mode.rawValue >= 1 {
                 message.append("### WARNING: ")
-                message.append(text)
-                print(message)
             }
         case .status:
             if Log.mode.rawValue == 2 {
                 message.append("### STATUS : ")
-                message.append(text)
-                print(message)
             }
+        }
+        message.append(text)
+        print(message)
+        if mode.rawValue > 0 {
+            let ping = NTPing(title: message, color: Color.Gray.P900)
+            ping.titleLabel.font = UIFont(name: "Courier", size: 12)
+            ping.titleLabel.textColor = .white
+            ping.show()
         }
     }
     
