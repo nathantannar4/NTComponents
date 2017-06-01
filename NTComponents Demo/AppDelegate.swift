@@ -66,11 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tabVC, TableViewController()])
         centerVC.title = "NTComponents"
+        centerVC.subtitle = "Demo"
         centerVC.tabBarHeight = 25
         centerVC.tabBarPosition = .top
         
-        let root = NTNavigationContainer(centerView: centerVC, leftView: AuthorViewController())
-        
+        let navVC = NTNavigationController(rootViewController: AuthorViewController())
+        let root = NTNavigationContainer(centerView: centerVC, leftView: navVC)
+        root.leftPanelWidth = 350
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         

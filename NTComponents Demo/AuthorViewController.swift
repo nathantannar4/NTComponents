@@ -12,16 +12,18 @@ class AuthorViewController: NTTableViewController, NTTableViewImageDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "About the Developer"
+        setTitleView(title: "NTComponents", subtitle: "About")
+        stretchyHeaderHeight = 150
         tableView.imageDataSource = self
-        stretchyHeaderHeight = 250
+        tableView.tableFooterView = UIView()
         addTopGradientToStretchyImage()
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = NTTableViewHeaderFooterView()
-        header.textLabel.text = "About the Developer"
-        return header
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return 78
+        }
+        return 50
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,13 +31,34 @@ class AuthorViewController: NTTableViewController, NTTableViewImageDataSource {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
-        cell.textLabel?.text = String.random(ofLength: 10)
-        cell.detailTextLabel?.text = String.random(ofLength: 30)
+        
+        let view = UIView()
+        view.setDefaultShadow()
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Nathan"))
+        imageView.layer.cornerRadius = 50
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 3
+        imageView.clipsToBounds = true
+        view.addSubview(imageView)
+        imageView.fillSuperview()
+        cell.addSubview(view)
+        view.anchor(nil, left: cell.leftAnchor, bottom: cell.bottomAnchor, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 8, rightConstant: 0, widthConstant: 100, heightConstant: 100)
+        
+        let titleLabel = NTLabel(style: .title)
+        titleLabel.text = "Nathan Tannar"
+        let subtitleLabel = NTLabel(style: .subtitle)
+        subtitleLabel.text = "SFU Computer Engineering Student"
+        cell.addSubview(titleLabel)
+        cell.addSubview(subtitleLabel)
+        titleLabel.anchor(cell.topAnchor, left: view.rightAnchor, bottom: nil, right: cell.rightAnchor, topConstant: 5, leftConstant: 6, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 20)
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: view.rightAnchor, bottom: view.bottomAnchor, right: cell.rightAnchor, topConstant: 2, leftConstant: 6, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        cell.selectionStyle = .none
+        
         return cell
     }
     

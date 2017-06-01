@@ -64,7 +64,7 @@ open class NTPing: NTView {
             backgroundColor = Color.Default.Status.Danger
         }
         
-        if type != .isInfo {
+        if backgroundColor!.isDark {
             titleLabel.textColor = .white
         }
     }
@@ -97,15 +97,6 @@ open class NTPing: NTView {
     // MARK: - Presentation Methods
     
     open func show(duration: TimeInterval = 2) {
-        
-        if UIApplication.shared.isStatusBarHidden {
-            // Fallback when status bar is not visible
-            let chime = NTChime(title: titleLabel.text, height: frame.height, color: backgroundColor ?? .white, onTap: nil)
-            chime.hideShadow()
-            chime.titleLabel.textAlignment = .center
-            chime.titleLabel.font = Font.Default.Caption.withSize(12)
-            chime.show(duration: duration)
-        }
         
         guard let view = statusBar else { return }
         

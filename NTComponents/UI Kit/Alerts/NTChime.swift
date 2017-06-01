@@ -27,7 +27,7 @@
 
 import UIKit
 
-open class NTChime: NTView {
+open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate {
     
     open var iconView: NTImageView = {
         let imageView = NTImageView()
@@ -47,24 +47,47 @@ open class NTChime: NTView {
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
-
-    open var action : (() -> Void)?
-    open var animationDuration: Double = 0.6
-    open var animationDelay: Double = 0
-    open var animationSpringDamping: CGFloat = 0.85
-    open var animationSpringVelocity: CGFloat = 1.12
-    open var animationOptions: UIViewAnimationOptions = [.curveEaseOut]
     
-    fileprivate var originalStatusBarStyle: UIStatusBarStyle = .default
+    open var blurView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0
+        return blurEffectView
+    }()
+    
+//    open var pullForDetailButton: NTButton = {
+//        let button = NTButton()
+//        button.image = Icon.Expand
+//        button.setDefaultShadow()
+//        button.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4)
+//        //button.isHidden = true
+//        return button
+//    }()
+
+    
+    open var animationDuration: Double = 0.4
+    open var animationDelay: Double = 0
+    open var animationSpringDamping: CGFloat = 0.8
+    open var animationSpringVelocity: CGFloat = 1.2
+    open var animationOptions: UIViewAnimationOptions = [.curveEaseIn]
+    open var frameTopAnchor: NSLayoutConstraint?
+    open var transition = NTCircularTransition()
+    open var height: CGFloat = 54
+    
+//    fileprivate var pullButtonTopAnchor: NSLayoutConstraint?
+//    fileprivate var pullButtonHeightAnchor: NSLayoutConstraint?
+    fileprivate var detailController: UIViewController?
+    fileprivate weak var parent: UIViewController?
     fileprivate var currentState: NTViewState = .hidden
     
     // MARK: - Initialization
     
-    public convenience init(type: NTAlertType = NTAlertType.isInfo, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, action : (() -> Void)? = nil) {
+    public convenience init(type: NTAlertType = NTAlertType.isInfo, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, blurBackground: Bool = false, height: CGFloat = 54, detailViewController: UIViewController? = nil) {
         
         var bounds =  UIScreen.main.bounds
-        bounds.origin.y = bounds.height - 64
-        bounds.size.height = 64
+        bounds.origin.y = bounds.height - height
+        bounds.size.height = height
         self.init(frame: bounds)
         
         setDefaultShadow()
@@ -73,18 +96,19 @@ open class NTChime: NTView {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         
-        iconView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 20, leftConstant: 12, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        titleLabel.anchor(topAnchor, left: nil, bottom: subtitleLabel.topAnchor, right: rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
-        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        iconView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 12, bottomConstant: 6, rightConstant: 6, widthConstant: 0, heightConstant: 0)
+        iconView.heightAnchor.constraint(lessThanOrEqualToConstant: height - 8).isActive = true
+        iconView.widthAnchor.constraint(lessThanOrEqualToConstant: height - 8).isActive = true
+        titleLabel.anchor(iconView.topAnchor, left: iconView.rightAnchor, bottom: subtitleLabel.topAnchor, right: rightAnchor, topConstant: 4, leftConstant: 6, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.anchorHeightToItem(titleLabel)
         
         titleLabel.text = title
         subtitleLabel.text = subtitle
         iconView.image = icon
-        
-        iconView.widthAnchor.constraint(equalToConstant: (icon != nil ? 40 : 0)).isActive = true
-        iconView.heightAnchor.constraint(equalToConstant: (icon != nil ? 40 : 0)).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: (icon != nil ? 8 : 0)).isActive = true
-       
+        blurView.isHidden = !blurBackground
+        self.height = height
+        self.detailController = detailViewController
         
         switch type {
         case .isInfo:
@@ -102,19 +126,32 @@ open class NTChime: NTView {
             titleLabel.textColor = .white
             subtitleLabel.textColor = .white
         }
+    
+        layer.cornerRadius = 5
+        
+        if detailController != nil {
+            
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+            addGestureRecognizer(panGesture)
+            let start = CGPoint(x: (frame.width / 2) - 25, y: height - 6)
+            let middle = CGPoint(x: (frame.width / 2), y: height - 4)
+            let end = CGPoint(x: (frame.width / 2) + 25, y: height - 6)
+            drawLineFrom([start, middle, end], ofColor: backgroundColor!.isLight ? Color.Gray.P800 : UIColor.white, ofWidth: 2.5, cornerRadius: 1)
+        }
     }
     
-    public convenience init(title: String? = nil, height: CGFloat = 64, color: UIColor = Color.Default.Status.Info, onTap : (() -> Void)?) {
+    public convenience init(title: String? = nil, height: CGFloat = 64, color: UIColor = Color.Default.Status.Info, blurBackground: Bool = true, detailViewController: UIViewController?) {
         
         var bounds =  UIScreen.main.bounds
         bounds.origin.y = bounds.height - height
         bounds.size.height = height
         self.init(frame: bounds)
         
-        action = onTap
+        self.detailController = detailViewController
         backgroundColor = color
         animationSpringDamping = 1
         animationSpringVelocity = 1
+        blurView.isHidden = !blurBackground
         
         addSubview(titleLabel)
         titleLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
@@ -136,42 +173,53 @@ open class NTChime: NTView {
     
     // MARK: - Actions
     
-    internal func didTap(_ recognizer: UITapGestureRecognizer) {
-        action?()
+    open func presentDetailController() {
+        guard let vc = detailController else { return }
+        vc.transitioningDelegate = self
+        vc.modalPresentationStyle = .custom
+        vc.view.layer.cornerRadius = 50
+        UIViewController.topController()?.present(vc, animated: true, completion: {
+            self.currentState = .hidden
+            self.blurBackground(false)
+//            self.pullForDetailButton.isHidden = true
+            self.isHidden = true
+            vc.view.layer.cornerRadius = 0
+        })
+    }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismiss()
+        super.touchesEnded(touches, with: event)
     }
     
     // MARK: - Presentation Methods
     
-    open func show(_ view: UIView? = UIViewController.topWindow(), duration: TimeInterval? = 3) {
+    open func show(_ viewController: UIViewController? = UIViewController.topController(), duration: TimeInterval? = 3) {
         if currentState != .hidden { return }
-        guard let view = view else { return }
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(NTToast.didTap(_:))))
-        view.addSubview(self)
-        frame = CGRect(x: 0, y: -view.frame.height, width: view.frame.width, height: self.frame.height)
-        
-        let topView: UIView = {
-            let view = UIView()
-            view.backgroundColor = self.backgroundColor
-            view.frame = CGRect(x: 0, y: -self.frame.height, width: self.frame.width, height: self.frame.height)
-            return view
-        }()
-        self.addSubview(topView)
-        
-        if backgroundColor!.isDark {
-            Log.write(.warning, "Ensure that 'View controller-based status bar appearance' is set to 'NO' in your projects Info.plist")
-            originalStatusBarStyle = UIApplication.shared.statusBarStyle
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
+        guard let viewController = viewController else { return }
+        viewController.view.addSubview(self)
+        frameTopAnchor = anchorWithReturnAnchors(viewController.view.topAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: -self.frame.height, leftConstant: 12, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: self.frame.height)[0]
         
         currentState = .transitioning
+        
+        parent = viewController
+        blurBackground(true)
+        viewController.view.layoutIfNeeded()
         UIView.animate(withDuration: animationDuration, delay: animationDelay, usingSpringWithDamping: animationSpringDamping, initialSpringVelocity: animationSpringVelocity, options: animationOptions, animations: {
-            self.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: self.frame.height)
+            self.frameTopAnchor?.constant = 24
+            viewController.view.layoutIfNeeded()
             
         }) { (finished) in
             self.currentState = .visible
-            self.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: self.frame.height)
-            topView.removeFromSuperview()
+//            viewController.view.insertSubview(self.pullForDetailButton, belowSubview: self)
+//            self.pullButtonTopAnchor = self.pullForDetailButton.anchorWithReturnAnchors(viewController.view.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 24, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: self.height, heightConstant: self.height)[0]
+//            self.pullForDetailButton.anchorCenterXToSuperview()
+//            self.pullForDetailButton.layer.cornerRadius = self.height / 2
+            
             guard let duration = duration else { return }
             DispatchQueue.executeAfter(duration, closure: {
                 self.dismiss()
@@ -180,17 +228,114 @@ open class NTChime: NTView {
     }
     
     open func dismiss() {
+        guard let parent = parent else { return }
         if currentState != .visible { return }
         currentState = .transitioning
         
-        UIView.transition(with: self, duration: 0.2, options: .curveLinear, animations: {() -> Void in
-            self.frame.origin = CGPoint(x: 0, y: -self.frame.height)
+        parent.view.layoutIfNeeded()
+        blurBackground(false)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.frameTopAnchor?.constant = -self.frame.height
+//            self.pullButtonTopAnchor?.constant = -self.frame.height
+            parent.view.layoutIfNeeded()
         }, completion: { finished in
             self.currentState = .hidden
-            if UIApplication.shared.statusBarStyle != self.originalStatusBarStyle {
-                UIApplication.shared.statusBarStyle = self.originalStatusBarStyle
-            }
+//            self.pullForDetailButton.removeFromSuperview()
             self.removeFromSuperview()
         })
+    }
+    
+    // MARK: - Background Blur
+    
+    open func blurBackground(_ isBlurred: Bool) {
+        guard let view = parent?.view else { return }
+        if isBlurred {
+            if !UIAccessibilityIsReduceTransparencyEnabled() {
+                if blurView.superview == nil {
+                    view.insertSubview(blurView, belowSubview: self)
+                    blurView.fillSuperview()
+                    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cancelBlur))
+                    blurView.addGestureRecognizer(tapGesture)
+                    UIView.animate(withDuration: animationDuration, delay: animationDelay, options: .curveLinear, animations: {
+                        self.blurView.alpha = 0.8
+                    }, completion: nil)
+                }
+            } else {
+                Log.write(.warning, "UIAccessibilityIsReduceTransparencyEnabled returned true, will not blur background")
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.blurView.alpha = 0
+            }, completion: { success in
+                self.blurView.removeFromSuperview()
+                self.blurView.gestureRecognizers?.removeAll()
+            })
+        }
+    }
+    
+    internal func cancelBlur() {
+        blurBackground(false)
+    }
+    
+    // MARK: - Pan Gesture
+    
+    open func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+        
+        guard let view = parent?.view else { return }
+        let velocity = gestureRecognizer.velocity(in: self).y
+        let translation = gestureRecognizer.translation(in: self)
+        
+        if gestureRecognizer.state == .began  || gestureRecognizer.state == .changed {
+            
+            if velocity < 0 {
+                dismiss()
+                return
+            }
+            blurView.alpha = 0
+            blurView.isHidden = false
+            
+//            let current = frameTopAnchor?.constant ?? 0
+//            if current >= (view.center.y / 4) && currentState == .visible {
+//                presentDetailController()
+//            } else if translation.y > 24  {
+//                frameTopAnchor?.constant = translation.y
+//            }
+            
+            var offset = translation.y
+            if center.y >= (height * 1.9) {
+                offset = 10 * offset / center.y
+                if center.y > (height * 2.1) {
+                    presentDetailController()
+                    gestureRecognizer.isEnabled = false
+                }
+            }
+            blurView.alpha = (center.y / (height * 1.5) / 2) < 0.8 ? center.y / (height * 1.5) / 2 : 0.8
+            
+            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + offset)
+            gestureRecognizer.setTranslation(CGPoint.zero, in: self)
+            
+            if velocity > 1000 {
+                presentDetailController()
+                gestureRecognizer.isEnabled = false
+            }
+        } else {
+            dismiss()
+        }
+    }
+    
+    // MARK: - Transition
+    
+    open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = center
+        transition.circle.frame = frame
+        transition.circleColor = detailController?.view.backgroundColor
+        return transition
+    }
+    
+    open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = UIViewController.topWindow()!.center
+        return transition
     }
 }

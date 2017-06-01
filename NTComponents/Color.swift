@@ -60,6 +60,7 @@ public struct Color {
             Color.Default.Tint.Toolbar = color
             Color.Default.Tint.Inactive = color.darker(by: 20)
             Color.Default.Tint.View = color
+            Color.Default.Status.Info = color
         }
 
         /**

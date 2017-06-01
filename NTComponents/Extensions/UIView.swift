@@ -27,6 +27,7 @@
 
 public extension UIView {
     
+    
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
@@ -36,6 +37,29 @@ public extension UIView {
             }
         }
         return nil
+    }
+    
+    func drawLineFrom(_ points: [CGPoint], ofColor lineColor: UIColor, ofWidth width: CGFloat = 1.0, cornerRadius: CGFloat = 0) {
+        
+        if points.count < 2 {
+            return
+        }
+        
+        let path = UIBezierPath()
+        path.move(to: points[0])
+        for point in points {
+            path.addLine(to: point)
+        }
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.backgroundColor = UIColor.clear.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = lineColor.cgColor
+        shapeLayer.lineWidth = width
+        shapeLayer.cornerRadius = cornerRadius
+        
+        self.layer.addSublayer(shapeLayer)
     }
     
     func applyGradient(colours: [UIColor])  {

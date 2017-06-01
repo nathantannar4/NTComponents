@@ -30,24 +30,46 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BANNER" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-tx-xyx">
                                 <rect key="frame" x="16" y="51" width="343" height="191"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="191" id="FJL-yM-WHo"/>
+                                    <constraint firstAttribute="height" constant="191" id="tX3-qu-DrX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 Nathan Tannar." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6z8-By-rhd">
-                                <rect key="frame" x="16" y="598" width="343" height="21"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6z8-By-rhd">
+                                <rect key="frame" x="16" y="278" width="343" height="369"/>
+                                <mutableString key="text">//  Copyright © 2017 Nathan Tannar.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+//  Created by Nathan Tannar</mutableString>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Abc-tx-xyx" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="7Fg-bj-v0A"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6z8-By-rhd" secondAttribute="bottom" constant="48" id="DNc-DQ-nXd"/>
-                            <constraint firstItem="Abc-tx-xyx" firstAttribute="trailing" secondItem="6z8-By-rhd" secondAttribute="trailing" id="E8B-fP-cjH"/>
-                            <constraint firstItem="Abc-tx-xyx" firstAttribute="leading" secondItem="6z8-By-rhd" secondAttribute="leading" id="ID5-ot-uoA"/>
-                            <constraint firstItem="Abc-tx-xyx" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="31" id="hIz-eL-Oqn"/>
-                            <constraint firstItem="Abc-tx-xyx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="lb2-nK-uE4"/>
+                            <constraint firstItem="Abc-tx-xyx" firstAttribute="leading" secondItem="6z8-By-rhd" secondAttribute="leading" id="BTu-Os-ddq"/>
+                            <constraint firstItem="6z8-By-rhd" firstAttribute="top" secondItem="Abc-tx-xyx" secondAttribute="bottom" constant="36" id="BbE-Lh-44d"/>
+                            <constraint firstAttribute="bottom" secondItem="6z8-By-rhd" secondAttribute="bottom" constant="20" symbolic="YES" id="OMZ-4K-wsB"/>
+                            <constraint firstItem="Abc-tx-xyx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="aTD-LZ-pKp"/>
+                            <constraint firstItem="Abc-tx-xyx" firstAttribute="trailing" secondItem="6z8-By-rhd" secondAttribute="trailing" id="aWW-pV-9zl"/>
+                            <constraint firstItem="Abc-tx-xyx" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="31" id="oSf-UL-A8Z"/>
+                            <constraint firstItem="Abc-tx-xyx" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="ymp-HI-9aj"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -55,6 +55,9 @@ import NTComponents
 ## Getting Started
 Coming soon...
 
+## Planned Improvements/Additons
+
+
 ## Contribute
 
 We would love for you to contribute to `NTComponents` with more useful extensions, models or UI classes. If interested please contact myself.

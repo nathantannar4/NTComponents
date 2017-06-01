@@ -27,31 +27,19 @@
 
 import UIKit
 
-/* Use
- 
- func present() {
- let vc = UIViewController()
- vc = self
- vc = .custom
- }
- 
- 
- func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
- transition.transitionMode = .present
- transition.startingPoint = menuButton.center
- transition.circleColor = menuButton.backgroundColor
- 
- return transition
- }
- 
- func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
- transition.transitionMode = .dismiss
- transition.startingPoint = menuButton.center
- transition.circleColor = menuButton.backgroundColor
- 
- return transition
- }
-*/
+open class NTTransition: NTCircularTransition {
+    
+    open override func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
+//        let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
+//        let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
+//        
+//        let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
+//        let size = CGSize(width: offestVector, height: offestVector)
+        
+        return CGRect(origin: CGPoint.zero, size: CGSize(width: UIScreen.main.bounds.width, height: 200))
+        
+    }
+}
 
 open class NTCircularTransition: NSObject, UIViewControllerAnimatedTransitioning {
  

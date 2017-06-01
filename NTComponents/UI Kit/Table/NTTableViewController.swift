@@ -37,7 +37,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         return tableView
     }()
     public var stretchyView: UIView = UIView()
-    public var stretchyHeaderHeight: CGFloat = 200 {
+    public var stretchyHeaderHeight: CGFloat = 0 {
         didSet {
             tableView.contentInset.top = stretchyHeaderHeight
             tableView.contentOffset = CGPoint(x: 0, y: -stretchyHeaderHeight)

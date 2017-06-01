@@ -102,6 +102,9 @@ open class NTButton: UIButton {
             rippleColor = rippleBackgroundColor.isLight ? rippleBackgroundColor.darker(by: 10) : rippleBackgroundColor.lighter(by: 10)
             if let color = newValue {
                 setTitleColor(color.isLight ? .black : .white, for: .normal)
+                if tintColor.isDark && color.isDark {
+                    tintColor = .white
+                }
             }
         }
     }
