@@ -62,6 +62,19 @@ public extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
     
+    func rotate360Degrees(duration: CFTimeInterval = 1.0, speed: Float = 1, completionDelegate: CAAnimationDelegate? = nil) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(Double.pi * 2.0)
+        rotateAnimation.duration = duration
+        rotateAnimation.speed = speed
+        
+        if let delegate = completionDelegate {
+            rotateAnimation.delegate = delegate
+        }
+        self.layer.add(rotateAnimation, forKey: nil)
+    }
+    
     func applyGradient(colours: [UIColor])  {
         self.applyGradient(colours: colours, locations: nil)
     }

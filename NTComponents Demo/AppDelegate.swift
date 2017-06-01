@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginVC.logo = #imageLiteral(resourceName: "BANNER")
         loginVC.title = "Login"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tabVC, TableViewController()])
+        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tabVC, TableViewController(), loginVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "Demo"
         centerVC.tabBarHeight = 25

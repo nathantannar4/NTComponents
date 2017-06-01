@@ -9,11 +9,13 @@
 import NTComponents
 
 class AlertDetailViewController: NTViewController {
+    
+    let button = NTButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let button = NTButton()
+        
         button.image = Icon.Delete
         button.tintColor = .white
         view.addSubview(button)

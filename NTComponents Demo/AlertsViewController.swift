@@ -239,6 +239,6 @@ class AlertsViewController: NTTableViewController {
     
     func showWheelLoader() {
         let loader = NTActivityIndicator()
-        loader.show(duration: 3)
+        loader.show(withTitle: "Loading...", duration: 3)
     }
 }

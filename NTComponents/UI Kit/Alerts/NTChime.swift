@@ -56,28 +56,16 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         return blurEffectView
     }()
     
-//    open var pullForDetailButton: NTButton = {
-//        let button = NTButton()
-//        button.image = Icon.Expand
-//        button.setDefaultShadow()
-//        button.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4)
-//        //button.isHidden = true
-//        return button
-//    }()
-
-    
     open var animationDuration: Double = 0.4
     open var animationDelay: Double = 0
     open var animationSpringDamping: CGFloat = 0.8
     open var animationSpringVelocity: CGFloat = 1.2
     open var animationOptions: UIViewAnimationOptions = [.curveEaseIn]
     open var frameTopAnchor: NSLayoutConstraint?
-    open var transition = NTCircularTransition()
+    open var transition = NTTransition()
     open var height: CGFloat = 54
+    open var detailController: UIViewController?
     
-//    fileprivate var pullButtonTopAnchor: NSLayoutConstraint?
-//    fileprivate var pullButtonHeightAnchor: NSLayoutConstraint?
-    fileprivate var detailController: UIViewController?
     fileprivate weak var parent: UIViewController?
     fileprivate var currentState: NTViewState = .hidden
     
@@ -140,28 +128,6 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         }
     }
     
-    public convenience init(title: String? = nil, height: CGFloat = 64, color: UIColor = Color.Default.Status.Info, blurBackground: Bool = true, detailViewController: UIViewController?) {
-        
-        var bounds =  UIScreen.main.bounds
-        bounds.origin.y = bounds.height - height
-        bounds.size.height = height
-        self.init(frame: bounds)
-        
-        self.detailController = detailViewController
-        backgroundColor = color
-        animationSpringDamping = 1
-        animationSpringVelocity = 1
-        blurView.isHidden = !blurBackground
-        
-        addSubview(titleLabel)
-        titleLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
-        
-        titleLabel.text = title
-        if color.isDark {
-            titleLabel.textColor = .white
-        }
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -178,10 +144,9 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         vc.transitioningDelegate = self
         vc.modalPresentationStyle = .custom
         vc.view.layer.cornerRadius = 50
+        currentState = .hidden
         UIViewController.topController()?.present(vc, animated: true, completion: {
-            self.currentState = .hidden
             self.blurBackground(false)
-//            self.pullForDetailButton.isHidden = true
             self.isHidden = true
             vc.view.layer.cornerRadius = 0
         })
@@ -215,11 +180,6 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
             
         }) { (finished) in
             self.currentState = .visible
-//            viewController.view.insertSubview(self.pullForDetailButton, belowSubview: self)
-//            self.pullButtonTopAnchor = self.pullForDetailButton.anchorWithReturnAnchors(viewController.view.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 24, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: self.height, heightConstant: self.height)[0]
-//            self.pullForDetailButton.anchorCenterXToSuperview()
-//            self.pullForDetailButton.layer.cornerRadius = self.height / 2
-            
             guard let duration = duration else { return }
             DispatchQueue.executeAfter(duration, closure: {
                 self.dismiss()
@@ -236,11 +196,9 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         blurBackground(false)
         UIView.animate(withDuration: 0.2, animations: {
             self.frameTopAnchor?.constant = -self.frame.height
-//            self.pullButtonTopAnchor?.constant = -self.frame.height
             parent.view.layoutIfNeeded()
         }, completion: { finished in
             self.currentState = .hidden
-//            self.pullForDetailButton.removeFromSuperview()
             self.removeFromSuperview()
         })
     }
@@ -281,7 +239,6 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     open func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
         
-        guard let view = parent?.view else { return }
         let velocity = gestureRecognizer.velocity(in: self).y
         let translation = gestureRecognizer.translation(in: self)
         
@@ -293,13 +250,6 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
             }
             blurView.alpha = 0
             blurView.isHidden = false
-            
-//            let current = frameTopAnchor?.constant ?? 0
-//            if current >= (view.center.y / 4) && currentState == .visible {
-//                presentDetailController()
-//            } else if translation.y > 24  {
-//                frameTopAnchor?.constant = translation.y
-//            }
             
             var offset = translation.y
             if center.y >= (height * 1.9) {
@@ -327,15 +277,26 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
+        transition.referenceView = self
         transition.startingPoint = center
-        transition.circle.frame = frame
-        transition.circleColor = detailController?.view.backgroundColor
+        transition.rippleView.isHidden = true
         return transition
     }
     
     open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        transition.startingPoint = UIViewController.topWindow()!.center
+        var center = UIViewController.topWindow()?.center ?? CGPoint.zero
+        if center.y > 0 {
+            center.y = center.y / 6
+        }
+        transition.startingPoint = center
+        transition.rippleView.isHidden = false
+        transition.rippleView.backgroundColor = backgroundColor
+        detailController?.view.backgroundColor = backgroundColor
+        DispatchQueue.executeAfter(1) { 
+            self.currentState = .visible
+            self.dismiss()
+        }
         return transition
     }
 }

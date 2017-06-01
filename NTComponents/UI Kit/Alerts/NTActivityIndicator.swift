@@ -50,6 +50,14 @@ open class NTActivityIndicator: UIView {
         return label
     }()
     
+    open var blurView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0
+        return blurEffectView
+    }()
+    
     // MARK: - Initialization
     
     public convenience init() {
@@ -59,7 +67,6 @@ open class NTActivityIndicator: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Color.Gray.P800.withAlphaComponent(0.4)
         addSubview(indicatorView)
     }
     
@@ -80,17 +87,21 @@ open class NTActivityIndicator: UIView {
         indicatorView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
         indicatorView.addSubview(activityIndicator)
         indicatorView.addSubview(titleLabel)
-        activityIndicator.anchor(indicatorView.topAnchor, left: indicatorView.leftAnchor, bottom: indicatorView.bottomAnchor, right: indicatorView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        activityIndicator.fillSuperview()
         if title != nil {
             titleLabel.text = title
             indicatorView.addSubview(titleLabel)
             titleLabel.anchor(nil, left: indicatorView.leftAnchor, bottom: indicatorView.bottomAnchor, right: indicatorView.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 8, rightConstant: 4, widthConstant: 0, heightConstant: 15)
         }
         
+        blurView.alpha = 0
+        parent.view.insertSubview(blurView, belowSubview: self)
+        blurView.fillSuperview()
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
+            self.blurView.alpha = 0.5
         }) { (success) in
-//            UIApplication.shared.beginIgnoringInteractionEvents()
             if success {
                 guard let duration = duration else {
                     return
@@ -105,10 +116,11 @@ open class NTActivityIndicator: UIView {
     open func dismiss() {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0
+            self.blurView.alpha = 0
         }) { (success) in
-//            UIApplication.shared.endIgnoringInteractionEvents()
             if success {
                 self.removeFromSuperview()
+                self.blurView.removeFromSuperview()
             }
         }
     }
