@@ -29,6 +29,13 @@ import UIKit
 
 open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate {
     
+    fileprivate static var currentChime: NTChime? {
+        willSet {
+            currentChime?.isHidden = true
+            currentChime?.dismiss()
+        }
+    }
+    
     open var iconView: NTImageView = {
         let imageView = NTImageView()
         return imageView
@@ -174,12 +181,15 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         parent = viewController
         blurBackground(true)
         viewController.view.layoutIfNeeded()
+        
         UIView.animate(withDuration: animationDuration, delay: animationDelay, usingSpringWithDamping: animationSpringDamping, initialSpringVelocity: animationSpringVelocity, options: animationOptions, animations: {
             self.frameTopAnchor?.constant = 24
+            NTChime.currentChime?.layer.shadowOpacity = 0
             viewController.view.layoutIfNeeded()
             
         }) { (finished) in
             self.currentState = .visible
+            NTChime.currentChime = self
             guard let duration = duration else { return }
             DispatchQueue.executeAfter(duration, closure: {
                 self.dismiss()

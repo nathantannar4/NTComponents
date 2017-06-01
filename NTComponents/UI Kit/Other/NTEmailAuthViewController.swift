@@ -113,7 +113,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
     let passwordViewToggleButton: NTButton = {
         let button = NTButton()
-        button.tintColor = Color.Default.Tint.View
+        button.imageView?.tintColor = Color.Default.Tint.View
         button.backgroundColor = .clear
         button.trackTouchLocation = false
         button.ripplePercent = 1.5

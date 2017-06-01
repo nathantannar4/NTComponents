@@ -35,7 +35,7 @@ open class NTLoginButton: NTButton {
 
 open class NTLoginViewController: NTViewController, UITableViewDataSource, UITableViewDelegate {
     
-    open var loginMethods: [NTLoginMethod] = [.facebook, .twitter, .google, .github, .linkedin, .email]
+    open var loginMethods: [NTLoginMethod] = [.email, .facebook, .twitter, .google, .github, .linkedin]
     
     open var logo: UIImage? {
         get {
@@ -83,6 +83,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.contentInset.top = 10
+        tableView.contentInset.bottom = 50
         return tableView
     }()
     
