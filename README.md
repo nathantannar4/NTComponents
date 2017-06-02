@@ -1,4 +1,4 @@
-![Logo](NTComponents/Assets/NT Components Banner.jpg)
+<img src="NTComponents/Assets/NT Components Banner.jpg">
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -69,7 +69,7 @@ We would love for you to contribute to `NTComponents` with more useful extension
 ## Author
 
 <img src="NTComponents/Assets/Nathan.png" width="75" height="75">
-[Nathan Tannar](https://nathantannar.me)  – nathantannar4@gmail.com
+Nathan Tannar - https://nathantannar.me
 
 ## License
 
