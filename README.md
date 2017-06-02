@@ -1,4 +1,4 @@
-![Logo](BANNER.jpg)
+![Logo](NTComponents/Assets/NT Components Banner.jpg)
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -47,6 +47,10 @@ import NTComponents
 
 ## Release History
 
+* 0.0.4
+    * Focus on animations and alert view updates
+* 0.0.3
+    * Focus on bug fixes and optimizations
 * 0.0.2
     * Completed the majority of main components
 * 0.0.1
@@ -64,7 +68,7 @@ We would love for you to contribute to `NTComponents` with more useful extension
 
 ## Author
 
-<img src="NATHAN.jpg" data-canonical-src="https://github.com/nathantannar4/Engage/blob/master/Engage/Nathan.jpg" width="75" height="75" style="border-radius: 50%">
+<img src="NTComponents/Assets/Nathan.png" width="75" height="75">
 [Nathan Tannar](https://nathantannar.me)  – nathantannar4@gmail.com
 
 ## License
