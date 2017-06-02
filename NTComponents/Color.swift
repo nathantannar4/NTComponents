@@ -92,11 +92,15 @@ public struct Color {
          - paramter offset: The offset of the shadow, defaults to CGSize(width: 0, height: 2)
          - returns: Void
         */
-        public static func setShadow(color: CGColor = Color.Gray.P600.cgColor, opacity: Float = 0.3, radius: CGFloat = 3, offset: CGSize = CGSize(width: 0, height: 2)) {
-            Color.Default.Shadow.cgColor = color
+        public static func setShadow(color: UIColor = Color.Gray.P500, opacity: Float = 0.3, radius: CGFloat = 3, offset: CGSize = CGSize(width: 0, height: 2)) {
+            Color.Default.Shadow.cgColor = color.cgColor
             Color.Default.Shadow.Opacity = opacity
             Color.Default.Shadow.Radius = radius
             Color.Default.Shadow.Offset = offset
+        }
+        
+        public static func setCleanShadow() {
+            setShadow(color: Color.Gray.P500, opacity: 1, radius: 1, offset: .zero)
         }
 
         public struct Tint {

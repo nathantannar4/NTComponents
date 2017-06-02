@@ -35,6 +35,16 @@ open class NTTableViewCell: UITableViewCell {
         }
     }
     
+    open override var selectionStyle: UITableViewCellSelectionStyle {
+        didSet {
+            if selectionStyle == .none {
+                ripplePercent = 0
+            } else {
+                ripplePercent = 1.2
+            }
+        }
+    }
+    
     // MARK: - Initialization
     
     public convenience init() {
@@ -52,7 +62,6 @@ open class NTTableViewCell: UITableViewCell {
         detailTextLabel?.numberOfLines = 0
         detailTextLabel?.lineBreakMode = .byWordWrapping
         imageView?.tintColor = Color.Default.Tint.View
-        selectionStyle = .none
         setup()
         
     }
@@ -73,6 +82,14 @@ open class NTTableViewCell: UITableViewCell {
     }
     
     // MARK: - Standard Methods
+    
+    open override func setSelected(_ selected: Bool, animated: Bool) {
+        // Purposefully Empty
+    }
+    
+    open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        // Purposefully Empty
+    }
     
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         

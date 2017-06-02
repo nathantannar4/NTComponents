@@ -287,4 +287,22 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Log.write(.status, "Selected row at index path \(indexPath)")
     }
+    
+    // MARK: - Refresh Methods
+    
+    open func refreshControl() -> NTRefreshControl? {
+        let rc = NTRefreshControl()
+        rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            return rc
+        }
+        return nil
+    }
+    
+    open func handleRefresh() {
+        if #available(iOS 10.0, *) {
+            (tableView.refreshControl as? NTRefreshControl)?.beginRefreshing()
+        }
+        
+    }
 }

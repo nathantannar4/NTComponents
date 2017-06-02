@@ -59,7 +59,7 @@ open class NTTabBar: UIView, NTTabBarItemDelegate {
         backgroundColor = Color.Default.Background.TabBar
         
         setDefaultShadow()
-        layer.shadowOffset = CGSize(width: 0, height: -1)
+        layer.shadowOffset = CGSize(width: 0, height: -Color.Default.Shadow.Offset.height)
         
         _items = []
 //        

@@ -63,15 +63,11 @@ open class NTAnimatedMenuButton: NTButton {
     // MARK: - Initializers
     
     open override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        DispatchQueue.executeAfter(0.15) {
-            super.endTracking(touch, with: event)
-        }
+        super.endTracking(touch, with: event)
     }
     
     open override func cancelTracking(with event: UIEvent?) {
-        DispatchQueue.executeAfter(0.14) {
-            super.cancelTracking(with: event)
-        }
+        super.cancelTracking(with: event)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -85,6 +81,7 @@ open class NTAnimatedMenuButton: NTButton {
     init(frame: CGRect, strokeColor: UIColor) {
         self.strokeColor = strokeColor
         super.init(frame: frame)
+        touchUpAnimationTime = 0.2
         
         self.top.path = longStroke;
         self.middle.path = shortStroke;

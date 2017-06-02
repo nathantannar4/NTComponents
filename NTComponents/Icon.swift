@@ -61,6 +61,8 @@ public struct Icon {
     public static let github = UIImage(named: "ic_github_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     
     
+    public static let NTLogo = icon("NT Logo Black")
+    
     public static let Delete = icon("Delete_ffffff_100")
     
     public static let Email = icon("ic_email")
@@ -78,6 +80,7 @@ public struct Icon {
     public static let MoreVertical = UIImage().imageRotatedByDegrees(oldImage: icon("More")!, deg: 90)
     public static let Expand = icon("Expand-100")
     public static let Spinner = icon("Synchronize-100")
+    public static let PullDownArrow = icon("Down-100")
     
     public struct Arrow {
         public static let Backward = Icon.icon("Backward_ffffff_100")

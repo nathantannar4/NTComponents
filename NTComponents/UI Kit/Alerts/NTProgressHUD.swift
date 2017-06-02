@@ -1,5 +1,5 @@
 //
-//  NTActivityIndicator.swift
+//  NTProgressHUD.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -25,7 +25,7 @@
 //  Created by Nathan Tannar on 5/29/17.
 //
 
-open class NTActivityIndicator: UIView {
+open class NTProgressHUD: UIView {
     
     open let indicatorView: UIView = {
         let view = UIView()
@@ -34,28 +34,19 @@ open class NTActivityIndicator: UIView {
         return view
     }()
     
-    open let activityIndicator: UIActivityIndicatorView = {
-        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        activityIndicatorView.startAnimating()
-        activityIndicatorView.color = Color.Gray.P800
-        return activityIndicatorView
+    open let activityIndicator: NTActivityView = {
+        let activityView = NTActivityView()
+        activityView.startAnimating()
+        return activityView
     }()
     
     open let titleLabel: NTLabel = {
         let label = NTLabel(style: .body)
         label.font = Font.Default.Body.withSize(12)
         label.textAlignment = .center
-        label.textColor = Color.Gray.P800
+        label.textColor = Color.Gray.P500
         label.adjustsFontSizeToFitWidth = true
         return label
-    }()
-    
-    open var blurView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0
-        return blurEffectView
     }()
     
     // MARK: - Initialization
@@ -87,20 +78,16 @@ open class NTActivityIndicator: UIView {
         indicatorView.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
         indicatorView.addSubview(activityIndicator)
         indicatorView.addSubview(titleLabel)
-        activityIndicator.fillSuperview()
-        if title != nil {
-            titleLabel.text = title
-            indicatorView.addSubview(titleLabel)
-            titleLabel.anchor(nil, left: indicatorView.leftAnchor, bottom: indicatorView.bottomAnchor, right: indicatorView.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 8, rightConstant: 4, widthConstant: 0, heightConstant: 15)
-        }
+        indicatorView.addSubview(titleLabel)
         
-        blurView.alpha = 0
-        parent.view.insertSubview(blurView, belowSubview: self)
-        blurView.fillSuperview()
+        activityIndicator.anchor(indicatorView.topAnchor, left: indicatorView.leftAnchor, bottom: titleLabel.topAnchor, right: indicatorView.rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
+        titleLabel.text = title
+        titleLabel.anchor(nil, left: indicatorView.leftAnchor, bottom: indicatorView.bottomAnchor, right: indicatorView.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 8, rightConstant: 4, widthConstant: 0, heightConstant: 0)
+    
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
-            self.blurView.alpha = 0.5
+            self.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
         }) { (success) in
             if success {
                 guard let duration = duration else {
@@ -116,11 +103,10 @@ open class NTActivityIndicator: UIView {
     open func dismiss() {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0
-            self.blurView.alpha = 0
+            self.backgroundColor = .clear
         }) { (success) in
             if success {
                 self.removeFromSuperview()
-                self.blurView.removeFromSuperview()
             }
         }
     }

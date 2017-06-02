@@ -61,6 +61,7 @@ open class NTTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 let viewCenter = presentedView.center
                 let viewSize = presentedView.frame.size
                 
+                rippleView.setDefaultShadow()
                 rippleView.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startingPoint)
                 rippleView.layer.cornerRadius = (referenceView?.layer.cornerRadius ?? rippleView.frame.size.height / 2)
                 rippleView.center = startingPoint

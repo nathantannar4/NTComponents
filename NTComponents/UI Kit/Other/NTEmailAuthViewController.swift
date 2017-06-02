@@ -123,7 +123,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         return button
     }()
     
-    fileprivate let indicatorView = NTActivityIndicator()
+    fileprivate let indicatorView = NTProgressHUD()
     
     open var showActivityIndicator: Bool = false {
         didSet {

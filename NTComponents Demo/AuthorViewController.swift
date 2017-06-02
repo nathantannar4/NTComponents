@@ -63,7 +63,7 @@ class AuthorViewController: NTTableViewController, NTTableViewImageDataSource {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(NTViewController(), animated: true)
+//        navigationController?.pushViewController(NTViewController(), animated: true)
     }
     
     func imageForStretchyView(in tableView: NTTableView) -> UIImage? {

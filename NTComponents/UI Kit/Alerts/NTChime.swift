@@ -38,6 +38,10 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     open var iconView: NTImageView = {
         let imageView = NTImageView()
+        imageView.layer.cornerRadius = 5
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.backgroundColor = .white
         return imageView
     }()
     
@@ -85,18 +89,9 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         bounds.size.height = height
         self.init(frame: bounds)
         
-        setDefaultShadow()
-        
-        addSubview(iconView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
-        
-        iconView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 4, leftConstant: 12, bottomConstant: 6, rightConstant: 6, widthConstant: 0, heightConstant: 0)
-        iconView.heightAnchor.constraint(lessThanOrEqualToConstant: height - 8).isActive = true
-        iconView.widthAnchor.constraint(lessThanOrEqualToConstant: height - 8).isActive = true
-        titleLabel.anchor(iconView.topAnchor, left: iconView.rightAnchor, bottom: subtitleLabel.topAnchor, right: rightAnchor, topConstant: 4, leftConstant: 6, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 0)
-        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        subtitleLabel.anchorHeightToItem(titleLabel)
+        clipsToBounds = true
+        layer.cornerRadius = 5
+        backgroundColor = Color.Gray.P100
         
         titleLabel.text = title
         subtitleLabel.text = subtitle
@@ -105,33 +100,50 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         self.height = height
         self.detailController = detailViewController
         
+        let topView = UIView()
+        addSubview(topView)
+        topView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        
+        addSubview(iconView)
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
+        
+        let hasImage = iconView.image != nil
+        iconView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        if hasImage {
+            iconView.anchorAspectRatio()
+        } else {
+            iconView.widthAnchor.constraint(equalToConstant: 0).isActive = true
+        }
+        
+        
+        titleLabel.anchor(topView.topAnchor, left: iconView.rightAnchor, bottom: topView.bottomAnchor, right: topView.rightAnchor, topConstant: 0, leftConstant: hasImage ? 8 : 0, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.anchor(topView.bottomAnchor, left: iconView.rightAnchor, bottom: bottomAnchor, right: topView.rightAnchor, topConstant: 2, leftConstant: hasImage ? 8 : 0, bottomConstant: 6, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        
         switch type {
         case .isInfo:
-            backgroundColor = Color.Default.Status.Info
+            topView.backgroundColor = Color.Default.Status.Info
         case .isSuccess:
-            backgroundColor = Color.Default.Status.Success
+            topView.backgroundColor = Color.Default.Status.Success
         case .isWarning:
-            backgroundColor = Color.Default.Status.Warning
+            topView.backgroundColor = Color.Default.Status.Warning
         case .isDanger:
-            backgroundColor = Color.Default.Status.Danger
+            topView.backgroundColor = Color.Default.Status.Danger
         }
         
-        if backgroundColor!.isDark {
-            iconView.tintColor = .white
+        iconView.tintColor = topView.backgroundColor
+        
+        if topView.backgroundColor!.isDark {
             titleLabel.textColor = .white
-            subtitleLabel.textColor = .white
         }
     
-        layer.cornerRadius = 5
-        
         if detailController != nil {
-            
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
             addGestureRecognizer(panGesture)
             let start = CGPoint(x: (frame.width / 2) - 25, y: height - 6)
             let middle = CGPoint(x: (frame.width / 2), y: height - 4)
             let end = CGPoint(x: (frame.width / 2) + 25, y: height - 6)
-            drawLineFrom([start, middle, end], ofColor: backgroundColor!.isLight ? Color.Gray.P800 : UIColor.white, ofWidth: 2.5, cornerRadius: 1)
+            drawLineFrom([start, middle, end], ofColor: backgroundColor!.isLight ? Color.Gray.P500 : UIColor.white, ofWidth: 2.5, cornerRadius: 1)
         }
     }
     
@@ -274,7 +286,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + offset)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self)
             
-            if velocity > 1000 {
+            if velocity > 1500 {
                 presentDetailController()
                 gestureRecognizer.isEnabled = false
             }

@@ -1,108 +1,107 @@
 {
   "images" : [
-	{
+    {
       "size" : "20x20",
-      "idiom": "iphone",
-	  "filename" : "LOGO-20@2x.png",
-      "scale": "2x"
-    },
-	{
-      "size" : "20x20",
-      "idiom": "iphone",
-	  "filename" : "LOGO-20@3x.png",
-      "scale": "3x"
-    },
-	{
-      "size" : "20x20",
-      "idiom": "ipad",
-	  "filename" : "LOGO-20.png",
-      "scale": "1x"
+      "idiom" : "iphone",
+      "filename" : "NT Logo Blue-20@2x.png",
+      "scale" : "2x"
     },
     {
       "size" : "20x20",
-      "idiom": "ipad",
-	  "filename" : "LOGO-20@2x.png",
-      "scale": "2x"
+      "idiom" : "iphone",
+      "filename" : "NT Logo Blue-20@3x.png",
+      "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "LOGO-29@2x.png",
+      "filename" : "NT Logo Blue-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "LOGO-29@3x.png",
+      "filename" : "NT Logo Blue-29@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "LOGO-40@2x.png",
+      "filename" : "NT Logo Blue-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "LOGO-40@3x.png",
+      "filename" : "NT Logo Blue-40@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "LOGO-60@2x.png",
+      "filename" : "NT Logo Blue-60@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "LOGO-60@3x.png",
+      "filename" : "NT Logo Blue-60@3x.png",
       "scale" : "3x"
     },
     {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "NT Logo Blue-20.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "NT Logo Blue-20@2x.png",
+      "scale" : "2x"
+    },
+    {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "LOGO-29.png",
+      "filename" : "NT Logo Blue-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "LOGO-29@2x.png",
+      "filename" : "NT Logo Blue-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "LOGO-40.png",
+      "filename" : "NT Logo Blue-40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "LOGO-40@2x.png",
+      "filename" : "NT Logo Blue-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "LOGO-76.png",
+      "filename" : "NT Logo Blue-76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "LOGO-76@2x.png",
+      "filename" : "NT Logo Blue-76@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "LOGO-83.5@2x.png",
+      "filename" : "NT Logo Blue-83.5@2x.png",
       "scale" : "2x"
     }
-	
   ],
   "info" : {
     "version" : 1,

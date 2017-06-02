@@ -214,7 +214,7 @@ class AlertsViewController: NTTableViewController {
     }
     
     func showChime(type: NTAlertType) {
-        let chime = NTChime(type: type, title: "Title", subtitle: "Subtile/Description", icon: Icon.Email, detailViewController: AlertDetailViewController())
+        let chime = NTChime(type: type, title: "Title", subtitle: "Subtile/Description", icon: Icon.NTLogo, detailViewController: AlertDetailViewController())
         chime.show()
     }
     
@@ -238,7 +238,7 @@ class AlertsViewController: NTTableViewController {
     }
     
     func showWheelLoader() {
-        let loader = NTActivityIndicator()
+        let loader = NTProgressHUD()
         loader.show(withTitle: "Loading...", duration: 3)
     }
 }

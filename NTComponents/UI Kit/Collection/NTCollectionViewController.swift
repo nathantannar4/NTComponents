@@ -173,19 +173,18 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - Refresh Methods
     
-    open func refreshControl() -> UIRefreshControl? {
-        let rc = UIRefreshControl()
-        rc.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+    open func refreshControl() -> NTRefreshControl? {
+        let rc = NTRefreshControl()
         rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
             return rc
-        } else {
-            Log.write(.error, "UIRefreshControl requires iOS 10.0")
-            return nil
         }
+        return nil
     }
     
     open func handleRefresh() {
-        
+        if #available(iOS 10.0, *) {
+            (collectionView?.refreshControl as? NTRefreshControl)?.beginRefreshing()
+        }
     }
 }

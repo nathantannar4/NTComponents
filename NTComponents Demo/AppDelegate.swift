@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Color.Default.Background.Button = UIColor(hex: "31485e")
         Color.Default.Text.Subtitle = Color.Gray.P700
         Color.Default.Tint.Inactive = Color.Gray.P500
-    
+        Color.Default.setCleanShadow()
         
         Font.Default.Title = Font.Roboto.Regular.withSize(18)
         Font.Default.Subtitle = Font.Roboto.Regular
@@ -57,14 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabVCs.append(vc)
         }
         
+        let profileVC = NTProfileViewController()
+        
         let tabVC = NTTabBarController(viewControllers: tabVCs)
         tabVC.title = "TabBar"
         
         let loginVC = NTLoginViewController()
-        loginVC.logo = #imageLiteral(resourceName: "BANNER")
+        loginVC.logo = #imageLiteral(resourceName: "NT Components Banner")
         loginVC.title = "Login"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [alertsVC, tabVC, TableViewController(), loginVC])
+        let centerVC = NTScrollableTabBarController(viewControllers: [profileVC, alertsVC, tabVC, TableViewController(), loginVC])
         centerVC.title = "NTComponents"
         centerVC.subtitle = "Demo"
         centerVC.tabBarHeight = 25

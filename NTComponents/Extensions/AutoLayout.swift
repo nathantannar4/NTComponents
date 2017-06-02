@@ -54,6 +54,18 @@ public extension UIView {
         bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
     }
     
+    func anchorAspectRatio() {
+        let aspectRatioConstraint = NSLayoutConstraint(item: self,
+                                                       attribute: .height,
+                                                       relatedBy: .equal,
+                                                       toItem: self,
+                                                       attribute: .width,
+                                                       multiplier: 1,
+                                                       constant: 0)
+        
+        self.addConstraint(aspectRatioConstraint)
+    }
+    
     func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) {
         
         _ = anchorWithReturnAnchors(top, left: left, bottom: bottom, right: right, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant, widthConstant: widthConstant, heightConstant: heightConstant)

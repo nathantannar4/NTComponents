@@ -14,6 +14,7 @@ class TableViewController: NTTableViewController {
         super.viewDidLoad()
         
         title = "Table View"
+        tableView.refreshControl = refreshControl()!
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,6 +34,15 @@ class TableViewController: NTTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(NTViewController(), animated: true)
+    }
+    
+    
+    override func handleRefresh() {
+        super.handleRefresh()
+        
+        DispatchQueue.executeAfter(3) {
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
 }
 
