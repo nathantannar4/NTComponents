@@ -147,7 +147,13 @@ open class NTAlertViewController: UIViewController  {
         confirmButton.anchor(nil, left: titleLabel.leftAnchor, bottom: cancelButton.topAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)
     }
     
+    open override func show(_ vc: UIViewController? = UIViewController.topWindow()?.rootViewController, sender: Any? = nil) {
+        guard let viewController = vc else { return }
+        viewController.present(self, animated: true, completion: nil)
+    }
+    
     // MARK: - Actions
+    
     open func cancelButtonPressed() {
         Log.write(.status, "Cancel button pressed")
         dismiss(animated: true) { 

@@ -1,5 +1,5 @@
 //
-//  Log.swift
+//  NTCircularTransitioningDelegate.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,49 +22,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 6/2/17.
 //
 
-public enum LogType {
-    case error, warning, status
-}
-
-public enum LogMode: Int {
-    case off = 0
-    case verbose = 1
-    case debug = 2
-}
-
-public struct Log {
+open class NTCircularTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
-    fileprivate static var mode: LogMode = .debug
+    open var referenceView: UIView
+    open var transition = NTCircularTransition()
     
-    public static func setTraceLevel(to mode: LogMode) {
-        Log.mode = mode
-    }
-
-    public static func write(_ type: LogType, _ text: String) {
-        var message = String()
-        switch type {
-        case .error:
-            if Log.mode.rawValue != 0 {
-                message.append("### ERROR  : ")
-                message.append(text)
-                print(message)
-            }
-        case .warning:
-            if Log.mode.rawValue >= 1 {
-                message.append("### WARNING: ")
-                message.append(text)
-                print(message)
-            }
-        case .status:
-            if Log.mode.rawValue == 2 {
-                message.append("### STATUS : ")
-                message.append(text)
-                print(message)
-            }
-        }
+    public init(referenceView: UIView) {
+        self.referenceView = referenceView
+        super.init()
     }
     
+    open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.referenceView = referenceView
+        return transition
+    }
+    
+    open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.referenceView = referenceView
+        return transition
+    }
 }

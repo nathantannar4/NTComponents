@@ -20,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Color.Default.setPrimary(to: .white)
         Color.Default.setSecondary(to: UIColor(hex: "31485e"))
         Color.Default.Background.Button = UIColor(hex: "31485e")
-        Color.Default.Text.Subtitle = Color.Gray.P700
-        Color.Default.Tint.Inactive = Color.Gray.P500
         Color.Default.setCleanShadow()
         
         Font.Default.Title = Font.Roboto.Regular.withSize(18)
@@ -46,35 +44,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         leftMenuLabel.fillSuperview()
         
         
-        let alertsVC = AlertsViewController()
-        
-        var tabVCs = [UIViewController]()
-        for i in 0...2 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.groupTableViewBackground.darker(by: CGFloat(i * 5))
-            vc.title = "Title"
-            vc.tabBarItem.image = Icon.google
-            tabVCs.append(vc)
-        }
-        
-        let profileVC = NTProfileViewController()
-        
-        let tabVC = NTTabBarController(viewControllers: tabVCs)
-        tabVC.title = "TabBar"
-        
         let loginVC = NTLoginViewController()
         loginVC.logo = #imageLiteral(resourceName: "NT Components Banner")
-        loginVC.title = "Login"
         
-        let centerVC = NTScrollableTabBarController(viewControllers: [profileVC, alertsVC, tabVC, TableViewController(), loginVC])
-        centerVC.title = "NTComponents"
-        centerVC.subtitle = "Demo"
-        centerVC.tabBarHeight = 25
-        centerVC.tabBarPosition = .top
+        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC, NTProfileViewController()])
+        sampleVC.tabBarHeight = 32
+        sampleVC.tabBarPosition = .top
+        sampleVC.title = "Samples"
+        sampleVC.viewDidLoad()
         
-        let navVC = NTNavigationController(rootViewController: AuthorViewController())
-        let root = NTNavigationContainer(centerView: centerVC, leftView: navVC)
+        let core = NTScrollableTabBarController(viewControllers: [NTFormViewController(), TableViewController()])
+        core.tabBarHeight = 32
+        core.tabBarPosition = .top
+        core.title = "Core"
+        core.viewDidLoad()
+        
+        let tabbarVC = NTScrollableTabBarController(viewControllers: [core, AlertsViewController(), sampleVC])
+        tabbarVC.title = "NTComponents"
+        tabbarVC.subtitle = "Demo"
+        tabbarVC.tabBarHeight = 44
+        tabbarVC.tabBarPosition = .bottom
+        tabbarVC.currentTabBarHeight = 0
+        tabbarVC.viewDidLoad()
+        
+        let root = NTNavigationContainer(centerView: tabbarVC, leftView: leftVC)
         root.leftPanelWidth = 350
+        
+        
+        
+        
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         
@@ -104,5 +102,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+class ViewController: UIViewController {
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let toggle = NTSwitch().onSwitchChanged { (isOn) in
+            NTPing(title: isOn ? "On" : "Off", color: Color.Default.Tint.NavigationBar).show()
+        }
+
+        view.addSubview(toggle)
+        toggle.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 100, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 40, heightConstant: 30)
+        
+        let check = NTCheckbox()
+        view.addSubview(check)
+        check.anchor(toggle.bottomAnchor, left: toggle.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func switchStateChanged(_ isOn: Bool) {
+        print(isOn)
+    }
+}
+
+extension ViewController: NTSegmentedControlDelegate {
+    func didSelect(_ segmentIndex: Int) {
+        print("Selected index: \(segmentIndex)")
+    }
 }
 

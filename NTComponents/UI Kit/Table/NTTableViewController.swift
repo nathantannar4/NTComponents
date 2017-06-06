@@ -87,6 +87,10 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
             return
         }
         
+        if stretchyHeaderHeight == 0 {
+            stretchyHeaderHeight = 150 // Default
+        }
+        
         if navigationController?.navigationBar.alpha != nil {
             if navigationController!.navigationBar.alpha <= CGFloat(0.5) {
                 UIApplication.shared.statusBarStyle = .lightContent

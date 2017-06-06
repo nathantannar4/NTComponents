@@ -9,12 +9,18 @@
 import UIKit
 import NTComponents
 
-class TableViewController: NTTableViewController {
+class TableViewController: NTTableViewController, NTTableViewImageDataSource {
+    
+    var delegate: NTSwipeableTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Table View"
-        tableView.refreshControl = refreshControl()!
+        let rc = refreshControl()
+        rc?.titleLabel.textColor = .white
+        tableView.refreshControl = rc
+        tableView.imageDataSource = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,8 +38,8 @@ class TableViewController: NTTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(NTViewController(), animated: true)
+    func imageForStretchyView(in tableView: NTTableView) -> UIImage? {
+        return #imageLiteral(resourceName: "Background")
     }
     
     

@@ -26,6 +26,11 @@
 		3818F70A1E5BDF5000902E23 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F91E5BDF5000902E23 /* Log.swift */; };
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
+		3823293A1EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382329391EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift */; };
+		3823293C1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3823293B1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift */; };
+		3823293E1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3823293D1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift */; };
+		382329401EE2863B00945C31 /* NTSwipeablePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3823293F1EE2863B00945C31 /* NTSwipeablePresentationController.swift */; };
+		382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */; };
 		383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */; };
 		3863D89A1EB0686E003B73F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3863D8471EB0686E003B73F7 /* Assets.xcassets */; };
 		3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */; };
@@ -54,9 +59,6 @@
 		3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */; };
 		3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */; };
 		3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86C1EB0686E003B73F7 /* NTToast.swift */; };
-		3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86E1EB0686E003B73F7 /* NTButton.swift */; };
-		3863D8BC1EB0686E003B73F7 /* NTAnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86F1EB0686E003B73F7 /* NTAnimatedMenuButton.swift */; };
-		3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8701EB0686E003B73F7 /* NTToolbar.swift */; };
 		3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */; };
 		3863D8BF1EB0686E003B73F7 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8731EB0686E003B73F7 /* NTCollectionViewCell.swift */; };
 		3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */; };
@@ -90,6 +92,15 @@
 		386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9B41ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift */; };
 		386AB9B91ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9B71ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift */; };
 		386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */; };
+		388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */; };
+		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
+		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
+		388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE71EE528840036AECE /* NTToolbar.swift */; };
+		388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE91EE5298C0036AECE /* NTCheckbox.swift */; };
+		388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EED1EE678B70036AECE /* NTFormViewController.swift */; };
+		388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF01EE678F80036AECE /* NTFormDatasource.swift */; };
+		388C1EF31EE679060036AECE /* NTFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF21EE679060036AECE /* NTFormCell.swift */; };
+		388C1EF51EE6791C0036AECE /* NTFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF41EE6791C0036AECE /* NTFormSection.swift */; };
 		389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3D41EB307370089E9C1 /* MapViewController.swift */; };
 		389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F41EB51EBE0089E9C1 /* NTChime.swift */; };
 		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
@@ -97,6 +108,7 @@
 		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
 		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
+		38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */; };
 		38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
@@ -159,6 +171,11 @@
 		3818F6F91E5BDF5000902E23 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		382329391EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSwipeableTransitioningDelegate.swift; sourceTree = "<group>"; };
+		3823293B1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSwipeableModalInteractiveTransition.swift; sourceTree = "<group>"; };
+		3823293D1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSwipeableTransitionAnimator.swift; sourceTree = "<group>"; };
+		3823293F1EE2863B00945C31 /* NTSwipeablePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSwipeablePresentationController.swift; sourceTree = "<group>"; };
+		382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransitioningDelegate.swift; sourceTree = "<group>"; };
 		383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		3863D8471EB0686E003B73F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -187,9 +204,6 @@
 		3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetViewController.swift; sourceTree = "<group>"; };
 		3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertViewController.swift; sourceTree = "<group>"; };
 		3863D86C1EB0686E003B73F7 /* NTToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToast.swift; sourceTree = "<group>"; };
-		3863D86E1EB0686E003B73F7 /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
-		3863D86F1EB0686E003B73F7 /* NTAnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedMenuButton.swift; sourceTree = "<group>"; };
-		3863D8701EB0686E003B73F7 /* NTToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
 		3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
 		3863D8731EB0686E003B73F7 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
 		3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +237,15 @@
 		386AB9B41ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasourceCell.swift; sourceTree = "<group>"; };
 		386AB9B71ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewDefaultCells.swift; sourceTree = "<group>"; };
 		386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTAnimatedMenuButton.swift; path = Controls/NTAnimatedMenuButton.swift; sourceTree = "<group>"; };
+		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
+		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
+		388C1EE71EE528840036AECE /* NTToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
+		388C1EE91EE5298C0036AECE /* NTCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCheckbox.swift; path = Controls/NTCheckbox.swift; sourceTree = "<group>"; };
+		388C1EED1EE678B70036AECE /* NTFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormViewController.swift; path = "NTComponents/UI Kit/Form/NTFormViewController.swift"; sourceTree = SOURCE_ROOT; };
+		388C1EF01EE678F80036AECE /* NTFormDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormDatasource.swift; path = Form/NTFormDatasource.swift; sourceTree = "<group>"; };
+		388C1EF21EE679060036AECE /* NTFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFormCell.swift; sourceTree = "<group>"; };
+		388C1EF41EE6791C0036AECE /* NTFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFormSection.swift; sourceTree = "<group>"; };
 		389AF3D41EB307370089E9C1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		389AF3F41EB51EBE0089E9C1 /* NTChime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTChime.swift; sourceTree = "<group>"; };
 		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
@@ -230,6 +253,7 @@
 		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
+		38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSegmentedControl.swift; path = Controls/NTSegmentedControl.swift; sourceTree = "<group>"; };
 		38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUserViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +318,11 @@
 			isa = PBXGroup;
 			children = (
 				380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */,
+				382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */,
+				382329391EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift */,
+				3823293B1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift */,
+				3823293D1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift */,
+				3823293F1EE2863B00945C31 /* NTSwipeablePresentationController.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -405,8 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				3863D87D1EB0686E003B73F7 /* NTViewController.swift */,
+				388C1EEF1EE678C40036AECE /* Form */,
 				3863D8691EB0686E003B73F7 /* Alerts */,
-				3863D86D1EB0686E003B73F7 /* Buttons */,
 				380EEA1C1EDE862D0018FC37 /* Camera */,
 				3863D8711EB0686E003B73F7 /* Collection */,
 				3863D8751EB0686E003B73F7 /* Map */,
@@ -414,6 +443,7 @@
 				3863D87E1EB0686E003B73F7 /* Other */,
 				3863D8801EB0686E003B73F7 /* Page */,
 				3863D8821EB0686E003B73F7 /* Search */,
+				38AFA4D31EE501D90056DDFC /* Controls */,
 				3863D8861EB0686E003B73F7 /* TabBar */,
 				3863D88E1EB0686E003B73F7 /* Table */,
 				3863D8921EB0686E003B73F7 /* Text */,
@@ -435,16 +465,6 @@
 				380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */,
 			);
 			path = Alerts;
-			sourceTree = "<group>";
-		};
-		3863D86D1EB0686E003B73F7 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				3863D86E1EB0686E003B73F7 /* NTButton.swift */,
-				3863D86F1EB0686E003B73F7 /* NTAnimatedMenuButton.swift */,
-				3863D8701EB0686E003B73F7 /* NTToolbar.swift */,
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		3863D8711EB0686E003B73F7 /* Collection */ = {
@@ -553,9 +573,33 @@
 				3863D8991EB0686E003B73F7 /* NTView.swift */,
 				38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */,
 				38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */,
+				388C1EE71EE528840036AECE /* NTToolbar.swift */,
 				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		388C1EEF1EE678C40036AECE /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				388C1EED1EE678B70036AECE /* NTFormViewController.swift */,
+				388C1EF01EE678F80036AECE /* NTFormDatasource.swift */,
+				388C1EF21EE679060036AECE /* NTFormCell.swift */,
+				388C1EF41EE6791C0036AECE /* NTFormSection.swift */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		38AFA4D31EE501D90056DDFC /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */,
+				388C1EE21EE528770036AECE /* NTButton.swift */,
+				38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */,
+				388C1EE31EE528770036AECE /* NTSwitch.swift */,
+				388C1EE91EE5298C0036AECE /* NTCheckbox.swift */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		38FCFA3A1ECFF7AD007D3019 /* Login */ = {
@@ -714,16 +758,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
+				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
 				3863D8B01EB0686E003B73F7 /* NSMutableAttributedString.swift in Sources */,
 				3863D8D21EB0686E003B73F7 /* NTTabBarItem.swift in Sources */,
+				388C1EF31EE679060036AECE /* NTFormCell.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */,
-				3863D8BC1EB0686E003B73F7 /* NTAnimatedMenuButton.swift in Sources */,
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
 				3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */,
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
+				3823293C1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift in Sources */,
 				3863D8B21EB0686E003B73F7 /* UIColor.swift in Sources */,
+				388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */,
 				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
 				3863D8CB1EB0686E003B73F7 /* NTSearchBarView.swift in Sources */,
@@ -749,12 +797,15 @@
 				386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */,
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
 				380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */,
+				388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
+				382329401EE2863B00945C31 /* NTSwipeablePresentationController.swift in Sources */,
 				386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
+				388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */,
 				38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */,
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
@@ -762,6 +813,8 @@
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
+				3823293E1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift in Sources */,
+				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
@@ -771,6 +824,8 @@
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
 				380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */,
+				3823293A1EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift in Sources */,
+				388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */,
 				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
 				3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */,
 				38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */,
@@ -780,15 +835,16 @@
 				380EEA121EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift in Sources */,
 				3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */,
 				38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */,
+				388C1EF51EE6791C0036AECE /* NTFormSection.swift in Sources */,
 				3863D8BF1EB0686E003B73F7 /* NTCollectionViewCell.swift in Sources */,
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
-				3863D8BD1EB0686E003B73F7 /* NTToolbar.swift in Sources */,
 				38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */,
+				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
+				38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */,
 				38FCFA821ED2D0C4007D3019 /* NTInputAccessoryView.swift in Sources */,
-				3863D8BB1EB0686E003B73F7 /* NTButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

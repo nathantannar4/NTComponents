@@ -60,7 +60,11 @@ open class NTActionSheetViewController: UIViewController  {
             subtitleLabel.text = newValue
         }
     }
-
+    
+    open var actionButtonHeight: CGFloat = 50
+    open var titleLabelHeight: CGFloat = 20
+    open var subtitleLabelHeight: CGFloat = 15
+    
     fileprivate var actions: [NTActionSheetItem] = []
     fileprivate var actionButtons: [NTButton] = []
 
@@ -82,8 +86,7 @@ open class NTActionSheetViewController: UIViewController  {
         let view = NTView()
         view.backgroundColor = .clear
         view.setDefaultShadow()
-        view.layer.shadowOffset = CGSize(width: 0, height: -2)
-        view.isHidden = true
+        view.layer.shadowOffset = CGSize(width: 0, height: -Color.Default.Shadow.Offset.height)
         return view
     }()
 
@@ -103,6 +106,7 @@ open class NTActionSheetViewController: UIViewController  {
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.modalPresentationStyle = .overCurrentContext
+        self.modalTransitionStyle = .crossDissolve
     }
 
     // MARK: - Standard Methods
@@ -118,6 +122,11 @@ open class NTActionSheetViewController: UIViewController  {
         super.viewDidAppear(animated)
 
         presentActionSheet()
+    }
+    
+    open override func show(_ vc: UIViewController? = UIViewController.topWindow()?.rootViewController, sender: Any? = nil) {
+        guard let viewController = vc else { return }
+        viewController.present(self, animated: false, completion: nil)
     }
 
     // MARK: - NTActionSheetAction Methods
@@ -178,16 +187,8 @@ open class NTActionSheetViewController: UIViewController  {
 
     public func presentActionSheet() {
 
-        let numberOfActions = actions.count
-
-        if numberOfActions <= 0 {
-            return
-        }
-
-        let actionButtonHeight = 50
-        let titleLabelHeight: CGFloat = 20
-        let subtitleLabelHeight: CGFloat = 15
-        let containerHeight: CGFloat = CGFloat(numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
+        let numberOfActions = CGFloat(actions.count)
+        let containerHeight: CGFloat = (numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
 
         view.addSubview(actionsContainer)
         actionsContainer.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: containerHeight)
@@ -212,8 +213,7 @@ open class NTActionSheetViewController: UIViewController  {
             button.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: CGFloat(actionButtonHeight))
         }
 
-        self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
-        self.actionsContainer.isHidden = false
+        actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             self.view.backgroundColor = Color.Gray.P900.withAlphaComponent(0.2)
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
@@ -222,7 +222,10 @@ open class NTActionSheetViewController: UIViewController  {
 
     open override func dismiss(animated flag: Bool = false, completion: (() -> Void)? = nil) {
 
-        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseIn, animations: {
+        let containerHeight: CGFloat = (CGFloat(actions.count) * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
+        
+        actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY - containerHeight
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
             self.actionsContainer.frame.origin.y = UIScreen.main.bounds.maxY
             self.view.backgroundColor = .clear
         }) { (success) in

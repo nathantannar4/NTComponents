@@ -156,6 +156,13 @@ open class NTAnimatedView: NTView {
         animateToNormal()
     }
     
+    open func autoAnimate() {
+        animate()
+        DispatchQueue.executeAfter(touchUpAnimationTime * 2 / 3) {
+            self.animateToNormal()
+        }
+    }
+    
     open func animate() {
         UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
             self.rippleBackgroundView.alpha = 1

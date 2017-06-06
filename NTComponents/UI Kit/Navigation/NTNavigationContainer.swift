@@ -195,10 +195,6 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         centerViewController.didMove(toParentViewController: centerNavigationController)
         centerNavigationController.addChildViewController(centerViewController)
         
-        if centerViewController is UITabBarController || centerViewController is UINavigationController || centerViewController is NTPageViewController {
-            centerNavigationController.setNavigationBarHidden(true, animated: false)
-        }
-        
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
         centerNavigationController.didMove(toParentViewController: self)
@@ -219,7 +215,7 @@ open class NTNavigationContainer: UIViewController, UIGestureRecognizerDelegate,
         if (shouldShowShadow) {
             Log.write(.status, "Will show shadow for center view")
             centerNavigationController.view.setDefaultShadow()
-            centerNavigationController.view.layer.shadowOffset = CGSize(width: -2, height: 0)
+            centerNavigationController.view.layer.shadowOffset = CGSize(width: -Color.Default.Shadow.Offset.width, height: 0)
         } else {
             Log.write(.status, "Will hide shadow for center view")
             centerNavigationController.view.hideShadow()

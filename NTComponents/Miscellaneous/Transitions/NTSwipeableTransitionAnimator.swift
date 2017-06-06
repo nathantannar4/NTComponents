@@ -1,5 +1,5 @@
 //
-//  Log.swift
+//  NTSwipeableTransitionAnimator.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,49 +22,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 2/12/17.
+//  Created by Nathan Tannar on 6/2/17.
 //
 
-public enum LogType {
-    case error, warning, status
-}
-
-public enum LogMode: Int {
-    case off = 0
-    case verbose = 1
-    case debug = 2
-}
-
-public struct Log {
+open class NTSwipeableTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    fileprivate static var mode: LogMode = .debug
-    
-    public static func setTraceLevel(to mode: LogMode) {
-        Log.mode = mode
-    }
-
-    public static func write(_ type: LogType, _ text: String) {
-        var message = String()
-        switch type {
-        case .error:
-            if Log.mode.rawValue != 0 {
-                message.append("### ERROR  : ")
-                message.append(text)
-                print(message)
-            }
-        case .warning:
-            if Log.mode.rawValue >= 1 {
-                message.append("### WARNING: ")
-                message.append(text)
-                print(message)
-            }
-        case .status:
-            if Log.mode.rawValue == 2 {
-                message.append("### STATUS : ")
-                message.append(text)
-                print(message)
-            }
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let _ = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+        let from = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            from!.view.frame.origin.y = 800
+        }) { (success) in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
     
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.3
+    }
 }

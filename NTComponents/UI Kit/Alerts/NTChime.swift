@@ -60,7 +60,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     }()
     
     open var blurView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.alpha = 0
@@ -73,7 +73,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     open var animationSpringVelocity: CGFloat = 1.2
     open var animationOptions: UIViewAnimationOptions = [.curveEaseIn]
     open var frameTopAnchor: NSLayoutConstraint?
-    open var transition = NTTransition()
+    open var transition = NTCircularTransition()
     open var height: CGFloat = 54
     open var detailController: UIViewController?
     
@@ -237,7 +237,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
                     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cancelBlur))
                     blurView.addGestureRecognizer(tapGesture)
                     UIView.animate(withDuration: animationDuration, delay: animationDelay, options: .curveLinear, animations: {
-                        self.blurView.alpha = 0.8
+                        self.blurView.alpha = 0.3
                     }, completion: nil)
                 }
             } else {
@@ -281,7 +281,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
                     gestureRecognizer.isEnabled = false
                 }
             }
-            blurView.alpha = (center.y / (height * 1.5) / 2) < 0.8 ? center.y / (height * 1.5) / 2 : 0.8
+            blurView.alpha = (center.y / (height * 1.5) / 2) < 0.8 ? center.y / (height * 1.5) / 6 : 0.3
             
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + offset)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self)
@@ -315,7 +315,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         transition.rippleView.isHidden = false
         transition.rippleView.backgroundColor = backgroundColor
         detailController?.view.backgroundColor = backgroundColor
-        DispatchQueue.executeAfter(1) { 
+        DispatchQueue.executeAfter(1) {
             self.currentState = .visible
             self.dismiss()
         }

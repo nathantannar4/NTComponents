@@ -9,11 +9,17 @@
 import NTComponents
 
 class AlertsViewController: NTTableViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        title = "Alerts"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Alerts"
+
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -197,8 +203,7 @@ class AlertsViewController: NTTableViewController {
         }))
         let actionSheet = NTActionSheetViewController(actions: actions)
         actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
-        present(actionSheet, animated: false, completion: nil)
-        
+        actionSheet.show()
     }
     
     func showAlert(type: NTAlertType) {
@@ -210,7 +215,7 @@ class AlertsViewController: NTTableViewController {
         alert.onConfirm = {
             self.showToast(withText: "Confirmed action")
         }
-        present(alert, animated: true, completion: nil)
+        alert.show()
     }
     
     func showChime(type: NTAlertType) {

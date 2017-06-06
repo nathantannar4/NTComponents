@@ -29,6 +29,17 @@ import UIKit
 
 open class NTTabBarController: UITabBarController, NTTabBarDelegate {
     
+    override open var title: String? {
+        didSet {
+            self.refreshTitleView(withAlpha: 1.0)
+        }
+    }
+    open var subtitle: String? {
+        didSet {
+            self.refreshTitleView(withAlpha: 1.0)
+        }
+    }
+    
     open var animatedTabBar: NTTabBar = {
         let tabBar = NTTabBar()
         return tabBar
@@ -46,7 +57,6 @@ open class NTTabBarController: UITabBarController, NTTabBarDelegate {
                     item.selectedImage = vc.tabBarItem.selectedImage
                     return item
                 }))
-            
         }
     }
     
@@ -71,7 +81,11 @@ open class NTTabBarController: UITabBarController, NTTabBarDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    public func refreshTitleView(withAlpha alpha: CGFloat) {
+        if self.title != nil {
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title.withAlphaComponent(alpha), subtitleColor: Color.Default.Text.Subtitle.withAlphaComponent(alpha))
+        }
+    }
     
     // MARK: - NTTabBarDelegate
     

@@ -89,7 +89,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     
     open var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.Gray.P700
+        view.backgroundColor = Color.Gray.P500
         return view
     }()
     
@@ -98,6 +98,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Login"
         view.backgroundColor = .white
         view.addSubview(logoView)
         view.addSubview(titleLabel)
@@ -109,7 +110,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         tableView.delegate = self
         
         logoView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        logoView.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
         
         titleLabel.anchor(logoView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         titleLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
