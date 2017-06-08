@@ -47,6 +47,8 @@ import NTComponents
 
 ## Release History
 
+* 0.0.5
+    * Bug Fixes & Tweaks, introduction of NTFormViewController to easily make forms
 * 0.0.4
     * Focus on animations and alert view updates
 * 0.0.3
@@ -54,13 +56,50 @@ import NTComponents
 * 0.0.2
     * Completed the majority of main components
 * 0.0.1
-    * Started with NTUIKit
+    * Branch from NTUIKit
 
 ## Getting Started
-Coming soon...
+I would recommend taking a look at the sample code that generates the `NTComponents Demo` app. Also try taking a look at the Jazzy generated Docs! While they are not complete yet I plan to work on documentation.
+
+``` swift
+import NTComponents
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        // Set color defaults
+        Color.Default.setPrimary(to: .white)
+        Color.Default.setSecondary(to: .red)
+        Color.Default.Text.Title = .blue
+
+        // If you want the shadow to be more standard
+        Color.Default.setCleanShadow()
+        
+        // Set your font defaults
+        Font.Default.Title = Font.Roboto.Medium.withSize(15)
+        Font.Default.Subtitle = Font.Roboto.Regular
+        Font.Default.Body = Font.Roboto.Regular.withSize(13)
+        
+        return true
+    }
+
+    // More standard AppDelegate methods
+}
+
+```
+More Coming Soon
 
 ## Planned Improvements/Additons
-
+* NTCollectionViewCell
+    * More base cells
+* More useful controllers
+* Camera controller
+* More docs
 
 ## Contribute
 
