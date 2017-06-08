@@ -32,6 +32,8 @@ open class NTInputAccessoryView: NTView {
     
     open var layoutConstraints: [NSLayoutConstraint]?
     
+    fileprivate var keyboardIsHidden: Bool = true
+    
     // MARK: - Initialization
     
     public convenience init() {
@@ -51,17 +53,16 @@ open class NTInputAccessoryView: NTView {
     // MARK: - Keyboard Observer
     
     open func keyboardDidChangeFrame(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.layoutConstraints?[1].constant != 0 {
-                UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                    self.layoutConstraints?[1].constant = -keyboardSize.height
-                    self.controller?.view.layoutIfNeeded()
-                })
-            }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, !keyboardIsHidden {
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.layoutConstraints?[1].constant = -keyboardSize.height
+                self.controller?.view.layoutIfNeeded()
+            })
         }
     }
     
     open func keyboardWillShow(notification: NSNotification) {
+        keyboardIsHidden = false
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.layoutConstraints?[1].constant = -keyboardSize.height
@@ -71,6 +72,7 @@ open class NTInputAccessoryView: NTView {
     }
     
     open func keyboardWillHide(notification: NSNotification) {
+        keyboardIsHidden = true
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.layoutConstraints?[1].constant = 0
             self.controller?.view.layoutIfNeeded()

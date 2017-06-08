@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Color.Default.Background.Button = UIColor(hex: "31485e")
         Color.Default.setCleanShadow()
         
-        Font.Default.Title = Font.Roboto.Regular.withSize(18)
+        Font.Default.Title = Font.Roboto.Medium.withSize(15)
         Font.Default.Subtitle = Font.Roboto.Regular
         Font.Default.Body = Font.Roboto.Regular.withSize(13)
         Font.Default.Caption = Font.Roboto.Medium.withSize(12)
@@ -36,30 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
-        let leftVC = NTViewController()
-        leftVC.view.backgroundColor = UIColor(hex: "31485e")
-        let leftMenuLabel = NTLabel(style: .title)
-        leftMenuLabel.textColor = .white
-        leftMenuLabel.textAlignment = .center
-        leftMenuLabel.text = "Left Navigation Drawer\n(A right one is available too!)"
-        leftMenuLabel.numberOfLines = 0
-        leftVC.view.addSubview(leftMenuLabel)
-        leftMenuLabel.fillSuperview()
-        
-        
         let loginVC = NTLoginViewController()
         loginVC.logo = #imageLiteral(resourceName: "NT Components Banner")
         
-        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC, NTProfileViewController()])
+        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC])
         sampleVC.tabBarHeight = 32
         sampleVC.tabBarPosition = .top
-        sampleVC.title = "Samples"
+        sampleVC.title = "Other"
         sampleVC.viewDidLoad()
         
-        let core = NTScrollableTabBarController(viewControllers: [FormViewController(), TableViewController()])
+        let core = NTScrollableTabBarController(viewControllers: [FormViewController().withTitle("Form"), TableViewController().withTitle("TableView"), NTProfileViewController().withTitle("CollectionView"), ColorsCollectionView().withTitle("Colors")])
         core.tabBarHeight = 32
         core.tabBarPosition = .top
         core.title = "Core"
+        core.tabBarItemWidth = 100
         core.viewDidLoad()
         
         let tabbarVC = NTScrollableTabBarController(viewControllers: [core, AlertsViewController(), sampleVC])
@@ -70,13 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbarVC.currentTabBarHeight = 0
         tabbarVC.viewDidLoad()
         
-        let root = NTNavigationContainer(centerView: tabbarVC, leftView: leftVC)
+        let root = NTNavigationContainer(centerView: tabbarVC, leftView: NTNavigationController(rootViewController: AuthorViewController()))
         root.leftPanelWidth = 350
         
-        
-        
-        
-        window?.rootViewController = NTNavigationViewController(rootViewController: FormViewController())
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true
@@ -103,29 +90,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
-class ViewController: UIViewController {
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let toggle = NTSwitch().onSwitchChanged { (isOn) in
-            NTPing(title: isOn ? "On" : "Off", color: Color.Default.Tint.NavigationBar).show()
-        }
-
-        view.addSubview(toggle)
-        toggle.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 100, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 40, heightConstant: 30)
-        
-        let check = NTCheckbox()
-        view.addSubview(check)
-        check.anchor(toggle.bottomAnchor, left: toggle.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
-        
-    }
-}
-
-
 

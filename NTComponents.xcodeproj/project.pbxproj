@@ -55,7 +55,7 @@
 		3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8641EB0686E003B73F7 /* UISearchBar.swift */; };
 		3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8651EB0686E003B73F7 /* UITextField.swift */; };
 		3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8661EB0686E003B73F7 /* UIView.swift */; };
-		3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8671EB0686E003B73F7 /* ViewController.swift */; };
+		3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8671EB0686E003B73F7 /* UIViewController.swift */; };
 		3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */; };
 		3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */; };
 		3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86C1EB0686E003B73F7 /* NTToast.swift */; };
@@ -206,7 +206,7 @@
 		3863D8641EB0686E003B73F7 /* UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		3863D8651EB0686E003B73F7 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		3863D8661EB0686E003B73F7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		3863D8671EB0686E003B73F7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3863D8671EB0686E003B73F7 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		3863D86A1EB0686E003B73F7 /* NTActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTActionSheetViewController.swift; sourceTree = "<group>"; };
 		3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertViewController.swift; sourceTree = "<group>"; };
 		3863D86C1EB0686E003B73F7 /* NTToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToast.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				3863D8641EB0686E003B73F7 /* UISearchBar.swift */,
 				3863D8651EB0686E003B73F7 /* UITextField.swift */,
 				3863D8661EB0686E003B73F7 /* UIView.swift */,
-				3863D8671EB0686E003B73F7 /* ViewController.swift */,
+				3863D8671EB0686E003B73F7 /* UIViewController.swift */,
 				386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */,
 			);
 			path = Extensions;
@@ -831,7 +831,7 @@
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				382329401EE2863B00945C31 /* NTSwipeablePresentationController.swift in Sources */,
 				386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */,
-				3863D8B71EB0686E003B73F7 /* ViewController.swift in Sources */,
+				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,

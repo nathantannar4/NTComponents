@@ -82,6 +82,7 @@ open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
         super.init(frame: frame)
         
         backgroundColor = Color.Default.Background.TabBar
+        rippleColor = Color.Default.Tint.TabBar.withAlpha(newAlpha: 0.4)
         trackTouchLocation = false
         ripplePercent = 1.1
         

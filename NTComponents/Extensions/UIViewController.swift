@@ -59,6 +59,12 @@ public extension UIViewController {
         return nil
     }
     
+    @discardableResult
+    func withTitle(_ title: String) -> Self {
+        self.title = title
+        return self
+    }
+    
     public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Default.Text.Title, subtitleColor: UIColor? = Color.Default.Text.Subtitle) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
