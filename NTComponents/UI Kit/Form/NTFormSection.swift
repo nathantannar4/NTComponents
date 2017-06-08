@@ -1,5 +1,5 @@
 //
-//  NTTextField.swift
+//  NTFormSection.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,44 +22,36 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 4/25/17.
+//  Created by Nathan Tannar on 6/5/17.
 //
 
-open class NTTextField: UITextField {
+open class NTFormSection: NSObject {
     
-    open var onTextFieldUpdate: ((NTTextField) -> Void)?
+    open var rows: [NTFormCell]
+    open var header: NTCollectionViewDefaultHeader?
+    open var footer: NTCollectionViewDefaultFooter?
     
-    @discardableResult
-    open func onTextFieldUpdate(_ handler: @escaping ((NTTextField) -> Void)) -> Self {
-        onTextFieldUpdate = handler
-        return self
-    }
-
-    // MARK: - Initialization
-
-    public convenience init(style: NTPreferredFontStyle) {
-        self.init()
-        self.setPreferredFontStyle(to: style)
-        setup()
-    }
-
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setPreferredFontStyle(to: .body)
-        setup()
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public init(fromRows rows: [NTFormCell], withHeaderView header: NTCollectionViewDefaultHeader? = nil, withFooterView footer: NTCollectionViewDefaultFooter? = nil) {
+        self.rows = rows
+        super.init()
+        self.header = header
+        self.footer = footer
     }
     
-    open func setup() {
+    public init(fromRows rows: [NTFormCell], withHeaderTitle headerTitle: String?, withFooterTitle footerTitle: String?) {
+        self.rows = rows
+        super.init()
         
-        tintColor = Color.Default.Tint.View
-        addTarget(self, action: #selector(textFieldDidUpdate(textField:)), for: .allEditingEvents)
-    }
-    
-    open func textFieldDidUpdate(textField: NTTextField) {
-        onTextFieldUpdate?(textField)
+        if headerTitle != nil {
+            let headerView = NTCollectionViewDefaultHeader()
+            headerView.label.text = headerTitle
+            self.header = headerView
+        }
+        
+        if footerTitle != nil {
+            let footerView = NTCollectionViewDefaultFooter()
+            footerView.label.text = footerTitle
+            self.footer = footerView
+        }
     }
 }

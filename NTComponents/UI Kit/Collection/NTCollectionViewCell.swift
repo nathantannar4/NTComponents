@@ -32,7 +32,7 @@ open class NTCollectionViewCell: UICollectionViewCell {
     
     open let separatorLineView: UIView = {
         let lineView = UIView()
-        lineView.backgroundColor = Color.Gray.P500
+        lineView.backgroundColor = Color.Gray.P300
         lineView.isHidden = true
         return lineView
     }()
@@ -55,4 +55,9 @@ open class NTCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    open class var cellSize: CGSize {
+        get {
+            return CGSize(width: UIScreen.main.bounds.width, height: 44)
+        }
+    }
 }

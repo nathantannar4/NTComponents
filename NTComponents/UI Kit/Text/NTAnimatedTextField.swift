@@ -30,7 +30,91 @@
 import UIKit
 
 
-@IBDesignable open class NTAnimatedTextField: TextFieldEffects {
+@IBDesignable open class NTAnimatedTextField: NTTextField {
+    
+    /**
+     The type of animation a TextFieldEffect can perform.
+     
+     - TextEntry: animation that takes effect when the textfield has focus.
+     - TextDisplay: animation that takes effect when the textfield loses focus.
+     */
+    public enum AnimationType: Int {
+        case textEntry
+        case textDisplay
+    }
+    
+    /**
+     Closure executed when an animation has been completed.
+     */
+    public typealias AnimationCompletionHandler = (_ type: AnimationType)->()
+    
+    /**
+     UILabel that holds all the placeholder information
+     */
+    open let placeholderLabel = UILabel()
+    
+    /**
+     The animation completion handler is the best place to be notified when the text field animation has ended.
+     */
+    open var animationCompletionHandler: AnimationCompletionHandler?
+    
+    
+    open func updateViewsForBoundsChange(_ bounds: CGRect) {
+        fatalError("\(#function) must be overridden")
+    }
+    
+    // MARK: - Overrides
+    
+    override open func draw(_ rect: CGRect) {
+        drawViewsForRect(rect)
+    }
+    
+    override open func drawPlaceholder(in rect: CGRect) {
+        // Don't draw any placeholders
+    }
+    
+    override open var text: String? {
+        didSet {
+            if let text = text, !text.isEmpty {
+                animateViewsForTextEntry()
+            } else {
+                animateViewsForTextDisplay()
+            }
+        }
+    }
+    
+    // MARK: - UITextField Observing
+    
+    override open func willMove(toSuperview newSuperview: UIView!) {
+        if newSuperview != nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+        } else {
+            NotificationCenter.default.removeObserver(self)
+        }
+    }
+    
+    /**
+     The textfield has started an editing session.
+     */
+    open func textFieldDidBeginEditing() {
+        animateViewsForTextEntry()
+    }
+    
+    /**
+     The textfield has ended an editing session.
+     */
+    open func textFieldDidEndEditing() {
+        animateViewsForTextDisplay()
+    }
+    
+    // MARK: - Interface Builder
+    
+    override open func prepareForInterfaceBuilder() {
+        drawViewsForRect(frame)
+    }
+
     
     /**
      The color of the border when it has no content.
@@ -88,16 +172,16 @@ import UIKit
         }
     }
     
-    private let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
-    private let placeholderInsets = CGPoint(x: 0, y: 12)
-    private let textFieldInsets = CGPoint(x: 0, y: 4)
+    open let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
+    open var placeholderInsets = CGPoint(x: 0, y: 12)
+    open var textFieldInsets = CGPoint(x: 0, y: 4)
     private let inactiveBorderLayer = CALayer()
     private let activeBorderLayer = CALayer()
     private var activePlaceholderPoint: CGPoint = CGPoint.zero
     
     // MARK: - TextFieldEffects
     
-    override open func drawViewsForRect(_ rect: CGRect) {
+    open func drawViewsForRect(_ rect: CGRect) {
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: rect.size.width, height: rect.size.height))
         
         placeholderLabel.frame = frame.insetBy(dx: placeholderInsets.x, dy: placeholderInsets.y)
@@ -111,7 +195,7 @@ import UIKit
         addSubview(placeholderLabel)
     }
     
-    override open func animateViewsForTextEntry() {
+    open func animateViewsForTextEntry() {
         if text!.isEmpty {
             UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: .beginFromCurrentState, animations: ({
                 self.placeholderLabel.frame.origin = CGPoint(x: 10, y: self.placeholderLabel.frame.origin.y)
@@ -131,7 +215,7 @@ import UIKit
         activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: true)
     }
     
-    override open func animateViewsForTextDisplay() {
+    open func animateViewsForTextDisplay() {
         if text!.isEmpty {
             UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 2.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: ({
                 self.layoutPlaceholderInTextRect()
@@ -195,8 +279,6 @@ import UIKit
         
     }
     
-    // MARK: - Overrides
-    
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.offsetBy(dx: textFieldInsets.x, dy: textFieldInsets.y)
     }
@@ -208,128 +290,18 @@ import UIKit
     // MARK: - Initialization
     
     public convenience init(style: NTPreferredFontStyle) {
-        self.init(frame: .zero)
+        self.init()
         self.setPreferredFontStyle(to: style)
-        
-        tintColor = Color.Default.Tint.View
+        setup()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setPreferredFontStyle(to: .body)
-        
-        tintColor = Color.Default.Tint.View
+        setup()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-open class TextFieldEffects : UITextField {
-    
-    /**
-     The type of animation a TextFieldEffect can perform.
-     
-     - TextEntry: animation that takes effect when the textfield has focus.
-     - TextDisplay: animation that takes effect when the textfield loses focus.
-     */
-    public enum AnimationType: Int {
-        case textEntry
-        case textDisplay
-    }
-    
-    /**
-     Closure executed when an animation has been completed.
-     */
-    public typealias AnimationCompletionHandler = (_ type: AnimationType)->()
-    
-    /**
-     UILabel that holds all the placeholder information
-     */
-    open let placeholderLabel = UILabel()
-    
-    /**
-     Creates all the animations that are used to leave the textfield in the "entering text" state.
-     */
-    open func animateViewsForTextEntry() {
-        fatalError("\(#function) must be overridden")
-    }
-    
-    /**
-     Creates all the animations that are used to leave the textfield in the "display input text" state.
-     */
-    open func animateViewsForTextDisplay() {
-        fatalError("\(#function) must be overridden")
-    }
-    
-    /**
-     The animation completion handler is the best place to be notified when the text field animation has ended.
-     */
-    open var animationCompletionHandler: AnimationCompletionHandler?
-    
-    /**
-     Draws the receiver’s image within the passed-in rectangle.
-     
-     - parameter rect:	The portion of the view’s bounds that needs to be updated.
-     */
-    open func drawViewsForRect(_ rect: CGRect) {
-        fatalError("\(#function) must be overridden")
-    }
-    
-    open func updateViewsForBoundsChange(_ bounds: CGRect) {
-        fatalError("\(#function) must be overridden")
-    }
-    
-    // MARK: - Overrides
-    
-    override open func draw(_ rect: CGRect) {
-        drawViewsForRect(rect)
-    }
-    
-    override open func drawPlaceholder(in rect: CGRect) {
-        // Don't draw any placeholders
-    }
-    
-    override open var text: String? {
-        didSet {
-            if let text = text, !text.isEmpty {
-                animateViewsForTextEntry()
-            } else {
-                animateViewsForTextDisplay()
-            }
-        }
-    }
-    
-    // MARK: - UITextField Observing
-    
-    override open func willMove(toSuperview newSuperview: UIView!) {
-        if newSuperview != nil {
-            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
-        } else {
-            NotificationCenter.default.removeObserver(self)
-        }
-    }
-    
-    /**
-     The textfield has started an editing session.
-     */
-    open func textFieldDidBeginEditing() {
-        animateViewsForTextEntry()
-    }
-    
-    /**
-     The textfield has ended an editing session.
-     */
-    open func textFieldDidEndEditing() {
-        animateViewsForTextDisplay()
-    }
-    
-    // MARK: - Interface Builder
-    
-    override open func prepareForInterfaceBuilder() {
-        drawViewsForRect(frame)
     }
 }

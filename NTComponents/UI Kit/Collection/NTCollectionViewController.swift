@@ -116,16 +116,12 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         return datasource?.numberOfItems(section) ?? 0
     }
     
-    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 44)
-    }
-    
     override open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: NTCollectionViewCell
         
         if let cls = datasource?.cellClass(indexPath) {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell 
         } else if let cellClasses = datasource?.cellClasses(), cellClasses.count > indexPath.section {
             let cls = cellClasses[indexPath.section]
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
@@ -169,7 +165,11 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         
         return reusableView
     }
-
+    
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return datasource?.cellClass(indexPath)?.cellSize ?? CGSize(width: view.frame.width, height: 44)
+    }
     
     // MARK: - Refresh Methods
     

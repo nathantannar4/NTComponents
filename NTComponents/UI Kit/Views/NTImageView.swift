@@ -39,18 +39,27 @@ open class NTImageView: UIImageView {
     private var urlStringForChecking: String?
     private var emptyImage: UIImage?
     
-    public convenience init(cornerRadius: CGFloat = 0, tapCallback: @escaping (() ->())) {
+    // MARK: - Handlers
+    
+    open var onTap: ((_ imageView: NTImageView) -> Void)?
+    
+    @discardableResult
+    open func onTap(_ handler: @escaping ((_ imageView: NTImageView) -> Void)) -> Self {
+        onTap = handler
+        return self
+    }
+    
+    // MARK: - Initialization
+    
+    public convenience init(cornerRadius: CGFloat = 0, tapCallback: @escaping ((_ imageView: NTImageView) -> Void)) {
         self.init(cornerRadius: cornerRadius, emptyImage: nil)
-        self.tapCallback = tapCallback
-        isUserInteractionEnabled = true
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        self.onTap = tapCallback
+        
     }
     
-    func handleTap() {
-        tapCallback?()
+    open func handleTap() {
+        onTap?(self)
     }
-    
-    private var tapCallback: (() -> ())?
     
     public convenience init(cornerRadius: CGFloat = 0, emptyImage: UIImage? = nil) {
         self.init(frame: .zero)
@@ -70,23 +79,24 @@ open class NTImageView: UIImageView {
     
     public override init(image: UIImage?) {
         super.init(image: image)
-        
-        contentMode = .scaleAspectFit
-        tintColor = Color.Default.Tint.View
+        setup()
     }
     
     public override init(image: UIImage?, highlightedImage: UIImage?) {
         super.init(image: image, highlightedImage: highlightedImage)
-        
-        contentMode = .scaleAspectFit
-        tintColor = Color.Default.Tint.View
+        setup()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setup()
+    }
+    
+    open func setup() {
         contentMode = .scaleAspectFit
         tintColor = Color.Default.Tint.View
+        isUserInteractionEnabled = true
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     required public init?(coder aDecoder: NSCoder) {

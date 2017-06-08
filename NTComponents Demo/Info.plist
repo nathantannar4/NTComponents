@@ -36,5 +36,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Photo Library Access?</string>
 </dict>
 </plist>

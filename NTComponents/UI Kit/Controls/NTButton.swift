@@ -32,28 +32,34 @@ import QuartzCore
 
 open class NTButton: UIButton {
     
+    // MARK: - Handlers
+    
+    open var onTouchUpInside: ((NTButton) -> Void)?
+    
+    @discardableResult
+    open func onTouchUpInside(_ handler: @escaping ((NTButton) -> Void)) -> Self {
+        onTouchUpInside = handler
+        return self
+    }
+    
+    open func didTouchUpInside() {
+        onTouchUpInside?(self)
+    }
+    
     // MARK: - Initialization
     
     public convenience init() {
         self.init(frame: .zero)
-        
-        backgroundColor = Color.Default.Background.Button
-        tintColor = Color.Default.Tint.Button
-        contentHorizontalAlignment = .center
-        titleLabel?.textAlignment = .center
-        titleLabel?.font = Font.Default.Body
-        setTitleColor(Color.Default.Background.Button.isLight ? .black : .white, for: .normal)
-        imageView?.contentMode = .scaleAspectFit
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
         setup()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     open var title: String? {
@@ -163,6 +169,17 @@ open class NTButton: UIButton {
     }
     
     fileprivate func setup() {
+        
+        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
+        
+        backgroundColor = Color.Default.Background.Button
+        tintColor = Color.Default.Tint.Button
+        contentHorizontalAlignment = .center
+        titleLabel?.textAlignment = .center
+        titleLabel?.font = Font.Default.Body
+        setTitleColor(Color.Default.Background.Button.isLight ? .black : .white, for: .normal)
+        imageView?.contentMode = .scaleAspectFit
+        
         setupRippleView()
         
         rippleBackgroundView.backgroundColor = rippleBackgroundColor
@@ -173,6 +190,9 @@ open class NTButton: UIButton {
         
         if let imageView = imageView {
             bringSubview(toFront: imageView)
+        }
+        if let label = titleLabel {
+            bringSubview(toFront: label)
         }
     }
     

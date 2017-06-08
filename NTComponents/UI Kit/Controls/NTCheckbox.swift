@@ -149,6 +149,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
     open func toggle(recognizer: UITapGestureRecognizer) {
         isSelected = !isSelected
         checkBox.autoAnimate()
+        onCheckboxChanged?(isSelected)
     }
     
     open func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {

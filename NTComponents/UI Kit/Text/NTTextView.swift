@@ -33,7 +33,7 @@ open class NTTextView: UITextView {
         didSet {
             if text.isEmpty {
                 text = placeholder
-                textColor = Color.Gray.P600
+                textColor = Color.Gray.P400
             }
         }
     }
@@ -49,6 +49,14 @@ open class NTTextView: UITextView {
             return super.textColor
         }
     }
+    
+    open var onTextViewUpdate: ((NTTextView) -> Void)?
+    
+    @discardableResult
+    open func onTextViewUpdate(_ handler: @escaping ((NTTextView) -> Void)) -> Self {
+        onTextViewUpdate = handler
+        return self
+    }
 
     public convenience init() {
         self.init(frame: .zero)
@@ -60,6 +68,17 @@ open class NTTextView: UITextView {
 
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidBeginEditing(notification:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewDidEndEditing(notification:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewDidUpdate(notification:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    }
+    
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        textContainerInset = UIEdgeInsets.zero
+        textContainer.lineFragmentPadding = 0
+    }
+    
+    open func textViewDidUpdate(notification: NSNotification) {
+        onTextViewUpdate?(self)
     }
 
     open func textViewDidBeginEditing(notification: NSNotification) {
@@ -72,7 +91,13 @@ open class NTTextView: UITextView {
     open func textViewDidEndEditing(notification: NSNotification) {
         if text.isEmpty {
             text = placeholder
-            textColor = Color.Gray.P600
+            textColor = Color.Gray.P400
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidBeginEditing, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidEndEditing, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
     }
 }

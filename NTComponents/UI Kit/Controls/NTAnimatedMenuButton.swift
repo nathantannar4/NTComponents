@@ -81,6 +81,9 @@ open class NTAnimatedMenuButton: NTButton {
     init(frame: CGRect, strokeColor: UIColor) {
         self.strokeColor = strokeColor
         super.init(frame: frame)
+        
+        backgroundColor = Color.Default.Background.NavigationBar
+        
         touchUpAnimationTime = 0.2
         
         self.top.path = longStroke;

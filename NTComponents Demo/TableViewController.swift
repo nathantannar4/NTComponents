@@ -9,7 +9,7 @@
 import UIKit
 import NTComponents
 
-class TableViewController: NTTableViewController, NTTableViewImageDataSource {
+class TableViewController: NTTableViewController {
     
     var delegate: NTSwipeableTransitioningDelegate?
     
@@ -18,9 +18,7 @@ class TableViewController: NTTableViewController, NTTableViewImageDataSource {
         
         title = "Table View"
         let rc = refreshControl()
-        rc?.titleLabel.textColor = .white
         tableView.refreshControl = rc
-        tableView.imageDataSource = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,11 +35,6 @@ class TableViewController: NTTableViewController, NTTableViewImageDataSource {
         cell.detailTextLabel?.text = String.random(ofLength: 30)
         return cell
     }
-    
-    func imageForStretchyView(in tableView: NTTableView) -> UIImage? {
-        return #imageLiteral(resourceName: "Background")
-    }
-    
     
     override func handleRefresh() {
         super.handleRefresh()

@@ -29,29 +29,32 @@ import UIKit
 
 open class NTCollectionViewDefaultHeader: NTCollectionViewDefaultCell {
     
-    override open var datasourceItem: Any? {
+    open override var datasourceItem: Any? {
         didSet {
-            if datasourceItem == nil {
-                label.text = "Default Header"
+            guard let text = datasourceItem as? String else {
+                return
             }
+            label.text = text
         }
     }
     
     override open func setupViews() {
         super.setupViews()
         
-        label.setPreferredFontStyle(to: .callout)
+        separatorLineView.isHidden = false
+        label.setPreferredFontStyle(to: .subhead)
         backgroundColor = .clear
     }
 }
 
 open class NTCollectionViewDefaultFooter: NTCollectionViewDefaultCell {
     
-    override open var datasourceItem: Any? {
+    open override var datasourceItem: Any? {
         didSet {
-            if datasourceItem == nil {
-                label.text = "Default Footer"
+            guard let text = datasourceItem as? String else {
+                return
             }
+            label.text = text
         }
     }
     
@@ -60,19 +63,18 @@ open class NTCollectionViewDefaultFooter: NTCollectionViewDefaultCell {
         
         label.textAlignment = .center
         label.setPreferredFontStyle(to: .footnote)
-        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
+        backgroundColor = .clear
     }
 }
 
 open class NTCollectionViewDefaultCell: NTCollectionViewCell {
     
-    override open var datasourceItem: Any? {
+    open override var datasourceItem: Any? {
         didSet {
-            if let text = datasourceItem as? String {
-                label.text = text
-            } else {
-                label.text = datasourceItem.debugDescription
+            guard let text = datasourceItem as? String else {
+                return
             }
+            label.text = text
         }
     }
     

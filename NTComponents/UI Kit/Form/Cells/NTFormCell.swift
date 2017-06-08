@@ -1,5 +1,5 @@
 //
-//  NTTextField.swift
+//  NTFormCell.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,44 +22,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 4/25/17.
+//  Created by Nathan Tannar on 6/5/17.
 //
 
-open class NTTextField: UITextField {
+open class NTFormCell: NTCollectionViewCell {
     
-    open var onTextFieldUpdate: ((NTTextField) -> Void)?
-    
-    @discardableResult
-    open func onTextFieldUpdate(_ handler: @escaping ((NTTextField) -> Void)) -> Self {
-        onTextFieldUpdate = handler
-        return self
-    }
-
-    // MARK: - Initialization
-
-    public convenience init(style: NTPreferredFontStyle) {
-        self.init()
-        self.setPreferredFontStyle(to: style)
-        setup()
-    }
-
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setPreferredFontStyle(to: .body)
-        setup()
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    open func setup() {
+    open override func setupViews() {
+        super.setupViews()
         
-        tintColor = Color.Default.Tint.View
-        addTarget(self, action: #selector(textFieldDidUpdate(textField:)), for: .allEditingEvents)
-    }
-    
-    open func textFieldDidUpdate(textField: NTTextField) {
-        onTextFieldUpdate?(textField)
+        backgroundColor = Color.Default.Background.View
+        separatorLineView.isHidden = false
     }
 }

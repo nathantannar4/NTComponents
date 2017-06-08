@@ -115,7 +115,7 @@ open class NTSegmentedControl: UIControl {
     
     private var segments: [String] = []
     
-    private var numberOfSegments: Int {
+    open var numberOfSegments: Int {
         return segments.count
     }
     
@@ -129,6 +129,16 @@ open class NTSegmentedControl: UIControl {
     private lazy var backgroundView: UIView = UIView()
     private lazy var selectedContainerView: UIView = UIView()
     private lazy var sliderView: SliderView = SliderView()
+    
+    // MARK: - Handlers
+    
+    open var onSelectionChanged: ((Int) -> Void)?
+    
+    @discardableResult
+    open func onSelectionChanged(_ handler: @escaping ((Int) -> Void)) -> Self {
+        onSelectionChanged = handler
+        return self
+    }
     
     public convenience init() {
         self.init(frame: .zero)
@@ -269,6 +279,7 @@ open class NTSegmentedControl: UIControl {
         let index = segmentIndex(for: location)
         move(to: index)
         delegate?.didSelect(index)
+        onSelectionChanged?(index)
     }
     
     open func move(to index: Int) {

@@ -99,8 +99,6 @@
 		388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE91EE5298C0036AECE /* NTCheckbox.swift */; };
 		388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EED1EE678B70036AECE /* NTFormViewController.swift */; };
 		388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF01EE678F80036AECE /* NTFormDatasource.swift */; };
-		388C1EF31EE679060036AECE /* NTFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF21EE679060036AECE /* NTFormCell.swift */; };
-		388C1EF51EE6791C0036AECE /* NTFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EF41EE6791C0036AECE /* NTFormSection.swift */; };
 		389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3D41EB307370089E9C1 /* MapViewController.swift */; };
 		389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F41EB51EBE0089E9C1 /* NTChime.swift */; };
 		389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3F81EB59AC10089E9C1 /* NTPing.swift */; };
@@ -115,6 +113,14 @@
 		38D1EE361EDFF1A700C7FD44 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */; };
 		38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */; };
 		38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */; };
+		38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8B51EE78C0100639A19 /* FormViewController.swift */; };
+		38ECA8B81EE7C58E00639A19 /* NTFormInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */; };
+		38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8BA1EE7C5DA00639A19 /* NTFormSection.swift */; };
+		38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8BC1EE7C5E600639A19 /* NTFormCell.swift */; };
+		38ECA8C11EE7D20B00639A19 /* NTFormLongInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */; };
+		38ECA8C31EE7D23700639A19 /* NTFormControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */; };
+		38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */; };
+		38ECA8C91EE8DEBE00639A19 /* NTFormProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */; };
 		38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */; };
 		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
 		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
@@ -244,8 +250,6 @@
 		388C1EE91EE5298C0036AECE /* NTCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCheckbox.swift; path = Controls/NTCheckbox.swift; sourceTree = "<group>"; };
 		388C1EED1EE678B70036AECE /* NTFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormViewController.swift; path = "NTComponents/UI Kit/Form/NTFormViewController.swift"; sourceTree = SOURCE_ROOT; };
 		388C1EF01EE678F80036AECE /* NTFormDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormDatasource.swift; path = Form/NTFormDatasource.swift; sourceTree = "<group>"; };
-		388C1EF21EE679060036AECE /* NTFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFormCell.swift; sourceTree = "<group>"; };
-		388C1EF41EE6791C0036AECE /* NTFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFormSection.swift; sourceTree = "<group>"; };
 		389AF3D41EB307370089E9C1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		389AF3F41EB51EBE0089E9C1 /* NTChime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTChime.swift; sourceTree = "<group>"; };
 		389AF3F81EB59AC10089E9C1 /* NTPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPing.swift; sourceTree = "<group>"; };
@@ -260,6 +264,14 @@
 		38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
 		38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTActivityView.swift; path = "NTComponents/UI Kit/Views/NTActivityView.swift"; sourceTree = SOURCE_ROOT; };
 		38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshControl.swift; sourceTree = "<group>"; };
+		38ECA8B51EE78C0100639A19 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormInputCell.swift; path = Form/Cells/NTFormInputCell.swift; sourceTree = "<group>"; };
+		38ECA8BA1EE7C5DA00639A19 /* NTFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormSection.swift; path = Form/NTFormSection.swift; sourceTree = "<group>"; };
+		38ECA8BC1EE7C5E600639A19 /* NTFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormCell.swift; path = Form/Cells/NTFormCell.swift; sourceTree = "<group>"; };
+		38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormLongInputCell.swift; path = Form/Cells/NTFormLongInputCell.swift; sourceTree = "<group>"; };
+		38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormControlCell.swift; path = Form/Cells/NTFormControlCell.swift; sourceTree = "<group>"; };
+		38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormImageViewCell.swift; path = Form/Cells/NTFormImageViewCell.swift; sourceTree = "<group>"; };
+		38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormProfileCell.swift; path = Form/Cells/NTFormProfileCell.swift; sourceTree = "<group>"; };
 		38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedTextField.swift; sourceTree = "<group>"; };
 		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
 		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
+				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
 				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
 				380461051EA2A787008A03B5 /* TableViewController.swift */,
 				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
@@ -584,8 +597,8 @@
 			children = (
 				388C1EED1EE678B70036AECE /* NTFormViewController.swift */,
 				388C1EF01EE678F80036AECE /* NTFormDatasource.swift */,
-				388C1EF21EE679060036AECE /* NTFormCell.swift */,
-				388C1EF41EE6791C0036AECE /* NTFormSection.swift */,
+				38ECA8BA1EE7C5DA00639A19 /* NTFormSection.swift */,
+				38ECA8B91EE7C5D000639A19 /* Cells */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -600,6 +613,19 @@
 				388C1EE91EE5298C0036AECE /* NTCheckbox.swift */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		38ECA8B91EE7C5D000639A19 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				38ECA8BC1EE7C5E600639A19 /* NTFormCell.swift */,
+				38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */,
+				38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */,
+				38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */,
+				38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */,
+				38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		38FCFA3A1ECFF7AD007D3019 /* Login */ = {
@@ -743,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */,
 				38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */,
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */,
@@ -763,7 +790,7 @@
 				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
 				3863D8B01EB0686E003B73F7 /* NSMutableAttributedString.swift in Sources */,
 				3863D8D21EB0686E003B73F7 /* NTTabBarItem.swift in Sources */,
-				388C1EF31EE679060036AECE /* NTFormCell.swift in Sources */,
+				38ECA8B81EE7C58E00639A19 /* NTFormInputCell.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */,
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
@@ -771,6 +798,7 @@
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
 				3823293C1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift in Sources */,
 				3863D8B21EB0686E003B73F7 /* UIColor.swift in Sources */,
+				38ECA8C91EE8DEBE00639A19 /* NTFormProfileCell.swift in Sources */,
 				388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */,
 				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
@@ -779,7 +807,9 @@
 				3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */,
 				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
+				38ECA8C11EE7D20B00639A19 /* NTFormLongInputCell.swift in Sources */,
 				3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */,
+				38ECA8C31EE7D23700639A19 /* NTFormControlCell.swift in Sources */,
 				3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */,
 				3863D8D41EB0686E003B73F7 /* NTTableView.swift in Sources */,
 				3863D8D01EB0686E003B73F7 /* NTTabBar.swift in Sources */,
@@ -815,6 +845,7 @@
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				3823293E1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
+				38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
@@ -835,12 +866,13 @@
 				380EEA121EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift in Sources */,
 				3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */,
 				38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */,
-				388C1EF51EE6791C0036AECE /* NTFormSection.swift in Sources */,
+				38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */,
 				3863D8BF1EB0686E003B73F7 /* NTCollectionViewCell.swift in Sources */,
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
 				38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */,
+				38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */,
 				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */,

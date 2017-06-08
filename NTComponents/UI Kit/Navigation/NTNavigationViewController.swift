@@ -25,6 +25,11 @@
 //  Created by Nathan Tannar on 5/19/17.
 //
 
+public protocol NTNavigationViewControllerDelegate: NSObjectProtocol {
+    func nextViewController(_ navigationViewController: NTNavigationViewController) -> UIViewController?
+    func navigationViewController(_ navigationViewController: NTNavigationViewController, shouldMoveTo viewController: UIViewController) -> Bool
+}
+
 open class NTNavigationViewController: NTViewController {
     
     open override var title: String? {
@@ -37,7 +42,9 @@ open class NTNavigationViewController: NTViewController {
         }
     }
     
-    open let navBarView: UIView = {
+    open var delegate: NTNavigationViewControllerDelegate?
+    
+    open let navigationBar: UIView = {
         let view = UIView()
         view.backgroundColor = Color.Default.Background.NavigationBar
         view.setDefaultShadow()
@@ -50,7 +57,7 @@ open class NTNavigationViewController: NTViewController {
         button.trackTouchLocation = false
         button.tintColor = Color.Default.Tint.NavigationBar
         button.rippleColor = Color.Gray.P200
-        button.image = Icon.Arrow.Backward
+        button.image = Icon.Delete
         button.ripplePercent = 1.2
         button.rippleOverBounds = true
         button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
@@ -58,7 +65,7 @@ open class NTNavigationViewController: NTViewController {
     }()
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.adjustsFontSizeToFitWidth = true
         label.font = Font.Default.Headline.withSize(44)
         return label
@@ -66,6 +73,7 @@ open class NTNavigationViewController: NTViewController {
     
     open let nextButton: NTButton = {
         let button = NTButton()
+        button.isHidden = true
         button.trackTouchLocation = false
         button.image = Icon.Arrow.Forward
         button.ripplePercent = 1
@@ -74,22 +82,48 @@ open class NTNavigationViewController: NTViewController {
         button.adjustsImageWhenHighlighted = false
         button.setDefaultShadow()
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.imageEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8)
         return button
     }()
+    
+    fileprivate var rootViewController: UIViewController!
+    fileprivate weak var previousViewController: UIViewController?
+    
+    // MARK: - Initialization
+    
+    fileprivate override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public convenience init(rootViewController: UIViewController) {
+        self.init(nibName: nil, bundle: nil)
+        self.rootViewController = rootViewController
+        self.rootViewController.didMove(toParentViewController: self)
+        self.addChildViewController(self.rootViewController)
+        view.insertSubview(self.rootViewController.view, at: 0)
+        self.rootViewController.view.anchor(navigationBar.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+    }
+    
+    // MARK: - Standard Methods
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         
         view.setDefaultShadow()
-        view.addSubview(navBarView)
-        navBarView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 84)
+        view.layer.shadowOffset = CGSize(width: -Color.Default.Shadow.Offset.width, height: 0)
+        view.addSubview(navigationBar)
+        navigationBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 84)
         
-        navBarView.addSubview(backButton)
-        navBarView.addSubview(titleLabel)
+        navigationBar.addSubview(backButton)
+        navigationBar.addSubview(titleLabel)
         view.addSubview(nextButton)
         
-        backButton.anchor(navBarView.topAnchor, left: navBarView.leftAnchor, bottom: nil, right: nil, topConstant: 22, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
-        titleLabel.anchor(backButton.bottomAnchor, left: backButton.leftAnchor, bottom: navBarView.bottomAnchor, right: navBarView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        backButton.anchor(navigationBar.topAnchor, left: navigationBar.leftAnchor, bottom: nil, right: nil, topConstant: 22, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+        titleLabel.anchor(backButton.bottomAnchor, left: backButton.leftAnchor, bottom: navigationBar.bottomAnchor, right: navigationBar.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
         nextButton.anchor(nil, left: nil, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 50, heightConstant: 50)
         
@@ -101,20 +135,44 @@ open class NTNavigationViewController: NTViewController {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let navColor = navBarView.backgroundColor else {
+        guard let navColor = navigationBar.backgroundColor else {
             return
         }
         statusBarStyle = UIApplication.shared.statusBarStyle
         UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
     }
     
-    open func nextButtonPressed() {
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if previousViewController != nil {
+            backButton.image = Icon.Arrow.Backward
+        } else {
+            backButton.tintColor = Color.Gray.P700
+        }
+        if (delegate?.nextViewController(self)) != nil {
+            nextButton.isHidden = false
+        }
+    }
+    
+    open func nextButtonPressed() {
+        guard let vc = delegate?.nextViewController(self) else {
+            return
+        }
+        if delegate!.navigationViewController(self, shouldMoveTo: vc) {
+            let navVC = NTNavigationViewController(rootViewController: vc)
+            navVC.previousViewController = self
+            presentViewController(navVC, from: .right, completion: nil)
+        }
     }
     
     open func backButtonPressed() {
-        dismissViewController(to: .right, completion: {
-            UIViewController.topController()?.viewDidAppear(true)
-        })
+        if previousViewController == nil {
+            dismiss(animated: true, completion: nil)
+        } else {
+            dismissViewController(to: .right) {
+                self.previousViewController?.viewWillAppear(true)
+            }
+        }
     }
 }

@@ -26,7 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Font.Default.Subtitle = Font.Roboto.Regular
         Font.Default.Body = Font.Roboto.Regular.withSize(13)
         Font.Default.Caption = Font.Roboto.Medium.withSize(12)
-        Font.Default.Subhead = Font.Roboto.Regular
+        Font.Default.Subhead = Font.Roboto.Light.withSize(14)
+        Font.Default.Headline = Font.Roboto.Medium.withSize(15)
+        Font.Default.Callout = Font.Roboto.Regular.withSize(15)
+        Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
         Log.setTraceLevel(to: .off)
         
@@ -53,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sampleVC.title = "Samples"
         sampleVC.viewDidLoad()
         
-        let core = NTScrollableTabBarController(viewControllers: [NTFormViewController(), TableViewController()])
+        let core = NTScrollableTabBarController(viewControllers: [FormViewController(), TableViewController()])
         core.tabBarHeight = 32
         core.tabBarPosition = .top
         core.title = "Core"
@@ -73,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        window?.rootViewController = root
+        window?.rootViewController = NTNavigationViewController(rootViewController: FormViewController())
         window?.makeKeyAndVisible()
         
         return true
@@ -122,19 +125,7 @@ class ViewController: UIViewController {
         check.anchor(toggle.bottomAnchor, left: toggle.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func switchStateChanged(_ isOn: Bool) {
-        print(isOn)
-    }
 }
 
-extension ViewController: NTSegmentedControlDelegate {
-    func didSelect(_ segmentIndex: Int) {
-        print("Selected index: \(segmentIndex)")
-    }
-}
+
 

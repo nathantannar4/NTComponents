@@ -388,7 +388,10 @@ open class NTSwitch: UIControl {
     func onTouchDown(btn: UIButton, withEvent event: UIEvent) {
         
         if isRippleEnabled {
-            initializeRipple()
+            
+            if rippleLayer == nil {
+                initializeRipple()
+            }
             
             // Animate for appearing ripple circle when tap and hold the switch thumb
             CATransaction.begin()
