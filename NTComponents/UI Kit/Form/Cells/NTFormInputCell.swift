@@ -26,7 +26,7 @@
 //
 
 
-open class NTFormInputCell: NTFormCell, UITextFieldDelegate {
+open class NTFormInputCell: NTFormCell {
     
     open override var datasourceItem: Any? {
         get {

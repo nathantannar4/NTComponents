@@ -62,21 +62,21 @@ open class NTActionSheetViewController: UIViewController  {
     }
     
     open var actionButtonHeight: CGFloat = 50
-    open var titleLabelHeight: CGFloat = 20
-    open var subtitleLabelHeight: CGFloat = 15
+    open var titleLabelHeight: CGFloat = 40
+    open var subtitleLabelHeight: CGFloat = 30
     
     fileprivate var actions: [NTActionSheetItem] = []
     fileprivate var actionButtons: [NTButton] = []
 
     public var titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .callout)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
     }()
 
     public var subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .caption)
         label.textAlignment = .center
         label.backgroundColor = .white
         return label
@@ -139,7 +139,8 @@ open class NTActionSheetViewController: UIViewController  {
         actions.append(action)
     }
 
-    public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = Icon.icon("Delete_ffffff_100"), color: UIColor = .white) {
+    public func addDismissAction(withText text: String = "Dismiss", icon: UIImage? = nil, color: UIColor = .white) {
+        
         let dismissAction = NTActionSheetItem(title: text, icon: icon, iconTint: UIColor.black, color: color)
         actions.append(dismissAction)
     }
@@ -178,14 +179,15 @@ open class NTActionSheetViewController: UIViewController  {
 
     open func didSelectAction(sender: NTButton) {
         if let index = actionButtons.index(of: sender) {
-            actions[index].action?()
-            dismiss()
+            dismiss(animated: false, completion: {
+                self.actions[index].action?()
+            })
         }
     }
 
     // MARK: - Animation Methods
 
-    public func presentActionSheet() {
+    fileprivate func presentActionSheet() {
 
         let numberOfActions = CGFloat(actions.count)
         let containerHeight: CGFloat = (numberOfActions * actionButtonHeight) + (title != nil ? titleLabelHeight : 0) + (subtitle != nil ? subtitleLabelHeight : 0)
@@ -196,11 +198,23 @@ open class NTActionSheetViewController: UIViewController  {
         // Header
         if title != nil {
             actionsContainer.addSubview(titleLabel)
-            titleLabel.anchor(actionsContainer.topAnchor, left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: titleLabelHeight)
+            titleLabel.anchor(actionsContainer.topAnchor, left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: titleLabelHeight - 10)
+            
+            if subtitle == nil {
+                let separatorView = UIView()
+                separatorView.backgroundColor = Color.Gray.P500
+                titleLabel.addSubview(separatorView)
+                separatorView.anchor(nil, left: titleLabel.leftAnchor, bottom: titleLabel.bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
+            }
         }
         if subtitle != nil {
             actionsContainer.addSubview(subtitleLabel)
-            subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight)
+            subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight - 10)
+            
+            let separatorView = UIView()
+            separatorView.backgroundColor = Color.Gray.P500
+            subtitleLabel.addSubview(separatorView)
+            separatorView.anchor(nil, left: subtitleLabel.leftAnchor, bottom: subtitleLabel.bottomAnchor, right: subtitleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
         }
 
         actionButtons.removeAll()

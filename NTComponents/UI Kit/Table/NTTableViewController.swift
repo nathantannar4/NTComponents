@@ -307,6 +307,5 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         if #available(iOS 10.0, *) {
             (tableView.refreshControl as? NTRefreshControl)?.beginRefreshing()
         }
-        
     }
 }

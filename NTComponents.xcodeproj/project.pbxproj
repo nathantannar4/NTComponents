@@ -14,7 +14,6 @@
 		38084ABF1EA311EE00329516 /* NTComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; };
 		38084AC01EA311EE00329516 /* NTComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38084AC51EA319D900329516 /* ColorsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38084AC41EA319D900329516 /* ColorsCollectionView.swift */; };
-		380EEA121EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA111EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift */; };
 		380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */; };
 		380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */; };
 		380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */; };
@@ -60,7 +59,6 @@
 		3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */; };
 		3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D86C1EB0686E003B73F7 /* NTToast.swift */; };
 		3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */; };
-		3863D8BF1EB0686E003B73F7 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8731EB0686E003B73F7 /* NTCollectionViewCell.swift */; };
 		3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */; };
 		3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8761EB0686E003B73F7 /* NTMapAnnotationView.swift */; };
 		3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */; };
@@ -89,8 +87,6 @@
 		3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8971EB0686E003B73F7 /* NTAnimatedView.swift */; };
 		3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8981EB0686E003B73F7 /* NTImageView.swift */; };
 		3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8991EB0686E003B73F7 /* NTView.swift */; };
-		386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9B41ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift */; };
-		386AB9B91ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9B71ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift */; };
 		386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */; };
 		388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
@@ -107,7 +103,6 @@
 		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
 		38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */; };
-		38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38D1EE361EDFF1A700C7FD44 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */; };
@@ -121,6 +116,13 @@
 		38ECA8C31EE7D23700639A19 /* NTFormControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */; };
 		38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */; };
 		38ECA8C91EE8DEBE00639A19 /* NTFormProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */; };
+		38ECA8CB1EE9AB3B00639A19 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8CA1EE9AB3B00639A19 /* CollectionViewController.swift */; };
+		38ECA8CE1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8CD1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift */; };
+		38ECA8D31EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8CF1EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift */; };
+		38ECA8D41EE9AC8400639A19 /* NTCollectionDatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D01EE9AC8400639A19 /* NTCollectionDatasourceCell.swift */; };
+		38ECA8D51EE9AC8400639A19 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D11EE9AC8400639A19 /* NTCollectionViewCell.swift */; };
+		38ECA8D61EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D21EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift */; };
+		38ECA8D81EE9BBA400639A19 /* NTLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D71EE9BBA400639A19 /* NTLandingViewController.swift */; };
 		38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */; };
 		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
 		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
@@ -163,7 +165,6 @@
 		380461001EA2A6C2008A03B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		380461051EA2A787008A03B5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		38084AC41EA319D900329516 /* ColorsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionView.swift; sourceTree = "<group>"; };
-		380EEA111EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProgressHUD.swift; sourceTree = "<group>"; };
 		380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransition.swift; sourceTree = "<group>"; };
 		380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
@@ -211,7 +212,6 @@
 		3863D86B1EB0686E003B73F7 /* NTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAlertViewController.swift; sourceTree = "<group>"; };
 		3863D86C1EB0686E003B73F7 /* NTToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToast.swift; sourceTree = "<group>"; };
 		3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
-		3863D8731EB0686E003B73F7 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewCell.swift; sourceTree = "<group>"; };
 		3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
 		3863D8761EB0686E003B73F7 /* NTMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapAnnotationView.swift; sourceTree = "<group>"; };
 		3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapPointAnnotation.swift; sourceTree = "<group>"; };
@@ -240,8 +240,6 @@
 		3863D8971EB0686E003B73F7 /* NTAnimatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedView.swift; sourceTree = "<group>"; };
 		3863D8981EB0686E003B73F7 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		3863D8991EB0686E003B73F7 /* NTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
-		386AB9B41ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasourceCell.swift; sourceTree = "<group>"; };
-		386AB9B71ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewDefaultCells.swift; sourceTree = "<group>"; };
 		386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTAnimatedMenuButton.swift; path = Controls/NTAnimatedMenuButton.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
 		38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSegmentedControl.swift; path = Controls/NTSegmentedControl.swift; sourceTree = "<group>"; };
-		38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTUserViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +269,13 @@
 		38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormControlCell.swift; path = Form/Cells/NTFormControlCell.swift; sourceTree = "<group>"; };
 		38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormImageViewCell.swift; path = Form/Cells/NTFormImageViewCell.swift; sourceTree = "<group>"; };
 		38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormProfileCell.swift; path = Form/Cells/NTFormProfileCell.swift; sourceTree = "<group>"; };
+		38ECA8CA1EE9AB3B00639A19 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		38ECA8CD1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionUserHeaderCell.swift; path = Cells/NTCollectionUserHeaderCell.swift; sourceTree = "<group>"; };
+		38ECA8CF1EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTAnimatedCollectionViewCell.swift; path = Cells/NTAnimatedCollectionViewCell.swift; sourceTree = "<group>"; };
+		38ECA8D01EE9AC8400639A19 /* NTCollectionDatasourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionDatasourceCell.swift; path = Cells/NTCollectionDatasourceCell.swift; sourceTree = "<group>"; };
+		38ECA8D11EE9AC8400639A19 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionViewCell.swift; path = Cells/NTCollectionViewCell.swift; sourceTree = "<group>"; };
+		38ECA8D21EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionViewDefaultCells.swift; path = Cells/NTCollectionViewDefaultCells.swift; sourceTree = "<group>"; };
+		38ECA8D71EE9BBA400639A19 /* NTLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTLandingViewController.swift; sourceTree = "<group>"; };
 		38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedTextField.swift; sourceTree = "<group>"; };
 		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
 		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
 				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
 				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
+				38ECA8CA1EE9AB3B00639A19 /* CollectionViewController.swift */,
 				380461051EA2A787008A03B5 /* TableViewController.swift */,
 				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
 				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
@@ -485,10 +490,7 @@
 			children = (
 				3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */,
 				3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */,
-				3863D8731EB0686E003B73F7 /* NTCollectionViewCell.swift */,
-				386AB9B41ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift */,
-				386AB9B71ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift */,
-				380EEA111EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift */,
+				38ECA8CC1EE9AC1F00639A19 /* Cells */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -519,7 +521,7 @@
 			children = (
 				38FCFA3A1ECFF7AD007D3019 /* Login */,
 				389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */,
-				38B5A9051EC9D8FF00B36954 /* NTUserViewController.swift */,
+				38ECA8D71EE9BBA400639A19 /* NTLandingViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -624,6 +626,18 @@
 				38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */,
 				38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */,
 				38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		38ECA8CC1EE9AC1F00639A19 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				38ECA8D11EE9AC8400639A19 /* NTCollectionViewCell.swift */,
+				38ECA8CF1EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift */,
+				38ECA8D21EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift */,
+				38ECA8D01EE9AC8400639A19 /* NTCollectionDatasourceCell.swift */,
+				38ECA8CD1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -773,6 +787,7 @@
 				38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */,
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */,
+				38ECA8CB1EE9AB3B00639A19 /* CollectionViewController.swift in Sources */,
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
 				38D1EE361EDFF1A700C7FD44 /* AlertDetailViewController.swift in Sources */,
 				383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */,
@@ -794,7 +809,9 @@
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */,
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
+				38ECA8D31EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift in Sources */,
 				3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */,
+				38ECA8D61EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift in Sources */,
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
 				3823293C1EE285EB00945C31 /* NTSwipeableModalInteractiveTransition.swift in Sources */,
 				3863D8B21EB0686E003B73F7 /* UIColor.swift in Sources */,
@@ -824,13 +841,13 @@
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,
 				380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */,
+				38ECA8CE1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift in Sources */,
 				386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */,
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
 				380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */,
 				388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				382329401EE2863B00945C31 /* NTSwipeablePresentationController.swift in Sources */,
-				386AB9B51ECD38D0004AC8D2 /* NTCollectionDatasourceCell.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
@@ -849,13 +866,13 @@
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
-				386AB9B91ECD777E004AC8D2 /* NTCollectionViewDefaultCells.swift in Sources */,
 				380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
 				380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */,
 				3823293A1EE27ABD00945C31 /* NTSwipeableTransitioningDelegate.swift in Sources */,
+				38ECA8D41EE9AC8400639A19 /* NTCollectionDatasourceCell.swift in Sources */,
 				388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */,
 				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
 				3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */,
@@ -863,19 +880,18 @@
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,
 				3863D8D81EB0686E003B73F7 /* NTTextField.swift in Sources */,
 				3863D8B31EB0686E003B73F7 /* UIImage+UIImageView.swift in Sources */,
-				380EEA121EDC00B00018FC37 /* NTAnimatedCollectionViewCell.swift in Sources */,
 				3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */,
 				38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */,
 				38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */,
-				3863D8BF1EB0686E003B73F7 /* NTCollectionViewCell.swift in Sources */,
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
+				38ECA8D81EE9BBA400639A19 /* NTLandingViewController.swift in Sources */,
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
-				38B5A9061EC9D8FF00B36954 /* NTUserViewController.swift in Sources */,
 				38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */,
 				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */,
+				38ECA8D51EE9AC8400639A19 /* NTCollectionViewCell.swift in Sources */,
 				38FCFA821ED2D0C4007D3019 /* NTInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

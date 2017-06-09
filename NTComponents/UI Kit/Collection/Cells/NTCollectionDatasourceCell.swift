@@ -25,33 +25,36 @@
 //  Created by Nathan Tannar on 5/17/17.
 //
 
+public struct NTCollectionDatasourceData {
+    public var dataSource: UICollectionViewDataSource?
+    public var delegate: UICollectionViewDelegate?
+    public var title: String?
+    public var subtitle: String?
+    public var cellSize: CGSize
+    public init(dataSource: UICollectionViewDataSource?, delegate: UICollectionViewDelegate?, title: String?, subtitle: String?, cellSize: CGSize = CGSize(width: 60, height: 60)) {
+        self.dataSource = dataSource
+        self.delegate = delegate
+        self.title = title
+        self.subtitle = subtitle
+        self.cellSize = cellSize
+    }
+}
+
 open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    open override var reuseIdentifier: String? {
-        get {
-            return "NTCollectionDatasourceCell"
+    open override var datasourceItem: Any? {
+        didSet {
+            guard let data = datasourceItem as? NTCollectionDatasourceData else {
+                return
+            }
+            collectionView.dataSource = data.dataSource
+            collectionView.delegate = data.delegate
+            titleLabel.text = data.title
+            subtitleLabel.text = data.subtitle
+            cellSize = data.cellSize
+            collectionView.reloadData()
         }
     }
-    
-    open var dataSource: UICollectionViewDataSource? {
-        get {
-            return collectionView.dataSource
-        }
-        set {
-            collectionView.dataSource = newValue
-        }
-    }
-    
-    open var delegate: UICollectionViewDelegate? {
-        get {
-            return collectionView.delegate
-        }
-        set {
-            collectionView.delegate = newValue
-        }
-    }
-    
-    open var collectionCellSize: CGSize = CGSize(width: 60, height: 60)
     
     // MARK: - Initialization
     
@@ -85,7 +88,11 @@ open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDat
     open let actionButton: NTButton = {
         let button = NTButton()
         button.trackTouchLocation = false
+        button.ripplePercent = 0.5
+        button.rippleOverBounds = true
         button.backgroundColor = .clear
+        button.rippleColor = Color.Gray.P200
+        button.tintColor = Color.Gray.P800
         button.image = Icon.Arrow.Forward?.scale(to: 15)
         button.title = "View All"
         button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
@@ -105,24 +112,26 @@ open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDat
         return collectionView
     }()
     
+    open var cellSize: CGSize = CGSize(width: 60, height: 60)
+    
     open override func setupViews() {
         
+        backgroundColor = .white
+        separatorLineView.isHidden = false
+        
         addSubview(collectionView)
-        addSubview(separatorLineView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(actionButton)
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier!)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         
-        titleLabel.anchor(topAnchor, left: leftAnchor, bottom: nil, right: actionButton.leftAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: actionButton.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        actionButton.anchor(topAnchor, left: nil, bottom: subtitleLabel.bottomAnchor, right: rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
-        actionButton.widthAnchor.constraint(lessThanOrEqualToConstant: 60).isActive = true
-        collectionView.anchor(subtitleLabel.bottomAnchor, left: leftAnchor, bottom: separatorLineView.topAnchor, right: rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        separatorLineView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
+        titleLabel.anchor(topAnchor, left: leftAnchor, bottom: nil, right: actionButton.leftAnchor, topConstant: 8, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: actionButton.leftAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        actionButton.anchor(topAnchor, left: nil, bottom: subtitleLabel.bottomAnchor, right: rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 16, widthConstant: 60, heightConstant: 0)
+        collectionView.anchor(subtitleLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
     
     final public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -134,14 +143,14 @@ open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDat
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier!, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         cell.backgroundColor = Color.Default.Background.ViewController
         return cell
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return collectionCellSize
+        return cellSize
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -152,7 +161,7 @@ open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDat
         
     }
     
-    open static var defaultSize: CGSize {
+    open override class var cellSize: CGSize {
         get {
             return CGSize(width: UIScreen.main.bounds.width, height: 120)
         }

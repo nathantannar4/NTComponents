@@ -38,5 +38,4 @@ open class NTImagePickerController: UIImagePickerController {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.setDefaultShadow()
     }
-    
 }

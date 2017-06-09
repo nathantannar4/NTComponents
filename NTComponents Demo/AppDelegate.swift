@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sampleVC.title = "Other"
         sampleVC.viewDidLoad()
         
-        let core = NTScrollableTabBarController(viewControllers: [FormViewController().withTitle("Form"), TableViewController().withTitle("TableView"), NTProfileViewController().withTitle("CollectionView"), ColorsCollectionView().withTitle("Colors")])
+        let core = NTScrollableTabBarController(viewControllers: [FormViewController().withTitle("Form"), TableViewController().withTitle("TableView"), CollectionViewController().withTitle("CollectionView"), ColorsCollectionView().withTitle("Colors")])
         core.tabBarHeight = 32
         core.tabBarPosition = .top
         core.title = "Core"

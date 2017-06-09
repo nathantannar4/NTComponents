@@ -29,7 +29,6 @@ import NTComponents
 
 class FormViewController: NTFormViewController, NTNavigationViewControllerDelegate {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,21 +73,24 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
         cellF.onImageViewTap { (imageView) in
             print("Tapped ImageView")
         }
+        cellF.onTouchUpInsideActionButton { (button) in
+            cellF.presentImagePicker(completion: { (image) in
+                print(image)
+            })
+        }
         
         let cellG = NTFormProfileCell()
         cellG.image = #imageLiteral(resourceName: "Nathan")
         cellG.name = "Nathan Tannar"
-        cellG.onImageViewTap { (imageView) in
-            print("Tapped ImageView")
-        }
-        cellG.onTextFieldUpdate { (textField) in
-            print(textField.text ?? "")
-        }
         cellG.onTouchUpInsideActionButton { (button) in
             cellG.presentImagePicker(completion: { (image) in
                 print(image)
             })
         }
+        cellG.onTextFieldUpdate { (textField) in
+            print(textField.text ?? "")
+        }
+        
         
         let sectionA = NTFormSection(fromRows: [cellF, cellG])
         
