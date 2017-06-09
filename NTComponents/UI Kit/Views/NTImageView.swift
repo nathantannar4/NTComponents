@@ -36,7 +36,6 @@ open class NTImageView: UIImageView {
     
     open var shouldUseEmptyImage = true
     
-    private var urlStringForChecking: String?
     private var emptyImage: UIImage?
     
     // MARK: - Handlers
@@ -142,8 +141,6 @@ open class NTImageView: UIImageView {
         guard let urlString = urlString else {
             return
         }
-        
-        self.urlStringForChecking = urlString
         
         let urlKey = urlString as NSString
         

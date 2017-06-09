@@ -179,6 +179,7 @@ open class NTButton: UIButton {
         titleLabel?.font = Font.Default.Body
         setTitleColor(Color.Default.Background.Button.isLight ? .black : .white, for: .normal)
         imageView?.contentMode = .scaleAspectFit
+        adjustsImageWhenHighlighted = false
         
         setupRippleView()
         

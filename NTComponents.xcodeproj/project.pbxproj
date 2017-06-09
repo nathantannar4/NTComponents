@@ -123,6 +123,9 @@
 		38ECA8D51EE9AC8400639A19 /* NTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D11EE9AC8400639A19 /* NTCollectionViewCell.swift */; };
 		38ECA8D61EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D21EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift */; };
 		38ECA8D81EE9BBA400639A19 /* NTLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8D71EE9BBA400639A19 /* NTLandingViewController.swift */; };
+		38ECA8DF1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8DE1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift */; };
+		38ECA8E11EEA636A00639A19 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E01EEA636A00639A19 /* UITextView.swift */; };
+		38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */; };
 		38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */; };
 		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
 		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
@@ -276,6 +279,9 @@
 		38ECA8D11EE9AC8400639A19 /* NTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionViewCell.swift; path = Cells/NTCollectionViewCell.swift; sourceTree = "<group>"; };
 		38ECA8D21EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCollectionViewDefaultCells.swift; path = Cells/NTCollectionViewDefaultCells.swift; sourceTree = "<group>"; };
 		38ECA8D71EE9BBA400639A19 /* NTLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTLandingViewController.swift; sourceTree = "<group>"; };
+		38ECA8DE1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormAnimatedInputCell.swift; path = Form/Cells/NTFormAnimatedInputCell.swift; sourceTree = "<group>"; };
+		38ECA8E01EEA636A00639A19 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormImageSelectorCell.swift; path = Form/Cells/NTFormImageSelectorCell.swift; sourceTree = "<group>"; };
 		38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedTextField.swift; sourceTree = "<group>"; };
 		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
 		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +447,7 @@
 				3863D8631EB0686E003B73F7 /* UIImage+UIImageView.swift */,
 				3863D8641EB0686E003B73F7 /* UISearchBar.swift */,
 				3863D8651EB0686E003B73F7 /* UITextField.swift */,
+				38ECA8E01EEA636A00639A19 /* UITextView.swift */,
 				3863D8661EB0686E003B73F7 /* UIView.swift */,
 				3863D8671EB0686E003B73F7 /* UIViewController.swift */,
 				386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */,
@@ -621,10 +628,12 @@
 			isa = PBXGroup;
 			children = (
 				38ECA8BC1EE7C5E600639A19 /* NTFormCell.swift */,
+				38ECA8DE1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift */,
 				38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */,
 				38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */,
 				38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */,
 				38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */,
+				38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */,
 				38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */,
 			);
 			name = Cells;
@@ -850,6 +859,7 @@
 				382329401EE2863B00945C31 /* NTSwipeablePresentationController.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
+				38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
 				388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */,
@@ -857,12 +867,14 @@
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
+				38ECA8E11EEA636A00639A19 /* UITextView.swift in Sources */,
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				3823293E1EE2861000945C31 /* NTSwipeableTransitionAnimator.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
 				38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */,
+				38ECA8DF1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,

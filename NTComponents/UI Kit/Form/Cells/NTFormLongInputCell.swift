@@ -77,7 +77,6 @@ open class NTFormLongInputCell: NTFormCell {
     
     open var textView: NTTextView = {
         let textView = NTTextView()
-        textView.placeholder = "Placeholder"
         return textView
     }()
     
@@ -99,6 +98,13 @@ open class NTFormLongInputCell: NTFormCell {
     
         label.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 2, leftConstant: 16, bottomConstant: 2, rightConstant: 0, widthConstant: 80, heightConstant: 40)
         textView.anchor(topAnchor, left: label.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 14, leftConstant: 2, bottomConstant: 2, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        textView.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
+    }
+    
+    open func dismissKeyboard() {
+        textView.resignFirstResponder()
     }
     
     open override class var cellSize: CGSize {

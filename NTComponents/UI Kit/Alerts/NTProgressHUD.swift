@@ -36,7 +36,6 @@ open class NTProgressHUD: UIView {
     
     open let activityIndicator: NTActivityView = {
         let activityView = NTActivityView()
-        activityView.startAnimating()
         return activityView
     }()
     
@@ -44,7 +43,7 @@ open class NTProgressHUD: UIView {
         let label = NTLabel(style: .body)
         label.font = Font.Default.Body.withSize(12)
         label.textAlignment = .center
-        label.textColor = Color.Gray.P500
+        label.textColor = Color.Gray.P800
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -67,7 +66,7 @@ open class NTProgressHUD: UIView {
     
     // MARK: - Functional Methods
     
-    open func show(withTitle title: String? = nil, duration: TimeInterval? = 3) {
+    open func show(withTitle title: String? = nil, duration: TimeInterval? = nil) {
         alpha = 0
         guard let parent = UIViewController.topController() else {
             return
@@ -81,6 +80,7 @@ open class NTProgressHUD: UIView {
         indicatorView.addSubview(titleLabel)
         
         activityIndicator.anchor(indicatorView.topAnchor, left: indicatorView.leftAnchor, bottom: titleLabel.topAnchor, right: indicatorView.rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        activityIndicator.startAnimating()
         
         titleLabel.text = title
         titleLabel.anchor(nil, left: indicatorView.leftAnchor, bottom: indicatorView.bottomAnchor, right: indicatorView.rightAnchor, topConstant: 0, leftConstant: 4, bottomConstant: 8, rightConstant: 4, widthConstant: 0, heightConstant: 0)

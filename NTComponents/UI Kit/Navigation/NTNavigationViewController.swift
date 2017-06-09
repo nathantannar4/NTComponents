@@ -30,6 +30,21 @@ public protocol NTNavigationViewControllerDelegate: NSObjectProtocol {
     func navigationViewController(_ navigationViewController: NTNavigationViewController, shouldMoveTo viewController: UIViewController) -> Bool
 }
 
+public extension UIViewController {
+    var navigationViewController: NTNavigationViewController? {
+        var parentViewController = parent
+        
+        while parentViewController != nil {
+            if let view = parentViewController as? NTNavigationViewController{
+                return view
+            }
+            parentViewController = parentViewController!.parent
+        }
+        Log.write(.warning, "View controller did not have an NTNavigationViewController as a parent")
+        return nil
+    }
+}
+
 open class NTNavigationViewController: NTViewController {
     
     open override var title: String? {
@@ -86,7 +101,11 @@ open class NTNavigationViewController: NTViewController {
         return button
     }()
     
-    fileprivate var rootViewController: UIViewController!
+    fileprivate var rootViewController: UIViewController! {
+        didSet {
+            title = rootViewController.title
+        }
+    }
     fileprivate weak var previousViewController: UIViewController?
     
     // MARK: - Initialization
@@ -168,7 +187,10 @@ open class NTNavigationViewController: NTViewController {
     
     open func backButtonPressed() {
         if previousViewController == nil {
-            dismiss(animated: true, completion: nil)
+            
+            dismiss(animated: true, completion: {
+                UIViewController.topController()?.viewWillAppear(true)
+            })
         } else {
             dismissViewController(to: .right) {
                 self.previousViewController?.viewWillAppear(true)

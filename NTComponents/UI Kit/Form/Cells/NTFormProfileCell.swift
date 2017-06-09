@@ -134,6 +134,13 @@ open class NTFormProfileCell: NTFormCell, UIImagePickerControllerDelegate, UINav
         actionButton.anchor(nil, left: imageView.leftAnchor, bottom: imageView.bottomAnchor, right: imageView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
         textField.anchor(topAnchor, left: imageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 6, leftConstant: 16, bottomConstant: 6, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+    
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        textField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
+    }
+    
+    open func dismissKeyboard() {
+        textField.resignFirstResponder()
     }
     
     // MARK: - UIImagePickerControllerDelegate

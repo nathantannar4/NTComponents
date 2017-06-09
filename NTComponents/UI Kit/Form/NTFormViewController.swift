@@ -27,6 +27,20 @@
 
 open class NTFormViewController: NTCollectionViewController {
     
+    override open var title: String? {
+        get {
+            return parent?.title ?? super.title
+        }
+        set {
+            if parent != nil {
+                parent?.title = newValue
+            } else {
+                super.title = newValue
+            }
+            
+        }
+    }
+    
     open var headerHeight: CGFloat = 30
     open var footerHeight: CGFloat = 20
     

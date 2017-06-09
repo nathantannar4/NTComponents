@@ -79,7 +79,6 @@ open class NTFormInputCell: NTFormCell {
     open var textField: NTTextField = {
         let textField = NTTextField(style: .body)
         textField.clearButtonMode = .whileEditing
-        textField.placeholder = "Placeholder"
         return textField
     }()
     
@@ -101,5 +100,12 @@ open class NTFormInputCell: NTFormCell {
         
         label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 2, leftConstant: 16, bottomConstant: 2, rightConstant: 0, widthConstant: 80, heightConstant: 0)
         textField.anchor(topAnchor, left: label.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 2, bottomConstant: 2, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        textField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
+    }
+    
+    open func dismissKeyboard() {
+        textField.resignFirstResponder()
     }
 }

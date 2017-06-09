@@ -13,7 +13,7 @@
     <a title="NTComponents  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">NTComponents Docs</a> (4% documented)</p>
+        <p><a href="index.html">NTComponents Docs</a> (3% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -90,6 +90,9 @@
                 <a href="Classes/NTCollectionDatasourceCell.html">NTCollectionDatasourceCell</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/NTCollectionUserHeaderCell.html">NTCollectionUserHeaderCell</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/NTCollectionViewCell.html">NTCollectionViewCell</a>
               </li>
               <li class="nav-group-task">
@@ -156,6 +159,9 @@
                 <a href="Classes/NTLabel.html">NTLabel</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/NTLandingViewController.html">NTLandingViewController</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/NTLoginButton.html">NTLoginButton</a>
               </li>
               <li class="nav-group-task">
@@ -190,9 +196,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/NTPing.html">NTPing</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NTProfileViewController.html">NTProfileViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/NTProgressHUD.html">NTProgressHUD</a>
@@ -286,12 +289,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/NTViewController.html">NTViewController</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/UserDatasource.html">UserDatasource</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/UserProfileCell.html">UserProfileCell</a>
               </li>
             </ul>
           </li>
@@ -496,6 +493,12 @@
               <li class="nav-group-task">
                 <a href="Structs/Log.html">Log</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Structs/NTCollectionDatasourceData.html">NTCollectionDatasourceData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/NTCollectionUserHeaderData.html">NTCollectionUserHeaderData</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -504,12 +507,12 @@
         <section>
           <section class="section">
             
-            <p><img src="NTComponents/Assets/NT Components Banner.jpg"></p>
+            <p><img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/NT%20Components%20Banner.jpg"></p>
 
 <p><a href="https://swift.org/"><img src="https://img.shields.io/badge/swift-3.1-orange.svg" alt="Swift Version"></a>
 <a href="https://cocoapods.org/pods/NTUIKit"><img src="https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat" alt="Platform"></a>
 <a href="https://travis-ci.org/dbader/node-datadog-metrics"><img src="https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square" alt="Build Status"></a>
-<a href="https://img.shields.io/cocoapods/v/NTComponents.svg"><img src="https://img.shields.io/cocoapods/v/NTComponents.svg" alt="CocoaPods Compatible"></a>   <a href=""><img src="https://img.shields.io/cocoapods/metrics/doc-percent/NTUIKit.svg" alt="CocoaPods"></a>
+<a href="https://img.shields.io/cocoapods/v/NTComponents.svg"><img src="https://img.shields.io/cocoapods/v/NTComponents.svg" alt="CocoaPods Compatible"></a>   <a href=""><img src="https://img.shields.io/cocoapods/metrics/doc-percent/NTComponents.svg" alt="CocoaPods"></a>
 <br></p>
 
 <p>I faced an ongoing problem of always having to set the tint color, font choice and general defaults for every project. To solve this I made <code>NTComponents</code>. A set of classes that will inherit defaults defined in <code>AppDelegate</code>. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.</p>
@@ -528,6 +531,9 @@
 <li>Programatic auto layout</li>
 <li>Many useful extensions</li>
 </ul>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>While NTComponents has yet to be fully documented, you can find the docs here: <a href="https://nathantannar.me/NTComponents/docs/">https://nathantannar.me/NTComponents/docs/</a></p>
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
@@ -582,14 +588,57 @@
 </ul></li>
 <h2 id='getting-started' class='heading'>Getting Started</h2>
 
-<p>Coming soon&hellip;</p>
+<p>I would recommend taking a look at the sample code that generates the <code>NTComponents Demo</code> app. Also try taking a look at the Jazzy generated Docs(<a href="https://nathantannar.me/NTComponents/docs/">https://nathantannar.me/NTComponents/docs/</a>)! While they are not complete yet I plan to work on documentation.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">NTComponents</span>
+
+<span class="kd">@UIApplicationMain</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+        <span class="c1">// Set color defaults</span>
+        <span class="kt">Color</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="nf">setPrimary</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">white</span><span class="p">)</span>
+        <span class="kt">Color</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="nf">setSecondary</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">.</span><span class="n">red</span><span class="p">)</span>
+        <span class="kt">Color</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="kt">Text</span><span class="o">.</span><span class="kt">Title</span> <span class="o">=</span> <span class="o">.</span><span class="n">blue</span>
+
+        <span class="c1">// If you want the shadow to be more standard</span>
+        <span class="kt">Color</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="nf">setCleanShadow</span><span class="p">()</span>
+
+        <span class="c1">// Set your font defaults</span>
+        <span class="kt">Font</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="kt">Title</span> <span class="o">=</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Roboto</span><span class="o">.</span><span class="kt">Medium</span><span class="o">.</span><span class="nf">withSize</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+        <span class="kt">Font</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="kt">Subtitle</span> <span class="o">=</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Roboto</span><span class="o">.</span><span class="kt">Regular</span>
+        <span class="kt">Font</span><span class="o">.</span><span class="kt">Default</span><span class="o">.</span><span class="kt">Body</span> <span class="o">=</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Roboto</span><span class="o">.</span><span class="kt">Regular</span><span class="o">.</span><span class="nf">withSize</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="c1">// More standard AppDelegate methods</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>More Coming Soon</p>
 <h2 id='planned-improvements-additons' class='heading'>Planned Improvements/Additons</h2>
+
+<ul>
+<li>NTCollectionViewCell
+
+<ul>
+<li>More base cells</li>
+</ul></li>
+<li>More useful controllers</li>
+<li>Camera controller</li>
+<li>More docs</li>
+</ul>
 <h2 id='contribute' class='heading'>Contribute</h2>
 
 <p>We would love for you to contribute to <code>NTComponents</code> with more useful extensions, models or UI classes. If interested please contact myself.</p>
 <h2 id='author' class='heading'>Author</h2>
 
-<p><img src="NTComponents/Assets/Nathan.png" width="75" height="75">
+<p><img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/Nathan.png" width="75" height="75">
 Nathan Tannar - <a href="https://nathantannar.me">https://nathantannar.me</a></p>
 <h2 id='license' class='heading'>License</h2>
 

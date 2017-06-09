@@ -79,6 +79,7 @@ open class NTTextView: UITextView {
     
     open func textViewDidUpdate(notification: NSNotification) {
         onTextViewUpdate?(self)
+        textColor = _textColor
     }
 
     open func textViewDidBeginEditing(notification: NSNotification) {

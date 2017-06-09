@@ -38,9 +38,9 @@ open class NTLandingViewController: NTViewController {
     
     open let subtitleLabel: NTLabel = {
         let label = NTLabel()
-        label.font = Font.Default.Body.withSize(22)
+        label.font = Font.Default.Body.withSize(36)
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = Color.Gray.P100
+        label.textColor = Color.Gray.P50
         return label
     }()
     
@@ -56,6 +56,7 @@ open class NTLandingViewController: NTViewController {
         let button = NTButton()
         button.trackTouchLocation = false
         button.backgroundColor = .white
+        button.tintColor = Color.Default.Background.Button
         button.layer.cornerRadius = 10
         button.setDefaultShadow()
         button.addTarget(self, action: #selector(buttonAAction), for: .touchUpInside)
@@ -66,6 +67,7 @@ open class NTLandingViewController: NTViewController {
         let button = NTButton()
         button.trackTouchLocation = false
         button.backgroundColor = .white
+        button.tintColor = Color.Default.Background.Button
         button.layer.cornerRadius = 10
         button.setDefaultShadow()
         button.addTarget(self, action: #selector(buttonBAction), for: .touchUpInside)
@@ -76,6 +78,8 @@ open class NTLandingViewController: NTViewController {
         let button = NTButton()
         button.isHidden = true
         button.trackTouchLocation = false
+        button.backgroundColor = .white
+        button.tintColor = Color.Gray.P800
         button.title = "Sign Out"
         button.ripplePercent = 1
         button.layer.cornerRadius = 16
@@ -102,8 +106,8 @@ open class NTLandingViewController: NTViewController {
         view.addSubview(buttonB)
         
         titleLabel.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 64, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 40)
-        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        detailLabel.anchor(subtitleLabel.bottomAnchor, left: subtitleLabel.leftAnchor, bottom: referenceView.bottomAnchor, right: subtitleLabel.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
+        detailLabel.anchor(subtitleLabel.bottomAnchor, left: subtitleLabel.leftAnchor, bottom: referenceView.bottomAnchor, right: subtitleLabel.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         buttonA.anchor(referenceView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, topConstant: 16, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
         buttonB.anchor(buttonA.topAnchor, left: buttonA.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 32, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 100)
@@ -119,15 +123,15 @@ open class NTLandingViewController: NTViewController {
         }
     }
     
-    func buttonAAction() {
+    open func buttonAAction() {
         
     }
     
-    func buttonBAction() {
+    open func buttonBAction() {
         
     }
     
-    func signoutAction() {
+    open func signoutAction() {
         
     }
 }

@@ -43,8 +43,7 @@ public struct Color {
             Color.Default.Background.NavigationBar = color
             Color.Default.Background.TabBar = color
             Color.Default.Background.Button = color
-            Color.Default.Tint.Toolbar = color
-            Color.Default.Tint.View = color
+            Color.Default.Tint.Button = color
         }
 
         /**
@@ -54,13 +53,13 @@ public struct Color {
          - returns: Void
         */
         public static func setSecondary(to color: UIColor) {
-            Color.Default.Tint.Button = color
             Color.Default.Tint.NavigationBar = color
             Color.Default.Tint.TabBar = color
             Color.Default.Tint.Toolbar = color
             Color.Default.Tint.Inactive = color.darker(by: 20)
             Color.Default.Tint.View = color
             Color.Default.Status.Info = color
+            Color.Default.Background.Button = color
         }
 
         /**

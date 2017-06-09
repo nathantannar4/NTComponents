@@ -39,6 +39,7 @@ open class NTFormImageViewCell: NTFormCell, UIImagePickerControllerDelegate, UIN
             self.actionButton = cell.actionButton
             self.imagePickerCompletion = cell.imagePickerCompletion
             self.setupViews()
+            self.separatorLineView.isHidden = cell.separatorLineView.isHidden
         }
     }
     

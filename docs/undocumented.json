@@ -3803,28 +3803,21 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTActionSheetViewController.swift",
-      "line": 147,
+      "line": 148,
       "symbol": "NTActionSheetViewController.createButton(fromAction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTActionSheetViewController.swift",
-      "line": 179,
+      "line": 180,
       "symbol": "NTActionSheetViewController.didSelectAction(sender:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTActionSheetViewController.swift",
-      "line": 188,
-      "symbol": "NTActionSheetViewController.presentActionSheet()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTActionSheetViewController.swift",
-      "line": 223,
+      "line": 237,
       "symbol": "NTActionSheetViewController.dismiss(animated:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -4607,101 +4600,458 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 29,
       "symbol": "NTAnimatedCollectionViewCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 36,
       "symbol": "NTAnimatedCollectionViewCell.backgroundColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 49,
       "symbol": "NTAnimatedCollectionViewCell.touchesBegan(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 89,
       "symbol": "NTAnimatedCollectionViewCell.touchesEnded(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 94,
       "symbol": "NTAnimatedCollectionViewCell.touchesCancelled(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 99,
       "symbol": "NTAnimatedCollectionViewCell.ripplePercent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 105,
       "symbol": "NTAnimatedCollectionViewCell.rippleColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 111,
       "symbol": "NTAnimatedCollectionViewCell.rippleBackgroundColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 120,
       "symbol": "NTAnimatedCollectionViewCell.rippleOverBounds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 121,
       "symbol": "NTAnimatedCollectionViewCell.shadowRippleRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 122,
       "symbol": "NTAnimatedCollectionViewCell.shadowRippleEnable",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 123,
       "symbol": "NTAnimatedCollectionViewCell.trackTouchLocation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 124,
       "symbol": "NTAnimatedCollectionViewCell.touchUpAnimationTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTAnimatedCollectionViewCell.swift",
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTAnimatedCollectionViewCell.swift",
       "line": 201,
       "symbol": "NTAnimatedCollectionViewCell.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 28,
+      "symbol": "NTCollectionDatasourceData",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 29,
+      "symbol": "NTCollectionDatasourceData.dataSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 30,
+      "symbol": "NTCollectionDatasourceData.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 31,
+      "symbol": "NTCollectionDatasourceData.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 32,
+      "symbol": "NTCollectionDatasourceData.subtitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 33,
+      "symbol": "NTCollectionDatasourceData.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 34,
+      "symbol": "NTCollectionDatasourceData.init(dataSource:delegate:title:subtitle:cellSize:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 43,
+      "symbol": "NTCollectionDatasourceCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 45,
+      "symbol": "NTCollectionDatasourceCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 61,
+      "symbol": "NTCollectionDatasourceCell.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 65,
+      "symbol": "NTCollectionDatasourceCell.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 70,
+      "symbol": "NTCollectionDatasourceCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 74,
+      "symbol": "NTCollectionDatasourceCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 81,
+      "symbol": "NTCollectionDatasourceCell.subtitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 88,
+      "symbol": "NTCollectionDatasourceCell.actionButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 106,
+      "symbol": "NTCollectionDatasourceCell.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 115,
+      "symbol": "NTCollectionDatasourceCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 137,
+      "symbol": "NTCollectionDatasourceCell.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 141,
+      "symbol": "NTCollectionDatasourceCell.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 145,
+      "symbol": "NTCollectionDatasourceCell.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 151,
+      "symbol": "NTCollectionDatasourceCell.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 156,
+      "symbol": "NTCollectionDatasourceCell.collectionView(_:layout:insetForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 160,
+      "symbol": "NTCollectionDatasourceCell.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionDatasourceCell.swift",
+      "line": 164,
+      "symbol": "NTCollectionDatasourceCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 28,
+      "symbol": "NTCollectionUserHeaderData",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 29,
+      "symbol": "NTCollectionUserHeaderData.banner",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 30,
+      "symbol": "NTCollectionUserHeaderData.photo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 31,
+      "symbol": "NTCollectionUserHeaderData.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 32,
+      "symbol": "NTCollectionUserHeaderData.subtitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 33,
+      "symbol": "NTCollectionUserHeaderData.init(banner:photo:title:subtitle:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 41,
+      "symbol": "NTCollectionUserHeaderCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 43,
+      "symbol": "NTCollectionUserHeaderCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 55,
+      "symbol": "NTCollectionUserHeaderCell.coverImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 63,
+      "symbol": "NTCollectionUserHeaderCell.profileImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 74,
+      "symbol": "NTCollectionUserHeaderCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 80,
+      "symbol": "NTCollectionUserHeaderCell.subtitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionUserHeaderCell.swift",
+      "line": 86,
+      "symbol": "NTCollectionUserHeaderCell.actionButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 28,
+      "symbol": "NTCollectionViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 30,
+      "symbol": "NTCollectionViewCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 31,
+      "symbol": "NTCollectionViewCell.controller",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 33,
+      "symbol": "NTCollectionViewCell.separatorLineView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 40,
+      "symbol": "NTCollectionViewCell.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 54,
+      "symbol": "NTCollectionViewCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewCell.swift",
+      "line": 58,
+      "symbol": "NTCollectionViewCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 30,
+      "symbol": "NTCollectionViewDefaultHeader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 32,
+      "symbol": "NTCollectionViewDefaultHeader.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 50,
+      "symbol": "NTCollectionViewDefaultFooter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 52,
+      "symbol": "NTCollectionViewDefaultFooter.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 70,
+      "symbol": "NTCollectionViewDefaultCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 72,
+      "symbol": "NTCollectionViewDefaultCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
+      "line": 81,
+      "symbol": "NTCollectionViewDefaultCell.label",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -4730,188 +5080,6 @@
       "line": 56,
       "symbol": "NTCollectionDatasource.numberOfSections()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 28,
-      "symbol": "NTCollectionDatasourceCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 30,
-      "symbol": "NTCollectionDatasourceCell.reuseIdentifier",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 36,
-      "symbol": "NTCollectionDatasourceCell.dataSource",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 45,
-      "symbol": "NTCollectionDatasourceCell.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 54,
-      "symbol": "NTCollectionDatasourceCell.collectionCellSize",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 58,
-      "symbol": "NTCollectionDatasourceCell.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 62,
-      "symbol": "NTCollectionDatasourceCell.init(frame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 67,
-      "symbol": "NTCollectionDatasourceCell.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 71,
-      "symbol": "NTCollectionDatasourceCell.titleLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 78,
-      "symbol": "NTCollectionDatasourceCell.subtitleLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 85,
-      "symbol": "NTCollectionDatasourceCell.actionButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 99,
-      "symbol": "NTCollectionDatasourceCell.collectionView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 128,
-      "symbol": "NTCollectionDatasourceCell.numberOfSections(in:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 132,
-      "symbol": "NTCollectionDatasourceCell.collectionView(_:numberOfItemsInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 136,
-      "symbol": "NTCollectionDatasourceCell.collectionView(_:cellForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 142,
-      "symbol": "NTCollectionDatasourceCell.collectionView(_:layout:sizeForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 147,
-      "symbol": "NTCollectionDatasourceCell.collectionView(_:layout:insetForSectionAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 151,
-      "symbol": "NTCollectionDatasourceCell.collectionView(_:didSelectItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionDatasourceCell.swift",
-      "line": 155,
-      "symbol": "NTCollectionDatasourceCell.defaultSize",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 28,
-      "symbol": "NTCollectionViewCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 30,
-      "symbol": "NTCollectionViewCell.datasourceItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 31,
-      "symbol": "NTCollectionViewCell.controller",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 33,
-      "symbol": "NTCollectionViewCell.separatorLineView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 40,
-      "symbol": "NTCollectionViewCell.init(frame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 54,
-      "symbol": "NTCollectionViewCell.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewCell.swift",
-      "line": 58,
-      "symbol": "NTCollectionViewCell.cellSize",
-      "symbol_kind": "source.lang.swift.decl.var.class",
       "warning": "undocumented"
     },
     {
@@ -5017,55 +5185,6 @@
       "line": 185,
       "symbol": "NTCollectionViewController.handleRefresh()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 30,
-      "symbol": "NTCollectionViewDefaultHeader",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 32,
-      "symbol": "NTCollectionViewDefaultHeader.datasourceItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 50,
-      "symbol": "NTCollectionViewDefaultFooter",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 52,
-      "symbol": "NTCollectionViewDefaultFooter.datasourceItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 70,
-      "symbol": "NTCollectionViewDefaultCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 72,
-      "symbol": "NTCollectionViewDefaultCell.datasourceItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/NTCollectionViewDefaultCells.swift",
-      "line": 81,
-      "symbol": "NTCollectionViewDefaultCell.label",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -7225,6 +7344,69 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 29,
+      "symbol": "NTLandingViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 31,
+      "symbol": "NTLandingViewController.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 39,
+      "symbol": "NTLandingViewController.subtitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 47,
+      "symbol": "NTLandingViewController.detailLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 55,
+      "symbol": "NTLandingViewController.buttonA",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 65,
+      "symbol": "NTLandingViewController.buttonB",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 75,
+      "symbol": "NTLandingViewController.signOutButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 88,
+      "symbol": "NTLandingViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 116,
+      "symbol": "NTLandingViewController.supportedInterfaceOrientations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
       "line": 28,
       "symbol": "NTLoginMethod",
@@ -7529,118 +7711,6 @@
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTSlideShowViewController.swift",
       "line": 196,
       "symbol": "NTSlideShowViewController.scrollViewDidScroll(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 28,
-      "symbol": "UserDatasource",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 37,
-      "symbol": "UserDatasource.numberOfItems(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 44,
-      "symbol": "UserDatasource.numberOfSections()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 61,
-      "symbol": "UserProfileCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 63,
-      "symbol": "UserProfileCell.datasourceItem",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 75,
-      "symbol": "UserProfileCell.coverImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 83,
-      "symbol": "UserProfileCell.profileImageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 94,
-      "symbol": "UserProfileCell.titleLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 100,
-      "symbol": "UserProfileCell.subtitleLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 106,
-      "symbol": "UserProfileCell.actionButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 157,
-      "symbol": "NTProfileViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 161,
-      "symbol": "NTProfileViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 170,
-      "symbol": "NTProfileViewController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 177,
-      "symbol": "NTProfileViewController.collectionView(_:layout:sizeForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 186,
-      "symbol": "NTProfileViewController.collectionView(_:layout:referenceSizeForHeaderInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTUserViewController.swift",
-      "line": 190,
-      "symbol": "NTProfileViewController.collectionView(_:layout:referenceSizeForFooterInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

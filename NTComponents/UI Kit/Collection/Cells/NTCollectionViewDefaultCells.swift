@@ -44,6 +44,9 @@ open class NTCollectionViewDefaultHeader: NTCollectionViewDefaultCell {
         separatorLineView.isHidden = false
         label.setPreferredFontStyle(to: .subhead)
         backgroundColor = .clear
+        
+        label.removeAllConstraints()
+        label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
     }
 }
 

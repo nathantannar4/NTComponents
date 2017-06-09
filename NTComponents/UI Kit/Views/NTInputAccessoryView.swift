@@ -54,6 +54,7 @@ open class NTInputAccessoryView: NTView {
     
     open func keyboardDidChangeFrame(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, !keyboardIsHidden {
+            print(keyboardSize.height)
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.layoutConstraints?[1].constant = -keyboardSize.height
                 self.controller?.view.layoutIfNeeded()

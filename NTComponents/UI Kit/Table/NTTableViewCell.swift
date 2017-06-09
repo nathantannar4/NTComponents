@@ -54,6 +54,8 @@ open class NTTableViewCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
+        object_setClass(imageView, NTImageView.self)
+        
         tintColor = Color.Default.Tint.View
         textLabel?.setPreferredFontStyle(to: .body)
         textLabel?.numberOfLines = 0

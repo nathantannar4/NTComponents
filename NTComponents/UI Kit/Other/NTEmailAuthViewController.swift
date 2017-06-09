@@ -45,8 +45,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         let button = NTButton()
         button.backgroundColor = .clear
         button.trackTouchLocation = false
-        button.tintColor = Color.Default.Tint.NavigationBar
-        button.rippleColor = Color.Gray.P200
+        button.tintColor = Color.Gray.P500
         button.image = Icon.Delete
         button.ripplePercent = 1.2
         button.rippleOverBounds = true

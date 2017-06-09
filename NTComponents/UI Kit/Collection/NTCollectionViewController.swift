@@ -173,8 +173,8 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - Refresh Methods
     
-    open func refreshControl() -> NTRefreshControl? {
-        let rc = NTRefreshControl()
+    open func refreshControl() -> UIRefreshControl? {
+        let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
             return rc
@@ -184,7 +184,7 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     
     open func handleRefresh() {
         if #available(iOS 10.0, *) {
-            (collectionView?.refreshControl as? NTRefreshControl)?.beginRefreshing()
+            collectionView?.refreshControl?.beginRefreshing()
         }
     }
 }
