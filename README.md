@@ -1,9 +1,9 @@
-<img src="NTComponents/Assets/NT Components Banner.jpg">
+<img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/NT%20Components%20Banner.jpg">
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
 [![Build Status][travis-image]][travis-url]
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/NTComponents.svg)](https://img.shields.io/cocoapods/v/NTComponents.svg)   [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/NTUIKit.svg)]()
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/NTComponents.svg)](https://img.shields.io/cocoapods/v/NTComponents.svg)   [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/NTComponents.svg)]()
 <br>
 
 I faced an ongoing problem of always having to set the tint color, font choice and general defaults for every project. To solve this I made `NTComponents`. A set of classes that will inherit defaults defined in `AppDelegate`. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.
@@ -18,6 +18,9 @@ I faced an ongoing problem of always having to set the tint color, font choice a
 * Common icons built in
 * Programatic auto layout
 * Many useful extensions
+
+## Documentation
+While NTComponents has yet to be fully documented, you can find the docs here: https://nathantannar.me/NTComponents/docs/
 
 ## Requirements
 
@@ -59,7 +62,7 @@ import NTComponents
     * Branch from NTUIKit
 
 ## Getting Started
-I would recommend taking a look at the sample code that generates the `NTComponents Demo` app. Also try taking a look at the Jazzy generated Docs! While they are not complete yet I plan to work on documentation.
+I would recommend taking a look at the sample code that generates the `NTComponents Demo` app. Also try taking a look at the Jazzy generated Docs(https://nathantannar.me/NTComponents/docs/)! While they are not complete yet I plan to work on documentation.
 
 ``` swift
 import NTComponents
@@ -107,7 +110,7 @@ We would love for you to contribute to `NTComponents` with more useful extension
 
 ## Author
 
-<img src="NTComponents/Assets/Nathan.png" width="75" height="75">
+<img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/Nathan.png" width="75" height="75">
 Nathan Tannar - https://nathantannar.me
 
 ## License
