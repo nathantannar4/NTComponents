@@ -1,4 +1,4 @@
-<img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/NT%20Components%20Banner.jpg">
+<img src="https://nathantannar.me/NTComponents/NTComponents/Assets/NT%20Components%20Banner.jpg">
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -110,7 +110,7 @@ We would love for you to contribute to `NTComponents` with more useful extension
 
 ## Author
 
-<img src="https://github.com/nathantannar4/NTComponents/blob/master/NTComponents/Assets/Nathan.png" width="75" height="75">
+<img src="https://nathantannar.me/NTComponents/NTComponents/Assets/Nathan.png" width="75" height="75">
 Nathan Tannar - https://nathantannar.me
 
 ## License

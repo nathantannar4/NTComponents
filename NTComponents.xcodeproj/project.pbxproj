@@ -127,7 +127,7 @@
 		38ECA8E11EEA636A00639A19 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E01EEA636A00639A19 /* UITextView.swift */; };
 		38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */; };
 		38ECA8E51EEE6C2000639A19 /* NTTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */; };
-		38ECA8E71EEE6E7C00639A19 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E61EEE6E7C00639A19 /* File.swift */; };
+		38ECA8E91EF0655B00639A19 /* NTFormTagInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8E81EF0655B00639A19 /* NTFormTagInputCell.swift */; };
 		38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */; };
 		38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */; };
 		38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */; };
@@ -285,7 +285,7 @@
 		38ECA8E01EEA636A00639A19 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormImageSelectorCell.swift; path = Form/Cells/NTFormImageSelectorCell.swift; sourceTree = "<group>"; };
 		38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTagListView.swift; sourceTree = "<group>"; };
-		38ECA8E61EEE6E7C00639A19 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		38ECA8E81EF0655B00639A19 /* NTFormTagInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormTagInputCell.swift; path = Form/Cells/NTFormTagInputCell.swift; sourceTree = "<group>"; };
 		38FCFA2F1ECFB7AD007D3019 /* NTAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTAnimatedTextField.swift; sourceTree = "<group>"; };
 		38FCFA341ECFE1FE007D3019 /* NTEmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailAuthViewController.swift; sourceTree = "<group>"; };
 		38FCFA381ECFF799007D3019 /* NTEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTEmailRegisterViewController.swift; sourceTree = "<group>"; };
@@ -601,7 +601,6 @@
 				38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */,
 				388C1EE71EE528840036AECE /* NTToolbar.swift */,
 				38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */,
-				38ECA8E61EEE6E7C00639A19 /* File.swift */,
 				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
 			path = Views;
@@ -641,6 +640,7 @@
 				38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */,
 				38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */,
 				38ECA8C81EE8DEBE00639A19 /* NTFormProfileCell.swift */,
+				38ECA8E81EF0655B00639A19 /* NTFormTagInputCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -824,6 +824,7 @@
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */,
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
+				38ECA8E91EF0655B00639A19 /* NTFormTagInputCell.swift in Sources */,
 				38ECA8D31EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift in Sources */,
 				3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */,
 				38ECA8D61EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift in Sources */,
@@ -852,7 +853,6 @@
 				3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */,
 				38FCFA4A1ED01F3F007D3019 /* NTNavigationViewController.swift in Sources */,
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
-				38ECA8E71EEE6E7C00639A19 /* File.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,

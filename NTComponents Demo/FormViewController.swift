@@ -32,7 +32,6 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        parent?.title = "NTFormViewController"
         (parent as? NTNavigationViewController)?.delegate = self
         collectionView?.contentInset.bottom = 30
         
@@ -91,13 +90,25 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
             print(textField.text ?? "")
         }
         
+        let cellH = NTFormTagInputCell()
+        cellH.title = "Tag Input"
+        cellH.onTagAdded { (tagView, tagListView) in
+            print("Added \(tagView.titleLabel?.text ?? "")")
+        }
+        cellH.onTagDeleted { (tagView, tagListView) in
+            tagListView.removeTagView(tagView)
+        }
+        
+        
         let sectionA = NTFormSection(fromRows: [cellF, cellG, NTFormImageSelectorCell()])
         
         let sectionB = NTFormSection(fromRows: [cellA, cellB, NTFormAnimatedInputCell()], withHeaderTitle: "Header", withFooterTitle: nil)
         
-        let sectionC = NTFormSection(fromRows: [cellC, cellD, cellE], withHeaderTitle: "Header", withFooterTitle: "Footer")
+        let sectionC = NTFormSection(fromRows: [cellC, cellD, cellE], withHeaderTitle: "Header", withFooterTitle: nil)
         
-        appendSections([sectionA, sectionB, sectionC])
+        let sectionD = NTFormSection(fromRows: [cellH], withHeaderTitle: "Header", withFooterTitle: "Footer")
+        
+        appendSections([sectionA, sectionB, sectionC, sectionD])
         reloadForm()
     }
     

@@ -43,7 +43,6 @@ public struct Color {
             Color.Default.Background.NavigationBar = color
             Color.Default.Background.TabBar = color
             Color.Default.Background.Button = color
-            Color.Default.Tint.Button = color
         }
 
         /**
@@ -60,6 +59,7 @@ public struct Color {
             Color.Default.Tint.View = color
             Color.Default.Status.Info = color
             Color.Default.Background.Button = color
+            Color.Default.Tint.Button = color
         }
 
         /**

@@ -2326,11 +2326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Views/NTTagListView.swift"
-            timestampString = "518945466.477087"
+            timestampString = "519074243.222091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "deleteButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -2374,12 +2374,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Views/NTTagListView.swift"
-            timestampString = "518945466.477087"
+            timestampString = "519074243.222091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "deleteButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift"
+            timestampString = "519079384.680473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "setupViews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

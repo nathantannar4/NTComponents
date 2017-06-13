@@ -26,12 +26,13 @@
 //  Adapted from https://github.com/ElaWorkshop/TagListView
 //
 
-@objc public protocol TagListViewDelegate {
-    @objc optional func tagPressed(_ title: String, tagView: TagView, sender: TagListView) -> Void
-    @objc optional func tagDeleteButtonPressed(_ title: String, tagView: TagView, sender: TagListView) -> Void
+@objc public protocol NTTagListViewDelegate {
+    @objc optional func tagPressed(_ tagView: NTTagView, sender: NTTagListView) -> Void
+    @objc optional func tagAdded(_ tagView: NTTagView, sender: NTTagListView) -> Void
+    @objc optional func tagDeleted(_ tagView: NTTagView, sender: NTTagListView) -> Void
 }
 
-open class TagListView: UIScrollView {
+open class NTTagListView: UIScrollView {
     
     open dynamic var textColor: UIColor = UIColor.white {
         didSet {
@@ -57,9 +58,7 @@ open class TagListView: UIScrollView {
         }
     }
     
- 
-    
-    open dynamic var cornerRadius: CGFloat = 10 {
+    open dynamic var cornerRadius: CGFloat = 5 {
         didSet {
             for tagView in tagViews {
                 tagView.cornerRadius = cornerRadius
@@ -106,7 +105,7 @@ open class TagListView: UIScrollView {
             rearrangeViews()
         }
     }
-    open dynamic var marginY: CGFloat = 2 {
+    open dynamic var marginY: CGFloat = 5 {
         didSet {
             rearrangeViews()
         }
@@ -149,7 +148,7 @@ open class TagListView: UIScrollView {
         }
     }
     
-    open dynamic var enableDeleteButton: Bool = false {
+    open dynamic var enableDeleteButton: Bool = true {
         didSet {
             for tagView in tagViews {
                 tagView.enableDeleteButton = enableDeleteButton
@@ -167,9 +166,9 @@ open class TagListView: UIScrollView {
         }
     }
     
-    open var tagdelegate: TagListViewDelegate?
+    open var tagDelegate: NTTagListViewDelegate?
     
-    open private(set) var tagViews: [TagView] = []
+    open private(set) var tagViews: [NTTagView] = []
     private(set) var tagBackgroundViews: [UIView] = []
     private(set) var rowViews: [UIView] = []
     private(set) var tagViewHeight: CGFloat = 0
@@ -177,6 +176,26 @@ open class TagListView: UIScrollView {
         didSet {
             invalidateIntrinsicContentSize()
         }
+    }
+    
+    // MARK: - Initialization
+    
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        tintColor = Color.Default.Tint.View
+        backgroundColor = .clear
+        
+        setDefaultShadow()
+        
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Layout
@@ -252,11 +271,12 @@ open class TagListView: UIScrollView {
         }
         let size = CGSize(width: frame.width, height: height)
         contentSize = size
+        
         return size
     }
     
-    private func createNewTagView(_ title: String) -> TagView {
-        let tagView = TagView(title: title)
+    open func createNewTagView(_ title: String) -> NTTagView {
+        let tagView = NTTagView(title: title)
         
         tagView.textColor = textColor
         tagView.selectedTextColor = selectedTextColor
@@ -285,13 +305,13 @@ open class TagListView: UIScrollView {
     }
     
     @discardableResult
-    open func addTag(_ title: String) -> TagView {
+    open func addTag(_ title: String) -> NTTagView {
         return addTagView(createNewTagView(title))
     }
     
     @discardableResult
-    open func addTags(_ titles: [String]) -> [TagView] {
-        var tagViews: [TagView] = []
+    open func addTags(_ titles: [String]) -> [NTTagView] {
+        var tagViews: [NTTagView] = []
         for title in titles {
             tagViews.append(createNewTagView(title))
         }
@@ -299,7 +319,7 @@ open class TagListView: UIScrollView {
     }
     
     @discardableResult
-    open func addTagViews(_ tagViews: [TagView]) -> [TagView] {
+    open func addTagViews(_ tagViews: [NTTagView]) -> [NTTagView] {
         for tagView in tagViews {
             self.tagViews.append(tagView)
             tagBackgroundViews.append(UIView(frame: tagView.bounds))
@@ -309,21 +329,21 @@ open class TagListView: UIScrollView {
     }
     
     @discardableResult
-    open func insertTag(_ title: String, at index: Int) -> TagView {
+    open func insertTag(_ title: String, at index: Int) -> NTTagView {
         return insertTagView(createNewTagView(title), at: index)
     }
     
     @discardableResult
-    open func addTagView(_ tagView: TagView) -> TagView {
+    open func addTagView(_ tagView: NTTagView) -> NTTagView {
         tagViews.append(tagView)
         tagBackgroundViews.append(UIView(frame: tagView.bounds))
         rearrangeViews()
-        
+        tagDelegate?.tagAdded?(tagView, sender: self)
         return tagView
     }
     
     @discardableResult
-    open func insertTagView(_ tagView: TagView, at index: Int) -> TagView {
+    open func insertTagView(_ tagView: NTTagView, at index: Int) -> NTTagView {
         tagViews.insert(tagView, at: index)
         tagBackgroundViews.insert(UIView(frame: tagView.bounds), at: index)
         rearrangeViews()
@@ -345,7 +365,7 @@ open class TagListView: UIScrollView {
         }
     }
     
-    open func removeTagView(_ tagView: TagView) {
+    open func removeTagView(_ tagView: NTTagView) {
         tagView.removeFromSuperview()
         if let index = tagViews.index(of: tagView) {
             tagViews.remove(at: index)
@@ -365,23 +385,227 @@ open class TagListView: UIScrollView {
         rearrangeViews()
     }
     
-    open func selectedTags() -> [TagView] {
+    open func selectedTags() -> [NTTagView] {
         return tagViews.filter() { $0.isSelected == true }
     }
     
     // MARK: - Events
     
-    func tagPressed(_ sender: TagView!) {
+    open func tagPressed(_ sender: NTTagView) {
         sender.onTap?(sender)
-        tagdelegate?.tagPressed?(sender.currentTitle ?? "", tagView: sender, sender: self)
+        tagDelegate?.tagPressed?(sender, sender: self)
     }
     
-    func deleteButtonPressed(_ closeButton: NTTagButton) {
-        
-        print(closeButton.tagView)
+    open func deleteButtonPressed(_ closeButton: NTTagDeleteButton) {
         if let tagView = closeButton.tagView {
-            tagdelegate?.tagDeleteButtonPressed?(tagView.currentTitle ?? "", tagView: tagView, sender: self)
+            tagDelegate?.tagDeleted?(tagView, sender: self)
         }
+    }
+}
+
+open class NTTagView: UIButton {
+    
+    open var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
+    open var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    open var borderColor: UIColor? {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    open var textColor: UIColor = UIColor.white {
+        didSet {
+            reloadStyles()
+        }
+    }
+    open var selectedTextColor: UIColor = UIColor.white {
+        didSet {
+            reloadStyles()
+        }
+    }
+    open var paddingY: CGFloat = 5 {
+        didSet {
+            titleEdgeInsets.top = paddingY
+            titleEdgeInsets.bottom = paddingY
+        }
+    }
+    open var paddingX: CGFloat = 10 {
+        didSet {
+            titleEdgeInsets.left = paddingX
+            updateRightInsets()
+        }
+    }
+    
+    open var tagBackgroundColor: UIColor = UIColor.gray {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    open var highlightedBackgroundColor: UIColor? {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    open var selectedBorderColor: UIColor? {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    open var selectedBackgroundColor: UIColor? {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    open var textFont: UIFont = Font.Default.Body.withSize(16) {
+        didSet {
+            titleLabel?.font = textFont
+        }
+    }
+    
+    open func reloadStyles() {
+        if isHighlighted {
+            if let highlightedBackgroundColor = highlightedBackgroundColor {
+                // For highlighted, if it's nil, we should not fallback to backgroundColor.
+                // Instead, we keep the current color.
+                backgroundColor = highlightedBackgroundColor
+            }
+        }
+        else if isSelected {
+            backgroundColor = selectedBackgroundColor ?? tagBackgroundColor
+            layer.borderColor = selectedBorderColor?.cgColor ?? borderColor?.cgColor
+            setTitleColor(selectedTextColor, for: UIControlState())
+        }
+        else {
+            backgroundColor = tagBackgroundColor
+            layer.borderColor = borderColor?.cgColor
+            setTitleColor(textColor, for: UIControlState())
+        }
+    }
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    override open var isSelected: Bool {
+        didSet {
+            reloadStyles()
+        }
+    }
+    
+    // MARK: Delete button
+    
+    open var deleteButton = NTTagDeleteButton()
+    
+    open var enableDeleteButton: Bool = false {
+        didSet {
+            deleteButton.isHidden = !enableDeleteButton
+            updateRightInsets()
+        }
+    }
+    
+    open var deleteButtonIconSize: CGFloat = 8 {
+        didSet {
+            updateRightInsets()
+        }
+    }
+    
+    /// Handles Tap (TouchUpInside)
+    open var onTap: ((NTTagView) -> Void)?
+    open var onLongPress: ((NTTagView) -> Void)?
+    
+    // MARK: - init
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setupView()
+    }
+    
+    public init(title: String) {
+        super.init(frame: CGRect.zero)
+        setTitle(title, for: UIControlState())
+        
+        setupView()
+    }
+    
+    open func setupView() {
+        frame.size = intrinsicContentSize
+        addSubview(deleteButton)
+        deleteButton.tagView = self
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
+        self.addGestureRecognizer(longPress)
+    }
+    
+    open func longPress() {
+        onLongPress?(self)
+    }
+    
+    // MARK: - layout
+    
+    override open var intrinsicContentSize: CGSize {
+        var size = titleLabel?.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
+        size.height = textFont.pointSize + paddingY * 2
+        size.width += paddingX * 2
+        if size.width < size.height {
+            size.width = size.height
+        }
+        if enableDeleteButton {
+            size.width += deleteButtonIconSize + paddingX
+        }
+        return size
+    }
+    
+    private func updateRightInsets() {
+        if enableDeleteButton {
+            titleEdgeInsets.right = paddingX  + deleteButtonIconSize + paddingX
+        }
+        else {
+            titleEdgeInsets.right = paddingX
+        }
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        if enableDeleteButton {
+            deleteButton.frame.size.width = paddingX + deleteButtonIconSize + paddingX
+            deleteButton.frame.origin.x = self.frame.width - deleteButton.frame.width
+            deleteButton.frame.size.height = self.frame.height
+            deleteButton.frame.origin.y = 0
+        }
+    }
+}
+
+open class NTTagDeleteButton: UIButton {
+    
+    open weak var tagView: NTTagView?
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        tintColor = .white
+        setImage(Icon.Delete, for: .normal)
+        adjustsImageWhenHighlighted = false
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

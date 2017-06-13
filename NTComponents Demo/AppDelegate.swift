@@ -38,21 +38,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let loginVC = NTLoginViewController()
         loginVC.logo = #imageLiteral(resourceName: "NT Components Banner")
+        loginVC.title = "Login"
         
-        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC])
+        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC, NTLandingViewController().withTitle("Landing")])
         sampleVC.tabBarHeight = 32
         sampleVC.tabBarPosition = .top
         sampleVC.title = "Other"
+        sampleVC.tabBarItemWidth = 50
         sampleVC.viewDidLoad()
         
         let core = NTScrollableTabBarController(viewControllers: [FormViewController().withTitle("Form"), TableViewController().withTitle("TableView"), CollectionViewController().withTitle("CollectionView"), ColorsCollectionView().withTitle("Colors")])
         core.tabBarHeight = 32
         core.tabBarPosition = .top
         core.title = "Core"
-        core.tabBarItemWidth = 100
         core.viewDidLoad()
         
-        let tabbarVC = NTScrollableTabBarController(viewControllers: [core, AlertsViewController(), sampleVC])
+        let tabbarVC = NTScrollableTabBarController(viewControllers: [core, AlertsViewController().withTitle("Alerts"), sampleVC])
         tabbarVC.title = "NTComponents"
         tabbarVC.subtitle = "Demo"
         tabbarVC.tabBarHeight = 44
@@ -63,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTNavigationContainer(centerView: tabbarVC, leftView: NTNavigationController(rootViewController: AuthorViewController()))
         root.leftPanelWidth = 350
         
-        window?.rootViewController = NTNavigationController(rootViewController: ViewController())
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true
@@ -92,45 +93,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-class ViewController: UIViewController, TagListViewDelegate {
-    
-    var tagListView = TagListView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(tagListView)
-        tagListView.fillSuperview()
-        
-        tagListView.enableDeleteButton = true
-        tagListView.cornerRadius = 5
-        
-        tagListView.tagdelegate = self
-        for _ in 0...100 {
-            tagListView.addTag("This is a tag")
-        }
-//        tagListView.addTag("On tap will be removed").onTap = { [weak self] tagView in
-//            self?.tagListView.removeTagView(tagView)
+//class ViewController: UIViewController, NTTagListViewDelegate {
+//    
+//    var tagListView = NTTagListView()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        view.addSubview(tagListView)
+//        tagListView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 100)
+//        
+//        tagListView.enableDeleteButton = true
+//        tagListView.cornerRadius = 5
+//        
+//        tagListView.tagDelegate = self
+//        for _ in 0...20 {
+//            tagListView.addTag("This is a tag")
 //        }
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: TagListViewDelegate
-    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag pressed: \(title), \(sender)")
-        tagView.isSelected = !tagView.isSelected
-    }
-    
-    func tagDeleteButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag Remove pressed: \(title), \(sender)")
-        sender.removeTagView(tagView)
-    }
-}
-
-
-
+////        tagListView.addTag("On tap will be removed").onTap = { [weak self] tagView in
+////            self?.tagListView.removeTagView(tagView)
+////        }
+//        
+//    }
+//    
+//    // MARK: TagListViewDelegate
+//    func tagPressed(_ title: String, tagView: NTTagView, sender: NTTagListView) {
+//        print("Tag pressed: \(title), \(sender)")
+//        tagView.isSelected = !tagView.isSelected
+//    }
+//    
+//    func tagDeleteButtonPressed(_ title: String, tagView: NTTagView, sender: NTTagListView) {
+//        print("Tag Remove pressed: \(title), \(sender)")
+//        sender.removeTagView(tagView)
+//    }
+//}
+//
+//
+//
