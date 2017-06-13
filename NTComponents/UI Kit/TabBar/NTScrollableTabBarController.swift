@@ -96,6 +96,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        updateNavigationBar()
         if let currentIndex = currentIndex {
             tabView?.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
@@ -104,7 +105,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        updateNavigationBar()
         tabView?.layouted = true
     }
     
@@ -174,8 +174,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
             navigationBar.shadowImage = UIImage()
             navigationBar.setBackgroundImage(UIImage(), for: .default)
             navigationBar.hideShadow()
-        } else {
-            navigationController?.navigationBar.setDefaultShadow()
         }
     }
 
@@ -195,7 +193,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
             pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: tabView.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         }
         
-        let _ = viewControllers.map({ $0.viewWillAppear(false) })
+//        let _ = viewControllers.map({ $0.viewWillAppear(false) })
         
         self.tabView?.pageTabItems = viewControllers.map({ $0.title ?? String() })
         self.tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)

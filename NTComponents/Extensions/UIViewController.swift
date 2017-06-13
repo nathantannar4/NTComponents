@@ -60,7 +60,7 @@ public extension UIViewController {
     }
     
     @discardableResult
-    func withTitle(_ title: String) -> Self {
+    func withTitle(_ title: String?) -> Self {
         self.title = title
         return self
     }

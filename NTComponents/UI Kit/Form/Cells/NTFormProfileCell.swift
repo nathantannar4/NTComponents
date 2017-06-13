@@ -73,6 +73,7 @@ open class NTFormProfileCell: NTFormCell, UIImagePickerControllerDelegate, UINav
     
     open var imageView: NTImageView = {
         let imageView = NTImageView()
+        imageView.backgroundColor = Color.Gray.P100
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = NTFormProfileCell.cellSize.height * 1.5 / 2

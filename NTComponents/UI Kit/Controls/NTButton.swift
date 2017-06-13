@@ -168,6 +168,12 @@ open class NTButton: UIButton {
         }
     }
     
+    open func pullImageToRight() {
+        transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+    }
+    
     fileprivate func setup() {
         
         addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)

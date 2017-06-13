@@ -24,7 +24,7 @@ open class NTInputAccessoryView: NTView {
             }
             NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardDidChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
             vc.view.addSubview(self)
             layoutConstraints = anchorWithReturnAnchors(nil, left: vc.view.leftAnchor, bottom: vc.view.bottomAnchor, right: vc.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: heightConstant)
         }
@@ -52,9 +52,16 @@ open class NTInputAccessoryView: NTView {
     
     // MARK: - Keyboard Observer
     
-    open func keyboardDidChangeFrame(notification: NSNotification) {
+    open func keyboardWillChangeFrame(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, !keyboardIsHidden {
+            guard let constant = self.layoutConstraints?[1].constant else {
+                return
+            }
+            print(constant)
             print(keyboardSize.height)
+            if keyboardSize.height < (constant) {
+                return
+            }
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.layoutConstraints?[1].constant = -keyboardSize.height
                 self.controller?.view.layoutIfNeeded()
@@ -80,4 +87,5 @@ open class NTInputAccessoryView: NTView {
         })
     }
 }
+
 

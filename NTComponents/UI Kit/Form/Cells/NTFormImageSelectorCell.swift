@@ -55,20 +55,25 @@ open class NTFormImageSelectorCell: NTFormCell, UIImagePickerControllerDelegate,
     open var imageView: NTImageView = {
         let imageView = NTImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = Color.Gray.P100
+        imageView.layer.cornerRadius = 5
+        imageView.layer.borderWidth = 1.5
+        imageView.layer.borderColor = Color.Gray.P100.cgColor
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     open var actionButton: NTButton = {
         let button = NTButton()
+        button.ripplePercent = 0.15
+        button.rippleOverBounds = true
         button.title = "Select Image from Library"
-        button.layer.cornerRadius = 5
         button.backgroundColor = .white
-        button.tintColor = Color.Gray.P800
+        button.contentHorizontalAlignment = .right
+        button.tintColor = Color.Gray.P500
         button.image = Icon.Arrow.Forward?.scale(to: 20)
-        button.titleColor = Color.Default.Text.Callout
-        button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        button.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.setPreferredFontStyle(to: .callout)
+        button.pullImageToRight()
         return button
     }()
     
@@ -98,12 +103,12 @@ open class NTFormImageSelectorCell: NTFormCell, UIImagePickerControllerDelegate,
         
         imageView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 4, leftConstant: 16, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         imageView.anchorAspectRatio()
-        actionButton.anchor(imageView.topAnchor, left: imageView.rightAnchor, bottom: imageView.bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        actionButton.anchor(topAnchor, left: imageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 16, rightConstant: 16, widthConstant: 0, heightConstant: 0)
     }
     
     open override class var cellSize: CGSize {
         get {
-            return CGSize(width: UIScreen.main.bounds.width, height: 44)
+            return CGSize(width: UIScreen.main.bounds.width, height: 60)
         }
     }
     

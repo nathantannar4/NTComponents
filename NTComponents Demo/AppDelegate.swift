@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTNavigationContainer(centerView: tabbarVC, leftView: NTNavigationController(rootViewController: AuthorViewController()))
         root.leftPanelWidth = 350
         
-        window?.rootViewController = root
+        window?.rootViewController = NTNavigationController(rootViewController: ViewController())
         window?.makeKeyAndVisible()
         
         return true
@@ -91,4 +91,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }
+
+class ViewController: UIViewController, TagListViewDelegate {
+    
+    var tagListView = TagListView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(tagListView)
+        tagListView.fillSuperview()
+        
+        tagListView.enableDeleteButton = true
+        tagListView.cornerRadius = 5
+        
+        tagListView.tagdelegate = self
+        for _ in 0...100 {
+            tagListView.addTag("This is a tag")
+        }
+//        tagListView.addTag("On tap will be removed").onTap = { [weak self] tagView in
+//            self?.tagListView.removeTagView(tagView)
+//        }
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: TagListViewDelegate
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag pressed: \(title), \(sender)")
+        tagView.isSelected = !tagView.isSelected
+    }
+    
+    func tagDeleteButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag Remove pressed: \(title), \(sender)")
+        sender.removeTagView(tagView)
+    }
+}
+
+
 

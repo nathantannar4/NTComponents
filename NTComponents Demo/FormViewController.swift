@@ -91,10 +91,9 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
             print(textField.text ?? "")
         }
         
+        let sectionA = NTFormSection(fromRows: [cellF, cellG, NTFormImageSelectorCell()])
         
-        let sectionA = NTFormSection(fromRows: [cellF, cellG])
-        
-        let sectionB = NTFormSection(fromRows: [cellA, cellB], withHeaderTitle: "Header", withFooterTitle: nil)
+        let sectionB = NTFormSection(fromRows: [cellA, cellB, NTFormAnimatedInputCell()], withHeaderTitle: "Header", withFooterTitle: nil)
         
         let sectionC = NTFormSection(fromRows: [cellC, cellD, cellE], withHeaderTitle: "Header", withFooterTitle: "Footer")
         
