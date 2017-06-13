@@ -39,6 +39,7 @@ open class NTToast: NTAnimatedView {
     
     open let button: NTButton = {
         let button = NTButton()
+        button.backgroundColor = .clear
         button.trackTouchLocation = false
         button.contentHorizontalAlignment = .center
         button.ripplePercent = 0.7
@@ -60,8 +61,8 @@ open class NTToast: NTAnimatedView {
         label.text = text
         label.textColor = color.isLight ? .black : .white
         
+        button.rippleColor = color.isLight ? color.darker(by: 10) : color.lighter(by: 10)
         button.title = actionTitle
-        button.backgroundColor = color
         button.addTarget(target, action: selector, for: .touchUpInside)
         
         label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: button.leftAnchor, topConstant: 2, leftConstant: 12, bottomConstant: 2, rightConstant: 4, widthConstant: 0, heightConstant: 0)

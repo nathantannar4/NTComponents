@@ -245,6 +245,8 @@ public extension UIView {
 private extension UIView {
     
     @discardableResult func _round(corners: UIRectCorner, radius: CGFloat) -> CAShapeLayer {
+        layoutIfNeeded()
+        layoutSubviews()
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath

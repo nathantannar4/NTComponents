@@ -201,7 +201,7 @@ class AlertsViewController: NTTableViewController {
         actions.append(NTActionSheetItem(title: "Twitter", icon: withImages ? Icon.twitter : nil, iconTint: Color.TwitterBlue, action: {
             NTToast(text: "Twitter").show(duration: 3.0)
         }))
-        let actionSheet = NTActionSheetViewController(actions: actions)
+        let actionSheet = NTActionSheetViewController(title: "Title", subtitle: "Subtitle", actions: actions)
         actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
         actionSheet.show()
     }

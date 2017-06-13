@@ -68,8 +68,7 @@ open class NTAlertViewController: UIViewController  {
     fileprivate let alertContainer: NTView = {
         let view = NTView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 5
-        view.setDefaultShadow()
+        view.layer.cornerRadius = 16
         return view
     }()
     
@@ -79,7 +78,9 @@ open class NTAlertViewController: UIViewController  {
         button.backgroundColor = .white
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
-        button.setDefaultShadow()
+//        button.setDefaultShadow()
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = Color.Gray.P400.cgColor
         return button
     }()
     
@@ -89,7 +90,7 @@ open class NTAlertViewController: UIViewController  {
         button.titleLabel?.textAlignment = .center
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(confirmButtonPresssed), for: .touchUpInside)
-        button.setDefaultShadow()
+//        button.setDefaultShadow()
         return button
     }()
     
@@ -139,12 +140,14 @@ open class NTAlertViewController: UIViewController  {
         alertContainer.addSubview(cancelButton)
         alertContainer.addSubview(confirmButton)
         
-        alertContainer.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 300, heightConstant: 250)
+        alertContainer.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 250, heightConstant: 150)
         alertContainer.anchorCenterSuperview()
         titleLabel.anchor(alertContainer.topAnchor, left: alertContainer.leftAnchor, bottom: nil, right: alertContainer.rightAnchor, topConstant: 16, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         subtitleLabel.anchor(titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: titleLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        cancelButton.anchor(nil, left: titleLabel.leftAnchor, bottom: alertContainer.bottomAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)
-        confirmButton.anchor(nil, left: titleLabel.leftAnchor, bottom: cancelButton.topAnchor, right: titleLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+        
+        cancelButton.anchor(nil, left: alertContainer.leftAnchor, bottom: alertContainer.bottomAnchor, right: confirmButton.leftAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 16, rightConstant: 8, widthConstant: 0, heightConstant: 40)
+        confirmButton.anchor(nil, left: cancelButton.rightAnchor, bottom: alertContainer.bottomAnchor, right: alertContainer.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 16, rightConstant: 16, widthConstant: 0, heightConstant: 40)
+        cancelButton.anchorWidthToItem(confirmButton)
     }
     
     open override func show(_ vc: UIViewController? = UIViewController.topWindow()?.rootViewController, sender: Any? = nil) {

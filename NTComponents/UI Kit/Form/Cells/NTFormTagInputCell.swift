@@ -26,7 +26,7 @@
 //
 
 
-open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate {
+open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate, UITextFieldDelegate {
     
     open override var datasourceItem: Any? {
         get {
@@ -58,7 +58,7 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate {
     open var tagListView: NTTagListView = {
         let tagListView = NTTagListView()
         tagListView.contentInset.top = 4
-        tagListView.scrollIndicatorInsets.right = -14
+        tagListView.showsVerticalScrollIndicator = false
         return tagListView
     }()
     
@@ -104,7 +104,7 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate {
         addSubview(tagListView)
         
         tagListView.tagDelegate = self
-        
+        textField.delegate = self
         textField.onTextFieldUpdate { (textField) in
             guard var text = textField.text else {
                 return
@@ -135,6 +135,26 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate {
     
     open func dismissKeyboard() {
         textField.resignFirstResponder()
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else {
+            return true
+        }
+        let tagText = text.substring(to: text.index(before: text.endIndex))
+        if !tagText.isEmpty {
+            self.tagListView.addTag(tagText)
+            textField.text = String()
+            DispatchQueue.executeAfter(0.1, closure: {
+                var offset = self.tagListView.contentOffset
+                offset.y = self.tagListView.contentSize.height + self.tagListView.contentInset.bottom - self.tagListView.bounds.size.height
+                self.tagListView.setContentOffset(offset, animated: true)
+            })
+            return false
+        }
+        return true
     }
     
     // MARK: NTTagListViewDelegate

@@ -61,9 +61,9 @@ open class NTActionSheetViewController: UIViewController  {
         }
     }
     
-    open var actionButtonHeight: CGFloat = 50
-    open var titleLabelHeight: CGFloat = 40
-    open var subtitleLabelHeight: CGFloat = 30
+    open var actionButtonHeight: CGFloat = 44
+    open var titleLabelHeight: CGFloat = 30
+    open var subtitleLabelHeight: CGFloat = 20
     
     fileprivate var actions: [NTActionSheetItem] = []
     fileprivate var actionButtons: [NTButton] = []
@@ -200,6 +200,8 @@ open class NTActionSheetViewController: UIViewController  {
             actionsContainer.addSubview(titleLabel)
             titleLabel.anchor(actionsContainer.topAnchor, left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: titleLabelHeight - 10)
             
+            titleLabel.round(corners: [.topLeft, .topRight], radius: 16)
+            
             if subtitle == nil {
                 let separatorView = UIView()
                 separatorView.backgroundColor = Color.Gray.P500
@@ -209,7 +211,11 @@ open class NTActionSheetViewController: UIViewController  {
         }
         if subtitle != nil {
             actionsContainer.addSubview(subtitleLabel)
-            subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight - 10)
+            subtitleLabel.anchor((actionsContainer.secondLastSubview()?.bottomAnchor ?? actionsContainer.topAnchor), left: actionsContainer.leftAnchor, bottom: nil, right: actionsContainer.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: subtitleLabelHeight)
+            
+            if title == nil {
+                subtitleLabel.round(corners: [.topLeft, .topRight], radius: 16)
+            }
             
             let separatorView = UIView()
             separatorView.backgroundColor = Color.Gray.P500
