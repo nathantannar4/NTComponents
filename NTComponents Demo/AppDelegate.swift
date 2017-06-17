@@ -17,11 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Color.Default.setPrimary(to: .white)
-        Color.Default.setSecondary(to: UIColor(hex: "31485e"))
-        Color.Default.Background.Button = UIColor(hex: "31485e")
-        Color.Default.setCleanShadow()
+        /// Set your preferred colors
+        Color.Default.setPrimary(to: UIColor(hex: "31485e"))
+        Color.Default.setSecondary(to: .white)
+        Color.Default.setTertiary(to: UIColor(hex: "baa57b"))
         
+        /// Set a specific default
+        Color.Default.Tint.Toolbar = UIColor(hex: "31485e")
+        
+        /// Set shadow preverence
+//        Color.Default.setCleanShadow()
+        
+        /// Set your preferred font
         Font.Default.Title = Font.Roboto.Medium.withSize(15)
         Font.Default.Subtitle = Font.Roboto.Regular
         Font.Default.Body = Font.Roboto.Regular.withSize(13)
@@ -31,40 +38,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Font.Default.Callout = Font.Roboto.Regular.withSize(15)
         Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
-        Log.setTraceLevel(to: .off)
+        /// Setting trace level to MAX
+        Log.setTraceLevel(to: .debug)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
-        let loginVC = NTLoginViewController()
-        loginVC.logo = #imageLiteral(resourceName: "NT Components Banner")
-        loginVC.title = "Login"
         
-        let sampleVC = NTScrollableTabBarController(viewControllers: [loginVC, NTLandingViewController().withTitle("Landing")])
-        sampleVC.tabBarHeight = 32
-        sampleVC.tabBarPosition = .top
-        sampleVC.title = "Other"
-        sampleVC.tabBarItemWidth = 50
-        sampleVC.viewDidLoad()
+        /// Creating a slide show controller
+        var items = [NTSlideDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: "NTComponents", subtitle: "Demo", body: "Here lies source code examples to demonstrate how easy it is to make beautiful apps with NTComponents")]
         
-        let core = NTScrollableTabBarController(viewControllers: [FormViewController().withTitle("Form"), TableViewController().withTitle("TableView"), CollectionViewController().withTitle("CollectionView"), ColorsCollectionView().withTitle("Colors")])
-        core.tabBarHeight = 32
-        core.tabBarPosition = .top
-        core.title = "Core"
-        core.viewDidLoad()
+        for _ in 0...3 {
+            let randomItem = NTSlideDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: String.random(ofLength: 16), subtitle: String.random(ofLength: 10), body: String.random(ofLength: 100))
+            items.append(randomItem)
+        }
         
-        let tabbarVC = NTScrollableTabBarController(viewControllers: [core, AlertsViewController().withTitle("Alerts"), sampleVC])
-        tabbarVC.title = "NTComponents"
-        tabbarVC.subtitle = "Demo"
-        tabbarVC.tabBarHeight = 44
-        tabbarVC.tabBarPosition = .bottom
-        tabbarVC.currentTabBarHeight = 0
-        tabbarVC.viewDidLoad()
+        let root = NTSlideShowViewController(dataSource: NTSlideShowDatasource(withValues: items))
         
-        let root = NTNavigationContainer(centerView: tabbarVC, leftView: NTNavigationController(rootViewController: AuthorViewController()))
-        root.leftPanelWidth = 350
-        
-        window?.rootViewController = NTNavigationController(rootViewController: core)
+        /// Set completion to our login page
+        root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
+    
+        /// Skip showing slide show
+        window?.rootViewController = root.completionViewController
         window?.makeKeyAndVisible()
         
         return true
@@ -92,41 +87,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }
-
-//class ViewController: UIViewController, NTTagListViewDelegate {
-//    
-//    var tagListView = NTTagListView()
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        view.addSubview(tagListView)
-//        tagListView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 10, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 100)
-//        
-//        tagListView.enableDeleteButton = true
-//        tagListView.cornerRadius = 5
-//        
-//        tagListView.tagDelegate = self
-//        for _ in 0...20 {
-//            tagListView.addTag("This is a tag")
-//        }
-////        tagListView.addTag("On tap will be removed").onTap = { [weak self] tagView in
-////            self?.tagListView.removeTagView(tagView)
-////        }
-//        
-//    }
-//    
-//    // MARK: TagListViewDelegate
-//    func tagPressed(_ title: String, tagView: NTTagView, sender: NTTagListView) {
-//        print("Tag pressed: \(title), \(sender)")
-//        tagView.isSelected = !tagView.isSelected
-//    }
-//    
-//    func tagDeleteButtonPressed(_ title: String, tagView: NTTagView, sender: NTTagListView) {
-//        print("Tag Remove pressed: \(title), \(sender)")
-//        sender.removeTagView(tagView)
-//    }
-//}
-//
-//
-//

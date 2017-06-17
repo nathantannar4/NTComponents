@@ -50,7 +50,7 @@ open class NTAlertViewController: UIViewController  {
     }
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.numberOfLines = 0
         label.font = Font.Default.Headline.withSize(20)
         label.textAlignment = .center
@@ -58,7 +58,7 @@ open class NTAlertViewController: UIViewController  {
     }()
     
     open let subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .subhead)
         label.font = Font.Default.Subhead.withSize(13)
         label.numberOfLines = 0
         label.textAlignment = .center

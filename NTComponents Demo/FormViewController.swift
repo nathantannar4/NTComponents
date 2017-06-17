@@ -120,7 +120,7 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
 //    }
     
     func nextViewController(_ navigationViewController: NTNavigationViewController) -> UIViewController? {
-        return nil
+        return FormViewController()
     }
     
     func navigationViewController(_ navigationViewController: NTNavigationViewController, shouldMoveTo viewController: UIViewController) -> Bool {

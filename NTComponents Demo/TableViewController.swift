@@ -31,14 +31,15 @@ class TableViewController: NTTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
-        cell.textLabel?.text = String.random(ofLength: 10)
+        cell.textLabel?.text = "Begin Form"
         cell.detailTextLabel?.text = String.random(ofLength: 30)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = NTViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = FormViewController()
+        let navVC = NTNavigationViewController(rootViewController: vc).withTitle("Form")
+        present(navVC, animated: true, completion: nil)
     }
     
 //    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {

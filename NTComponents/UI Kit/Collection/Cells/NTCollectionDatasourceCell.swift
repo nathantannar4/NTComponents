@@ -72,14 +72,14 @@ open class NTCollectionDatasourceCell: NTCollectionViewCell, UICollectionViewDat
     }
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.adjustsFontSizeToFitWidth = true
         label.font = Font.Default.Title.withSize(13)
         return label
     }()
     
     open let subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .subhead)
         label.adjustsFontSizeToFitWidth = true
         label.font = Font.Default.Subtitle.withSize(11)
         return label

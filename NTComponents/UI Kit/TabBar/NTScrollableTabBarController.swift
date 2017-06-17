@@ -75,7 +75,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     }
     fileprivate var shouldScrollCurrentBar: Bool = true
     
-    open var tabView: NTScrollableTabBar?
+    open var tabBar: NTScrollableTabBar?
     open var tabBarTopConstraint: NSLayoutConstraint?
     open var currentTabBarHeight: CGFloat = 2.5
     open var hidesTabBarWhenPushed: Bool = false
@@ -106,7 +106,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         super.viewDidLoad()
         
         setupPageViewController()
-        setupTabView()
+        setupTabBar()
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -114,22 +114,22 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
         updateNavigationBar()
         if let currentIndex = currentIndex {
-            tabView?.updateCurrentIndex(currentIndex, shouldScroll: true)
+            tabBar?.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
     }
 
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        tabView?.layouted = true
+        tabBar?.layouted = true
     }
     
     open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        tabView?.collectionView.collectionViewLayout.invalidateLayout()
-        tabView?.setNeedsDisplay()
+        tabBar?.collectionView.collectionViewLayout.invalidateLayout()
+        tabBar?.setNeedsDisplay()
         view.setNeedsDisplay()
         DispatchQueue.main.async {
-            self.tabView?.updateCurrentIndex(self.tabView!.currentIndex, shouldScroll: true)
+            self.tabBar?.updateCurrentIndex(self.tabBar!.currentIndex, shouldScroll: true)
         }
     }
 
@@ -143,7 +143,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         let completion: ((Bool) -> Void) = { [weak self] _ in
             self?.shouldScrollCurrentBar = true
             self?.beforeIndex = index
-            self?.viewControllers[index].viewDidAppear(false)
+            self?.viewControllers[index].viewDidAppear(true)
         }
 
         pageViewController.setViewControllers(
@@ -153,7 +153,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
             completion: completion)
 
         guard isViewLoaded else { return }
-        tabView?.updateCurrentIndex(index, shouldScroll: true)
+        tabBar?.updateCurrentIndex(index, shouldScroll: true)
     }
     
     open func setupPageViewController() {
@@ -193,39 +193,37 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         }
     }
 
-    open func setupTabView() {
-        let tabView = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight, itemWidth: tabBarItemWidth)
-        tabView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tabView)
-        self.tabView?.removeFromSuperview()
-        self.tabView = nil
-        self.tabView = tabView
+    open func setupTabBar() {
+        let tabBar = NTScrollableTabBar(barHeight: currentTabBarHeight, barPosition: tabBarPosition, tabHeight: tabBarHeight, itemWidth: tabBarItemWidth)
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tabBar)
+        self.tabBar?.removeFromSuperview()
+        self.tabBar = nil
+        self.tabBar = tabBar
         
-        applyTabViewContraints()
+        applytabBarContraints()
         
         if tabBarPosition == .top {
-            pageViewController.view.anchor(tabView.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+            pageViewController.view.anchor(tabBar.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         } else {
-            pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: tabView.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+            pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: tabBar.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         }
         
-//        let _ = viewControllers.map({ $0.viewWillAppear(false) })
+        self.tabBar?.pageTabItems = viewControllers.map({ $0.title ?? String() })
+        self.tabBar?.updateCurrentIndex(beforeIndex, shouldScroll: true)
         
-        self.tabView?.pageTabItems = viewControllers.map({ $0.title ?? String() })
-        self.tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)
-        
-        self.tabView?.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
+        self.tabBar?.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
             self?.displayControllerWithIndex(index, direction: direction, animated: true)
         }
         
         updateNavigationBar()
     }
     
-    open func applyTabViewContraints() {
+    open func applytabBarContraints() {
         if tabBarPosition == .top {
-            tabBarTopConstraint = tabView?.anchorWithReturnAnchors(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)[0]
+            tabBarTopConstraint = tabBar?.anchorWithReturnAnchors(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)[0]
         } else {
-            tabBarTopConstraint = tabView?.anchorWithReturnAnchors(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)[0]
+            tabBarTopConstraint = tabBar?.anchorWithReturnAnchors(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: tabBarHeight)[0]
         }
     }
 
@@ -255,6 +253,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         guard var index = viewControllers.index(of: viewController) else {
             return nil
         }
+        
 
         if isAfter {
             index += 1
@@ -280,20 +279,22 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         shouldScrollCurrentBar = true
-        tabView?.scrollToHorizontalCenter()
+        tabBar?.scrollToHorizontalCenter()
         let _ = pendingViewControllers.map({ $0.viewDidAppear(true) })
 
         // Order to prevent the the hit repeatedly during animation
-        tabView?.updateCollectionViewUserInteractionEnabled(false)
+        tabBar?.updateCollectionViewUserInteractionEnabled(false)
     }
 
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let currentIndex = currentIndex , currentIndex < viewControllerCount {
-            tabView?.updateCurrentIndex(currentIndex, shouldScroll: false)
+            tabBar?.updateCurrentIndex(currentIndex, shouldScroll: false)
             beforeIndex = currentIndex
         }
-
-        tabView?.updateCollectionViewUserInteractionEnabled(true)
+        if completed {
+            let _ = previousViewControllers.map({ $0.viewDidDisappear(true) })
+        }
+        tabBar?.updateCollectionViewUserInteractionEnabled(true)
     }
     
     // MARK: - UIScrollViewDelegate
@@ -317,11 +318,11 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         }
 
         let scrollOffsetX = scrollView.contentOffset.x - view.frame.width
-        tabView?.scrollCurrentBarView(index, contentOffsetX: scrollOffsetX)
+        tabBar?.scrollCurrentBarView(index, contentOffsetX: scrollOffsetX)
     }
 
     open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)
+        tabBar?.updateCurrentIndex(beforeIndex, shouldScroll: true)
     }
     
     // MARK: - UINavigationControllerDelegate

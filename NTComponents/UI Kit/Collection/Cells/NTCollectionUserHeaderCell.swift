@@ -72,13 +72,13 @@ open class NTCollectionUserHeaderCell: NTCollectionViewCell {
     }()
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     open let subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .subhead)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()

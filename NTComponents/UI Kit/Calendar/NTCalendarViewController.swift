@@ -25,6 +25,143 @@
 //  Created by Nathan Tannar on 6/16/17.
 //
 
-open class NTCalendarViewController: NTViewController {
+open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     
+    
+    open var dateFormatter: DateFormatter = {
+        let format = DateFormatter()
+        format.timeZone = Calendar.current.timeZone
+        format.locale = Calendar.current.locale
+        return format
+    }()
+    
+    open var calendarHeaderView: NTCalendarHeaderView = {
+        let view = NTCalendarHeaderView()
+        view.setDefaultShadow()
+        return view
+    }()
+    open var calendarView = NTCalendarView()
+    open var detailView = UIView()
+    
+    // MARK: - Initialization
+    
+    public convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    open func setup() {
+        calendarView.calendarDelegate = self
+        calendarView.calendarDataSource = self
+        view.addSubview(calendarHeaderView)
+        view.addSubview(calendarView)
+        view.addSubview(detailView)
+        calendarHeaderView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+        calendarView.anchor(calendarHeaderView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        calendarView.heightAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
+        detailView.anchor(calendarView.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        calendarView.visibleDates { (dates) in
+            if let firstDayInVisibleMonth = dates.monthDates.first?.date {
+                self.updateTitleView(withDate: firstDayInVisibleMonth)
+            }
+        }
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateTabBar(shadowHidden: true)
+    }
+    
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        updateTabBar(shadowHidden: false)
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    open func updateNavigationBar(shadowHidden: Bool) {
+        if let navigationBar = navigationController?.navigationBar {
+            if shadowHidden {
+                navigationBar.layer.shadowOpacity = 0
+                navigationBar.shadowImage = UIImage()
+                navigationBar.setBackgroundImage(UIImage(), for: .default)
+                navigationBar.hideShadow()
+            } else {
+                navigationBar.setDefaultShadow()
+            }
+        }
+    }
+    
+    open func updateTabBar(shadowHidden: Bool) {
+        if let tabBarController = scrollableTabBarController {
+            if tabBarController.tabBarPosition == .top {
+                shadowHidden ? tabBarController.tabBar?.hideShadow() : tabBarController.tabBar?.setDefaultShadow()
+            }
+        } else {
+            updateNavigationBar(shadowHidden: shadowHidden)
+        }
+    }
+    
+    open func updateTitleView(withDate date: Date) {
+        dateFormatter.dateFormat = "MMMM"
+//        title = dateFormatter.string(from: date)
+        calendarHeaderView.monthLabel.text = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "yyyy"
+//        subtitle = dateFormatter.string(from: date)
+        calendarHeaderView.yearLabel.text = dateFormatter.string(from: date)
+    }
+    
+    // MARK: - JTAppleCalendarViewDataSource
+    
+    public func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        
+        dateFormatter.dateFormat = "yyyy MM dd"
+        let startDate = dateFormatter.date(from: "2017 01 01")!
+        let endDate = dateFormatter.date(from: "2017 12 31")!
+        
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        return parameters
+    }
+    
+    public func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: NTCalendarViewCell.reuseIdentifier, for: indexPath) as! NTCalendarViewCell
+        cell.cellState = cellState
+        cell.controller = self
+        return cell
+    }
+    
+    // MARK: - JTAppleCalendarViewDelegate
+    
+    public func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let cell = cell as? NTCalendarViewCell else {
+            return
+        }
+        cell.isSelected = true
+    }
+    
+    public func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let cell = cell as? NTCalendarViewCell else {
+            return
+        }
+        cell.isSelected = false
+    }
+    
+    public func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        
+        if let firstDayInVisibleMonth = visibleDates.monthDates.first?.date {
+            updateTitleView(withDate: firstDayInVisibleMonth)
+        }
+    }
 }

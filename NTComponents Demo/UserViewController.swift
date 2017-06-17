@@ -80,12 +80,11 @@ class CellDatasource: NTCollectionDatasource {
     
 }
 
-class CollectionViewController: NTCollectionViewController {
+class UserViewController: NTCollectionViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Profile"
         datasource = Datasource()
     }
     

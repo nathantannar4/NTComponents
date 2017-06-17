@@ -45,6 +45,12 @@ public struct Color {
             Color.Default.Background.Button = color
             Color.Default.Tint.Button = color
             Color.Default.Tint.View = color
+            Color.Default.Tint.Toolbar = color
+            
+            if color.isDark {
+                Color.Default.Text.Title = .white
+                Color.Default.Text.Subtitle = UIColor.white.darker(by: 5)
+            }
         }
 
         /**
@@ -60,7 +66,6 @@ public struct Color {
             Color.Default.Tint.Inactive = color.darker(by: 20)
             Color.Default.Tint.View = color
             Color.Default.Status.Info = color
-            Color.Default.Background.Button = color
         }
 
         /**
@@ -71,6 +76,9 @@ public struct Color {
         */
         public static func setTertiary(to color: UIColor) {
             Color.Default.Background.Button = color
+            Color.Default.Tint.View = color
+            Color.Default.Status.Info = color
+            Color.Default.Tint.Toolbar = color
         }
 
         /**
@@ -103,6 +111,11 @@ public struct Color {
         /// Sets the default shadow to a more standard flat look
         public static func setCleanShadow() {
             setShadow(color: Color.Gray.P500, opacity: 1, radius: 1, offset: .zero)
+        }
+        
+        /// Sets the default shadow to transparent
+        public static func setNoShadow() {
+            setShadow(color: .clear, opacity: 0, radius: 0, offset: .zero)
         }
 
         public struct Tint {
@@ -138,7 +151,7 @@ public struct Color {
         }
 
         public struct Status {
-            public static var Info    = Color.White
+            public static var Info    = UIColor(hex: "007AFF")
             public static var Success = UIColor(hex: "#37D387")
             public static var Warning = Color.Orange.P800.lighter(by: 10)
             public static var Danger  = UIColor(hex: "#FF6E6E")

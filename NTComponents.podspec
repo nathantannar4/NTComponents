@@ -23,13 +23,13 @@ s.homepage = "https://github.com/nathantannar4/NTComponents"
 # 6 - Source
 s.source = { :git => "https://github.com/nathantannar4/NTComponents.git", :tag => "#{s.version}"}
 
-# 7
+# 7 - Dependencies
 s.framework = "UIKit"
 
-# 8
+# 8 - Source Files
 s.source_files = "NTComponents/**/*.{swift}"
 
-# 9
+# 9 - Resources
 s.resources = "NTComponents/**/*.{xcassets,otf,ttf,xib,storyboard}"
 
 

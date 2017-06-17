@@ -27,4 +27,109 @@
 
 open class NTCalendarHeaderView: UIView {
     
+    open var monthLabel: NTLabel = {
+        let label = NTLabel(style: .title)
+        label.text = "January"
+        label.font = Font.Default.Title.withSize(24)
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    open var yearLabel: NTLabel = {
+        let label = NTLabel(style: .subtitle)
+        label.text = "2017"
+        label.font = Font.Default.Title.withSize(18)
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .right
+        return label
+    }()
+    
+    open var days: [String] = ["SUN","MON","TUE","WED","THR","FRI","SAT"]
+    open var dayLabels: [String:NTLabel] = [:]
+    fileprivate var layedOutDayLabels: Bool = false
+    
+    // MARK: - Initialization
+    
+    convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    open func setup() {
+        
+        backgroundColor = Color.Default.Background.NavigationBar
+        
+        addSubview(monthLabel)
+        addSubview(yearLabel)
+        
+        monthLabel.anchor(topAnchor, left: leftAnchor, bottom: nil, right: yearLabel.leftAnchor, topConstant: 2, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        yearLabel.anchor(nil, left: monthLabel.rightAnchor, bottom: monthLabel.bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        
+        monthLabel.anchorWidthToItem(yearLabel)
+        
+        populateDayLabels()
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layoutDayLabels()
+    }
+    
+    // MARK: - Methods
+    
+    open func layoutDayLabels() {
+        if layedOutDayLabels {
+            return
+        }
+        
+        var currentAnchor = leftAnchor
+        for (index, day) in days.enumerated() {
+            guard let label = dayLabels[day] else {
+                return
+            }
+            
+            label.anchor(monthLabel.bottomAnchor, left: currentAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+            
+            if index == days.count - 1 {
+                label.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            } else {
+                currentAnchor = label.rightAnchor
+                if let lastLabel = dayLabels[days.last!] {
+                    label.anchorWidthToItem(lastLabel)
+                }
+            }
+        }
+        
+        
+        
+        layedOutDayLabels = true
+    }
+    
+    open func populateDayLabels() {
+    
+        for day in days {
+            let label = dayLabel(withText: day)
+            dayLabels[day] = label
+            addSubview(label)
+        }
+    }
+    
+    open func dayLabel(withText text: String?) -> NTLabel {
+        let label = NTLabel(style: .caption)
+        label.text = text
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        label.textColor = Color.Default.Text.Title.darker(by: 15)
+        return label
+    }
 }

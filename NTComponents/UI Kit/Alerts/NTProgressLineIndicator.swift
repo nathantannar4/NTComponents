@@ -33,7 +33,7 @@ open class NTProgressLineIndicator: UIView {
     
     let progressLine: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.Default.Tint.NavigationBar
+        view.backgroundColor = Color.Default.Tint.View
         return view
     }()
     

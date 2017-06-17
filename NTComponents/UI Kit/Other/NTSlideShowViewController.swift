@@ -25,7 +25,20 @@
 //  Created by Nathan Tannar on 5/15/17.
 //
 
-public typealias NTSlideDataSet = (image: UIImage?, title: String?, subtitle: String?, body: String?)
+public struct NTSlideDataSet {
+    
+    public var image: UIImage?
+    public var title: String?
+    public var subtitle: String?
+    public var body: String?
+    
+    public init(image: UIImage?, title: String?, subtitle: String?, body: String?) {
+        self.image = image
+        self.title = title
+        self.subtitle = subtitle
+        self.body = body
+    }
+}
 
 open class NTSlideShowDatasource {
 
@@ -68,7 +81,7 @@ open class NTSlideShowViewController: NTPageViewController {
     open var buttonContainer: UIView = {
         let view = UIView()
         view.setDefaultShadow()
-        view.layer.shadowOffset = CGSize(width: 0, height: -2)
+        view.layer.shadowOffset = CGSize(width: 0, height: -Color.Default.Shadow.Offset.height)
         return view
     }()
     
@@ -165,12 +178,12 @@ open class NTSlideShowViewController: NTPageViewController {
     open func createContentViewControllers(withItems items: [NTSlideDataSet]) {
         for item in items {
             let imageView = NTImageView(image: item.image)
-            imageView.contentMode = .scaleAspectFill
-            let titleLabel = NTLabel(style: .title)
+            imageView.contentMode = .scaleAspectFit
+            let titleLabel = NTLabel(style: .headline)
             titleLabel.text = item.title
             titleLabel.textAlignment = .center
             titleLabel.font = Font.Default.Title.withSize(26)
-            let subtitleLabel = NTLabel(style: .subtitle)
+            let subtitleLabel = NTLabel(style: .subhead)
             subtitleLabel.text = item.subtitle
             subtitleLabel.textAlignment = .center
             let bodyLabel = NTLabel(style: .body)
@@ -183,9 +196,9 @@ open class NTSlideShowViewController: NTPageViewController {
             viewController.view.addSubview(bodyLabel)
             
             imageView.anchor(viewController.view.topAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: UIScreen.main.bounds.height * 2 / 5)
-            titleLabel.anchor(imageView.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 12, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-            subtitleLabel.anchor(titleLabel.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 6, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-            bodyLabel.anchor(subtitleLabel.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 12, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+            titleLabel.anchor(imageView.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 12, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+            subtitleLabel.anchor(titleLabel.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 6, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+            bodyLabel.anchor(subtitleLabel.bottomAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: 12, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
             
             self.viewControllers.append(viewController)
         }

@@ -52,7 +52,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     }()
     
     open var titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.font = Font.Default.Title.withSize(36)
         label.adjustsFontSizeToFitWidth = true
         label.text = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
@@ -61,7 +61,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
     }()
     
     open var subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .subhead)
         label.font = Font.Default.Subtitle.withSize(24)
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center

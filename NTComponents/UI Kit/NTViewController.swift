@@ -25,24 +25,28 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
-import UIKit
-
 open class NTViewController: UIViewController {
     
     
     /// Calls setTitleView after being set to refresh the titleView with the .title NTPreferredFontStyle
     override open var title: String? {
         didSet {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
+            if shouldAutoUpdateTitleView {
+                setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
+            }
         }
     }
     
     /// Calls setTitleView after being set to refresh the titleView with the .subtitle NTPreferredFontStyle
     open var subtitle: String? {
         didSet {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
+            if shouldAutoUpdateTitleView {
+                setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
+            }
         }
     }
+    
+    open var shouldAutoUpdateTitleView: Bool = true
     
     // MARK: - Status Bar
     

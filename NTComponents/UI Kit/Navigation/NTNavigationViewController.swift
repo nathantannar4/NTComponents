@@ -71,7 +71,9 @@ open class NTNavigationViewController: NTViewController {
         button.backgroundColor = .clear
         button.trackTouchLocation = false
         button.tintColor = Color.Default.Tint.NavigationBar
-        button.rippleColor = Color.Gray.P200
+        if Color.Default.Background.Button == Color.Default.Background.NavigationBar {
+            button.rippleColor = Color.Default.Background.Button.darker(by: 10)
+        }
         button.image = Icon.Delete
         button.ripplePercent = 1.2
         button.rippleOverBounds = true
@@ -80,9 +82,9 @@ open class NTNavigationViewController: NTViewController {
     }()
     
     open let titleLabel: NTLabel = {
-        let label = NTLabel(style: .headline)
+        let label = NTLabel(style: .title)
         label.adjustsFontSizeToFitWidth = true
-        label.font = Font.Default.Headline.withSize(44)
+        label.font = Font.Default.Title.withSize(44)
         return label
     }()
     
@@ -165,9 +167,7 @@ open class NTNavigationViewController: NTViewController {
         
         if previousViewController != nil {
             backButton.image = Icon.Arrow.Backward
-        } else {
-            backButton.tintColor = Color.Gray.P700
-        }
+        } 
         if (delegate?.nextViewController(self)) != nil {
             nextButton.isHidden = false
         }
