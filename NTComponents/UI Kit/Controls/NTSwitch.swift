@@ -44,18 +44,18 @@ open class NTSwitch: UIControl {
 
     open var isRippleEnabled: Bool = true
     
-    open var sliderOnTintColor: UIColor = Color.Default.Tint.Button {
+    open var sliderOnTintColor: UIColor = Color.Default.Tint.View {
         didSet {
             rippleColor = sliderOnTintColor.isLight ? sliderOnTintColor.darker(by: 10) : sliderOnTintColor.lighter(by: 10)
         }
     }
 
-    open var trackOnTintColor: UIColor = Color.Default.Tint.Button.lighter(by: 20)
+    open var trackOnTintColor: UIColor = Color.Default.Tint.View.lighter(by: 20)
     open var trackOffTintColor: UIColor = Color.Gray.P500
     open var sliderOffTintColor: UIColor = Color.Gray.P300
     open var sliderDisabledTintColor: UIColor = Color.Gray.P300
     open var trackDisabledTintColor: UIColor = Color.Gray.P300
-    open var rippleColor: UIColor = Color.Default.Tint.Button.isLight ? Color.Default.Tint.Button.darker(by: 10) : Color.Default.Tint.Button.lighter(by: 10)
+    open var rippleColor: UIColor = Color.Default.Tint.View.isLight ? Color.Default.Tint.View.darker(by: 10) : Color.Default.Tint.View.lighter(by: 10)
     
     open var slider: UIButton = {
         let button = UIButton()

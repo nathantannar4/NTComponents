@@ -78,6 +78,7 @@ open class NTFormInputCell: NTFormCell {
     
     open var textField: NTTextField = {
         let textField = NTTextField(style: .body)
+        textField.placeholder = "Edit.."
         textField.clearButtonMode = .whileEditing
         return textField
     }()

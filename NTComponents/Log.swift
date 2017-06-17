@@ -25,10 +25,22 @@
 //  Created by Nathan Tannar on 2/12/17.
 //
 
+
+/// Type of print statement sent to be logged. If the current log mode allows such a type it will be logged
+///
+/// - error:
+/// - warning:
+/// - status: 
 public enum LogType {
     case error, warning, status
 }
 
+
+/// Default is debug
+///
+/// - off: rawValue of 0
+/// - verbose: rawValue of 1
+/// - debug: rawValue of 2
 public enum LogMode: Int {
     case off = 0
     case verbose = 1
@@ -39,29 +51,39 @@ public struct Log {
     
     fileprivate static var mode: LogMode = .debug
     
+    
+    /// Sets the current LogMode to the passed parameter
+    ///
+    /// - Parameter mode: LogMode
     public static func setTraceLevel(to mode: LogMode) {
         Log.mode = mode
     }
 
-    public static func write(_ type: LogType, _ text: String) {
+    
+    /// Checks if the current LogMode allows for such an print statement, if so the statment is printed to the console
+    ///
+    /// - Parameters:
+    ///   - type: LogType
+    ///   - text: Statement to be printed
+    public static func write(_ type: LogType, _ text: Any) {
         var message = String()
         switch type {
         case .error:
             if Log.mode.rawValue != 0 {
                 message.append("### ERROR  : ")
-                message.append(text)
+                message.append(String(describing: text))
                 print(message)
             }
         case .warning:
             if Log.mode.rawValue >= 1 {
                 message.append("### WARNING: ")
-                message.append(text)
+                message.append(String(describing: text))
                 print(message)
             }
         case .status:
             if Log.mode.rawValue == 2 {
                 message.append("### STATUS : ")
-                message.append(text)
+                message.append(String(describing: text))
                 print(message)
             }
         }

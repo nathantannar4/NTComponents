@@ -45,6 +45,7 @@ public extension UIView {
     func fillSuperview() {
         guard let superview = self.superview else {
             Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `fillSuperview()` to fix this.")
+            Log.write(.error, String(describing: self))
             return
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +76,7 @@ public extension UIView {
         
         if self.superview == nil {
             Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorWithReturnAnchors(...)` to fix this.")
+            Log.write(.error, String(describing: self))
             return []
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -126,6 +128,7 @@ public extension UIView {
         
         if self.superview == nil {
             Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorCenterXToSuperview()` to fix this.")
+            Log.write(.error, String(describing: self))
             return
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -138,6 +141,7 @@ public extension UIView {
         
         if self.superview == nil {
             Log.write(.error, "`superview` was nil – call `addSubview(view: UIView)` before calling `anchorCenterYToSuperview()` to fix this.")
+            Log.write(.error, String(describing: self))
             return
         }
         translatesAutoresizingMaskIntoConstraints = false

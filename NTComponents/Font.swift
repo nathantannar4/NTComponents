@@ -36,10 +36,7 @@ public struct Font {
     /// An internal reference to the fonts bundle.
     private static var internalBundle: Bundle?
     
-    /**
-     A public reference to the font bundle, that aims to detect
-     the correct bundle to use.
-     */
+    /// A public reference to the font bundle, that aims to detect the correct bundle to use.
     public static var bundle: Bundle {
         if nil == Font.internalBundle {
             Font.internalBundle = Bundle(for: NTView.self)
@@ -52,6 +49,15 @@ public struct Font {
         return Font.internalBundle!
     }
     
+    
+    /// Loads a custom font
+    ///
+    /// - Parameters:
+    ///   - fromBundle: The bundle the font is located under, defaults to Font.bundle
+    ///   - name: The name of the font file
+    ///   - withExtension: The extension of the font file
+    ///   - size: The font size you would like returned, defaults 15
+    /// - Returns: A UIFont generated from the custom font file
     public static func load(fromBundle: Bundle = bundle, name: String, withExtension: String = "ttf", withSize size: CGFloat = 15) -> UIFont? {
         guard let url = bundle.url(forResource: name, withExtension: withExtension) else {
             Log.write(.error, "Failed to find the font: \(name).\(withExtension) in the supplied bundle")

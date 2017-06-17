@@ -304,8 +304,6 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
     }
     
     open func handleRefresh() {
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl?.beginRefreshing()
-        }
+        
     }
 }

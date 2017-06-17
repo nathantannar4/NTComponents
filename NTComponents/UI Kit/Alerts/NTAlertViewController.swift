@@ -52,14 +52,14 @@ open class NTAlertViewController: UIViewController  {
     open let titleLabel: NTLabel = {
         let label = NTLabel(style: .title)
         label.numberOfLines = 0
-        label.font = Font.Default.Title.withSize(20)
+        label.font = Font.Default.Headline.withSize(20)
         label.textAlignment = .center
         return label
     }()
     
     open let subtitleLabel: NTLabel = {
         let label = NTLabel(style: .subtitle)
-        label.font = Font.Default.Subtitle.withSize(13)
+        label.font = Font.Default.Subhead.withSize(13)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -68,7 +68,7 @@ open class NTAlertViewController: UIViewController  {
     fileprivate let alertContainer: NTView = {
         let view = NTView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 16
+        view.layer.cornerRadius = 5
         return view
     }()
     

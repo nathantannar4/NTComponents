@@ -14,7 +14,7 @@
     <a title="Log Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">NTComponents Docs</a> (3% documented)</p>
+        <p><a href="../index.html">NTComponents Docs</a> (4% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -121,6 +121,9 @@
                 <a href="../Classes/NTEmailRegisterViewController.html">NTEmailRegisterViewController</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/NTFormAnimatedInputCell.html">NTFormAnimatedInputCell</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/NTFormCell.html">NTFormCell</a>
               </li>
               <li class="nav-group-task">
@@ -128,6 +131,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTFormDatasource.html">NTFormDatasource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTFormImageSelectorCell.html">NTFormImageSelectorCell</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTFormImageViewCell.html">NTFormImageViewCell</a>
@@ -143,6 +149,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTFormSection.html">NTFormSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTFormTagInputCell.html">NTFormTagInputCell</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTFormViewController.html">NTFormViewController</a>
@@ -269,6 +278,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTTableViewHeaderFooterView.html">NTTableViewHeaderFooterView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTTagDeleteButton.html">NTTagDeleteButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTTagListView.html">NTTagListView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTTagListView/Alignment.html">– Alignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NTTagView.html">NTTagView</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/NTTextField.html">NTTextField</a>
@@ -406,6 +427,9 @@
                 <a href="../Protocols/NTTableViewImageDataSource.html">NTTableViewImageDataSource</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/NTTagListViewDelegate.html">NTTagListViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/NTTextInputBarDelegate.html">NTTextInputBarDelegate</a>
               </li>
             </ul>
@@ -527,8 +551,35 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets the current LogMode to the passed parameter</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">setTraceLevel</span><span class="p">(</span><span class="n">to</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogMode.html">LogMode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>LogMode</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -546,8 +597,47 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Checks if the current LogMode allows for such an print statement, if so the statment is printed to the console</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/LogType.html">LogType</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>LogType</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Statement to be printed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -557,7 +647,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/nathantannar4/NTComponents" target="_blank" rel="external">Nathan Tannar</a>. All rights reserved. (Last updated: 2017-06-08)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/nathantannar4/NTComponents" target="_blank" rel="external">Nathan Tannar</a>. All rights reserved. (Last updated: 2017-06-13)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

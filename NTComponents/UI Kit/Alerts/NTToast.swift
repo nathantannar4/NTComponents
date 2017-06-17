@@ -29,7 +29,7 @@ import UIKit
 
 open class NTToast: NTAnimatedView {
 
-    internal var currentState: NTViewState = .hidden
+    open var currentState: NTViewState = .hidden
     open var dismissOnTap: Bool = true
     
     open let label: NTLabel = {

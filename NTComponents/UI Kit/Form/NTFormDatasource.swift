@@ -41,9 +41,12 @@ open class NTFormDatasource: NTCollectionDatasource {
     open override func cellClasses() -> [NTCollectionViewCell.Type] {
         var classes = [NTCollectionViewCell.Type] ()
         for section in 0...(numberOfSections() - 1) {
-            for row in 0...(numberOfItems(section) - 1) {
-                if let currentClass = cellClass(IndexPath(row: row, section: section)) {
-                    classes.append(currentClass)
+            let rows = (numberOfItems(section) - 1)
+            if rows >= 0 {
+                for row in 0...rows {
+                    if let currentClass = cellClass(IndexPath(row: row, section: section)) {
+                        classes.append(currentClass)
+                    }
                 }
             }
         }

@@ -29,21 +29,24 @@ import UIKit
 
 open class NTViewController: UIViewController {
     
+    
+    /// Calls setTitleView after being set to refresh the titleView with the .title NTPreferredFontStyle
     override open var title: String? {
         didSet {
-            self.refreshTitleView(withAlpha: 1.0)
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
         }
     }
+    
+    /// Calls setTitleView after being set to refresh the titleView with the .subtitle NTPreferredFontStyle
     open var subtitle: String? {
         didSet {
-            self.refreshTitleView(withAlpha: 1.0)
+            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title, subtitleColor: Color.Default.Text.Subtitle)
         }
     }
     
     // MARK: - Status Bar
     
-    internal var statusBarStyle: UIStatusBarStyle = .default
-    
+    /// Modifies UIApplication.shared.isStatusBarHidden when set and animates the appearance update
     open var statusBarHidden: Bool = false {
         didSet {
             UIApplication.shared.isStatusBarHidden = statusBarHidden
@@ -52,9 +55,14 @@ open class NTViewController: UIViewController {
             }
         }
     }
+    
+    
+    /// The appearance update animation used when setting the status bar
     open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.slide
     }
+    
+    /// Returns statusBarHidden to allow for easy appearance updates to teh status bar
     open override var prefersStatusBarHidden: Bool {
         return self.statusBarHidden
     }
@@ -65,36 +73,5 @@ open class NTViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Color.Default.Background.ViewController
-    }
-    
-    open override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-//        statusBarHidden = false
-//        UIApplication.shared.statusBarStyle = statusBarStyle
-    }
-    
-    open override func viewWillDisappear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = statusBarStyle
-    }
-    
-    open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        statusBarStyle = UIApplication.shared.statusBarStyle
-//        guard let navColor = navigationController?.navigationBar.barTintColor else {
-//            guard let viewColor = view.backgroundColor else {
-//                return
-//            }
-//            UIApplication.shared.statusBarStyle = viewColor.isLight ? .default : .lightContent
-//            return
-//        }
-//        UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
-    }
-    
-    public func refreshTitleView(withAlpha alpha: CGFloat) {
-        if self.title != nil {
-            self.setTitleView(title: self.title, subtitle: self.subtitle, titleColor: Color.Default.Text.Title.withAlphaComponent(alpha), subtitleColor: Color.Default.Text.Subtitle.withAlphaComponent(alpha))
-        }
     }
 }

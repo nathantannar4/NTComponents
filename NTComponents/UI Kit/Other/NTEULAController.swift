@@ -11,7 +11,7 @@ open class NTEULAController: NTViewController {
     
     open let navBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.Default.Background.NavigationBar
         view.setDefaultShadow()
         return view
     }()
@@ -20,8 +20,10 @@ open class NTEULAController: NTViewController {
         let button = NTButton()
         button.backgroundColor = .clear
         button.trackTouchLocation = false
-        button.tintColor = Color.Gray.P500
-        button.rippleColor = Color.Gray.P200
+        button.tintColor = Color.Default.Tint.NavigationBar
+        if Color.Default.Background.Button == Color.Default.Background.NavigationBar {
+            button.rippleColor = Color.Default.Background.Button.darker(by: 10)
+        }
         button.image = Icon.Delete
         button.ripplePercent = 1.5
         button.rippleOverBounds = true

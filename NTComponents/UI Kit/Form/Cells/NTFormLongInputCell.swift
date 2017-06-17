@@ -77,6 +77,7 @@ open class NTFormLongInputCell: NTFormCell {
     
     open var textView: NTTextView = {
         let textView = NTTextView()
+        textView.placeholder = "Edit.."
         return textView
     }()
     

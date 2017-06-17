@@ -34,7 +34,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
         view.rippleOverBounds = true
         view.trackTouchLocation = false
         view.backgroundColor = .clear
-        view.rippleColor = Color.Default.Tint.Button.isLight ? Color.Default.Tint.Button.darker(by: 10) : Color.Default.Tint.Button.lighter(by: 10)
+        view.rippleColor = Color.Default.Tint.View.isLight ? Color.Default.Tint.View.darker(by: 10) : Color.Default.Tint.View.lighter(by: 10)
         view.rippleView.alpha = 0.3
         view.layer.borderWidth = 1.5
         view.layer.borderColor = Color.Gray.P500.cgColor
@@ -68,7 +68,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
                 pathLayer.removeAllAnimations()
                 pathLayer.add(pathAnimation, forKey:"strokeEnd")
                 UIView.animate(withDuration: pathAnimation.duration, animations: {
-                    self.checkBox.layer.borderColor = Color.Default.Tint.Button.lighter(by: 20).cgColor
+                    self.checkBox.layer.borderColor = Color.Default.Tint.View.lighter(by: 20).cgColor
                     
                 })
             } else {
@@ -132,7 +132,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
     open func setupPathLayer() {
         pathLayer.frame = checkBox.bounds
         pathLayer.path = checkPath().cgPath
-        pathLayer.strokeColor = Color.Default.Tint.Button.cgColor
+        pathLayer.strokeColor = Color.Default.Tint.View.cgColor
         pathLayer.fillColor = nil
         pathLayer.lineWidth = 3.5
         pathLayer.lineCap = kCALineCapRound

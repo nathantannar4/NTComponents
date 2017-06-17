@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = NTNavigationContainer(centerView: tabbarVC, leftView: NTNavigationController(rootViewController: AuthorViewController()))
         root.leftPanelWidth = 350
         
-        window?.rootViewController = root
+        window?.rootViewController = NTNavigationController(rootViewController: core)
         window?.makeKeyAndVisible()
         
         return true

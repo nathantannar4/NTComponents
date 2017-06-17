@@ -37,5 +37,6 @@ open class NTImagePickerController: UIImagePickerController {
         navigationBar.isTranslucent = false
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.setDefaultShadow()
+        sourceType = .photoLibrary
     }
 }

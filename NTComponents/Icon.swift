@@ -33,10 +33,7 @@ public struct Icon {
     /// An internal reference to the icons bundle.
     private static var internalBundle: Bundle?
     
-    /**
-     A public reference to the icons bundle, that aims to detect
-     the correct bundle to use.
-     */
+    /// A public reference to the icons bundle, that aims to detect the correct bundle to use.
     public static var bundle: Bundle {
         if nil == Icon.internalBundle {
             Icon.internalBundle = Bundle(for: NTView.self)
@@ -60,16 +57,11 @@ public struct Icon {
     public static let linkedin = UIImage(named: "ic_linkedin_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     public static let github = UIImage(named: "ic_github_logo", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     
-    
     public static let NTLogo = icon("NT Logo Black")
-    
     public static let Delete = icon("Delete_ffffff_100")
-    
     public static let Email = icon("ic_email")
-    
     public static let Lock = icon("ic_lock")
     public static let Unlock = icon("ic_unlock")
-    
     public static let Search = icon("Search")
     public static let Create = icon("Create")
     public static let Check = icon("Check")

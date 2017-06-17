@@ -34,6 +34,12 @@ public extension UIViewController {
             Log.write(.error, "Could not find the active window")
             return
         }
+        if let viewControllers = window.rootViewController?.childViewControllers {
+            for viewController in viewControllers {
+                viewController.dismiss(animated: false, completion: nil)
+            }
+        }
+        window.resignKey()
         window.rootViewController = self
         window.makeKeyAndVisible()
     }

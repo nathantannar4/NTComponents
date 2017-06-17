@@ -31,6 +31,21 @@ public enum NTTabBarPosition {
     case top, bottom
 }
 
+public extension UIViewController {
+    var scrollableTabBarController: NTScrollableTabBarController? {
+        var parentViewController = parent
+        
+        while parentViewController != nil {
+            if let view = parentViewController as? NTScrollableTabBarController {
+                return view
+            }
+            parentViewController = parentViewController!.parent
+        }
+        Log.write(.warning, "View controller did not have an NTScrollableTabBarController as a parent")
+        return nil
+    }
+}
+
 open class NTScrollableTabBarController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate {
     
     public var currentIndex: Int? {
@@ -62,7 +77,8 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     
     open var tabView: NTScrollableTabBar?
     open var tabBarTopConstraint: NSLayoutConstraint?
-    open var currentTabBarHeight: CGFloat = 2
+    open var currentTabBarHeight: CGFloat = 2.5
+    open var hidesTabBarWhenPushed: Bool = false
     open var tabBarHeight: CGFloat = 32
     open var tabBarItemWidth: CGFloat = 0
     open var tabBarPosition: NTTabBarPosition = .top {
@@ -89,8 +105,8 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTabView()
         setupPageViewController()
+        setupTabView()
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -112,7 +128,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         tabView?.collectionView.collectionViewLayout.invalidateLayout()
         tabView?.setNeedsDisplay()
         view.setNeedsDisplay()
-        DispatchQueue.executeAfter(0.1) {
+        DispatchQueue.main.async {
             self.tabView?.updateCurrentIndex(self.tabView!.currentIndex, shouldScroll: true)
         }
     }
@@ -145,7 +161,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         pageViewController.delegate = self
         automaticallyAdjustsScrollViewInsets = false
         addChildViewController(pageViewController)
-        view.insertSubview(pageViewController.view, belowSubview: tabView!)
+        view.addSubview(pageViewController.view)
         pageViewController.didMove(toParentViewController: self)
     
         for vc in viewControllers {
@@ -216,17 +232,16 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     open func updateTabBarOrigin(hidden: Bool) {
         guard let tabBarTopConstraint = tabBarTopConstraint else { return }
         
+        if !hidden && tabBarTopConstraint.constant == 0.0 {
+            return
+        } else if hidden && tabBarTopConstraint.constant != 0.0 {
+            return
+        }
+        
         if tabBarPosition == .top {
             tabBarTopConstraint.constant = hidden ? -tabBarHeight : 0.0
         } else {
             tabBarTopConstraint.constant = hidden ? tabBarHeight : 0.0
-        }
-        if !hidden {
-            navigationController?.navigationBar.hideShadow()
-        } else {
-            DispatchQueue.executeAfter(1.5 * TimeInterval(UINavigationControllerHideShowBarDuration), closure: {
-                self.navigationController?.navigationBar.setDefaultShadow()
-            })
         }
         UIView.animate(withDuration: 2 * TimeInterval(UINavigationControllerHideShowBarDuration)) {
             self.view.layoutIfNeeded()
@@ -283,7 +298,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     
     // MARK: - UIScrollViewDelegate
 
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x == defaultContentOffsetX || !shouldScrollCurrentBar {
             return
         }
@@ -305,14 +320,23 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         tabView?.scrollCurrentBarView(index, contentOffsetX: scrollOffsetX)
     }
 
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         tabView?.updateCurrentIndex(beforeIndex, shouldScroll: true)
     }
     
     // MARK: - UINavigationControllerDelegate
     
-    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        
-        updateTabBarOrigin(hidden: !(viewController == self))
+    open func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let hidden = !(viewController == self)
+        if hidesTabBarWhenPushed {
+            updateTabBarOrigin(hidden: hidden)
+        }
+        if !hidden {
+            navigationController.navigationBar.hideShadow()
+        } else {
+            DispatchQueue.executeAfter(1.5 * TimeInterval(UINavigationControllerHideShowBarDuration), closure: {
+                self.navigationController?.navigationBar.setDefaultShadow()
+            })
+        }
     }
 }

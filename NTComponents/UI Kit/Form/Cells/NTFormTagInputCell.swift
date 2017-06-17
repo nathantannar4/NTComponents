@@ -143,9 +143,8 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate, UITextFieldDel
         guard let text = textField.text else {
             return true
         }
-        let tagText = text.substring(to: text.index(before: text.endIndex))
-        if !tagText.isEmpty {
-            self.tagListView.addTag(tagText)
+        if !text.isEmpty {
+            self.tagListView.addTag(text)
             textField.text = String()
             DispatchQueue.executeAfter(0.1, closure: {
                 var offset = self.tagListView.contentOffset

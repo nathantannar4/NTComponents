@@ -157,7 +157,6 @@ open class NTNavigationViewController: NTViewController {
         guard let navColor = navigationBar.backgroundColor else {
             return
         }
-        statusBarStyle = UIApplication.shared.statusBarStyle
         UIApplication.shared.statusBarStyle = navColor.isLight ? .default : .lightContent
     }
     

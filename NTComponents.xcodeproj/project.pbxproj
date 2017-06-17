@@ -105,6 +105,10 @@
 		38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
+		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
+		38CACA251EF4D19700F07499 /* NTCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA241EF4D19700F07499 /* NTCalendarView.swift */; };
+		38CACA271EF4D1CB00F07499 /* NTCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */; };
+		38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */; };
 		38D1EE361EDFF1A700C7FD44 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */; };
 		38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */; };
 		38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */; };
@@ -263,6 +267,10 @@
 		38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSegmentedControl.swift; path = Controls/NTSegmentedControl.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		38CACA241EF4D19700F07499 /* NTCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarView.swift; path = Calendar/NTCalendarView.swift; sourceTree = "<group>"; };
+		38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarViewController.swift; path = Calendar/NTCalendarViewController.swift; sourceTree = "<group>"; };
+		38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarHeaderView.swift; path = Calendar/NTCalendarHeaderView.swift; sourceTree = "<group>"; };
 		38D1EE351EDFF1A700C7FD44 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
 		38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTActivityView.swift; path = "NTComponents/UI Kit/Views/NTActivityView.swift"; sourceTree = SOURCE_ROOT; };
 		38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshControl.swift; sourceTree = "<group>"; };
@@ -319,6 +327,7 @@
 			children = (
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
 				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
+				38CACA211EF4D0C300F07499 /* CalendarViewController.swift */,
 				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
 				38ECA8CA1EE9AB3B00639A19 /* CollectionViewController.swift */,
 				380461051EA2A787008A03B5 /* TableViewController.swift */,
@@ -463,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D87D1EB0686E003B73F7 /* NTViewController.swift */,
+				38CACA231EF4D16200F07499 /* Calendar */,
 				388C1EEF1EE678C40036AECE /* Form */,
 				3863D8691EB0686E003B73F7 /* Alerts */,
 				380EEA1C1EDE862D0018FC37 /* Camera */,
@@ -627,6 +637,16 @@
 				388C1EE91EE5298C0036AECE /* NTCheckbox.swift */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		38CACA231EF4D16200F07499 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				38CACA241EF4D19700F07499 /* NTCalendarView.swift */,
+				38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */,
+				38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		38ECA8B91EE7C5D000639A19 /* Cells */ = {
@@ -801,6 +821,7 @@
 				38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */,
 				38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */,
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
+				38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */,
 				38ECA8CB1EE9AB3B00639A19 /* CollectionViewController.swift in Sources */,
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
@@ -815,6 +836,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
 				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
@@ -867,6 +889,7 @@
 				38ECA8E51EEE6C2000639A19 /* NTTagListView.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
+				38CACA251EF4D19700F07499 /* NTCalendarView.swift in Sources */,
 				38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
@@ -902,6 +925,7 @@
 				3863D8B31EB0686E003B73F7 /* UIImage+UIImageView.swift in Sources */,
 				3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */,
 				38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */,
+				38CACA271EF4D1CB00F07499 /* NTCalendarViewController.swift in Sources */,
 				38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */,
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
