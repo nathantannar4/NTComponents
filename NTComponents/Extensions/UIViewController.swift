@@ -27,21 +27,17 @@
 
 import UIKit
 
+public enum NTPresentationDirection {
+    case top, right, bottom, left
+}
+
 public extension UIViewController {
     
-    public func makeKeyAndVisible()  {
-        guard let window = UIViewController.topWindow() else {
-            Log.write(.error, "Could not find the active window")
+    public func makeKeyAndVisible(animated: Bool = false)  {
+        guard let controller = UIViewController.topController() else {
             return
         }
-        if let viewControllers = window.rootViewController?.childViewControllers {
-            for viewController in viewControllers {
-                viewController.dismiss(animated: false, completion: nil)
-            }
-        }
-        window.resignKey()
-        window.rootViewController = self
-        window.makeKeyAndVisible()
+        controller.present(self, animated: animated, completion: nil)
     }
     
     class func topWindow() -> UIWindow? {

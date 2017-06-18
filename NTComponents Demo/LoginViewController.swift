@@ -44,7 +44,7 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
         tabVC.title = "NTComponents"
         tabVC.subtitle = "Demo"
         tabVC.tabBarPosition = .bottom
-        let container = NTNavigationContainer(centerView: tabVC, leftView: AuthorViewController(), rightView: nil)
+        let container = NTNavigationContainer(centerViewController: tabVC, leftViewController: NTNavigationController(rootViewController: AuthorViewController()), rightViewController: UIViewController())
         container.makeKeyAndVisible()
     }
     

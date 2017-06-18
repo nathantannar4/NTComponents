@@ -1,5 +1,5 @@
 //
-//  NTSlideShowViewController.swift
+//  NTOnboardingViewController.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -25,7 +25,7 @@
 //  Created by Nathan Tannar on 5/15/17.
 //
 
-public struct NTSlideDataSet {
+public struct NTOnboardingDataSet {
     
     public var image: UIImage?
     public var title: String?
@@ -40,21 +40,21 @@ public struct NTSlideDataSet {
     }
 }
 
-open class NTSlideShowDatasource {
+open class NTOnboardingDatasource {
 
-    open var items: [NTSlideDataSet]
+    open var items: [NTOnboardingDataSet]
     
-    public init(withValues items: [NTSlideDataSet]) {
+    public init(withValues items: [NTOnboardingDataSet]) {
         self.items = items
     }
 }
 
-open class NTSlideShowViewController: NTPageViewController {
+open class NTOnboardingViewController: NTPageViewController {
     
-    open var datasource: NTSlideShowDatasource?
+    open var datasource: NTOnboardingDatasource?
     
     /**
-     The view controller presented after the slide show has completed. If left nil NTSlideShowViewController will attempt to dismiss itself
+     The view controller presented after the slide show has completed. If left nil NTOnboardingViewController will attempt to dismiss itself
      */
     open var completionViewController: UIViewController?
     
@@ -106,7 +106,7 @@ open class NTSlideShowViewController: NTPageViewController {
 
     // MARK: - Initialization
  
-    public convenience init(dataSource: NTSlideShowDatasource?) {
+    public convenience init(dataSource: NTOnboardingDatasource?) {
         self.init()
  
         guard let items = dataSource?.items else {
@@ -159,7 +159,7 @@ open class NTSlideShowViewController: NTPageViewController {
         statusBarHidden = false
     }
     
-    // MARK: - NTSlideShow Methods
+    // MARK: - NTOnboarding Methods
     
     open override func slideToNextViewController() {
         if currentIndex == viewControllers.count - 1 {
@@ -175,7 +175,7 @@ open class NTSlideShowViewController: NTPageViewController {
         }
     }
     
-    open func createContentViewControllers(withItems items: [NTSlideDataSet]) {
+    open func createContentViewControllers(withItems items: [NTOnboardingDataSet]) {
         for item in items {
             let imageView = NTImageView(image: item.image)
             imageView.contentMode = .scaleAspectFit

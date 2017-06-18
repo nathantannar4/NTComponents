@@ -41,7 +41,7 @@ open class NTCollectionViewDefaultHeader: NTCollectionViewDefaultCell {
     override open func setupViews() {
         super.setupViews()
         
-        label.setPreferredFontStyle(to: .callout)
+        label.setPreferredFontStyle(to: .subhead)
         backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
     }
 }

@@ -92,8 +92,6 @@ open class NTLandingViewController: NTViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        view.applyGradient(colours: [Color.Default.Tint.View.darker(by: 10), Color.Default.Tint.View.darker(by: 5), Color.Default.Tint.View, Color.Default.Tint.View.lighter(by: 5)], locations: [0.0, 0.1, 0.3, 1.0])
-        
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(detailLabel)
