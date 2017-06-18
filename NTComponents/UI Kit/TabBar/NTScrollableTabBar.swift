@@ -57,6 +57,7 @@ open class NTScrollableTabBar: UIView {
         collectionView.backgroundColor = Color.Default.Background.TabBar
         collectionView.scrollsToTop = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         return collectionView
     }()
     

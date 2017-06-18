@@ -99,8 +99,8 @@ open class NTPing: NTView {
     open func show(duration: TimeInterval = 2) {
         
         guard let view = statusBar else { return }
+        view.addSubview(self)
         
-        statusBar?.addSubview(self)
         frame = CGRect(x: 0, y: -view.frame.height, width: view.frame.width, height: self.frame.height)
         
         currentState = .transitioning

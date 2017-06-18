@@ -29,6 +29,12 @@ import UIKit
 
 open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate {
     
+    fileprivate var statusBar: UIView? {
+        get {
+            return UIApplication.shared.value(forKey: "statusBar") as? UIView
+        }
+    }
+    
     fileprivate static var currentChime: NTChime? {
         willSet {
             currentChime?.isHidden = true
@@ -46,14 +52,14 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     }()
     
     open var titleLabel: NTLabel = {
-        let label = NTLabel(style: .title)
+        let label = NTLabel(style: .headline)
         label.font = Font.Default.Title.withSize(15)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
 
     open var subtitleLabel: NTLabel = {
-        let label = NTLabel(style: .subtitle)
+        let label = NTLabel(style: .subhead)
         label.font = Font.Default.Subtitle.withSize(13)
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -74,7 +80,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     open var animationOptions: UIViewAnimationOptions = [.curveEaseIn]
     open var frameTopAnchor: NSLayoutConstraint?
     open var transition = NTCircularTransition()
-    open var height: CGFloat = 54
+    open var height: CGFloat = 48
     open var detailController: UIViewController?
     
     fileprivate weak var parent: UIViewController?
@@ -82,7 +88,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     // MARK: - Initialization
     
-    public convenience init(type: NTAlertType = NTAlertType.isInfo, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, blurBackground: Bool = false, height: CGFloat = 54, detailViewController: UIViewController? = nil) {
+    public convenience init(type: NTAlertType = NTAlertType.isInfo, title: String? = nil, subtitle: String? = nil, icon: UIImage? = nil, blurBackground: Bool = false, height: CGFloat = 48, detailViewController: UIViewController? = nil) {
         
         var bounds =  UIScreen.main.bounds
         bounds.origin.y = bounds.height - height
@@ -164,7 +170,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         vc.modalPresentationStyle = .custom
         vc.view.layer.cornerRadius = 50
         currentState = .hidden
-        UIViewController.topController()?.present(vc, animated: true, completion: {
+        parent?.present(vc, animated: true, completion: {
             self.blurBackground(false)
             self.isHidden = true
             vc.view.layer.cornerRadius = 0
@@ -184,8 +190,12 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     open func show(_ viewController: UIViewController? = UIViewController.topController(), duration: TimeInterval? = 3) {
         if currentState != .hidden { return }
+        
         guard let viewController = viewController else { return }
         viewController.view.addSubview(self)
+        
+        statusBar?.isHidden = true
+        
         frameTopAnchor = anchorWithReturnAnchors(viewController.view.topAnchor, left: viewController.view.leftAnchor, bottom: nil, right: viewController.view.rightAnchor, topConstant: -self.frame.height, leftConstant: 12, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: self.frame.height)[0]
         
         currentState = .transitioning
@@ -195,7 +205,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         viewController.view.layoutIfNeeded()
         
         UIView.animate(withDuration: animationDuration, delay: animationDelay, usingSpringWithDamping: animationSpringDamping, initialSpringVelocity: animationSpringVelocity, options: animationOptions, animations: {
-            self.frameTopAnchor?.constant = 24
+            self.frameTopAnchor?.constant = 8
             NTChime.currentChime?.layer.shadowOpacity = 0
             viewController.view.layoutIfNeeded()
             
@@ -213,6 +223,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         guard let parent = parent else { return }
         if currentState != .visible { return }
         currentState = .transitioning
+        statusBar?.isHidden = false
         
         parent.view.layoutIfNeeded()
         blurBackground(false)
@@ -274,6 +285,9 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
             blurView.isHidden = false
             
             var offset = translation.y
+            if center.y >= 20 {
+                statusBar?.isHidden = false
+            }
             if center.y >= (height * 1.9) {
                 offset = 10 * offset / center.y
                 if center.y > (height * 2.1) {
@@ -287,6 +301,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
             gestureRecognizer.setTranslation(CGPoint.zero, in: self)
             
             if velocity > 1500 {
+                statusBar?.isHidden = false
                 presentDetailController()
                 gestureRecognizer.isEnabled = false
             }

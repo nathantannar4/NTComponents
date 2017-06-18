@@ -27,7 +27,6 @@
 
 open class NTCalendarView: JTAppleCalendarView {
     
-    
     // MARK: - Initialization
     
     public override init() {

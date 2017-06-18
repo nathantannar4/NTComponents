@@ -112,7 +112,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        updateNavigationBar()
         if let currentIndex = currentIndex {
             tabBar?.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
@@ -185,11 +184,13 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
     open func updateNavigationBar() {
         navigationController?.delegate = self
-        if let navigationBar = navigationController?.navigationBar, tabBarPosition == .top {
-            navigationBar.layer.shadowOpacity = 0
-            navigationBar.shadowImage = UIImage()
-            navigationBar.setBackgroundImage(UIImage(), for: .default)
-            navigationBar.hideShadow()
+        if tabBarPosition == .top {
+            navigationController?.navigationBar.layer.shadowOpacity = 0
+            navigationController?.navigationBar.shadowImage = UIImage()
+            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationController?.navigationBar.hideShadow()
+        } else {
+            navigationController?.navigationBar.setDefaultShadow()
         }
     }
 
@@ -205,6 +206,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         
         if tabBarPosition == .top {
             pageViewController.view.anchor(tabBar.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+            updateNavigationBar()
         } else {
             pageViewController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: tabBar.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         }
@@ -215,8 +217,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         self.tabBar?.pageItemPressedBlock = { [weak self] (index: Int, direction: UIPageViewControllerNavigationDirection) in
             self?.displayControllerWithIndex(index, direction: direction, animated: true)
         }
-        
-        updateNavigationBar()
     }
     
     open func applytabBarContraints() {

@@ -9,9 +9,7 @@
 import UIKit
 import NTComponents
 
-class TableViewController: NTTableViewController {
-    
-    var delegate: NTSwipeableTransitioningDelegate?
+class TableViewController: NTTableViewController, NTTableViewImageDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +17,7 @@ class TableViewController: NTTableViewController {
         title = "Table View"
         let rc = refreshControl()
         tableView.refreshControl = rc
+        tableView.imageDataSource = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,6 +63,10 @@ class TableViewController: NTTableViewController {
 //            }, completion: nil)    
 //        }
 //    }
+    
+    func imageForStretchyView(in tableView: NTTableView) -> UIImage? {
+        return #imageLiteral(resourceName: "NT Components Banner")
+    }
     
     override func handleRefresh() {
         super.handleRefresh()

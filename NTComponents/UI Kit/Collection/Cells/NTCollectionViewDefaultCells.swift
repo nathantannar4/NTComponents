@@ -41,12 +41,8 @@ open class NTCollectionViewDefaultHeader: NTCollectionViewDefaultCell {
     override open func setupViews() {
         super.setupViews()
         
-        separatorLineView.isHidden = false
-        label.setPreferredFontStyle(to: .subhead)
-        backgroundColor = .clear
-        
-        label.removeAllConstraints()
-        label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 10, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        label.setPreferredFontStyle(to: .callout)
+        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
     }
 }
 
@@ -64,9 +60,10 @@ open class NTCollectionViewDefaultFooter: NTCollectionViewDefaultCell {
     override open func setupViews() {
         super.setupViews()
         
+        separatorLineView.isHidden = true
         label.textAlignment = .center
         label.setPreferredFontStyle(to: .footnote)
-        backgroundColor = .clear
+        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
     }
 }
 
@@ -89,6 +86,10 @@ open class NTCollectionViewDefaultCell: NTCollectionViewCell {
     
     override open func setupViews() {
         super.setupViews()
+        
+        backgroundColor = .white
+        separatorLineView.isHidden = false
+        
         addSubview(label)
         label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
     }

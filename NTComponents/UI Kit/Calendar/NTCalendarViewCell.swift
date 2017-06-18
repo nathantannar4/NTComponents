@@ -41,12 +41,26 @@ open class NTCalendarViewCell: JTAppleCell {
             if cellState?.dateBelongsTo != .thisMonth {
                 dateLabel.textColor = Color.Default.Text.Disabled
             }
+            if let date = cellState?.date {
+                currentDayView.isHidden = !Calendar.current.isDateInToday(date)
+            } else {
+                currentDayView.isHidden = false
+            }
         }
     }
     
     open var dateLabel: NTLabel = {
         let label = NTLabel(style: .body)
         return label
+    }()
+    
+    open var currentDayView: UIView = {
+        let view = UIView()
+        view.layer.borderColor = Color.Default.Tint.View.cgColor
+        view.layer.borderWidth = 2
+        view.isHidden = true
+        view.layer.cornerRadius = 50 / 2
+        return view
     }()
     
     open var isSelectedView: UIView = {
@@ -74,13 +88,16 @@ open class NTCalendarViewCell: JTAppleCell {
     
     open func setupViews() {
         
+        addSubview(currentDayView)
         addSubview(isSelectedView)
         addSubview(dateLabel)
         
         dateLabel.anchorCenterSuperview()
-        isSelectedView.anchorCenterSuperview()
-        isSelectedView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        isSelectedView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        for view in [currentDayView, isSelectedView] {
+            view.anchorCenterSuperview()
+            view.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        }
     }
     
     open override var isSelected: Bool {

@@ -27,6 +27,27 @@
 
 public extension Date {
     
+    func addMonth(_ n: Int) -> Date {
+        let cal = NSCalendar.current
+        return cal.date(byAdding: .month, value: n, to: self)!
+    }
+    func addDay(_ n: Int) -> Date {
+        let cal = NSCalendar.current
+        return cal.date(byAdding: .day, value: n, to: self)!
+    }
+    func addSec(_ n: Int) -> Date {
+        let cal = NSCalendar.current
+        return cal.date(byAdding: .second, value: n, to: self)!
+    }
+    
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+    
     func string(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .current

@@ -68,6 +68,8 @@ open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelega
         calendarView.visibleDates { (dates) in
             if let firstDayInVisibleMonth = dates.monthDates.first?.date {
                 self.updateTitleView(withDate: firstDayInVisibleMonth)
+                self.calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
+                self.calendarView.scrollToDate(Date().startOfMonth(), animateScroll: false, preferredScrollPosition: .left)
             }
         }
     }
@@ -88,7 +90,6 @@ open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelega
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     open func updateNavigationBar(shadowHidden: Bool) {
@@ -108,6 +109,8 @@ open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelega
         if let tabBarController = scrollableTabBarController {
             if tabBarController.tabBarPosition == .top {
                 shadowHidden ? tabBarController.tabBar?.hideShadow() : tabBarController.tabBar?.setDefaultShadow()
+            } else {
+                updateNavigationBar(shadowHidden: shadowHidden)
             }
         } else {
             updateNavigationBar(shadowHidden: shadowHidden)
@@ -116,10 +119,8 @@ open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelega
     
     open func updateTitleView(withDate date: Date) {
         dateFormatter.dateFormat = "MMMM"
-//        title = dateFormatter.string(from: date)
         calendarHeaderView.monthLabel.text = dateFormatter.string(from: date)
         dateFormatter.dateFormat = "yyyy"
-//        subtitle = dateFormatter.string(from: date)
         calendarHeaderView.yearLabel.text = dateFormatter.string(from: date)
     }
     
@@ -128,8 +129,8 @@ open class NTCalendarViewController: NTViewController, JTAppleCalendarViewDelega
     public func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         
         dateFormatter.dateFormat = "yyyy MM dd"
-        let startDate = dateFormatter.date(from: "2017 01 01")!
-        let endDate = dateFormatter.date(from: "2017 12 31")!
+        let startDate = dateFormatter.date(from: "2000 01 01")!
+        let endDate = dateFormatter.date(from: "2030 12 31")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters

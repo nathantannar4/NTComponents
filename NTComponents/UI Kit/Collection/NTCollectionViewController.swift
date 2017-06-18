@@ -64,12 +64,9 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         view.backgroundColor = Color.Default.Background.ViewController
         collectionView?.backgroundColor = .clear
         collectionView?.alwaysBounceVertical = true
-        collectionView?.register(NTCollectionViewCell.self, forCellWithReuseIdentifier: "NTCollectionViewCell")
-        collectionView?.register(NTCollectionDatasourceCell.self, forCellWithReuseIdentifier: "NTCollectionDatasourceCell")
         collectionView?.register(NTCollectionViewDefaultCell.self, forCellWithReuseIdentifier: defaultCellId)
-        collectionView?.register(NTCollectionViewDefaultFooter.self, forCellWithReuseIdentifier: defaultFooterId)
-        collectionView?.register(NTCollectionViewDefaultHeader.self, forCellWithReuseIdentifier: defaultHeaderId)
-       
+        collectionView?.register(NTCollectionViewDefaultHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: defaultHeaderId)
+        collectionView?.register(NTCollectionViewDefaultFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: defaultFooterId)
         
         view.addSubview(activityIndicatorView)
         activityIndicatorView.anchorCenterXToSuperview()

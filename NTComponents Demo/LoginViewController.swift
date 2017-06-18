@@ -41,7 +41,10 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
             CalendarViewController().withTitle("Calendar")
         ])
         tabVC.tabBarItemWidth = 70
-        let container = NTNavigationContainer(centerView: tabVC, leftView: MenuViewController(), rightView: nil)
+        tabVC.title = "NTComponents"
+        tabVC.subtitle = "Demo"
+        tabVC.tabBarPosition = .bottom
+        let container = NTNavigationContainer(centerView: tabVC, leftView: AuthorViewController(), rightView: nil)
         container.makeKeyAndVisible()
     }
     
