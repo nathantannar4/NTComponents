@@ -26,6 +26,7 @@
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
 		382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */; };
+		38351D481EF7435E0046BB2E /* NTDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38351D471EF7435E0046BB2E /* NTDrawerController.swift */; };
 		383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */; };
 		3863D89A1EB0686E003B73F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3863D8471EB0686E003B73F7 /* Assets.xcassets */; };
 		3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */; };
@@ -202,6 +203,7 @@
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransitioningDelegate.swift; sourceTree = "<group>"; };
+		38351D471EF7435E0046BB2E /* NTDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDrawerController.swift; sourceTree = "<group>"; };
 		383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		3863D8471EB0686E003B73F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3863D84A1EB0686E003B73F7 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 		3863D87A1EB0686E003B73F7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				38351D471EF7435E0046BB2E /* NTDrawerController.swift */,
 				3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */,
 				3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */,
 				38FCFA491ED01F3F007D3019 /* NTNavigationViewController.swift */,
@@ -975,6 +978,7 @@
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
 				38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */,
+				38351D481EF7435E0046BB2E /* NTDrawerController.swift in Sources */,
 				38ECA8DF1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,

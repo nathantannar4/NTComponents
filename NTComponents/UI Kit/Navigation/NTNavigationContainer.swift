@@ -34,7 +34,7 @@ open class DrawerBarButtonItem: UIBarButtonItem {
     
     open var menuButton: AnimatedMenuButton
     
-    // MARK: - Initializers
+     MARK: - Initializers
     
     public override init() {
         self.menuButton = AnimatedMenuButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
@@ -65,7 +65,7 @@ open class DrawerBarButtonItem: UIBarButtonItem {
         self.customView = self.menuButton
     }
     
-    // MARK: - Animations
+     MARK: - Animations
     
     open func animate(withPercentVisible percentVisible: CGFloat, drawerSide: DrawerSide) {
         if let btn = self.customView as? AnimatedMenuButton {
@@ -80,7 +80,7 @@ open class AnimatedMenuButton : UIButton {
     lazy var middle: CAShapeLayer = CAShapeLayer()
     lazy var bottom: CAShapeLayer = CAShapeLayer()
     
-    // MARK: - Constants
+     MARK: - Constants
     
     let animationDuration: CFTimeInterval = 8.0
     
@@ -93,7 +93,7 @@ open class AnimatedMenuButton : UIButton {
     
     var animatable = true
     
-    // MARK: - Initializers
+     MARK: - Initializers
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -166,7 +166,7 @@ open class AnimatedMenuButton : UIButton {
         bottom.stroke()
     }
     
-    // MARK: - Animations
+     MARK: - Animations
     
     open func animate(withPercentVisible percentVisible: CGFloat, drawerSide: DrawerSide) {
         if !self.animatable {

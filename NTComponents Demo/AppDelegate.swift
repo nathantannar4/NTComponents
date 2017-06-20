@@ -59,7 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
     
         /// Skip showing slide show
-        window?.rootViewController = root.completionViewController
+        let drawer = NTDrawerController(centerViewController: NTNavigationController(rootViewController: CalendarViewController()), leftViewController: FeedViewController(), rightViewController: AlertsViewController())
+        drawer.leftViewProperties.isVisibleOnTop = false
+        window?.rootViewController = drawer
         window?.makeKeyAndVisible()
         
         return true
