@@ -16,2205 +16,2205 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 102,
+      "line": 101,
       "symbol": "Color.Default.setCleanShadow()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 106,
+      "line": 105,
       "symbol": "Color.Default.Tint",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 109,
+      "line": 108,
       "symbol": "Color.Default.Tint.View",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 110,
+      "line": 109,
       "symbol": "Color.Default.Tint.Button",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 111,
+      "line": 110,
       "symbol": "Color.Default.Tint.NavigationBar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 112,
+      "line": 111,
       "symbol": "Color.Default.Tint.TabBar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 113,
+      "line": 112,
       "symbol": "Color.Default.Tint.Toolbar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 114,
+      "line": 113,
       "symbol": "Color.Default.Tint.Inactive",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 117,
+      "line": 116,
       "symbol": "Color.Default.Background",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 118,
+      "line": 117,
       "symbol": "Color.Default.Background.View",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 119,
+      "line": 118,
       "symbol": "Color.Default.Background.ViewController",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 120,
+      "line": 119,
       "symbol": "Color.Default.Background.Button",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 121,
+      "line": 120,
       "symbol": "Color.Default.Background.NavigationBar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 122,
+      "line": 121,
       "symbol": "Color.Default.Background.TabBar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 123,
+      "line": 122,
       "symbol": "Color.Default.Background.Toolbar",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 126,
+      "line": 125,
       "symbol": "Color.Default.Text",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 127,
+      "line": 126,
       "symbol": "Color.Default.Text.Title",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 128,
+      "line": 127,
       "symbol": "Color.Default.Text.Subtitle",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 129,
+      "line": 128,
       "symbol": "Color.Default.Text.Body",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 130,
+      "line": 129,
       "symbol": "Color.Default.Text.Callout",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 131,
+      "line": 130,
       "symbol": "Color.Default.Text.Caption",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 132,
+      "line": 131,
       "symbol": "Color.Default.Text.Footnote",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 133,
+      "line": 132,
       "symbol": "Color.Default.Text.Headline",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 134,
+      "line": 133,
       "symbol": "Color.Default.Text.Subhead",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 135,
+      "line": 134,
       "symbol": "Color.Default.Text.Disabled",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 138,
+      "line": 137,
       "symbol": "Color.Default.Status",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 139,
+      "line": 138,
       "symbol": "Color.Default.Status.Info",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 140,
+      "line": 139,
       "symbol": "Color.Default.Status.Success",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 141,
+      "line": 140,
       "symbol": "Color.Default.Status.Warning",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 142,
+      "line": 141,
       "symbol": "Color.Default.Status.Danger",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 145,
+      "line": 144,
       "symbol": "Color.Default.Shadow",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 146,
+      "line": 145,
       "symbol": "Color.Default.Shadow.cgColor",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 147,
+      "line": 146,
       "symbol": "Color.Default.Shadow.Opacity",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 148,
+      "line": 147,
       "symbol": "Color.Default.Shadow.Radius",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 149,
+      "line": 148,
       "symbol": "Color.Default.Shadow.Offset",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 153,
+      "line": 152,
       "symbol": "Color.FacebookBlue",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 154,
+      "line": 153,
       "symbol": "Color.TwitterBlue",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 155,
+      "line": 154,
       "symbol": "Color.LinkedInBlue",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 157,
+      "line": 156,
       "symbol": "Color.Red",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 158,
+      "line": 157,
       "symbol": "Color.Red.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 159,
+      "line": 158,
       "symbol": "Color.Red.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 160,
+      "line": 159,
       "symbol": "Color.Red.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 161,
+      "line": 160,
       "symbol": "Color.Red.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 162,
+      "line": 161,
       "symbol": "Color.Red.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 163,
+      "line": 162,
       "symbol": "Color.Red.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 164,
+      "line": 163,
       "symbol": "Color.Red.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 165,
+      "line": 164,
       "symbol": "Color.Red.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 166,
+      "line": 165,
       "symbol": "Color.Red.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 167,
+      "line": 166,
       "symbol": "Color.Red.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 168,
+      "line": 167,
       "symbol": "Color.Red.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 169,
+      "line": 168,
       "symbol": "Color.Red.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 170,
+      "line": 169,
       "symbol": "Color.Red.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 171,
+      "line": 170,
       "symbol": "Color.Red.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 174,
+      "line": 173,
       "symbol": "Color.Pink",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 175,
+      "line": 174,
       "symbol": "Color.Pink.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 176,
+      "line": 175,
       "symbol": "Color.Pink.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 177,
+      "line": 176,
       "symbol": "Color.Pink.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 178,
+      "line": 177,
       "symbol": "Color.Pink.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 179,
+      "line": 178,
       "symbol": "Color.Pink.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 180,
+      "line": 179,
       "symbol": "Color.Pink.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 181,
+      "line": 180,
       "symbol": "Color.Pink.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 182,
+      "line": 181,
       "symbol": "Color.Pink.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 183,
+      "line": 182,
       "symbol": "Color.Pink.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 184,
+      "line": 183,
       "symbol": "Color.Pink.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 185,
+      "line": 184,
       "symbol": "Color.Pink.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 186,
+      "line": 185,
       "symbol": "Color.Pink.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 187,
+      "line": 186,
       "symbol": "Color.Pink.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 188,
+      "line": 187,
       "symbol": "Color.Pink.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 191,
+      "line": 190,
       "symbol": "Color.Purple",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 192,
+      "line": 191,
       "symbol": "Color.Purple.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 193,
+      "line": 192,
       "symbol": "Color.Purple.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 194,
+      "line": 193,
       "symbol": "Color.Purple.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 195,
+      "line": 194,
       "symbol": "Color.Purple.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 196,
+      "line": 195,
       "symbol": "Color.Purple.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 197,
+      "line": 196,
       "symbol": "Color.Purple.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 198,
+      "line": 197,
       "symbol": "Color.Purple.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 199,
+      "line": 198,
       "symbol": "Color.Purple.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 200,
+      "line": 199,
       "symbol": "Color.Purple.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 201,
+      "line": 200,
       "symbol": "Color.Purple.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 202,
+      "line": 201,
       "symbol": "Color.Purple.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 203,
+      "line": 202,
       "symbol": "Color.Purple.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 204,
+      "line": 203,
       "symbol": "Color.Purple.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 205,
+      "line": 204,
       "symbol": "Color.Purple.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 208,
+      "line": 207,
       "symbol": "Color.DeepPurple",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 209,
+      "line": 208,
       "symbol": "Color.DeepPurple.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 210,
+      "line": 209,
       "symbol": "Color.DeepPurple.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 211,
+      "line": 210,
       "symbol": "Color.DeepPurple.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 212,
+      "line": 211,
       "symbol": "Color.DeepPurple.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 213,
+      "line": 212,
       "symbol": "Color.DeepPurple.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 214,
+      "line": 213,
       "symbol": "Color.DeepPurple.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 215,
+      "line": 214,
       "symbol": "Color.DeepPurple.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 216,
+      "line": 215,
       "symbol": "Color.DeepPurple.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 217,
+      "line": 216,
       "symbol": "Color.DeepPurple.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 218,
+      "line": 217,
       "symbol": "Color.DeepPurple.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 219,
+      "line": 218,
       "symbol": "Color.DeepPurple.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 220,
+      "line": 219,
       "symbol": "Color.DeepPurple.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 221,
+      "line": 220,
       "symbol": "Color.DeepPurple.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 222,
+      "line": 221,
       "symbol": "Color.DeepPurple.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 225,
+      "line": 224,
       "symbol": "Color.Indigo",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 226,
+      "line": 225,
       "symbol": "Color.Indigo.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 227,
+      "line": 226,
       "symbol": "Color.Indigo.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 228,
+      "line": 227,
       "symbol": "Color.Indigo.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 229,
+      "line": 228,
       "symbol": "Color.Indigo.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 230,
+      "line": 229,
       "symbol": "Color.Indigo.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 231,
+      "line": 230,
       "symbol": "Color.Indigo.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 232,
+      "line": 231,
       "symbol": "Color.Indigo.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 233,
+      "line": 232,
       "symbol": "Color.Indigo.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 234,
+      "line": 233,
       "symbol": "Color.Indigo.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 235,
+      "line": 234,
       "symbol": "Color.Indigo.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 236,
+      "line": 235,
       "symbol": "Color.Indigo.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 237,
+      "line": 236,
       "symbol": "Color.Indigo.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 238,
+      "line": 237,
       "symbol": "Color.Indigo.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 239,
+      "line": 238,
       "symbol": "Color.Indigo.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 242,
+      "line": 241,
       "symbol": "Color.Blue",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 243,
+      "line": 242,
       "symbol": "Color.Blue.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 244,
+      "line": 243,
       "symbol": "Color.Blue.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 245,
+      "line": 244,
       "symbol": "Color.Blue.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 246,
+      "line": 245,
       "symbol": "Color.Blue.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 247,
+      "line": 246,
       "symbol": "Color.Blue.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 248,
+      "line": 247,
       "symbol": "Color.Blue.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 249,
+      "line": 248,
       "symbol": "Color.Blue.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 250,
+      "line": 249,
       "symbol": "Color.Blue.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 251,
+      "line": 250,
       "symbol": "Color.Blue.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 252,
+      "line": 251,
       "symbol": "Color.Blue.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 253,
+      "line": 252,
       "symbol": "Color.Blue.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 254,
+      "line": 253,
       "symbol": "Color.Blue.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 255,
+      "line": 254,
       "symbol": "Color.Blue.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 256,
+      "line": 255,
       "symbol": "Color.Blue.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 259,
+      "line": 258,
       "symbol": "Color.LightBlue",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 260,
+      "line": 259,
       "symbol": "Color.LightBlue.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 261,
+      "line": 260,
       "symbol": "Color.LightBlue.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 262,
+      "line": 261,
       "symbol": "Color.LightBlue.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 263,
+      "line": 262,
       "symbol": "Color.LightBlue.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 264,
+      "line": 263,
       "symbol": "Color.LightBlue.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 265,
+      "line": 264,
       "symbol": "Color.LightBlue.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 266,
+      "line": 265,
       "symbol": "Color.LightBlue.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 267,
+      "line": 266,
       "symbol": "Color.LightBlue.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 268,
+      "line": 267,
       "symbol": "Color.LightBlue.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 269,
+      "line": 268,
       "symbol": "Color.LightBlue.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 270,
+      "line": 269,
       "symbol": "Color.LightBlue.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 271,
+      "line": 270,
       "symbol": "Color.LightBlue.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 272,
+      "line": 271,
       "symbol": "Color.LightBlue.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 273,
+      "line": 272,
       "symbol": "Color.LightBlue.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 276,
+      "line": 275,
       "symbol": "Color.Cyan",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 277,
+      "line": 276,
       "symbol": "Color.Cyan.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 278,
+      "line": 277,
       "symbol": "Color.Cyan.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 279,
+      "line": 278,
       "symbol": "Color.Cyan.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 280,
+      "line": 279,
       "symbol": "Color.Cyan.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 281,
+      "line": 280,
       "symbol": "Color.Cyan.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 282,
+      "line": 281,
       "symbol": "Color.Cyan.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 283,
+      "line": 282,
       "symbol": "Color.Cyan.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 284,
+      "line": 283,
       "symbol": "Color.Cyan.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 285,
+      "line": 284,
       "symbol": "Color.Cyan.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 286,
+      "line": 285,
       "symbol": "Color.Cyan.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 287,
+      "line": 286,
       "symbol": "Color.Cyan.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 288,
+      "line": 287,
       "symbol": "Color.Cyan.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 289,
+      "line": 288,
       "symbol": "Color.Cyan.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 290,
+      "line": 289,
       "symbol": "Color.Cyan.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 293,
+      "line": 292,
       "symbol": "Color.Teal",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 294,
+      "line": 293,
       "symbol": "Color.Teal.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 295,
+      "line": 294,
       "symbol": "Color.Teal.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 296,
+      "line": 295,
       "symbol": "Color.Teal.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 297,
+      "line": 296,
       "symbol": "Color.Teal.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 298,
+      "line": 297,
       "symbol": "Color.Teal.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 299,
+      "line": 298,
       "symbol": "Color.Teal.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 300,
+      "line": 299,
       "symbol": "Color.Teal.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 301,
+      "line": 300,
       "symbol": "Color.Teal.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 302,
+      "line": 301,
       "symbol": "Color.Teal.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 303,
+      "line": 302,
       "symbol": "Color.Teal.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 304,
+      "line": 303,
       "symbol": "Color.Teal.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 305,
+      "line": 304,
       "symbol": "Color.Teal.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 306,
+      "line": 305,
       "symbol": "Color.Teal.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 307,
+      "line": 306,
       "symbol": "Color.Teal.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 310,
+      "line": 309,
       "symbol": "Color.Green",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 311,
+      "line": 310,
       "symbol": "Color.Green.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 312,
+      "line": 311,
       "symbol": "Color.Green.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 313,
+      "line": 312,
       "symbol": "Color.Green.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 314,
+      "line": 313,
       "symbol": "Color.Green.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 315,
+      "line": 314,
       "symbol": "Color.Green.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 316,
+      "line": 315,
       "symbol": "Color.Green.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 317,
+      "line": 316,
       "symbol": "Color.Green.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 318,
+      "line": 317,
       "symbol": "Color.Green.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 319,
+      "line": 318,
       "symbol": "Color.Green.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 320,
+      "line": 319,
       "symbol": "Color.Green.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 321,
+      "line": 320,
       "symbol": "Color.Green.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 322,
+      "line": 321,
       "symbol": "Color.Green.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 323,
+      "line": 322,
       "symbol": "Color.Green.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 324,
+      "line": 323,
       "symbol": "Color.Green.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 327,
+      "line": 326,
       "symbol": "Color.LightGreen",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 328,
+      "line": 327,
       "symbol": "Color.LightGreen.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 329,
+      "line": 328,
       "symbol": "Color.LightGreen.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 330,
+      "line": 329,
       "symbol": "Color.LightGreen.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 331,
+      "line": 330,
       "symbol": "Color.LightGreen.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 332,
+      "line": 331,
       "symbol": "Color.LightGreen.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 333,
+      "line": 332,
       "symbol": "Color.LightGreen.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 334,
+      "line": 333,
       "symbol": "Color.LightGreen.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 335,
+      "line": 334,
       "symbol": "Color.LightGreen.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 336,
+      "line": 335,
       "symbol": "Color.LightGreen.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 337,
+      "line": 336,
       "symbol": "Color.LightGreen.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 338,
+      "line": 337,
       "symbol": "Color.LightGreen.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 339,
+      "line": 338,
       "symbol": "Color.LightGreen.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 340,
+      "line": 339,
       "symbol": "Color.LightGreen.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 341,
+      "line": 340,
       "symbol": "Color.LightGreen.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 344,
+      "line": 343,
       "symbol": "Color.Lime",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 345,
+      "line": 344,
       "symbol": "Color.Lime.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 346,
+      "line": 345,
       "symbol": "Color.Lime.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 347,
+      "line": 346,
       "symbol": "Color.Lime.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 348,
+      "line": 347,
       "symbol": "Color.Lime.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 349,
+      "line": 348,
       "symbol": "Color.Lime.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 350,
+      "line": 349,
       "symbol": "Color.Lime.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 351,
+      "line": 350,
       "symbol": "Color.Lime.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 352,
+      "line": 351,
       "symbol": "Color.Lime.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 353,
+      "line": 352,
       "symbol": "Color.Lime.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 354,
+      "line": 353,
       "symbol": "Color.Lime.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 355,
+      "line": 354,
       "symbol": "Color.Lime.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 356,
+      "line": 355,
       "symbol": "Color.Lime.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 357,
+      "line": 356,
       "symbol": "Color.Lime.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 358,
+      "line": 357,
       "symbol": "Color.Lime.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 361,
+      "line": 360,
       "symbol": "Color.Yellow",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 362,
+      "line": 361,
       "symbol": "Color.Yellow.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 363,
+      "line": 362,
       "symbol": "Color.Yellow.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 364,
+      "line": 363,
       "symbol": "Color.Yellow.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 365,
+      "line": 364,
       "symbol": "Color.Yellow.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 366,
+      "line": 365,
       "symbol": "Color.Yellow.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 367,
+      "line": 366,
       "symbol": "Color.Yellow.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 368,
+      "line": 367,
       "symbol": "Color.Yellow.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 369,
+      "line": 368,
       "symbol": "Color.Yellow.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 370,
+      "line": 369,
       "symbol": "Color.Yellow.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 371,
+      "line": 370,
       "symbol": "Color.Yellow.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 372,
+      "line": 371,
       "symbol": "Color.Yellow.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 373,
+      "line": 372,
       "symbol": "Color.Yellow.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 374,
+      "line": 373,
       "symbol": "Color.Yellow.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 375,
+      "line": 374,
       "symbol": "Color.Yellow.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 378,
+      "line": 377,
       "symbol": "Color.Amber",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 379,
+      "line": 378,
       "symbol": "Color.Amber.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 380,
+      "line": 379,
       "symbol": "Color.Amber.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 381,
+      "line": 380,
       "symbol": "Color.Amber.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 382,
+      "line": 381,
       "symbol": "Color.Amber.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 383,
+      "line": 382,
       "symbol": "Color.Amber.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 384,
+      "line": 383,
       "symbol": "Color.Amber.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 385,
+      "line": 384,
       "symbol": "Color.Amber.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 386,
+      "line": 385,
       "symbol": "Color.Amber.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 387,
+      "line": 386,
       "symbol": "Color.Amber.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 388,
+      "line": 387,
       "symbol": "Color.Amber.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 389,
+      "line": 388,
       "symbol": "Color.Amber.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 390,
+      "line": 389,
       "symbol": "Color.Amber.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 391,
+      "line": 390,
       "symbol": "Color.Amber.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 392,
+      "line": 391,
       "symbol": "Color.Amber.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 395,
+      "line": 394,
       "symbol": "Color.Orange",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 396,
+      "line": 395,
       "symbol": "Color.Orange.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 397,
+      "line": 396,
       "symbol": "Color.Orange.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 398,
+      "line": 397,
       "symbol": "Color.Orange.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 399,
+      "line": 398,
       "symbol": "Color.Orange.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 400,
+      "line": 399,
       "symbol": "Color.Orange.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 401,
+      "line": 400,
       "symbol": "Color.Orange.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 402,
+      "line": 401,
       "symbol": "Color.Orange.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 403,
+      "line": 402,
       "symbol": "Color.Orange.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 404,
+      "line": 403,
       "symbol": "Color.Orange.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 405,
+      "line": 404,
       "symbol": "Color.Orange.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 406,
+      "line": 405,
       "symbol": "Color.Orange.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 407,
+      "line": 406,
       "symbol": "Color.Orange.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 408,
+      "line": 407,
       "symbol": "Color.Orange.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 409,
+      "line": 408,
       "symbol": "Color.Orange.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 412,
+      "line": 411,
       "symbol": "Color.DeepOrange",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 413,
+      "line": 412,
       "symbol": "Color.DeepOrange.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 414,
+      "line": 413,
       "symbol": "Color.DeepOrange.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 415,
+      "line": 414,
       "symbol": "Color.DeepOrange.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 416,
+      "line": 415,
       "symbol": "Color.DeepOrange.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 417,
+      "line": 416,
       "symbol": "Color.DeepOrange.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 418,
+      "line": 417,
       "symbol": "Color.DeepOrange.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 419,
+      "line": 418,
       "symbol": "Color.DeepOrange.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 420,
+      "line": 419,
       "symbol": "Color.DeepOrange.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 421,
+      "line": 420,
       "symbol": "Color.DeepOrange.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 422,
+      "line": 421,
       "symbol": "Color.DeepOrange.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 423,
+      "line": 422,
       "symbol": "Color.DeepOrange.A100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 424,
+      "line": 423,
       "symbol": "Color.DeepOrange.A200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 425,
+      "line": 424,
       "symbol": "Color.DeepOrange.A400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 426,
+      "line": 425,
       "symbol": "Color.DeepOrange.A700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 429,
+      "line": 428,
       "symbol": "Color.Brown",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 430,
+      "line": 429,
       "symbol": "Color.Brown.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 431,
+      "line": 430,
       "symbol": "Color.Brown.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 432,
+      "line": 431,
       "symbol": "Color.Brown.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 433,
+      "line": 432,
       "symbol": "Color.Brown.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 434,
+      "line": 433,
       "symbol": "Color.Brown.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 435,
+      "line": 434,
       "symbol": "Color.Brown.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 436,
+      "line": 435,
       "symbol": "Color.Brown.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 437,
+      "line": 436,
       "symbol": "Color.Brown.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 438,
+      "line": 437,
       "symbol": "Color.Brown.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 439,
+      "line": 438,
       "symbol": "Color.Brown.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 442,
+      "line": 441,
       "symbol": "Color.Gray",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 443,
+      "line": 442,
       "symbol": "Color.Gray.P0",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 444,
+      "line": 443,
       "symbol": "Color.Gray.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 445,
+      "line": 444,
       "symbol": "Color.Gray.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 446,
+      "line": 445,
       "symbol": "Color.Gray.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 447,
+      "line": 446,
       "symbol": "Color.Gray.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 448,
+      "line": 447,
       "symbol": "Color.Gray.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 449,
+      "line": 448,
       "symbol": "Color.Gray.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 450,
+      "line": 449,
       "symbol": "Color.Gray.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 451,
+      "line": 450,
       "symbol": "Color.Gray.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 452,
+      "line": 451,
       "symbol": "Color.Gray.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 453,
+      "line": 452,
       "symbol": "Color.Gray.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 454,
+      "line": 453,
       "symbol": "Color.Gray.P1000",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 457,
+      "line": 456,
       "symbol": "Color.BlueGray",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 458,
+      "line": 457,
       "symbol": "Color.BlueGray.P50",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 459,
+      "line": 458,
       "symbol": "Color.BlueGray.P100",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 460,
+      "line": 459,
       "symbol": "Color.BlueGray.P200",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 461,
+      "line": 460,
       "symbol": "Color.BlueGray.P300",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 462,
+      "line": 461,
       "symbol": "Color.BlueGray.P400",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 463,
+      "line": 462,
       "symbol": "Color.BlueGray.P500",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 464,
+      "line": 463,
       "symbol": "Color.BlueGray.P600",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 465,
+      "line": 464,
       "symbol": "Color.BlueGray.P700",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 466,
+      "line": 465,
       "symbol": "Color.BlueGray.P800",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 467,
+      "line": 466,
       "symbol": "Color.BlueGray.P900",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 470,
+      "line": 469,
       "symbol": "Color.Black",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Color.swift",
-      "line": 472,
+      "line": 471,
       "symbol": "Color.White",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
@@ -2643,6 +2643,13 @@
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Extensions/UITextField.swift",
       "line": 46,
       "symbol": "UITextField.addRightPadding(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Extensions/UITextView.swift",
+      "line": 30,
+      "symbol": "UITextView.addToolBar(withItems:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -3208,79 +3215,51 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 28,
-      "symbol": "LogType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 29,
+      "line": 35,
       "symbol": "LogType.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 29,
+      "line": 35,
       "symbol": "LogType.status",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 29,
+      "line": 35,
       "symbol": "LogType.warning",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 32,
-      "symbol": "LogMode",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 33,
+      "line": 45,
       "symbol": "LogMode.off",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 34,
+      "line": 46,
       "symbol": "LogMode.verbose",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 35,
+      "line": 47,
       "symbol": "LogMode.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 38,
+      "line": 50,
       "symbol": "Log",
       "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 42,
-      "symbol": "Log.setTraceLevel(to:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/Log.swift",
-      "line": 46,
-      "symbol": "Log.write(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
@@ -3817,7 +3796,7 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTActionSheetViewController.swift",
-      "line": 237,
+      "line": 243,
       "symbol": "NTActionSheetViewController.dismiss(animated:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -3894,77 +3873,77 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 76,
+      "line": 75,
       "symbol": "NTAlertViewController.cancelButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 86,
+      "line": 87,
       "symbol": "NTAlertViewController.confirmButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 96,
+      "line": 97,
       "symbol": "NTAlertViewController.onCancel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 97,
+      "line": 98,
       "symbol": "NTAlertViewController.onConfirm",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 99,
+      "line": 100,
       "symbol": "NTAlertViewController.init(title:subtitle:type:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 119,
+      "line": 120,
       "symbol": "NTAlertViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 123,
+      "line": 124,
       "symbol": "NTAlertViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 131,
+      "line": 132,
       "symbol": "NTAlertViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 150,
+      "line": 153,
       "symbol": "NTAlertViewController.show(_:sender:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 157,
+      "line": 160,
       "symbol": "NTAlertViewController.cancelButtonPressed()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTAlertViewController.swift",
-      "line": 164,
+      "line": 167,
       "symbol": "NTAlertViewController.confirmButtonPresssed()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -4321,35 +4300,35 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTProgressHUD.swift",
-      "line": 43,
+      "line": 42,
       "symbol": "NTProgressHUD.titleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTProgressHUD.swift",
-      "line": 54,
+      "line": 53,
       "symbol": "NTProgressHUD.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTProgressHUD.swift",
-      "line": 58,
+      "line": 57,
       "symbol": "NTProgressHUD.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTProgressHUD.swift",
-      "line": 64,
+      "line": 63,
       "symbol": "NTProgressHUD.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTProgressHUD.swift",
-      "line": 70,
+      "line": 69,
       "symbol": "NTProgressHUD.show(withTitle:duration:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -4475,6 +4454,13 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
+      "line": 32,
+      "symbol": "NTToast.currentState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
       "line": 33,
       "symbol": "NTToast.dismissOnTap",
       "symbol_kind": "source.lang.swift.decl.var.instance",
@@ -4496,56 +4482,56 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 50,
+      "line": 51,
       "symbol": "NTToast.init(text:color:actionTitle:target:selector:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 71,
+      "line": 72,
       "symbol": "NTToast.init(text:color:height:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 86,
+      "line": 87,
       "symbol": "NTToast.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 95,
+      "line": 96,
       "symbol": "NTToast.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 105,
+      "line": 106,
       "symbol": "NTToast.show(_:duration:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 124,
+      "line": 125,
       "symbol": "NTToast.dismiss()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 138,
+      "line": 139,
       "symbol": "NTToast.animateToNormal()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Alerts/NTToast.swift",
-      "line": 142,
+      "line": 143,
       "symbol": "NTToast.genericErrorMessage()",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
@@ -5021,35 +5007,35 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
-      "line": 50,
+      "line": 53,
       "symbol": "NTCollectionViewDefaultFooter",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
-      "line": 52,
+      "line": 55,
       "symbol": "NTCollectionViewDefaultFooter.datasourceItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
-      "line": 70,
+      "line": 73,
       "symbol": "NTCollectionViewDefaultCell",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
-      "line": 72,
+      "line": 75,
       "symbol": "NTCollectionViewDefaultCell.datasourceItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Collection/Cells/NTCollectionViewDefaultCells.swift",
-      "line": 81,
+      "line": 84,
       "symbol": "NTCollectionViewDefaultCell.label",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -5441,42 +5427,49 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 210,
+      "line": 171,
+      "symbol": "NTButton.pullImageToRight()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
+      "line": 217,
       "symbol": "NTButton.beginTracking(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 223,
+      "line": 230,
       "symbol": "NTButton.cancelTracking(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 228,
+      "line": 235,
       "symbol": "NTButton.endTracking(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 233,
+      "line": 240,
       "symbol": "NTButton.animate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 269,
+      "line": 276,
       "symbol": "NTButton.animateToNormal()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Controls/NTButton.swift",
-      "line": 301,
+      "line": 308,
       "symbol": "NTButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -5909,6 +5902,62 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 28,
+      "symbol": "NTFormAnimatedInputCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 30,
+      "symbol": "NTFormAnimatedInputCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 42,
+      "symbol": "NTFormAnimatedInputCell.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 51,
+      "symbol": "NTFormAnimatedInputCell.placeholder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 60,
+      "symbol": "NTFormAnimatedInputCell.textField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 69,
+      "symbol": "NTFormAnimatedInputCell.onTextFieldUpdate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 86,
+      "symbol": "NTFormAnimatedInputCell.dismissKeyboard()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormAnimatedInputCell.swift",
+      "line": 90,
+      "symbol": "NTFormAnimatedInputCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormCell.swift",
       "line": 28,
       "symbol": "NTFormCell",
@@ -5972,6 +6021,83 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 29,
+      "symbol": "NTFormImageSelectorCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 31,
+      "symbol": "NTFormImageSelectorCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 46,
+      "symbol": "NTFormImageSelectorCell.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 55,
+      "symbol": "NTFormImageSelectorCell.imageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 66,
+      "symbol": "NTFormImageSelectorCell.actionButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 80,
+      "symbol": "NTFormImageSelectorCell.imagePickerCompletion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 85,
+      "symbol": "NTFormImageSelectorCell.onImageViewTap(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 91,
+      "symbol": "NTFormImageSelectorCell.onTouchUpInsideActionButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 109,
+      "symbol": "NTFormImageSelectorCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 117,
+      "symbol": "NTFormImageSelectorCell.presentImagePicker(completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageSelectorCell.swift",
+      "line": 124,
+      "symbol": "NTFormImageSelectorCell.imagePickerController(_:didFinishPickingMediaWithInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
       "line": 28,
       "symbol": "NTFormImageViewCell",
@@ -5987,63 +6113,63 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 45,
+      "line": 46,
       "symbol": "NTFormImageViewCell.image",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 54,
+      "line": 55,
       "symbol": "NTFormImageViewCell.imageView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 60,
+      "line": 61,
       "symbol": "NTFormImageViewCell.actionButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 72,
+      "line": 73,
       "symbol": "NTFormImageViewCell.imagePickerCompletion",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 77,
+      "line": 78,
       "symbol": "NTFormImageViewCell.onImageViewTap(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 83,
+      "line": 84,
       "symbol": "NTFormImageViewCell.onTouchUpInsideActionButton(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 100,
+      "line": 101,
       "symbol": "NTFormImageViewCell.cellSize",
       "symbol_kind": "source.lang.swift.decl.var.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 108,
+      "line": 109,
       "symbol": "NTFormImageViewCell.presentImagePicker(completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormImageViewCell.swift",
-      "line": 115,
+      "line": 116,
       "symbol": "NTFormImageViewCell.imagePickerController(_:didFinishPickingMediaWithInfo:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -6105,6 +6231,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormInputCell.swift",
+      "line": 109,
+      "symbol": "NTFormInputCell.dismissKeyboard()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormLongInputCell.swift",
       "line": 28,
       "symbol": "NTFormLongInputCell",
@@ -6162,7 +6295,14 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormLongInputCell.swift",
-      "line": 104,
+      "line": 107,
+      "symbol": "NTFormLongInputCell.dismissKeyboard()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormLongInputCell.swift",
+      "line": 111,
       "symbol": "NTFormLongInputCell.cellSize",
       "symbol_kind": "source.lang.swift.decl.var.class",
       "warning": "undocumented"
@@ -6211,58 +6351,170 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 84,
+      "line": 85,
       "symbol": "NTFormProfileCell.actionButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 94,
+      "line": 95,
       "symbol": "NTFormProfileCell.textField",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 103,
+      "line": 104,
       "symbol": "NTFormProfileCell.imagePickerCompletion",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 108,
+      "line": 109,
       "symbol": "NTFormProfileCell.onImageViewTap(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 114,
+      "line": 115,
       "symbol": "NTFormProfileCell.onTextFieldUpdate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 120,
+      "line": 121,
       "symbol": "NTFormProfileCell.onTouchUpInsideActionButton(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 141,
+      "line": 143,
+      "symbol": "NTFormProfileCell.dismissKeyboard()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
+      "line": 149,
       "symbol": "NTFormProfileCell.presentImagePicker(completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormProfileCell.swift",
-      "line": 148,
+      "line": 156,
       "symbol": "NTFormProfileCell.imagePickerController(_:didFinishPickingMediaWithInfo:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 29,
+      "symbol": "NTFormTagInputCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 31,
+      "symbol": "NTFormTagInputCell.datasourceItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 49,
+      "symbol": "NTFormTagInputCell.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 58,
+      "symbol": "NTFormTagInputCell.tagListView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 65,
+      "symbol": "NTFormTagInputCell.label",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 72,
+      "symbol": "NTFormTagInputCell.textField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 82,
+      "symbol": "NTFormTagInputCell.onTagAdded",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 83,
+      "symbol": "NTFormTagInputCell.onTagDeleted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 86,
+      "symbol": "NTFormTagInputCell.onTagAdded(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 92,
+      "symbol": "NTFormTagInputCell.onTagDeleted(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 136,
+      "symbol": "NTFormTagInputCell.dismissKeyboard()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 142,
+      "symbol": "NTFormTagInputCell.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 161,
+      "symbol": "NTFormTagInputCell.tagAdded(_:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 165,
+      "symbol": "NTFormTagInputCell.tagDeleted(_:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/Cells/NTFormTagInputCell.swift",
+      "line": 169,
+      "symbol": "NTFormTagInputCell.cellSize",
+      "symbol_kind": "source.lang.swift.decl.var.class",
       "warning": "undocumented"
     },
     {
@@ -6295,14 +6547,14 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormDatasource.swift",
-      "line": 85,
+      "line": 88,
       "symbol": "NTFormDatasource.numberOfItems(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormDatasource.swift",
-      "line": 89,
+      "line": 92,
       "symbol": "NTFormDatasource.numberOfSections()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -6359,76 +6611,83 @@
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
       "line": 30,
+      "symbol": "NTFormViewController.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
+      "line": 44,
       "symbol": "NTFormViewController.headerHeight",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 31,
+      "line": 45,
       "symbol": "NTFormViewController.footerHeight",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 35,
+      "line": 49,
       "symbol": "NTFormViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 40,
+      "line": 54,
       "symbol": "NTFormViewController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 44,
+      "line": 58,
       "symbol": "NTFormViewController.collectionView(_:layout:referenceSizeForHeaderInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 51,
+      "line": 65,
       "symbol": "NTFormViewController.collectionView(_:layout:referenceSizeForFooterInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 60,
+      "line": 74,
       "symbol": "NTFormViewController.appendSections(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 66,
+      "line": 80,
       "symbol": "NTFormViewController.appendSection(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 70,
+      "line": 84,
       "symbol": "NTFormViewController.insertSection(_:atIndex:animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 74,
+      "line": 88,
       "symbol": "NTFormViewController.reloadForm()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Form/NTFormViewController.swift",
-      "line": 78,
+      "line": 92,
       "symbol": "NTFormViewController.handleRefresh()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -7051,98 +7310,105 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 33,
+      "line": 34,
+      "symbol": "UIViewController.navigationViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
+      "line": 48,
       "symbol": "NTNavigationViewController",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 35,
+      "line": 50,
       "symbol": "NTNavigationViewController.title",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 45,
+      "line": 60,
       "symbol": "NTNavigationViewController.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 47,
+      "line": 62,
       "symbol": "NTNavigationViewController.navigationBar",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 54,
+      "line": 69,
       "symbol": "NTNavigationViewController.backButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 67,
+      "line": 82,
       "symbol": "NTNavigationViewController.titleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 74,
+      "line": 89,
       "symbol": "NTNavigationViewController.nextButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 98,
+      "line": 117,
       "symbol": "NTNavigationViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 102,
+      "line": 121,
       "symbol": "NTNavigationViewController.init(rootViewController:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 113,
+      "line": 132,
       "symbol": "NTNavigationViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 135,
+      "line": 154,
       "symbol": "NTNavigationViewController.viewDidAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 145,
+      "line": 164,
       "symbol": "NTNavigationViewController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 158,
+      "line": 177,
       "symbol": "NTNavigationViewController.nextButtonPressed()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Navigation/NTNavigationViewController.swift",
-      "line": 169,
+      "line": 188,
       "symbol": "NTNavigationViewController.backButtonPressed()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -7254,63 +7520,63 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 57,
+      "line": 56,
       "symbol": "NTEmailAuthViewController.titleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 65,
+      "line": 64,
       "symbol": "NTEmailAuthViewController.signInButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 76,
+      "line": 75,
       "symbol": "NTEmailAuthViewController.signUpButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 128,
+      "line": 127,
       "symbol": "NTEmailAuthViewController.showActivityIndicator",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 140,
+      "line": 139,
       "symbol": "NTEmailAuthViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 173,
+      "line": 172,
       "symbol": "NTEmailAuthViewController.submitAuth()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 188,
+      "line": 187,
       "symbol": "NTEmailAuthViewController.cancelAuth()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 199,
+      "line": 198,
       "symbol": "NTEmailAuthViewController.showSignUpViewController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTEmailAuthViewController.swift",
-      "line": 211,
+      "line": 210,
       "symbol": "NTEmailAuthViewController.authorize(_:email:password:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -7380,30 +7646,51 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
-      "line": 65,
+      "line": 66,
       "symbol": "NTLandingViewController.buttonB",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
-      "line": 75,
+      "line": 77,
       "symbol": "NTLandingViewController.signOutButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
-      "line": 88,
+      "line": 92,
       "symbol": "NTLandingViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
-      "line": 116,
+      "line": 120,
       "symbol": "NTLandingViewController.supportedInterfaceOrientations",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 126,
+      "symbol": "NTLandingViewController.buttonAAction()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 130,
+      "symbol": "NTLandingViewController.buttonBAction()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLandingViewController.swift",
+      "line": 134,
+      "symbol": "NTLandingViewController.signoutAction()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -7548,49 +7835,49 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 130,
+      "line": 129,
       "symbol": "NTLoginViewController.createLoginButton(forMethod:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 152,
+      "line": 151,
       "symbol": "NTLoginViewController.createLoginButton(color:title:logo:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 179,
+      "line": 178,
       "symbol": "NTLoginViewController.loginLogic(sender:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 190,
+      "line": 189,
       "symbol": "NTLoginViewController.numberOfSections(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 194,
+      "line": 193,
       "symbol": "NTLoginViewController.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 198,
+      "line": 197,
       "symbol": "NTLoginViewController.tableView(_:cellForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Other/NTLoginViewController.swift",
-      "line": 210,
+      "line": 209,
       "symbol": "NTLoginViewController.tableView(_:heightForRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -8297,7 +8584,7 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 104,
+      "line": 105,
       "symbol": "NTScrollableTabBarController.viewDidAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -8339,70 +8626,70 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 182,
+      "line": 180,
       "symbol": "NTScrollableTabBarController.setupTabView()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 210,
+      "line": 208,
       "symbol": "NTScrollableTabBarController.applyTabViewContraints()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 218,
+      "line": 216,
       "symbol": "NTScrollableTabBarController.updateTabBarOrigin(hidden:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 258,
+      "line": 256,
       "symbol": "NTScrollableTabBarController.pageViewController(_:viewControllerAfter:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 262,
+      "line": 260,
       "symbol": "NTScrollableTabBarController.pageViewController(_:viewControllerBefore:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 268,
+      "line": 266,
       "symbol": "NTScrollableTabBarController.pageViewController(_:willTransitionTo:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 277,
+      "line": 275,
       "symbol": "NTScrollableTabBarController.pageViewController(_:didFinishAnimating:previousViewControllers:transitionCompleted:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 288,
+      "line": 286,
       "symbol": "NTScrollableTabBarController.scrollViewDidScroll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 310,
+      "line": 308,
       "symbol": "NTScrollableTabBarController.scrollViewDidEndDecelerating(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift",
-      "line": 316,
+      "line": 314,
       "symbol": "NTScrollableTabBarController.navigationController(_:willShow:animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -8794,112 +9081,112 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 69,
+      "line": 71,
       "symbol": "NTTableViewCell.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 73,
+      "line": 75,
       "symbol": "NTTableViewCell.backgroundColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 86,
+      "line": 88,
       "symbol": "NTTableViewCell.setSelected(_:animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 90,
+      "line": 92,
       "symbol": "NTTableViewCell.setHighlighted(_:animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 94,
+      "line": 96,
       "symbol": "NTTableViewCell.touchesBegan(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 134,
+      "line": 136,
       "symbol": "NTTableViewCell.touchesEnded(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 139,
+      "line": 141,
       "symbol": "NTTableViewCell.touchesCancelled(_:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 144,
+      "line": 146,
       "symbol": "NTTableViewCell.ripplePercent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 150,
+      "line": 152,
       "symbol": "NTTableViewCell.rippleColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 156,
+      "line": 158,
       "symbol": "NTTableViewCell.rippleBackgroundColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 165,
+      "line": 167,
       "symbol": "NTTableViewCell.rippleOverBounds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 166,
+      "line": 168,
       "symbol": "NTTableViewCell.shadowRippleRadius",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 167,
+      "line": 169,
       "symbol": "NTTableViewCell.shadowRippleEnable",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 168,
+      "line": 170,
       "symbol": "NTTableViewCell.trackTouchLocation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 169,
+      "line": 171,
       "symbol": "NTTableViewCell.touchUpAnimationTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Table/NTTableViewCell.swift",
-      "line": 246,
+      "line": 248,
       "symbol": "NTTableViewCell.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -9571,14 +9858,14 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Text/NTTextView.swift",
-      "line": 84,
+      "line": 85,
       "symbol": "NTTextView.textViewDidBeginEditing(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Text/NTTextView.swift",
-      "line": 91,
+      "line": 92,
       "symbol": "NTTextView.textViewDidEndEditing(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -9816,84 +10103,84 @@
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 44,
+      "line": 43,
       "symbol": "NTImageView.onTap",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 47,
+      "line": 46,
       "symbol": "NTImageView.onTap(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 54,
+      "line": 53,
       "symbol": "NTImageView.init(cornerRadius:tapCallback:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 60,
+      "line": 59,
       "symbol": "NTImageView.handleTap()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 64,
+      "line": 63,
       "symbol": "NTImageView.init(cornerRadius:emptyImage:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 75,
+      "line": 74,
       "symbol": "NTImageView.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 80,
+      "line": 79,
       "symbol": "NTImageView.init(image:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 85,
+      "line": 84,
       "symbol": "NTImageView.init(image:highlightedImage:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 90,
+      "line": 89,
       "symbol": "NTImageView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 95,
+      "line": 94,
       "symbol": "NTImageView.setup()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 102,
+      "line": 101,
       "symbol": "NTImageView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTImageView.swift",
-      "line": 140,
+      "line": 139,
       "symbol": "NTImageView.loadImage(urlString:allowCache:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -9950,20 +10237,20 @@
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTInputAccessoryView.swift",
       "line": 55,
-      "symbol": "NTInputAccessoryView.keyboardDidChangeFrame(notification:)",
+      "symbol": "NTInputAccessoryView.keyboardWillChangeFrame(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTInputAccessoryView.swift",
-      "line": 64,
+      "line": 72,
       "symbol": "NTInputAccessoryView.keyboardWillShow(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTInputAccessoryView.swift",
-      "line": 74,
+      "line": 82,
       "symbol": "NTInputAccessoryView.keyboardWillHide(notification:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -10063,6 +10350,552 @@
       "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTRefreshControl.swift",
       "line": 127,
       "symbol": "NTRefreshControl.animationDidStart(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 29,
+      "symbol": "NTTagListViewDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 30,
+      "symbol": "NTTagListViewDelegate.tagPressed(_:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 31,
+      "symbol": "NTTagListViewDelegate.tagAdded(_:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 32,
+      "symbol": "NTTagListViewDelegate.tagDeleted(_:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 35,
+      "symbol": "NTTagListView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 37,
+      "symbol": "NTTagListView.textColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 45,
+      "symbol": "NTTagListView.selectedTextColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 53,
+      "symbol": "NTTagListView.tagHighlightedBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 61,
+      "symbol": "NTTagListView.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 68,
+      "symbol": "NTTagListView.borderWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 76,
+      "symbol": "NTTagListView.borderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 84,
+      "symbol": "NTTagListView.selectedBorderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 92,
+      "symbol": "NTTagListView.paddingY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 100,
+      "symbol": "NTTagListView.paddingX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 108,
+      "symbol": "NTTagListView.marginY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 113,
+      "symbol": "NTTagListView.marginX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 119,
+      "symbol": "NTTagListView.Alignment",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 120,
+      "symbol": "NTTagListView.Alignment.left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 121,
+      "symbol": "NTTagListView.Alignment.center",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 122,
+      "symbol": "NTTagListView.Alignment.right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 125,
+      "symbol": "NTTagListView.alignment",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 130,
+      "symbol": "NTTagListView.shadowColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 135,
+      "symbol": "NTTagListView.shadowRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 140,
+      "symbol": "NTTagListView.shadowOffset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 145,
+      "symbol": "NTTagListView.shadowOpacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 151,
+      "symbol": "NTTagListView.enableDeleteButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 160,
+      "symbol": "NTTagListView.textFont",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 169,
+      "symbol": "NTTagListView.tagDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 171,
+      "symbol": "NTTagListView.tagViews",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 183,
+      "symbol": "NTTagListView.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 187,
+      "symbol": "NTTagListView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 197,
+      "symbol": "NTTagListView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 203,
+      "symbol": "NTTagListView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 267,
+      "symbol": "NTTagListView.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 278,
+      "symbol": "NTTagListView.createNewTagView(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 308,
+      "symbol": "NTTagListView.addTag(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 313,
+      "symbol": "NTTagListView.addTags(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 322,
+      "symbol": "NTTagListView.addTagViews(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 332,
+      "symbol": "NTTagListView.insertTag(_:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 337,
+      "symbol": "NTTagListView.addTagView(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 346,
+      "symbol": "NTTagListView.insertTagView(_:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 354,
+      "symbol": "NTTagListView.setTitle(_:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 358,
+      "symbol": "NTTagListView.removeTag(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 368,
+      "symbol": "NTTagListView.removeTagView(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 378,
+      "symbol": "NTTagListView.removeAllTags()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 388,
+      "symbol": "NTTagListView.selectedTags()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 394,
+      "symbol": "NTTagListView.tagPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 399,
+      "symbol": "NTTagListView.deleteButtonPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 406,
+      "symbol": "NTTagView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 408,
+      "symbol": "NTTagView.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 414,
+      "symbol": "NTTagView.borderWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 420,
+      "symbol": "NTTagView.borderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 426,
+      "symbol": "NTTagView.textColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 431,
+      "symbol": "NTTagView.selectedTextColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 436,
+      "symbol": "NTTagView.paddingY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 442,
+      "symbol": "NTTagView.paddingX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 449,
+      "symbol": "NTTagView.tagBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 455,
+      "symbol": "NTTagView.highlightedBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 461,
+      "symbol": "NTTagView.selectedBorderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 467,
+      "symbol": "NTTagView.selectedBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 473,
+      "symbol": "NTTagView.textFont",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 479,
+      "symbol": "NTTagView.reloadStyles()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 499,
+      "symbol": "NTTagView.isHighlighted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 505,
+      "symbol": "NTTagView.isSelected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 513,
+      "symbol": "NTTagView.deleteButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 515,
+      "symbol": "NTTagView.enableDeleteButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 522,
+      "symbol": "NTTagView.deleteButtonIconSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 530,
+      "symbol": "NTTagView.onLongPress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 534,
+      "symbol": "NTTagView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 540,
+      "symbol": "NTTagView.init(title:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 547,
+      "symbol": "NTTagView.setupView()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 556,
+      "symbol": "NTTagView.longPress()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 562,
+      "symbol": "NTTagView.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 584,
+      "symbol": "NTTagView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 595,
+      "symbol": "NTTagDeleteButton",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 597,
+      "symbol": "NTTagDeleteButton.tagView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 599,
+      "symbol": "NTTagDeleteButton.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathantannar/Documents/NTComponents/NTComponents/UI Kit/Views/NTTagListView.swift",
+      "line": 607,
+      "symbol": "NTTagDeleteButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

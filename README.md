@@ -50,6 +50,8 @@ import NTComponents
 
 ## Release History
 
+* 0.0.6
+    * Added calendar view integration from JTAppleCalendar and an all new NTDrawerController
 * 0.0.5
     * Bug Fixes & Tweaks, introduction of NTFormViewController to easily make forms
 * 0.0.4
