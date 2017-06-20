@@ -18,6 +18,7 @@
 		380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */; };
 		380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */; };
 		380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */; };
+		381890311EF9CD6000947205 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381890301EF9CD6000947205 /* UIButton.swift */; };
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F7061E5BDF5000902E23 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F51E5BDF5000902E23 /* Icon.swift */; };
@@ -61,7 +62,6 @@
 		3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */; };
 		3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8781EB0686E003B73F7 /* NTMapView.swift */; };
 		3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8791EB0686E003B73F7 /* NTMapViewController.swift */; };
-		3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */; };
 		3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */; };
 		3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D87D1EB0686E003B73F7 /* NTViewController.swift */; };
 		3863D8C81EB0686E003B73F7 /* NTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */; };
@@ -85,7 +85,7 @@
 		3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8981EB0686E003B73F7 /* NTImageView.swift */; };
 		3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8991EB0686E003B73F7 /* NTView.swift */; };
 		386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */; };
-		388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */; };
+		388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
 		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
 		388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE71EE528840036AECE /* NTToolbar.swift */; };
@@ -128,6 +128,7 @@
 		38CACA5A1EF5966300F07499 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA591EF5966300F07499 /* AlertDetailViewController.swift */; };
 		38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */; };
 		38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */; };
+		38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D645801EF8F76E000C7357 /* NTSearchSelectViewController.swift */; };
 		38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8B51EE78C0100639A19 /* FormViewController.swift */; };
 		38ECA8B81EE7C58E00639A19 /* NTFormInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */; };
 		38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECA8BA1EE7C5DA00639A19 /* NTFormSection.swift */; };
@@ -193,6 +194,7 @@
 		380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransition.swift; sourceTree = "<group>"; };
 		380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
 		380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCameraViewController.swift; sourceTree = "<group>"; };
+		381890301EF9CD6000947205 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3818F6D71E5BDEA600902E23 /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818F6DA1E5BDEA600902E23 /* NTComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTComponents.h; sourceTree = "<group>"; };
 		3818F6DB1E5BDEA600902E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -238,7 +240,6 @@
 		3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapPointAnnotation.swift; sourceTree = "<group>"; };
 		3863D8781EB0686E003B73F7 /* NTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapView.swift; sourceTree = "<group>"; };
 		3863D8791EB0686E003B73F7 /* NTMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapViewController.swift; sourceTree = "<group>"; };
-		3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationContainer.swift; sourceTree = "<group>"; };
 		3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
 		3863D87D1EB0686E003B73F7 /* NTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTViewController.swift; sourceTree = "<group>"; };
 		3863D87F1EB0686E003B73F7 /* NTLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTLoginViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +263,7 @@
 		3863D8981EB0686E003B73F7 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		3863D8991EB0686E003B73F7 /* NTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
 		386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
-		388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTAnimatedMenuButton.swift; path = Controls/NTAnimatedMenuButton.swift; sourceTree = "<group>"; };
+		388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTDrawerBarButtonItem.swift; path = Controls/NTDrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
 		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
 		388C1EE71EE528840036AECE /* NTToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTToolbar.swift; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 		38CACA591EF5966300F07499 /* AlertDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDetailViewController.swift; sourceTree = "<group>"; };
 		38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTActivityView.swift; path = "NTComponents/UI Kit/Views/NTActivityView.swift"; sourceTree = SOURCE_ROOT; };
 		38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshControl.swift; sourceTree = "<group>"; };
+		38D645801EF8F76E000C7357 /* NTSearchSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSearchSelectViewController.swift; sourceTree = "<group>"; };
 		38ECA8B51EE78C0100639A19 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormInputCell.swift; path = Form/Cells/NTFormInputCell.swift; sourceTree = "<group>"; };
 		38ECA8BA1EE7C5DA00639A19 /* NTFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormSection.swift; path = Form/NTFormSection.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D85D1EB0686E003B73F7 /* AutoLayout.swift */,
+				381890301EF9CD6000947205 /* UIButton.swift */,
 				3863D85E1EB0686E003B73F7 /* Date.swift */,
 				3863D85F1EB0686E003B73F7 /* MultiThreading.swift */,
 				3863D8601EB0686E003B73F7 /* NSMutableAttributedString.swift */,
@@ -561,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				38351D471EF7435E0046BB2E /* NTDrawerController.swift */,
-				3863D87B1EB0686E003B73F7 /* NTNavigationContainer.swift */,
 				3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */,
 				38FCFA491ED01F3F007D3019 /* NTNavigationViewController.swift */,
 			);
@@ -592,6 +594,7 @@
 				3863D8831EB0686E003B73F7 /* NTSearchBar.swift */,
 				3863D8841EB0686E003B73F7 /* NTSearchBarView.swift */,
 				3863D8851EB0686E003B73F7 /* NTSearchViewController.swift */,
+				38D645801EF8F76E000C7357 /* NTSearchSelectViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -661,7 +664,7 @@
 		38AFA4D31EE501D90056DDFC /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				388C1EE11EE528770036AECE /* NTAnimatedMenuButton.swift */,
+				388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */,
 				388C1EE21EE528770036AECE /* NTButton.swift */,
 				38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */,
 				388C1EE31EE528770036AECE /* NTSwitch.swift */,
@@ -925,6 +928,7 @@
 				3863D8CB1EB0686E003B73F7 /* NTSearchBarView.swift in Sources */,
 				3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */,
 				3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */,
+				38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */,
 				38CACA3F1EF4EA8C00F07499 /* CalendarEnums.swift in Sources */,
 				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
@@ -939,7 +943,6 @@
 				3863D8C81EB0686E003B73F7 /* NTLoginViewController.swift in Sources */,
 				3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */,
 				3863D8B91EB0686E003B73F7 /* NTAlertViewController.swift in Sources */,
-				3863D8C51EB0686E003B73F7 /* NTNavigationContainer.swift in Sources */,
 				38FCFA4A1ED01F3F007D3019 /* NTNavigationViewController.swift in Sources */,
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
@@ -953,7 +956,7 @@
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
 				38CACA461EF4EA8C00F07499 /* JTAppleCalendarView.swift in Sources */,
 				380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */,
-				388C1EE41EE528770036AECE /* NTAnimatedMenuButton.swift in Sources */,
+				388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				38ECA8E51EEE6C2000639A19 /* NTTagListView.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
@@ -965,6 +968,7 @@
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
 				388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */,
+				381890311EF9CD6000947205 /* UIButton.swift in Sources */,
 				38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */,
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,

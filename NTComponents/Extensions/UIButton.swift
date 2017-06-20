@@ -1,5 +1,5 @@
 //
-//  NTImagePickerController.swift
+//  UIButton.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,24 +22,46 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 5/26/17.
+//  Created by Nathan Tannar on 6/20/17.
 //
 
-open class NTImagePickerController: UIImagePickerController {
+public extension UIButton {
     
+    var title: String? {
+        get {
+            return titleLabel?.text
+        }
+        set {
+            setTitle(newValue, for: .normal)
+        }
+    }
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationBar.barTintColor = Color.Default.Background.NavigationBar
-        navigationBar.tintColor = Color.Default.Tint.NavigationBar
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.setDefaultShadow()
-        navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName : UIColor.white
-            ]
-        sourceType = .photoLibrary
+    var titleColor: UIColor? {
+        get {
+            return titleLabel?.textColor
+        }
+        set {
+            setTitleColor(newValue, for: .normal)
+        }
+    }
+    
+    var titleFont: UIFont? {
+        get {
+            return titleLabel?.font
+        }
+        set {
+            titleLabel?.font = newValue
+        }
+    }
+    
+    var image: UIImage? {
+        get {
+            return imageView?.image
+        }
+        set {
+            setImage(newValue, for: .normal)
+        }
     }
 }
+
+

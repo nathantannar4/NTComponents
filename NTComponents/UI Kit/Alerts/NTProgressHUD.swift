@@ -106,6 +106,7 @@ open class NTProgressHUD: UIView {
             self.backgroundColor = .clear
         }) { (success) in
             if success {
+                self.activityIndicator.stopAnimating()
                 self.removeFromSuperview()
             }
         }

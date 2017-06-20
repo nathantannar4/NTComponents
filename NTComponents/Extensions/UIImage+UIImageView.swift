@@ -62,6 +62,21 @@ public extension UIImage {
         return self.resizeImage(width: size, height: size)
     }
     
+    func with(inset: CGFloat) -> UIImage? {
+        return imageWithInset(insets: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset))
+    }
+    
+    func imageWithInset(insets: UIEdgeInsets) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(
+            CGSize(width: self.size.width + insets.left + insets.right,
+                   height: self.size.height + insets.top + insets.bottom), false, self.scale)
+        let origin = CGPoint(x: insets.left, y: insets.top)
+        self.draw(at: origin)
+        let imageWithInsets = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return imageWithInsets
+    }
+    
     class func from(color: UIColor) -> UIImage {
         let rect : CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)

@@ -61,11 +61,18 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         view.backgroundColor = Color.Default.Background.ViewController
+        setupStretchyImageView()
+        setupTableView()
+    }
+    
+    open func setupStretchyImageView() {
         stretchyView.addSubview(stretchyImageView)
         view.addSubview(stretchyView)
         stretchyView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: stretchyHeaderHeight)
         stretchyImageView.fillSuperview()
-        
+    }
+    
+    open func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)

@@ -722,11 +722,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "pageViewController(_:didFinishAnimating:previousViewControllers:transitionCompleted:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -802,11 +802,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519631537.798556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "setupPageViewController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1290,11 +1290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
             landmarkName = "navigationController(_:willShow:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1306,11 +1306,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "updateTabBarOrigin(hidden:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1338,11 +1338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "setupTabBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1354,11 +1354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519631537.798556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "setupPageViewController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1912,11 +1912,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519200682.325728"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2262,11 +2262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "updateNavigationBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2278,11 +2278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "updateNavigationBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2436,11 +2436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506030.398676"
+            timestampString = "519631537.798556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "displayControllerWithIndex(_:direction:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2452,11 +2452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "pageViewController(_:willTransitionTo:)"
             landmarkType = "7">
             <Locations>
@@ -2500,28 +2500,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "pageViewController(_:willTransitionTo:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NTComponents/UI Kit/TabBar/NTScrollableTabBarController.swift"
-            timestampString = "519506132.83512"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "pageViewController(_:didFinishAnimating:previousViewControllers:transitionCompleted:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2674,11 +2658,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519621744.881137"
+            timestampString = "519625756.800876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "init(centerViewController:leftViewController:rightViewController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2690,12 +2674,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519621858.355325"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "toggle(drawerSide:completion:)"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "addMenuBarButtonItems(animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2706,12 +2690,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519621858.355325"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "toggle(drawerSide:completion:)"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "addMenuBarButtonItems(animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2722,13 +2706,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519621858.355325"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "toggle(drawerSide:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "NTDrawerController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2738,13 +2722,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519621858.355325"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "toggle(drawerSide:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "NTDrawerController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -2786,11 +2770,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519622685.301674"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "close(drawerSide:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2834,12 +2818,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519622685.301674"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
-            landmarkName = "gestureRecognizerShouldBegin(_:)"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "bounceBack(drawerSide:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2850,12 +2834,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Navigation/NTDrawerController.swift"
-            timestampString = "519622685.301674"
+            timestampString = "519628771.07409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
-            landmarkName = "gestureRecognizerShouldBegin(_:)"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "bounceBack(drawerSide:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Table/NTTableViewCell.swift"
+            timestampString = "519629824.42427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "animateToNormal()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Search/NTDataSelectorViewController.swift"
+            timestampString = "519632902.458278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

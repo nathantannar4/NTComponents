@@ -62,42 +62,6 @@ open class NTButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open var title: String? {
-        get {
-            return titleLabel?.text
-        }
-        set {
-            setTitle(newValue, for: .normal)
-        }
-    }
-    
-    open var titleColor: UIColor? {
-        get {
-            return titleLabel?.textColor
-        }
-        set {
-            setTitleColor(newValue, for: .normal)
-        }
-    }
-    
-    open var titleFont: UIFont? {
-        get {
-            return titleLabel?.font
-        }
-        set {
-            titleLabel?.font = newValue
-        }
-    }
-    
-    open var image: UIImage? {
-        get {
-            return imageView?.image
-        }
-        set {
-            setImage(newValue, for: .normal)
-        }
-    }
-    
     open override var backgroundColor: UIColor? {
         get {
             return super.backgroundColor

@@ -63,7 +63,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         return viewController
     }()
     
-    fileprivate var viewControllers: [UIViewController]
+    fileprivate var viewControllers: [UIViewController] = [NTViewController()]
     fileprivate var beforeIndex: Int = 0
     fileprivate var viewControllerCount: Int {
         get {
@@ -90,10 +90,13 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
     // MARK: - Initialization
     
-    public init(viewControllers: [UIViewController]) {
+    public convenience init(viewControllers: [UIViewController]) {
+        self.init(nibName: nil, bundle: nil)
         self.viewControllers = viewControllers
-        super.init(nibName: nil, bundle: nil)
-        
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required public init?(coder: NSCoder) {
@@ -112,6 +115,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        viewControllers[beforeIndex].viewWillAppear(animated)
         if let currentIndex = currentIndex {
             tabBar?.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
@@ -120,6 +124,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        viewControllers[beforeIndex].viewDidAppear(animated)
         tabBar?.layouted = true
     }
     
@@ -156,6 +161,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     }
     
     open func setupPageViewController() {
+        pageViewController.beginAppearanceTransition(true, animated: true)
         pageViewController.dataSource = self
         pageViewController.delegate = self
         automaticallyAdjustsScrollViewInsets = false
@@ -172,6 +178,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
                            direction: .forward,
                            animated: false,
                            completion: nil)
+        pageViewController.endAppearanceTransition()
         setupScrollView()
     }
 
@@ -280,7 +287,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         shouldScrollCurrentBar = true
         tabBar?.scrollToHorizontalCenter()
-        let _ = pendingViewControllers.map({ $0.viewDidAppear(true) })
+//        let _ = pendingViewControllers.map({ $0.beginAppearanceTransition(true, animated: true) })
 
         // Order to prevent the the hit repeatedly during animation
         tabBar?.updateCollectionViewUserInteractionEnabled(false)
@@ -291,9 +298,9 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
             tabBar?.updateCurrentIndex(currentIndex, shouldScroll: false)
             beforeIndex = currentIndex
         }
-        if completed {
-            let _ = previousViewControllers.map({ $0.viewDidDisappear(true) })
-        }
+//        pageViewController.viewControllers?[0].endAppearanceTransition()
+//        previousViewControllers[0].viewDidDisappear(true)
+        
         tabBar?.updateCollectionViewUserInteractionEnabled(true)
     }
     

@@ -54,8 +54,6 @@ open class NTTableViewCell: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        object_setClass(imageView, NTImageView.self)
-        
         tintColor = Color.Default.Tint.View
         textLabel?.setPreferredFontStyle(to: .body)
         textLabel?.numberOfLines = 0
@@ -64,6 +62,9 @@ open class NTTableViewCell: UITableViewCell {
         detailTextLabel?.numberOfLines = 0
         detailTextLabel?.lineBreakMode = .byWordWrapping
         imageView?.tintColor = Color.Default.Tint.View
+        imageView?.layer.cornerRadius = 5
+        imageView?.layer.borderWidth = 1
+        imageView?.layer.borderColor = Color.Default.Tint.View.cgColor
         setup()
         
     }
@@ -242,7 +243,9 @@ open class NTTableViewCell: UITableViewCell {
                         groupAnim.animations = [shadowAnim, opacityAnim]
                         
                         self.layer.add(groupAnim, forKey:"shadowBack")
+                        
         }, completion: nil)
+        
     }
     
     override open func layoutSubviews() {

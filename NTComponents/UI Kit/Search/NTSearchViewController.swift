@@ -31,6 +31,8 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
 
     public var searchBar: NTSearchBar = {
         let searchBar = NTSearchBar()
+        searchBar.searchBarStyle = .minimal
+        (searchBar.value(forKey: "searchField") as? UITextField)?.textColor = Color.Default.Tint.NavigationBar
         searchBar.tintColor = Color.Default.Tint.NavigationBar
         return searchBar
     }()
@@ -39,10 +41,28 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-
+        
         searchBar.delegate = self
-        navigationItem.titleView = self.searchBar
+        setup()
         updateResults()
+    }
+    
+    open func setup() {
+        navigationController?.navigationBar.hideShadow()
+        let searchView = UIView()
+        searchView.setDefaultShadow()
+        searchView.backgroundColor = navigationController?.navigationBar.backgroundColor ?? view.backgroundColor
+        searchView.addSubview(searchBar)
+        searchBar.anchor(searchView.topAnchor, left: searchView.leftAnchor, bottom: searchView.bottomAnchor, right: searchView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        view.addSubview(searchView)
+        searchView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 36)
+    }
+    
+    open override func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        tableView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 36, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
 
     override open func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +70,7 @@ open class NTSearchViewController: NTTableViewController, UISearchBarDelegate {
         view.endEditing(true)
     }
 
-    // MARK: NTSearchViewController Methods
+    // MARK: - NTSearchViewController Methods
 
     open func updateResults() {
         Log.write(.warning, "You have not overridden the search results handler")

@@ -108,6 +108,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     // MARK: - Drawer View Properties
     open var leftViewProperties  = NTDrawerViewProperties(side: .left)
     open var rightViewProperties = NTDrawerViewProperties(side: .right)
+    open var automaticallyAddMenuButtonItems: Bool = true
     
     open lazy var overlayView: UIView = { [weak self] in
         let view = UIView()
@@ -118,7 +119,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         return view
     }()
     
-    fileprivate var statusBar: UIView? {
+    open var statusBar: UIView? {
         get {
             return UIApplication.shared.value(forKey: "statusBar") as? UIView
         }
@@ -255,18 +256,37 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
             }
         }
         addViewController(viewController, toSide: side)
-        if let frame = oldFrame {
-            viewController.view.frame = frame
+        if oldFrame != nil {
+            viewController.view.frame = oldFrame!
         }
         switch side {
         case .center:
-            addMenuBarButtonItems(animated: true)
+            _centerViewController = nil
+            _centerViewController = viewController
         case .left:
+            _leftViewController = nil
             _leftViewController = viewController
             updateView(self.properties(forSide: side)!)
         case .right:
+            _rightViewController = nil
             _rightViewController = viewController
             updateView(self.properties(forSide: side)!)
+        }
+        addMenuBarButtonItems(animated: false)
+        completion?()
+    }
+    
+    open func removeViewController(forSide side: NTDrawerSide) {
+        switch side {
+        case .center:
+            removeViewController(_centerViewController)
+            _centerViewController = nil
+        case .left:
+            removeViewController(_leftViewController)
+            _leftViewController = nil
+        case .right:
+            removeViewController(_rightViewController)
+            _rightViewController = nil
         }
     }
     
@@ -275,19 +295,23 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     ///
     /// - Parameter animated: If items are added with an animation. Defaults to false
     open func addMenuBarButtonItems(animated: Bool = false) {
+        if !automaticallyAddMenuButtonItems {
+            return
+        }
+        
         guard let navigationController = _centerViewController as? UINavigationController else {
             Log.write(.warning, "The centerViewController passed to NTDrawerController was not a UINavigationController so the standard UIBarButtonItems will not be added")
             return
         }
-        print(_centerViewController)
+        Log.write(.status, "Automatically adding menu items to UINavigationController. If you do not want this set automaticallyAddMenuButtonItems to false")
         
         if _leftViewController != nil {
             let barButtonItem = NTDrawerBarButtonItem(target: self, action: #selector(toggleLeftViewController(_:)))
-            navigationController.viewControllers[0].navigationItem.leftBarButtonItem = barButtonItem
-        }
+            navigationController.viewControllers[0].navigationItem.setLeftBarButton(barButtonItem, animated: animated)
+        } 
         if _rightViewController != nil {
             let barButtonItem = NTDrawerBarButtonItem(target: self, action: #selector(toggleRightViewController(_:)))
-            navigationController.viewControllers[0].navigationItem.rightBarButtonItem = barButtonItem
+            navigationController.viewControllers[0].navigationItem.setRightBarButton(barButtonItem, animated: animated)
         }
     }
     
@@ -497,18 +521,19 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     }
     
     open func updateView(_ properties: NTDrawerViewProperties) {
-    
+        
+        if !properties.isVisibleOnTop {
+            view.bringSubview(toFront: _centerViewController!.view)
+            _centerViewController?.view.setDefaultShadow()
+        }
+        
         if properties.side == .left {
             _leftViewController?.view.frame = CGRect(x: properties.isVisibleOnTop ? -leftViewProperties.width : 0, y: 0, width: leftViewProperties.width, height: view.bounds.height)
             if properties.isVisibleOnTop {
                 view.bringSubview(toFront: _leftViewController!.view)
                 _leftViewController?.view.setDefaultShadow()
-                _leftViewController?.view.layer.shadowOpacity = Color.Default.Shadow.Opacity + 0.2
                 _leftViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
             } else {
-                view.bringSubview(toFront: _centerViewController!.view)
-                _centerViewController?.view.setDefaultShadow()
-                _centerViewController?.view.layer.shadowOpacity = Color.Default.Shadow.Opacity + 0.2
                 _centerViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
             }
         } else if properties.side == .right {
@@ -516,12 +541,8 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
             if properties.isVisibleOnTop {
                 view.bringSubview(toFront: _rightViewController!.view)
                 _rightViewController?.view.setDefaultShadow()
-                _rightViewController?.view.layer.shadowOpacity = Color.Default.Shadow.Opacity + 0.2
                 _rightViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
             } else {
-                view.bringSubview(toFront: _centerViewController!.view)
-                _centerViewController?.view.setDefaultShadow()
-                _centerViewController?.view.layer.shadowOpacity = Color.Default.Shadow.Opacity + 0.2
                 _centerViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
             }
         }
@@ -552,30 +573,42 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Accessor Variables
     
+    /// Accessor to the centerViewController
     open var centerViewController: UIViewController? {
         get {
             return _centerViewController
         }
     }
     
+    /// Accessor to the leftViewController
     open var leftViewController: UIViewController? {
         get {
             return _leftViewController
         }
     }
     
+    /// Accessor to the rightViewController
     open var rightViewController: UIViewController? {
         get {
             return _rightViewController
         }
     }
     
+    /// Assuming centerViewController is of type UINavigationController its first child view controller will be returned
+    open var rootViewController: UIViewController? {
+        get {
+            return (_centerViewController as? UINavigationController)?.viewControllers[0]
+        }
+    }
+    
+    /// Accessor to the currentStae
     open var currentState: NTDrawerControllerState {
         get {
             return _currentState
         }
     }
     
+    /// Accessor to the current side that is presenting
     open var activeSide: NTDrawerSide {
         get {
             switch _currentState {
@@ -637,125 +670,5 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         case .right:
             return _rightViewController
         }
-    }
-}
-
-open class NTDrawerBarButtonItem: UIBarButtonItem {
-    
-    open var menuButton: AnimatedMenuButton
-    
-    open class AnimatedMenuButton: UIButton {
-        
-        lazy var top: CAShapeLayer = CAShapeLayer()
-        lazy var middle: CAShapeLayer = CAShapeLayer()
-        lazy var bottom: CAShapeLayer = CAShapeLayer()
-        
-        
-        let shortStroke: CGPath = {
-            let path = CGMutablePath()
-            path.move(to: CGPoint(x: 3.5, y: 6))
-            path.addLine(to: CGPoint(x: 22.5, y: 6))
-            return path
-        }()
-        
-        
-        // MARK: - Initializers
-        
-        required public init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-        }
-        
-        override convenience init(frame: CGRect) {
-            self.init(frame: frame, strokeColor: Color.Default.Tint.NavigationBar)
-        }
-        
-        public init(frame: CGRect, strokeColor: UIColor) {
-            super.init(frame: frame)
-            
-            self.top.path = shortStroke;
-            self.middle.path = shortStroke;
-            self.bottom.path = shortStroke;
-            
-            for layer in [ self.top, self.middle, self.bottom ] {
-                layer.fillColor = nil
-                layer.strokeColor = strokeColor.cgColor
-                layer.lineWidth = 1
-                layer.miterLimit = 2
-                layer.lineCap = kCALineCapSquare
-                layer.masksToBounds = true
-                
-                if let path = layer.path, let strokingPath = CGPath(__byStroking: path, transform: nil, lineWidth: 1, lineCap: .square, lineJoin: .miter, miterLimit: 4) {
-                    layer.bounds = strokingPath.boundingBoxOfPath
-                }
-                
-                layer.actions = [
-                    "opacity": NSNull(),
-                    "transform": NSNull()
-                ]
-                
-                self.layer.addSublayer(layer)
-            }
-            
-            self.top.anchorPoint = CGPoint(x: 1, y: 0.5)
-            self.top.position = CGPoint(x: 23, y: 7)
-            self.middle.position = CGPoint(x: 13, y: 13)
-            
-            self.bottom.anchorPoint = CGPoint(x: 1, y: 0.5)
-            self.bottom.position = CGPoint(x: 23, y: 19)
-        }
-        
-        open override func draw(_ rect: CGRect) {
-            
-            Color.Default.Tint.NavigationBar.setStroke()
-            
-            let context = UIGraphicsGetCurrentContext()
-            context?.setShouldAntialias(false)
-            
-            let top = UIBezierPath()
-            top.move(to: CGPoint(x:3,y:6.5))
-            top.addLine(to: CGPoint(x:23,y:6.5))
-            top.stroke()
-            
-            let middle = UIBezierPath()
-            middle.move(to: CGPoint(x:3,y:12.5))
-            middle.addLine(to: CGPoint(x:23,y:12.5))
-            middle.stroke()
-            
-            let bottom = UIBezierPath()
-            bottom.move(to: CGPoint(x:3,y:18.5))
-            bottom.addLine(to: CGPoint(x:23,y:18.5))
-            bottom.stroke()
-        }
-    }
-
-    
-    // MARK: - Initializers
-    
-    public override init() {
-        self.menuButton = AnimatedMenuButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
-        super.init()
-        self.customView = self.menuButton
-    }
-    
-    public convenience init(target: AnyObject?, action: Selector) {
-        self.init(target: target, action: action, menuIconColor: Color.Default.Tint.NavigationBar)
-    }
-    
-    public convenience init(target: AnyObject?, action: Selector, menuIconColor: UIColor) {
-        self.init(target: target, action: action, menuIconColor: menuIconColor, animatable: true)
-    }
-    
-    public convenience init(target: AnyObject?, action: Selector, menuIconColor: UIColor, animatable: Bool) {
-        let menuButton = AnimatedMenuButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26), strokeColor: menuIconColor)
-        menuButton.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
-        self.init(customView: menuButton)
-        
-        self.menuButton = menuButton
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        self.menuButton = AnimatedMenuButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
-        super.init(coder: aDecoder)
-        self.customView = self.menuButton
     }
 }
