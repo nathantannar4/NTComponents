@@ -1,5 +1,5 @@
 //
-//  NTMapPointAnnotation.swift
+//  NTMapAnnotation.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -27,13 +27,23 @@
 
 import MapKit
 
-open class NTMapPointAnnotation: MKPointAnnotation {
+open class NTMapAnnotation: NSObject, MKAnnotation {
 
+    open var object: AnyObject?
+    open var title: String?
+    open var subtitle: String?
+    open var coordinate: CLLocationCoordinate2D
+    
     // MARK: - Initialization
     
-    public override init() {
+    public convenience init(coordinate: CLLocationCoordinate2D) {
+        self.init(title: nil, subtitle: nil, coordinate: coordinate)
+    }
+    
+    public init(title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
         super.init()
-        
-        
     }
 }

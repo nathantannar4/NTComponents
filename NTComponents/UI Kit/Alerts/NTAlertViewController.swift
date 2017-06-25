@@ -150,7 +150,7 @@ open class NTAlertViewController: UIViewController  {
         cancelButton.anchorWidthToItem(confirmButton)
     }
     
-    open override func show(_ vc: UIViewController? = UIViewController.topWindow()?.rootViewController, sender: Any? = nil) {
+    open override func show(_ vc: UIViewController? = UIApplication.presentedController, sender: Any? = nil) {
         guard let viewController = vc else { return }
         viewController.present(self, animated: true, completion: nil)
     }

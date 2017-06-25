@@ -188,7 +188,7 @@ open class NTNavigationViewController: NTViewController {
         if previousViewController == nil {
             
             dismiss(animated: true, completion: {
-                UIViewController.topController()?.viewWillAppear(true)
+                UIApplication.presentedController?.viewWillAppear(true)
             })
         } else {
             dismissViewController(to: .right) {

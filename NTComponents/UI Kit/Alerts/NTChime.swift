@@ -188,7 +188,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     // MARK: - Presentation Methods
     
-    open func show(_ viewController: UIViewController? = UIViewController.topController(), duration: TimeInterval? = 3) {
+    open func show(_ viewController: UIViewController? = UIApplication.presentedController, duration: TimeInterval? = 3) {
         if currentState != .hidden { return }
         
         guard let viewController = viewController else { return }
@@ -322,7 +322,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     
     open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        var center = UIViewController.topWindow()?.center ?? CGPoint.zero
+        var center = UIApplication.presentedWindow?.center ?? CGPoint.zero
         if center.y > 0 {
             center.y = center.y / 6
         }

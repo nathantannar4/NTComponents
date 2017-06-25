@@ -33,32 +33,15 @@ public enum NTPresentationDirection {
 
 public extension UIViewController {
     
+    
+    /// Presents the view controller over the current view controller that is presenting
+    ///
+    /// - Parameter animated: If the animation is animated. Default is 'false'
     public func makeKeyAndVisible(animated: Bool = false)  {
-        guard let controller = UIViewController.topController() else {
+        guard let controller = UIApplication.presentedController else {
             return
         }
         controller.present(self, animated: animated, completion: nil)
-    }
-    
-    class func topWindow() -> UIWindow? {
-        
-        for window in UIApplication.shared.windows.reversed() {
-            if window.windowLevel == UIWindowLevelNormal && !window.isHidden && window.frame != CGRect.zero {
-                return window
-            }
-        }
-        return nil
-    }
-    
-    class func topController() -> UIViewController? {
-        if var topController = UIViewController.topWindow()?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-            }
-            
-            return topController
-        }
-        return nil
     }
     
     @discardableResult

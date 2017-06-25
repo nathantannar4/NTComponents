@@ -118,7 +118,7 @@ open class NTFormImageSelectorCell: NTFormCell, UIImagePickerControllerDelegate,
         let imagePicker = NTImagePickerController()
         imagePicker.delegate = self
         imagePickerCompletion = completion
-        UIViewController.topController()?.present(imagePicker, animated: true, completion: nil)
+        UIApplication.presentedController?.present(imagePicker, animated: true, completion: nil)
     }
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

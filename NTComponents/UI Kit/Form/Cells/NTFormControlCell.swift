@@ -39,7 +39,7 @@ open class NTFormControlCell<T: UIControl>: NTFormCell {
             self.control = cell.control
             self.onControlChanged = cell.onControlChanged
             self.setupViews()
-            self.control.addTarget(self, action: #selector(controlDidChange(_:)), for: UIControlEvents.valueChanged)
+            self.control.addTarget(self, action: #selector(controlDidChange), for: UIControlEvents.valueChanged)
         }
     }
     
@@ -65,10 +65,10 @@ open class NTFormControlCell<T: UIControl>: NTFormCell {
     
     // MARK: - Handlers
     
-    open var onControlChanged: ((Any) -> Void)?
+    open var onControlChanged: ((T) -> Void)?
     
     @discardableResult
-    open func onControlChanged(_ handler: @escaping ((Any) -> Void)) -> Self {
+    open func onControlChanged(_ handler: @escaping ((AnyObject) -> Void)) -> Self {
         if control is NTSwitch {
             (control as! NTSwitch).onSwitchChanged = handler
         } else if control is NTCheckbox {
@@ -81,7 +81,7 @@ open class NTFormControlCell<T: UIControl>: NTFormCell {
         return self
     }
     
-    open func controlDidChange(_ control: UIControl) {
+    open func controlDidChange() {
         onControlChanged?(control)
     }
     

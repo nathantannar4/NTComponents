@@ -30,7 +30,13 @@
 
 open class NTSwitch: UIControl {
     
-    open var isOn: Bool = false
+    open var isOn: Bool = false {
+        didSet {
+            if oldValue != isOn {
+                self.onSwitchChanged?(self)
+            }
+        }
+    }
     
     open var isBounceEnabled: Bool = false {
         didSet {
@@ -80,10 +86,10 @@ open class NTSwitch: UIControl {
     
     // MARK: - Handlers
     
-    open var onSwitchChanged: ((Bool) -> Void)?
+    open var onSwitchChanged: ((NTSwitch) -> Void)?
     
     @discardableResult
-    open func onSwitchChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
+    open func onSwitchChanged(_ handler: @escaping ((NTSwitch) -> Void)) -> Self {
         onSwitchChanged = handler
         return self
     }
@@ -187,7 +193,6 @@ open class NTSwitch: UIControl {
     }
     
     open func switchAreaTapped(recognizer: UITapGestureRecognizer) {
-        onSwitchChanged?(!isOn)
         changeThumbState()
     }
     
@@ -416,7 +421,6 @@ open class NTSwitch: UIControl {
     
 
     internal func sliderTapped() {
-        onSwitchChanged?(!isOn)
         changeThumbState()
     }
     

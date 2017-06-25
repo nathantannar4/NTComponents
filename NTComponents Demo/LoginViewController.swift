@@ -40,12 +40,14 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
             AlertsViewController().withTitle("Alerts"),
             CalendarViewController().withTitle("Calendar")
         ])
-        tabVC.tabBarItemWidth = 70
+        tabVC.tabBarHeight = 50
         tabVC.title = "NTComponents"
         tabVC.subtitle = "Demo"
         tabVC.tabBarPosition = .bottom
-        let container = NTDrawerController(centerViewController: tabVC, leftViewController: NTNavigationController(rootViewController: AuthorViewController()), rightViewController: UIViewController())
-        container.makeKeyAndVisible()
+        let drawer = NTDrawerController(centerViewController: NTNavigationController(rootViewController: tabVC),
+                                        leftViewController: DrawerViewController(side: .left),
+                                        rightViewController: DrawerViewController(side: .right))
+        present(drawer, animated: false, completion: nil)
     }
     
     func thirdPartyLogin(_ sender: NTLoginButton) {

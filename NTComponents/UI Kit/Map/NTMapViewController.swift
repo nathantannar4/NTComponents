@@ -28,7 +28,7 @@
 import MapKit
 import CoreLocation
 
-open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, NTSearchBarViewDelegate {
+open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     open var mapView: NTMapView = {
         let mapView = NTMapView()
@@ -42,19 +42,16 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         manager.desiredAccuracy = kCLLocationAccuracyBest
         return manager
     }()
-
-    open var searchBar: NTSearchBarView = {
-        let searchBar = NTSearchBarView()
-        return searchBar
-    }()
-
-    open var tableView: NTTableView = {
-        let tableView = NTTableView()
-        tableView.backgroundColor = Color.Default.Background.View
-        tableView.contentInset.top = 10
-        tableView.contentOffset = CGPoint(x: 0, y: -10)
-        tableView.scrollIndicatorInsets.top = 10
-        return tableView
+    
+    open var centerUserButton: NTButton = {
+        let button = NTButton()
+        button.trackTouchLocation = false
+        button.ripplePercent = 1
+        button.image = Icon.Target?.scale(to:  40)
+        button.backgroundColor = .white
+        button.setDefaultShadow()
+        button.layer.cornerRadius = 25
+        return button
     }()
 
     // MARK: - Standard Methods
@@ -62,82 +59,71 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
     open override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+    
+    open func setup() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-
+        DispatchQueue.main.async(execute: {
+            self.locationManager.startUpdatingLocation()
+        })
         mapView.delegate = self
         view.addSubview(mapView)
         mapView.fillSuperview()
-
-        searchBar.delegate = self
-        view.addSubview(searchBar)
-        
-        if let parent = parent as? NTScrollableTabBarController, parent.tabBarPosition == .top {
-            searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24 + parent.tabBarHeight, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
-        } else {
-            searchBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 38)
-        }
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.insertSubview(tableView, belowSubview: searchBar)
-        tableView.anchor(searchBar.bottomAnchor, left: searchBar.leftAnchor, bottom: nil, right: searchBar.rightAnchor, topConstant: -10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        tableView.setDefaultShadow()
-        tableView.layer.cornerRadius = 5
-    }
-
-    // MARK: - NTSearchBarViewDelegate
-
-    open func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) -> Bool {
-        Log.write(.status, "Searched for \(query)")
-
-        let origin = tableView.frame.origin
-        let bounds = tableView.bounds
-        let height = (CGFloat(tableView.numberOfRows(inSection: 0)) * tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))) + 10
-       
-        UIView.animate(withDuration: 0.3, animations: {
-            self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: CGFloat(height)))
-        })
-        return true
-    }
-
-    open func searchBarDidBeginEditing(_ searchBar: NTTextField) {
-
-    }
-
-    open func searchBarDidEndEditing(_ searchBar: NTTextField) {
-
-        let origin = tableView.frame.origin
-        let bounds = tableView.bounds
-
-        UIView.animate(withDuration: 0.3) {
-            self.tableView.frame = CGRect(origin: origin, size: CGSize(width: bounds.width, height: 0))
-        }
+        mapView.addSubview(centerUserButton)
+        centerUserButton.anchor(nil, left: nil, bottom: mapView.bottomAnchor, right: mapView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 50, heightConstant: 50)
+        centerUserButton.addTarget(self, action: #selector(centerMapToUser(animated:)), for: .touchUpInside)
     }
 
     // MARK: - MKMapViewDelegate
 
-    open func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-        searchBar.endSearchEditing()
-    }
-
     open func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let reuseIdentifier = "pin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
+        
+        guard !annotation.isKind(of: MKUserLocation.self) else {
+            return nil
         }
+        
+        let reuseIdentifier = "PIN"
 
-//        let customPointAnnotation = annotation as! CustomPointAnnotation
-//        annotationView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
-
-        return annotationView
+        var view: NTMapAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+            as? NTMapAnnotationView {
+            dequeuedView.annotation = annotation
+            dequeuedView.object = (annotation as? NTMapAnnotation)?.object
+            view = dequeuedView
+        } else {
+            view = NTMapAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            view.canShowCallout = true
+            //view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+        }
+        return view
     }
-
+    
+    open func centerMapToUser(animated: Bool = true) {
+        guard let coordinate = currentLocation() else {
+            return
+        }
+        Log.write(.status, "Centering map to \(coordinate)")
+        let latDelta: CLLocationDegrees = 0.02
+        let lonDelta: CLLocationDegrees = 0.02
+        let span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(coordinate, span)
+        mapView.setRegion(region, animated: animated)
+    }
+    
+    open func currentLocation() -> CLLocationCoordinate2D? {
+        guard let location = locationManager.location else {
+            Log.write(.error, "Failed to get the users current location. Was auth given?")
+            return nil
+        }
+        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        return coordinate
+    }
 
     // MARK: - CLLocationManagerDelegate
 
@@ -175,29 +161,5 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
             // Alert requesting access is visible at this point.
             break
         }
-    }
-
-    // MARK: - UITableViewDataSource
-
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 36
-    }
-
-    final public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return NTTableViewCell()
-    }
-
-    // MAKR: - UITableViewDelegate
-
-    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Log.write(.status, "Selected row at index path \(indexPath)")
     }
 }

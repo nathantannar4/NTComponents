@@ -132,10 +132,10 @@ open class NTSegmentedControl: UIControl {
     
     // MARK: - Handlers
     
-    open var onSelectionChanged: ((Int) -> Void)?
+    open var onSelectionChanged: ((NTSegmentedControl) -> Void)?
     
     @discardableResult
-    open func onSelectionChanged(_ handler: @escaping ((Int) -> Void)) -> Self {
+    open func onSelectionChanged(_ handler: @escaping ((NTSegmentedControl) -> Void)) -> Self {
         onSelectionChanged = handler
         return self
     }
@@ -279,7 +279,7 @@ open class NTSegmentedControl: UIControl {
         let index = segmentIndex(for: location)
         move(to: index)
         delegate?.didSelect(index)
-        onSelectionChanged?(index)
+        onSelectionChanged?(self)
     }
     
     open func move(to index: Int) {

@@ -29,16 +29,27 @@ class TableViewController: NTTableViewController, NTTableViewImageDataSource {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
-        cell.textLabel?.text = "Begin Form"
-        cell.detailTextLabel?.text = String.random(ofLength: 30)
-        return cell
+        if indexPath.row % 2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
+            cell.textLabel?.text = "Begin Form"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NTTableViewCell", for: indexPath) as! NTTableViewCell
+            cell.textLabel?.text = "Push ViewController"
+            cell.detailTextLabel?.text = String.random(ofLength: 30)
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = FormViewController()
-        let navVC = NTNavigationViewController(rootViewController: vc).withTitle("Form")
-        present(navVC, animated: true, completion: nil)
+        if indexPath.row % 2 == 0 {
+            let vc = FormViewController()
+            let navVC = NTNavigationViewController(rootViewController: vc).withTitle("Form")
+            present(navVC, animated: true, completion: nil)
+        } else {
+            let vc = AuthorViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 //    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {

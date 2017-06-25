@@ -90,10 +90,10 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
     
     // MARK: - Handlers
     
-    open var onCheckboxChanged: ((Bool) -> Void)?
+    open var onCheckboxChanged: ((NTCheckbox) -> Void)?
     
     @discardableResult
-    open func onCheckboxChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
+    open func onCheckboxChanged(_ handler: @escaping ((NTCheckbox) -> Void)) -> Self {
         onCheckboxChanged = handler
         return self
     }
@@ -149,7 +149,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
     open func toggle(recognizer: UITapGestureRecognizer) {
         isSelected = !isSelected
         checkBox.autoAnimate()
-        onCheckboxChanged?(isSelected)
+        onCheckboxChanged?(self)
     }
     
     open func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {

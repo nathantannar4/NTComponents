@@ -103,7 +103,7 @@ open class NTToast: NTAnimatedView {
         }
     }
 
-    open func show(_ view: UIView? = UIViewController.topController()?.view, duration: TimeInterval? = 2) {
+    open func show(_ view: UIView? = UIApplication.presentedController?.view, duration: TimeInterval? = 2) {
         if currentState != .hidden { return }
         guard let view = view else { return }
         

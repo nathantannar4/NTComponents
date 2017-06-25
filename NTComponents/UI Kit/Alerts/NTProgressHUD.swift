@@ -68,7 +68,7 @@ open class NTProgressHUD: UIView {
     
     open func show(withTitle title: String? = nil, duration: TimeInterval? = nil) {
         alpha = 0
-        guard let parent = UIViewController.topController() else {
+        guard let parent = UIApplication.presentedController else {
             return
         }
         parent.view.addSubview(self)

@@ -1,5 +1,5 @@
 //
-//  NTMapAnnotationView.swift
+//  NTFormActionCell.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -22,32 +22,56 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-//  Created by Nathan Tannar on 4/24/17.
+//  Created by Nathan Tannar on 6/23/17.
 //
 
-import MapKit
-
-open class NTMapAnnotationView: MKPinAnnotationView {
-
-    open var object: AnyObject?
+open class NTFormActionCell: NTFormCell {
     
-    // MARK: - Initialization
-    
-    public override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        if let object = (annotation as? NTMapAnnotation)?.object {
-            self.object = object
+    open override var datasourceItem: Any? {
+        get {
+            return self
         }
-        setup()
+        set {
+            guard let cell = newValue as? NTFormActionCell else { return }
+            self.button.removeFromSuperview()
+            self.button = cell.button
+            self.onTap = cell.onTap
+            self.setupViews()
+        }
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    open var title: String? {
+        get {
+            return button.title
+        }
+        set {
+            button.title = newValue
+        }
     }
     
-    open func setup() {
-        isDraggable = false
-        tintColor = Color.Default.Tint.View
-        pinTintColor = Color.Default.Tint.View
+    open var button: NTButton = {
+        let button = NTButton()
+        button.backgroundColor = .white
+        return button
+    }()
+    
+    open var onTap: (() -> Void)?
+    
+    @discardableResult
+    open func onTap(_ handler: @escaping (() -> Void)) -> Self {
+        onTap = handler
+        return self
+    }
+
+    open override func setupViews() {
+        super.setupViews()
+        
+        addSubview(button)
+        button.fillSuperview()
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+    }
+    
+    open func didTap(_ sender: AnyObject) {
+        onTap?()
     }
 }

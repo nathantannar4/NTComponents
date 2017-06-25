@@ -59,7 +59,7 @@
 		3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */; };
 		3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */; };
 		3863D8C11EB0686E003B73F7 /* NTMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8761EB0686E003B73F7 /* NTMapAnnotationView.swift */; };
-		3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */; };
+		3863D8C21EB0686E003B73F7 /* NTMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8771EB0686E003B73F7 /* NTMapAnnotation.swift */; };
 		3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8781EB0686E003B73F7 /* NTMapView.swift */; };
 		3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8791EB0686E003B73F7 /* NTMapViewController.swift */; };
 		3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */; };
@@ -85,6 +85,8 @@
 		3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8981EB0686E003B73F7 /* NTImageView.swift */; };
 		3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863D8991EB0686E003B73F7 /* NTView.swift */; };
 		386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */; };
+		386BA3AA1EF9DE7C0075EAB2 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */; };
+		386BA3AD1EF9EDEF0075EAB2 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */; };
 		388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
 		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
@@ -99,6 +101,7 @@
 		389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */; };
 		389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */; };
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
+		38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5F05D1EFE1A4000BFE240 /* NTFormActionCell.swift */; };
 		38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
@@ -237,7 +240,7 @@
 		3863D8721EB0686E003B73F7 /* NTCollectionDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionDatasource.swift; sourceTree = "<group>"; };
 		3863D8741EB0686E003B73F7 /* NTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCollectionViewController.swift; sourceTree = "<group>"; };
 		3863D8761EB0686E003B73F7 /* NTMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapAnnotationView.swift; sourceTree = "<group>"; };
-		3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapPointAnnotation.swift; sourceTree = "<group>"; };
+		3863D8771EB0686E003B73F7 /* NTMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapAnnotation.swift; sourceTree = "<group>"; };
 		3863D8781EB0686E003B73F7 /* NTMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapView.swift; sourceTree = "<group>"; };
 		3863D8791EB0686E003B73F7 /* NTMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMapViewController.swift; sourceTree = "<group>"; };
 		3863D87C1EB0686E003B73F7 /* NTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTNavigationController.swift; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 		3863D8981EB0686E003B73F7 /* NTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImageView.swift; sourceTree = "<group>"; };
 		3863D8991EB0686E003B73F7 /* NTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTView.swift; sourceTree = "<group>"; };
 		386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTDrawerBarButtonItem.swift; path = Controls/NTDrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
 		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
@@ -277,6 +282,7 @@
 		389AF3FE1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		389AF4481EC95BC60089E9C1 /* NTSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSlideShowViewController.swift; sourceTree = "<group>"; };
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
+		38A5F05D1EFE1A4000BFE240 /* NTFormActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormActionCell.swift; path = Collection/Cells/NTFormActionCell.swift; sourceTree = "<group>"; };
 		38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSegmentedControl.swift; path = Controls/NTSegmentedControl.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
@@ -359,17 +365,9 @@
 			children = (
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
 				38CACA4D1EF58D6700F07499 /* LoginViewController.swift */,
-				38CACA511EF58F1700F07499 /* TabBarController.swift */,
-				38CACA531EF58F4A00F07499 /* FeedViewController.swift */,
-				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
-				38CACA211EF4D0C300F07499 /* CalendarViewController.swift */,
-				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
-				380461051EA2A787008A03B5 /* TableViewController.swift */,
-				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
+				386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */,
 				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
-				38084AC41EA319D900329516 /* ColorsCollectionView.swift */,
-				38CACA591EF5966300F07499 /* AlertDetailViewController.swift */,
-				38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */,
+				386BA3AB1EF9E8520075EAB2 /* Old */,
 				380460FB1EA2A6C2008A03B5 /* Assets.xcassets */,
 				38CACA4F1EF58DFA00F07499 /* EULA.html */,
 				380460FD1EA2A6C2008A03B5 /* LaunchScreen.storyboard */,
@@ -484,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D85D1EB0686E003B73F7 /* AutoLayout.swift */,
+				386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */,
 				381890301EF9CD6000947205 /* UIButton.swift */,
 				3863D85E1EB0686E003B73F7 /* Date.swift */,
 				3863D85F1EB0686E003B73F7 /* MultiThreading.swift */,
@@ -553,7 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				3863D8761EB0686E003B73F7 /* NTMapAnnotationView.swift */,
-				3863D8771EB0686E003B73F7 /* NTMapPointAnnotation.swift */,
+				3863D8771EB0686E003B73F7 /* NTMapAnnotation.swift */,
 				3863D8781EB0686E003B73F7 /* NTMapView.swift */,
 				3863D8791EB0686E003B73F7 /* NTMapViewController.swift */,
 			);
@@ -650,6 +649,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		386BA3AB1EF9E8520075EAB2 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				38CACA511EF58F1700F07499 /* TabBarController.swift */,
+				38CACA531EF58F4A00F07499 /* FeedViewController.swift */,
+				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
+				38CACA211EF4D0C300F07499 /* CalendarViewController.swift */,
+				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
+				380461051EA2A787008A03B5 /* TableViewController.swift */,
+				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
+				38084AC41EA319D900329516 /* ColorsCollectionView.swift */,
+				38CACA591EF5966300F07499 /* AlertDetailViewController.swift */,
+				38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
 		388C1EEF1EE678C40036AECE /* Form */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +733,7 @@
 			isa = PBXGroup;
 			children = (
 				38ECA8BC1EE7C5E600639A19 /* NTFormCell.swift */,
+				38A5F05D1EFE1A4000BFE240 /* NTFormActionCell.swift */,
 				38ECA8DE1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift */,
 				38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */,
 				38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */,
@@ -888,6 +905,7 @@
 				38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */,
 				38CACA5A1EF5966300F07499 /* AlertDetailViewController.swift in Sources */,
 				38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */,
+				386BA3AD1EF9EDEF0075EAB2 /* DrawerViewController.swift in Sources */,
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
 				38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */,
 				38CACA541EF58F4A00F07499 /* FeedViewController.swift in Sources */,
@@ -904,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */,
+				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
 				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
@@ -927,7 +946,7 @@
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
 				3863D8CB1EB0686E003B73F7 /* NTSearchBarView.swift in Sources */,
 				3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */,
-				3863D8C21EB0686E003B73F7 /* NTMapPointAnnotation.swift in Sources */,
+				3863D8C21EB0686E003B73F7 /* NTMapAnnotation.swift in Sources */,
 				38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */,
 				38CACA3F1EF4EA8C00F07499 /* CalendarEnums.swift in Sources */,
 				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
@@ -982,6 +1001,7 @@
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
 				38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */,
+				386BA3AA1EF9DE7C0075EAB2 /* UIApplication.swift in Sources */,
 				38351D481EF7435E0046BB2E /* NTDrawerController.swift in Sources */,
 				38ECA8DF1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift in Sources */,
 				3863D8D71EB0686E003B73F7 /* NTLabel.swift in Sources */,

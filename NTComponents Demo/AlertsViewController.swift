@@ -204,6 +204,12 @@ class AlertsViewController: NTTableViewController {
         let actionSheet = NTActionSheetViewController(title: "Title", subtitle: "Subtitle", actions: actions)
         actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
         actionSheet.show()
+        
+        DispatchQueue.executeAfter(2) { 
+            actionSheet.insertAction(NTActionSheetItem(title: "Delayed Action", icon: withImages ? Icon.NTLogo : nil, action: {
+                NTToast(text: "Delayed Action").show(duration: 3.0)
+            }), atIndex: 0)
+        }
     }
     
     func showAlert(type: NTAlertType) {

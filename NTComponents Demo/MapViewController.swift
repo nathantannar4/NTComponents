@@ -7,38 +7,17 @@
 //
 
 import NTComponents
+import MapKit
+import CoreLocation
 
 class MapViewController: NTMapViewController {
     
-    var objects: [String] = []
-    
-    override func searchBar(_ searchBar: NTTextField, didUpdateSearchFor query: String) -> Bool {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        objects.append(String.random(ofLength: 8))
-        tableView.reloadData()
-        
-        return super.searchBar(searchBar, didUpdateSearchFor: query)
-    }
-    
-    override func searchBarDidEndEditing(_ searchBar: NTTextField) {
-        
-        objects.removeAll()
-        tableView.reloadSections([0], with: .none)
-        
-        super.searchBarDidEndEditing(searchBar)
-    }
-    
-    
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = NTTableViewCell()
-        cell.textLabel?.text = objects[indexPath.row]
-        cell.detailTextLabel?.text = "123 45th Avenue, City"
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        let coord = CLLocationCoordinate2D(latitude: 37.232331410000002, longitude: -122.0312186)
+        let ann = NTMapAnnotation(title: "Title", subtitle: "Subtitle", coordinate: coord)
+        mapView.addAnnotation(ann)
+        centerMapToUser(animated: true)
     }
 }

@@ -46,7 +46,7 @@ public extension UIViewController {
     }
 }
 
-open class NTScrollableTabBarController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate {
+open class NTScrollableTabBarController: NTViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     
     public var currentIndex: Int? {
         get {
@@ -78,7 +78,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     open var tabBar: NTScrollableTabBar?
     open var tabBarTopConstraint: NSLayoutConstraint?
     open var currentTabBarHeight: CGFloat = 2.5
-    open var hidesTabBarWhenPushed: Bool = false
     open var tabBarHeight: CGFloat = 32
     open var tabBarItemWidth: CGFloat = 0
     open var tabBarPosition: NTTabBarPosition = .top {
@@ -115,7 +114,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewControllers[beforeIndex].viewWillAppear(animated)
+        viewControllers[beforeIndex].beginAppearanceTransition(true, animated: true)
         if let currentIndex = currentIndex {
             tabBar?.updateCurrentIndex(currentIndex, shouldScroll: true)
         }
@@ -124,7 +123,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        viewControllers[beforeIndex].viewDidAppear(animated)
+        viewControllers[beforeIndex].endAppearanceTransition()
         tabBar?.layouted = true
     }
     
@@ -147,7 +146,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         let completion: ((Bool) -> Void) = { [weak self] _ in
             self?.shouldScrollCurrentBar = true
             self?.beforeIndex = index
-            self?.viewControllers[index].viewDidAppear(true)
         }
 
         pageViewController.setViewControllers(
@@ -190,7 +188,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
 
     open func updateNavigationBar() {
-        navigationController?.delegate = self
         if tabBarPosition == .top {
             navigationController?.navigationBar.layer.shadowOpacity = 0
             navigationController?.navigationBar.shadowImage = UIImage()
@@ -330,21 +327,5 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
     open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         tabBar?.updateCurrentIndex(beforeIndex, shouldScroll: true)
-    }
-    
-    // MARK: - UINavigationControllerDelegate
-    
-    open func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        let hidden = !(viewController == self)
-        if hidesTabBarWhenPushed {
-            updateTabBarOrigin(hidden: hidden)
-        }
-        if !hidden {
-            navigationController.navigationBar.hideShadow()
-        } else {
-            DispatchQueue.executeAfter(1.5 * TimeInterval(UINavigationControllerHideShowBarDuration), closure: {
-                self.navigationController?.navigationBar.setDefaultShadow()
-            })
-        }
     }
 }

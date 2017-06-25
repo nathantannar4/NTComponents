@@ -48,25 +48,16 @@ open class NTTableViewCell: UITableViewCell {
     // MARK: - Initialization
     
     public convenience init() {
-        self.init(style: .subtitle, reuseIdentifier: "NTTableViewCell")
+        self.init(style: .default, reuseIdentifier: "NTTableViewCell")
+    }
+    
+    public convenience init(style: UITableViewCellStyle) {
+        self.init(style: style, reuseIdentifier: "NTTableViewCell")
     }
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
-        tintColor = Color.Default.Tint.View
-        textLabel?.setPreferredFontStyle(to: .body)
-        textLabel?.numberOfLines = 0
-        textLabel?.lineBreakMode = .byWordWrapping
-        detailTextLabel?.setPreferredFontStyle(to: .footnote)
-        detailTextLabel?.numberOfLines = 0
-        detailTextLabel?.lineBreakMode = .byWordWrapping
-        imageView?.tintColor = Color.Default.Tint.View
-        imageView?.layer.cornerRadius = 5
-        imageView?.layer.borderWidth = 1
-        imageView?.layer.borderColor = Color.Default.Tint.View.cgColor
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -193,6 +184,18 @@ open class NTTableViewCell: UITableViewCell {
     
     fileprivate func setup() {
         setupRippleView()
+        
+        tintColor = Color.Default.Tint.View
+        textLabel?.setPreferredFontStyle(to: .body)
+        textLabel?.numberOfLines = 0
+        textLabel?.lineBreakMode = .byWordWrapping
+        detailTextLabel?.setPreferredFontStyle(to: .footnote)
+        detailTextLabel?.numberOfLines = 0
+        detailTextLabel?.lineBreakMode = .byWordWrapping
+        imageView?.tintColor = Color.Default.Tint.View
+        imageView?.layer.cornerRadius = 5
+        imageView?.layer.borderWidth = 0
+        imageView?.layer.borderColor = Color.Default.Tint.View.cgColor
         
         rippleBackgroundView.backgroundColor = rippleBackgroundColor
         rippleBackgroundView.frame = bounds

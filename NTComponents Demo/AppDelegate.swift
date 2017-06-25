@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Font.Default.Callout = Font.Roboto.Regular.withSize(15)
         Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
+        
         /// Setting trace level to MAX
         Log.setTraceLevel(to: .debug)
         
@@ -58,10 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// Set completion to our login page
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
     
+        UIApplication.shared.statusBarStyle = .default
+        
         /// Skip showing slide show
-        let drawer = NTDrawerController(centerViewController: NTNavigationController(rootViewController: CalendarViewController()), leftViewController: FeedViewController(), rightViewController: AlertsViewController())
-        drawer.leftViewProperties.isVisibleOnTop = false
-        window?.rootViewController = drawer
+        window?.rootViewController = MapViewController()
         window?.makeKeyAndVisible()
         
         return true

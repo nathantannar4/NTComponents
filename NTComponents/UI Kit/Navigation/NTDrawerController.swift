@@ -106,8 +106,16 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     }
     
     // MARK: - Drawer View Properties
-    open var leftViewProperties  = NTDrawerViewProperties(side: .left)
-    open var rightViewProperties = NTDrawerViewProperties(side: .right)
+    open var leftViewProperties  = NTDrawerViewProperties(side: .left) {
+        didSet {
+            updateView(leftViewProperties)
+        }
+    }
+    open var rightViewProperties = NTDrawerViewProperties(side: .right) {
+        didSet {
+            updateView(rightViewProperties)
+        }
+    }
     open var automaticallyAddMenuButtonItems: Bool = true
     
     open lazy var overlayView: UIView = { [weak self] in
@@ -171,7 +179,9 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        close(drawerSide: activeSide)
+        if activeSide == .right {
+            updateView(rightViewProperties)
+        }
     }
     
     // MARK: - NTDrawerController Methods
@@ -183,8 +193,10 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         guard let vc = viewController else {
             return
         }
-        addChildViewController(vc)
         
+        
+        vc.willMove(toParentViewController: self)
+        addChildViewController(vc)
         vc.beginAppearanceTransition(true, animated: false)
         view.addSubview(vc.view)
         
@@ -200,7 +212,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
             properties(forSide: .left)!.overflowView.removeAllConstraints()
             properties(forSide: .left)!.overflowView.removeFromSuperview()
             vc.view.addSubview(properties(forSide: .left)!.overflowView)
-            properties(forSide: .left)!.overflowView.anchor(vc.view.topAnchor, left: nil, bottom: vc.view.bottomAnchor, right: vc.view.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 0)
+            properties(forSide: .left)!.overflowView.anchor(vc.view.topAnchor, left: nil, bottom: vc.view.bottomAnchor, right: vc.view.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 200, heightConstant: 0)
         case .right:
             vc.view.frame = CGRect(x: view.bounds.width, y: 0, width: rightViewProperties.width, height: view.bounds.height)
             vc.view.autoresizingMask = [.flexibleHeight]
@@ -210,7 +222,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
             properties(forSide: .right)!.overflowView.removeAllConstraints()
             properties(forSide: .right)!.overflowView.removeFromSuperview()
             vc.view.addSubview(properties(forSide: .right)!.overflowView)
-            properties(forSide: .right)!.overflowView.anchor(vc.view.topAnchor, left: vc.view.rightAnchor, bottom: vc.view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 0)
+            properties(forSide: .right)!.overflowView.anchor(vc.view.topAnchor, left: vc.view.rightAnchor, bottom: vc.view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 200, heightConstant: 0)
         }
     
         vc.endAppearanceTransition()
@@ -227,8 +239,8 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         }
         vc.willMove(toParentViewController: nil)
         vc.beginAppearanceTransition(false, animated: false)
-        vc.removeFromParentViewController()
         vc.view.removeFromSuperview()
+        vc.removeFromParentViewController()
         vc.endAppearanceTransition()
     }
     
@@ -365,8 +377,9 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         }
         
         updateView(properties)
-        viewController(forSide: properties.side)?.view.isHidden = false
-        viewController(forSide: properties.side)?.view.addGestureRecognizer(panGestureRecognizer)
+        viewController(forSide: side)?.view.isHidden = false
+        viewController(forSide: side)?.view.addGestureRecognizer(panGestureRecognizer)
+        viewController(forSide: side)?.beginAppearanceTransition(true, animated: true)
         toggleOverlayView(isActive: true)
         
         UIView.animate(withDuration: properties.drawerAnimationDuration,
@@ -377,16 +390,16 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
                                 
                                 if properties.isVisibleOnTop {
                                     self.viewController(forSide: side)?.view.transform = properties.transform()
-                                    self.statusBar?.alpha = 0
                                 } else {
                                     self._centerViewController?.view.transform = properties.transform()
-                                    self.statusBar?.transform = properties.transform()
                                 }
+                                self.statusBar?.alpha = 0
                                 self.overlayView.alpha = 0.2
                                 properties.additionalOpenAnimations?()
                                 
         }, completion: { finished in
             
+            self.viewController(forSide: properties.side)?.endAppearanceTransition()
             self._currentState = self.state(forSide: side)
             completion?()
         })
@@ -404,6 +417,8 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
             return
         }
         
+        viewController(forSide: side)?.beginAppearanceTransition(false, animated: true)
+        
         UIView.animate(withDuration: properties.drawerAnimationDuration,
                               delay: properties.drawerAnimationDelay,
              usingSpringWithDamping: properties.drawerAnimationSpringDamping,
@@ -412,17 +427,18 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
                                 
                                 if properties.isVisibleOnTop {
                                     self.viewController(forSide: side)?.view.transform = CGAffineTransform.identity
-                                    self.statusBar?.alpha = 1
                                 } else {
                                     self._centerViewController?.view.transform = CGAffineTransform.identity
-                                    self.statusBar?.transform = CGAffineTransform.identity
                                 }
+                                self.statusBar?.alpha = 1
                                 self.overlayView.alpha = 0
 
                                 properties.additionalCloseAnimations?()
                                 
         }, completion: { finished in
             self.toggleOverlayView(isActive: false)
+            self.viewController(forSide: properties.side)?.view.endEditing(true)
+            self.viewController(forSide: properties.side)?.endAppearanceTransition()
             self.viewController(forSide: side)?.view.isHidden = true
             self.viewController(forSide: side)?.view.removeGestureRecognizer(self.panGestureRecognizer)
             self._currentState = .collapsed
@@ -520,30 +536,83 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    
+    /// Called when the drawer controller is about to present a side or when a properties value has changed
+    ///
+    /// - Parameter properties: Properties used to update
     open func updateView(_ properties: NTDrawerViewProperties) {
         
-        if !properties.isVisibleOnTop {
-            view.bringSubview(toFront: _centerViewController!.view)
-            _centerViewController?.view.setDefaultShadow()
-        }
-        
-        if properties.side == .left {
-            _leftViewController?.view.frame = CGRect(x: properties.isVisibleOnTop ? -leftViewProperties.width : 0, y: 0, width: leftViewProperties.width, height: view.bounds.height)
-            if properties.isVisibleOnTop {
-                view.bringSubview(toFront: _leftViewController!.view)
-                _leftViewController?.view.setDefaultShadow()
-                _leftViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
-            } else {
-                _centerViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
+        if activeSide == .center {
+            
+            if !properties.isVisibleOnTop {
+                view.bringSubview(toFront: _centerViewController!.view)
+                _centerViewController?.view.setDefaultShadow()
             }
-        } else if properties.side == .right {
-            _rightViewController?.view.frame = CGRect(x: view.bounds.width - (properties.isVisibleOnTop ? 0 : rightViewProperties.width), y: 0, width: rightViewProperties.width, height: view.bounds.height)
-            if properties.isVisibleOnTop {
-                view.bringSubview(toFront: _rightViewController!.view)
-                _rightViewController?.view.setDefaultShadow()
-                _rightViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
-            } else {
-                _centerViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
+            
+            if properties.side == .left {
+                _leftViewController?.view.frame = CGRect(x: properties.isVisibleOnTop ? -leftViewProperties.width : 0, y: 0, width: leftViewProperties.width, height: view.bounds.height)
+                if properties.isVisibleOnTop {
+                    view.bringSubview(toFront: _leftViewController!.view)
+                    _leftViewController?.view.setDefaultShadow()
+                    _leftViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
+                } else {
+                    _centerViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
+                }
+            } else if properties.side == .right {
+                _rightViewController?.view.frame = CGRect(x: view.bounds.width - (properties.isVisibleOnTop ? 0 : rightViewProperties.width), y: 0, width: rightViewProperties.width, height: view.bounds.height)
+                if properties.isVisibleOnTop {
+                    view.bringSubview(toFront: _rightViewController!.view)
+                    _rightViewController?.view.setDefaultShadow()
+                    _rightViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
+                } else {
+                    _centerViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
+                }
+            }
+        } else {
+            
+            // Update center view controller and status bar transform
+            self.statusBar?.alpha = 0
+            UIView.animate(withDuration: properties.drawerAnimationDuration,
+                           delay: properties.drawerAnimationDelay,
+                           usingSpringWithDamping: properties.drawerAnimationSpringDamping,
+                           initialSpringVelocity: properties.drawerAnimationSpringVelocity,
+                           options: properties.drawerAnimationStyle, animations: {
+                            
+                            if !properties.isVisibleOnTop {
+                                self._centerViewController?.view.setDefaultShadow()
+                                self._centerViewController?.view.transform = properties.transform()
+                            } else {
+                                self._centerViewController?.view.transform = CGAffineTransform.identity
+                            }
+                            
+            }, completion: { success in
+                if !properties.isVisibleOnTop {
+                    self.view.bringSubview(toFront: self._centerViewController!.view)
+                }
+            })
+            
+            if properties.side == .left {
+                _leftViewController?.beginAppearanceTransition(true, animated: false)
+                _leftViewController?.view.frame = CGRect(x: 0, y: 0, width: leftViewProperties.width, height: view.bounds.height)
+                if properties.isVisibleOnTop {
+                    view.bringSubview(toFront: _leftViewController!.view)
+                    _leftViewController?.view.setDefaultShadow()
+                    _leftViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
+                } else {
+                    _centerViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
+                }
+                _leftViewController?.endAppearanceTransition()
+            } else if properties.side == .right {
+                _rightViewController?.beginAppearanceTransition(true, animated: false)
+                _rightViewController?.view.frame = CGRect(x: view.bounds.width - rightViewProperties.width, y: 0, width: rightViewProperties.width, height: view.bounds.height)
+                if properties.isVisibleOnTop {
+                    view.bringSubview(toFront: _rightViewController!.view)
+                    _rightViewController?.view.setDefaultShadow()
+                    _rightViewController?.view.layer.shadowOffset = CGSize(width: -3, height: 0)
+                } else {
+                    _centerViewController?.view.layer.shadowOffset = CGSize(width: 3, height: 0)
+                }
+                _rightViewController?.endAppearanceTransition()
             }
         }
     }
@@ -562,7 +631,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     /// Closes the active drawer if the viewControllerToPresent.modalPresentationStyle is anything other than .overCurrentContext
     open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         
-        if viewControllerToPresent.modalPresentationStyle != .overCurrentContext {
+        if viewControllerToPresent.modalPresentationStyle != .overCurrentContext && viewControllerToPresent.modalPresentationStyle != .custom {
             close(drawerSide: activeSide) {
                 super.present(viewControllerToPresent, animated: flag, completion: completion)
             }
