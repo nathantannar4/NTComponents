@@ -6,15 +6,8 @@
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-@objc public protocol NTTextInputBarDelegate {
-    @objc optional func textInputShouldReturn(_ textField: NTTextField) -> Bool
-    @objc optional func textInput(_ textView: NTTextField, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
-    
-}
 
 open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
-    
-    open var delegate: NTTextInputBarDelegate?
     
     open var maxHeight: CGFloat = 120
     
@@ -22,8 +15,11 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
         let textView = NTTextView()
         textView.placeholder = "Tap to edit.."
         textView.isEditable = true
-        textView.font = Font.Default.Body.withSize(13)
+        textView.font = Font.Default.Body.withSize(15)
         textView.isScrollEnabled = true
+        textView.layer.cornerRadius = 5
+        textView.layer.backgroundColor = Color.Gray.P100.cgColor
+        textView.edgePadding = UIEdgeInsets(top: 8, left: 10, bottom: 2, right: 10)
         return textView
     }()
     
@@ -49,8 +45,16 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
         return button
     }()
     
+    open var resignResponderOnSend: Bool = false
     open var alwaysShowSendButton: Bool = false
+    open var showAccessoryButton: Bool = false {
+        didSet {
+            accessoryButtonWidthConstraint?.constant = showAccessoryButton ? 30 : 0
+            layoutIfNeeded()
+        }
+    }
     
+    fileprivate var accessoryButtonWidthConstraint: NSLayoutConstraint?
     fileprivate var sendButtonWidthConstraint: NSLayoutConstraint?
     fileprivate var previousRect: CGRect = .zero
     
@@ -71,12 +75,15 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
         textView.delegate = self
         
         accessoryButton.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 4, leftConstant: 12, bottomConstant: 4, rightConstant: 0, widthConstant: 0, heightConstant: 30)
-        accessoryButton.widthAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
+        accessoryButtonWidthConstraint = accessoryButton.widthAnchor.constraint(equalToConstant: 0)
+        accessoryButtonWidthConstraint?.isActive = true
+        
         textView.anchor(topAnchor, left: accessoryButton.rightAnchor, bottom: bottomAnchor, right: sendButton.leftAnchor, topConstant: 4, leftConstant: 8, bottomConstant: 4, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        
         sendButton.anchor(nil, left: nil, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 4, rightConstant: 12, widthConstant: 0, heightConstant: 30)
         sendButtonWidthConstraint = sendButton.widthAnchor.constraint(lessThanOrEqualToConstant: 0)
         sendButtonWidthConstraint?.isActive = true
-        sendButton.addTarget(self, action: #selector(resignFirstResponder), for: .touchUpInside)
+        sendButton.addTarget(self, action: #selector(didPressSend(_:)), for: .touchUpInside)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -84,6 +91,12 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
     }
     
     // MARK: - Standard Methods
+    
+    open func didPressSend(_ sender: NTButton) {
+        if resignResponderOnSend {
+            textView.resignFirstResponder()
+        }
+    }
     
     open override func resignFirstResponder() -> Bool {
         return textView.resignFirstResponder()
@@ -127,11 +140,9 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
     
     open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            textView.resignFirstResponder()
+            didPressSend(sendButton)
             return false
         }
         return true
     }
-    
-    
 }

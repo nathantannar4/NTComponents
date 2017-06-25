@@ -54,20 +54,36 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         return button
     }()
 
+    // MARK: - Initialization
+    
+    convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Standard Methods
 
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
-    }
-    
-    open func setup() {
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
         DispatchQueue.main.async(execute: {
             self.locationManager.startUpdatingLocation()
         })
+    }
+    
+    
+    /// Called during initialization
+    open func setup() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         mapView.delegate = self
         view.addSubview(mapView)
         mapView.fillSuperview()

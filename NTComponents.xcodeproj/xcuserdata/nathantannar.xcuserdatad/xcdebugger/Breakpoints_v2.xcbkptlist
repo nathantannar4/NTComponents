@@ -1958,11 +1958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Text/NTTextView.swift"
-            timestampString = "518508664.83022"
+            timestampString = "520124289.181425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3158,13 +3158,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Map/NTMapViewController.swift"
-            timestampString = "519982981.43864"
+            timestampString = "520122746.351701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "setup()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/UI Kit/Text/NTTextInputBar.swift"
+            timestampString = "520123897.205619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "textView"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

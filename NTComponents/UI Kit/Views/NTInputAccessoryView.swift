@@ -24,7 +24,7 @@ open class NTInputAccessoryView: NTView {
             }
             NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(NTTextInputBar.keyboardDidChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
             vc.view.addSubview(self)
             layoutConstraints = anchorWithReturnAnchors(nil, left: vc.view.leftAnchor, bottom: vc.view.bottomAnchor, right: vc.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: heightConstant)
         }
@@ -41,7 +41,7 @@ open class NTInputAccessoryView: NTView {
     }
     
     public override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         
     }
     
@@ -49,20 +49,24 @@ open class NTInputAccessoryView: NTView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - De-Initialization
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     // MARK: - Keyboard Observer
     
-    open func keyboardWillChangeFrame(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, !keyboardIsHidden {
+    open func keyboardDidChangeFrame(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, !keyboardIsHidden, let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
             guard let constant = self.layoutConstraints?[1].constant else {
                 return
             }
-            print(constant)
-            print(keyboardSize.height)
-            if keyboardSize.height < (constant) {
+            if keyboardSize.height < constant {
                 return
             }
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            
+            UIView.animate(withDuration: TimeInterval(duration), animations: { () -> Void in
                 self.layoutConstraints?[1].constant = -keyboardSize.height
                 self.controller?.view.layoutIfNeeded()
             })
@@ -71,8 +75,8 @@ open class NTInputAccessoryView: NTView {
     
     open func keyboardWillShow(notification: NSNotification) {
         keyboardIsHidden = false
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
+            UIView.animate(withDuration: TimeInterval(duration), animations: { () -> Void in
                 self.layoutConstraints?[1].constant = -keyboardSize.height
                 self.controller?.view.layoutIfNeeded()
             })
@@ -81,10 +85,12 @@ open class NTInputAccessoryView: NTView {
     
     open func keyboardWillHide(notification: NSNotification) {
         keyboardIsHidden = true
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.layoutConstraints?[1].constant = 0
-            self.controller?.view.layoutIfNeeded()
-        })
+        if let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
+            UIView.animate(withDuration: TimeInterval(duration), animations: { () -> Void in
+                self.layoutConstraints?[1].constant = 0
+                self.controller?.view.layoutIfNeeded()
+            })
+        }
     }
 }
 

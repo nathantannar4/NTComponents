@@ -62,7 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .default
         
         /// Skip showing slide show
-        window?.rootViewController = MapViewController()
+        let vc = NTViewController()
+        let bar = NTTextInputBar()
+        bar.controller = vc
+        
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
         return true
