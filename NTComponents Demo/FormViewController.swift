@@ -47,6 +47,13 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
             print(textView.text ?? "")
         }
         
+        let cellI = NTFormDateInputCell()
+        cellI.title = "Date Input"
+        cellI.date = Date()
+        cellI.onDateChanged { (date) in
+            print(date)
+        }
+        
         let cellC = NTFormControlCell<NTSwitch>()
         cellC.title = "Switch"
         cellC.onControlChanged { (isOn) in
@@ -102,7 +109,7 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
         
         let sectionA = NTFormSection(fromRows: [cellF, cellG, NTFormImageSelectorCell()])
         
-        let sectionB = NTFormSection(fromRows: [cellA, cellB, NTFormAnimatedInputCell()], withHeaderTitle: "Header", withFooterTitle: nil)
+        let sectionB = NTFormSection(fromRows: [cellA, cellB, cellI, NTFormAnimatedInputCell()], withHeaderTitle: "Header", withFooterTitle: nil)
         
         let sectionC = NTFormSection(fromRows: [cellC, cellD, cellE], withHeaderTitle: "Header", withFooterTitle: nil)
         

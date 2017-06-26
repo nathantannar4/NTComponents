@@ -28,10 +28,24 @@
 open class NTTextField: UITextField {
     
     open var onTextFieldUpdate: ((NTTextField) -> Void)?
+    open var onBeginEditing: ((NTTextField) -> Void)?
+    open var onEndEditing: ((NTTextField) -> Void)?
     
     @discardableResult
     open func onTextFieldUpdate(_ handler: @escaping ((NTTextField) -> Void)) -> Self {
         onTextFieldUpdate = handler
+        return self
+    }
+    
+    @discardableResult
+    open func onBeginEditing(_ handler: @escaping ((NTTextField) -> Void)) -> Self {
+        onBeginEditing = handler
+        return self
+    }
+    
+    @discardableResult
+    open func onEndEditing(_ handler: @escaping ((NTTextField) -> Void)) -> Self {
+        onEndEditing = handler
         return self
     }
 
@@ -57,9 +71,19 @@ open class NTTextField: UITextField {
         
         tintColor = Color.Default.Tint.View
         addTarget(self, action: #selector(textFieldDidUpdate(textField:)), for: .allEditingEvents)
+        addTarget(self, action: #selector(textFieldDidBeginEditing(textField:)), for: .editingDidBegin)
+        addTarget(self, action: #selector(textFieldDidEndEditing(textField:)), for: .editingDidEnd)
     }
     
     open func textFieldDidUpdate(textField: NTTextField) {
         onTextFieldUpdate?(textField)
+    }
+    
+    open func textFieldDidBeginEditing(textField: NTTextField) {
+        onBeginEditing?(textField)
+    }
+    
+    open func textFieldDidEndEditing(textField: NTTextField) {
+        onEndEditing?(textField)
     }
 }

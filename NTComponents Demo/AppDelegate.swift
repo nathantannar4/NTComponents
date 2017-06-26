@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// Creating a slide show controller
         var items = [NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: "NTComponents", subtitle: "Demo", body: "Here lies source code examples to demonstrate how easy it is to make beautiful apps with NTComponents")]
         
-        for _ in 0...3 {
+        for _ in 0...2 {
             let randomItem = NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: String.random(ofLength: 16), subtitle: String.random(ofLength: 10), body: String.random(ofLength: 100))
             items.append(randomItem)
         }
@@ -58,15 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Set completion to our login page
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
-    
-        UIApplication.shared.statusBarStyle = .default
         
         /// Skip showing slide show
-        let vc = NTViewController()
-        let bar = NTTextInputBar()
-        bar.controller = vc
-        
-        window?.rootViewController = vc
+        window?.rootViewController = root.completionViewController
         window?.makeKeyAndVisible()
         
         return true

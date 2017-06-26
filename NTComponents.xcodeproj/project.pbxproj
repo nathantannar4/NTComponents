@@ -27,6 +27,8 @@
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
 		3818F7721E5BF78C00902E23 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F7711E5BF78C00902E23 /* Font.swift */; };
 		382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */; };
+		3830CA141F008B0C008A0D11 /* StandardViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */; };
+		3830CA161F00AC99008A0D11 /* NTFormDateInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830CA151F00AC99008A0D11 /* NTFormDateInputCell.swift */; };
 		38351D481EF7435E0046BB2E /* NTDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38351D471EF7435E0046BB2E /* NTDrawerController.swift */; };
 		383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */; };
 		3863D89A1EB0686E003B73F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3863D8471EB0686E003B73F7 /* Assets.xcassets */; };
@@ -208,6 +210,8 @@
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
 		3818F7711E5BF78C00902E23 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransitioningDelegate.swift; sourceTree = "<group>"; };
+		3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardViewControllers.swift; sourceTree = "<group>"; };
+		3830CA151F00AC99008A0D11 /* NTFormDateInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormDateInputCell.swift; path = Form/Cells/NTFormDateInputCell.swift; sourceTree = "<group>"; };
 		38351D471EF7435E0046BB2E /* NTDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDrawerController.swift; sourceTree = "<group>"; };
 		383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		3863D8471EB0686E003B73F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -366,7 +370,8 @@
 				380460F41EA2A6C2008A03B5 /* AppDelegate.swift */,
 				38CACA4D1EF58D6700F07499 /* LoginViewController.swift */,
 				386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */,
-				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
+				3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */,
+				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
 				386BA3AB1EF9E8520075EAB2 /* Old */,
 				380460FB1EA2A6C2008A03B5 /* Assets.xcassets */,
 				38CACA4F1EF58DFA00F07499 /* EULA.html */,
@@ -652,13 +657,13 @@
 		386BA3AB1EF9E8520075EAB2 /* Old */ = {
 			isa = PBXGroup;
 			children = (
+				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
 				38CACA511EF58F1700F07499 /* TabBarController.swift */,
 				38CACA531EF58F4A00F07499 /* FeedViewController.swift */,
 				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
 				38CACA211EF4D0C300F07499 /* CalendarViewController.swift */,
 				383686AF1EDE9AE6000E6807 /* AuthorViewController.swift */,
 				380461051EA2A787008A03B5 /* TableViewController.swift */,
-				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
 				38084AC41EA319D900329516 /* ColorsCollectionView.swift */,
 				38CACA591EF5966300F07499 /* AlertDetailViewController.swift */,
 				38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */,
@@ -737,6 +742,7 @@
 				38ECA8DE1EEA4A7200639A19 /* NTFormAnimatedInputCell.swift */,
 				38ECA8B71EE7C58E00639A19 /* NTFormInputCell.swift */,
 				38ECA8C01EE7D20B00639A19 /* NTFormLongInputCell.swift */,
+				3830CA151F00AC99008A0D11 /* NTFormDateInputCell.swift */,
 				38ECA8C21EE7D23700639A19 /* NTFormControlCell.swift */,
 				38ECA8C61EE8DA9500639A19 /* NTFormImageViewCell.swift */,
 				38ECA8E21EEA6F4E00639A19 /* NTFormImageSelectorCell.swift */,
@@ -902,6 +908,7 @@
 			files = (
 				38CACA4E1EF58D6700F07499 /* LoginViewController.swift in Sources */,
 				38CACA521EF58F1700F07499 /* TabBarController.swift in Sources */,
+				3830CA141F008B0C008A0D11 /* StandardViewControllers.swift in Sources */,
 				38ECA8B61EE78C0100639A19 /* FormViewController.swift in Sources */,
 				38CACA5A1EF5966300F07499 /* AlertDetailViewController.swift in Sources */,
 				38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */,
@@ -997,6 +1004,7 @@
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
 				38CACA491EF4EA8C00F07499 /* JTCalendarProtocols.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
+				3830CA161F00AC99008A0D11 /* NTFormDateInputCell.swift in Sources */,
 				38CACA431EF4EA8C00F07499 /* JTAppleCalendarLayout.swift in Sources */,
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,

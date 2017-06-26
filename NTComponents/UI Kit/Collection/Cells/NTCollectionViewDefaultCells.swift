@@ -42,7 +42,7 @@ open class NTCollectionViewDefaultHeader: NTCollectionViewDefaultCell {
         super.setupViews()
         
         label.setPreferredFontStyle(to: .subhead)
-        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
+        backgroundColor = Color.Default.Background.ViewController
     }
 }
 
@@ -63,7 +63,7 @@ open class NTCollectionViewDefaultFooter: NTCollectionViewDefaultCell {
         separatorLineView.isHidden = true
         label.textAlignment = .center
         label.setPreferredFontStyle(to: .footnote)
-        backgroundColor = Color.Default.Background.ViewController.darker(by: 3)
+        backgroundColor = Color.Default.Background.ViewController
     }
 }
 

@@ -87,9 +87,9 @@ import UIKit
     
     override open func willMove(toSuperview newSuperview: UIView!) {
         if newSuperview != nil {
-            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing(textField:)), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
             
-            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing(textField:)), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
         } else {
             NotificationCenter.default.removeObserver(self)
         }
@@ -98,14 +98,17 @@ import UIKit
     /**
      The textfield has started an editing session.
      */
-    open func textFieldDidBeginEditing() {
+    open override func textFieldDidBeginEditing(textField: NTTextField) {
+        super.textFieldDidBeginEditing(textField: textField)
         animateViewsForTextEntry()
     }
     
     /**
      The textfield has ended an editing session.
      */
-    open func textFieldDidEndEditing() {
+    
+    open override func textFieldDidEndEditing(textField: NTTextField) {
+        super.textFieldDidEndEditing(textField: textField)
         animateViewsForTextDisplay()
     }
     

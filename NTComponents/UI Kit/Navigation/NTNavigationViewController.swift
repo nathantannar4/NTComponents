@@ -58,7 +58,7 @@ open class NTNavigationViewController: NTViewController {
     }
     
     open var delegate: NTNavigationViewControllerDelegate?
-    
+
     open let navigationBar: UIView = {
         let view = UIView()
         view.backgroundColor = Color.Default.Background.NavigationBar

@@ -50,6 +50,17 @@ public extension UIViewController {
         return self
     }
     
+    @discardableResult
+    func addDismissalBarButtonItem() -> Self {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissController))
+        navigationItem.leftBarButtonItem = barButtonItem
+        return self
+    }
+    
+    func dismissController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     public func setTitleView(title: String? = nil, subtitle: String? = nil, titleColor: UIColor? = Color.Default.Text.Title, subtitleColor: UIColor? = Color.Default.Text.Subtitle) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
@@ -144,4 +155,3 @@ public extension UIViewController {
         })
     }
 }
-
