@@ -89,6 +89,15 @@
 		386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */; };
 		386BA3AA1EF9DE7C0075EAB2 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */; };
 		386BA3AD1EF9EDEF0075EAB2 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */; };
+		3881E3341F020DA50013D241 /* NTTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3331F020DA50013D241 /* NTTimelineTableViewCell.swift */; };
+		3881E33A1F020DFD0013D241 /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3391F020DFD0013D241 /* Lorem.swift */; };
+		3881E33C1F020E580013D241 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E33B1F020E580013D241 /* Person.swift */; };
+		3881E33E1F020E8A0013D241 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E33D1F020E8A0013D241 /* Array.swift */; };
+		3881E3401F020FA50013D241 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E33F1F020FA50013D241 /* Int.swift */; };
+		3881E3421F0214270013D241 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3411F0214270013D241 /* TimelineTableViewController.swift */; };
+		3881E3441F021E300013D241 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3431F021E300013D241 /* CALayer.swift */; };
+		3881E3461F0362150013D241 /* Material-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3451F0362150013D241 /* Material-Icons.ttf */; };
+		3881E3481F03658B0013D241 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3471F03658B0013D241 /* FontAwesome.ttf */; };
 		388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
 		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
@@ -272,6 +281,15 @@
 		386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
 		386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		3881E3331F020DA50013D241 /* NTTimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTTimelineTableViewCell.swift; sourceTree = "<group>"; };
+		3881E3391F020DFD0013D241 /* Lorem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lorem.swift; sourceTree = "<group>"; };
+		3881E33B1F020E580013D241 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3881E33D1F020E8A0013D241 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		3881E33F1F020FA50013D241 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		3881E3411F0214270013D241 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		3881E3431F021E300013D241 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		3881E3451F0362150013D241 /* Material-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Material-Icons.ttf"; sourceTree = "<group>"; };
+		3881E3471F03658B0013D241 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTDrawerBarButtonItem.swift; path = Controls/NTDrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
 		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
@@ -372,6 +390,7 @@
 				386BA3AC1EF9EDEF0075EAB2 /* DrawerViewController.swift */,
 				3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */,
 				38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */,
+				3881E3411F0214270013D241 /* TimelineTableViewController.swift */,
 				386BA3AB1EF9E8520075EAB2 /* Old */,
 				380460FB1EA2A6C2008A03B5 /* Assets.xcassets */,
 				38CACA4F1EF58DFA00F07499 /* EULA.html */,
@@ -385,6 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				380EEA161EDE7FD80018FC37 /* Transitions */,
+				3881E3391F020DFD0013D241 /* Lorem.swift */,
+				3881E33B1F020E580013D241 /* Person.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -478,6 +499,8 @@
 				3863D8531EB0686E003B73F7 /* Roboto-Regular.ttf */,
 				3863D8541EB0686E003B73F7 /* Roboto-Thin.ttf */,
 				3863D8551EB0686E003B73F7 /* Roboto-ThinItalic.ttf */,
+				3881E3451F0362150013D241 /* Material-Icons.ttf */,
+				3881E3471F03658B0013D241 /* FontAwesome.ttf */,
 			);
 			name = Fonts;
 			path = fonts;
@@ -487,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				3863D85D1EB0686E003B73F7 /* AutoLayout.swift */,
+				3881E33D1F020E8A0013D241 /* Array.swift */,
+				3881E33F1F020FA50013D241 /* Int.swift */,
 				386BA3A91EF9DE7C0075EAB2 /* UIApplication.swift */,
 				381890301EF9CD6000947205 /* UIButton.swift */,
 				3863D85E1EB0686E003B73F7 /* Date.swift */,
@@ -499,6 +524,7 @@
 				3863D8651EB0686E003B73F7 /* UITextField.swift */,
 				38ECA8E01EEA636A00639A19 /* UITextView.swift */,
 				3863D8661EB0686E003B73F7 /* UIView.swift */,
+				3881E3431F021E300013D241 /* CALayer.swift */,
 				3863D8671EB0686E003B73F7 /* UIViewController.swift */,
 				386AB9BA1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift */,
 			);
@@ -701,6 +727,7 @@
 				38CACA2A1EF4D80C00F07499 /* NTCalendarViewCell.swift */,
 				38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */,
 				38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */,
+				3881E3331F020DA50013D241 /* NTTimelineTableViewCell.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -896,6 +923,8 @@
 				3863D8A71EB0686E003B73F7 /* Roboto-ThinItalic.ttf in Resources */,
 				3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */,
 				3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */,
+				3881E3461F0362150013D241 /* Material-Icons.ttf in Resources */,
+				3881E3481F03658B0013D241 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +949,7 @@
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
 				383686B01EDE9AE6000E6807 /* AuthorViewController.swift in Sources */,
 				38084AC51EA319D900329516 /* ColorsCollectionView.swift in Sources */,
+				3881E3421F0214270013D241 /* TimelineTableViewController.swift in Sources */,
 				38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +962,7 @@
 				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3818F7061E5BDF5000902E23 /* Icon.swift in Sources */,
+				3881E33A1F020DFD0013D241 /* Lorem.swift in Sources */,
 				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
 				3863D8B01EB0686E003B73F7 /* NSMutableAttributedString.swift in Sources */,
 				3863D8D21EB0686E003B73F7 /* NTTabBarItem.swift in Sources */,
@@ -942,6 +973,7 @@
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
 				38ECA8E91EF0655B00639A19 /* NTFormTagInputCell.swift in Sources */,
 				38ECA8D31EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift in Sources */,
+				3881E33E1F020E8A0013D241 /* Array.swift in Sources */,
 				3863D8C31EB0686E003B73F7 /* NTMapView.swift in Sources */,
 				38ECA8D61EE9AC8400639A19 /* NTCollectionViewDefaultCells.swift in Sources */,
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
@@ -991,6 +1023,7 @@
 				38CACA251EF4D19700F07499 /* NTCalendarView.swift in Sources */,
 				38CACA421EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift in Sources */,
 				38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */,
+				3881E3401F020FA50013D241 /* Int.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
 				3863D8CA1EB0686E003B73F7 /* NTSearchBar.swift in Sources */,
 				388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */,
@@ -1016,6 +1049,7 @@
 				38FCFA391ECFF799007D3019 /* NTEmailRegisterViewController.swift in Sources */,
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
 				380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */,
+				3881E3341F020DA50013D241 /* NTTimelineTableViewCell.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
@@ -1024,6 +1058,7 @@
 				38CACA2B1EF4D80C00F07499 /* NTCalendarViewCell.swift in Sources */,
 				388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */,
 				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
+				3881E33C1F020E580013D241 /* Person.swift in Sources */,
 				3863D8C71EB0686E003B73F7 /* NTViewController.swift in Sources */,
 				38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */,
 				3818F7071E5BDF5000902E23 /* Color.swift in Sources */,
@@ -1041,6 +1076,7 @@
 				38CACA4A1EF4EA8C00F07499 /* UICollectionViewDelegates.swift in Sources */,
 				38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */,
 				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
+				3881E3441F021E300013D241 /* CALayer.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,
 				38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */,
 				38ECA8D51EE9AC8400639A19 /* NTCollectionViewCell.swift in Sources */,

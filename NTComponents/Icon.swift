@@ -76,6 +76,8 @@ public struct Icon {
     public static let NavBackButton = icon("NavBackButton")
     public static let Target = icon("Target")
     public static let MapMarker = icon("MapMarker")
+    public static let Map = icon("Map")
+    public static let Clock = icon("Clock")
     
     public struct Arrow {
         public static let Backward = Icon.icon("Backward_ffffff_100")

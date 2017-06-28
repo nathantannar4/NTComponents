@@ -27,7 +27,6 @@
 
 public extension UIView {
     
-    
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
@@ -39,7 +38,7 @@ public extension UIView {
         return nil
     }
     
-    func drawLineFrom(_ points: [CGPoint], ofColor lineColor: UIColor, ofWidth width: CGFloat = 1.0, cornerRadius: CGFloat = 0) {
+    func drawLineFrom(_ points: [CGPoint], ofColor lineColor: UIColor, ofWidth width: CGFloat = 1.0, cornerRadius: CGFloat = 0, lineCap: String = kCALineCapButt) {
         
         if points.count < 2 {
             return
@@ -58,6 +57,7 @@ public extension UIView {
         shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.lineWidth = width
         shapeLayer.cornerRadius = cornerRadius
+        shapeLayer.lineCap = lineCap
         
         self.layer.addSublayer(shapeLayer)
     }
@@ -101,14 +101,11 @@ public extension UIView {
     }
     
     func hideShadow() {
-        self.layer.shadowOpacity = 0
+        self.layer.hideShadow()
     }
     
     func setDefaultShadow() {
-        self.layer.shadowColor = Color.Default.Shadow.cgColor
-        self.layer.shadowOpacity = Color.Default.Shadow.Opacity
-        self.layer.shadowOffset = Color.Default.Shadow.Offset
-        self.layer.shadowRadius = Color.Default.Shadow.Radius
+        self.layer.setDefaultShadow()
     }
     
     /**
@@ -264,4 +261,3 @@ private extension UIView {
         layer.addSublayer(borderLayer)
     }
 }
-

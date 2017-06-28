@@ -82,7 +82,7 @@ public extension Date {
     
     // MARK:- APP SPECIFIC FORMATS
     
-    func app_dateFromString(strDate:String, format:String) -> Date? {
+    func dateFromString(strDate: String, format: String) -> Date? {
         
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
@@ -93,7 +93,7 @@ public extension Date {
     }
     
     
-    func app_stringFromDate() -> String {
+    func stringify() -> String {
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let strdt = dateFormatter.string(from: self as Date)
@@ -103,7 +103,7 @@ public extension Date {
         return "--"
     }
     
-    func app_stringFromDate_timeStamp() -> String {
+    func stringifyTimestamp() -> String {
         return "\(self.hourTwoDigit):\(self.minuteTwoDigit) \(self.AM_PM)  \(self.monthNameShort) \(self.dayTwoDigit)"
     }
     

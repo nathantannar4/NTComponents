@@ -29,14 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Color.Default.setCleanShadow()
         
         /// Set your preferred font
-        Font.Default.Title = Font.Roboto.Medium.withSize(15)
-        Font.Default.Subtitle = Font.Roboto.Regular
-        Font.Default.Body = Font.Roboto.Regular.withSize(13)
-        Font.Default.Caption = Font.Roboto.Medium.withSize(12)
-        Font.Default.Subhead = Font.Roboto.Light.withSize(14)
-        Font.Default.Headline = Font.Roboto.Medium.withSize(15)
-        Font.Default.Callout = Font.Roboto.Regular.withSize(15)
-        Font.Default.Footnote = Font.Roboto.Light.withSize(12)
+//        Font.Default.Title = Font.Roboto.Medium.withSize(15)
+//        Font.Default.Subtitle = Font.Roboto.Regular
+//        Font.Default.Body = Font.Roboto.Regular.withSize(13)
+//        Font.Default.Caption = Font.Roboto.Medium.withSize(12)
+//        Font.Default.Subhead = Font.Roboto.Light.withSize(14)
+//        Font.Default.Headline = Font.Roboto.Medium.withSize(15)
+//        Font.Default.Callout = Font.Roboto.Regular.withSize(15)
+//        Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
         
         /// Setting trace level to MAX
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
         
         /// Skip showing slide show
-        window?.rootViewController = root.completionViewController
+        window?.rootViewController = NTNavigationController(rootViewController: TimelineTableViewController())
         window?.makeKeyAndVisible()
         
         return true

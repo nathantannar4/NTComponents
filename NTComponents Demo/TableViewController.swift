@@ -20,6 +20,11 @@ class TableViewController: NTTableViewController, NTTableViewImageDataSource {
         tableView.imageDataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -20,6 +20,11 @@ class AuthorViewController: NTTableViewController, NTTableViewImageDataSource {
         addTopGradientToStretchyImage()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
