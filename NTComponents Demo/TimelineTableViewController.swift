@@ -18,6 +18,10 @@ class TimelineTableViewController: UITableViewController {
         self.tableView.separatorStyle = .none
         self.tableView.estimatedRowHeight = 300
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let item = UIBarButtonItem(image: nil, style: .plain, target: nil, action: nil)
+        item.setIcon(icon: FAType.FAGithub, iconSize: 30)
+        navigationItem.rightBarButtonItem = item
     }
 
     // MARK: - Table view data source
@@ -35,7 +39,7 @@ class TimelineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  NTTimelineTableViewCell()
+        let cell =  NTTimelineTableViewCell(style: .detailed)
         cell.isInitial = indexPath.row == 0
         cell.isFinal = indexPath.row + 1 == self.tableView(tableView, numberOfRowsInSection: indexPath.section)
         cell.timeLabel.text = "\(indexPath.row + 8):30"
@@ -44,8 +48,9 @@ class TimelineTableViewController: UITableViewController {
         cell.thumbnailImageView.image = #imageLiteral(resourceName: "Nathan")
         
 //        Becomes available if initialized with NTTimelineTableViewCell(style: .detailed)
-//        cell.durationLabel.text = "60 Min"
-//        cell.locationLabel.text = Lorem.words(nbWords: 2).capitalized
+        cell.durationLabel.text = "60 Min"
+        cell.locationLabel.text = Lorem.words(nbWords: 2).capitalized
+//        cell.durationIconView.setFAIconWithName(icon: FAType.FAAdressCard, textColor: .black)
         
         if indexPath.row == 3 {
             cell.timeline.trailingColor = Color.Default.Tint.View

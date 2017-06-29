@@ -96,8 +96,10 @@
 		3881E3401F020FA50013D241 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E33F1F020FA50013D241 /* Int.swift */; };
 		3881E3421F0214270013D241 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3411F0214270013D241 /* TimelineTableViewController.swift */; };
 		3881E3441F021E300013D241 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3431F021E300013D241 /* CALayer.swift */; };
-		3881E3461F0362150013D241 /* Material-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3451F0362150013D241 /* Material-Icons.ttf */; };
 		3881E3481F03658B0013D241 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3471F03658B0013D241 /* FontAwesome.ttf */; };
+		3881E34B1F03674C0013D241 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E34A1F03674C0013D241 /* MaterialIcons.ttf */; };
+		3881E34D1F036B590013D241 /* GMDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E34C1F036B590013D241 /* GMDType.swift */; };
+		3881E34F1F036B720013D241 /* FAType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E34E1F036B720013D241 /* FAType.swift */; };
 		388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
 		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
@@ -288,8 +290,10 @@
 		3881E33F1F020FA50013D241 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		3881E3411F0214270013D241 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		3881E3431F021E300013D241 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
-		3881E3451F0362150013D241 /* Material-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Material-Icons.ttf"; sourceTree = "<group>"; };
 		3881E3471F03658B0013D241 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		3881E34A1F03674C0013D241 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		3881E34C1F036B590013D241 /* GMDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMDType.swift; sourceTree = "<group>"; };
+		3881E34E1F036B720013D241 /* FAType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAType.swift; sourceTree = "<group>"; };
 		388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTDrawerBarButtonItem.swift; path = Controls/NTDrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
 		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
@@ -454,9 +458,9 @@
 			children = (
 				3863D80C1EB0676C003B73F7 /* Supporting Files */,
 				3818F6F91E5BDF5000902E23 /* Log.swift */,
-				3818F6F51E5BDF5000902E23 /* Icon.swift */,
 				3818F6F61E5BDF5000902E23 /* Color.swift */,
 				3818F7711E5BF78C00902E23 /* Font.swift */,
+				3881E3501F04C99E0013D241 /* Icons */,
 				38CACA2F1EF4EA7400F07499 /* Dependencies */,
 				3863D8461EB0686E003B73F7 /* Assets */,
 				380EEA151EDE7FB30018FC37 /* Miscellaneous */,
@@ -499,7 +503,7 @@
 				3863D8531EB0686E003B73F7 /* Roboto-Regular.ttf */,
 				3863D8541EB0686E003B73F7 /* Roboto-Thin.ttf */,
 				3863D8551EB0686E003B73F7 /* Roboto-ThinItalic.ttf */,
-				3881E3451F0362150013D241 /* Material-Icons.ttf */,
+				3881E34A1F03674C0013D241 /* MaterialIcons.ttf */,
 				3881E3471F03658B0013D241 /* FontAwesome.ttf */,
 			);
 			name = Fonts;
@@ -695,6 +699,16 @@
 				38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */,
 			);
 			name = Old;
+			sourceTree = "<group>";
+		};
+		3881E3501F04C99E0013D241 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3818F6F51E5BDF5000902E23 /* Icon.swift */,
+				3881E34C1F036B590013D241 /* GMDType.swift */,
+				3881E34E1F036B720013D241 /* FAType.swift */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		388C1EEF1EE678C40036AECE /* Form */ = {
@@ -918,12 +932,12 @@
 				3863D89D1EB0686E003B73F7 /* Roboto-BlackItalic.ttf in Resources */,
 				3863D8A61EB0686E003B73F7 /* Roboto-Thin.ttf in Resources */,
 				3863D8A51EB0686E003B73F7 /* Roboto-Regular.ttf in Resources */,
+				3881E34B1F03674C0013D241 /* MaterialIcons.ttf in Resources */,
 				3863D89A1EB0686E003B73F7 /* Assets.xcassets in Resources */,
 				3863D8A31EB0686E003B73F7 /* Roboto-Medium.ttf in Resources */,
 				3863D8A71EB0686E003B73F7 /* Roboto-ThinItalic.ttf in Resources */,
 				3863D89C1EB0686E003B73F7 /* Roboto-Black.ttf in Resources */,
 				3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */,
-				3881E3461F0362150013D241 /* Material-Icons.ttf in Resources */,
 				3881E3481F03658B0013D241 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -982,6 +996,7 @@
 				388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */,
 				38CACA4C1EF4EA8C00F07499 /* UserInteractionFunctions.swift in Sources */,
 				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,
+				3881E34F1F036B720013D241 /* FAType.swift in Sources */,
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
 				3863D8CB1EB0686E003B73F7 /* NTSearchBarView.swift in Sources */,
 				3863D8BA1EB0686E003B73F7 /* NTToast.swift in Sources */,
@@ -1075,6 +1090,7 @@
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
 				38CACA4A1EF4EA8C00F07499 /* UICollectionViewDelegates.swift in Sources */,
 				38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */,
+				3881E34D1F036B590013D241 /* GMDType.swift in Sources */,
 				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
 				3881E3441F021E300013D241 /* CALayer.swift in Sources */,
 				3818F7721E5BF78C00902E23 /* Font.swift in Sources */,

@@ -69,7 +69,7 @@ open class NTTimelineTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.tintColor = Color.Default.Tint.View
         imageView.contentMode = .scaleAspectFit
-        imageView.image = Icon.Clock
+        imageView.setIconAsImage(icon: FAType.FAClockO)
         return imageView
     }()
     
@@ -188,19 +188,19 @@ open class NTTimelineTableViewCell: UITableViewCell {
         addSubview(locationLabel)
         
         descriptionTextView.removeAllConstraints()
-        descriptionTextView.anchor(titleLabel.bottomAnchor, left: timeLabel.leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        descriptionTextView.anchor(titleLabel.bottomAnchor, left: timeLabel.leftAnchor, bottom: durationLabel.topAnchor, right: rightAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
         durationIconView.anchor(descriptionTextView.bottomAnchor, left: timeLabel.leftAnchor, bottom: locationIconView.topAnchor, right: durationLabel.leftAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         durationIconView.widthAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         durationIconView.anchorAspectRatio()
         
-        durationLabel.anchor(durationIconView.topAnchor, left: durationIconView.rightAnchor, bottom: locationLabel.topAnchor, right: descriptionTextView.rightAnchor, topConstant: 3, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        durationLabel.anchor(durationIconView.topAnchor, left: durationIconView.rightAnchor, bottom: locationLabel.topAnchor, right: descriptionTextView.rightAnchor, topConstant: 2, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        locationIconView.anchor(durationIconView.bottomAnchor, left: durationIconView.leftAnchor, bottom: bottomAnchor, right: locationLabel.leftAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 2, rightConstant: 8, widthConstant: 0, heightConstant: 0)
+        locationIconView.anchor(durationIconView.bottomAnchor, left: durationIconView.leftAnchor, bottom: bottomAnchor, right: locationLabel.leftAnchor, topConstant: 2, leftConstant: 0, bottomConstant: 6, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         locationIconView.widthAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         locationIconView.anchorAspectRatio()
         
-        locationLabel.anchor(locationIconView.topAnchor, left: locationIconView.rightAnchor, bottom: bottomAnchor, right: durationLabel.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 2, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        locationLabel.anchor(locationIconView.topAnchor, left: locationIconView.rightAnchor, bottom: bottomAnchor, right: durationLabel.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 6, rightConstant: 0, widthConstant: 0, heightConstant: 0)
     }
     
     // MARK: - Standard Methods

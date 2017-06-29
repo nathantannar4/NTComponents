@@ -58,7 +58,19 @@ public struct Font {
     ///   - withExtension: The extension of the font file
     ///   - size: The font size you would like returned, defaults 15
     /// - Returns: A UIFont generated from the custom font file
-    public static func load(fromBundle: Bundle = bundle, name: String, withExtension: String = "ttf", withSize size: CGFloat = 15) -> UIFont? {
+    @discardableResult
+    public static func load(fromBundle: Bundle = bundle, name: String?, withExtension: String = "ttf", withSize size: CGFloat = 15) -> UIFont? {
+        
+        guard let name = name else {
+            return nil
+        }
+        
+        // Check if font is already loaded
+        if UIFont.fontNames(forFamilyName: name).count != 0 {
+            return UIFont(name: name, size: size)
+        }
+        
+        // Else try to load the font
         guard let url = bundle.url(forResource: name, withExtension: withExtension) else {
             Log.write(.error, "Failed to find the font: \(name).\(withExtension) in the supplied bundle")
             return nil

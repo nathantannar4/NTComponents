@@ -1050,11 +1050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/Icon.swift"
-            timestampString = "519199421.654295"
+            timestampString = "520411969.634972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "Icon"
             landmarkType = "14">
          </BreakpointContent>
@@ -3244,6 +3244,38 @@
             startingLineNumber = "365"
             endingLineNumber = "365"
             landmarkName = "draw(view:from:to:color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/Icon.swift"
+            timestampString = "520411969.634972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "init(bgIcon:orientation:bgTextColor:bgBackgroundColor:topIcon:topTextColor:bgLarge:size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NTComponents/Icon.swift"
+            timestampString = "520411969.634972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "init(bgIcon:orientation:bgTextColor:bgBackgroundColor:topIcon:topTextColor:bgLarge:size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
