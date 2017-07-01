@@ -100,9 +100,10 @@ open class NTButton: UIButton {
         }
     }
     
-    open var buttonCornerRadius: Float = 0 {
+    open var buttonCornerRadius: CGFloat = 0 {
         didSet{
-            layer.cornerRadius = CGFloat(buttonCornerRadius)
+            layer.cornerRadius = buttonCornerRadius
+            rippleBackgroundView.layer.cornerRadius = buttonCornerRadius
         }
     }
     
@@ -153,11 +154,12 @@ open class NTButton: UIButton {
         
         setupRippleView()
         
+        addSubview(rippleBackgroundView)
         rippleBackgroundView.backgroundColor = rippleBackgroundColor
-        rippleBackgroundView.frame = bounds
+        rippleBackgroundView.fillSuperview()
         rippleBackgroundView.addSubview(rippleView)
         rippleBackgroundView.alpha = 0
-        addSubview(rippleBackgroundView)
+        
         
         if let imageView = imageView {
             bringSubview(toFront: imageView)

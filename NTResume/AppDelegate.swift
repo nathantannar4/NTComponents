@@ -1,12 +1,11 @@
 //
 //  AppDelegate.swift
-//  NTComponents Demo
+//  NTResume
 //
-//  Created by Nathan Tannar on 4/15/17.
+//  Created by Nathan Tannar on 6/29/17.
 //  Copyright © 2017 Nathan Tannar. All rights reserved.
 //
 
-import UIKit
 import NTComponents
 
 @UIApplicationMain
@@ -18,18 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /// Set your preferred colors
-        Color.Default.setPrimary(to: UIColor(hex: "31485e"))
+        Color.Default.setPrimary(to: UIColor(r: 42, g: 66, b: 102))
         Color.Default.setSecondary(to: .white)
         Color.Default.setTertiary(to: UIColor(hex: "baa57b"))
+        Color.Default.Background.Button = UIColor(r: 42, g: 66, b: 102)
         Color.Default.Background.ViewController = Color.Gray.P100
         
-        /// Set a specific default
-        Color.Default.Tint.Toolbar = UIColor(hex: "31485e")
-        
-        /// Set shadow preverence
-//        Color.Default.setCleanShadow()
-        
-        /// Set your preferred font
         Font.Default.Title = Font.Roboto.Medium.withSize(15)
         Font.Default.Subtitle = Font.Roboto.Regular
         Font.Default.Body = Font.Roboto.Regular.withSize(13)
@@ -39,32 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Font.Default.Callout = Font.Roboto.Regular.withSize(15)
         Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
-        
-        
-        
-        
-        /// Setting trace level to MAX
-        Log.setTraceLevel(to: .debug)
+        UIApplication.shared.isStatusBarHidden = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        
-        
-        /// Creating a slide show controller
-        var items = [NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: "NTComponents", subtitle: "Demo", body: "Here lies source code examples to demonstrate how easy it is to make beautiful apps with NTComponents")]
-        
-        for _ in 0...2 {
-            let randomItem = NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: String.random(ofLength: 16), subtitle: String.random(ofLength: 10), body: String.random(ofLength: 100))
-            items.append(randomItem)
-        }
-        
-        let root = NTOnboardingViewController(dataSource: NTOnboardingDatasource(withValues: items))
-        
-        /// Set completion to our login page
-        root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
-        
-        /// Skip showing slide show
-        window?.rootViewController = root
+        let tabbarVC = NTScrollableTabBarController(viewControllers: [InteractiveResumeViewController().withTitle("Resume")])
+        tabbarVC.tabBarItemWidth = 50
+        window?.rootViewController = ContainerController(centerViewController: tabbarVC, rightViewController: RightViewController())
         window?.makeKeyAndVisible()
         
         return true
@@ -91,4 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
+
 }
+

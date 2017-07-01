@@ -354,12 +354,12 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     }
     
     /// Action for NTDrawerBarButtonItem that is added by default to the centerViewController
-    internal func toggleLeftViewController(_ sender: AnyObject? = nil) {
+    open func toggleLeftViewController(_ sender: AnyObject? = nil) {
         toggle(drawerSide: .left)
     }
     
     /// Action for NTDrawerBarButtonItem that is added by default to the centerViewController
-    internal func toggleRightViewController(_ sender: AnyObject? = nil) {
+    open func toggleRightViewController(_ sender: AnyObject? = nil) {
         toggle(drawerSide: .right)
     }
     

@@ -27,6 +27,9 @@
 //  Typography defaults inspired by https://experience.sap.com/fiori-design-ios/article/typography/
 //
 
+import Foundation
+import CoreFoundation
+
 public enum NTPreferredFontStyle {
     case title, subtitle, body, callout, caption, footnote, headline, subhead, disabled
 }
@@ -47,6 +50,17 @@ public struct Font {
             }
         }
         return Font.internalBundle!
+    }
+    
+    
+    /// Prints the available/loaded fonts
+    public static func whatIsAvailable() {
+        for family in UIFont.familyNames {
+            print("\(family)")
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print("== \(name)")
+            }
+        }
     }
     
     
@@ -71,7 +85,7 @@ public struct Font {
         }
         
         // Else try to load the font
-        guard let url = bundle.url(forResource: name, withExtension: withExtension) else {
+        guard let url = fromBundle.url(forResource: name, withExtension: withExtension) else {
             Log.write(.error, "Failed to find the font: \(name).\(withExtension) in the supplied bundle")
             return nil
         }
@@ -80,8 +94,10 @@ public struct Font {
         }
         let font = CGFont(fontDataProvider)
         var error: Unmanaged<CFError>?
+        
         guard CTFontManagerRegisterGraphicsFont(font, &error) else {
             Log.write(.error, "Failed to register font from file: \(name).\(withExtension)")
+            Log.write(.error, error.debugDescription)
             return nil
         }
         return UIFont(name: name, size: size)
@@ -113,6 +129,8 @@ public struct Font {
         public static let Black         = Font.load(name: "Roboto-Black")!
         public static let BlackItalic   = Font.load(name: "Roboto-BlackItalic")!
     }
+    
+    public static let BebasNeue = Font.load(name: "BebasNeue", withExtension: "otf", withSize: 15)
 }
 
 public extension UILabel {
