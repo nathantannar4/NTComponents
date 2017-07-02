@@ -49,7 +49,8 @@ import NTComponents
 2. Copy the NTComponents.framework product to your project
 
 ## Release History
-
+* 0.0.6
+    * More views, bug fixes and optimizations
 * 0.0.6
     * Added calendar view integration from JTAppleCalendar and an all new NTDrawerController
 * 0.0.5

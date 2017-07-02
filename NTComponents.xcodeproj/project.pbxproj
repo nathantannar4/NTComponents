@@ -804,10 +804,10 @@
 			isa = PBXGroup;
 			children = (
 				38C039451F0966C9007BDD88 /* Color.swift */,
-				38C039461F0966C9007BDD88 /* FAType.swift */,
 				38C039471F0966C9007BDD88 /* Font.swift */,
-				38C039481F0966C9007BDD88 /* GMDType.swift */,
 				38C039491F0966C9007BDD88 /* Icon.swift */,
+				38C039461F0966C9007BDD88 /* FAType.swift */,
+				38C039481F0966C9007BDD88 /* GMDType.swift */,
 			);
 			name = Styling;
 			sourceTree = "<group>";

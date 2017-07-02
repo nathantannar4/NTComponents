@@ -9,7 +9,7 @@ s.summary = "A collection of everything I find useful when developing any app!"
 s.requires_arc = true
 
 # 2 - Version
-s.version = "0.0.6"
+s.version = "0.0.7"
 
 # 3 - License
 s.license = { :type => "MIT", :file => "LICENSE" }

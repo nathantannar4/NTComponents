@@ -18,7 +18,7 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
         titleLabel.text = "NTComponents"
         subtitleLabel.text = "Demo"
         
-        didLogIn()
+//        didLogIn()
     }
     
     override func loginLogic(sender: NTLoginButton) {
@@ -38,7 +38,10 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
             StandardViewControllers().withTitle("Controllers"),
             AlertsViewController().withTitle("Alerts"),
             FormViewController().withTitle("Form"),
-            CalendarViewController().withTitle("Calendar")
+            CalendarViewController().withTitle("Calendar"),
+            TimelineTableViewController().withTitle("Timeline"),
+            ViewController().withTitle("Magic View"),
+            ColorsCollectionView().withTitle("Colors")
         ])
         tabVC.tabBarHeight = 44
         tabVC.title = "NTComponents"

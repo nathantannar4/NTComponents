@@ -190,7 +190,7 @@ open class NTScrollableTabBar: UIView {
     /**
      Make the tapped cell the current
 
-     - parameter index: Next IndexPath√
+     - parameter index: Next IndexPath
      */
     fileprivate func updateCurrentIndexForTap(_ index: Int) {
         deselectVisibleCells()

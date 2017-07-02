@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var items = [NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: "NTComponents", subtitle: "Demo", body: "Here lies source code examples to demonstrate how easy it is to make beautiful apps with NTComponents")]
         
         for _ in 0...2 {
-            let randomItem = NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: String.random(ofLength: 16), subtitle: String.random(ofLength: 10), body: String.random(ofLength: 100))
+            let randomItem = NTOnboardingDataSet(image: #imageLiteral(resourceName: "NT Components Banner"), title: Lorem.words(nbWords: 3), subtitle: Lorem.sentence(), body: Lorem.paragraph())
             items.append(randomItem)
         }
         
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
     
         /// Skip showing slide show
-        window?.rootViewController = root.completionViewController
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         
         return true

@@ -86,7 +86,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
         }
     }
     
-
     // MARK: - Initialization
     
     public convenience init(viewControllers: [UIViewController]) {
@@ -280,7 +279,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         shouldScrollCurrentBar = true
         tabBar?.scrollToHorizontalCenter()
-//        let _ = pendingViewControllers.map({ $0.beginAppearanceTransition(true, animated: true) })
 
         // Order to prevent the the hit repeatedly during animation
         tabBar?.updateCollectionViewUserInteractionEnabled(false)
@@ -291,8 +289,6 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
             tabBar?.updateCurrentIndex(currentIndex, shouldScroll: false)
             beforeIndex = currentIndex
         }
-//        pageViewController.viewControllers?[0].endAppearanceTransition()
-//        previousViewControllers[0].viewDidDisappear(true)
         
         tabBar?.updateCollectionViewUserInteractionEnabled(true)
     }
