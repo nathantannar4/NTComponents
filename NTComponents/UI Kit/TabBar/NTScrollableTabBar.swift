@@ -48,6 +48,7 @@ open class NTScrollableTabBar: UIView {
     fileprivate var currentBarViewWidth: CGFloat = 0.0
     fileprivate var currentBarViewLeftConstraint: NSLayoutConstraint?
     fileprivate var tabHeight: CGFloat = 32
+    fileprivate var tabBarPosition: NTTabBarPosition = .top
 
     open var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -112,7 +113,7 @@ open class NTScrollableTabBar: UIView {
         currentBarViewHeightConstraint?.constant = barHeight
         currentBarView.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        self.tabBarPosition = barPosition
         if barPosition == .bottom {
             currentBarView.anchor(topAnchor, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: barHeight)
             layer.shadowOffset = CGSize(width: -Color.Default.Shadow.Offset.width, height: -Color.Default.Shadow.Offset.height)
@@ -266,29 +267,10 @@ extension NTScrollableTabBar: UICollectionViewDataSource {
 
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NTScrollableTabBarItem.cellIdentifier, for: indexPath) as! NTScrollableTabBarItem
-        configureCell(cell, indexPath: indexPath)
+        cell.title = pageTabItems[indexPath.item]
+        cell.isCurrent = indexPath.item == (currentIndex % pageTabItemsCount)
+        cell.tabBarPosition = tabBarPosition
         return cell
-    }
-
-    open func configureCell(_ cell: NTScrollableTabBarItem, indexPath: IndexPath) {
-        let fixedIndex = indexPath.item
-        cell.title = pageTabItems[fixedIndex]
-        cell.isCurrent = fixedIndex == (currentIndex % pageTabItemsCount)
-        cell.tabItemButtonPressedBlock = { [weak self, weak cell] in
-            var direction: UIPageViewControllerNavigationDirection = .forward
-            if let currentIndex = self?.currentIndex {
-                if indexPath.item < currentIndex {
-                    direction = .reverse
-                }
-            }
-            self?.pageItemPressedBlock?(fixedIndex, direction)
-
-            if cell?.isCurrent == false {
-                // Not accept touch events to scroll the animation is finished
-                self?.updateCollectionViewUserInteractionEnabled(false)
-            }
-            self?.updateCurrentIndexForTap(indexPath.item)
-        }
     }
 
     open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -312,6 +294,7 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
             if let cell = collectionView.cellForItem(at: indexPath) as? NTScrollableTabBarItem {
                 cell.showCurrentBarView()
             }
+            
         }
     }
 
@@ -326,6 +309,22 @@ extension NTScrollableTabBar: UICollectionViewDelegate {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
             shouldScrollToItem = false
         }
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let fixedIndex = indexPath.item
+        let isCurrent = fixedIndex == (currentIndex % pageTabItemsCount)
+        var direction: UIPageViewControllerNavigationDirection = .forward
+        if indexPath.item < currentIndex {
+            direction = .reverse
+        }
+        self.pageItemPressedBlock?(fixedIndex, direction)
+        
+        if !isCurrent {
+            // Not accept touch events to scroll the animation is finished
+            self.updateCollectionViewUserInteractionEnabled(false)
+        }
+        self.updateCurrentIndexForTap(indexPath.item)
     }
 }
 

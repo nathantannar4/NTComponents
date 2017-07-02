@@ -29,7 +29,6 @@ import UIKit
 
 open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
 
-    open var tabItemButtonPressedBlock: ((Void) -> Void)?
     open var title: String? {
         get {
             return titleLabel.text
@@ -64,9 +63,25 @@ open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
         return label
     }()
     
+    open var tabBarPosition: NTTabBarPosition = .top {
+        didSet {
+            currentBarView.removeAllConstraints()
+            
+            if tabBarPosition == .top {
+                currentBarView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
+            } else {
+                currentBarView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
+            }
+        }
+    }
+    
     fileprivate var currentTabLineWeight: CGFloat = 2.0 {
         didSet {
-            currentBarView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
+            if tabBarPosition == .top {
+                currentBarView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
+            } else {
+                currentBarView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: currentTabLineWeight)
+            }
         }
     }
     
@@ -98,12 +113,6 @@ open class NTScrollableTabBarItem: NTAnimatedCollectionViewCell {
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        tabItemButtonPressedBlock?()
     }
 
     // MARK: - User Actions

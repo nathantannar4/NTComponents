@@ -203,7 +203,7 @@ class AlertsViewController: NTTableViewController, UIViewControllerTransitioning
         }))
         let actionSheet = NTActionSheetViewController(title: "Title", subtitle: "Subtitle", actions: actions)
         actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
-        present(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: false, completion: nil)
         
         DispatchQueue.executeAfter(2) { 
             actionSheet.insertAction(NTActionSheetItem(title: "Delayed Action", icon: withImages ? Icon.NTLogo : nil, action: {

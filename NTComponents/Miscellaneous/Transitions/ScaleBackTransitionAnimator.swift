@@ -25,34 +25,19 @@
 //  Created by Nathan Tannar on 7/2/17.
 //
 
-open class ScaleBackTransitionAnimatorDelegate: NSObject, UIViewControllerTransitioningDelegate {
-    
-    open var delay: TimeInterval = 0
-    open var duration: TimeInterval = 0.5
-    open var scale: CGFloat = 0.85
-    
-    open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ScaleBackTransitionAnimator(scale: scale, duration: duration, delay: delay, forwardTransition: true)
-    }
-    
-    open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ScaleBackTransitionAnimator(scale: scale, duration: duration, delay: delay, forwardTransition: false)
-    }
-}
-
 open class ScaleBackTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    open var forwardTransition = true
-    open var delay: TimeInterval = 0
-    open var duration: TimeInterval = 0.5
-    open let scale: CGFloat
+    open var forwardTransition: Bool
+    open var delay: TimeInterval
+    open var duration: TimeInterval
+    open var scale: CGFloat
     
-    public init(scale: CGFloat, duration: TimeInterval = 0.5, delay: TimeInterval = 0, forwardTransition: Bool) {
+    public init(scale: CGFloat = 0.85, duration: TimeInterval = 0.5, delay: TimeInterval = 0, forwardTransition: Bool = true) {
         self.scale = scale
-        super.init()
         self.delay = delay
         self.duration = duration
         self.forwardTransition = forwardTransition
+        super.init()
     }
     
     open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
