@@ -37,9 +37,7 @@ open class NTView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        tintColor = Color.Default.Tint.View
-        backgroundColor = Color.Default.Background.View
+        setup()
     }
     
     public convenience init() {
@@ -47,6 +45,12 @@ open class NTView: UIView {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    open func setup() {
+        tintColor = Color.Default.Tint.View
+        backgroundColor = Color.Default.Background.View
     }
 }

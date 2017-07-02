@@ -1894,11 +1894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NTComponents/UI Kit/Views/NTAnimatedView.swift"
-            timestampString = "518414490.895675"
+            timestampString = "520710438.475878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "animateToNormal()"
             landmarkType = "7">
          </BreakpointContent>

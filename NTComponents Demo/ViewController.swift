@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NTComponents
 
 class ViewController: UIViewController, NTMagicViewDelegate {
     

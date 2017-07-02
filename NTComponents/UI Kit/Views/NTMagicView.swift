@@ -35,7 +35,7 @@ import UIKit
     @objc optional func magicView(_ magicView: NTMagicView, shouldSnapToFrame frame: CGRect) -> Bool
 }
 
-open class NTMagicView: UIView {
+open class NTMagicView: NTView {
     
     open var delegate: NTMagicViewDelegate?
     open var panGestureRecognizer: UIPanGestureRecognizer?
@@ -92,7 +92,8 @@ open class NTMagicView: UIView {
     
     
     /// Sets up the views default properties
-    open func setup() {
+    open override func setup() {
+        super.setup()
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         addGestureRecognizer(panGestureRecognizer!)
     }

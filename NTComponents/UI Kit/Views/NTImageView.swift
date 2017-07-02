@@ -35,8 +35,9 @@ open class NTImageView: UIImageView {
     open static let imageCache = NSCache<NSString, DiscardableImageCacheItem>()
     
     open var shouldUseEmptyImage = true
+    open var shouldExpandOnTap = true
     
-    private var emptyImage: UIImage?
+    fileprivate var emptyImage: UIImage?
     
     // MARK: - Handlers
     

@@ -106,7 +106,8 @@ open class NTAnimatedView: NTView {
         }
     }
     
-    open func setup() {
+    open override func setup() {
+        super.setup()
         setupRippleView()
         
         rippleBackgroundView.backgroundColor = rippleBackgroundColor

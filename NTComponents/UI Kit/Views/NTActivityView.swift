@@ -84,7 +84,8 @@ open class NTActivityView: NTView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open func setup() {
+    open override func setup() {
+        super.setup()
         backgroundColor = .clear
         circleLayer.lineCap = "round"
         circleLayer.lineWidth = 4
