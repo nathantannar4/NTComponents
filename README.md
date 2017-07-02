@@ -1,4 +1,4 @@
-<img src="https://nathantannar.me/NTComponents/NTComponents/Assets/NT%20Components%20Banner.jpg">
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/NTComponents/Assets/NT%20Components%20Banner.jpg">
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/NTComponents.svg?style=flat)](https://cocoapods.org/pods/NTUIKit)
@@ -6,18 +6,21 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/NTComponents.svg)](https://img.shields.io/cocoapods/v/NTComponents.svg)   [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/NTComponents.svg)]()
 <br>
 
+For the better part of two years I have been learning Swift. During this time I used a lot of 3rd party dependencies to build out my apps. While they were useful for getting started, I wanted to dive deeper and create my own set of components that would have the essentials I would need to develop apps moving forward.
+
 I faced an ongoing problem of always having to set the tint color, font choice and general defaults for every project. To solve this I made `NTComponents`. A set of classes that will inherit defaults defined in `AppDelegate`. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.
 
 ## Features
 
 * Maintain consistency and style with ease
     * Set global app defaults, such as color or font, that will be defaults in all NTComponent classes
-* New base class controllers to work with
-* Material color palette built in
-* Ripple effect for buttons and views available
-* Common icons built in
+* Custom container controllers
+    * NTDrawerController, NTScrollableTabBarController and more!
+* Material color palette available
+* FontAwesome and GoogleMaterialDesign icons available
+* Material ripple effect for buttons and views available
 * Programatic auto layout
-* Many useful extensions
+* Many useful extensions (seriously take a look!)
 
 ## Documentation
 While NTComponents has yet to be fully documented, you can find the docs here: https://nathantannar.me/NTComponents/docs/
@@ -49,7 +52,7 @@ import NTComponents
 2. Copy the NTComponents.framework product to your project
 
 ## Release History
-* 0.0.6
+* 0.0.7
     * More views, bug fixes and optimizations
 * 0.0.6
     * Added calendar view integration from JTAppleCalendar and an all new NTDrawerController
@@ -85,12 +88,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // If you want the shadow to be more standard
         Color.Default.setCleanShadow()
-        
+
         // Set your font defaults
         Font.Default.Title = Font.Roboto.Medium.withSize(15)
         Font.Default.Subtitle = Font.Roboto.Regular
         Font.Default.Body = Font.Roboto.Regular.withSize(13)
-        
+
         return true
     }
 
@@ -98,12 +101,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 ```
-More Coming Soon
+## Screen Captures
+
+###### Onboarding
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/Onboarding1.png" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/Onboarding2.png" width="242" height="432">
+
+###### Login
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTLoginViewController.png" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTEmailAuthViewController.png" width="242" height="432">
+
+###### Alerts
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTActionSheetController.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTAlertViewController.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTChime.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTPing.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTActivityViews.gif" width="242" height="432">
+
+###### Controller Containers
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTDrawerController.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTScrollableTabBarController.gif" width="242" height="432">
+
+###### Froms
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTFormController.gif" width="242" height="432">
+
+###### And Much, Much, More
+
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTMagicView.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/Colors.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTCalendarViewController.png" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTTimelineCell.png" width="242" height="432">
+
 
 ## Planned Improvements/Additons
 * NTCollectionViewCell
     * More base cells
-* More useful controllers
 * Camera controller
 * More docs
 
@@ -111,9 +138,13 @@ More Coming Soon
 
 We would love for you to contribute to `NTComponents` with more useful extensions, models or UI classes. If interested please contact myself.
 
+## Bugs
+
+Find a bug? Please feel free to let me know!
+
 ## Author
 
-<img src="https://nathantannar.me/NTComponents/NTComponents/Assets/Nathan.png" width="75" height="75">
+<img src="https://github.com/nathantannar4/NTComponents/raw/master/NTComponents/Assets/Nathan.png" width="75" height="75">
 Nathan Tannar - https://nathantannar.me
 
 ## License
