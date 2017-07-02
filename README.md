@@ -147,6 +147,19 @@ Find a bug? Please feel free to let me know!
 <img src="https://github.com/nathantannar4/NTComponents/raw/master/NTComponents/Assets/Nathan.png" width="75" height="75">
 Nathan Tannar - https://nathantannar.me
 
+## Acknowledgements
+
+I would like to thank the following open source developers. Some of which I either drew inspiration upon or reworked their code into `NTComponents`
+
+Brian Voong - https://github.com/bhlvoong/LBTAComponents
+Raul Riera - https://github.com/raulriera/TextFieldEffects
+patchthecode - https://github.com/patchthecode/JTAppleCalendar
+Zheng-Xiang Ke - https://github.com/kf99916/TimelineTableViewCell
+Ryo Aoyama - https://github.com/ra1028/Former
+Amornchai Kanokpullwad - https://github.com/zoonooz/ZFRippleButton
+
+And to all of the contributors on StackOverflow
+
 ## License
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
