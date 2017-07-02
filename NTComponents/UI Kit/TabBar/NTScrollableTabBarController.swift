@@ -254,11 +254,7 @@ open class NTScrollableTabBarController: NTViewController, UIPageViewControllerD
 
     fileprivate func nextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
 
-        guard var index = viewControllers.index(of: viewController) else {
-            return nil
-        }
-        
-
+        guard var index = viewControllers.index(of: viewController) else { return nil }
         if isAfter {
             index += 1
         } else {

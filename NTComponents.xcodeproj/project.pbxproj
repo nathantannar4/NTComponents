@@ -126,6 +126,8 @@
 		389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */; };
 		38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5F05D1EFE1A4000BFE240 /* NTFormActionCell.swift */; };
 		38AFA4D71EE509170056DDFC /* NTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */; };
+		38C037AD1F095E9C007BDD88 /* NTMagicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C037AC1F095E9C007BDD88 /* NTMagicView.swift */; };
+		38C037AF1F095EAB007BDD88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C037AE1F095EAB007BDD88 /* ViewController.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
@@ -351,6 +353,8 @@
 		389AF44A1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCredentialPromptViewController.swift; sourceTree = "<group>"; };
 		38A5F05D1EFE1A4000BFE240 /* NTFormActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormActionCell.swift; path = Collection/Cells/NTFormActionCell.swift; sourceTree = "<group>"; };
 		38AFA4D61EE509170056DDFC /* NTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSegmentedControl.swift; path = Controls/NTSegmentedControl.swift; sourceTree = "<group>"; };
+		38C037AC1F095E9C007BDD88 /* NTMagicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMagicView.swift; sourceTree = "<group>"; };
+		38C037AE1F095EAB007BDD88 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -735,6 +739,7 @@
 				38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */,
 				388C1EE71EE528840036AECE /* NTToolbar.swift */,
 				38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */,
+				38C037AC1F095E9C007BDD88 /* NTMagicView.swift */,
 				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
 			path = Views;
@@ -744,6 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				389AF3D41EB307370089E9C1 /* MapViewController.swift */,
+				38C037AE1F095EAB007BDD88 /* ViewController.swift */,
 				38CACA511EF58F1700F07499 /* TabBarController.swift */,
 				38CACA531EF58F4A00F07499 /* FeedViewController.swift */,
 				38ECA8B51EE78C0100639A19 /* FormViewController.swift */,
@@ -1068,6 +1074,7 @@
 				386BA3AD1EF9EDEF0075EAB2 /* DrawerViewController.swift in Sources */,
 				380461061EA2A787008A03B5 /* TableViewController.swift in Sources */,
 				38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */,
+				38C037AF1F095EAB007BDD88 /* ViewController.swift in Sources */,
 				38CACA541EF58F4A00F07499 /* FeedViewController.swift in Sources */,
 				389AF3D51EB307370089E9C1 /* MapViewController.swift in Sources */,
 				380460F51EA2A6C2008A03B5 /* AppDelegate.swift in Sources */,
@@ -1082,6 +1089,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C037AD1F095E9C007BDD88 /* NTMagicView.swift in Sources */,
 				38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */,
 				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,

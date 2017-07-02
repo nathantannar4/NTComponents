@@ -63,8 +63,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// Set completion to our login page
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
         
+        var rootControllers: [UIViewController] = {
+            var vcs = [UIViewController]()
+            for index in 0...4 {
+                let vc = NTViewController()
+                vc.title = "Item \(index + 1)"
+                vc.tabBarItem.image = Icon.NTLogo
+                vc.view.backgroundColor = Color.Default.Background.ViewController.darker(by: CGFloat(index * 2))
+                vcs.append(vc)
+            }
+            return vcs
+        }()
+        
         /// Skip showing slide show
-        window?.rootViewController = root
+        window?.rootViewController = NTScrollableTabBarController(viewControllers: rootControllers)
         window?.makeKeyAndVisible()
         
         return true
