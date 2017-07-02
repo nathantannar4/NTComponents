@@ -282,7 +282,7 @@ open class NTActionSheetViewController: UIViewController, UITableViewDataSource,
         tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .fade)
         
         view.layoutIfNeeded()
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
             self.topAnchor?.constant = -height
             self.view.layoutIfNeeded()
         }, completion: { _ in

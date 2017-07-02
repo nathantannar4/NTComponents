@@ -15,7 +15,7 @@
 		38084AC01EA311EE00329516 /* NTComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38084AC51EA319D900329516 /* ColorsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38084AC41EA319D900329516 /* ColorsCollectionView.swift */; };
 		380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */; };
-		380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */; };
+		380EEA181EDE7FFD0018FC37 /* CircularTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* CircularTransitionAnimator.swift */; };
 		380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */; };
 		380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */; };
 		381890311EF9CD6000947205 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381890301EF9CD6000947205 /* UIButton.swift */; };
@@ -23,7 +23,6 @@
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
 		3818F70A1E5BDF5000902E23 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3818F6F91E5BDF5000902E23 /* Log.swift */; };
 		3818F70F1E5BE05800902E23 /* NTComponents.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3818F70E1E5BE05800902E23 /* NTComponents.podspec */; };
-		382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */; };
 		3830CA141F008B0C008A0D11 /* StandardViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */; };
 		3830CA161F00AC99008A0D11 /* NTFormDateInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830CA151F00AC99008A0D11 /* NTFormDateInputCell.swift */; };
 		38351D481EF7435E0046BB2E /* NTDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38351D471EF7435E0046BB2E /* NTDrawerController.swift */; };
@@ -128,6 +127,7 @@
 		38C0394C1F0966C9007BDD88 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039471F0966C9007BDD88 /* Font.swift */; };
 		38C0394D1F0966C9007BDD88 /* GMDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039481F0966C9007BDD88 /* GMDType.swift */; };
 		38C0394E1F0966C9007BDD88 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039491F0966C9007BDD88 /* Icon.swift */; };
+		38C039511F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
@@ -239,7 +239,7 @@
 		380461051EA2A787008A03B5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		38084AC41EA319D900329516 /* ColorsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionView.swift; sourceTree = "<group>"; };
 		380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProgressHUD.swift; sourceTree = "<group>"; };
-		380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransition.swift; sourceTree = "<group>"; };
+		380EEA171EDE7FFD0018FC37 /* CircularTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransitionAnimator.swift; sourceTree = "<group>"; };
 		380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
 		380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCameraViewController.swift; sourceTree = "<group>"; };
 		381890301EF9CD6000947205 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -249,7 +249,6 @@
 		3818F6E41E5BDED000902E23 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3818F6F91E5BDF5000902E23 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3818F70E1E5BE05800902E23 /* NTComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTComponents.podspec; sourceTree = "<group>"; };
-		382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCircularTransitioningDelegate.swift; sourceTree = "<group>"; };
 		3830CA131F008B0C008A0D11 /* StandardViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardViewControllers.swift; sourceTree = "<group>"; };
 		3830CA151F00AC99008A0D11 /* NTFormDateInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTFormDateInputCell.swift; path = Form/Cells/NTFormDateInputCell.swift; sourceTree = "<group>"; };
 		38351D471EF7435E0046BB2E /* NTDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDrawerController.swift; sourceTree = "<group>"; };
@@ -355,6 +354,7 @@
 		38C039471F0966C9007BDD88 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Styling/Font.swift; sourceTree = "<group>"; };
 		38C039481F0966C9007BDD88 /* GMDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMDType.swift; path = Styling/GMDType.swift; sourceTree = "<group>"; };
 		38C039491F0966C9007BDD88 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = Styling/Icon.swift; sourceTree = "<group>"; };
+		38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleBackTransitionAnimator.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -472,8 +472,8 @@
 		380EEA161EDE7FD80018FC37 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				380EEA171EDE7FFD0018FC37 /* NTCircularTransition.swift */,
-				382329421EE28D2600945C31 /* NTCircularTransitioningDelegate.swift */,
+				380EEA171EDE7FFD0018FC37 /* CircularTransitionAnimator.swift */,
+				38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -1094,7 +1094,6 @@
 				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3881E33A1F020DFD0013D241 /* Lorem.swift in Sources */,
-				382329431EE28D2600945C31 /* NTCircularTransitioningDelegate.swift in Sources */,
 				3863D8B01EB0686E003B73F7 /* NSMutableAttributedString.swift in Sources */,
 				3863D8D21EB0686E003B73F7 /* NTTabBarItem.swift in Sources */,
 				38ECA8B81EE7C58E00639A19 /* NTFormInputCell.swift in Sources */,
@@ -1183,10 +1182,11 @@
 				389AF3FF1EB889240089E9C1 /* NTTableViewHeaderFooterView.swift in Sources */,
 				380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */,
 				3881E3341F020DA50013D241 /* NTTimelineTableViewCell.swift in Sources */,
+				38C039511F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift in Sources */,
 				3863D8B61EB0686E003B73F7 /* UIView.swift in Sources */,
 				3863D8D91EB0686E003B73F7 /* NTTextView.swift in Sources */,
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
-				380EEA181EDE7FFD0018FC37 /* NTCircularTransition.swift in Sources */,
+				380EEA181EDE7FFD0018FC37 /* CircularTransitionAnimator.swift in Sources */,
 				38ECA8D41EE9AC8400639A19 /* NTCollectionDatasourceCell.swift in Sources */,
 				38CACA2B1EF4D80C00F07499 /* NTCalendarViewCell.swift in Sources */,
 				388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */,

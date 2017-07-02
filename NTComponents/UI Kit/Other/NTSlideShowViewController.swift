@@ -169,10 +169,7 @@ open class NTOnboardingViewController: NTPageViewController {
                 dismissViewController(to: .left, completion: nil)
                 return
             }
-            completion.beginAppearanceTransition(true, animated: true)
-            presentViewController(completion, from: .right, completion: {
-                completion.endAppearanceTransition()
-            })
+            presentViewController(completion, from: .right, completion: nil)
         } else {
             super.slideToNextViewController()
         }

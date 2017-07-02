@@ -1,5 +1,5 @@
 //
-//  NTCircularTransition.swift
+//  CircularTransitionAnimator.swift
 //  NTComponents
 //
 //  Copyright © 2017 Nathan Tannar.
@@ -27,7 +27,7 @@
 
 import UIKit
 
-open class NTCircularTransition: NSObject, UIViewControllerAnimatedTransitioning {
+open class CircularTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     public enum NTTransitionMode:Int {
         case present, dismiss, pop

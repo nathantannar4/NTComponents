@@ -8,7 +8,7 @@
 
 import NTComponents
 
-class AlertsViewController: NTTableViewController {
+class AlertsViewController: NTTableViewController, UIViewControllerTransitioningDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -203,7 +203,7 @@ class AlertsViewController: NTTableViewController {
         }))
         let actionSheet = NTActionSheetViewController(title: "Title", subtitle: "Subtitle", actions: actions)
         actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
-        actionSheet.show()
+        present(actionSheet, animated: true, completion: nil)
         
         DispatchQueue.executeAfter(2) { 
             actionSheet.insertAction(NTActionSheetItem(title: "Delayed Action", icon: withImages ? Icon.NTLogo : nil, action: {

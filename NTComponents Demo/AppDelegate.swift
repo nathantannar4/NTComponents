@@ -39,10 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Font.Default.Callout = Font.Roboto.Regular.withSize(15)
         Font.Default.Footnote = Font.Roboto.Light.withSize(12)
         
-        
-        
-        
-        
         /// Setting trace level to MAX
         Log.setTraceLevel(to: .debug)
         
@@ -64,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
     
         /// Skip showing slide show
-        window?.rootViewController = root
+        window?.rootViewController = root.completionViewController
         window?.makeKeyAndVisible()
         
         return true

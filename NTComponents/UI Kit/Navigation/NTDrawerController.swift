@@ -627,19 +627,6 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
-    /// Closes the active drawer if the viewControllerToPresent.modalPresentationStyle is anything other than .overCurrentContext
-    open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        
-        if viewControllerToPresent.modalPresentationStyle != .overCurrentContext && viewControllerToPresent.modalPresentationStyle != .custom {
-            close(drawerSide: activeSide) {
-                super.present(viewControllerToPresent, animated: flag, completion: completion)
-            }
-        } else {
-            super.present(viewControllerToPresent, animated: flag, completion: completion)
-        }
-    }
-    
     // MARK: - Accessor Variables
     
     /// Accessor to the centerViewController

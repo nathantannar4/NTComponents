@@ -79,7 +79,7 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
     open var animationSpringVelocity: CGFloat = 1.2
     open var animationOptions: UIViewAnimationOptions = [.curveEaseIn]
     open var frameTopAnchor: NSLayoutConstraint?
-    open var transition = NTCircularTransition()
+    open var transition = CircularTransitionAnimator()
     open var height: CGFloat = 48
     open var detailController: UIViewController?
     

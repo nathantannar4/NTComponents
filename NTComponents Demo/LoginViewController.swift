@@ -36,6 +36,7 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
     func didLogIn() {
         let tabVC = TabBarController(viewControllers: [
             StandardViewControllers().withTitle("Controllers"),
+            TableViewController().withTitle("Table"),
             AlertsViewController().withTitle("Alerts"),
             FormViewController().withTitle("Form"),
             CalendarViewController().withTitle("Calendar"),
@@ -44,6 +45,7 @@ class LoginViewController: NTLoginViewController, NTEmailAuthDelegate {
             ColorsCollectionView().withTitle("Colors")
         ])
         tabVC.tabBarHeight = 44
+        tabVC.tabBarItemWidth = 100
         tabVC.title = "NTComponents"
         tabVC.subtitle = "Demo"
         tabVC.tabBarPosition = .bottom
