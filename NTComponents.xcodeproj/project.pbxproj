@@ -128,6 +128,7 @@
 		38C0394D1F0966C9007BDD88 /* GMDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039481F0966C9007BDD88 /* GMDType.swift */; };
 		38C0394E1F0966C9007BDD88 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039491F0966C9007BDD88 /* Icon.swift */; };
 		38C039511F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */; };
+		38C039A11F0AEDAC007BDD88 /* NTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
@@ -355,6 +356,7 @@
 		38C039481F0966C9007BDD88 /* GMDType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMDType.swift; path = Styling/GMDType.swift; sourceTree = "<group>"; };
 		38C039491F0966C9007BDD88 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = Styling/Icon.swift; sourceTree = "<group>"; };
 		38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleBackTransitionAnimator.swift; sourceTree = "<group>"; };
+		38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCarouselView.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 				388C1EE71EE528840036AECE /* NTToolbar.swift */,
 				38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */,
 				38C037AC1F095E9C007BDD88 /* NTMagicView.swift */,
+				38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */,
 				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
 			path = Views;
@@ -1109,6 +1112,7 @@
 				3863D8DA1EB0686E003B73F7 /* NTAnimatedView.swift in Sources */,
 				3863D8B21EB0686E003B73F7 /* UIColor.swift in Sources */,
 				38ECA8C91EE8DEBE00639A19 /* NTFormProfileCell.swift in Sources */,
+				38C039A11F0AEDAC007BDD88 /* NTCarouselView.swift in Sources */,
 				388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */,
 				38CACA4C1EF4EA8C00F07499 /* UserInteractionFunctions.swift in Sources */,
 				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,

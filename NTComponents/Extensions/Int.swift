@@ -26,6 +26,12 @@
 //
 
 public extension Int {
+    
+    
+    public var cgFloat: CGFloat {
+        return CGFloat(self)
+    }
+    
     /**
      Return a random number between `min` and `max`.
      - note: The maximum value cannot be more than `UInt32.max - 1`

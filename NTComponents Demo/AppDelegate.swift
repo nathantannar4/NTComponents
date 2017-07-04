@@ -58,9 +58,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Set completion to our login page
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
+        
+        
+        let vc = NTViewController()
+        let carousel = NTCarouselView()
+        carousel.isInfinite = true
+        carousel.isAutoScrollEnabled = true
+        carousel.items = [(#imageLiteral(resourceName: "BackgroundA"), { print("Tapped Item 1") }),
+                          (#imageLiteral(resourceName: "BackgroundB"), { print("Tapped Item 2") }),
+                          (#imageLiteral(resourceName: "BackgroundC"), { print("Tapped Item 3") })]
+        vc.view.addSubview(carousel)
+        carousel.anchor(vc.view.topAnchor, left: vc.view.leftAnchor, bottom: nil, right: vc.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 150)
     
         /// Skip showing slide show
-        window?.rootViewController = root.completionViewController
+        window?.rootViewController = vc //root.completionViewController
         window?.makeKeyAndVisible()
         
         return true
