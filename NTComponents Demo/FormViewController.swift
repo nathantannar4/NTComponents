@@ -74,7 +74,7 @@ class FormViewController: NTFormViewController, NTNavigationViewControllerDelega
         }
         
         let cellF = NTFormImageViewCell()
-        cellF.imageView.image = #imageLiteral(resourceName: "Background")
+        cellF.imageView.image = #imageLiteral(resourceName: "BackgroundA")
         cellF.actionButton.isHidden = false
         cellF.onImageViewTap { (imageView) in
             print("Tapped ImageView")

@@ -104,6 +104,9 @@
 		3881E3751F0629290013D241 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3741F0629290013D241 /* RightViewController.swift */; };
 		3881E3771F0631B80013D241 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3761F0631B80013D241 /* MaterialIcons.ttf */; };
 		3881E3831F0697F60013D241 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3821F0697F60013D241 /* BebasNeue.otf */; };
+		388A2EF71F0B47AD00311148 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A2EF51F0B47AD00311148 /* PulleyPassthroughScrollView.swift */; };
+		388A2EF81F0B47AD00311148 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A2EF61F0B47AD00311148 /* PulleyViewController.swift */; };
+		388A2EFC1F0B57B300311148 /* NTExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A2EFB1F0B57B300311148 /* NTExpandableView.swift */; };
 		388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */; };
 		388C1EE51EE528770036AECE /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE21EE528770036AECE /* NTButton.swift */; };
 		388C1EE61EE528770036AECE /* NTSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C1EE31EE528770036AECE /* NTSwitch.swift */; };
@@ -332,6 +335,9 @@
 		3881E3741F0629290013D241 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		3881E3761F0631B80013D241 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = ../Fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		3881E3821F0697F60013D241 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeue.otf; path = ../Fonts/BebasNeue.otf; sourceTree = "<group>"; };
+		388A2EF51F0B47AD00311148 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulleyPassthroughScrollView.swift; path = Dependencies/Pully/PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
+		388A2EF61F0B47AD00311148 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulleyViewController.swift; path = Dependencies/Pully/PulleyViewController.swift; sourceTree = "<group>"; };
+		388A2EFB1F0B57B300311148 /* NTExpandableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTExpandableView.swift; sourceTree = "<group>"; };
 		388C1EE11EE528770036AECE /* NTDrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTDrawerBarButtonItem.swift; path = Controls/NTDrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		388C1EE21EE528770036AECE /* NTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTButton.swift; path = Controls/NTButton.swift; sourceTree = "<group>"; };
 		388C1EE31EE528770036AECE /* NTSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTSwitch.swift; path = Controls/NTSwitch.swift; sourceTree = "<group>"; };
@@ -739,6 +745,7 @@
 				388C1EE71EE528840036AECE /* NTToolbar.swift */,
 				38ECA8E41EEE6C2000639A19 /* NTTagListView.swift */,
 				38C037AC1F095E9C007BDD88 /* NTMagicView.swift */,
+				388A2EFB1F0B57B300311148 /* NTExpandableView.swift */,
 				38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */,
 				38FCFA811ED2D0C4007D3019 /* NTInputAccessoryView.swift */,
 			);
@@ -778,6 +785,15 @@
 				3881E3641F04DED10013D241 /* Info.plist */,
 			);
 			path = NTResume;
+			sourceTree = "<group>";
+		};
+		388A2EF41F0B479D00311148 /* Pully */ = {
+			isa = PBXGroup;
+			children = (
+				388A2EF51F0B47AD00311148 /* PulleyPassthroughScrollView.swift */,
+				388A2EF61F0B47AD00311148 /* PulleyViewController.swift */,
+			);
+			name = Pully;
 			sourceTree = "<group>";
 		};
 		388C1EEF1EE678C40036AECE /* Form */ = {
@@ -830,6 +846,7 @@
 		38CACA2F1EF4EA7400F07499 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				388A2EF41F0B479D00311148 /* Pully */,
 				38CACA301EF4EA7C00F07499 /* JTAppleCalendar */,
 			);
 			name = Dependencies;
@@ -1124,6 +1141,7 @@
 				38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */,
 				38C0394E1F0966C9007BDD88 /* Icon.swift in Sources */,
 				38CACA3F1EF4EA8C00F07499 /* CalendarEnums.swift in Sources */,
+				388A2EF81F0B47AD00311148 /* PulleyViewController.swift in Sources */,
 				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
 				38ECA8C11EE7D20B00639A19 /* NTFormLongInputCell.swift in Sources */,
@@ -1131,6 +1149,7 @@
 				3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */,
 				38ECA8C31EE7D23700639A19 /* NTFormControlCell.swift in Sources */,
 				3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */,
+				388A2EFC1F0B57B300311148 /* NTExpandableView.swift in Sources */,
 				3863D8D41EB0686E003B73F7 /* NTTableView.swift in Sources */,
 				3863D8D01EB0686E003B73F7 /* NTTabBar.swift in Sources */,
 				3863D8D51EB0686E003B73F7 /* NTTableViewCell.swift in Sources */,
@@ -1167,6 +1186,7 @@
 				38FCFA351ECFE1FE007D3019 /* NTEmailAuthViewController.swift in Sources */,
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
+				388A2EF71F0B47AD00311148 /* PulleyPassthroughScrollView.swift in Sources */,
 				38CACA411EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
 				38ECA8E11EEA636A00639A19 /* UITextView.swift in Sources */,

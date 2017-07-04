@@ -10,6 +10,8 @@ For the better part of two years I have been learning Swift. During this time I 
 
 I faced an ongoing problem of always having to set the tint color, font choice and general defaults for every project. To solve this I made `NTComponents`. A set of classes that will inherit defaults defined in `AppDelegate`. This grew into also adding useful extensions, models and custom views simplify app creation while maintaining great UI/UX.
 
+Hit that star button to show your support!
+
 ## Features
 
 * Maintain consistency and style with ease
@@ -119,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTDrawerController.gif" width="242" height="432"> <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTScrollableTabBarController.gif" width="242" height="432">
 
-###### Froms
+###### Forms
 
 <img src="https://github.com/nathantannar4/NTComponents/raw/master/Screenshots/NTFormController.gif" width="242" height="432">
 

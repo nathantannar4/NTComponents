@@ -69,7 +69,9 @@ open class NTCarouselView: UICollectionView, UICollectionViewDataSource, UIColle
     
     open var autoScrollTimeInterval: TimeInterval = 3 {
         didSet {
-            timer?.timeInterval = autoScrollTimeInterval
+            if isAutoScrollEnabled {
+                timer = Timer.scheduledTimer(timeInterval: autoScrollTimeInterval, target: self, selector: #selector(handleTimer(_:)), userInfo: nil, repeats: true)
+            }
         }
     }
     

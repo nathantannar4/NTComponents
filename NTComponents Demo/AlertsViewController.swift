@@ -19,7 +19,15 @@ class AlertsViewController: NTTableViewController, UIViewControllerTransitioning
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        let view = NTExpandableView()
+        view.textLabel.text = Lorem.sentence().capitalized
+        view.detailTextLabel.text = Lorem.paragraph()
+        view.backgroundColor = Color.Default.Background.NavigationBar
+        view.setDefaultShadow()
+        self.view.addSubview(view)
+        view.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        tableView.contentInset.top = 20
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
