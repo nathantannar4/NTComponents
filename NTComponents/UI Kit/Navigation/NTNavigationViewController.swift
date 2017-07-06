@@ -57,7 +57,7 @@ open class NTNavigationViewController: NTViewController {
         }
     }
     
-    open var delegate: NTNavigationViewControllerDelegate?
+    open weak var delegate: NTNavigationViewControllerDelegate?
 
     open let navigationBar: UIView = {
         let view = UIView()

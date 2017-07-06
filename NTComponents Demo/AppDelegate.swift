@@ -58,9 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// Set completion to our login page
         root.completionViewController = NTNavigationController(rootViewController: LoginViewController())
-    
+        
         /// Skip showing slide show
-        window?.rootViewController = root.completionViewController
+        window?.rootViewController = ExpandingTableViewController()
         window?.makeKeyAndVisible()
         
         return true

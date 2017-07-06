@@ -38,7 +38,7 @@ open class NTTabBar: UIView, NTTabBarItemDelegate {
         }
     }
     
-    public var delegate: NTTabBarDelegate?
+    public weak var delegate: NTTabBarDelegate?
     public var selectedItem: NTTabBarItem?
     public var numberOfItems: Int {
         get {

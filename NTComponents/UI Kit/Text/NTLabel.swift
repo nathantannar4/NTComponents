@@ -40,6 +40,7 @@ open class NTLabel: UILabel {
         setPreferredFontStyle(to: .body)
         minimumScaleFactor = 0.2
         numberOfLines = 0
+        lineBreakMode = .byWordWrapping
     }
 
     required public init?(coder aDecoder: NSCoder) {

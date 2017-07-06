@@ -32,7 +32,7 @@
 
 open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
-    open var delegate: NTEmailAuthDelegate?
+    open weak var delegate: NTEmailAuthDelegate?
     
     open let navBarView: UIView = {
         let view = UIView()

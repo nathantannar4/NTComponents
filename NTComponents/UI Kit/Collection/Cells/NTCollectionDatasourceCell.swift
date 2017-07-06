@@ -26,8 +26,8 @@
 //
 
 public struct NTCollectionDatasourceData {
-    public var dataSource: UICollectionViewDataSource?
-    public var delegate: UICollectionViewDelegate?
+    public weak var dataSource: UICollectionViewDataSource?
+    public weak var delegate: UICollectionViewDelegate?
     public var title: String?
     public var subtitle: String?
     public var cellSize: CGSize

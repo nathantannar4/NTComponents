@@ -29,7 +29,7 @@ import UIKit
 
 public class NTTableView: UITableView {
     
-    public var imageDataSource: NTTableViewImageDataSource?
+    public weak var imageDataSource: NTTableViewImageDataSource?
     
     public init() {
         super.init(frame: .zero, style: .plain)

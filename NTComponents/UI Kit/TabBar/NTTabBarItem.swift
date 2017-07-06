@@ -80,7 +80,7 @@ open class NTTabBarItem: NTAnimatedView {
         return bgColor.isLight ? Color.Default.Tint.TabBar : Color.White
     }
     
-    open var delegate: NTTabBarItemDelegate?
+    open weak var delegate: NTTabBarItemDelegate?
     
     //MARK: - Initialization
     

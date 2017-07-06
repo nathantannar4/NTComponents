@@ -37,7 +37,7 @@ import UIKit
 
 open class NTMagicView: NTView {
     
-    open var delegate: NTMagicViewDelegate?
+    open weak var delegate: NTMagicViewDelegate?
     open var panGestureRecognizer: UIPanGestureRecognizer?
     
     
