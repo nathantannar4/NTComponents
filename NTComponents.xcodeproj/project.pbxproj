@@ -17,7 +17,6 @@
 		380EEA141EDD4DF90018FC37 /* NTProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */; };
 		380EEA181EDE7FFD0018FC37 /* CircularTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA171EDE7FFD0018FC37 /* CircularTransitionAnimator.swift */; };
 		380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */; };
-		380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */; };
 		381890311EF9CD6000947205 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381890301EF9CD6000947205 /* UIButton.swift */; };
 		3818F6DC1E5BDEA600902E23 /* NTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3818F6DA1E5BDEA600902E23 /* NTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3818F6E51E5BDED000902E23 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3818F6E41E5BDED000902E23 /* LICENSE */; };
@@ -133,6 +132,7 @@
 		38C0394E1F0966C9007BDD88 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039491F0966C9007BDD88 /* Icon.swift */; };
 		38C039511F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */; };
 		38C039A11F0AEDAC007BDD88 /* NTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */; };
+		38C39FE81F12A1A200EAFBAA /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C39FE71F12A1A200EAFBAA /* RippleView.swift */; };
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
@@ -246,7 +246,6 @@
 		380EEA131EDD4DF90018FC37 /* NTProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProgressHUD.swift; sourceTree = "<group>"; };
 		380EEA171EDE7FFD0018FC37 /* CircularTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransitionAnimator.swift; sourceTree = "<group>"; };
 		380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTImagePickerController.swift; sourceTree = "<group>"; };
-		380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCameraViewController.swift; sourceTree = "<group>"; };
 		381890301EF9CD6000947205 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3818F6D71E5BDEA600902E23 /* NTComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NTComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818F6DA1E5BDEA600902E23 /* NTComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTComponents.h; sourceTree = "<group>"; };
@@ -365,6 +364,7 @@
 		38C039491F0966C9007BDD88 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = Styling/Icon.swift; sourceTree = "<group>"; };
 		38C039501F09A24C007BDD88 /* ScaleBackTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleBackTransitionAnimator.swift; sourceTree = "<group>"; };
 		38C039A01F0AEDAC007BDD88 /* NTCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTCarouselView.swift; sourceTree = "<group>"; };
+		38C39FE71F12A1A200EAFBAA /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleView.swift; sourceTree = "<group>"; };
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -476,6 +476,7 @@
 				380EEA161EDE7FD80018FC37 /* Transitions */,
 				3881E3391F020DFD0013D241 /* Lorem.swift */,
 				3881E33B1F020E580013D241 /* Person.swift */,
+				38C39FE71F12A1A200EAFBAA /* RippleView.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -493,7 +494,6 @@
 			isa = PBXGroup;
 			children = (
 				380EEA1D1EDE862D0018FC37 /* NTImagePickerController.swift */,
-				380EEA1F1EDE86960018FC37 /* NTCameraViewController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -1113,6 +1113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C39FE81F12A1A200EAFBAA /* RippleView.swift in Sources */,
 				38C037AD1F095E9C007BDD88 /* NTMagicView.swift in Sources */,
 				38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */,
 				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
@@ -1172,7 +1173,6 @@
 				386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */,
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
 				38CACA461EF4EA8C00F07499 /* JTAppleCalendarView.swift in Sources */,
-				380EEA201EDE86960018FC37 /* NTCameraViewController.swift in Sources */,
 				388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				38ECA8E51EEE6C2000639A19 /* NTTagListView.swift in Sources */,

@@ -185,6 +185,8 @@ open class NTTableViewCell: UITableViewCell {
     fileprivate func setup() {
         setupRippleView()
         
+        selectionStyle = .none
+        ripplePercent = 1.2
         tintColor = Color.Default.Tint.View
         textLabel?.setPreferredFontStyle(to: .body)
         textLabel?.numberOfLines = 0

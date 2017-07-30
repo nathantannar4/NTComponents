@@ -210,7 +210,7 @@ class AlertsViewController: NTTableViewController, UIViewControllerTransitioning
             NTToast(text: "Twitter").show(duration: 3.0)
         }))
         let actionSheet = NTActionSheetViewController(title: "Title", subtitle: "Subtitle", actions: actions)
-        actionSheet.addDismissAction(withText: "Dismiss", icon: withImages ? Icon.Delete : nil)
+        actionSheet.addDismissAction()
         present(actionSheet, animated: false, completion: nil)
         
         DispatchQueue.executeAfter(2) { 

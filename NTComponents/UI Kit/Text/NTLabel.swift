@@ -38,7 +38,7 @@ open class NTLabel: UILabel {
         super.init(frame: frame)
 
         setPreferredFontStyle(to: .body)
-        minimumScaleFactor = 0.2
+        minimumScaleFactor = 0.1
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
     }

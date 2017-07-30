@@ -32,19 +32,19 @@ open class NTActionSheetItem: NSObject {
     open var icon: UIImage?
     open var iconTint: UIColor?
     open var title: String?
-    open var color: UIColor
+    open var backgroundColor: UIColor
     open var action: (() -> Void)?
 
-    public required init(title: String?, icon: UIImage?, iconTint: UIColor?, color: UIColor? = Color.Default.Background.ViewController, action: (() -> Void)?) {
+    public required init(title: String?, icon: UIImage?, iconTint: UIColor?, backgroundColor: UIColor = Color.Default.Background.ViewController, action: (() -> Void)?) {
         self.title = title
         self.icon = icon
-        self.color = color ?? .white
+        self.backgroundColor = backgroundColor
         self.action = action
         self.iconTint = iconTint
     }
 
     public convenience init(title: String?, icon: UIImage?, action: (() -> Void)?) {
-        self.init(title: title, icon: icon, iconTint: Color.Default.Tint.View, color: .white, action: action)
+        self.init(title: title, icon: icon, iconTint: Color.Default.Tint.View, backgroundColor: .white, action: action)
     }
 }
 
@@ -215,7 +215,7 @@ open class NTActionSheetViewController: UIViewController, UITableViewDataSource,
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = NTTableViewCell()
-        cell.backgroundColor = actions[indexPath.row].color
+        cell.backgroundColor = actions[indexPath.row].backgroundColor
         cell.textLabel?.text = actions[indexPath.row].title
         cell.textLabel?.textAlignment = actions[indexPath.row].icon != nil ? .left : .center
         cell.imageView?.image = actions[indexPath.row].icon?.scale(to: 44)
@@ -290,8 +290,13 @@ open class NTActionSheetViewController: UIViewController, UITableViewDataSource,
         })
     }
     
-    open func addDismissAction(withText text: String = "Dismiss", icon: UIImage?, color: UIColor = .white) {
-        let dismissAction = NTActionSheetItem(title: text, icon: icon, iconTint: color.isLight ? UIColor.black : UIColor.white, color: color, action: nil)
+    open func addDismissAction() {
+        let dismissAction = NTActionSheetItem(title: "Dismiss", icon: nil, iconTint: Color.Gray.P800, backgroundColor: Color.Default.Background.ViewController, action: nil)
+        actions.append(dismissAction)
+    }
+    
+    open func addDismissAction(withText text: String = "Dismiss", icon: UIImage?, iconTint: UIColor, backgroundColor: UIColor) {
+        let dismissAction = NTActionSheetItem(title: text, icon: icon, iconTint: iconTint, backgroundColor: backgroundColor, action: nil)
         actions.append(dismissAction)
     }
 

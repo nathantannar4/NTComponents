@@ -118,7 +118,7 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         let cell: NTCollectionViewCell
         
         if let cls = datasource?.cellClass(indexPath) {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell 
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
         } else if let cellClasses = datasource?.cellClasses(), cellClasses.count > indexPath.section {
             let cls = cellClasses[indexPath.section]
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(cls), for: indexPath) as! NTCollectionViewCell
@@ -165,7 +165,7 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return datasource?.cellClass(indexPath)?.cellSize ?? datasource?.cellClasses()[indexPath.section].cellSize ?? CGSize(width: view.frame.width, height: 44)
+        return CGSize(width: view.frame.width, height: 44)
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -173,17 +173,15 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        guard let datasourceHeaders = datasource?.headerClasses()?.count, datasourceHeaders > section else {
-            return CGSize(width: view.frame.width, height: 20)
-        }
-        return datasource?.headerClasses()?[section].cellSize ?? CGSize(width: view.frame.width, height: 20)
+        return CGSize(width: view.frame.width, height: 20)
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        guard let datasourceFooters = datasource?.footerClasses()?.count, datasourceFooters > section else {
-            return CGSize(width: view.frame.width, height: 10)
-        }
-        return datasource?.footerClasses()?[section].cellSize ?? CGSize(width: view.frame.width, height: 10)
+        return CGSize(width: view.frame.width, height: 10)
+    }
+    
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return .leastNonzeroMagnitude
     }
     
     // MARK: - Refresh Methods

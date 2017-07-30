@@ -119,7 +119,7 @@ open class NTTabBarItem: NTAnimatedView {
         }
         set {
             super.tintColor = newValue
-            rippleColor = newValue.withAlpha(newAlpha: 0.4)
+            rippleColor = newValue.withAlpha(0.4)
         }
     }
     

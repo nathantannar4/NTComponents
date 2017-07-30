@@ -58,7 +58,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
     
     open let titleLabel: NTLabel = {
         let label = NTLabel(style: .title)
-        label.font = Font.Default.Headline.withSize(44)
+        label.font = Font.Default.Headline.withSize(22)
         label.adjustsFontSizeToFitWidth = true
         label.text = "Email Sign In"
         return label
@@ -150,7 +150,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         navBarView.addSubview(titleLabel)
         
         cancelButton.anchor(navBarView.topAnchor, left: navBarView.leftAnchor, bottom: nil, right: nil, topConstant: 24, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 30, heightConstant: 30)
-        titleLabel.anchor(cancelButton.bottomAnchor, left: cancelButton.leftAnchor, bottom: navBarView.bottomAnchor, right: navBarView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 6, rightConstant: 16, widthConstant: 0, heightConstant: 0)
+        titleLabel.anchor(cancelButton.bottomAnchor, left: cancelButton.leftAnchor, bottom: navBarView.bottomAnchor, right: navBarView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 2, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)

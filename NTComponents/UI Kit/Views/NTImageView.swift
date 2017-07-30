@@ -113,11 +113,13 @@ open class NTImageView: UIImageView {
     open func loadImage(url: URL?, allowCache: Bool = true, completion: (() -> ())? = nil) {
         guard let url = url else {
             completion?()
+            Log.write(.status, "Invalid URL")
             return
         }
         if allowCache, let cachedItem = NTImageView.imageCache.object(forKey: url.absoluteString as NSString) {
             image = cachedItem.image
             completion?()
+            Log.write(.status, "Loaded from cache")
             return
         }
         URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
@@ -129,8 +131,8 @@ open class NTImageView: UIImageView {
                 if let image = UIImage(data: data!) {
                     let cacheItem = DiscardableImageCacheItem(image: image)
                     NTImageView.imageCache.setObject(cacheItem, forKey: url.absoluteString as NSString)
-                    
                     self?.image = image
+                    Log.write(.status, "Downloaded the image and added it to the cache")
                     completion?()
                 }
             }
@@ -150,15 +152,99 @@ open class NTImageView: UIImageView {
         if allowCache, let cachedItem = NTImageView.imageCache.object(forKey: urlKey) {
             image = cachedItem.image
             completion?()
+            Log.write(.status, "Loaded from cache")
             return
         }
         
         guard let url = URL(string: urlString) else {
             if shouldUseEmptyImage {
                 image = emptyImage
+                Log.write(.status, "Using empty image")
             }
             return
         }
         loadImage(url: url, allowCache: allowCache, completion: completion)
+    }
+}
+
+open class NTImageViewController: UIViewController, UIScrollViewDelegate {
+    
+    
+    open weak var imageView: NTImageView?
+    open lazy var scrollView: UIScrollView = { [weak self] in
+        let scrollView = UIScrollView(frame: self!.view.bounds)
+        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        scrollView.backgroundColor = .clear
+        scrollView.delegate = self
+        return scrollView
+    }()
+    
+    public init(fromImageView: NTImageView) {
+        imageView = fromImageView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        
+        scrollView.contentSize = imageView!.bounds.size
+        view.addSubview(scrollView)
+
+        setZoomScaleFor(srollViewSize: scrollView.bounds.size)
+        scrollView.zoomScale = scrollView.minimumZoomScale
+        
+        recenterImage()
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    open override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override open func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        setZoomScaleFor(srollViewSize: scrollView.bounds.size)
+        
+        if scrollView.zoomScale < scrollView.minimumZoomScale {
+            scrollView.zoomScale = scrollView.minimumZoomScale
+        }
+        
+        recenterImage()
+    }
+    
+    private func setZoomScaleFor(srollViewSize: CGSize) {
+        guard let imageView = imageView else { return }
+        let imageSize = imageView.bounds.size
+        let widthScale = srollViewSize.width / imageSize.width
+        let heightScale = srollViewSize.height / imageSize.height
+        let minimunScale = min(widthScale, heightScale)
+        
+        scrollView.minimumZoomScale = minimunScale
+        scrollView.maximumZoomScale = 3.0
+        
+    }
+    
+    private func recenterImage() {
+        guard let imageView = imageView else { return }
+        let scrollViewSize = scrollView.bounds.size
+        let imageViewSize = imageView.frame.size
+        let horizontalSpace = imageViewSize.width < scrollViewSize.width ? (scrollViewSize.width - imageViewSize.width) / 2.0 : 0
+        let verticalSpace = imageViewSize.height < scrollViewSize.height ? (scrollViewSize.height - imageViewSize.width) / 2.0 :0
+        
+        scrollView.contentInset = UIEdgeInsetsMake(verticalSpace, horizontalSpace, verticalSpace, horizontalSpace)
+        
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+    
+    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        self.recenterImage()
     }
 }

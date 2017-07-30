@@ -38,5 +38,7 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow Photo Library Access?</string>
+	<key>Privacy — Camera Usage Description</key>
+	<string>We wont spy on you</string>
 </dict>
 </plist>

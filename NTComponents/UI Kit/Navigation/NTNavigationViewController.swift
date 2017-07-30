@@ -84,7 +84,7 @@ open class NTNavigationViewController: NTViewController {
     open let titleLabel: NTLabel = {
         let label = NTLabel(style: .title)
         label.adjustsFontSizeToFitWidth = true
-        label.font = Font.Default.Title.withSize(44)
+        label.font = Font.Default.Title.withSize(22)
         return label
     }()
     
