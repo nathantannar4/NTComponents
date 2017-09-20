@@ -121,6 +121,7 @@ open class NTActionSheetViewController: UIViewController, UITableViewDataSource,
     
     open func setup() {
         view.addSubview(tableView)
+        tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -238,26 +239,9 @@ open class NTActionSheetViewController: UIViewController, UITableViewDataSource,
         }
     }
     
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetY = scrollView.contentOffset.y
-        var height = CGFloat(actions.count * 44)
-        let maxScrollUp: CGFloat = 35
-        height += maxScrollUp
-        
-        if contentOffsetY > 0 {
-            if contentOffsetY >= maxScrollUp {
-                // Max scroll up
-                scrollView.contentOffset.y = maxScrollUp
-            } else {
-                topAnchor?.constant = -contentOffsetY - height
-                view.layoutIfNeeded()
-            }
-        }
-    }
-    
     // MARK: - NTActionSheetAction Methods
     
-    open func dismissActionSheet() {
+    @objc open func dismissActionSheet() {
         dismiss()
     }
     

@@ -57,7 +57,7 @@ open class NTImageView: UIImageView {
         
     }
     
-    open func handleTap() {
+    @objc open func handleTap() {
         onTap?(self)
     }
     

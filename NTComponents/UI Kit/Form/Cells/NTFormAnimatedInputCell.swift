@@ -83,7 +83,7 @@ open class NTFormAnimatedInputCell: NTFormCell {
         textField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
     }
     
-    open func dismissKeyboard() {
+    @objc open func dismissKeyboard() {
         textField.resignFirstResponder()
     }
     

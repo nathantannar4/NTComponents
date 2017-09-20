@@ -34,7 +34,7 @@
 
 open class NTTagListView: UIScrollView {
     
-    open dynamic var textColor: UIColor = UIColor.white {
+    @objc open dynamic var textColor: UIColor = UIColor.white {
         didSet {
             for tagView in tagViews {
                 tagView.textColor = textColor
@@ -42,7 +42,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var selectedTextColor: UIColor = UIColor.white {
+    @objc open dynamic var selectedTextColor: UIColor = UIColor.white {
         didSet {
             for tagView in tagViews {
                 tagView.selectedTextColor = selectedTextColor
@@ -50,7 +50,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var tagHighlightedBackgroundColor: UIColor? {
+    @objc open dynamic var tagHighlightedBackgroundColor: UIColor? {
         didSet {
             for tagView in tagViews {
                 tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
@@ -58,14 +58,14 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var cornerRadius: CGFloat = 5 {
+    @objc open dynamic var cornerRadius: CGFloat = 5 {
         didSet {
             for tagView in tagViews {
                 tagView.cornerRadius = cornerRadius
             }
         }
     }
-    open dynamic var borderWidth: CGFloat = 0 {
+    @objc open dynamic var borderWidth: CGFloat = 0 {
         didSet {
             for tagView in tagViews {
                 tagView.borderWidth = borderWidth
@@ -73,7 +73,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var borderColor: UIColor? {
+    @objc open dynamic var borderColor: UIColor? {
         didSet {
             for tagView in tagViews {
                 tagView.borderColor = borderColor
@@ -81,7 +81,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var selectedBorderColor: UIColor? {
+    @objc open dynamic var selectedBorderColor: UIColor? {
         didSet {
             for tagView in tagViews {
                 tagView.selectedBorderColor = selectedBorderColor
@@ -89,7 +89,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var paddingY: CGFloat = 5 {
+    @objc open dynamic var paddingY: CGFloat = 5 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingY = paddingY
@@ -97,7 +97,7 @@ open class NTTagListView: UIScrollView {
             rearrangeViews()
         }
     }
-    open dynamic var paddingX: CGFloat = 10 {
+    @objc open dynamic var paddingX: CGFloat = 10 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingX = paddingX
@@ -105,12 +105,12 @@ open class NTTagListView: UIScrollView {
             rearrangeViews()
         }
     }
-    open dynamic var marginY: CGFloat = 5 {
+    @objc open dynamic var marginY: CGFloat = 5 {
         didSet {
             rearrangeViews()
         }
     }
-    open dynamic var marginX: CGFloat = 5 {
+    @objc open dynamic var marginX: CGFloat = 5 {
         didSet {
             rearrangeViews()
         }
@@ -127,28 +127,28 @@ open class NTTagListView: UIScrollView {
             rearrangeViews()
         }
     }
-    open dynamic var shadowColor: UIColor = UIColor.white {
+    @objc open dynamic var shadowColor: UIColor = UIColor.white {
         didSet {
             rearrangeViews()
         }
     }
-    open dynamic var shadowRadius: CGFloat = 0 {
+    @objc open dynamic var shadowRadius: CGFloat = 0 {
         didSet {
             rearrangeViews()
         }
     }
-    open dynamic var shadowOffset: CGSize = CGSize.zero {
+    @objc open dynamic var shadowOffset: CGSize = CGSize.zero {
         didSet {
             rearrangeViews()
         }
     }
-    open dynamic var shadowOpacity: Float = 0 {
+    @objc open dynamic var shadowOpacity: Float = 0 {
         didSet {
             rearrangeViews()
         }
     }
     
-    open dynamic var enableDeleteButton: Bool = true {
+    @objc open dynamic var enableDeleteButton: Bool = true {
         didSet {
             for tagView in tagViews {
                 tagView.enableDeleteButton = enableDeleteButton
@@ -157,7 +157,7 @@ open class NTTagListView: UIScrollView {
         }
     }
     
-    open dynamic var textFont: UIFont = Font.Default.Body.withSize(16) {
+    @objc open dynamic var textFont: UIFont = Font.Default.Body.withSize(16) {
         didSet {
             for tagView in tagViews {
                 tagView.textFont = textFont
@@ -391,12 +391,12 @@ open class NTTagListView: UIScrollView {
     
     // MARK: - Events
     
-    open func tagPressed(_ sender: NTTagView) {
+    @objc open func tagPressed(_ sender: NTTagView) {
         sender.onTap?(sender)
         tagDelegate?.tagPressed?(sender, sender: self)
     }
     
-    open func deleteButtonPressed(_ closeButton: NTTagDeleteButton) {
+    @objc open func deleteButtonPressed(_ closeButton: NTTagDeleteButton) {
         if let tagView = closeButton.tagView {
             tagDelegate?.tagDeleted?(tagView, sender: self)
         }
@@ -553,14 +553,14 @@ open class NTTagView: UIButton {
         self.addGestureRecognizer(longPress)
     }
     
-    open func longPress() {
+    @objc open func longPress() {
         onLongPress?(self)
     }
     
     // MARK: - layout
     
     override open var intrinsicContentSize: CGSize {
-        var size = titleLabel?.text?.size(attributes: [NSFontAttributeName: textFont]) ?? CGSize.zero
+        var size = titleLabel?.text?.size(withAttributes: [NSAttributedStringKey.font: textFont]) ?? CGSize.zero
         size.height = textFont.pointSize + paddingY * 2
         size.width += paddingX * 2
         if size.width < size.height {

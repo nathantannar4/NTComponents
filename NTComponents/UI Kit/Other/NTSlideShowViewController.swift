@@ -161,7 +161,7 @@ open class NTOnboardingViewController: NTPageViewController {
     
     // MARK: - NTOnboarding Methods
     
-    open override func slideToNextViewController() {
+    @objc open override func slideToNextViewController() {
         if currentIndex == viewControllers.count - 1 {
             
             statusBarHidden = false

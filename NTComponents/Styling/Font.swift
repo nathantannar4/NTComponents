@@ -95,7 +95,7 @@ public struct Font {
         let font = CGFont(fontDataProvider)
         var error: Unmanaged<CFError>?
         
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+        guard CTFontManagerRegisterGraphicsFont(font!, &error) else {
             Log.write(.error, "Failed to register font from file: \(name).\(withExtension)")
             Log.write(.error, error.debugDescription)
             return nil
@@ -104,15 +104,15 @@ public struct Font {
     }
 
     public struct Default {
-        public static var Title     = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-        public static var Subtitle  = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
-        public static var Body      = UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)
-        public static var Callout   = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-        public static var Caption   = UIFont.systemFont(ofSize: 12, weight: UIFontWeightRegular)
-        public static var Footnote  = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
-        public static var Headline  = UIFont.systemFont(ofSize: 17, weight: UIFontWeightMedium)
-        public static var Subhead   = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
-        public static var Disabled  = UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)
+        public static var Title     = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
+        public static var Subtitle  = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)
+        public static var Body      = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
+        public static var Callout   = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)
+        public static var Caption   = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.regular)
+        public static var Footnote  = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.medium)
+        public static var Headline  = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)
+        public static var Subhead   = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
+        public static var Disabled  = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
     }
 
     public struct Roboto {

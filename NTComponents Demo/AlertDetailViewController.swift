@@ -26,7 +26,7 @@ class AlertDetailViewController: NTViewController {
     }
     
 
-    func hide() {
+    @objc func hide() {
         dismiss(animated: true, completion: nil)
     }
 

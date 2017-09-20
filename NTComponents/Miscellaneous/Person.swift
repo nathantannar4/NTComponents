@@ -1,6 +1,6 @@
 //
 //  Person.swift
-//  NTComponents
+//  NTToolKit
 //
 //  Copyright © 2017 Nathan Tannar.
 //

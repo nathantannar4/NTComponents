@@ -110,7 +110,8 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate, UITextFieldDel
                 return
             }
             if text.characters.last == "," {
-                let tagText = text.substring(to: text.index(before: text.endIndex))
+                //.substring(to: text.index(before: text.endIndex))
+                let tagText = String(text[..<text.endIndex])
                 if !tagText.isEmpty {
                     self.tagListView.addTag(tagText)
                     textField.text = String()
@@ -133,7 +134,7 @@ open class NTFormTagInputCell: NTFormCell, NTTagListViewDelegate, UITextFieldDel
         textField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
     }
     
-    open func dismissKeyboard() {
+    @objc open func dismissKeyboard() {
         textField.resignFirstResponder()
     }
     

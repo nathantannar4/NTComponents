@@ -140,7 +140,7 @@ open class NTFormProfileCell: NTFormCell, UIImagePickerControllerDelegate, UINav
         textField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
     }
     
-    open func dismissKeyboard() {
+    @objc open func dismissKeyboard() {
         textField.resignFirstResponder()
     }
     

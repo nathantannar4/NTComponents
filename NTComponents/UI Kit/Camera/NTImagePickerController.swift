@@ -38,7 +38,7 @@ open class NTImagePickerController: UIImagePickerController {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.setDefaultShadow()
         navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName : UIColor.white
+            NSAttributedStringKey.foregroundColor : UIColor.white
             ]
         sourceType = .photoLibrary
     }

@@ -117,7 +117,7 @@ open class NTMapViewController: NTViewController, MKMapViewDelegate, CLLocationM
         return view
     }
     
-    open func centerMapToUser(animated: Bool = true) {
+    @objc open func centerMapToUser(animated: Bool = true) {
         guard let coordinate = currentLocation() else {
             return
         }

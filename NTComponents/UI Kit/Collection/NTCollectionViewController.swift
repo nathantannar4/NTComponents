@@ -195,7 +195,7 @@ open class NTCollectionViewController: UICollectionViewController, UICollectionV
         return nil
     }
     
-    open func handleRefresh() {
+    @objc open func handleRefresh() {
         if #available(iOS 10.0, *) {
             collectionView?.refreshControl?.beginRefreshing()
         }

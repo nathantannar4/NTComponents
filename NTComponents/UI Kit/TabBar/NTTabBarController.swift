@@ -105,14 +105,12 @@ open class NTTabBarController: UITabBarController, NTTabBarDelegate {
             return
         }
         
-        guard let frame = self.tabBarController?.tabBar.frame else {
-            return
-        }
+        let frame = self.tabBar.frame
         let height = frame.size.height
         let offsetY = hidden ? height : -height
         
         UIView.animate(withDuration: 0.3) {
-            self.tabBarController?.tabBar.frame = CGRect(x: frame.origin.x, y: frame.origin.y + offsetY, width: frame.width, height: frame.height)
+            self.tabBar.frame = CGRect(x: frame.origin.x, y: frame.origin.y + offsetY, width: frame.width, height: frame.height)
         }
     }
 }

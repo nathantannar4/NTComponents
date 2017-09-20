@@ -92,7 +92,7 @@ open class NTExpandableView: UIView {
     
     // MARK: View Toggle
     
-    open func handleToggle(_ button: NTButton) {
+    @objc open func handleToggle(_ button: NTButton) {
         
         UIView.animate(withDuration: 0.3, animations: { 
             if self.isExpanded {

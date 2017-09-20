@@ -157,14 +157,14 @@ open class NTAlertViewController: UIViewController  {
     
     // MARK: - Actions
     
-    open func cancelButtonPressed() {
+    @objc open func cancelButtonPressed() {
         Log.write(.status, "Cancel button pressed")
         dismiss(animated: true) { 
             self.onCancel?()
         }
     }
     
-    open func confirmButtonPresssed() {
+    @objc open func confirmButtonPresssed() {
         Log.write(.status, "Confirm button pressed")
         dismiss(animated: true) {
             self.onConfirm?()

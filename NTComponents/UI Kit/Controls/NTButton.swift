@@ -42,7 +42,7 @@ open class NTButton: UIButton {
         return self
     }
     
-    open func didTouchUpInside() {
+    @objc open func didTouchUpInside() {
         onTouchUpInside?(self)
     }
     

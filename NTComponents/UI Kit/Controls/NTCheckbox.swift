@@ -146,7 +146,7 @@ open class NTCheckbox: UIControl, CAAnimationDelegate {
         setupPathLayer()
     }
     
-    open func toggle(recognizer: UITapGestureRecognizer) {
+    @objc open func toggle(recognizer: UITapGestureRecognizer) {
         isSelected = !isSelected
         checkBox.autoAnimate()
         onCheckboxChanged?(self)

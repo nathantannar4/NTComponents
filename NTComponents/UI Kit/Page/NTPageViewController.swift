@@ -93,11 +93,11 @@ open class NTPageViewController: NTViewController, UIPageViewControllerDataSourc
     
     // MARK: - NTPageViewController Methods
     
-    open func slideToNextViewController() {
+    @objc open func slideToNextViewController() {
         displayControllerWithIndex(currentIndex + 1, direction: .forward, animated: true)
     }
     
-    open func slideToPreviousViewController() {
+    @objc open func slideToPreviousViewController() {
         displayControllerWithIndex(currentIndex - 1, direction: .reverse, animated: true)
     }
     

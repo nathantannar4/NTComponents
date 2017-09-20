@@ -81,7 +81,7 @@ open class NTFormControlCell<T: UIControl>: NTFormCell {
         return self
     }
     
-    open func controlDidChange() {
+    @objc open func controlDidChange() {
         onControlChanged?(control)
     }
     

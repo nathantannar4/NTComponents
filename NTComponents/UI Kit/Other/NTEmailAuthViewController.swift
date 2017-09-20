@@ -172,7 +172,7 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         signInButton.anchor(nil, left: nil, bottom: accessoryView.bottomAnchor, right: accessoryView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 16, rightConstant: 16, widthConstant: 100, heightConstant: 36)
     }
     
-    open func submitAuth() {
+    @objc open func submitAuth() {
         
         guard let email = emailTextField.text else {
             NTPing(type: .isDanger, title: "Invalid Email").show()
@@ -187,18 +187,18 @@ open class NTEmailAuthViewController: NTViewController, NTEmailAuthDelegate {
         }
     }
     
-    open func cancelAuth() {
+    @objc open func cancelAuth() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
-    internal func togglePasswordTextFieldSecurity() {
+    @objc internal func togglePasswordTextFieldSecurity() {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         passwordViewToggleButton.image = passwordTextField.isSecureTextEntry ? Icon.Lock : Icon.Unlock
     }
     
-    open func showSignUpViewController() {
+    @objc open func showSignUpViewController() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         let vc = NTEmailRegisterViewController()

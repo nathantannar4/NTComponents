@@ -71,7 +71,7 @@ open class NTFormActionCell: NTFormCell {
         button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
     }
     
-    open func didTap(_ sender: AnyObject) {
+    @objc open func didTap(_ sender: AnyObject) {
         onTap?()
     }
 }

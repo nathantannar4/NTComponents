@@ -246,7 +246,7 @@ class AlertsViewController: NTTableViewController, UIViewControllerTransitioning
         NTToast(text: text, actionTitle: "Undo", target: self, selector: #selector(toastAction)).show(duration: 3)
     }
     
-    func toastAction() {
+    @objc func toastAction() {
         NTPing(title: "Toast Action", color: Color.Gray.P800).show()
     }
     

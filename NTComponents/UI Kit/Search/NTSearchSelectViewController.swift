@@ -74,11 +74,11 @@ open class NTSearchSelectViewController<T : Equatable>: NTSearchViewController {
         
     }
     
-    open func confirmSelection(_ sender: AnyObject) {
+    @objc open func confirmSelection(_ sender: AnyObject) {
         self.searchController(confirmedSelectionOfObjects: selectedObjects)
     }
     
-    open func cancelSelection(_ sender: AnyObject) {
+    @objc open func cancelSelection(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
     

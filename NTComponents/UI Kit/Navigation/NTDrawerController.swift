@@ -349,17 +349,17 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
     }
     
     /// Closes the active drawer side
-    open func closeDrawer() {
+    @objc open func closeDrawer() {
         toggle(drawerSide: activeSide)
     }
     
     /// Action for NTDrawerBarButtonItem that is added by default to the centerViewController
-    open func toggleLeftViewController(_ sender: AnyObject? = nil) {
+    @objc open func toggleLeftViewController(_ sender: AnyObject? = nil) {
         toggle(drawerSide: .left)
     }
     
     /// Action for NTDrawerBarButtonItem that is added by default to the centerViewController
-    open func toggleRightViewController(_ sender: AnyObject? = nil) {
+    @objc open func toggleRightViewController(_ sender: AnyObject? = nil) {
         toggle(drawerSide: .right)
     }
     
@@ -493,7 +493,7 @@ open class NTDrawerController: NTViewController, UIGestureRecognizerDelegate {
         return true
     }
     
-    open func handlePanGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc open func handlePanGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
         
         let boundWidth = gestureRecognizer.view!.frame.origin.x
      

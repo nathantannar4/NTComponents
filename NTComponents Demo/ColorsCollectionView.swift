@@ -28,7 +28,7 @@ class ColorsCollectionView: NTCollectionViewController {
         return .leastNonzeroMagnitude
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .leastNonzeroMagnitude
     }
     

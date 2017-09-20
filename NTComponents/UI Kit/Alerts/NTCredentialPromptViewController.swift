@@ -164,7 +164,7 @@ open class NTCredentialPromptViewController: UIViewController, UIGestureRecogniz
     }
     
     // MARK: - Actions
-    open func cancelPrompt() {
+    @objc open func cancelPrompt() {
         if emailTextField.isFirstResponder {
             emailTextField.resignFirstResponder()
             return
@@ -182,7 +182,7 @@ open class NTCredentialPromptViewController: UIViewController, UIGestureRecogniz
         }
     }
     
-    open func loginButtonPresssed() {
+    @objc open func loginButtonPresssed() {
         Log.write(.status, "Login button pressed")
         
         emailTextField.resignFirstResponder()

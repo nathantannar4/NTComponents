@@ -83,7 +83,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.contentInset.top = 10
-        tableView.contentInset.bottom = 50
+        tableView.contentInset.bottom = 30
         return tableView
     }()
     
@@ -175,7 +175,7 @@ open class NTLoginViewController: NTViewController, UITableViewDataSource, UITab
         return button
     }
     
-    open func loginLogic(sender: NTLoginButton) {
+    @objc open func loginLogic(sender: NTLoginButton) {
         if sender.loginMethod == .email {
             let vc = NTEmailAuthViewController()
             present(vc, animated: true, completion: nil)

@@ -97,12 +97,12 @@ open class NTTextView: UITextView {
         textContainer.lineFragmentPadding = 0
     }
     
-    open func textViewDidUpdate(notification: NSNotification) {
+    @objc open func textViewDidUpdate(notification: NSNotification) {
         onTextViewUpdate?(self)
         textColor = _textColor
     }
 
-    open func textViewDidBeginEditing(notification: NSNotification) {
+    @objc open func textViewDidBeginEditing(notification: NSNotification) {
         onBeginEditing?(self)
         if text == placeholder {
             text = String()
@@ -110,7 +110,7 @@ open class NTTextView: UITextView {
         }
     }
 
-    open func textViewDidEndEditing(notification: NSNotification) {
+    @objc open func textViewDidEndEditing(notification: NSNotification) {
         onEndEditing?(self)
         if text.isEmpty {
             text = placeholder

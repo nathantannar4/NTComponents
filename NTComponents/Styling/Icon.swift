@@ -115,7 +115,7 @@ public extension UIImage {
         
         let font = Font.load(name: icon.filename, withSize: fontSize)!
         
-        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: textColor, NSBackgroundColorAttributeName: backgroundColor, NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.backgroundColor: backgroundColor, NSAttributedStringKey.paragraphStyle: paragraph]
         
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
@@ -198,14 +198,14 @@ public extension UIBarButtonItem {
     func setIcon<T:IconType>(icon: T, iconSize: CGFloat = 30) {
         
         guard let font = Font.load(name: icon.filename, withSize: iconSize) else { return }
-        setTitleTextAttributes([NSFontAttributeName: font], for: .normal)
+        setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
         title = icon.text
     }
     
     func setIcon<T:IconType>(prefixText: String, icon: T, postfixText: String, size: CGFloat = 30) {
         
         guard let font = Font.load(name: icon.filename, withSize: size) else { return }
-        setTitleTextAttributes([NSFontAttributeName: font], for: .normal)
+        setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
         
         var text = prefixText
         if let iconText = icon.text {
@@ -263,8 +263,8 @@ public extension UIButton {
         Font.load(name: icon.filename)
         guard let titleLabel = titleLabel else { return }
         let attributedText = attributedTitle(for: .normal) ?? NSAttributedString()
-        let  startFont =  attributedText.length == 0 ? nil : attributedText.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
-        let endFont = attributedText.length == 0 ? nil : attributedText.attribute(NSFontAttributeName, at: attributedText.length - 1, effectiveRange: nil) as? UIFont
+        let  startFont =  attributedText.length == 0 ? nil : attributedText.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: nil) as? UIFont
+        let endFont = attributedText.length == 0 ? nil : attributedText.attribute(NSAttributedStringKey.font, at: attributedText.length - 1, effectiveRange: nil) as? UIFont
         var textFont = titleLabel.font
         if let f = startFont , f.fontName != icon.filename  {
             textFont = f
@@ -273,18 +273,18 @@ public extension UIButton {
         }
         
         var textColor: UIColor = .black
-        attributedText.enumerateAttribute(NSForegroundColorAttributeName, in:NSMakeRange(0,attributedText.length), options:.longestEffectiveRangeNotRequired) {
+        attributedText.enumerateAttribute(NSAttributedStringKey.foregroundColor, in:NSMakeRange(0,attributedText.length), options:.longestEffectiveRangeNotRequired) {
             value, range, stop in
             if value != nil {
                 textColor = value as! UIColor
             }
         }
         
-        let textAttributes = [NSFontAttributeName: textFont!, NSForegroundColorAttributeName: textColor] as [String : Any]
+        let textAttributes = [NSAttributedStringKey.font.rawValue: textFont!, NSAttributedStringKey.foregroundColor: textColor] as! [NSAttributedStringKey : Any]
         let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: textAttributes)
         
         let iconFont = UIFont(name: icon.filename, size: iconSize ?? size ?? titleLabel.font.pointSize)!
-        let iconAttributes = [NSFontAttributeName: iconFont, NSForegroundColorAttributeName: textColor] as [String : Any]
+        let iconAttributes = [NSAttributedStringKey.font.rawValue: iconFont, NSAttributedStringKey.foregroundColor: textColor] as! [NSAttributedStringKey : Any]
         
         let iconString = NSAttributedString(string: icon.text!, attributes: iconAttributes)
         prefixTextAttribured.append(iconString)
@@ -299,7 +299,7 @@ public extension UIButton {
     func setIconColor(color: UIColor, forState state: UIControlState = .normal) {
         
         let attributedString = NSMutableAttributedString(attributedString: attributedTitle(for: state) ?? NSAttributedString())
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSMakeRange(0, attributedString.length))
         
         setAttributedTitle(attributedString, for: state)
         setTitleColor(color, for: state)
@@ -317,7 +317,7 @@ public extension UILabel {
     
     func setIconColor(color: UIColor) {
         let attributedString = NSMutableAttributedString(attributedString: attributedText ?? NSAttributedString())
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, attributedText!.length))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: NSMakeRange(0, attributedText!.length))
         textColor = color
     }
     
@@ -327,19 +327,19 @@ public extension UILabel {
         Font.load(name: icon.filename)
         
         let attrText = attributedText ?? NSAttributedString()
-        let startFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
-        let endFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: attrText.length - 1, effectiveRange: nil) as? UIFont
+        let startFont = attrText.length == 0 ? nil : attrText.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: nil) as? UIFont
+        let endFont = attrText.length == 0 ? nil : attrText.attribute(NSAttributedStringKey.font, at: attrText.length - 1, effectiveRange: nil) as? UIFont
         var textFont = font
         if let f = startFont , f.fontName != icon.filename  {
             textFont = f
         } else if let f = endFont , f.fontName != icon.filename  {
             textFont = f
         }
-        let textAttribute = [NSFontAttributeName : textFont!]
+        let textAttribute = [NSAttributedStringKey.font : textFont!]
         let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: textAttribute)
         
         let iconFont = UIFont(name: icon.filename, size: iconSize ?? size ?? font.pointSize)!
-        let iconAttribute = [NSFontAttributeName : iconFont]
+        let iconAttribute = [NSAttributedStringKey.font : iconFont]
         
         let iconString = NSAttributedString(string: icon.text ?? String(), attributes: iconAttribute)
         prefixTextAttribured.append(iconString)
@@ -368,8 +368,8 @@ public extension UITabBarItem {
         
         selectedImage = UIImage(icon: icon, size: tabBarItemImageSize, orientation: orientation, textColor: selectedTextColor, backgroundColor: selectedBackgroundColor).withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        setTitleTextAttributes([NSForegroundColorAttributeName: textColor], for: .normal)
-        setTitleTextAttributes([NSForegroundColorAttributeName: selectedTextColor], for: .selected)
+        setTitleTextAttributes([NSAttributedStringKey.foregroundColor: textColor], for: .normal)
+        setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedTextColor], for: .selected)
     }
 }
 
@@ -379,7 +379,7 @@ public extension UISegmentedControl {
     public func setIcon<T:IconType>(icon: T, forSegmentAtIndex segment: Int) {
         
         guard let font = Font.load(name: icon.filename, withSize: 30) else { return }
-        setTitleTextAttributes([NSFontAttributeName: font], for: .normal)
+        setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
         setTitle(icon.text, forSegmentAt: segment)
     }
 }
@@ -427,7 +427,7 @@ public extension UIViewController {
         set {
             guard let icon = newValue else { return }
             guard let font = Font.load(name: icon.filename, withSize: 30) else { return }
-            navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: font]
             title = newValue?.text
         }
         get {

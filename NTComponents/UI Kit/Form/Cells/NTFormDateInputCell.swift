@@ -117,15 +117,15 @@ open class NTFormDateInputCell: NTFormCell {
         dateField.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
     }
     
-    open func presentDatePicker(sender: NTTextField) {
+    @objc open func presentDatePicker(sender: NTTextField) {
         sender.inputView = datePicker
     }
     
-    open func dismissDatePicker() {
+    @objc open func dismissDatePicker() {
         dateField.resignFirstResponder()
     }
     
-    open func datePickerValueChanged(_ sender: UIDatePicker) {
+    @objc open func datePickerValueChanged(_ sender: UIDatePicker) {
         date = sender.date
         onDateChanged?(sender.date)
     }

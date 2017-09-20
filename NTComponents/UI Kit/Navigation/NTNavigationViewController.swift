@@ -173,7 +173,7 @@ open class NTNavigationViewController: NTViewController {
         }
     }
     
-    open func nextButtonPressed() {
+    @objc open func nextButtonPressed() {
         guard let vc = delegate?.nextViewController(self) else {
             return
         }
@@ -184,7 +184,7 @@ open class NTNavigationViewController: NTViewController {
         }
     }
     
-    open func backButtonPressed() {
+    @objc open func backButtonPressed() {
         if previousViewController == nil {
             
             dismiss(animated: true, completion: {

@@ -121,15 +121,15 @@ open class NTLandingViewController: NTViewController {
         }
     }
     
-    open func buttonAAction() {
+    @objc open func buttonAAction() {
         
     }
     
-    open func buttonBAction() {
+    @objc open func buttonBAction() {
         
     }
     
-    open func signoutAction() {
+    @objc open func signoutAction() {
         
     }
 }

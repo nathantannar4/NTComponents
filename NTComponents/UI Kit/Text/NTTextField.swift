@@ -75,15 +75,15 @@ open class NTTextField: UITextField {
         addTarget(self, action: #selector(textFieldDidEndEditing(textField:)), for: .editingDidEnd)
     }
     
-    open func textFieldDidUpdate(textField: NTTextField) {
+    @objc open func textFieldDidUpdate(textField: NTTextField) {
         onTextFieldUpdate?(textField)
     }
     
-    open func textFieldDidBeginEditing(textField: NTTextField) {
+    @objc open func textFieldDidBeginEditing(textField: NTTextField) {
         onBeginEditing?(textField)
     }
     
-    open func textFieldDidEndEditing(textField: NTTextField) {
+    @objc open func textFieldDidEndEditing(textField: NTTextField) {
         onEndEditing?(textField)
     }
 }

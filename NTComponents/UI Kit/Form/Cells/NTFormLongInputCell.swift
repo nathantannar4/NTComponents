@@ -104,7 +104,7 @@ open class NTFormLongInputCell: NTFormCell {
         textView.addToolBar(withItems: [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton])
     }
     
-    open func dismissKeyboard() {
+    @objc open func dismissKeyboard() {
         textView.resignFirstResponder()
     }
     

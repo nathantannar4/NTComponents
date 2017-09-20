@@ -264,13 +264,13 @@ open class NTChime: NTAnimatedView, UIGestureRecognizerDelegate, UIViewControlle
         }
     }
     
-    internal func cancelBlur() {
+    @objc internal func cancelBlur() {
         blurBackground(false)
     }
     
     // MARK: - Pan Gesture
     
-    open func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc open func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
         
         let velocity = gestureRecognizer.velocity(in: self).y
         let translation = gestureRecognizer.translation(in: self)

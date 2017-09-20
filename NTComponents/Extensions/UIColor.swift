@@ -122,10 +122,11 @@ public extension UIColor {
     // Extended Variables
     //**************************************/
     
+    var ciColor: CIColor {
+        return CIColor(color: self)
+    }
     var RGBA: [CGFloat] {
-        var RGBA: [CGFloat] = [0,0,0,0]
-        self.getRed(&RGBA[0], green: &RGBA[1], blue: &RGBA[2], alpha: &RGBA[3])
-        return RGBA
+        return [ciColor.red, ciColor.green, ciColor.blue, ciColor.alpha]
     }
     
     var luminance: CGFloat {

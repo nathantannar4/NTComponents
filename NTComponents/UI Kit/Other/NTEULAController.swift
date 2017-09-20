@@ -55,7 +55,7 @@ open class NTEULAController: NTViewController {
             if let filepath = newValue {
                 do {
                     let str = try NSAttributedString(data: String(contentsOfFile: filepath)
-                        .data(using: String.Encoding.unicode, allowLossyConversion: true)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType], documentAttributes: nil)
+                        .data(using: String.Encoding.unicode, allowLossyConversion: true)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType : NSAttributedString.DocumentType.html], documentAttributes: nil)
                     textView.attributedText = str
                 } catch {
                     print(error)
@@ -82,7 +82,7 @@ open class NTEULAController: NTViewController {
         
     }
     
-    open func doneReading() {
+    @objc open func doneReading() {
         dismiss(animated: true, completion: nil)
     }
 }

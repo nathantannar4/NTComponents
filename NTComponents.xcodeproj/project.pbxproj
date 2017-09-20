@@ -92,15 +92,6 @@
 		3881E3421F0214270013D241 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3411F0214270013D241 /* TimelineTableViewController.swift */; };
 		3881E3441F021E300013D241 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3431F021E300013D241 /* CALayer.swift */; };
 		3881E3481F03658B0013D241 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3471F03658B0013D241 /* FontAwesome.ttf */; };
-		3881E3591F04DED10013D241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3581F04DED10013D241 /* AppDelegate.swift */; };
-		3881E35B1F04DED10013D241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E35A1F04DED10013D241 /* ViewController.swift */; };
-		3881E3601F04DED10013D241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3881E35F1F04DED10013D241 /* Assets.xcassets */; };
-		3881E3631F04DED10013D241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3611F04DED10013D241 /* LaunchScreen.storyboard */; };
-		3881E3691F04DF630013D241 /* Nathan_Tannar_Resume.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3681F04DF630013D241 /* Nathan_Tannar_Resume.pdf */; };
-		3881E36B1F04E07D0013D241 /* NTComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; };
-		3881E36C1F04E07D0013D241 /* NTComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3881E3711F0621580013D241 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3701F0621580013D241 /* ContainerController.swift */; };
-		3881E3751F0629290013D241 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3881E3741F0629290013D241 /* RightViewController.swift */; };
 		3881E3771F0631B80013D241 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3761F0631B80013D241 /* MaterialIcons.ttf */; };
 		3881E3831F0697F60013D241 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3881E3821F0697F60013D241 /* BebasNeue.otf */; };
 		388A2EF71F0B47AD00311148 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A2EF51F0B47AD00311148 /* PulleyPassthroughScrollView.swift */; };
@@ -136,31 +127,11 @@
 		38C7C8BB1EA33BCC00187EE9 /* MaterialColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */; };
 		38C7C8BF1EA3DF9A00187EE9 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */; };
 		38CACA221EF4D0C300F07499 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA211EF4D0C300F07499 /* CalendarViewController.swift */; };
-		38CACA251EF4D19700F07499 /* NTCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA241EF4D19700F07499 /* NTCalendarView.swift */; };
-		38CACA271EF4D1CB00F07499 /* NTCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */; };
-		38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */; };
-		38CACA2B1EF4D80C00F07499 /* NTCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA2A1EF4D80C00F07499 /* NTCalendarViewCell.swift */; };
-		38CACA3F1EF4EA8C00F07499 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA311EF4EA8C00F07499 /* CalendarEnums.swift */; };
-		38CACA401EF4EA8C00F07499 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA321EF4EA8C00F07499 /* CalendarStructs.swift */; };
-		38CACA411EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA331EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift */; };
-		38CACA421EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA341EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift */; };
-		38CACA431EF4EA8C00F07499 /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA351EF4EA8C00F07499 /* JTAppleCalendarLayout.swift */; };
-		38CACA441EF4EA8C00F07499 /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA361EF4EA8C00F07499 /* JTAppleCalendarLayoutProtocol.swift */; };
-		38CACA451EF4EA8C00F07499 /* JTAppleCalendarVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA371EF4EA8C00F07499 /* JTAppleCalendarVariables.swift */; };
-		38CACA461EF4EA8C00F07499 /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA381EF4EA8C00F07499 /* JTAppleCalendarView.swift */; };
-		38CACA471EF4EA8C00F07499 /* JTAppleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA391EF4EA8C00F07499 /* JTAppleCell.swift */; };
-		38CACA481EF4EA8C00F07499 /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA3A1EF4EA8C00F07499 /* JTAppleCollectionReusableView.swift */; };
-		38CACA491EF4EA8C00F07499 /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA3B1EF4EA8C00F07499 /* JTCalendarProtocols.swift */; };
-		38CACA4A1EF4EA8C00F07499 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA3C1EF4EA8C00F07499 /* UICollectionViewDelegates.swift */; };
-		38CACA4B1EF4EA8C00F07499 /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA3D1EF4EA8C00F07499 /* UIScrollViewDelegates.swift */; };
-		38CACA4C1EF4EA8C00F07499 /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA3E1EF4EA8C00F07499 /* UserInteractionFunctions.swift */; };
 		38CACA4E1EF58D6700F07499 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA4D1EF58D6700F07499 /* LoginViewController.swift */; };
 		38CACA501EF58DFA00F07499 /* EULA.html in Resources */ = {isa = PBXBuildFile; fileRef = 38CACA4F1EF58DFA00F07499 /* EULA.html */; };
 		38CACA521EF58F1700F07499 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA511EF58F1700F07499 /* TabBarController.swift */; };
 		38CACA541EF58F4A00F07499 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA531EF58F4A00F07499 /* FeedViewController.swift */; };
 		38CACA5A1EF5966300F07499 /* AlertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CACA591EF5966300F07499 /* AlertDetailViewController.swift */; };
-		38CD309D1F06A9DA0087FFF7 /* InteractiveResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD309C1F06A9DA0087FFF7 /* InteractiveResumeViewController.swift */; };
-		38CD309F1F06AAB50087FFF7 /* Content.json in Resources */ = {isa = PBXBuildFile; fileRef = 38CD309E1F06AAB50087FFF7 /* Content.json */; };
 		38D1EE381EE0E83300C7FD44 /* NTActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE371EE0E83300C7FD44 /* NTActivityView.swift */; };
 		38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1EE391EE114C500C7FD44 /* NTRefreshControl.swift */; };
 		38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D645801EF8F76E000C7357 /* NTSearchSelectViewController.swift */; };
@@ -200,13 +171,6 @@
 			remoteGlobalIDString = 3818F6D61E5BDEA600902E23;
 			remoteInfo = NTComponents;
 		};
-		3881E36D1F04E07D0013D241 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3818F6CE1E5BDEA600902E23 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3818F6D61E5BDEA600902E23;
-			remoteInfo = NTComponents;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -217,17 +181,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				38084AC01EA311EE00329516 /* NTComponents.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3881E36F1F04E07D0013D241 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3881E36C1F04E07D0013D241 /* NTComponents.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +277,6 @@
 		3881E3431F021E300013D241 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		3881E3471F03658B0013D241 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		3881E3511F04DE160013D241 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		3881E3561F04DED10013D241 /* NTResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3881E3581F04DED10013D241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3881E35A1F04DED10013D241 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3881E35F1F04DED10013D241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,24 +320,6 @@
 		38C7C8BA1EA33BCC00187EE9 /* MaterialColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColors.swift; sourceTree = "<group>"; };
 		38C7C8BE1EA3DF9A00187EE9 /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		38CACA211EF4D0C300F07499 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		38CACA241EF4D19700F07499 /* NTCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarView.swift; path = Calendar/NTCalendarView.swift; sourceTree = "<group>"; };
-		38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarViewController.swift; path = Calendar/NTCalendarViewController.swift; sourceTree = "<group>"; };
-		38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarHeaderView.swift; path = Calendar/NTCalendarHeaderView.swift; sourceTree = "<group>"; };
-		38CACA2A1EF4D80C00F07499 /* NTCalendarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NTCalendarViewCell.swift; path = Calendar/NTCalendarViewCell.swift; sourceTree = "<group>"; };
-		38CACA311EF4EA8C00F07499 /* CalendarEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Dependencies/JTAppleCalendar/CalendarEnums.swift; sourceTree = "<group>"; };
-		38CACA321EF4EA8C00F07499 /* CalendarStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Dependencies/JTAppleCalendar/CalendarStructs.swift; sourceTree = "<group>"; };
-		38CACA331EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Dependencies/JTAppleCalendar/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
-		38CACA341EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Dependencies/JTAppleCalendar/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
-		38CACA351EF4EA8C00F07499 /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Dependencies/JTAppleCalendar/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
-		38CACA361EF4EA8C00F07499 /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Dependencies/JTAppleCalendar/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
-		38CACA371EF4EA8C00F07499 /* JTAppleCalendarVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarVariables.swift; path = Dependencies/JTAppleCalendar/JTAppleCalendarVariables.swift; sourceTree = "<group>"; };
-		38CACA381EF4EA8C00F07499 /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Dependencies/JTAppleCalendar/JTAppleCalendarView.swift; sourceTree = "<group>"; };
-		38CACA391EF4EA8C00F07499 /* JTAppleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCell.swift; path = Dependencies/JTAppleCalendar/JTAppleCell.swift; sourceTree = "<group>"; };
-		38CACA3A1EF4EA8C00F07499 /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Dependencies/JTAppleCalendar/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
-		38CACA3B1EF4EA8C00F07499 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Dependencies/JTAppleCalendar/JTCalendarProtocols.swift; sourceTree = "<group>"; };
-		38CACA3C1EF4EA8C00F07499 /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Dependencies/JTAppleCalendar/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
-		38CACA3D1EF4EA8C00F07499 /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Dependencies/JTAppleCalendar/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
-		38CACA3E1EF4EA8C00F07499 /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Dependencies/JTAppleCalendar/UserInteractionFunctions.swift; sourceTree = "<group>"; };
 		38CACA4D1EF58D6700F07499 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		38CACA4F1EF58DFA00F07499 /* EULA.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EULA.html; sourceTree = "<group>"; };
 		38CACA511EF58F1700F07499 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -437,14 +371,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3881E3531F04DED10013D241 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3881E36B1F04E07D0013D241 /* NTComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +443,6 @@
 			children = (
 				3818F6D71E5BDEA600902E23 /* NTComponents.framework */,
 				380460F21EA2A6C2008A03B5 /* NTComponents Demo.app */,
-				3881E3561F04DED10013D241 /* NTResume.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -837,10 +762,6 @@
 		38CACA231EF4D16200F07499 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				38CACA241EF4D19700F07499 /* NTCalendarView.swift */,
-				38CACA2A1EF4D80C00F07499 /* NTCalendarViewCell.swift */,
-				38CACA281EF4D1F100F07499 /* NTCalendarHeaderView.swift */,
-				38CACA261EF4D1CB00F07499 /* NTCalendarViewController.swift */,
 				3881E3331F020DA50013D241 /* NTTimelineTableViewCell.swift */,
 			);
 			name = Calendar;
@@ -850,30 +771,8 @@
 			isa = PBXGroup;
 			children = (
 				388A2EF41F0B479D00311148 /* Pully */,
-				38CACA301EF4EA7C00F07499 /* JTAppleCalendar */,
 			);
 			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		38CACA301EF4EA7C00F07499 /* JTAppleCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				38CACA311EF4EA8C00F07499 /* CalendarEnums.swift */,
-				38CACA321EF4EA8C00F07499 /* CalendarStructs.swift */,
-				38CACA331EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift */,
-				38CACA341EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift */,
-				38CACA351EF4EA8C00F07499 /* JTAppleCalendarLayout.swift */,
-				38CACA361EF4EA8C00F07499 /* JTAppleCalendarLayoutProtocol.swift */,
-				38CACA371EF4EA8C00F07499 /* JTAppleCalendarVariables.swift */,
-				38CACA381EF4EA8C00F07499 /* JTAppleCalendarView.swift */,
-				38CACA391EF4EA8C00F07499 /* JTAppleCell.swift */,
-				38CACA3A1EF4EA8C00F07499 /* JTAppleCollectionReusableView.swift */,
-				38CACA3B1EF4EA8C00F07499 /* JTCalendarProtocols.swift */,
-				38CACA3C1EF4EA8C00F07499 /* UICollectionViewDelegates.swift */,
-				38CACA3D1EF4EA8C00F07499 /* UIScrollViewDelegates.swift */,
-				38CACA3E1EF4EA8C00F07499 /* UserInteractionFunctions.swift */,
-			);
-			name = JTAppleCalendar;
 			sourceTree = "<group>";
 		};
 		38ECA8B91EE7C5D000639A19 /* Cells */ = {
@@ -968,25 +867,6 @@
 			productReference = 3818F6D71E5BDEA600902E23 /* NTComponents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3881E3551F04DED10013D241 /* NTResume */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3881E3651F04DED10013D241 /* Build configuration list for PBXNativeTarget "NTResume" */;
-			buildPhases = (
-				3881E3521F04DED10013D241 /* Sources */,
-				3881E3531F04DED10013D241 /* Frameworks */,
-				3881E3541F04DED10013D241 /* Resources */,
-				3881E36F1F04E07D0013D241 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3881E36E1F04E07D0013D241 /* PBXTargetDependency */,
-			);
-			name = NTResume;
-			productName = NTResume;
-			productReference = 3881E3561F04DED10013D241 /* NTResume.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -994,22 +874,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Nathan Tannar";
 				TargetAttributes = {
 					380460F11EA2A6C2008A03B5 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 9EUCWD26TP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					3818F6D61E5BDEA600902E23 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9EUCWD26TP;
-						ProvisioningStyle = Automatic;
-					};
-					3881E3551F04DED10013D241 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 9EUCWD26TP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1029,7 +906,6 @@
 			targets = (
 				3818F6D61E5BDEA600902E23 /* NTComponents */,
 				380460F11EA2A6C2008A03B5 /* NTComponents Demo */,
-				3881E3551F04DED10013D241 /* NTResume */,
 			);
 		};
 /* End PBXProject section */
@@ -1070,17 +946,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3881E3541F04DED10013D241 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3881E3631F04DED10013D241 /* LaunchScreen.storyboard in Resources */,
-				3881E3691F04DF630013D241 /* Nathan_Tannar_Resume.pdf in Resources */,
-				3881E3601F04DED10013D241 /* Assets.xcassets in Resources */,
-				38CD309F1F06AAB50087FFF7 /* Content.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1115,7 +980,6 @@
 			files = (
 				38C39FE81F12A1A200EAFBAA /* RippleView.swift in Sources */,
 				38C037AD1F095E9C007BDD88 /* NTMagicView.swift in Sources */,
-				38CACA291EF4D1F100F07499 /* NTCalendarHeaderView.swift in Sources */,
 				38A5F05E1EFE1A4000BFE240 /* NTFormActionCell.swift in Sources */,
 				388C1EEA1EE5298C0036AECE /* NTCheckbox.swift in Sources */,
 				3881E33A1F020DFD0013D241 /* Lorem.swift in Sources */,
@@ -1124,7 +988,6 @@
 				38ECA8B81EE7C58E00639A19 /* NTFormInputCell.swift in Sources */,
 				3818F70A1E5BDF5000902E23 /* Log.swift in Sources */,
 				3863D8DB1EB0686E003B73F7 /* NTImageView.swift in Sources */,
-				38CACA441EF4EA8C00F07499 /* JTAppleCalendarLayoutProtocol.swift in Sources */,
 				3863D8D11EB0686E003B73F7 /* NTTabBarController.swift in Sources */,
 				38ECA8E91EF0655B00639A19 /* NTFormTagInputCell.swift in Sources */,
 				38ECA8D31EE9AC8400639A19 /* NTAnimatedCollectionViewCell.swift in Sources */,
@@ -1136,7 +999,6 @@
 				38ECA8C91EE8DEBE00639A19 /* NTFormProfileCell.swift in Sources */,
 				38C039A11F0AEDAC007BDD88 /* NTCarouselView.swift in Sources */,
 				388C1EE81EE528840036AECE /* NTToolbar.swift in Sources */,
-				38CACA4C1EF4EA8C00F07499 /* UserInteractionFunctions.swift in Sources */,
 				38FCFA301ECFB7AD007D3019 /* NTAnimatedTextField.swift in Sources */,
 				38C0394C1F0966C9007BDD88 /* Font.swift in Sources */,
 				3863D8B11EB0686E003B73F7 /* String.swift in Sources */,
@@ -1145,12 +1007,10 @@
 				3863D8C21EB0686E003B73F7 /* NTMapAnnotation.swift in Sources */,
 				38D645811EF8F76E000C7357 /* NTSearchSelectViewController.swift in Sources */,
 				38C0394E1F0966C9007BDD88 /* Icon.swift in Sources */,
-				38CACA3F1EF4EA8C00F07499 /* CalendarEnums.swift in Sources */,
 				388A2EF81F0B47AD00311148 /* PulleyViewController.swift in Sources */,
 				38FCFA3C1ECFF7C7007D3019 /* NTEULAController.swift in Sources */,
 				3863D8B41EB0686E003B73F7 /* UISearchBar.swift in Sources */,
 				38ECA8C11EE7D20B00639A19 /* NTFormLongInputCell.swift in Sources */,
-				38CACA481EF4EA8C00F07499 /* JTAppleCollectionReusableView.swift in Sources */,
 				3863D8C41EB0686E003B73F7 /* NTMapViewController.swift in Sources */,
 				38ECA8C31EE7D23700639A19 /* NTFormControlCell.swift in Sources */,
 				3863D8DC1EB0686E003B73F7 /* NTView.swift in Sources */,
@@ -1165,22 +1025,16 @@
 				3863D8CD1EB0686E003B73F7 /* NTScrollableTabBar.swift in Sources */,
 				3863D8CF1EB0686E003B73F7 /* NTScrollableTabBarItem.swift in Sources */,
 				3863D8CE1EB0686E003B73F7 /* NTScrollableTabBarController.swift in Sources */,
-				38CACA471EF4EA8C00F07499 /* JTAppleCell.swift in Sources */,
 				3863D8AF1EB0686E003B73F7 /* MultiThreading.swift in Sources */,
 				380EEA1E1EDE862D0018FC37 /* NTImagePickerController.swift in Sources */,
-				38CACA4B1EF4EA8C00F07499 /* UIScrollViewDelegates.swift in Sources */,
 				38ECA8CE1EE9AC5400639A19 /* NTCollectionUserHeaderCell.swift in Sources */,
 				386AB9BB1ECD7788004AC8D2 /* DiscardableImageCacheItem.swift in Sources */,
 				389AF4491EC95BC60089E9C1 /* NTSlideShowViewController.swift in Sources */,
-				38CACA461EF4EA8C00F07499 /* JTAppleCalendarView.swift in Sources */,
 				388C1EE41EE528770036AECE /* NTDrawerBarButtonItem.swift in Sources */,
 				389AF3F91EB59AC10089E9C1 /* NTPing.swift in Sources */,
 				38ECA8E51EEE6C2000639A19 /* NTTagListView.swift in Sources */,
 				3863D8B71EB0686E003B73F7 /* UIViewController.swift in Sources */,
-				38CACA401EF4EA8C00F07499 /* CalendarStructs.swift in Sources */,
 				3863D8D61EB0686E003B73F7 /* NTTableViewController.swift in Sources */,
-				38CACA251EF4D19700F07499 /* NTCalendarView.swift in Sources */,
-				38CACA421EF4EA8C00F07499 /* JTAppleCalendarDelegateProtocol.swift in Sources */,
 				38ECA8E31EEA6F4E00639A19 /* NTFormImageSelectorCell.swift in Sources */,
 				3881E3401F020FA50013D241 /* Int.swift in Sources */,
 				389AF3FD1EB880770089E9C1 /* NTProgressLineIndicator.swift in Sources */,
@@ -1191,14 +1045,11 @@
 				3863D8B81EB0686E003B73F7 /* NTActionSheetViewController.swift in Sources */,
 				3863D8C01EB0686E003B73F7 /* NTCollectionViewController.swift in Sources */,
 				388A2EF71F0B47AD00311148 /* PulleyPassthroughScrollView.swift in Sources */,
-				38CACA411EF4EA8C00F07499 /* GlobalFunctionsAndExtensions.swift in Sources */,
 				3863D8CC1EB0686E003B73F7 /* NTSearchViewController.swift in Sources */,
 				38ECA8E11EEA636A00639A19 /* UITextView.swift in Sources */,
 				3863D8BE1EB0686E003B73F7 /* NTCollectionDatasource.swift in Sources */,
-				38CACA491EF4EA8C00F07499 /* JTCalendarProtocols.swift in Sources */,
 				3863D8B51EB0686E003B73F7 /* UITextField.swift in Sources */,
 				3830CA161F00AC99008A0D11 /* NTFormDateInputCell.swift in Sources */,
-				38CACA431EF4EA8C00F07499 /* JTAppleCalendarLayout.swift in Sources */,
 				38FCFA7E1ED2BEFC007D3019 /* NTTextInputBar.swift in Sources */,
 				388C1EE51EE528770036AECE /* NTButton.swift in Sources */,
 				38ECA8BD1EE7C5E600639A19 /* NTFormCell.swift in Sources */,
@@ -1216,7 +1067,6 @@
 				3863D8C91EB0686E003B73F7 /* NTPageViewController.swift in Sources */,
 				380EEA181EDE7FFD0018FC37 /* CircularTransitionAnimator.swift in Sources */,
 				38ECA8D41EE9AC8400639A19 /* NTCollectionDatasourceCell.swift in Sources */,
-				38CACA2B1EF4D80C00F07499 /* NTCalendarViewCell.swift in Sources */,
 				388C1EEE1EE678B70036AECE /* NTFormViewController.swift in Sources */,
 				389AF3F51EB51EBE0089E9C1 /* NTChime.swift in Sources */,
 				3881E33C1F020E580013D241 /* Person.swift in Sources */,
@@ -1227,15 +1077,12 @@
 				3863D8B31EB0686E003B73F7 /* UIImage+UIImageView.swift in Sources */,
 				3863D8C61EB0686E003B73F7 /* NTNavigationController.swift in Sources */,
 				38D1EE3A1EE114C500C7FD44 /* NTRefreshControl.swift in Sources */,
-				38CACA271EF4D1CB00F07499 /* NTCalendarViewController.swift in Sources */,
 				38ECA8BB1EE7C5DA00639A19 /* NTFormSection.swift in Sources */,
 				3863D8AE1EB0686E003B73F7 /* Date.swift in Sources */,
 				38C0394B1F0966C9007BDD88 /* FAType.swift in Sources */,
 				3863D8AD1EB0686E003B73F7 /* AutoLayout.swift in Sources */,
 				38ECA8D81EE9BBA400639A19 /* NTLandingViewController.swift in Sources */,
-				38CACA451EF4EA8C00F07499 /* JTAppleCalendarVariables.swift in Sources */,
 				389AF44B1EC9BFA90089E9C1 /* NTCredentialPromptViewController.swift in Sources */,
-				38CACA4A1EF4EA8C00F07499 /* UICollectionViewDelegates.swift in Sources */,
 				38ECA8C71EE8DA9500639A19 /* NTFormImageViewCell.swift in Sources */,
 				388C1EF11EE678F80036AECE /* NTFormDatasource.swift in Sources */,
 				3881E3441F021E300013D241 /* CALayer.swift in Sources */,
@@ -1246,18 +1093,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3881E3521F04DED10013D241 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3881E35B1F04DED10013D241 /* ViewController.swift in Sources */,
-				3881E3751F0629290013D241 /* RightViewController.swift in Sources */,
-				38CD309D1F06A9DA0087FFF7 /* InteractiveResumeViewController.swift in Sources */,
-				3881E3591F04DED10013D241 /* AppDelegate.swift in Sources */,
-				3881E3711F0621580013D241 /* ContainerController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1265,11 +1100,6 @@
 			isa = PBXTargetDependency;
 			target = 3818F6D61E5BDEA600902E23 /* NTComponents */;
 			targetProxy = 38084AC11EA311EE00329516 /* PBXContainerItemProxy */;
-		};
-		3881E36E1F04E07D0013D241 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3818F6D61E5BDEA600902E23 /* NTComponents */;
-			targetProxy = 3881E36D1F04E07D0013D241 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1305,7 +1135,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1321,7 +1152,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.nathantannar.NTComponents-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1334,7 +1166,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1342,7 +1176,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1387,7 +1225,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1395,7 +1235,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1440,7 +1284,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathantannar.NTComponents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1460,39 +1305,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.nathantannar.NTComponents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		3881E3661F04DED10013D241 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = NTResume/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.nathantannar.NTResume;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		3881E3671F04DED10013D241 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = 9EUCWD26TP;
-				INFOPLIST_FILE = NTResume/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.nathantannar.NTResume;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1522,15 +1336,6 @@
 			buildConfigurations = (
 				3818F6E01E5BDEA600902E23 /* Debug */,
 				3818F6E11E5BDEA600902E23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3881E3651F04DED10013D241 /* Build configuration list for PBXNativeTarget "NTResume" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3881E3661F04DED10013D241 /* Debug */,
-				3881E3671F04DED10013D241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -192,7 +192,7 @@ open class NTSwitch: UIControl {
         }
     }
     
-    open func switchAreaTapped(recognizer: UITapGestureRecognizer) {
+    @objc open func switchAreaTapped(recognizer: UITapGestureRecognizer) {
         changeThumbState()
     }
     
@@ -390,7 +390,7 @@ open class NTSwitch: UIControl {
     }
     
     //MARK: - Event Actions
-    func onTouchDown(btn: UIButton, withEvent event: UIEvent) {
+    @objc func onTouchDown(btn: UIButton, withEvent event: UIEvent) {
         
         if isRippleEnabled {
             
@@ -420,12 +420,12 @@ open class NTSwitch: UIControl {
     }
     
 
-    internal func sliderTapped() {
+    @objc internal func sliderTapped() {
         changeThumbState()
     }
     
     // Change thumb state when touchUPOutside action is detected
-    internal func onTouchUpOutsideOrCanceled(btn: UIButton, withEvent event: UIEvent) {
+    @objc internal func onTouchUpOutsideOrCanceled(btn: UIButton, withEvent event: UIEvent) {
         
         // print("Touch released at ouside")
         if let touch = event.touches(for: btn)?.first {
@@ -451,7 +451,7 @@ open class NTSwitch: UIControl {
     }
     
     // Drag the switch thumb
-    internal func onTouchDragInside(btn: UIButton, withEvent event:UIEvent) {
+    @objc internal func onTouchDragInside(btn: UIButton, withEvent event:UIEvent) {
         //This code can go awry if there is more than one finger on the screen
         
         if let touch = event.touches(for: btn)?.first {

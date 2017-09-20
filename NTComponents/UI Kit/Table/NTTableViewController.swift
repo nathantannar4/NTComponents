@@ -310,7 +310,7 @@ open class NTTableViewController: NTViewController, UITableViewDataSource, UITab
         return nil
     }
     
-    open func handleRefresh() {
+    @objc open func handleRefresh() {
         
     }
 }

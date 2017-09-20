@@ -92,7 +92,7 @@ open class NTTextInputBar: NTInputAccessoryView, UITextViewDelegate {
     
     // MARK: - Standard Methods
     
-    open func didPressSend(_ sender: NTButton) {
+    @objc open func didPressSend(_ sender: NTButton) {
         if resignResponderOnSend {
             textView.resignFirstResponder()
         }

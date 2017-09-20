@@ -129,7 +129,7 @@ open class NTMagicView: NTView {
     /// Called when a pan gesture is sent to the view
     ///
     /// - Parameter gesture: UIPanGestureRecognizer
-    open func handlePan(_ gesture: UIPanGestureRecognizer) {
+    @objc open func handlePan(_ gesture: UIPanGestureRecognizer) {
         
         guard let superview = self.superview else {
             /// ERROR, NTMagicView must have a superview

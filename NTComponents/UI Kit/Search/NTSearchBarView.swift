@@ -116,7 +116,7 @@ open class NTSearchBarView: NTView, UITextFieldDelegate {
     
     // MARK: - Search
 
-    open func search() {
+    @objc open func search() {
         Log.write(.status, "SearchBar search executed")
         let _ = delegate?.searchBar(searchField, didUpdateSearchFor: searchField.text ?? String())
     }

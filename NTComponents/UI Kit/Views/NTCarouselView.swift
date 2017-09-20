@@ -126,14 +126,14 @@ open class NTCarouselView: UICollectionView, UICollectionViewDataSource, UIColle
         }
     }
     
-    open func layoutItems() {
+    @objc open func layoutItems() {
         collectionViewLayout.invalidateLayout()
     }
   
     
     // MARK: - Timer
     
-    open func handleTimer(_ timer: Timer) {
+    @objc open func handleTimer(_ timer: Timer) {
         
         if !canAutoScroll {
             return

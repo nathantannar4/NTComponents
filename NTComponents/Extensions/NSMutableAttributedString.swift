@@ -28,14 +28,14 @@
 public extension NSMutableAttributedString {
     
     func bold(_ text: String) -> NSMutableAttributedString {
-        let attrs:[String:AnyObject] = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]
+        let attrs:[NSAttributedStringKey:AnyObject] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : UIFont.boldSystemFont(ofSize: 14)]
         let boldString = NSMutableAttributedString(string:"\(text)", attributes: attrs)
         self.append(boldString)
         return self
     }
     
     func italic(_ text: String) -> NSMutableAttributedString {
-        let attrs:[String:AnyObject] = [NSFontAttributeName : UIFont.italicSystemFont(ofSize: 14)]
+        let attrs: [NSAttributedStringKey:AnyObject] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue) : UIFont.italicSystemFont(ofSize: 14)]
         let boldString = NSMutableAttributedString(string:"\(text)", attributes: attrs)
         self.append(boldString)
         return self
@@ -60,8 +60,8 @@ public extension NSMutableAttributedString {
         let foundRange = self.mutableString.range(of: textToFind)
         if foundRange.location != NSNotFound {
             //self.addAttribute(NSLinkAttributeName, value: linkURL, range: foundRange)
-            self.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)], range: foundRange)
-            self.addAttributes([NSForegroundColorAttributeName: Color.Default.Tint.Button], range: foundRange)
+            self.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)], range: foundRange)
+            self.addAttributes([NSAttributedStringKey.foregroundColor: Color.Default.Tint.Button], range: foundRange)
         }
     }
 }

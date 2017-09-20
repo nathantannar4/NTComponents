@@ -1,6 +1,6 @@
 //
 //  Lorem.swift
-//  NTComponents
+//  NTToolKit
 //
 //  Copyright © 2017 Nathan Tannar.
 //
@@ -222,7 +222,7 @@ public class Lorem {
 }
 
 extension String {
-    var firstCapitalized : String {
+    var firstCapitalized: String {
         var string = self
         string.replaceSubrange(string.startIndex...string.startIndex, with: String(string[string.startIndex]).capitalized)
         return string

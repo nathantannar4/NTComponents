@@ -97,7 +97,7 @@ open class NTToast: NTAnimatedView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    internal func didTap(_ recognizer: UITapGestureRecognizer) {
+    @objc internal func didTap(_ recognizer: UITapGestureRecognizer) {
         if dismissOnTap {
             dismiss()
         }
@@ -122,7 +122,7 @@ open class NTToast: NTAnimatedView {
         })
     }
 
-    open func dismiss() {
+    @objc open func dismiss() {
         if currentState != .visible {
             return
         }
