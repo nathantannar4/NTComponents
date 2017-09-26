@@ -30,7 +30,8 @@ While NTComponents has yet to be fully documented, you can find the docs here: h
 ## Requirements
 
 - iOS 9.1+
-- Xcode 8.0+
+- Xcode 9.0+
+- Swift 4
 
 ## Installation
 
@@ -54,6 +55,8 @@ import NTComponents
 2. Copy the NTComponents.framework product to your project
 
 ## Release History
+* 1.0.0
+    * Swift 4
 * 0.0.7
     * More views, bug fixes and optimizations
 * 0.0.6
@@ -168,7 +171,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 [https://github.com/nathantannar4/NTComponents](https://github.com/nathantannar4/NTComponents)
 
-[swift-image]:https://img.shields.io/badge/swift-3.1-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-4.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
